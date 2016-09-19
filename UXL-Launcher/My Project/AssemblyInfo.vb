@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("UXL-Launcher")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("UXL Launcher - Unified eXecutable Launcher")>
+<Assembly: AssemblyDescription("UXL is an an app launcher meant to launch Microsoft Office 2010+ software. Not associated with Microsoft.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("UXL-Launcher")>
-<Assembly: AssemblyCopyright("Copyright ©  2016")>
+<Assembly: AssemblyCopyright("Copyright © 2013-2016 Drew Naylor")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("0.1.0.0")>
+<Assembly: AssemblyFileVersion("0.1.0.0")>
