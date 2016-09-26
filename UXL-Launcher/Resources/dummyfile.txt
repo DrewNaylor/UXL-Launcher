@@ -1,0 +1,1 @@
+Make sure that at least one file in this folder exists at any given time. PowerShell complains about a folder not existing if I try to use the BuildDate thing without this directory here. If this text document is here, then Git will download the Resources folder like it should even if every other file in here is auto-generated and on the gitignore.
