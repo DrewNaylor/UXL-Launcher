@@ -37,9 +37,9 @@ Partial Class MainWindow
         Me.panelWhiteBackPanel = New System.Windows.Forms.Panel()
         Me.statusStripMainWindow = New System.Windows.Forms.StatusStrip()
         Me.statusStripLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.menubarMainWindow.SuspendLayout()
         Me.panelWhiteBackPanel.SuspendLayout()
         Me.statusStripMainWindow.SuspendLayout()
@@ -121,8 +121,8 @@ Partial Class MainWindow
         'panelWhiteBackPanel
         '
         Me.panelWhiteBackPanel.BackColor = System.Drawing.Color.White
-        Me.panelWhiteBackPanel.Controls.Add(Me.GroupBox1)
         Me.panelWhiteBackPanel.Controls.Add(Me.statusStripMainWindow)
+        Me.panelWhiteBackPanel.Controls.Add(Me.GroupBox1)
         Me.panelWhiteBackPanel.Controls.Add(Me.groupboxProApps)
         Me.panelWhiteBackPanel.Controls.Add(Me.groupboxStandardApps)
         Me.panelWhiteBackPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -148,6 +148,15 @@ Partial Class MainWindow
         Me.statusStripLabelWelcomeText.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
     "relevent app. Also, explore the UI."
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(437, 2)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(190, 491)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Professional Apps"
+        '
         'groupboxProApps
         '
         Me.groupboxProApps.Location = New System.Drawing.Point(223, 2)
@@ -165,15 +174,6 @@ Partial Class MainWindow
         Me.groupboxStandardApps.TabIndex = 1
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Location = New System.Drawing.Point(608, 39)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(190, 491)
-        Me.GroupBox1.TabIndex = 3
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Professional Apps"
         '
         'MainWindow
         '
