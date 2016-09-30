@@ -23,8 +23,8 @@ Partial Class MainWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarMainWindow = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,32 +34,33 @@ Partial Class MainWindow
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.panelWhiteBackPanel = New System.Windows.Forms.Panel()
+        Me.statusStripMainWindow = New System.Windows.Forms.StatusStrip()
+        Me.statusStripLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.MenuStrip1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
+        Me.menubarMainWindow.SuspendLayout()
+        Me.panelWhiteBackPanel.SuspendLayout()
+        Me.statusStripMainWindow.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'menubarMainWindow
         '
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem2, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(696, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.menubarMainWindow.BackColor = System.Drawing.SystemColors.Control
+        Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuButton, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
+        Me.menubarMainWindow.Name = "menubarMainWindow"
+        Me.menubarMainWindow.Size = New System.Drawing.Size(696, 24)
+        Me.menubarMainWindow.TabIndex = 0
+        Me.menubarMainWindow.Text = "MenuStrip1"
         '
-        'FileToolStripMenuItem2
+        'FileToolStripMenuButton
         '
-        Me.FileToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
-        Me.FileToolStripMenuItem2.Name = "FileToolStripMenuItem2"
-        Me.FileToolStripMenuItem2.Size = New System.Drawing.Size(37, 20)
-        Me.FileToolStripMenuItem2.Text = "&File"
+        Me.FileToolStripMenuButton.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuButton.Name = "FileToolStripMenuButton"
+        Me.FileToolStripMenuButton.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuButton.Text = "&File"
         '
         'ExitToolStripMenuItem
         '
@@ -117,90 +118,101 @@ Partial Class MainWindow
         Me.FileToolStripMenuItem1.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem1.Text = "File"
         '
-        'Panel1
+        'panelWhiteBackPanel
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.StatusStrip1)
-        Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 24)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(696, 518)
-        Me.Panel1.TabIndex = 1
+        Me.panelWhiteBackPanel.BackColor = System.Drawing.Color.White
+        Me.panelWhiteBackPanel.Controls.Add(Me.GroupBox1)
+        Me.panelWhiteBackPanel.Controls.Add(Me.statusStripMainWindow)
+        Me.panelWhiteBackPanel.Controls.Add(Me.groupboxProApps)
+        Me.panelWhiteBackPanel.Controls.Add(Me.groupboxStandardApps)
+        Me.panelWhiteBackPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelWhiteBackPanel.Location = New System.Drawing.Point(0, 24)
+        Me.panelWhiteBackPanel.Name = "panelWhiteBackPanel"
+        Me.panelWhiteBackPanel.Size = New System.Drawing.Size(696, 518)
+        Me.panelWhiteBackPanel.TabIndex = 1
         '
-        'GroupBox2
+        'statusStripMainWindow
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(204, 2)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(190, 491)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Professional Apps"
+        Me.statusStripMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusStripLabelWelcomeText})
+        Me.statusStripMainWindow.Location = New System.Drawing.Point(0, 496)
+        Me.statusStripMainWindow.Name = "statusStripMainWindow"
+        Me.statusStripMainWindow.Size = New System.Drawing.Size(696, 22)
+        Me.statusStripMainWindow.TabIndex = 0
+        Me.statusStripMainWindow.Text = "StatusStrip1"
+        '
+        'statusStripLabelWelcomeText
+        '
+        Me.statusStripLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
+        Me.statusStripLabelWelcomeText.Name = "statusStripLabelWelcomeText"
+        Me.statusStripLabelWelcomeText.Size = New System.Drawing.Size(619, 17)
+        Me.statusStripLabelWelcomeText.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
+    "relevent app. Also, explore the UI."
+        '
+        'groupboxProApps
+        '
+        Me.groupboxProApps.Location = New System.Drawing.Point(223, 2)
+        Me.groupboxProApps.Name = "groupboxProApps"
+        Me.groupboxProApps.Size = New System.Drawing.Size(190, 491)
+        Me.groupboxProApps.TabIndex = 2
+        Me.groupboxProApps.TabStop = False
+        Me.groupboxProApps.Text = "Professional Apps"
+        '
+        'groupboxStandardApps
+        '
+        Me.groupboxStandardApps.Location = New System.Drawing.Point(8, 2)
+        Me.groupboxStandardApps.Name = "groupboxStandardApps"
+        Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 491)
+        Me.groupboxStandardApps.TabIndex = 1
+        Me.groupboxStandardApps.TabStop = False
+        Me.groupboxStandardApps.Text = "Standard Apps"
         '
         'GroupBox1
         '
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(608, 39)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(190, 491)
-        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Standard Apps"
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 496)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(696, 22)
-        Me.StatusStrip1.TabIndex = 0
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(619, 17)
-        Me.ToolStripStatusLabel1.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
-    "relevent app. Also, explore the UI."
+        Me.GroupBox1.Text = "Professional Apps"
         '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(696, 542)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.panelWhiteBackPanel)
+        Me.Controls.Add(Me.menubarMainWindow)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.menubarMainWindow
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "UXL Launcher REMEMBER TO PUT 32-BIT OR 64-BIT MODE HERE"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        Me.menubarMainWindow.ResumeLayout(False)
+        Me.menubarMainWindow.PerformLayout()
+        Me.panelWhiteBackPanel.ResumeLayout(False)
+        Me.panelWhiteBackPanel.PerformLayout()
+        Me.statusStripMainWindow.ResumeLayout(False)
+        Me.statusStripMainWindow.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents menubarMainWindow As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FileToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents FileToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents FileToolStripMenuButton As ToolStripMenuItem
     Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelWhiteBackPanel As Panel
     Friend WithEvents AuthorsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LicenseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents statusStripMainWindow As StatusStrip
+    Friend WithEvents statusStripLabelWelcomeText As ToolStripStatusLabel
+    Friend WithEvents groupboxStandardApps As GroupBox
+    Friend WithEvents groupboxProApps As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
 End Class
