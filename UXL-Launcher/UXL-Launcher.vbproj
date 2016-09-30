@@ -65,6 +65,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>UXL_Launcher_Icon_For_Windows.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -151,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BuildDate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
