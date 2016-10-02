@@ -29,6 +29,8 @@ Partial Class aaformMainWindow
         Me.menubarToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarOptionsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarHelpMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarHelpTopicsButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zseparatorHelpMenu = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarAuthorsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarLicenseButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarAboutButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -84,27 +86,39 @@ Partial Class aaformMainWindow
         '
         'menubarHelpMenu
         '
-        Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
+        Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
         Me.menubarHelpMenu.Name = "menubarHelpMenu"
         Me.menubarHelpMenu.Size = New System.Drawing.Size(44, 20)
         Me.menubarHelpMenu.Text = "&Help"
         '
+        'menubarHelpTopicsButton
+        '
+        Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
+        Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarHelpTopicsButton.Text = "&View Help Topics"
+        '
+        'zseparatorHelpMenu
+        '
+        Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
+        '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(116, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAuthorsButton.Text = "A&uthors"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(116, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(116, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
@@ -219,4 +233,6 @@ Partial Class aaformMainWindow
     Friend WithEvents groupboxStandardApps As GroupBox
     Friend WithEvents groupboxProApps As GroupBox
     Friend WithEvents groupboxExtraApps As GroupBox
+    Friend WithEvents menubarHelpTopicsButton As ToolStripMenuItem
+    Friend WithEvents zseparatorHelpMenu As ToolStripSeparator
 End Class
