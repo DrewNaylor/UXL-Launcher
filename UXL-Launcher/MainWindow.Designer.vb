@@ -65,7 +65,8 @@ Partial Class aaformMainWindow
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
-        Me.menubarExitButton.Size = New System.Drawing.Size(92, 22)
+        Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
+        Me.menubarExitButton.Size = New System.Drawing.Size(152, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarToolsMenu
@@ -91,20 +92,20 @@ Partial Class aaformMainWindow
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(116, 22)
-        Me.menubarAuthorsButton.Text = "Authors"
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarAuthorsButton.Text = "A&uthors"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(116, 22)
-        Me.menubarLicenseButton.Text = "License"
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(116, 22)
-        Me.menubarAboutButton.Text = "About"
+        Me.menubarAboutButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
         '
