@@ -37,9 +37,9 @@ Partial Class aaformMainWindow
         Me.panelWhiteBackPanel = New System.Windows.Forms.Panel()
         Me.statusbarMainWindow = New System.Windows.Forms.StatusStrip()
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
         Me.menubarMainWindow.SuspendLayout()
         Me.panelWhiteBackPanel.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -66,7 +66,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarToolsMenu
@@ -92,19 +92,19 @@ Partial Class aaformMainWindow
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(116, 22)
         Me.menubarAuthorsButton.Text = "A&uthors"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(116, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(116, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
@@ -123,9 +123,9 @@ Partial Class aaformMainWindow
         '
         Me.panelWhiteBackPanel.BackColor = System.Drawing.Color.White
         Me.panelWhiteBackPanel.Controls.Add(Me.statusbarMainWindow)
-        Me.panelWhiteBackPanel.Controls.Add(Me.groupboxExtraApps)
         Me.panelWhiteBackPanel.Controls.Add(Me.groupboxProApps)
         Me.panelWhiteBackPanel.Controls.Add(Me.groupboxStandardApps)
+        Me.panelWhiteBackPanel.Controls.Add(Me.groupboxExtraApps)
         Me.panelWhiteBackPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelWhiteBackPanel.Location = New System.Drawing.Point(0, 24)
         Me.panelWhiteBackPanel.Name = "panelWhiteBackPanel"
@@ -149,17 +149,9 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
     "relevent app. Also, explore the UI."
         '
-        'groupboxExtraApps
-        '
-        Me.groupboxExtraApps.Location = New System.Drawing.Point(437, 2)
-        Me.groupboxExtraApps.Name = "groupboxExtraApps"
-        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 491)
-        Me.groupboxExtraApps.TabIndex = 3
-        Me.groupboxExtraApps.TabStop = False
-        Me.groupboxExtraApps.Text = "Extra Apps + Tools"
-        '
         'groupboxProApps
         '
+        Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxProApps.Location = New System.Drawing.Point(223, 2)
         Me.groupboxProApps.Name = "groupboxProApps"
         Me.groupboxProApps.Size = New System.Drawing.Size(190, 491)
@@ -169,12 +161,23 @@ Partial Class aaformMainWindow
         '
         'groupboxStandardApps
         '
+        Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxStandardApps.Location = New System.Drawing.Point(8, 2)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
         Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 491)
         Me.groupboxStandardApps.TabIndex = 1
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'groupboxExtraApps
+        '
+        Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxExtraApps.Location = New System.Drawing.Point(437, 2)
+        Me.groupboxExtraApps.Name = "groupboxExtraApps"
+        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 491)
+        Me.groupboxExtraApps.TabIndex = 3
+        Me.groupboxExtraApps.TabStop = False
+        Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
         'aaformMainWindow
         '
