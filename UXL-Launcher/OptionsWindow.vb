@@ -22,7 +22,7 @@
 
 
 
-Public Class OptionsWindow
+Public Class aaformOptionsWindow
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

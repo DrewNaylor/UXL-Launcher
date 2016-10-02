@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class OptionsWindow
+Partial Class aaformOptionsWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,28 +22,28 @@ Partial Class OptionsWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.labelComingSoon = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label1
+        'labelComingSoon
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(198, 164)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Coming soon."
+        Me.labelComingSoon.AutoSize = True
+        Me.labelComingSoon.Location = New System.Drawing.Point(198, 164)
+        Me.labelComingSoon.Name = "labelComingSoon"
+        Me.labelComingSoon.Size = New System.Drawing.Size(71, 13)
+        Me.labelComingSoon.TabIndex = 0
+        Me.labelComingSoon.Text = "Coming soon."
         '
-        'OptionsWindow
+        'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(485, 394)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.labelComingSoon)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "OptionsWindow"
+        Me.Name = "aaformOptionsWindow"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -53,5 +53,5 @@ Partial Class OptionsWindow
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labelComingSoon As Label
 End Class

@@ -35,6 +35,6 @@ Public Class aaformMainWindow
 
     Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window.
-        OptionsWindow.Show()
+        aaformOptionsWindow.Show()
     End Sub
 End Class
