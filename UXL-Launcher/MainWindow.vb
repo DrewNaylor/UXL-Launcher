@@ -22,18 +22,18 @@
 
 
 
-Public Class MainWindow
+Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
         ' End the execution of the app.
         Me.Close()
 
     End Sub
 
-    Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
+    Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window.
         OptionsWindow.Show()
     End Sub
