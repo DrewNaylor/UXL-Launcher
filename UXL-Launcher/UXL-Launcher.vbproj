@@ -170,6 +170,19 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Word.png" />
+    <None Include="Resources\Sharepoint Workspace.png" />
+    <None Include="Resources\Publisher.png" />
+    <None Include="Resources\Powerpoint.png" />
+    <None Include="Resources\Outlook.png" />
+    <None Include="Resources\Onenote.png" />
+    <None Include="Resources\Infopath.png" />
+    <None Include="Resources\Excel.png" />
+    <None Include="Resources\Access.png" />
+    <None Include="Resources\Microsoft Query.png" />
+    <None Include="Resources\picture manager.png" />
+    <None Include="Resources\Clip Organizer.png" />
+    <None Include="Resources\Language Settings.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
