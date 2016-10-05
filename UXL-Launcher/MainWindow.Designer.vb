@@ -41,6 +41,7 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -157,6 +158,7 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel.BackColor = System.Drawing.Color.White
         Me.flowLayoutPanel.Controls.Add(Me.groupboxStandardApps)
         Me.flowLayoutPanel.Controls.Add(Me.groupboxProApps)
+        Me.flowLayoutPanel.Controls.Add(Me.GroupBox1)
         Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 44)
         Me.flowLayoutPanel.Name = "flowLayoutPanel"
@@ -165,8 +167,8 @@ Partial Class aaformMainWindow
         '
         'groupboxStandardApps
         '
-        Me.groupboxStandardApps.Location = New System.Drawing.Point(10, 3)
-        Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.groupboxStandardApps.Location = New System.Drawing.Point(33, 3)
+        Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(33, 3, 3, 3)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
         Me.groupboxStandardApps.Size = New System.Drawing.Size(380, 958)
         Me.groupboxStandardApps.TabIndex = 0
@@ -175,13 +177,23 @@ Partial Class aaformMainWindow
         '
         'groupboxProApps
         '
-        Me.groupboxProApps.Location = New System.Drawing.Point(426, 3)
+        Me.groupboxProApps.Location = New System.Drawing.Point(449, 3)
         Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(33, 3, 3, 3)
         Me.groupboxProApps.Name = "groupboxProApps"
         Me.groupboxProApps.Size = New System.Drawing.Size(380, 958)
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Location = New System.Drawing.Point(865, 3)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(33, 3, 3, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(380, 958)
+        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "GroupBox1"
         '
         'aaformMainWindow
         '
@@ -225,4 +237,5 @@ Partial Class aaformMainWindow
     Friend WithEvents flowLayoutPanel As FlowLayoutPanel
     Friend WithEvents groupboxStandardApps As GroupBox
     Friend WithEvents groupboxProApps As GroupBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
