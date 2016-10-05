@@ -200,7 +200,7 @@ Partial Class aaformMainWindow
         'pictureOneNoteIcon
         '
         Me.pictureOneNoteIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
-        Me.pictureOneNoteIcon.Location = New System.Drawing.Point(14, 536)
+        Me.pictureOneNoteIcon.Location = New System.Drawing.Point(14, 530)
         Me.pictureOneNoteIcon.Name = "pictureOneNoteIcon"
         Me.pictureOneNoteIcon.Size = New System.Drawing.Size(100, 96)
         Me.pictureOneNoteIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -210,7 +210,7 @@ Partial Class aaformMainWindow
         'pictureOutlookIcon
         '
         Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
-        Me.pictureOutlookIcon.Location = New System.Drawing.Point(14, 410)
+        Me.pictureOutlookIcon.Location = New System.Drawing.Point(14, 407)
         Me.pictureOutlookIcon.Name = "pictureOutlookIcon"
         Me.pictureOutlookIcon.Size = New System.Drawing.Size(100, 96)
         Me.pictureOutlookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -220,7 +220,7 @@ Partial Class aaformMainWindow
         'picturePowerpointIcon
         '
         Me.picturePowerpointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Powerpoint
-        Me.picturePowerpointIcon.Location = New System.Drawing.Point(14, 286)
+        Me.picturePowerpointIcon.Location = New System.Drawing.Point(14, 284)
         Me.picturePowerpointIcon.Name = "picturePowerpointIcon"
         Me.picturePowerpointIcon.Size = New System.Drawing.Size(100, 96)
         Me.picturePowerpointIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -230,7 +230,7 @@ Partial Class aaformMainWindow
         'pictureExcelIcon
         '
         Me.pictureExcelIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Excel
-        Me.pictureExcelIcon.Location = New System.Drawing.Point(14, 162)
+        Me.pictureExcelIcon.Location = New System.Drawing.Point(14, 161)
         Me.pictureExcelIcon.Name = "pictureExcelIcon"
         Me.pictureExcelIcon.Size = New System.Drawing.Size(100, 96)
         Me.pictureExcelIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
