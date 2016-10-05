@@ -3120,7 +3120,7 @@
         s/6IzfT/LEBZf1zPcpUAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="picture_manager" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Picture_Manager" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAAd0SU1FB98GEAQKKU+xfl8AAP+fSURBVHhe7L1ldJ1Htq19+nSHzA4zMzMzs8MM
