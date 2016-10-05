@@ -50,10 +50,12 @@ Partial Class aaformMainWindow
         'menubarMainWindow
         '
         Me.menubarMainWindow.BackColor = System.Drawing.SystemColors.Control
+        Me.menubarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFileMenu, Me.menubarToolsMenu, Me.menubarHelpMenu})
         Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
         Me.menubarMainWindow.Name = "menubarMainWindow"
-        Me.menubarMainWindow.Size = New System.Drawing.Size(696, 24)
+        Me.menubarMainWindow.Padding = New System.Windows.Forms.Padding(12, 4, 0, 4)
+        Me.menubarMainWindow.Size = New System.Drawing.Size(1392, 44)
         Me.menubarMainWindow.TabIndex = 0
         Me.menubarMainWindow.Text = "MenuStrip1"
         '
@@ -61,64 +63,64 @@ Partial Class aaformMainWindow
         '
         Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
-        Me.menubarFileMenu.Size = New System.Drawing.Size(37, 20)
+        Me.menubarFileMenu.Size = New System.Drawing.Size(64, 36)
         Me.menubarFileMenu.Text = "&File"
         '
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(237, 38)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarToolsMenu
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 20)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(82, 36)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOptionsButton
         '
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(125, 22)
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(269, 38)
         Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
         '
         Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
         Me.menubarHelpMenu.Name = "menubarHelpMenu"
-        Me.menubarHelpMenu.Size = New System.Drawing.Size(44, 20)
+        Me.menubarHelpMenu.Size = New System.Drawing.Size(77, 36)
         Me.menubarHelpMenu.Text = "&Help"
         '
         'menubarHelpTopicsButton
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(389, 38)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(386, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(389, 38)
         Me.menubarAuthorsButton.Text = "A&uthors"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(389, 38)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(389, 38)
         Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
@@ -141,17 +143,20 @@ Partial Class aaformMainWindow
         Me.panelWhiteBackPanel.Controls.Add(Me.groupboxStandardApps)
         Me.panelWhiteBackPanel.Controls.Add(Me.groupboxExtraApps)
         Me.panelWhiteBackPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelWhiteBackPanel.Location = New System.Drawing.Point(0, 24)
+        Me.panelWhiteBackPanel.Location = New System.Drawing.Point(0, 44)
+        Me.panelWhiteBackPanel.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.panelWhiteBackPanel.Name = "panelWhiteBackPanel"
-        Me.panelWhiteBackPanel.Size = New System.Drawing.Size(696, 518)
+        Me.panelWhiteBackPanel.Size = New System.Drawing.Size(1392, 998)
         Me.panelWhiteBackPanel.TabIndex = 1
         '
         'statusbarMainWindow
         '
+        Me.statusbarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
-        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 496)
+        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 961)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
-        Me.statusbarMainWindow.Size = New System.Drawing.Size(696, 22)
+        Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(2, 0, 28, 0)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(1392, 37)
         Me.statusbarMainWindow.TabIndex = 0
         Me.statusbarMainWindow.Text = "StatusStrip1"
         '
@@ -159,16 +164,18 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(619, 17)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(1260, 32)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
     "relevent app. Also, explore the UI."
         '
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxProApps.Location = New System.Drawing.Point(223, 2)
+        Me.groupboxProApps.Location = New System.Drawing.Point(446, 4)
+        Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.groupboxProApps.Name = "groupboxProApps"
-        Me.groupboxProApps.Size = New System.Drawing.Size(190, 491)
+        Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.groupboxProApps.Size = New System.Drawing.Size(380, 944)
         Me.groupboxProApps.TabIndex = 2
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
@@ -176,9 +183,11 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxStandardApps.Location = New System.Drawing.Point(8, 2)
+        Me.groupboxStandardApps.Location = New System.Drawing.Point(16, 4)
+        Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
-        Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 491)
+        Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.groupboxStandardApps.Size = New System.Drawing.Size(380, 944)
         Me.groupboxStandardApps.TabIndex = 1
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
@@ -186,22 +195,24 @@ Partial Class aaformMainWindow
         'groupboxExtraApps
         '
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxExtraApps.Location = New System.Drawing.Point(437, 2)
+        Me.groupboxExtraApps.Location = New System.Drawing.Point(874, 4)
+        Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
-        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 491)
+        Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.groupboxExtraApps.Size = New System.Drawing.Size(380, 944)
         Me.groupboxExtraApps.TabIndex = 3
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
         'aaformMainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(696, 542)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.ClientSize = New System.Drawing.Size(1392, 1042)
         Me.Controls.Add(Me.panelWhiteBackPanel)
         Me.Controls.Add(Me.menubarMainWindow)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menubarMainWindow
+        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "aaformMainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "UXL Launcher REMEMBER TO PUT 32-BIT OR 64-BIT MODE HERE"
