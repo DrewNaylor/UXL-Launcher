@@ -40,6 +40,7 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.buttonRunOneNote = New System.Windows.Forms.Button()
         Me.buttonRunOutlook = New System.Windows.Forms.Button()
         Me.buttonRunPowerPoint = New System.Windows.Forms.Button()
         Me.buttonRunExcel = New System.Windows.Forms.Button()
@@ -50,8 +51,15 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
-        Me.buttonRunOneNote = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -61,6 +69,11 @@ Partial Class aaformMainWindow
         CType(Me.picturePowerpointIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.groupboxProApps.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -207,6 +220,15 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
         '
+        'buttonRunOneNote
+        '
+        Me.buttonRunOneNote.Location = New System.Drawing.Point(126, 530)
+        Me.buttonRunOneNote.Name = "buttonRunOneNote"
+        Me.buttonRunOneNote.Size = New System.Drawing.Size(210, 96)
+        Me.buttonRunOneNote.TabIndex = 9
+        Me.buttonRunOneNote.Text = "Microsoft OneNote"
+        Me.buttonRunOneNote.UseVisualStyleBackColor = True
+        '
         'buttonRunOutlook
         '
         Me.buttonRunOutlook.Location = New System.Drawing.Point(126, 407)
@@ -296,6 +318,14 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.Button1)
+        Me.groupboxProApps.Controls.Add(Me.Button4)
+        Me.groupboxProApps.Controls.Add(Me.Button2)
+        Me.groupboxProApps.Controls.Add(Me.PictureBox4)
+        Me.groupboxProApps.Controls.Add(Me.Button3)
+        Me.groupboxProApps.Controls.Add(Me.PictureBox3)
+        Me.groupboxProApps.Controls.Add(Me.PictureBox2)
+        Me.groupboxProApps.Controls.Add(Me.PictureBox1)
         Me.groupboxProApps.Location = New System.Drawing.Point(448, 4)
         Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
         Me.groupboxProApps.Name = "groupboxProApps"
@@ -304,6 +334,82 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(126, 407)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(210, 96)
+        Me.Button1.TabIndex = 17
+        Me.Button1.Text = "Microsoft Outlook"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(126, 38)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(210, 96)
+        Me.Button4.TabIndex = 14
+        Me.Button4.Text = "Microsoft Word"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(126, 284)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(210, 96)
+        Me.Button2.TabIndex = 16
+        Me.Button2.Text = "Microsoft PowerPoint"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.UXL_Launcher.My.Resources.Resources.Access
+        Me.PictureBox4.Location = New System.Drawing.Point(14, 38)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(100, 96)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 10
+        Me.PictureBox4.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(126, 161)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(210, 96)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Microsoft Excel"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.UXL_Launcher.My.Resources.Resources.Excel
+        Me.PictureBox3.Location = New System.Drawing.Point(14, 161)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(100, 96)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 11
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.UXL_Launcher.My.Resources.Resources.Powerpoint
+        Me.PictureBox2.Location = New System.Drawing.Point(14, 284)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 96)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 12
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 407)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 96)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 13
+        Me.PictureBox1.TabStop = False
         '
         'groupboxExtraApps
         '
@@ -316,15 +422,6 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.TabIndex = 2
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
-        '
-        'buttonRunOneNote
-        '
-        Me.buttonRunOneNote.Location = New System.Drawing.Point(126, 530)
-        Me.buttonRunOneNote.Name = "buttonRunOneNote"
-        Me.buttonRunOneNote.Size = New System.Drawing.Size(210, 96)
-        Me.buttonRunOneNote.TabIndex = 9
-        Me.buttonRunOneNote.Text = "Microsoft OneNote"
-        Me.buttonRunOneNote.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
@@ -353,6 +450,11 @@ Partial Class aaformMainWindow
         CType(Me.picturePowerpointIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.groupboxProApps.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -387,4 +489,12 @@ Partial Class aaformMainWindow
     Friend WithEvents buttonRunPowerPoint As Button
     Friend WithEvents buttonRunOutlook As Button
     Friend WithEvents buttonRunOneNote As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
