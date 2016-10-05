@@ -183,6 +183,7 @@
     <None Include="Resources\picture manager.png" />
     <None Include="Resources\Clip Organizer.png" />
     <None Include="Resources\Language Settings.png" />
+    <None Include="UXL-Standalone-Icon.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
