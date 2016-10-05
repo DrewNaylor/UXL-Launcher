@@ -38,11 +38,12 @@ Partial Class aaformMainWindow
         Me.zotherstuffFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.statusbarMainWindow = New System.Windows.Forms.StatusStrip()
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.flowLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -151,31 +152,43 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
     "relevant app. Also, explore the UI."
         '
-        'FlowLayoutPanel1
+        'flowLayoutPanel
         '
-        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.White
-        Me.FlowLayoutPanel1.Controls.Add(Me.groupboxStandardApps)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 44)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1412, 981)
-        Me.FlowLayoutPanel1.TabIndex = 2
+        Me.flowLayoutPanel.BackColor = System.Drawing.Color.White
+        Me.flowLayoutPanel.Controls.Add(Me.groupboxStandardApps)
+        Me.flowLayoutPanel.Controls.Add(Me.groupboxProApps)
+        Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 44)
+        Me.flowLayoutPanel.Name = "flowLayoutPanel"
+        Me.flowLayoutPanel.Size = New System.Drawing.Size(1412, 981)
+        Me.flowLayoutPanel.TabIndex = 2
         '
         'groupboxStandardApps
         '
-        Me.groupboxStandardApps.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxStandardApps.Location = New System.Drawing.Point(10, 3)
+        Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
-        Me.groupboxStandardApps.Size = New System.Drawing.Size(200, 100)
+        Me.groupboxStandardApps.Size = New System.Drawing.Size(380, 958)
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
-        Me.groupboxStandardApps.Text = "GroupBox1"
+        Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'groupboxProApps
+        '
+        Me.groupboxProApps.Location = New System.Drawing.Point(426, 3)
+        Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(33, 3, 3, 3)
+        Me.groupboxProApps.Name = "groupboxProApps"
+        Me.groupboxProApps.Size = New System.Drawing.Size(380, 958)
+        Me.groupboxProApps.TabIndex = 1
+        Me.groupboxProApps.TabStop = False
+        Me.groupboxProApps.Text = "Professional Apps"
         '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1412, 1062)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.flowLayoutPanel)
         Me.Controls.Add(Me.statusbarMainWindow)
         Me.Controls.Add(Me.menubarMainWindow)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -188,7 +201,7 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow.PerformLayout()
         Me.statusbarMainWindow.ResumeLayout(False)
         Me.statusbarMainWindow.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.flowLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -209,6 +222,7 @@ Partial Class aaformMainWindow
     Friend WithEvents zseparatorHelpMenu As ToolStripSeparator
     Friend WithEvents statusbarMainWindow As StatusStrip
     Friend WithEvents statusbarLabelWelcomeText As ToolStripStatusLabel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents flowLayoutPanel As FlowLayoutPanel
     Friend WithEvents groupboxStandardApps As GroupBox
+    Friend WithEvents groupboxProApps As GroupBox
 End Class
