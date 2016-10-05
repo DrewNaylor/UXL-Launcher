@@ -56,7 +56,7 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
         Me.menubarMainWindow.Name = "menubarMainWindow"
         Me.menubarMainWindow.Padding = New System.Windows.Forms.Padding(12, 4, 0, 4)
-        Me.menubarMainWindow.Size = New System.Drawing.Size(1412, 44)
+        Me.menubarMainWindow.Size = New System.Drawing.Size(1280, 44)
         Me.menubarMainWindow.TabIndex = 0
         Me.menubarMainWindow.Text = "MenuStrip1"
         '
@@ -142,7 +142,7 @@ Partial Class aaformMainWindow
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
         Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 1025)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
-        Me.statusbarMainWindow.Size = New System.Drawing.Size(1412, 37)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(1280, 37)
         Me.statusbarMainWindow.TabIndex = 1
         Me.statusbarMainWindow.Text = "StatusStrip1"
         '
@@ -162,7 +162,7 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 44)
         Me.flowLayoutPanel.Name = "flowLayoutPanel"
-        Me.flowLayoutPanel.Size = New System.Drawing.Size(1412, 981)
+        Me.flowLayoutPanel.Size = New System.Drawing.Size(1280, 981)
         Me.flowLayoutPanel.TabIndex = 2
         '
         'groupboxStandardApps
@@ -199,7 +199,7 @@ Partial Class aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1412, 1062)
+        Me.ClientSize = New System.Drawing.Size(1280, 1062)
         Me.Controls.Add(Me.flowLayoutPanel)
         Me.Controls.Add(Me.statusbarMainWindow)
         Me.Controls.Add(Me.menubarMainWindow)
