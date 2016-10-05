@@ -40,6 +40,7 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.buttonRunOutlook = New System.Windows.Forms.Button()
         Me.buttonRunPowerPoint = New System.Windows.Forms.Button()
         Me.buttonRunExcel = New System.Windows.Forms.Button()
         Me.buttonRunWord = New System.Windows.Forms.Button()
@@ -50,7 +51,7 @@ Partial Class aaformMainWindow
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
-        Me.buttonRunOutlook = New System.Windows.Forms.Button()
+        Me.buttonRunOneNote = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -187,6 +188,7 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxStandardApps.Controls.Add(Me.buttonRunOneNote)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOutlook)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunPowerPoint)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunExcel)
@@ -204,6 +206,15 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'buttonRunOutlook
+        '
+        Me.buttonRunOutlook.Location = New System.Drawing.Point(126, 407)
+        Me.buttonRunOutlook.Name = "buttonRunOutlook"
+        Me.buttonRunOutlook.Size = New System.Drawing.Size(210, 96)
+        Me.buttonRunOutlook.TabIndex = 8
+        Me.buttonRunOutlook.Text = "Microsoft Outlook"
+        Me.buttonRunOutlook.UseVisualStyleBackColor = True
         '
         'buttonRunPowerPoint
         '
@@ -306,14 +317,14 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
-        'buttonRunOutlook
+        'buttonRunOneNote
         '
-        Me.buttonRunOutlook.Location = New System.Drawing.Point(126, 407)
-        Me.buttonRunOutlook.Name = "buttonRunOutlook"
-        Me.buttonRunOutlook.Size = New System.Drawing.Size(210, 96)
-        Me.buttonRunOutlook.TabIndex = 8
-        Me.buttonRunOutlook.Text = "Microsoft Outlook"
-        Me.buttonRunOutlook.UseVisualStyleBackColor = True
+        Me.buttonRunOneNote.Location = New System.Drawing.Point(126, 530)
+        Me.buttonRunOneNote.Name = "buttonRunOneNote"
+        Me.buttonRunOneNote.Size = New System.Drawing.Size(210, 96)
+        Me.buttonRunOneNote.TabIndex = 9
+        Me.buttonRunOneNote.Text = "Microsoft OneNote"
+        Me.buttonRunOneNote.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
@@ -375,4 +386,5 @@ Partial Class aaformMainWindow
     Friend WithEvents buttonRunExcel As Button
     Friend WithEvents buttonRunPowerPoint As Button
     Friend WithEvents buttonRunOutlook As Button
+    Friend WithEvents buttonRunOneNote As Button
 End Class
