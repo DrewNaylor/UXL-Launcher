@@ -40,6 +40,7 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.pictureOutlookIcon = New System.Windows.Forms.PictureBox()
         Me.picturePowerpointIcon = New System.Windows.Forms.PictureBox()
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
@@ -49,6 +50,7 @@ Partial Class aaformMainWindow
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
         Me.groupboxStandardApps.SuspendLayout()
+        CType(Me.pictureOutlookIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picturePowerpointIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,6 +181,7 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxStandardApps.Controls.Add(Me.pictureOutlookIcon)
         Me.groupboxStandardApps.Controls.Add(Me.picturePowerpointIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureExcelIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureWordIcon)
@@ -190,6 +193,16 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'pictureOutlookIcon
+        '
+        Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
+        Me.pictureOutlookIcon.Location = New System.Drawing.Point(14, 410)
+        Me.pictureOutlookIcon.Name = "pictureOutlookIcon"
+        Me.pictureOutlookIcon.Size = New System.Drawing.Size(100, 96)
+        Me.pictureOutlookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureOutlookIcon.TabIndex = 3
+        Me.pictureOutlookIcon.TabStop = False
         '
         'picturePowerpointIcon
         '
@@ -267,6 +280,7 @@ Partial Class aaformMainWindow
         Me.statusbarMainWindow.PerformLayout()
         Me.flowLayoutPanel.ResumeLayout(False)
         Me.groupboxStandardApps.ResumeLayout(False)
+        CType(Me.pictureOutlookIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picturePowerpointIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).EndInit()
@@ -297,4 +311,5 @@ Partial Class aaformMainWindow
     Friend WithEvents pictureWordIcon As PictureBox
     Friend WithEvents pictureExcelIcon As PictureBox
     Friend WithEvents picturePowerpointIcon As PictureBox
+    Friend WithEvents pictureOutlookIcon As PictureBox
 End Class
