@@ -40,11 +40,14 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
+        Me.groupboxStandardApps.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -164,7 +167,7 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel.Controls.Add(Me.groupboxExtraApps)
         Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 44)
-        Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.flowLayoutPanel.Name = "flowLayoutPanel"
         Me.flowLayoutPanel.Size = New System.Drawing.Size(1280, 1018)
         Me.flowLayoutPanel.TabIndex = 2
@@ -172,14 +175,25 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxStandardApps.Controls.Add(Me.PictureBox1)
         Me.groupboxStandardApps.Location = New System.Drawing.Point(32, 4)
         Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
-        Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(4)
         Me.groupboxStandardApps.Size = New System.Drawing.Size(380, 958)
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.Word
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 38)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 96)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'groupboxProApps
         '
@@ -187,7 +201,7 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Location = New System.Drawing.Point(448, 4)
         Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
         Me.groupboxProApps.Name = "groupboxProApps"
-        Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(4)
         Me.groupboxProApps.Size = New System.Drawing.Size(380, 958)
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
@@ -199,7 +213,7 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.Location = New System.Drawing.Point(864, 4)
         Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
-        Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(4)
         Me.groupboxExtraApps.Size = New System.Drawing.Size(380, 958)
         Me.groupboxExtraApps.TabIndex = 2
         Me.groupboxExtraApps.TabStop = False
@@ -216,7 +230,7 @@ Partial Class aaformMainWindow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menubarMainWindow
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.MaximizeBox = False
         Me.Name = "aaformMainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -226,6 +240,8 @@ Partial Class aaformMainWindow
         Me.statusbarMainWindow.ResumeLayout(False)
         Me.statusbarMainWindow.PerformLayout()
         Me.flowLayoutPanel.ResumeLayout(False)
+        Me.groupboxStandardApps.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -250,4 +266,5 @@ Partial Class aaformMainWindow
     Friend WithEvents groupboxStandardApps As GroupBox
     Friend WithEvents groupboxProApps As GroupBox
     Friend WithEvents groupboxExtraApps As GroupBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
