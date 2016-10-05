@@ -49,6 +49,7 @@ Partial Class aaformMainWindow
         '
         'menubarMainWindow
         '
+        Me.menubarMainWindow.AutoSize = False
         Me.menubarMainWindow.BackColor = System.Drawing.SystemColors.Control
         Me.menubarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFileMenu, Me.menubarToolsMenu, Me.menubarHelpMenu})
@@ -206,7 +207,8 @@ Partial Class aaformMainWindow
         '
         'aaformMainWindow
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1412, 1062)
         Me.Controls.Add(Me.panelWhiteBackPanel)
         Me.Controls.Add(Me.menubarMainWindow)
@@ -223,7 +225,6 @@ Partial Class aaformMainWindow
         Me.statusbarMainWindow.ResumeLayout(False)
         Me.statusbarMainWindow.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
