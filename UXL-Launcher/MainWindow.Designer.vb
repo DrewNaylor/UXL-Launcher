@@ -47,6 +47,7 @@ Partial Class aaformMainWindow
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -183,6 +184,7 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxStandardApps.Controls.Add(Me.Button1)
         Me.groupboxStandardApps.Controls.Add(Me.pictureOneNoteIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureOutlookIcon)
         Me.groupboxStandardApps.Controls.Add(Me.picturePowerpointIcon)
@@ -271,6 +273,15 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(126, 38)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(210, 96)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -327,4 +338,5 @@ Partial Class aaformMainWindow
     Friend WithEvents picturePowerpointIcon As PictureBox
     Friend WithEvents pictureOutlookIcon As PictureBox
     Friend WithEvents pictureOneNoteIcon As PictureBox
+    Friend WithEvents Button1 As Button
 End Class
