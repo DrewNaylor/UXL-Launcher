@@ -55,6 +55,7 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
         Me.menubarMainWindow.Name = "menubarMainWindow"
         Me.menubarMainWindow.Padding = New System.Windows.Forms.Padding(12, 4, 0, 4)
+        Me.menubarMainWindow.Size = New System.Drawing.Size(1412, 44)
         Me.menubarMainWindow.TabIndex = 0
         Me.menubarMainWindow.Text = "MenuStrip1"
         '
@@ -145,14 +146,17 @@ Partial Class aaformMainWindow
         Me.panelWhiteBackPanel.Location = New System.Drawing.Point(0, 44)
         Me.panelWhiteBackPanel.Margin = New System.Windows.Forms.Padding(6)
         Me.panelWhiteBackPanel.Name = "panelWhiteBackPanel"
+        Me.panelWhiteBackPanel.Size = New System.Drawing.Size(1412, 1018)
         Me.panelWhiteBackPanel.TabIndex = 1
         '
         'statusbarMainWindow
         '
         Me.statusbarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
+        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 981)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
         Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(2, 0, 28, 0)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(1412, 37)
         Me.statusbarMainWindow.TabIndex = 0
         Me.statusbarMainWindow.Text = "StatusStrip1"
         '
@@ -203,6 +207,7 @@ Partial Class aaformMainWindow
         'aaformMainWindow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.ClientSize = New System.Drawing.Size(1412, 1062)
         Me.Controls.Add(Me.panelWhiteBackPanel)
         Me.Controls.Add(Me.menubarMainWindow)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
