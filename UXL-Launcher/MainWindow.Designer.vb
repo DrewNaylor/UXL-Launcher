@@ -60,6 +60,7 @@ Partial Class aaformMainWindow
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -100,7 +101,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(237, 38)
+        Me.menubarExitButton.Size = New System.Drawing.Size(269, 38)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarToolsMenu
@@ -113,7 +114,7 @@ Partial Class aaformMainWindow
         'menubarOptionsButton
         '
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(214, 38)
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(269, 38)
         Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
@@ -318,6 +319,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.RichTextBox1)
         Me.groupboxProApps.Controls.Add(Me.Button1)
         Me.groupboxProApps.Controls.Add(Me.buttonRunAccess)
         Me.groupboxProApps.Controls.Add(Me.Button2)
@@ -423,6 +425,14 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(13, 581)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(360, 253)
+        Me.RichTextBox1.TabIndex = 18
+        Me.RichTextBox1.Text = ""
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -497,4 +507,5 @@ Partial Class aaformMainWindow
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

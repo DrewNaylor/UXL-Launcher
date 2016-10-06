@@ -24,7 +24,8 @@
 
 Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim BuildDateString As String = My.Resources.BuildDate
+        RichTextBox1.Text = BuildDateString
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
@@ -36,5 +37,9 @@ Public Class aaformMainWindow
     Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window.
         aaformOptionsWindow.Show()
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+
     End Sub
 End Class
