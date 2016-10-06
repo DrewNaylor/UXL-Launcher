@@ -52,9 +52,9 @@ Partial Class aaformMainWindow
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.buttonRunAccess = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.pictureAccessIcon = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -70,7 +70,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupboxProApps.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureAccessIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -319,9 +319,9 @@ Partial Class aaformMainWindow
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxProApps.Controls.Add(Me.Button1)
-        Me.groupboxProApps.Controls.Add(Me.Button4)
+        Me.groupboxProApps.Controls.Add(Me.buttonRunAccess)
         Me.groupboxProApps.Controls.Add(Me.Button2)
-        Me.groupboxProApps.Controls.Add(Me.PictureBox4)
+        Me.groupboxProApps.Controls.Add(Me.pictureAccessIcon)
         Me.groupboxProApps.Controls.Add(Me.Button3)
         Me.groupboxProApps.Controls.Add(Me.PictureBox3)
         Me.groupboxProApps.Controls.Add(Me.PictureBox2)
@@ -344,14 +344,14 @@ Partial Class aaformMainWindow
         Me.Button1.Text = "Microsoft Outlook"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button4
+        'buttonRunAccess
         '
-        Me.Button4.Location = New System.Drawing.Point(126, 38)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(210, 96)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "Microsoft Word"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.buttonRunAccess.Location = New System.Drawing.Point(126, 38)
+        Me.buttonRunAccess.Name = "buttonRunAccess"
+        Me.buttonRunAccess.Size = New System.Drawing.Size(210, 96)
+        Me.buttonRunAccess.TabIndex = 14
+        Me.buttonRunAccess.Text = "Microsoft Word"
+        Me.buttonRunAccess.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -362,15 +362,15 @@ Partial Class aaformMainWindow
         Me.Button2.Text = "Microsoft PowerPoint"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'PictureBox4
+        'pictureAccessIcon
         '
-        Me.PictureBox4.Image = Global.UXL_Launcher.My.Resources.Resources.Access
-        Me.PictureBox4.Location = New System.Drawing.Point(14, 38)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 96)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 10
-        Me.PictureBox4.TabStop = False
+        Me.pictureAccessIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Access
+        Me.pictureAccessIcon.Location = New System.Drawing.Point(14, 38)
+        Me.pictureAccessIcon.Name = "pictureAccessIcon"
+        Me.pictureAccessIcon.Size = New System.Drawing.Size(100, 96)
+        Me.pictureAccessIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureAccessIcon.TabIndex = 10
+        Me.pictureAccessIcon.TabStop = False
         '
         'Button3
         '
@@ -451,7 +451,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupboxProApps.ResumeLayout(False)
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureAccessIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -490,9 +490,9 @@ Partial Class aaformMainWindow
     Friend WithEvents buttonRunOutlook As Button
     Friend WithEvents buttonRunOneNote As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents buttonRunAccess As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents pictureAccessIcon As PictureBox
     Friend WithEvents Button3 As Button
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
