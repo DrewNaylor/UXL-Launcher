@@ -24,8 +24,9 @@
 
 Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
-        RichTextBox1.Text = BuildDateString
+
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
@@ -39,7 +40,4 @@ Public Class aaformMainWindow
         aaformOptionsWindow.Show()
     End Sub
 
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
-
-    End Sub
 End Class
