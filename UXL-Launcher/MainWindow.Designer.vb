@@ -442,7 +442,8 @@ Partial Class aaformMainWindow
         '
         'aaformMainWindow
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(640, 552)
         Me.Controls.Add(Me.statusbarMainWindow)
         Me.Controls.Add(Me.flowLayoutPanel)
