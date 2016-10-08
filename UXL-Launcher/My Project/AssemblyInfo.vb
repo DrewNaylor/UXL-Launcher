@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("UXL Launcher - Unified eXecutable Launcher")>
-<Assembly: AssemblyDescription("UXL is an an app launcher meant to launch Microsoft Office 2010+ software. Not associated with Microsoft.")>
+<Assembly: AssemblyDescription("Launchers for Microsoft Office apps in one place. This app not assoc'd with Microsoft.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("UXL-Launcher")>
 <Assembly: AssemblyCopyright("Copyright © 2013-2016 Drew Naylor")>

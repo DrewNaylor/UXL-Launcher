@@ -1,4 +1,4 @@
-﻿'UXL Launcher - Launch Office Apps Quickly!
+﻿'UXL Launcher - Launchers for Microsoft Office apps in one place.
 'Copyright (C) 2013-2016  Drew Naylor
 'Microsoft Office is copyright Microsoft Corp.
 '(Note that the copyright years include the years left out by the hyphen.)
