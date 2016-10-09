@@ -183,6 +183,7 @@
     <None Include="UXL-Standalone-Icon.png" />
     <None Include="Resources\uxl-icon-24x24.png" />
     <None Include="Resources\small Language Settings.png" />
+    <None Include="Resources\uxl_icon_24x24.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
