@@ -60,14 +60,14 @@ Partial Class aaformMainWindow
         Me.pictureInfoPathIcon = New System.Windows.Forms.PictureBox()
         Me.pictureSharepointIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.buttonRunOneNoteQuickLaunch = New System.Windows.Forms.Button()
+        Me.pictureQueryIcon = New System.Windows.Forms.PictureBox()
+        Me.buttonRunQuery = New System.Windows.Forms.Button()
+        Me.pictureOneNoteQuickLaunchIcon = New System.Windows.Forms.PictureBox()
+        Me.buttonRunPictureManager = New System.Windows.Forms.Button()
+        Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
+        Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
+        Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -83,10 +83,10 @@ Partial Class aaformMainWindow
         CType(Me.pictureInfoPathIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureSharepointIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupboxExtraApps.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureQueryIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -445,14 +445,14 @@ Partial Class aaformMainWindow
         'groupboxExtraApps
         '
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxExtraApps.Controls.Add(Me.Button1)
-        Me.groupboxExtraApps.Controls.Add(Me.PictureBox1)
-        Me.groupboxExtraApps.Controls.Add(Me.Button2)
-        Me.groupboxExtraApps.Controls.Add(Me.PictureBox4)
-        Me.groupboxExtraApps.Controls.Add(Me.Button3)
-        Me.groupboxExtraApps.Controls.Add(Me.PictureBox3)
-        Me.groupboxExtraApps.Controls.Add(Me.PictureBox2)
-        Me.groupboxExtraApps.Controls.Add(Me.Button4)
+        Me.groupboxExtraApps.Controls.Add(Me.buttonRunOneNoteQuickLaunch)
+        Me.groupboxExtraApps.Controls.Add(Me.pictureQueryIcon)
+        Me.groupboxExtraApps.Controls.Add(Me.buttonRunQuery)
+        Me.groupboxExtraApps.Controls.Add(Me.pictureOneNoteQuickLaunchIcon)
+        Me.groupboxExtraApps.Controls.Add(Me.buttonRunPictureManager)
+        Me.groupboxExtraApps.Controls.Add(Me.picturePictureManagerIcon)
+        Me.groupboxExtraApps.Controls.Add(Me.pictureClipOrganizerIcon)
+        Me.groupboxExtraApps.Controls.Add(Me.buttonRunClipOrganizer)
         Me.groupboxExtraApps.Location = New System.Drawing.Point(864, 4)
         Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
@@ -462,89 +462,89 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
-        'Button1
+        'buttonRunOneNoteQuickLaunch
         '
-        Me.Button1.Location = New System.Drawing.Point(126, 424)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(210, 100)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "OneNote Quick Launch"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.buttonRunOneNoteQuickLaunch.Location = New System.Drawing.Point(126, 424)
+        Me.buttonRunOneNoteQuickLaunch.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunOneNoteQuickLaunch.Name = "buttonRunOneNoteQuickLaunch"
+        Me.buttonRunOneNoteQuickLaunch.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunOneNoteQuickLaunch.TabIndex = 25
+        Me.buttonRunOneNoteQuickLaunch.Text = "OneNote Quick Launch"
+        Me.buttonRunOneNoteQuickLaunch.UseVisualStyleBackColor = True
         '
-        'PictureBox1
+        'pictureQueryIcon
         '
-        Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.Microsoft_Query
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 40)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
+        Me.pictureQueryIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Microsoft_Query
+        Me.pictureQueryIcon.Location = New System.Drawing.Point(14, 40)
+        Me.pictureQueryIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureQueryIcon.Name = "pictureQueryIcon"
+        Me.pictureQueryIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureQueryIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureQueryIcon.TabIndex = 18
+        Me.pictureQueryIcon.TabStop = False
         '
-        'Button2
+        'buttonRunQuery
         '
-        Me.Button2.Location = New System.Drawing.Point(126, 40)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(210, 100)
-        Me.Button2.TabIndex = 22
-        Me.Button2.Text = "Microsoft Query"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.buttonRunQuery.Location = New System.Drawing.Point(126, 40)
+        Me.buttonRunQuery.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunQuery.Name = "buttonRunQuery"
+        Me.buttonRunQuery.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunQuery.TabIndex = 22
+        Me.buttonRunQuery.Text = "Microsoft Query"
+        Me.buttonRunQuery.UseVisualStyleBackColor = True
         '
-        'PictureBox4
+        'pictureOneNoteQuickLaunchIcon
         '
-        Me.PictureBox4.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
-        Me.PictureBox4.Location = New System.Drawing.Point(14, 424)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 21
-        Me.PictureBox4.TabStop = False
+        Me.pictureOneNoteQuickLaunchIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.pictureOneNoteQuickLaunchIcon.Location = New System.Drawing.Point(14, 424)
+        Me.pictureOneNoteQuickLaunchIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureOneNoteQuickLaunchIcon.Name = "pictureOneNoteQuickLaunchIcon"
+        Me.pictureOneNoteQuickLaunchIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureOneNoteQuickLaunchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureOneNoteQuickLaunchIcon.TabIndex = 21
+        Me.pictureOneNoteQuickLaunchIcon.TabStop = False
         '
-        'Button3
+        'buttonRunPictureManager
         '
-        Me.Button3.Location = New System.Drawing.Point(126, 296)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(210, 100)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Microsoft Picture Manager"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.buttonRunPictureManager.Location = New System.Drawing.Point(126, 296)
+        Me.buttonRunPictureManager.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunPictureManager.Name = "buttonRunPictureManager"
+        Me.buttonRunPictureManager.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunPictureManager.TabIndex = 24
+        Me.buttonRunPictureManager.Text = "Microsoft Picture Manager"
+        Me.buttonRunPictureManager.UseVisualStyleBackColor = True
         '
-        'PictureBox3
+        'picturePictureManagerIcon
         '
-        Me.PictureBox3.Image = Global.UXL_Launcher.My.Resources.Resources.Picture_Manager
-        Me.PictureBox3.Location = New System.Drawing.Point(14, 296)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 20
-        Me.PictureBox3.TabStop = False
+        Me.picturePictureManagerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Picture_Manager
+        Me.picturePictureManagerIcon.Location = New System.Drawing.Point(14, 296)
+        Me.picturePictureManagerIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.picturePictureManagerIcon.Name = "picturePictureManagerIcon"
+        Me.picturePictureManagerIcon.Size = New System.Drawing.Size(100, 100)
+        Me.picturePictureManagerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picturePictureManagerIcon.TabIndex = 20
+        Me.picturePictureManagerIcon.TabStop = False
         '
-        'PictureBox2
+        'pictureClipOrganizerIcon
         '
-        Me.PictureBox2.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer
-        Me.PictureBox2.Location = New System.Drawing.Point(14, 170)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 19
-        Me.PictureBox2.TabStop = False
+        Me.pictureClipOrganizerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer
+        Me.pictureClipOrganizerIcon.Location = New System.Drawing.Point(14, 170)
+        Me.pictureClipOrganizerIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureClipOrganizerIcon.Name = "pictureClipOrganizerIcon"
+        Me.pictureClipOrganizerIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureClipOrganizerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pictureClipOrganizerIcon.TabIndex = 19
+        Me.pictureClipOrganizerIcon.TabStop = False
         '
-        'Button4
+        'buttonRunClipOrganizer
         '
-        Me.Button4.Location = New System.Drawing.Point(126, 168)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(210, 100)
-        Me.Button4.TabIndex = 23
-        Me.Button4.Text = "Microsoft Clip Organizer"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.buttonRunClipOrganizer.Location = New System.Drawing.Point(126, 168)
+        Me.buttonRunClipOrganizer.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunClipOrganizer.Name = "buttonRunClipOrganizer"
+        Me.buttonRunClipOrganizer.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunClipOrganizer.TabIndex = 23
+        Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
+        Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
@@ -579,10 +579,10 @@ Partial Class aaformMainWindow
         CType(Me.pictureInfoPathIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureSharepointIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupboxExtraApps.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureQueryIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -625,12 +625,12 @@ Partial Class aaformMainWindow
     Friend WithEvents picturePublisherIcon As PictureBox
     Friend WithEvents pictureInfoPathIcon As PictureBox
     Friend WithEvents pictureSharepointIcon As PictureBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Button4 As Button
+    Friend WithEvents buttonRunOneNoteQuickLaunch As Button
+    Friend WithEvents pictureQueryIcon As PictureBox
+    Friend WithEvents buttonRunQuery As Button
+    Friend WithEvents pictureOneNoteQuickLaunchIcon As PictureBox
+    Friend WithEvents buttonRunPictureManager As Button
+    Friend WithEvents picturePictureManagerIcon As PictureBox
+    Friend WithEvents pictureClipOrganizerIcon As PictureBox
+    Friend WithEvents buttonRunClipOrganizer As Button
 End Class
