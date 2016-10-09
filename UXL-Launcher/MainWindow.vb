@@ -1,6 +1,7 @@
 ﻿'UXL Launcher - Launchers for Microsoft Office apps in one place.
 'Copyright (C) 2013-2016  Drew Naylor
-'Microsoft Office is copyright Microsoft Corp.
+'Microsoft Office and all related words are copyright
+'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
 'This file is part of UXL Launcher
@@ -18,7 +19,7 @@
 'GNU General Public License for more details.
 '
 'You should have received a copy of the GNU General Public License
-'along with Drew's App Launcher.  If not, see <http://www.gnu.org/licenses/>.
+'along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
