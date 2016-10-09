@@ -27,8 +27,9 @@ Partial Class aaformMainWindow
         Me.menubarFileMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarExitButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menubarOptionsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarOfficeLangPrefsButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zseparatorToolsMenu1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.menubarOptionsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarHelpMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarHelpTopicsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.zseparatorHelpMenu = New System.Windows.Forms.ToolStripSeparator()
@@ -69,7 +70,6 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
-        Me.zseparatorToolsMenu1 = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -124,17 +124,27 @@ Partial Class aaformMainWindow
         Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
-        'menubarOptionsButton
-        '
-        Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(225, 22)
-        Me.menubarOptionsButton.Text = "&Options..."
-        '
         'menubarOfficeLangPrefsButton
         '
+        Me.menubarOfficeLangPrefsButton.Image = Global.UXL_Launcher.My.Resources.Resources.small_Language_Settings
+        Me.menubarOfficeLangPrefsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOfficeLangPrefsButton.Name = "menubarOfficeLangPrefsButton"
-        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(225, 22)
+        Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
+        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
         Me.menubarOfficeLangPrefsButton.Text = "Office Language Preferences"
+        '
+        'zseparatorToolsMenu1
+        '
+        Me.zseparatorToolsMenu1.Name = "zseparatorToolsMenu1"
+        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(230, 6)
+        '
+        'menubarOptionsButton
+        '
+        Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
+        Me.menubarOptionsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menubarOptionsButton.Name = "menubarOptionsButton"
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(233, 30)
+        Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
         '
@@ -552,11 +562,6 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.TabIndex = 23
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
-        '
-        'zseparatorToolsMenu1
-        '
-        Me.zseparatorToolsMenu1.Name = "zseparatorToolsMenu1"
-        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(222, 6)
         '
         'aaformMainWindow
         '

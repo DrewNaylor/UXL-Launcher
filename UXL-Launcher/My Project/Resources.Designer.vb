@@ -71,7 +71,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2016-10-05T21:08:37
+        '''  Looks up a localized string similar to 2016-10-09T05:47:27
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -186,6 +186,26 @@ Namespace My.Resources
         Public ReadOnly Property Sharepoint_Workspace() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Sharepoint_Workspace", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property small_Language_Settings() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("small_Language_Settings", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property uxl_icon_24x24() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("uxl_icon_24x24", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
