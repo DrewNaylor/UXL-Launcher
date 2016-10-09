@@ -26,7 +26,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.</code>
 
 <code>You should have received a copy of the GNU General Public License
-along with Drew's App Launcher.  If not, see <http://www.gnu.org/licenses/>.</code>
+along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.</code>
 
 
 More information to come in the future! In the meantime, please check the repositories of Drew's App Launcher, linked here:
