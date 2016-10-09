@@ -61,13 +61,13 @@ Partial Class aaformMainWindow
         Me.pictureSharepointIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -84,9 +84,9 @@ Partial Class aaformMainWindow
         CType(Me.pictureSharepointIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupboxExtraApps.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -464,7 +464,7 @@ Partial Class aaformMainWindow
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(138, 424)
+        Me.Button1.Location = New System.Drawing.Point(126, 424)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(210, 100)
@@ -472,29 +472,9 @@ Partial Class aaformMainWindow
         Me.Button1.Text = "Microsoft SharePoint Workspace"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(138, 40)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(210, 100)
-        Me.Button2.TabIndex = 22
-        Me.Button2.Text = "Microsoft Access"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(138, 296)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(210, 100)
-        Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Microsoft InfoPath"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.Access
+        Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.Microsoft_Query
         Me.PictureBox1.Location = New System.Drawing.Point(14, 40)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
@@ -503,30 +483,40 @@ Partial Class aaformMainWindow
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
-        'Button4
+        'Button2
         '
-        Me.Button4.Location = New System.Drawing.Point(138, 168)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(210, 100)
-        Me.Button4.TabIndex = 23
-        Me.Button4.Text = "Microsoft Publisher"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(126, 40)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(210, 100)
+        Me.Button2.TabIndex = 22
+        Me.Button2.Text = "Microsoft Access"
+        Me.Button2.UseVisualStyleBackColor = True
         '
-        'PictureBox2
+        'PictureBox4
         '
-        Me.PictureBox2.Image = Global.UXL_Launcher.My.Resources.Resources.Publisher
-        Me.PictureBox2.Location = New System.Drawing.Point(14, 168)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 19
-        Me.PictureBox2.TabStop = False
+        Me.PictureBox4.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.PictureBox4.Location = New System.Drawing.Point(14, 424)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 21
+        Me.PictureBox4.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(126, 296)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(210, 100)
+        Me.Button3.TabIndex = 24
+        Me.Button3.Text = "Microsoft InfoPath"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.UXL_Launcher.My.Resources.Resources.Infopath
+        Me.PictureBox3.Image = Global.UXL_Launcher.My.Resources.Resources.Picture_Manager
         Me.PictureBox3.Location = New System.Drawing.Point(14, 296)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
@@ -535,16 +525,26 @@ Partial Class aaformMainWindow
         Me.PictureBox3.TabIndex = 20
         Me.PictureBox3.TabStop = False
         '
-        'PictureBox4
+        'PictureBox2
         '
-        Me.PictureBox4.Image = Global.UXL_Launcher.My.Resources.Resources.Sharepoint_Workspace
-        Me.PictureBox4.Location = New System.Drawing.Point(14, 424)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 21
-        Me.PictureBox4.TabStop = False
+        Me.PictureBox2.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer
+        Me.PictureBox2.Location = New System.Drawing.Point(14, 170)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(100, 100)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 19
+        Me.PictureBox2.TabStop = False
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(126, 168)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(210, 100)
+        Me.Button4.TabIndex = 23
+        Me.Button4.Text = "Microsoft Publisher"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
@@ -580,9 +580,9 @@ Partial Class aaformMainWindow
         CType(Me.pictureSharepointIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupboxExtraApps.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
