@@ -469,7 +469,7 @@ Partial Class aaformMainWindow
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(210, 100)
         Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Microsoft SharePoint Workspace"
+        Me.Button1.Text = "OneNote Quick Launch"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'PictureBox1
@@ -490,7 +490,7 @@ Partial Class aaformMainWindow
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(210, 100)
         Me.Button2.TabIndex = 22
-        Me.Button2.Text = "Microsoft Access"
+        Me.Button2.Text = "Microsoft Query"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'PictureBox4
@@ -511,7 +511,7 @@ Partial Class aaformMainWindow
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(210, 100)
         Me.Button3.TabIndex = 24
-        Me.Button3.Text = "Microsoft InfoPath"
+        Me.Button3.Text = "Microsoft Picture Manager"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'PictureBox3
@@ -543,7 +543,7 @@ Partial Class aaformMainWindow
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(210, 100)
         Me.Button4.TabIndex = 23
-        Me.Button4.Text = "Microsoft Publisher"
+        Me.Button4.Text = "Microsoft Clip Organizer"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
