@@ -48,7 +48,7 @@ Public Class aaformMainWindow
 
         ElseIf My.Settings.alwaysOnTop = False Then
             Me.TopMost = False
-            menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
+        menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
         End If
 
 
