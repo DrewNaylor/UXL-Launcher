@@ -102,8 +102,7 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFileMenu, Me.menubarViewMenu, Me.menubarToolsMenu, Me.menubarHelpMenu})
         Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
         Me.menubarMainWindow.Name = "menubarMainWindow"
-        Me.menubarMainWindow.Padding = New System.Windows.Forms.Padding(12, 4, 0, 4)
-        Me.menubarMainWindow.Size = New System.Drawing.Size(1280, 46)
+        Me.menubarMainWindow.Size = New System.Drawing.Size(640, 23)
         Me.menubarMainWindow.TabIndex = 0
         Me.menubarMainWindow.Text = "MenuStrip1"
         '
@@ -111,14 +110,14 @@ Partial Class aaformMainWindow
         '
         Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
-        Me.menubarFileMenu.Size = New System.Drawing.Size(64, 38)
+        Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
         Me.menubarFileMenu.Text = "&File"
         '
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(237, 38)
+        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
@@ -139,7 +138,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOfficeLangPrefsButton, Me.zseparatorToolsMenu1, Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(82, 38)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOfficeLangPrefsButton
@@ -148,57 +147,57 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOfficeLangPrefsButton.Name = "menubarOfficeLangPrefsButton"
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
-        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(421, 36)
+        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
         Me.menubarOfficeLangPrefsButton.Text = "Office Language Preferences"
         '
         'zseparatorToolsMenu1
         '
         Me.zseparatorToolsMenu1.Name = "zseparatorToolsMenu1"
-        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(418, 6)
+        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(230, 6)
         '
         'menubarOptionsButton
         '
         Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
         Me.menubarOptionsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(421, 38)
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(233, 30)
         Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
         '
         Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
         Me.menubarHelpMenu.Name = "menubarHelpMenu"
-        Me.menubarHelpMenu.Size = New System.Drawing.Size(77, 38)
+        Me.menubarHelpMenu.Size = New System.Drawing.Size(44, 19)
         Me.menubarHelpMenu.Text = "&Help"
         '
         'menubarHelpTopicsButton
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(386, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAuthorsButton.Text = "A&uthors"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
@@ -217,10 +216,10 @@ Partial Class aaformMainWindow
         '
         Me.statusbarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
-        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 1017)
+        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 505)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
-        Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(0, 0, 14, 0)
-        Me.statusbarMainWindow.Size = New System.Drawing.Size(1280, 37)
+        Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(0, 0, 7, 0)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(640, 22)
         Me.statusbarMainWindow.SizingGrip = False
         Me.statusbarMainWindow.TabIndex = 1
         Me.statusbarMainWindow.Text = "StatusStrip1"
@@ -229,7 +228,7 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(1259, 32)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(619, 17)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL, the Unified eXecutable Launcher! Click the buttons to launch the " &
     "relevant app. Also, explore the UI."
         '
@@ -240,10 +239,10 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel.Controls.Add(Me.groupboxProApps)
         Me.flowLayoutPanel.Controls.Add(Me.groupboxExtraApps)
         Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 46)
-        Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(4)
+        Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 23)
+        Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.flowLayoutPanel.Name = "flowLayoutPanel"
-        Me.flowLayoutPanel.Size = New System.Drawing.Size(1280, 1008)
+        Me.flowLayoutPanel.Size = New System.Drawing.Size(640, 504)
         Me.flowLayoutPanel.TabIndex = 2
         '
         'groupboxStandardApps
@@ -259,61 +258,61 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.Controls.Add(Me.picturePowerpointIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureExcelIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureWordIcon)
-        Me.groupboxStandardApps.Location = New System.Drawing.Point(32, 4)
-        Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
+        Me.groupboxStandardApps.Location = New System.Drawing.Point(16, 2)
+        Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
-        Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxStandardApps.Size = New System.Drawing.Size(380, 963)
+        Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 482)
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
         '
         'buttonRunOneNote
         '
-        Me.buttonRunOneNote.Location = New System.Drawing.Point(126, 552)
-        Me.buttonRunOneNote.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunOneNote.Location = New System.Drawing.Point(63, 276)
+        Me.buttonRunOneNote.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunOneNote.Name = "buttonRunOneNote"
-        Me.buttonRunOneNote.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunOneNote.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunOneNote.TabIndex = 9
         Me.buttonRunOneNote.Text = "Microsoft OneNote"
         Me.buttonRunOneNote.UseVisualStyleBackColor = True
         '
         'buttonRunOutlook
         '
-        Me.buttonRunOutlook.Location = New System.Drawing.Point(126, 424)
-        Me.buttonRunOutlook.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunOutlook.Location = New System.Drawing.Point(63, 212)
+        Me.buttonRunOutlook.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunOutlook.Name = "buttonRunOutlook"
-        Me.buttonRunOutlook.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunOutlook.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunOutlook.TabIndex = 8
         Me.buttonRunOutlook.Text = "Microsoft Outlook"
         Me.buttonRunOutlook.UseVisualStyleBackColor = True
         '
         'buttonRunPowerPoint
         '
-        Me.buttonRunPowerPoint.Location = New System.Drawing.Point(126, 296)
-        Me.buttonRunPowerPoint.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunPowerPoint.Location = New System.Drawing.Point(63, 148)
+        Me.buttonRunPowerPoint.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunPowerPoint.Name = "buttonRunPowerPoint"
-        Me.buttonRunPowerPoint.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunPowerPoint.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunPowerPoint.TabIndex = 7
         Me.buttonRunPowerPoint.Text = "Microsoft PowerPoint"
         Me.buttonRunPowerPoint.UseVisualStyleBackColor = True
         '
         'buttonRunExcel
         '
-        Me.buttonRunExcel.Location = New System.Drawing.Point(126, 168)
-        Me.buttonRunExcel.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunExcel.Location = New System.Drawing.Point(63, 84)
+        Me.buttonRunExcel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunExcel.Name = "buttonRunExcel"
-        Me.buttonRunExcel.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunExcel.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunExcel.TabIndex = 6
         Me.buttonRunExcel.Text = "Microsoft Excel"
         Me.buttonRunExcel.UseVisualStyleBackColor = True
         '
         'buttonRunWord
         '
-        Me.buttonRunWord.Location = New System.Drawing.Point(126, 40)
-        Me.buttonRunWord.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunWord.Location = New System.Drawing.Point(63, 20)
+        Me.buttonRunWord.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunWord.Name = "buttonRunWord"
-        Me.buttonRunWord.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunWord.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunWord.TabIndex = 5
         Me.buttonRunWord.Text = "Microsoft Word"
         Me.buttonRunWord.UseVisualStyleBackColor = True
@@ -321,10 +320,10 @@ Partial Class aaformMainWindow
         'pictureOneNoteIcon
         '
         Me.pictureOneNoteIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
-        Me.pictureOneNoteIcon.Location = New System.Drawing.Point(14, 552)
-        Me.pictureOneNoteIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureOneNoteIcon.Location = New System.Drawing.Point(7, 276)
+        Me.pictureOneNoteIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureOneNoteIcon.Name = "pictureOneNoteIcon"
-        Me.pictureOneNoteIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureOneNoteIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureOneNoteIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureOneNoteIcon.TabIndex = 4
         Me.pictureOneNoteIcon.TabStop = False
@@ -332,10 +331,10 @@ Partial Class aaformMainWindow
         'pictureOutlookIcon
         '
         Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
-        Me.pictureOutlookIcon.Location = New System.Drawing.Point(14, 424)
-        Me.pictureOutlookIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureOutlookIcon.Location = New System.Drawing.Point(7, 212)
+        Me.pictureOutlookIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureOutlookIcon.Name = "pictureOutlookIcon"
-        Me.pictureOutlookIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureOutlookIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureOutlookIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureOutlookIcon.TabIndex = 3
         Me.pictureOutlookIcon.TabStop = False
@@ -343,10 +342,10 @@ Partial Class aaformMainWindow
         'picturePowerpointIcon
         '
         Me.picturePowerpointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Powerpoint
-        Me.picturePowerpointIcon.Location = New System.Drawing.Point(14, 296)
-        Me.picturePowerpointIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.picturePowerpointIcon.Location = New System.Drawing.Point(7, 148)
+        Me.picturePowerpointIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.picturePowerpointIcon.Name = "picturePowerpointIcon"
-        Me.picturePowerpointIcon.Size = New System.Drawing.Size(100, 100)
+        Me.picturePowerpointIcon.Size = New System.Drawing.Size(50, 50)
         Me.picturePowerpointIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picturePowerpointIcon.TabIndex = 2
         Me.picturePowerpointIcon.TabStop = False
@@ -354,10 +353,10 @@ Partial Class aaformMainWindow
         'pictureExcelIcon
         '
         Me.pictureExcelIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Excel
-        Me.pictureExcelIcon.Location = New System.Drawing.Point(14, 168)
-        Me.pictureExcelIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureExcelIcon.Location = New System.Drawing.Point(7, 84)
+        Me.pictureExcelIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureExcelIcon.Name = "pictureExcelIcon"
-        Me.pictureExcelIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureExcelIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureExcelIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureExcelIcon.TabIndex = 1
         Me.pictureExcelIcon.TabStop = False
@@ -365,10 +364,10 @@ Partial Class aaformMainWindow
         'pictureWordIcon
         '
         Me.pictureWordIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Word
-        Me.pictureWordIcon.Location = New System.Drawing.Point(14, 40)
-        Me.pictureWordIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureWordIcon.Location = New System.Drawing.Point(7, 20)
+        Me.pictureWordIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureWordIcon.Name = "pictureWordIcon"
-        Me.pictureWordIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureWordIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureWordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureWordIcon.TabIndex = 0
         Me.pictureWordIcon.TabStop = False
@@ -385,11 +384,11 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Controls.Add(Me.picturePublisherIcon)
         Me.groupboxProApps.Controls.Add(Me.pictureInfoPathIcon)
         Me.groupboxProApps.Controls.Add(Me.pictureSharepointIcon)
-        Me.groupboxProApps.Location = New System.Drawing.Point(448, 4)
-        Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
+        Me.groupboxProApps.Location = New System.Drawing.Point(224, 2)
+        Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxProApps.Name = "groupboxProApps"
-        Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxProApps.Size = New System.Drawing.Size(380, 963)
+        Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxProApps.Size = New System.Drawing.Size(190, 482)
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
@@ -397,7 +396,8 @@ Partial Class aaformMainWindow
         'debugLabelForAlwaysOnTop
         '
         Me.debugLabelForAlwaysOnTop.AutoSize = True
-        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(5, 324)
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 295)
+        Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
         Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(185, 156)
         Me.debugLabelForAlwaysOnTop.TabIndex = 10
@@ -405,30 +405,30 @@ Partial Class aaformMainWindow
         '
         'buttonRunSharePointWkSp
         '
-        Me.buttonRunSharePointWkSp.Location = New System.Drawing.Point(126, 424)
-        Me.buttonRunSharePointWkSp.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunSharePointWkSp.Location = New System.Drawing.Point(63, 212)
+        Me.buttonRunSharePointWkSp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunSharePointWkSp.Name = "buttonRunSharePointWkSp"
-        Me.buttonRunSharePointWkSp.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunSharePointWkSp.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunSharePointWkSp.TabIndex = 17
         Me.buttonRunSharePointWkSp.Text = "Microsoft SharePoint Workspace"
         Me.buttonRunSharePointWkSp.UseVisualStyleBackColor = True
         '
         'buttonRunAccess
         '
-        Me.buttonRunAccess.Location = New System.Drawing.Point(126, 40)
-        Me.buttonRunAccess.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunAccess.Location = New System.Drawing.Point(63, 20)
+        Me.buttonRunAccess.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunAccess.Name = "buttonRunAccess"
-        Me.buttonRunAccess.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunAccess.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunAccess.TabIndex = 14
         Me.buttonRunAccess.Text = "Microsoft Access"
         Me.buttonRunAccess.UseVisualStyleBackColor = True
         '
         'buttonRunInfoPath
         '
-        Me.buttonRunInfoPath.Location = New System.Drawing.Point(126, 296)
-        Me.buttonRunInfoPath.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunInfoPath.Location = New System.Drawing.Point(63, 148)
+        Me.buttonRunInfoPath.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunInfoPath.Name = "buttonRunInfoPath"
-        Me.buttonRunInfoPath.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunInfoPath.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunInfoPath.TabIndex = 16
         Me.buttonRunInfoPath.Text = "Microsoft InfoPath"
         Me.buttonRunInfoPath.UseVisualStyleBackColor = True
@@ -436,20 +436,20 @@ Partial Class aaformMainWindow
         'pictureAccessIcon
         '
         Me.pictureAccessIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Access
-        Me.pictureAccessIcon.Location = New System.Drawing.Point(14, 40)
-        Me.pictureAccessIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureAccessIcon.Location = New System.Drawing.Point(7, 20)
+        Me.pictureAccessIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureAccessIcon.Name = "pictureAccessIcon"
-        Me.pictureAccessIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureAccessIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureAccessIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureAccessIcon.TabIndex = 10
         Me.pictureAccessIcon.TabStop = False
         '
         'buttonRunPublisher
         '
-        Me.buttonRunPublisher.Location = New System.Drawing.Point(126, 168)
-        Me.buttonRunPublisher.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunPublisher.Location = New System.Drawing.Point(63, 84)
+        Me.buttonRunPublisher.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunPublisher.Name = "buttonRunPublisher"
-        Me.buttonRunPublisher.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunPublisher.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunPublisher.TabIndex = 15
         Me.buttonRunPublisher.Text = "Microsoft Publisher"
         Me.buttonRunPublisher.UseVisualStyleBackColor = True
@@ -457,10 +457,10 @@ Partial Class aaformMainWindow
         'picturePublisherIcon
         '
         Me.picturePublisherIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Publisher
-        Me.picturePublisherIcon.Location = New System.Drawing.Point(14, 168)
-        Me.picturePublisherIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.picturePublisherIcon.Location = New System.Drawing.Point(7, 84)
+        Me.picturePublisherIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.picturePublisherIcon.Name = "picturePublisherIcon"
-        Me.picturePublisherIcon.Size = New System.Drawing.Size(100, 100)
+        Me.picturePublisherIcon.Size = New System.Drawing.Size(50, 50)
         Me.picturePublisherIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picturePublisherIcon.TabIndex = 11
         Me.picturePublisherIcon.TabStop = False
@@ -468,10 +468,10 @@ Partial Class aaformMainWindow
         'pictureInfoPathIcon
         '
         Me.pictureInfoPathIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Infopath
-        Me.pictureInfoPathIcon.Location = New System.Drawing.Point(14, 296)
-        Me.pictureInfoPathIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureInfoPathIcon.Location = New System.Drawing.Point(7, 148)
+        Me.pictureInfoPathIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureInfoPathIcon.Name = "pictureInfoPathIcon"
-        Me.pictureInfoPathIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureInfoPathIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureInfoPathIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureInfoPathIcon.TabIndex = 12
         Me.pictureInfoPathIcon.TabStop = False
@@ -479,10 +479,10 @@ Partial Class aaformMainWindow
         'pictureSharepointIcon
         '
         Me.pictureSharepointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Sharepoint_Workspace
-        Me.pictureSharepointIcon.Location = New System.Drawing.Point(14, 424)
-        Me.pictureSharepointIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureSharepointIcon.Location = New System.Drawing.Point(7, 212)
+        Me.pictureSharepointIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureSharepointIcon.Name = "pictureSharepointIcon"
-        Me.pictureSharepointIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureSharepointIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureSharepointIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureSharepointIcon.TabIndex = 13
         Me.pictureSharepointIcon.TabStop = False
@@ -498,21 +498,21 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.Controls.Add(Me.picturePictureManagerIcon)
         Me.groupboxExtraApps.Controls.Add(Me.pictureClipOrganizerIcon)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunClipOrganizer)
-        Me.groupboxExtraApps.Location = New System.Drawing.Point(864, 4)
-        Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
+        Me.groupboxExtraApps.Location = New System.Drawing.Point(432, 2)
+        Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
-        Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxExtraApps.Size = New System.Drawing.Size(380, 963)
+        Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 482)
         Me.groupboxExtraApps.TabIndex = 2
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
         '
         'buttonRunOneNoteQuickLaunch
         '
-        Me.buttonRunOneNoteQuickLaunch.Location = New System.Drawing.Point(126, 424)
-        Me.buttonRunOneNoteQuickLaunch.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunOneNoteQuickLaunch.Location = New System.Drawing.Point(63, 212)
+        Me.buttonRunOneNoteQuickLaunch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunOneNoteQuickLaunch.Name = "buttonRunOneNoteQuickLaunch"
-        Me.buttonRunOneNoteQuickLaunch.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunOneNoteQuickLaunch.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunOneNoteQuickLaunch.TabIndex = 25
         Me.buttonRunOneNoteQuickLaunch.Text = "OneNote Quick Launch"
         Me.buttonRunOneNoteQuickLaunch.UseVisualStyleBackColor = True
@@ -520,20 +520,20 @@ Partial Class aaformMainWindow
         'pictureQueryIcon
         '
         Me.pictureQueryIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Microsoft_Query
-        Me.pictureQueryIcon.Location = New System.Drawing.Point(14, 40)
-        Me.pictureQueryIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureQueryIcon.Location = New System.Drawing.Point(7, 20)
+        Me.pictureQueryIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureQueryIcon.Name = "pictureQueryIcon"
-        Me.pictureQueryIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureQueryIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureQueryIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureQueryIcon.TabIndex = 18
         Me.pictureQueryIcon.TabStop = False
         '
         'buttonRunQuery
         '
-        Me.buttonRunQuery.Location = New System.Drawing.Point(126, 40)
-        Me.buttonRunQuery.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunQuery.Location = New System.Drawing.Point(63, 20)
+        Me.buttonRunQuery.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunQuery.Name = "buttonRunQuery"
-        Me.buttonRunQuery.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunQuery.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunQuery.TabIndex = 22
         Me.buttonRunQuery.Text = "Microsoft Query"
         Me.buttonRunQuery.UseVisualStyleBackColor = True
@@ -541,20 +541,20 @@ Partial Class aaformMainWindow
         'pictureOneNoteQuickLaunchIcon
         '
         Me.pictureOneNoteQuickLaunchIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
-        Me.pictureOneNoteQuickLaunchIcon.Location = New System.Drawing.Point(14, 424)
-        Me.pictureOneNoteQuickLaunchIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureOneNoteQuickLaunchIcon.Location = New System.Drawing.Point(7, 212)
+        Me.pictureOneNoteQuickLaunchIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureOneNoteQuickLaunchIcon.Name = "pictureOneNoteQuickLaunchIcon"
-        Me.pictureOneNoteQuickLaunchIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureOneNoteQuickLaunchIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureOneNoteQuickLaunchIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureOneNoteQuickLaunchIcon.TabIndex = 21
         Me.pictureOneNoteQuickLaunchIcon.TabStop = False
         '
         'buttonRunPictureManager
         '
-        Me.buttonRunPictureManager.Location = New System.Drawing.Point(126, 296)
-        Me.buttonRunPictureManager.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunPictureManager.Location = New System.Drawing.Point(63, 148)
+        Me.buttonRunPictureManager.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunPictureManager.Name = "buttonRunPictureManager"
-        Me.buttonRunPictureManager.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunPictureManager.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunPictureManager.TabIndex = 24
         Me.buttonRunPictureManager.Text = "Microsoft Picture Manager"
         Me.buttonRunPictureManager.UseVisualStyleBackColor = True
@@ -562,10 +562,10 @@ Partial Class aaformMainWindow
         'picturePictureManagerIcon
         '
         Me.picturePictureManagerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Picture_Manager
-        Me.picturePictureManagerIcon.Location = New System.Drawing.Point(14, 296)
-        Me.picturePictureManagerIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.picturePictureManagerIcon.Location = New System.Drawing.Point(7, 148)
+        Me.picturePictureManagerIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.picturePictureManagerIcon.Name = "picturePictureManagerIcon"
-        Me.picturePictureManagerIcon.Size = New System.Drawing.Size(100, 100)
+        Me.picturePictureManagerIcon.Size = New System.Drawing.Size(50, 50)
         Me.picturePictureManagerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picturePictureManagerIcon.TabIndex = 20
         Me.picturePictureManagerIcon.TabStop = False
@@ -573,36 +573,35 @@ Partial Class aaformMainWindow
         'pictureClipOrganizerIcon
         '
         Me.pictureClipOrganizerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer
-        Me.pictureClipOrganizerIcon.Location = New System.Drawing.Point(14, 170)
-        Me.pictureClipOrganizerIcon.Margin = New System.Windows.Forms.Padding(4)
+        Me.pictureClipOrganizerIcon.Location = New System.Drawing.Point(7, 85)
+        Me.pictureClipOrganizerIcon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pictureClipOrganizerIcon.Name = "pictureClipOrganizerIcon"
-        Me.pictureClipOrganizerIcon.Size = New System.Drawing.Size(100, 100)
+        Me.pictureClipOrganizerIcon.Size = New System.Drawing.Size(50, 50)
         Me.pictureClipOrganizerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureClipOrganizerIcon.TabIndex = 19
         Me.pictureClipOrganizerIcon.TabStop = False
         '
         'buttonRunClipOrganizer
         '
-        Me.buttonRunClipOrganizer.Location = New System.Drawing.Point(126, 168)
-        Me.buttonRunClipOrganizer.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonRunClipOrganizer.Location = New System.Drawing.Point(63, 84)
+        Me.buttonRunClipOrganizer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonRunClipOrganizer.Name = "buttonRunClipOrganizer"
-        Me.buttonRunClipOrganizer.Size = New System.Drawing.Size(210, 100)
+        Me.buttonRunClipOrganizer.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunClipOrganizer.TabIndex = 23
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(1280, 1054)
+        Me.ClientSize = New System.Drawing.Size(640, 527)
         Me.Controls.Add(Me.statusbarMainWindow)
         Me.Controls.Add(Me.flowLayoutPanel)
         Me.Controls.Add(Me.menubarMainWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menubarMainWindow
-        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.MaximizeBox = False
         Me.Name = "aaformMainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
