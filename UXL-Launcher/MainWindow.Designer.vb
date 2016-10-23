@@ -26,6 +26,8 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow = New System.Windows.Forms.MenuStrip()
         Me.menubarFileMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarExitButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarViewMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarAlwaysOnTopButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarOfficeLangPrefsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.zseparatorToolsMenu1 = New System.Windows.Forms.ToolStripSeparator()
@@ -53,6 +55,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.buttonRunSharePointWkSp = New System.Windows.Forms.Button()
         Me.buttonRunAccess = New System.Windows.Forms.Button()
         Me.buttonRunInfoPath = New System.Windows.Forms.Button()
@@ -96,7 +99,7 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow.AutoSize = False
         Me.menubarMainWindow.BackColor = System.Drawing.SystemColors.Control
         Me.menubarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFileMenu, Me.menubarToolsMenu, Me.menubarHelpMenu})
+        Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFileMenu, Me.menubarViewMenu, Me.menubarToolsMenu, Me.menubarHelpMenu})
         Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
         Me.menubarMainWindow.Name = "menubarMainWindow"
         Me.menubarMainWindow.Padding = New System.Windows.Forms.Padding(12, 4, 0, 4)
@@ -117,6 +120,20 @@ Partial Class aaformMainWindow
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
         Me.menubarExitButton.Size = New System.Drawing.Size(237, 38)
         Me.menubarExitButton.Text = "E&xit"
+        '
+        'menubarViewMenu
+        '
+        Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton})
+        Me.menubarViewMenu.Name = "menubarViewMenu"
+        Me.menubarViewMenu.Size = New System.Drawing.Size(44, 19)
+        Me.menubarViewMenu.Text = "&View"
+        '
+        'menubarAlwaysOnTopButton
+        '
+        Me.menubarAlwaysOnTopButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menubarAlwaysOnTopButton.Name = "menubarAlwaysOnTopButton"
+        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(154, 22)
+        Me.menubarAlwaysOnTopButton.Text = "&Always On Top"
         '
         'menubarToolsMenu
         '
@@ -359,6 +376,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelForAlwaysOnTop)
         Me.groupboxProApps.Controls.Add(Me.buttonRunSharePointWkSp)
         Me.groupboxProApps.Controls.Add(Me.buttonRunAccess)
         Me.groupboxProApps.Controls.Add(Me.buttonRunInfoPath)
@@ -375,6 +393,15 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
+        '
+        'debugLabelForAlwaysOnTop
+        '
+        Me.debugLabelForAlwaysOnTop.AutoSize = True
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(5, 324)
+        Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
+        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(185, 156)
+        Me.debugLabelForAlwaysOnTop.TabIndex = 10
+        Me.debugLabelForAlwaysOnTop.Text = resources.GetString("debugLabelForAlwaysOnTop.Text")
         '
         'buttonRunSharePointWkSp
         '
@@ -592,6 +619,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureExcelIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureWordIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupboxProApps.ResumeLayout(False)
+        Me.groupboxProApps.PerformLayout()
         CType(Me.pictureAccessIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picturePublisherIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureInfoPathIcon, System.ComponentModel.ISupportInitialize).EndInit()
@@ -653,4 +681,7 @@ Partial Class aaformMainWindow
     Friend WithEvents buttonRunClipOrganizer As Button
     Friend WithEvents menubarOfficeLangPrefsButton As ToolStripMenuItem
     Friend WithEvents zseparatorToolsMenu1 As ToolStripSeparator
+    Friend WithEvents menubarViewMenu As ToolStripMenuItem
+    Friend WithEvents menubarAlwaysOnTopButton As ToolStripMenuItem
+    Friend WithEvents debugLabelForAlwaysOnTop As Label
 End Class

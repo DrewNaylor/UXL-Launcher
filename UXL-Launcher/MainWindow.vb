@@ -25,10 +25,43 @@
 
 Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
 
+        ' Hide the debugging labels.
+        debugLabelForAlwaysOnTop.Hide()
+
+
+
+#Region "Main form loading code for Always On Top menubar button."
+
+        ' See if the Always On Top setting is set to true and if it is, then set
+        ' the window to be on top of other windows.
+
+        If My.Settings.alwaysOnTop = True Then
+            menubarAlwaysOnTopButton.CheckState = CheckState.Checked
+            Me.TopMost = True
+
+            ' But if the Always On Top setting is false, then set the window to not
+            ' be on top of other windows.
+
+        ElseIf My.Settings.alwaysOnTop = False Then
+            Me.TopMost = False
+            menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
+        End If
+
+
+
+        ' Display whether the Always On Top menubar button is checked.
+
+        debugLabelForAlwaysOnTop.Text = menubarAlwaysOnTopButton.CheckState & My.Settings.alwaysOnTop
+
+#End Region
+
     End Sub
+
+#Region "Menubar code, including menubar buttons."
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
         ' End the execution of the app.
@@ -40,5 +73,46 @@ Public Class aaformMainWindow
         ' Open the Options window.
         aaformOptionsWindow.Show()
     End Sub
+
+#Region "Always On Top menubar button checkbox and stuff."
+    Private Sub menubarAlwaysOnTopButton_Click(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.Click
+
+
+        ' When the user clicks on the Always On Top menubar button, the following code will run.
+        ' First, the app will see if the Always On Top menubar button is unchecked, then it will
+        ' check the box for that button.
+        ' Then, the app will check to see what My.Settings.alwaysOnTop is set to. If it's set to
+        ' False, then the app will set it to True.
+        ' After that, My.Settings will be saved.
+        ' Later, a debugging label will be updated with the CheckState of the Always On Top button.
+
+        If menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked Then
+            menubarAlwaysOnTopButton.CheckState = CheckState.Checked
+            Me.TopMost = True
+            If My.Settings.alwaysOnTop = False Then
+                My.Settings.alwaysOnTop = True
+            End If
+            My.Settings.Save()
+            My.Settings.Reload()
+
+        ElseIf menubarAlwaysOnTopButton.CheckState = CheckState.Checked Then
+            menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
+            Me.TopMost = False
+            If My.Settings.alwaysOnTop = True Then
+                My.Settings.alwaysOnTop = False
+            End If
+            My.Settings.Save()
+            My.Settings.Reload()
+
+
+        End If
+
+        debugLabelForAlwaysOnTop.Text = menubarAlwaysOnTopButton.CheckState & My.Settings.alwaysOnTop
+
+
+
+    End Sub
+#End Region
+#End Region
 
 End Class
