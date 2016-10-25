@@ -34,6 +34,8 @@ Public Class aaformMainWindow
 
 
 
+
+
 #Region "Main form loading code for Always On Top menubar button."
 
         ' See if the Always On Top setting is set to true and if it is, then set
@@ -48,7 +50,7 @@ Public Class aaformMainWindow
 
         ElseIf My.Settings.alwaysOnTop = False Then
             Me.TopMost = False
-        menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
+            menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
         End If
 
 
@@ -60,6 +62,10 @@ Public Class aaformMainWindow
 #End Region
 
     End Sub
+
+
+
+
 
 #Region "Menubar code, including menubar buttons."
 
@@ -112,6 +118,9 @@ Public Class aaformMainWindow
 
 
     End Sub
+
+
+
 #End Region
 #End Region
 

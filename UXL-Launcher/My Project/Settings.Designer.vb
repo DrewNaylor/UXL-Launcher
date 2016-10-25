@@ -65,6 +65,54 @@ Namespace My
                 Me("alwaysOnTop") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C")>  _
+        Public Property officeDriveLocation() As String
+            Get
+                Return CType(Me("officeDriveLocation"),String)
+            End Get
+            Set
+                Me("officeDriveLocation") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property cpuIsSixtyFourBit() As Boolean
+            Get
+                Return CType(Me("cpuIsSixtyFourBit"),Boolean)
+            End Get
+            Set
+                Me("cpuIsSixtyFourBit") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property userHasOfficeThreeSixFive() As String
+            Get
+                Return CType(Me("userHasOfficeThreeSixFive"),String)
+            End Get
+            Set
+                Me("userHasOfficeThreeSixFive") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("14")>  _
+        Public Property userOfficeVersion() As String
+            Get
+                Return CType(Me("userOfficeVersion"),String)
+            End Get
+            Set
+                Me("userOfficeVersion") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
