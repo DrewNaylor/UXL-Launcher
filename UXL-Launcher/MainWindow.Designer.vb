@@ -396,12 +396,12 @@ Partial Class aaformMainWindow
         'debugLabelForAlwaysOnTop
         '
         Me.debugLabelForAlwaysOnTop.AutoSize = True
-        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(5, 444)
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 431)
         Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
-        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(185, 156)
+        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(184, 26)
         Me.debugLabelForAlwaysOnTop.TabIndex = 10
-        Me.debugLabelForAlwaysOnTop.Text = resources.GetString("debugLabelForAlwaysOnTop.Text")
+        Me.debugLabelForAlwaysOnTop.Text = "This is a debug label and it shows the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "status of the Always On Top feature."
         '
         'buttonRunSharePointWkSp
         '

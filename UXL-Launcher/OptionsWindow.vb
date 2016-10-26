@@ -23,8 +23,56 @@
 
 
 
+Imports System.ComponentModel
+
 Public Class aaformOptionsWindow
+
+
+#Region "Code to run when opening the Options window."
+
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+#Region "Always On Top override code for opening dialog boxes, including debug code."
+        ' If Always On Top is turned on, then turn it off when the Options window is opened.
+
+        If My.Settings.alwaysOnTop = True Then
+            aaformMainWindow.TopMost = False
+        ElseIf My.Settings.alwaysOnTop = False Then
+            aaformMainWindow.TopMost = False
+        End If
+
+
+        ' Debug label for the Always On Top feature.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
+#End Region
+
     End Sub
+#End Region
+
+
+#Region "Code to run when closing the Options window."
+
+    Private Sub aaformOptionsWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+
+#Region "Always On Top override code for closing dialog boxes, including debug code."
+
+        ' When the Options window is closing, tell the main window to be Always On Top if My.Settings.alwaysOnTop is set to True.
+        If My.Settings.alwaysOnTop = True Then
+            aaformMainWindow.TopMost = True
+        ElseIf My.Settings.alwaysOnTop = False Then
+            aaformMainWindow.TopMost = False
+        End If
+
+        ' Debug label for the Always On Top feature.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
+    End Sub
+
+#End Region
+#End Region
+
 End Class

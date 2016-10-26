@@ -36,7 +36,7 @@ Public Class aaformMainWindow
 
 
 
-#Region "Main form loading code for Always On Top menubar button."
+#Region "Main form loading code for Always On Top menubar button, including debug code."
 
         ' See if the Always On Top setting is set to true and if it is, then set
         ' the window to be on top of other windows.
@@ -55,34 +55,31 @@ Public Class aaformMainWindow
 
 
 
-        ' Display whether the Always On Top menubar button is checked.
-
-        debugLabelForAlwaysOnTop.Text = menubarAlwaysOnTopButton.CheckState & My.Settings.alwaysOnTop
+        ' Debug label for the Always On Top feature.
+        debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & Me.TopMost
 
 #End Region
 
     End Sub
 
 
-
-
-
 #Region "Menubar code, including menubar buttons."
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
+    Private Sub menubarExitButton_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
         ' End the execution of the app.
         Me.Close()
 
     End Sub
 
-    Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
+    Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window.
-        aaformOptionsWindow.Show()
+        aaformOptionsWindow.ShowDialog()
     End Sub
 
 #Region "Always On Top menubar button checkbox and stuff."
     Private Sub menubarAlwaysOnTopButton_Click(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.Click
-
 
         ' When the user clicks on the Always On Top menubar button, the following code will run.
         ' First, the app will see if the Always On Top menubar button is unchecked, then it will
@@ -110,16 +107,14 @@ Public Class aaformMainWindow
             My.Settings.Save()
             My.Settings.Reload()
 
-
         End If
 
-        debugLabelForAlwaysOnTop.Text = menubarAlwaysOnTopButton.CheckState & My.Settings.alwaysOnTop
-
-
+        ' Debug label for the Always On Top feature.
+        debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & Me.TopMost
 
     End Sub
-
-
 
 #End Region
 #End Region
