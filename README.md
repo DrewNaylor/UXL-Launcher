@@ -37,3 +37,6 @@ https://github.com/DrewNaylor/MSOfficeAppLauncherNext32
 https://github.com/DrewNaylor/MSOfficeAppLauncherNext64
 
 These links will be modified to show a friendly title, but I want them to be posted right now and I don't remember Markdown links right now.
+
+
+Please note that in addition to Microsoft .Net version 4.5.1, Microsoft Build Tools 2015 is required for compiling this software if Visual Studio 2015 is not installed on your computer. You can grab a copy of MS Build Tools 2015 here: https://www.microsoft.com/en-us/download/details.aspx?id=48159
