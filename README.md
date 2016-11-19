@@ -29,14 +29,17 @@ GNU General Public License for more details.</code>
 <code>You should have received a copy of the GNU General Public License
 along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.</code>
 
+<br>
+<br>
 
 More information to come in the future! In the meantime, please check the repositories of Drew's App Launcher, linked here:
 
-https://github.com/DrewNaylor/MSOfficeAppLauncherNext32
+[Drew's App Launcher 32-bit](https://github.com/DrewNaylor/MSOfficeAppLauncherNext32)
 
-https://github.com/DrewNaylor/MSOfficeAppLauncherNext64
+[Drew's App Launcher 64-bit](https://github.com/DrewNaylor/MSOfficeAppLauncherNext64)
 
-These links will be modified to show a friendly title, but I want them to be posted right now and I don't remember Markdown links right now.
+<br>
+<br>
 
 
 Please note that in addition to [Microsoft .Net Framework version 4.6.1 (web installer)](https://www.microsoft.com/en-us/download/details.aspx?id=49981), [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159) is required for compiling this software if Visual Studio 2015 is not installed on your computer.
