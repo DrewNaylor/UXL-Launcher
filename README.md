@@ -44,3 +44,7 @@ More information to come in the future! In the meantime, please check the reposi
 # Required software.
 
 Please note that in addition to [Microsoft .Net Framework version 4.6.1 (web installer)](https://www.microsoft.com/en-us/download/details.aspx?id=49981), [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159) is required for compiling this software if Visual Studio 2015 is not installed on your computer. Windows PowerShell is also required to run some of the commands.
+
+# UXL Autobuild Script
+
+UXL Autobuild Script (or UAS) is a Batch script I made for developers and other people who want the latest changes from the Master branch right away. Note that I can't guarantee any stability by going this route rather than sticking with the stable releases, but if you want to use it anyway, I've made a [GitHub Gist with the code pasted into it](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde). To use the script, simply copy-and-paste the code into Notepad or your favorite text editor and save it as a ".bat" file. When you run the script it will tell you a bunch of important stuff as well as asking you if you want to run it, exit, or view the software required to build the project as written above.
