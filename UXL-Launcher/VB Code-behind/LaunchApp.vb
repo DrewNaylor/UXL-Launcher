@@ -27,11 +27,13 @@ Public Class LaunchApp
 
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access
-        Process.Start(My.Settings.officeDriveLocation + ":\Program Files (x86)\Microsoft Office\Office14\MSACCESS.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":\Program Files (x86)\Microsoft Office\Office14\MSACCESS.EXE")
     End Sub
 
-
-
+    Public Shared Sub LaunchExcel()
+        ' Launch Microsoft Excel
+        Process.Start(My.Settings.officeDriveLocation & ":\Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE")
+    End Sub
 
 
 
