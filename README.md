@@ -43,7 +43,7 @@ More information to come in the future! In the meantime, please check the reposi
 
 # Required software.
 
-Please note that in addition to [Microsoft .Net Framework version 4.6.1 (web installer)](https://www.microsoft.com/en-us/download/details.aspx?id=49981), [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159) is required for compiling this software if Visual Studio 2015 is not installed on your computer. Windows PowerShell is also required to run some of the commands.
+Please note that in addition to [Microsoft .Net Framework version 4.6.1 (web installer)](https://www.microsoft.com/en-us/download/details.aspx?id=49981), [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159) is required for compiling this software if Visual Studio 2015 is not installed on your computer. [Windows PowerShell 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) is also required to run some of the commands in the UXL Autobuild Script.
 
 # UXL Autobuild Script
 
