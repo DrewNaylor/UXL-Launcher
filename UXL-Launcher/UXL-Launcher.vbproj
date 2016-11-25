@@ -123,6 +123,7 @@
     <Compile Include="OptionsWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VB Code-behind\LaunchApp.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
@@ -186,6 +187,7 @@
     <None Include="Resources\uxl_icon_24x24.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -Command "((Get-Date).ToUniversalTime()).ToString(\"s\") | Out-File '$(ProjectDir)Resources\BuildDate.txt'"</PreBuildEvent>

@@ -115,8 +115,18 @@ Public Class aaformMainWindow
         "main window TopMost: " & Me.TopMost
 
     End Sub
+#End Region
+#End Region
+
+
+#Region "App Launcher Code."
+
+    Private Sub buttonRunAccess_Click(sender As Object, e As EventArgs) Handles buttonRunAccess.Click
+        ' Run Microsoft Access
+        LaunchApp.LaunchAccess()
+    End Sub
 
 #End Region
-#End Region
+
 
 End Class
