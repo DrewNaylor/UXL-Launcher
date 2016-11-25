@@ -126,6 +126,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchAccess()
     End Sub
 
+    Private Sub buttonRunExcel_Click(sender As Object, e As EventArgs) Handles buttonRunExcel.Click
+        ' Run Microsoft Excel
+        LaunchApp.LaunchExcel()
+    End Sub
+
 #End Region
 
 
