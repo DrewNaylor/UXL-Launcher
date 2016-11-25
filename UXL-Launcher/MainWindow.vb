@@ -131,6 +131,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchExcel()
     End Sub
 
+    Private Sub buttonRunInfoPath_Click(sender As Object, e As EventArgs) Handles buttonRunInfoPath.Click
+        ' Run Microsoft InfoPath
+        LaunchApp.LaunchInfopath()
+    End Sub
+
 #End Region
 
 
