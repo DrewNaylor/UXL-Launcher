@@ -37,7 +37,12 @@ Public Class LaunchApp
 
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft InfoPath.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\EXCEL.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\INFOPATH.EXE")
+    End Sub
+
+    Public Shared Sub LaunchOnenote()
+        ' Launch Microsoft Onenote.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\ONENOTE.EXE")
     End Sub
 
 

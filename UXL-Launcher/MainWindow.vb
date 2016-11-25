@@ -122,19 +122,26 @@ Public Class aaformMainWindow
 #Region "App Launcher Code."
 
     Private Sub buttonRunAccess_Click(sender As Object, e As EventArgs) Handles buttonRunAccess.Click
-        ' Run Microsoft Access
+        ' Run Microsoft Access.
         LaunchApp.LaunchAccess()
     End Sub
 
     Private Sub buttonRunExcel_Click(sender As Object, e As EventArgs) Handles buttonRunExcel.Click
-        ' Run Microsoft Excel
+        ' Run Microsoft Excel.
         LaunchApp.LaunchExcel()
     End Sub
 
     Private Sub buttonRunInfoPath_Click(sender As Object, e As EventArgs) Handles buttonRunInfoPath.Click
-        ' Run Microsoft InfoPath
+        ' Run Microsoft InfoPath.
         LaunchApp.LaunchInfopath()
     End Sub
+
+    Private Sub buttonRunOneNote_Click(sender As Object, e As EventArgs) Handles buttonRunOneNote.Click
+        ' Run Microsoft OneNote.
+        LaunchApp.LaunchOnenote()
+    End Sub
+
+
 
 #End Region
 
