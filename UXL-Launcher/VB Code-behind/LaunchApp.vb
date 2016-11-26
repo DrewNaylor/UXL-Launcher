@@ -90,6 +90,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\ONENOTEM.EXE")
     End Sub
 
+    Public Shared Sub LaunchOfficeLangPrefs()
+        ' Launch Office Language Preferences.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\SETLANG.EXE")
+    End Sub
+
 
 
 

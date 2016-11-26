@@ -186,6 +186,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchOnenoteQuickLaunch()
     End Sub
 
+    Private Sub menubarOfficeLangPrefsButton_Click(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.Click
+        ' Run Office Language Preferences.
+        LaunchApp.LaunchOfficeLangPrefs
+    End Sub
+
 
 
 
