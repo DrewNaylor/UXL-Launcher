@@ -167,13 +167,18 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub buttonRunQuery_Click(sender As Object, e As EventArgs) Handles buttonRunQuery.Click
-        ' Run Microsoft Query
+        ' Run Microsoft Query.
         LaunchApp.LaunchQuery()
     End Sub
 
     Private Sub buttonRunClipOrganizer_Click(sender As Object, e As EventArgs) Handles buttonRunClipOrganizer.Click
-        ' Run Microsoft Clip Organizer
+        ' Run Microsoft Clip Organizer.
         LaunchApp.LaunchClipOrganizer()
+    End Sub
+
+    Private Sub buttonRunPictureManager_Click(sender As Object, e As EventArgs) Handles buttonRunPictureManager.Click
+        ' Run Microsoft Picture Manager.
+        LaunchApp.LaunchPictureManager()
     End Sub
 
 

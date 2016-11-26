@@ -80,6 +80,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\MSTORE.EXE")
     End Sub
 
+    Public Shared Sub LaunchPictureManager()
+        ' Launch Microsoft Picture Manager.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\OIS.EXE")
+    End Sub
+
 
 
 
