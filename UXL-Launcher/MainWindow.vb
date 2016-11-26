@@ -29,7 +29,7 @@ Public Class aaformMainWindow
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
 
-        ' Run the code in the OfficeLocater.vb file.
+        ' Run the code in the cpuType sub in OfficeLocater.vb.
         OfficeLocater.cpuType()
 
 

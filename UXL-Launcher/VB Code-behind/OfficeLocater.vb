@@ -25,11 +25,17 @@
 Public Class OfficeLocater
 #Region "This code is for figuring out where Office should be launched from based on My.Settings."
 
+    ' Create a public, shared string called cpuTypeString. This string is used in the app launch code when the user clicks the buttons.
     Public Shared cpuTypeString As String
 
+    ' The cpuType sub is used to give cpuTypeString data.
     Public Shared Sub cpuType()
+        ' Create a string called userCPUType which is only used in this sub.
         Dim userCPUType As String
 
+        ' This code looks at My.Settings.cpuIsSixtyFourBit and if it's set to True, userCPUType contains " (x86)" and cpuTypeString is set
+        ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
+        'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is cpuTypeString.
         If My.Settings.cpuIsSixtyFourBit = True Then
             userCPUType = " (x86)"
             cpuTypeString = userCPUType
