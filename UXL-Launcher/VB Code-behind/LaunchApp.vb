@@ -85,6 +85,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\OIS.EXE")
     End Sub
 
+    Public Shared Sub LaunchOnenoteQuickLaunch()
+        ' Launch Microsoft OneNote Quick Launcher.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\ONENOTEM.EXE")
+    End Sub
+
 
 
 

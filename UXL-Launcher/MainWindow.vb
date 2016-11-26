@@ -181,6 +181,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchPictureManager()
     End Sub
 
+    Private Sub buttonRunOneNoteQuickLaunch_Click(sender As Object, e As EventArgs) Handles buttonRunOneNoteQuickLaunch.Click
+        ' Run Microsoft OneNote Quick Launcher.
+        LaunchApp.LaunchOnenoteQuickLaunch()
+    End Sub
+
 
 
 
