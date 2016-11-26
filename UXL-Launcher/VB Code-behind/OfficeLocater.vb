@@ -31,7 +31,7 @@ Public Class OfficeLocater
         Dim userCPUType As String
 
         If My.Settings.cpuIsSixtyFourBit = True Then
-            userCPUType = "( x86)"
+            userCPUType = " (x86)"
             cpuTypeString = userCPUType
         ElseIf My.Settings.cpuIsSixtyFourBit Then
             userCPUType = ""

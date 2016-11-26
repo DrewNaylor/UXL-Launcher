@@ -25,9 +25,10 @@
 Public Class LaunchApp
 #Region "The code in this region is for launching the apps when buttons are pressed."
 
+
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access.
-        Process.Start(My.Settings.officeDriveLocation & ":\Program Files (x86)\Microsoft Office\Office14\MSACCESS.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":\Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office\Office14\MSACCESS.EXE")
     End Sub
 
     Public Shared Sub LaunchExcel()
