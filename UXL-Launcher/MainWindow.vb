@@ -156,6 +156,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchSharepointWorkspace()
     End Sub
 
+    Private Sub buttonRunPublisher_Click(sender As Object, e As EventArgs) Handles buttonRunPublisher.Click
+        ' Run Microsoft Publisher.
+        LaunchApp.LaunchPublisher()
+    End Sub
+
 
 
 #End Region

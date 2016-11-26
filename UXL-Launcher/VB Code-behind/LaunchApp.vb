@@ -60,6 +60,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\GROOVE.EXE")
     End Sub
 
+    Public Shared Sub LaunchPublisher()
+        ' Launch Microsoft Publisher.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\MSPUB.EXE")
+    End Sub
+
 
 
 
