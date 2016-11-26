@@ -32,11 +32,19 @@ Public Class aaformMainWindow
         ' Hide the debugging labels.
         debugLabelForAlwaysOnTop.Hide()
 
+#Region "Debug code for aaformMainWindow."
+
+        ' Debug label for the Always On Top feature.
+        debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & Me.TopMost
+
+        ' Debug label for cpuTypeString.
 
 
+#End Region
 
-
-#Region "Main form loading code for Always On Top menubar button, including debug code."
+#Region "Main form loading code for Always On Top menubar button."
 
         ' See if the Always On Top setting is set to true and if it is, then set
         ' the window to be on top of other windows.
@@ -52,14 +60,6 @@ Public Class aaformMainWindow
             Me.TopMost = False
             menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
         End If
-
-
-
-        ' Debug label for the Always On Top feature.
-        debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
-        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
-        "main window TopMost: " & Me.TopMost
-
 #End Region
 
     End Sub

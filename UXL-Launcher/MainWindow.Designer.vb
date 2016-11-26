@@ -73,6 +73,7 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
+        Me.debugLabelForcpuTypeString = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -375,6 +376,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelForcpuTypeString)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForAlwaysOnTop)
         Me.groupboxProApps.Controls.Add(Me.buttonRunSharePointWkSp)
         Me.groupboxProApps.Controls.Add(Me.buttonRunAccess)
@@ -591,6 +593,15 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
+        'debugLabelForcpuTypeString
+        '
+        Me.debugLabelForcpuTypeString.AutoSize = True
+        Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(7, 312)
+        Me.debugLabelForcpuTypeString.Name = "debugLabelForcpuTypeString"
+        Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(126, 26)
+        Me.debugLabelForcpuTypeString.TabIndex = 18
+        Me.debugLabelForcpuTypeString.Text = "Debug label; shows what" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "cpuTypeString is."
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -683,4 +694,5 @@ Partial Class aaformMainWindow
     Friend WithEvents menubarViewMenu As ToolStripMenuItem
     Friend WithEvents menubarAlwaysOnTopButton As ToolStripMenuItem
     Friend WithEvents debugLabelForAlwaysOnTop As Label
+    Friend WithEvents debugLabelForcpuTypeString As Label
 End Class
