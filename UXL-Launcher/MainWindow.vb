@@ -161,6 +161,12 @@ Public Class aaformMainWindow
         LaunchApp.LaunchPublisher()
     End Sub
 
+    Private Sub buttonRunWord_Click(sender As Object, e As EventArgs) Handles buttonRunWord.Click
+        ' Run Microsoft Word.
+        LaunchApp.LaunchWord()
+    End Sub
+
+
 
 
 #End Region

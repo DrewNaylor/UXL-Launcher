@@ -65,6 +65,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\MSPUB.EXE")
     End Sub
 
+    Public Shared Sub LaunchWord()
+        ' Launch Microsoft Word.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE")
+    End Sub
+
 
 
 
