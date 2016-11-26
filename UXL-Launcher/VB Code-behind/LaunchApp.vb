@@ -75,6 +75,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\MSQRY32.EXE")
     End Sub
 
+    Public Shared Sub LaunchClipOrganizer()
+        ' Launch Microsoft Clip Organizer.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\MSTORE.EXE")
+    End Sub
+
 
 
 

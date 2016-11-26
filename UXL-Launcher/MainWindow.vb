@@ -171,6 +171,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchQuery()
     End Sub
 
+    Private Sub buttonRunClipOrganizer_Click(sender As Object, e As EventArgs) Handles buttonRunClipOrganizer.Click
+        ' Run Microsoft Clip Organizer
+        LaunchApp.LaunchClipOrganizer()
+    End Sub
+
 
 
 
