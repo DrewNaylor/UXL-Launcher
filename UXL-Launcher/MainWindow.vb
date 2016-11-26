@@ -166,6 +166,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchWord()
     End Sub
 
+    Private Sub buttonRunQuery_Click(sender As Object, e As EventArgs) Handles buttonRunQuery.Click
+        ' Run Microsoft Query
+        LaunchApp.LaunchQuery()
+    End Sub
+
 
 
 

@@ -70,6 +70,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE")
     End Sub
 
+    Public Shared Sub LaunchQuery()
+        ' Launch Microsoft Query.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\MSQRY32.EXE")
+    End Sub
+
 
 
 
