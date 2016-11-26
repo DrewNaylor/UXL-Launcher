@@ -45,6 +45,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\ONENOTE.EXE")
     End Sub
 
+    Public Shared Sub LaunchOutlook()
+        ' Launch Microsoft Outlook.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\OUTLOOK.EXE")
+    End Sub
+
 
 
 

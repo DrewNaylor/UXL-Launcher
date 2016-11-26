@@ -141,6 +141,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchOnenote()
     End Sub
 
+    Private Sub buttonRunOutlook_Click(sender As Object, e As EventArgs) Handles buttonRunOutlook.Click
+        ' Run Microsoft Outlook.
+        LaunchApp.LaunchOutlook()
+    End Sub
+
 
 
 #End Region
