@@ -151,6 +151,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchPowerpoint()
     End Sub
 
+    Private Sub buttonRunSharePointWkSp_Click(sender As Object, e As EventArgs) Handles buttonRunSharePointWkSp.Click
+        ' Run Microsoft SharePoint Workspace.
+        LaunchApp.LaunchSharepointWorkspace()
+    End Sub
+
 
 
 #End Region
