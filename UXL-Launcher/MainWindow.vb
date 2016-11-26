@@ -146,6 +146,11 @@ Public Class aaformMainWindow
         LaunchApp.LaunchOutlook()
     End Sub
 
+    Private Sub buttonRunPowerPoint_Click(sender As Object, e As EventArgs) Handles buttonRunPowerPoint.Click
+        ' Run Microsoft PowerPoint.
+        LaunchApp.LaunchPowerpoint()
+    End Sub
+
 
 
 #End Region

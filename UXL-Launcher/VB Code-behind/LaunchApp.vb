@@ -50,6 +50,11 @@ Public Class LaunchApp
         Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\OUTLOOK.EXE")
     End Sub
 
+    Public Shared Sub LaunchPowerpoint()
+        ' Launch Microsoft Powerpoint.
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files (x86)\Microsoft Office\Office14\POWERPNT.EXE")
+    End Sub
+
 
 
 
