@@ -514,7 +514,7 @@ Partial Class aaformMainWindow
         Me.buttonRunOneNoteQuickLaunch.Name = "buttonRunOneNoteQuickLaunch"
         Me.buttonRunOneNoteQuickLaunch.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunOneNoteQuickLaunch.TabIndex = 25
-        Me.buttonRunOneNoteQuickLaunch.Text = "OneNote Quick Launch"
+        Me.buttonRunOneNoteQuickLaunch.Text = "Microsoft OneNote Quick Launch"
         Me.buttonRunOneNoteQuickLaunch.UseVisualStyleBackColor = True
         '
         'pictureQueryIcon
