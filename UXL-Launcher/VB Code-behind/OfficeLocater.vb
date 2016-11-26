@@ -25,14 +25,18 @@
 Public Class OfficeLocater
 #Region "This code is for figuring out where Office should be launched from based on My.Settings."
 
-    Public Shared Sub OfficeLocationString()
-        Dim cpuTypeString As String
-        If My.Settings.cpuIsSixtyFourBit = True Then
-            cpuTypeString = " (x86)"
-        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-            cpuTypeString = ""
-        End If
+    Public Shared cpuTypeString As String
 
+    Public Shared Sub cpuType()
+        Dim userCPUType As String
+
+        If My.Settings.cpuIsSixtyFourBit = True Then
+            userCPUType = "( x86)"
+            cpuTypeString = userCPUType
+        ElseIf My.Settings.cpuIsSixtyFourBit Then
+            userCPUType = ""
+            cpuTypeString = userCPUType
+        End If
 
     End Sub
 

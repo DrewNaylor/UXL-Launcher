@@ -29,6 +29,10 @@ Public Class aaformMainWindow
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
 
+        ' Run the code in the OfficeLocater.vb file.
+        OfficeLocater.cpuType()
+
+
         ' Hide the debugging labels.
         debugLabelForAlwaysOnTop.Hide()
 
@@ -40,6 +44,7 @@ Public Class aaformMainWindow
         "main window TopMost: " & Me.TopMost
 
         ' Debug label for cpuTypeString.
+        debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
 
 
 #End Region
