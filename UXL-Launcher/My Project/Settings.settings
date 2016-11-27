@@ -11,7 +11,7 @@
     <Setting Name="cpuIsSixtyFourBit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="userHasOfficeThreeSixFive" Type="System.String" Scope="User">
+    <Setting Name="userHasOfficeThreeSixFive" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userOfficeVersion" Type="System.String" Scope="User">

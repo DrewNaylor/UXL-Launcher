@@ -58,19 +58,14 @@ Public Class OfficeLocater
         ' If userHasOfficeThreeSixFive is set to True, then userOfficeInst is set to "\root" 
         ' and officeInstallMethodString is set to userOfficeInst as well. If it's False, then
         ' userOfficeInst is set to "".
-
-
-
-
-
-
+        If My.Settings.userHasOfficeThreeSixFive = True Then
+            userOfficeInst = "\root"
+            officeInstallMethodString = userOfficeInst
+        ElseIf My.Settings.userHasOfficeThreeSixFive Then
+            userOfficeInst = ""
+            officeInstallMethodString = userOfficeInst
+        End If
     End Sub
-
-
-
-
-
-
 #End Region
 #End Region
 End Class

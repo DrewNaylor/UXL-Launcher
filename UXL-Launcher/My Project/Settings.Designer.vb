@@ -93,9 +93,9 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property userHasOfficeThreeSixFive() As String
+        Public Property userHasOfficeThreeSixFive() As Boolean
             Get
-                Return CType(Me("userHasOfficeThreeSixFive"),String)
+                Return CType(Me("userHasOfficeThreeSixFive"),Boolean)
             End Get
             Set
                 Me("userHasOfficeThreeSixFive") = value

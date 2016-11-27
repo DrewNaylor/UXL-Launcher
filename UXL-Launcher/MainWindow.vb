@@ -31,6 +31,9 @@ Public Class aaformMainWindow
 
         ' Run the code in the cpuType sub in OfficeLocater.vb.
         OfficeLocater.cpuType()
+        ' Run the code in the officeInst sub in OfficeLocater.vb.
+        OfficeLocater.officeInst()
+
 
 
         ' Hide the debugging labels.
@@ -45,6 +48,8 @@ Public Class aaformMainWindow
 
         ' Debug label for cpuTypeString.
         debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
+        ' Debug label for officeInstallMethodString.
+        debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
 
 
 #End Region
