@@ -29,6 +29,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.buttonClearTextbox = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
@@ -121,6 +122,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeLocation
         '
+        Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearTextbox)
         Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeLocationDescription)
@@ -131,15 +133,26 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
         '
+        'buttonClearTextbox
+        '
+        Me.buttonClearTextbox.AutoSize = True
+        Me.buttonClearTextbox.Location = New System.Drawing.Point(462, 128)
+        Me.buttonClearTextbox.Name = "buttonClearTextbox"
+        Me.buttonClearTextbox.Size = New System.Drawing.Size(156, 45)
+        Me.buttonClearTextbox.TabIndex = 3
+        Me.buttonClearTextbox.Text = "Clear Textbox"
+        Me.buttonClearTextbox.UseVisualStyleBackColor = True
+        '
         'textboxOfficeDrive
         '
         Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.textboxOfficeDrive.Location = New System.Drawing.Point(375, 138)
+        Me.textboxOfficeDrive.Location = New System.Drawing.Point(374, 135)
         Me.textboxOfficeDrive.MaxLength = 1
         Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
         Me.textboxOfficeDrive.ShortcutsEnabled = False
-        Me.textboxOfficeDrive.Size = New System.Drawing.Size(52, 31)
+        Me.textboxOfficeDrive.Size = New System.Drawing.Size(36, 31)
         Me.textboxOfficeDrive.TabIndex = 2
+        Me.textboxOfficeDrive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'labelOfficeInstalledToDrive
         '
@@ -207,4 +220,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOfficeLocationDescription As Label
     Friend WithEvents labelOfficeInstalledToDrive As Label
     Friend WithEvents textboxOfficeDrive As TextBox
+    Friend WithEvents buttonClearTextbox As Button
 End Class
