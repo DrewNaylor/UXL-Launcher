@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("14")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("16")>  _
         Public Property userOfficeVersion() As String
             Get
                 Return CType(Me("userOfficeVersion"),String)

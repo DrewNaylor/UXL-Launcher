@@ -50,6 +50,8 @@ Public Class aaformMainWindow
         debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
         ' Debug label for officeInstallMethodString.
         debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
+        ' Debug label for userOfficeVersion.
+        debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
 
 
 #End Region

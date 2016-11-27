@@ -75,6 +75,7 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
+        Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -378,6 +379,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelForuserOfficeVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeInstallMethodString)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForcpuTypeString)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForAlwaysOnTop)
@@ -615,6 +617,15 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
+        'debugLabelForuserOfficeVersion
+        '
+        Me.debugLabelForuserOfficeVersion.AutoSize = True
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(14, 699)
+        Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
+        Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(328, 25)
+        Me.debugLabelForuserOfficeVersion.TabIndex = 20
+        Me.debugLabelForuserOfficeVersion.Text = "debugLabelForuserOfficeVersion"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -710,4 +721,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForAlwaysOnTop As Label
     Friend WithEvents debugLabelForcpuTypeString As Label
     Friend WithEvents debugLabelForofficeInstallMethodString As Label
+    Friend WithEvents debugLabelForuserOfficeVersion As Label
 End Class
