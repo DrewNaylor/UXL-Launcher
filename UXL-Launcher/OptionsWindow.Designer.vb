@@ -28,9 +28,14 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
+        Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
+        Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
+        Me.tabpageGeneral.SuspendLayout()
+        Me.groupboxOfficeLocation.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -104,6 +109,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpageGeneral
         '
+        Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeLocation)
         Me.tabpageGeneral.Location = New System.Drawing.Point(8, 39)
         Me.tabpageGeneral.Name = "tabpageGeneral"
         Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(3)
@@ -111,6 +117,27 @@ Partial Class aaformOptionsWindow
         Me.tabpageGeneral.TabIndex = 0
         Me.tabpageGeneral.Text = "General"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
+        '
+        'groupboxOfficeLocation
+        '
+        Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
+        Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeLocationDescription)
+        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(6, 6)
+        Me.groupboxOfficeLocation.Name = "groupboxOfficeLocation"
+        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(912, 261)
+        Me.groupboxOfficeLocation.TabIndex = 0
+        Me.groupboxOfficeLocation.TabStop = False
+        Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
+        '
+        'labelOfficeLocationDescription
+        '
+        Me.labelOfficeLocationDescription.AutoSize = True
+        Me.labelOfficeLocationDescription.Location = New System.Drawing.Point(21, 39)
+        Me.labelOfficeLocationDescription.Name = "labelOfficeLocationDescription"
+        Me.labelOfficeLocationDescription.Size = New System.Drawing.Size(597, 75)
+        Me.labelOfficeLocationDescription.TabIndex = 0
+        Me.labelOfficeLocationDescription.Text = "Please enter the drive you installed Microsoft Office to below." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Special characte" &
+    "rs are not permitted. Click the Clear Textbox" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "button to clear the textbox."
         '
         'tabpageAdvanced
         '
@@ -121,6 +148,15 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
+        '
+        'labelOfficeInstalledToDrive
+        '
+        Me.labelOfficeInstalledToDrive.AutoSize = True
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(26, 138)
+        Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
+        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(342, 25)
+        Me.labelOfficeInstalledToDrive.TabIndex = 1
+        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to drive:"
         '
         'aaformOptionsWindow
         '
@@ -140,6 +176,9 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.ResumeLayout(False)
         Me.tableLayoutPanelOptionsWindow.PerformLayout()
         Me.tabcontrolOptionsWindow.ResumeLayout(False)
+        Me.tabpageGeneral.ResumeLayout(False)
+        Me.groupboxOfficeLocation.ResumeLayout(False)
+        Me.groupboxOfficeLocation.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -151,4 +190,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tabcontrolOptionsWindow As TabControl
     Friend WithEvents tabpageGeneral As TabPage
     Friend WithEvents tabpageAdvanced As TabPage
+    Friend WithEvents groupboxOfficeLocation As GroupBox
+    Friend WithEvents labelOfficeLocationDescription As Label
+    Friend WithEvents labelOfficeInstalledToDrive As Label
 End Class
