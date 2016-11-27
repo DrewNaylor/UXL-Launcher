@@ -48,9 +48,8 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
         Me.tableLayoutPanelOptionsWindow.RowCount = 2
-        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
-        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.0!))
+        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
         Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(970, 788)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
         '
@@ -58,8 +57,8 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.buttonDefaultSettings.AutoSize = True
-        Me.buttonDefaultSettings.Location = New System.Drawing.Point(15, 726)
-        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
+        Me.buttonDefaultSettings.Location = New System.Drawing.Point(15, 732)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(15, 3, 3, 5)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
         Me.buttonDefaultSettings.Size = New System.Drawing.Size(134, 45)
         Me.buttonDefaultSettings.TabIndex = 2
@@ -70,8 +69,8 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonSaveSettings.AutoSize = True
-        Me.buttonSaveSettings.Location = New System.Drawing.Point(821, 726)
-        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
+        Me.buttonSaveSettings.Location = New System.Drawing.Point(821, 732)
+        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(3, 3, 15, 5)
         Me.buttonSaveSettings.Name = "buttonSaveSettings"
         Me.buttonSaveSettings.Size = New System.Drawing.Size(134, 45)
         Me.buttonSaveSettings.TabIndex = 0
@@ -82,7 +81,8 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonCancel.AutoSize = True
-        Me.buttonCancel.Location = New System.Drawing.Point(674, 726)
+        Me.buttonCancel.Location = New System.Drawing.Point(674, 732)
+        Me.buttonCancel.Margin = New System.Windows.Forms.Padding(3, 3, 3, 5)
         Me.buttonCancel.Name = "buttonCancel"
         Me.buttonCancel.Size = New System.Drawing.Size(134, 45)
         Me.buttonCancel.TabIndex = 1
@@ -98,7 +98,7 @@ Partial Class aaformOptionsWindow
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(964, 703)
+        Me.TabControl1.Size = New System.Drawing.Size(964, 718)
         Me.TabControl1.TabIndex = 3
         '
         'TabPage1
@@ -106,7 +106,7 @@ Partial Class aaformOptionsWindow
         Me.TabPage1.Location = New System.Drawing.Point(8, 39)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(948, 656)
+        Me.TabPage1.Size = New System.Drawing.Size(948, 671)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -116,7 +116,7 @@ Partial Class aaformOptionsWindow
         Me.TabPage2.Location = New System.Drawing.Point(8, 39)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(948, 656)
+        Me.TabPage2.Size = New System.Drawing.Size(948, 671)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
