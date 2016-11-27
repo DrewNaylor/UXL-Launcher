@@ -33,67 +33,67 @@ Public Class LaunchApp
 
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel.
-        Process.Start(My.Settings.officeDriveLocation & ":\Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\EXCEL.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":\Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\EXCEL.EXE")
     End Sub
 
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft InfoPath.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\INFOPATH.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\INFOPATH.EXE")
     End Sub
 
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\ONENOTE.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\ONENOTE.EXE")
     End Sub
 
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\OUTLOOK.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\OUTLOOK.EXE")
     End Sub
 
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\POWERPNT.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\POWERPNT.EXE")
     End Sub
 
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft SharePoint Workspace.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\GROOVE.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\GROOVE.EXE")
     End Sub
 
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\MSPUB.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\MSPUB.EXE")
     End Sub
 
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\WINWORD.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\WINWORD.EXE")
     End Sub
 
     Public Shared Sub LaunchQuery()
         ' Launch Microsoft Query.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\MSQRY32.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\MSQRY32.EXE")
     End Sub
 
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\MSTORE.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\MSTORE.EXE")
     End Sub
 
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Picture Manager.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\OIS.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\OIS.EXE")
     End Sub
 
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\ONENOTEM.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\ONENOTEM.EXE")
     End Sub
 
     Public Shared Sub LaunchOfficeLangPrefs()
         ' Launch Office Language Preferences.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office14\SETLANG.EXE")
+        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\SETLANG.EXE")
     End Sub
 
 
