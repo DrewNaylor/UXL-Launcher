@@ -128,10 +128,22 @@ Public Class aaformOptionsWindow
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
 
-            'Save settings.
+            ' Save settings.
             My.Settings.Save()
             My.Settings.Reload()
             MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+
+            ' Update the debug labels on the main window.
+
+            ' Debug label for officeDriveLocation.
+            aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
+            ' Debug label for cpuTypeString.
+            aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
+            ' Debug label for officeInstallMethodString.
+            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
+            ' Debug label for userOfficeVersion.
+            aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+
             Me.Close()
         End If
     End Sub
