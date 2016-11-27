@@ -29,6 +29,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
@@ -120,6 +121,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeLocation
         '
+        Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeLocationDescription)
         Me.groupboxOfficeLocation.Location = New System.Drawing.Point(6, 6)
@@ -128,6 +130,16 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.TabIndex = 0
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
+        '
+        'textboxOfficeDrive
+        '
+        Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.textboxOfficeDrive.Location = New System.Drawing.Point(375, 138)
+        Me.textboxOfficeDrive.MaxLength = 1
+        Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
+        Me.textboxOfficeDrive.ShortcutsEnabled = False
+        Me.textboxOfficeDrive.Size = New System.Drawing.Size(52, 31)
+        Me.textboxOfficeDrive.TabIndex = 2
         '
         'labelOfficeInstalledToDrive
         '
@@ -194,4 +206,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxOfficeLocation As GroupBox
     Friend WithEvents labelOfficeLocationDescription As Label
     Friend WithEvents labelOfficeInstalledToDrive As Label
+    Friend WithEvents textboxOfficeDrive As TextBox
 End Class
