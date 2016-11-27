@@ -26,11 +26,11 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.buttonCancel = New System.Windows.Forms.Button()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
+        Me.tabpageGeneral = New System.Windows.Forms.TabPage()
+        Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -43,7 +43,7 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonDefaultSettings, 0, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 3, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonCancel, 2, 1)
-        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.TabControl1, 0, 0)
+        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.tabcontrolOptionsWindow, 0, 0)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
@@ -89,37 +89,38 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel.Text = "Cancel"
         Me.buttonCancel.UseVisualStyleBackColor = True
         '
-        'TabControl1
+        'tabcontrolOptionsWindow
         '
-        Me.tableLayoutPanelOptionsWindow.SetColumnSpan(Me.TabControl1, 4)
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(3, 3)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(964, 718)
-        Me.TabControl1.TabIndex = 3
+        Me.tableLayoutPanelOptionsWindow.SetColumnSpan(Me.tabcontrolOptionsWindow, 4)
+        Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageGeneral)
+        Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageAdvanced)
+        Me.tabcontrolOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(15, 15)
+        Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(15, 15, 15, 3)
+        Me.tabcontrolOptionsWindow.Name = "tabcontrolOptionsWindow"
+        Me.tabcontrolOptionsWindow.SelectedIndex = 0
+        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(940, 706)
+        Me.tabcontrolOptionsWindow.TabIndex = 3
         '
-        'TabPage1
+        'tabpageGeneral
         '
-        Me.TabPage1.Location = New System.Drawing.Point(8, 39)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(948, 671)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.tabpageGeneral.Location = New System.Drawing.Point(8, 39)
+        Me.tabpageGeneral.Name = "tabpageGeneral"
+        Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageGeneral.Size = New System.Drawing.Size(924, 659)
+        Me.tabpageGeneral.TabIndex = 0
+        Me.tabpageGeneral.Text = "General"
+        Me.tabpageGeneral.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'tabpageAdvanced
         '
-        Me.TabPage2.Location = New System.Drawing.Point(8, 39)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(948, 671)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.tabpageAdvanced.Location = New System.Drawing.Point(8, 39)
+        Me.tabpageAdvanced.Name = "tabpageAdvanced"
+        Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageAdvanced.Size = New System.Drawing.Size(948, 671)
+        Me.tabpageAdvanced.TabIndex = 1
+        Me.tabpageAdvanced.Text = "Advanced"
+        Me.tabpageAdvanced.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -138,7 +139,7 @@ Partial Class aaformOptionsWindow
         Me.Text = "Options"
         Me.tableLayoutPanelOptionsWindow.ResumeLayout(False)
         Me.tableLayoutPanelOptionsWindow.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
+        Me.tabcontrolOptionsWindow.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -147,7 +148,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonSaveSettings As Button
     Friend WithEvents buttonCancel As Button
     Friend WithEvents buttonDefaultSettings As Button
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents tabcontrolOptionsWindow As TabControl
+    Friend WithEvents tabpageGeneral As TabPage
+    Friend WithEvents tabpageAdvanced As TabPage
 End Class
