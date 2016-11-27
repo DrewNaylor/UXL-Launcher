@@ -55,10 +55,10 @@ Partial Class aaformOptionsWindow
         '
         'buttonDefaultSettings
         '
-        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonDefaultSettings.AutoSize = True
         Me.buttonDefaultSettings.Location = New System.Drawing.Point(15, 732)
-        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(15, 3, 3, 5)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(3, 3, 20, 5)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
         Me.buttonDefaultSettings.Size = New System.Drawing.Size(134, 45)
         Me.buttonDefaultSettings.TabIndex = 2
@@ -117,7 +117,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.Location = New System.Drawing.Point(8, 39)
         Me.tabpageAdvanced.Name = "tabpageAdvanced"
         Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageAdvanced.Size = New System.Drawing.Size(948, 671)
+        Me.tabpageAdvanced.Size = New System.Drawing.Size(924, 659)
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
