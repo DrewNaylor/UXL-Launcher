@@ -29,9 +29,9 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
-        Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -129,6 +129,16 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
         '
+        'labelOfficeInstalledToDrive
+        '
+        Me.labelOfficeInstalledToDrive.AutoSize = True
+        Me.labelOfficeInstalledToDrive.ForeColor = System.Drawing.Color.Blue
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(26, 138)
+        Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
+        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(342, 25)
+        Me.labelOfficeInstalledToDrive.TabIndex = 1
+        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to drive:"
+        '
         'labelOfficeLocationDescription
         '
         Me.labelOfficeLocationDescription.AutoSize = True
@@ -148,15 +158,6 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
-        '
-        'labelOfficeInstalledToDrive
-        '
-        Me.labelOfficeInstalledToDrive.AutoSize = True
-        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(26, 138)
-        Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
-        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(342, 25)
-        Me.labelOfficeInstalledToDrive.TabIndex = 1
-        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to drive:"
         '
         'aaformOptionsWindow
         '
