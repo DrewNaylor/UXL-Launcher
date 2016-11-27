@@ -29,6 +29,8 @@ Public Class OfficeLocater
     Public Shared cpuTypeString As String
     ' Create a public, shared string called officeVersionString which is used in the app launch code when the user clicks the buttons.
     Public Shared officeInstallMethodString As String
+    ' Create a public, shared string called titlebarBitMode which is used to show whether or not the app is in "64-bit Mode" or "32-bit Mode."
+    Public Shared titlebarBitModeString As String
 
 
 #Region "cpuTypeString and cpuType sub."
@@ -43,9 +45,11 @@ Public Class OfficeLocater
         If My.Settings.cpuIsSixtyFourBit = True Then
             userCPUType = " (x86)"
             cpuTypeString = userCPUType
+            titlebarBitModeString = "64-bit"
         ElseIf My.Settings.cpuIsSixtyFourBit Then
             userCPUType = ""
             cpuTypeString = userCPUType
+            titlebarBitModeString = "32-bit"
         End If
     End Sub
 #End Region
