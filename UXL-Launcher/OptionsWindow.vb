@@ -32,7 +32,7 @@ Public Class aaformOptionsWindow
 
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-#Region "Always On Top override code for opening dialog boxes, including debug code."
+#Region "Always On Top override code for opening dialog boxes."
         ' If Always On Top is turned on, then turn it off when the Options window is opened.
 
         If My.Settings.alwaysOnTop = True Then
@@ -40,14 +40,15 @@ Public Class aaformOptionsWindow
         ElseIf My.Settings.alwaysOnTop = False Then
             aaformMainWindow.TopMost = False
         End If
+#End Region
 
+        ' Load the user's settings when the Options window is opened.
+        textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
-        ' Debug label for the Always On Top feature.
+        ' Debug labels for the main form.
         aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
         "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
         "main window TopMost: " & aaformMainWindow.TopMost
-#End Region
-
     End Sub
 #End Region
 
@@ -130,7 +131,7 @@ Public Class aaformOptionsWindow
             'Save settings.
             My.Settings.Save()
             My.Settings.Reload()
-            MessageBox.Show("Settings saved.")
+            MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             Me.Close()
         End If
     End Sub
