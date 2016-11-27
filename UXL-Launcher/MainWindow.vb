@@ -46,6 +46,9 @@ Public Class aaformMainWindow
         "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
         "main window TopMost: " & Me.TopMost
 
+
+        ' Debug label for officeDriveLocation.
+        debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
         ' Debug label for cpuTypeString.
         debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
         ' Debug label for officeInstallMethodString.

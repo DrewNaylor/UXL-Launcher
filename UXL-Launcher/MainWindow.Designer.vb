@@ -55,6 +55,8 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
+        Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.debugLabelForofficeInstallMethodString = New System.Windows.Forms.Label()
         Me.debugLabelForcpuTypeString = New System.Windows.Forms.Label()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
@@ -75,7 +77,6 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
-        Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -379,6 +380,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeDriveLocation)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForuserOfficeVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeInstallMethodString)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForcpuTypeString)
@@ -400,14 +402,32 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
         '
+        'debugLabelForofficeDriveLocation
+        '
+        Me.debugLabelForofficeDriveLocation.AutoSize = True
+        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(14, 599)
+        Me.debugLabelForofficeDriveLocation.Name = "debugLabelForofficeDriveLocation"
+        Me.debugLabelForofficeDriveLocation.Size = New System.Drawing.Size(341, 25)
+        Me.debugLabelForofficeDriveLocation.TabIndex = 21
+        Me.debugLabelForofficeDriveLocation.Text = "debugLabelForofficeDriveLocation"
+        '
+        'debugLabelForuserOfficeVersion
+        '
+        Me.debugLabelForuserOfficeVersion.AutoSize = True
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(14, 699)
+        Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
+        Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(328, 25)
+        Me.debugLabelForuserOfficeVersion.TabIndex = 20
+        Me.debugLabelForuserOfficeVersion.Text = "debugLabelForuserOfficeVersion"
+        '
         'debugLabelForofficeInstallMethodString
         '
         Me.debugLabelForofficeInstallMethodString.AutoSize = True
         Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(14, 649)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
-        Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(254, 50)
+        Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(337, 50)
         Me.debugLabelForofficeInstallMethodString.TabIndex = 19
-        Me.debugLabelForofficeInstallMethodString.Text = "Debug label for" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "officeInstallMethodString."
+        Me.debugLabelForofficeInstallMethodString.Text = "debugLabelForofficeInstallMethod" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "String"
         '
         'debugLabelForcpuTypeString
         '
@@ -415,9 +435,9 @@ Partial Class aaformMainWindow
         Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(14, 624)
         Me.debugLabelForcpuTypeString.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.debugLabelForcpuTypeString.Name = "debugLabelForcpuTypeString"
-        Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(309, 25)
+        Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(296, 25)
         Me.debugLabelForcpuTypeString.TabIndex = 18
-        Me.debugLabelForcpuTypeString.Text = "Debug label for cpuTypeString."
+        Me.debugLabelForcpuTypeString.Text = "debugLabelForcpuTypeString"
         '
         'debugLabelForAlwaysOnTop
         '
@@ -617,15 +637,6 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
-        'debugLabelForuserOfficeVersion
-        '
-        Me.debugLabelForuserOfficeVersion.AutoSize = True
-        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(14, 699)
-        Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
-        Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(328, 25)
-        Me.debugLabelForuserOfficeVersion.TabIndex = 20
-        Me.debugLabelForuserOfficeVersion.Text = "debugLabelForuserOfficeVersion"
-        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -722,4 +733,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForcpuTypeString As Label
     Friend WithEvents debugLabelForofficeInstallMethodString As Label
     Friend WithEvents debugLabelForuserOfficeVersion As Label
+    Friend WithEvents debugLabelForofficeDriveLocation As Label
 End Class
