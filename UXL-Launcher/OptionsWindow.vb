@@ -141,10 +141,17 @@ Public Class aaformOptionsWindow
 
 #Region "Code that runs when the user clicks the Cancel button."
     Private Sub buttonCancel_Click(sender As Object, e As EventArgs) Handles buttonCancel.Click
-        'Cancel out of the Options window and reload the user's settings
+        ' Cancel out of the Options window and reload the user's settings
         My.Settings.Reload()
         Me.Close()
     End Sub
 #End Region
 
+#Region "Code that runs when the user clicks the Clear Textbox button."
+    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearTextbox.Click
+        ' Clear the OfficeDrive textbox and set focus to it.
+        textboxOfficeDrive.Text = ""
+        textboxOfficeDrive.Select()
+    End Sub
+#End Region
 End Class
