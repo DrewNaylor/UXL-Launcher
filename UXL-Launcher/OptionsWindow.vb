@@ -93,6 +93,16 @@ Public Class aaformOptionsWindow
         End If
     End Sub
 
+#Region "Code that runs when the user clicks the Defaults button."
+    Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
+        ' Reset the "Office Install Drive" to drive C.
+        textboxOfficeDrive.Text = "C"
+        ' This space reserved for more settings.
 
+
+        MessageBox.Show("Values reset to default. Click the Save button to save changes.", "Reset UXL Launcher settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+
+    End Sub
+#End Region
 
 End Class
