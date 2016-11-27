@@ -98,7 +98,10 @@ Public Class aaformOptionsWindow
     Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
         ' Reset the "Office Install Drive" to drive C.
         textboxOfficeDrive.Text = "C"
+        '
         ' This space reserved for more settings.
+        '
+        '
 
 
         MessageBox.Show("Values reset to default. Click the Save button to save changes.", "Reset UXL Launcher settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
@@ -116,6 +119,10 @@ Public Class aaformOptionsWindow
             ' After telling them that, reset the "Office Install Drive" textbox to default.
             textboxOfficeDrive.Text = "C"
         Else
+            '
+            ' This space reserved for more settings.
+            '
+            '
 
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
@@ -129,5 +136,16 @@ Public Class aaformOptionsWindow
         End If
 
     End Sub
+
+
 #End Region
+
+#Region "Code that runs when the user clicks the Cancel button."
+    Private Sub buttonCancel_Click(sender As Object, e As EventArgs) Handles buttonCancel.Click
+        'Cancel out of the Options window and reload the user's settings
+        My.Settings.Reload()
+        Me.Close()
+    End Sub
+#End Region
+
 End Class
