@@ -23,35 +23,39 @@ Partial Class aaformOptionsWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
         '
-        Me.tableLayoutPanelOptionsWindow.ColumnCount = 1
+        Me.tableLayoutPanelOptionsWindow.ColumnCount = 4
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.Button1, 0, 1)
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 443.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169.0!))
+        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 3, 1)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
         Me.tableLayoutPanelOptionsWindow.RowCount = 2
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(970, 788)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
         '
-        'Button1
+        'buttonSaveSettings
         '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Button1.AutoSize = True
-        Me.Button1.Location = New System.Drawing.Point(817, 720)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(138, 57)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.buttonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonSaveSettings.AutoSize = True
+        Me.buttonSaveSettings.Location = New System.Drawing.Point(821, 725)
+        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(3, 3, 15, 3)
+        Me.buttonSaveSettings.Name = "buttonSaveSettings"
+        Me.buttonSaveSettings.Size = New System.Drawing.Size(134, 46)
+        Me.buttonSaveSettings.TabIndex = 0
+        Me.buttonSaveSettings.Text = "Save"
+        Me.buttonSaveSettings.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -75,5 +79,5 @@ Partial Class aaformOptionsWindow
     End Sub
 
     Friend WithEvents tableLayoutPanelOptionsWindow As TableLayoutPanel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents buttonSaveSettings As Button
 End Class
