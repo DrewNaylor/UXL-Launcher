@@ -112,7 +112,7 @@ Public Class aaformOptionsWindow
         'Look at the length of the text in the "Drive Selector" textbox and if there is no text in it then kindly tell the
         'user they need to type in one drive letter.
         If textboxOfficeDrive.Text.Length = 0 Then
-            MessageBox.Show("You must type in one drive letter.", "Value doesn't meet requirement.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             'After telling them that, reset the "Drive Selector" textbox to default.
             textboxOfficeDrive.Text = "C"
         Else
