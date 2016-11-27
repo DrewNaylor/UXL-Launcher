@@ -109,15 +109,15 @@ Public Class aaformOptionsWindow
 #Region "Code that runs when the user clicks the Save button."
     Private Sub buttonSaveSettings_Click(sender As Object, e As EventArgs) Handles buttonSaveSettings.Click
 
-        'Look at the length of the text in the "Drive Selector" textbox and if there is no text in it then kindly tell the
-        'user they need to type in one drive letter.
+        ' Look at the length of the text in the "Office Install Drive" textbox and if there is no text in it then kindly tell the
+        ' user they need to type in one drive letter.
         If textboxOfficeDrive.Text.Length = 0 Then
             MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            'After telling them that, reset the "Drive Selector" textbox to default.
+            ' After telling them that, reset the "Office Install Drive" textbox to default.
             textboxOfficeDrive.Text = "C"
         Else
 
-            'This is where to look up the drive for launching the programs.
+            ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
 
             'Save settings.
