@@ -132,9 +132,7 @@ Public Class aaformOptionsWindow
             My.Settings.Reload()
             MessageBox.Show("Settings saved.")
             Me.Close()
-
         End If
-
     End Sub
 
 
