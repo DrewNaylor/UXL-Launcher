@@ -28,6 +28,8 @@ Public Class OfficeLocater
     ' Create a public, shared string called cpuTypeString. This string is used in the app launch code when the user clicks the buttons.
     Public Shared cpuTypeString As String
 
+
+#Region "cpuTypeString and cpuType sub."
     ' The cpuType sub is used to give cpuTypeString data.
     Public Shared Sub cpuType()
         ' Create a string called userCPUType which is only used in this sub.
@@ -43,8 +45,7 @@ Public Class OfficeLocater
             userCPUType = ""
             cpuTypeString = userCPUType
         End If
-
     End Sub
-
+#End Region
 #End Region
 End Class
