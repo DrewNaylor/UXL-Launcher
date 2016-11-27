@@ -85,7 +85,7 @@ Public Class aaformOptionsWindow
 
             'Display a message box when the user presses characters that aren't allowed.
             e.Handled = True
-            MessageBox.Show("This textbox only accepts letters such as A, B, C etc. Click the Clear Textbox button to empty the textbox.")
+            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf & "Click the Clear Textbox button to empty the textbox.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             'Change the textbox for choosing the drive Office is installed on back to drive C.
             textboxOfficeDrive.Text = "C"
