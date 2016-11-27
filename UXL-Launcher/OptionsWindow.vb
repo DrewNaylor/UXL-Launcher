@@ -72,7 +72,26 @@ Public Class aaformOptionsWindow
         "main window TopMost: " & aaformMainWindow.TopMost
     End Sub
 
+
+
 #End Region
 #End Region
+
+
+
+    Private Sub textboxOfficeDrive_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textboxOfficeDrive.KeyPress
+        ' This sub is to make sure that people are only entering letters.
+        If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
+
+            'Display a message box when the user presses characters that aren't allowed.
+            e.Handled = True
+            MessageBox.Show("This textbox only accepts letters such as A, B, C etc. Click the Clear Textbox button to empty the textbox.")
+
+            'Change the textbox for choosing the drive Office is installed on back to drive C.
+            textboxOfficeDrive.Text = "C"
+        End If
+    End Sub
+
+
 
 End Class
