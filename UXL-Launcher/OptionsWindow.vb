@@ -40,15 +40,17 @@ Public Class aaformOptionsWindow
         ElseIf My.Settings.alwaysOnTop = False Then
             aaformMainWindow.TopMost = False
         End If
+
+        ' Debug labels for Always On Top code on the main form.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
 #End Region
 
         ' Load the user's settings when the Options window is opened.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
-        ' Debug labels for the main form.
-        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
-        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
-        "main window TopMost: " & aaformMainWindow.TopMost
+
     End Sub
 #End Region
 
@@ -105,7 +107,7 @@ Public Class aaformOptionsWindow
         '
 
 
-        MessageBox.Show("Values reset to default. Click the Save button to save changes.", "Reset UXL Launcher settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        MessageBox.Show("Values reset to default. Click the Save button to save changes." & vbCrLf & "Note that Always On Top will not be reset to its default value.", "Reset UXL Launcher settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
     End Sub
 #End Region
@@ -132,6 +134,7 @@ Public Class aaformOptionsWindow
             My.Settings.Save()
             My.Settings.Reload()
             MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+
 
             ' Update the debug labels on the main window.
 
