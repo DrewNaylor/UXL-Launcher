@@ -23,8 +23,9 @@ Partial Class aaformOptionsWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
+        Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -32,11 +33,12 @@ Partial Class aaformOptionsWindow
         '
         Me.tableLayoutPanelOptionsWindow.ColumnCount = 4
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 462.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 490.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152.0!))
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159.0!))
+        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonDefaultSettings, 0, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 3, 1)
-        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.Button1, 2, 1)
+        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonCancel, 2, 1)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
@@ -46,6 +48,18 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(970, 788)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
+        '
+        'buttonDefaultSettings
+        '
+        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.buttonDefaultSettings.AutoSize = True
+        Me.buttonDefaultSettings.Location = New System.Drawing.Point(15, 725)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(15, 3, 3, 3)
+        Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(134, 46)
+        Me.buttonDefaultSettings.TabIndex = 2
+        Me.buttonDefaultSettings.Text = "Defaults"
+        Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
         'buttonSaveSettings
         '
@@ -59,16 +73,16 @@ Partial Class aaformOptionsWindow
         Me.buttonSaveSettings.Text = "Save"
         Me.buttonSaveSettings.UseVisualStyleBackColor = True
         '
-        'Button1
+        'buttonCancel
         '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Button1.AutoSize = True
-        Me.Button1.Location = New System.Drawing.Point(674, 725)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 46)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonCancel.AutoSize = True
+        Me.buttonCancel.Location = New System.Drawing.Point(674, 725)
+        Me.buttonCancel.Name = "buttonCancel"
+        Me.buttonCancel.Size = New System.Drawing.Size(134, 46)
+        Me.buttonCancel.TabIndex = 1
+        Me.buttonCancel.Text = "Cancel"
+        Me.buttonCancel.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -93,5 +107,6 @@ Partial Class aaformOptionsWindow
 
     Friend WithEvents tableLayoutPanelOptionsWindow As TableLayoutPanel
     Friend WithEvents buttonSaveSettings As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents buttonCancel As Button
+    Friend WithEvents buttonDefaultSettings As Button
 End Class
