@@ -46,7 +46,7 @@ Public Class OfficeLocater
             userCPUType = " (x86)"
             cpuTypeString = userCPUType
             titlebarBitModeString = "64-bit"
-        ElseIf My.Settings.cpuIsSixtyFourBit Then
+        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
             userCPUType = ""
             cpuTypeString = userCPUType
             titlebarBitModeString = "32-bit"

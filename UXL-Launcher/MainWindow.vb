@@ -35,7 +35,7 @@ Public Class aaformMainWindow
         OfficeLocater.officeInst()
 
         ' Put text in the titlebar.
-        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.cpuTypeString & "-mode)"
+        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
 
 
         ' Hide the debugging labels.
