@@ -28,7 +28,7 @@ Public Class OfficeLocater
     ' Create a public, shared string called cpuTypeString. This string is used in the app launch code when the user clicks the buttons.
     Public Shared cpuTypeString As String
     ' Create a public, shared string called officeVersionString which is used in the app launch code when the user clicks the buttons.
-    Public Shared officeVersionString As String
+    Public Shared officeInstallMethodString As String
 
 
 #Region "cpuTypeString and cpuType sub."
@@ -49,10 +49,10 @@ Public Class OfficeLocater
         End If
     End Sub
 #End Region
-#Region "officeVersionString and officeVer sub."
+#Region "officeInstallMethodString and officeInst sub."
     ' The officeVer sub is used to give officeVersionString data.
-    Public Shared Sub officeVer()
-        Dim userOfficeVer As String
+    Public Shared Sub officeInst()
+        Dim userOfficeInst As String
 
 
 
