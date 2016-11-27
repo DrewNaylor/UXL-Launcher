@@ -78,7 +78,7 @@ Public Class aaformOptionsWindow
 #End Region
 
 
-
+#Region "Code that runs when the user typs stuff in the textboxOfficeDrive."
     Private Sub textboxOfficeDrive_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textboxOfficeDrive.KeyPress
         ' This sub is to make sure that people are only entering letters.
         If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
@@ -92,6 +92,7 @@ Public Class aaformOptionsWindow
             textboxOfficeDrive.Text = "C"
         End If
     End Sub
+#End Region
 
 #Region "Code that runs when the user clicks the Defaults button."
     Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
@@ -105,4 +106,28 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
+#Region "Code that runs when the user clicks the Save button."
+    Private Sub buttonSaveSettings_Click(sender As Object, e As EventArgs) Handles buttonSaveSettings.Click
+
+        'Look at the length of the text in the "Drive Selector" textbox and if there is no text in it then kindly tell the
+        'user they need to type in one drive letter.
+        If textboxOfficeDrive.Text.Length = 0 Then
+            MessageBox.Show("You must type in one drive letter.", "Value doesn't meet requirement.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            'After telling them that, reset the "Drive Selector" textbox to default.
+            textboxOfficeDrive.Text = "C"
+        Else
+
+            'This is where to look up the drive for launching the programs.
+            My.Settings.officeDriveLocation = textboxOfficeDrive.Text
+
+            'Save settings.
+            My.Settings.Save()
+            My.Settings.Reload()
+            MessageBox.Show("Settings saved.")
+            Me.Close()
+
+        End If
+
+    End Sub
+#End Region
 End Class
