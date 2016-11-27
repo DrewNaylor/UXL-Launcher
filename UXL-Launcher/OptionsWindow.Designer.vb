@@ -22,25 +22,30 @@ Partial Class aaformOptionsWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.labelComingSoon = New System.Windows.Forms.Label()
+        Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
         Me.SuspendLayout()
         '
-        'labelComingSoon
+        'tableLayoutPanelOptionsWindow
         '
-        Me.labelComingSoon.AutoSize = True
-        Me.labelComingSoon.Location = New System.Drawing.Point(198, 164)
-        Me.labelComingSoon.Name = "labelComingSoon"
-        Me.labelComingSoon.Size = New System.Drawing.Size(71, 13)
-        Me.labelComingSoon.TabIndex = 0
-        Me.labelComingSoon.Text = "Coming soon."
+        Me.tableLayoutPanelOptionsWindow.ColumnCount = 1
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
+        Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
+        Me.tableLayoutPanelOptionsWindow.RowCount = 2
+        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.0!))
+        Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(970, 788)
+        Me.tableLayoutPanelOptionsWindow.TabIndex = 0
         '
         'aaformOptionsWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(485, 394)
-        Me.Controls.Add(Me.labelComingSoon)
+        Me.ClientSize = New System.Drawing.Size(970, 788)
+        Me.Controls.Add(Me.tableLayoutPanelOptionsWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "aaformOptionsWindow"
@@ -49,9 +54,8 @@ Partial Class aaformOptionsWindow
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Options"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents labelComingSoon As Label
+    Friend WithEvents tableLayoutPanelOptionsWindow As TableLayoutPanel
 End Class
