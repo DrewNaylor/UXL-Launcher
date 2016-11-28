@@ -118,11 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelOfficeVersionDescription.Text" xml:space="preserve">
-    <value>Of the choices available in the drop-down box below, please select the version
-of Microsoft Office you use the most frequently. Microsoft Office 2010 is the 
-default for this setting.
-If you installed Office via Office 365 then check the "I installed Office via 
-Office 365" checkbox below. Unchecked is the default for this setting.</value>
+    <value>Of the choices available in the dropdown box below, please select the version
+of Microsoft Office you use the most frequently. Check the checkbox below
+if you used Office 365 to install Office. By default the dropdown box is set to 
+Office 2010 and the Office 365 checkbox is unchecked.</value>
   </data>
   <data name="labelOfficeLocationDescription.Text" xml:space="preserve">
     <value>Please enter the drive you installed Microsoft Office to below. Special characters

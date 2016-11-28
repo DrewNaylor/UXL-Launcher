@@ -151,7 +151,7 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeVersionDescription.AutoSize = True
         Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(66, 40)
         Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
-        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(762, 125)
+        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(755, 100)
         Me.labelOfficeVersionDescription.TabIndex = 0
         Me.labelOfficeVersionDescription.Text = resources.GetString("labelOfficeVersionDescription.Text")
         '
