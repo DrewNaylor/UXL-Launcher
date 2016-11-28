@@ -235,16 +235,9 @@ Public Class aaformOptionsWindow
             OfficeLocater.combineStrings()
             MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
-
-
-
-
-
             Me.Close()
         End If
     End Sub
-
-
 #End Region
 
 #Region "Code that runs when the user clicks the Cancel button."
@@ -263,17 +256,17 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
-#Region "Determine whether or not the settings the user chose are potentially incompatible."
-
-    ' Set My.Settings.userHasOfficeThreeSixFive to True or False based on the
-    ' current state of checkboxUserHasO365.
-    Public Sub incompatibleSettingsChecker()
-
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
+#Region "Code that runs when the user clicks the 'Help Me!' button on the Advanced tab."
+    Private Sub buttonHelpMeCPUType_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
+        ' Open the System Properties Control Panel page.
         Process.Start("control.exe", "system")
+    End Sub
+#End Region
+#Region "Code that runs when the user clicks the 'Test Settings' button."
+    Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
+        MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
+                        "Afterward we will attempt to launch the Office Language Preferences" & vbCrLf &
+                        "application. If no message appears, assume that it worked.")
     End Sub
 #End Region
 
