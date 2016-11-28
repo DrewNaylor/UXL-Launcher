@@ -69,13 +69,20 @@ Public Class aaformOptionsWindow
         comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
 #End Region
 
-        ' Load the user's settings for userOfficeVersion when the Options window loads.
+        ' Load the user's settings for My.Settings.userOfficeVersion when the Options window loads.
         If My.Settings.userOfficeVersion = "14" Then
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2010"
         ElseIf My.Settings.userOfficeVersion = "15" Then
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2013"
         ElseIf My.Settings.userOfficeVersion = "16" Then
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2016"
+        End If
+
+        ' Load the user's settings for My.Settings.cpuIsSixtyFourBit.
+        If My.Settings.cpuIsSixtyFourBit = True Then
+            radiobuttonCPUIs64Bit.Checked = True
+        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
+            radiobuttonCPUIs32Bit.Checked = True
         End If
 
     End Sub
@@ -200,6 +207,13 @@ Public Class aaformOptionsWindow
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
                 MessageBox.Show("Why do you have a quantum CPU?", "Q-Bits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
+                If My.Settings.cpuIsSixtyFourBit = True Then
+                    radiobuttonCPUIs64Bit.Checked = True
+                    My.Settings.cpuIsSixtyFourBit = True
+                ElseIf My.Settings.cpuIsSixtyFourBit = False Then
+                    radiobuttonCPUIs32Bit.Checked = True
+                    My.Settings.cpuIsSixtyFourBit = False
+                End If
             End If
 #End Region
 
