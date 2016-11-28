@@ -130,7 +130,7 @@ Partial Class aaformOptionsWindow
         '
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.labelOfficeVersionDescription)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 274)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 274)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(911, 382)
         Me.GroupBox1.TabIndex = 1
@@ -141,7 +141,7 @@ Partial Class aaformOptionsWindow
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(176, 179)
+        Me.ComboBox1.Location = New System.Drawing.Point(414, 187)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 33)
         Me.ComboBox1.TabIndex = 1
@@ -151,9 +151,9 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeVersionDescription.AutoSize = True
         Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(66, 40)
         Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
-        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(77, 25)
+        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(762, 125)
         Me.labelOfficeVersionDescription.TabIndex = 0
-        Me.labelOfficeVersionDescription.Text = "Label1"
+        Me.labelOfficeVersionDescription.Text = resources.GetString("labelOfficeVersionDescription.Text")
         '
         'groupboxOfficeLocation
         '
