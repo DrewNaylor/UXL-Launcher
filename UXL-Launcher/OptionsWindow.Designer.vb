@@ -29,8 +29,9 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
+        Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.labelOfficeVersionDescription = New System.Windows.Forms.Label()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
         Me.buttonClearTextbox = New System.Windows.Forms.Button()
@@ -38,11 +39,10 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.groupboxOfficeVersion.SuspendLayout()
         Me.groupboxOfficeLocation.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -117,7 +117,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpageGeneral
         '
-        Me.tabpageGeneral.Controls.Add(Me.GroupBox1)
+        Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeVersion)
         Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeLocation)
         Me.tabpageGeneral.Location = New System.Drawing.Point(8, 39)
         Me.tabpageGeneral.Name = "tabpageGeneral"
@@ -127,26 +127,36 @@ Partial Class aaformOptionsWindow
         Me.tabpageGeneral.Text = "General"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'groupboxOfficeVersion
         '
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.labelOfficeVersionDescription)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 274)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(911, 382)
-        Me.GroupBox1.TabIndex = 1
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "What version of Microsoft Office do you use?"
+        Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
+        Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
+        Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeVersionDescription)
+        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(6, 274)
+        Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
+        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(911, 382)
+        Me.groupboxOfficeVersion.TabIndex = 1
+        Me.groupboxOfficeVersion.TabStop = False
+        Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use?"
         '
-        'ComboBox1
+        'labelUserHasThisOfficeVersion
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(444, 168)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 33)
-        Me.ComboBox1.TabIndex = 1
+        Me.labelUserHasThisOfficeVersion.AutoSize = True
+        Me.labelUserHasThisOfficeVersion.ForeColor = System.Drawing.Color.Blue
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 171)
+        Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
+        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(360, 25)
+        Me.labelUserHasThisOfficeVersion.TabIndex = 2
+        Me.labelUserHasThisOfficeVersion.Text = "I use this version of Microsoft Office:"
+        '
+        'comboboxOfficeVersionSelector
+        '
+        Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxOfficeVersionSelector.FormattingEnabled = True
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(444, 168)
+        Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
+        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(271, 33)
+        Me.comboboxOfficeVersionSelector.TabIndex = 1
         '
         'labelOfficeVersionDescription
         '
@@ -220,15 +230,6 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 171)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(360, 25)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "I use this version of Microsoft Office:"
-        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -248,8 +249,8 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.PerformLayout()
         Me.tabcontrolOptionsWindow.ResumeLayout(False)
         Me.tabpageGeneral.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.groupboxOfficeVersion.ResumeLayout(False)
+        Me.groupboxOfficeVersion.PerformLayout()
         Me.groupboxOfficeLocation.ResumeLayout(False)
         Me.groupboxOfficeLocation.PerformLayout()
         Me.ResumeLayout(False)
@@ -268,8 +269,8 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOfficeInstalledToDrive As Label
     Friend WithEvents textboxOfficeDrive As TextBox
     Friend WithEvents buttonClearTextbox As Button
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents groupboxOfficeVersion As GroupBox
     Friend WithEvents labelOfficeVersionDescription As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents comboboxOfficeVersionSelector As ComboBox
+    Friend WithEvents labelUserHasThisOfficeVersion As Label
 End Class
