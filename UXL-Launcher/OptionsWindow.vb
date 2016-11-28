@@ -217,9 +217,13 @@ Public Class aaformOptionsWindow
                                 "and installation method are untested and might not work properly." & vbCrLf &
                                 "Are you sure you want to save?", "Potentially incompatible settings detected!" _
                                 , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.Yes Then
-                My.Settings.userHasOfficeThreeSixFive = True
-            ElseIf checkboxUserHasO365.Checked = False Then
-                My.Settings.userHasOfficeThreeSixFive = False
+
+
+                If checkboxUserHasO365.Checked = True Then
+                    My.Settings.userHasOfficeThreeSixFive = True
+                ElseIf checkboxUserHasO365.Checked = False Then
+                    My.Settings.userHasOfficeThreeSixFive = False
+                End If
             End If
         End If
 
