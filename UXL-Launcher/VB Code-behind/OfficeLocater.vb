@@ -31,24 +31,26 @@ Public Class OfficeLocater
     Public Shared officeInstallMethodString As String
     ' Create a public, shared string called titlebarBitMode which is used to show whether or not the app is in "64-bit Mode" or "32-bit Mode."
     Public Shared titlebarBitModeString As String
+    ' Create a public, shared string called fullLauncherCodeString which is used to combine all the other launcher code strings into one that's much shorter.
+    Public Shared fullLauncherCodeString As String
 
 
 #Region "cpuTypeString and cpuType sub."
     ' The cpuType sub is used to give cpuTypeString data.
     Public Shared Sub cpuType()
         ' Create a string called userCPUType which is only used in this sub.
-        Dim userCPUType As String
+        Dim cpuTypePrivateString As String
 
         ' This code looks at My.Settings.cpuIsSixtyFourBit and if it's set to True, userCPUType contains " (x86)" and cpuTypeString is set
         ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
         'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is cpuTypeString.
         If My.Settings.cpuIsSixtyFourBit = True Then
-            userCPUType = " (x86)"
-            cpuTypeString = userCPUType
+            cpuTypePrivateString = " (x86)"
+            cpuTypeString = cpuTypePrivateString
             titlebarBitModeString = "64-bit"
         ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-            userCPUType = ""
-            cpuTypeString = userCPUType
+            cpuTypePrivateString = ""
+            cpuTypeString = cpuTypePrivateString
             titlebarBitModeString = "32-bit"
         End If
     End Sub
@@ -57,19 +59,39 @@ Public Class OfficeLocater
     ' The officeVer sub is used to give officeVersionString data.
     Public Shared Sub officeInst()
         ' Create a string called userOfficeInst which is only used in this sub.
-        Dim userOfficeInst As String
+        Dim officeInstallMethodPrivateString As String
 
         ' If userHasOfficeThreeSixFive is set to True, then userOfficeInst is set to "\root" 
         ' and officeInstallMethodString is set to userOfficeInst as well. If it's False, then
         ' userOfficeInst is set to "".
         If My.Settings.userHasOfficeThreeSixFive = True Then
-            userOfficeInst = "\root"
-            officeInstallMethodString = userOfficeInst
+            officeInstallMethodPrivateString = "\root"
+            officeInstallMethodString = officeInstallMethodPrivateString
         ElseIf My.Settings.userHasOfficeThreeSixFive Then
-            userOfficeInst = ""
-            officeInstallMethodString = userOfficeInst
+            officeInstallMethodPrivateString = ""
+            officeInstallMethodString = officeInstallMethodPrivateString
         End If
     End Sub
 #End Region
 #End Region
+#Region "This code combines all the launcher strings into one string to make modification easier."
+    ' With this sub I'll be able to shorten the length of the button_click event strings for the launcher buttons.
+    Public Shared Sub combineStrings()
+        ' This string is only used in this sub.
+        Dim fullLauncherCodePrivateString As String
+
+        ' What this does is take all the other strings above and put them into one string along with the "Program Files"
+        ' and "Microsoft Office" directories.
+        ' First we need to run the other subs.
+        officeInst()
+        cpuType()
+
+        ' Then we need to combine them.
+        fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office" & officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\"
+        ' Make the public string equal to the private string.
+        fullLauncherCodeString = fullLauncherCodePrivateString
+
+    End Sub
+#End Region
+
 End Class
