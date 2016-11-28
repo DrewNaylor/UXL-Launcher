@@ -41,8 +41,8 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
@@ -253,8 +253,8 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
-        Me.groupboxCPUType.Controls.Add(Me.RadioButton2)
-        Me.groupboxCPUType.Controls.Add(Me.RadioButton1)
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
         Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(6, 6)
@@ -264,29 +264,29 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
         '
-        'RadioButton2
+        'radiobuttonCPUIs64Bit
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.ForeColor = System.Drawing.Color.Blue
-        Me.RadioButton2.Location = New System.Drawing.Point(66, 199)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(173, 29)
-        Me.RadioButton2.TabIndex = 3
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "RadioButton2"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.radiobuttonCPUIs64Bit.AutoSize = True
+        Me.radiobuttonCPUIs64Bit.ForeColor = System.Drawing.Color.Blue
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(66, 199)
+        Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
+        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(306, 29)
+        Me.radiobuttonCPUIs64Bit.TabIndex = 3
+        Me.radiobuttonCPUIs64Bit.TabStop = True
+        Me.radiobuttonCPUIs64Bit.Text = "I'm running 64-bit Windows."
+        Me.radiobuttonCPUIs64Bit.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'radiobuttonCPUIs32Bit
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.ForeColor = System.Drawing.Color.Blue
-        Me.RadioButton1.Location = New System.Drawing.Point(66, 164)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(173, 29)
-        Me.RadioButton1.TabIndex = 2
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "RadioButton1"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radiobuttonCPUIs32Bit.AutoSize = True
+        Me.radiobuttonCPUIs32Bit.ForeColor = System.Drawing.Color.Blue
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(66, 164)
+        Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
+        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(306, 29)
+        Me.radiobuttonCPUIs32Bit.TabIndex = 2
+        Me.radiobuttonCPUIs32Bit.TabStop = True
+        Me.radiobuttonCPUIs32Bit.Text = "I'm running 32-bit Windows."
+        Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
         '
         'buttonHelpMeCPUType
         '
@@ -356,6 +356,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxCPUType As GroupBox
     Friend WithEvents labelCPUTypeDescription As Label
     Friend WithEvents buttonHelpMeCPUType As Button
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
+    Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
 End Class
