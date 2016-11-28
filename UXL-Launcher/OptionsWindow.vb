@@ -191,6 +191,16 @@ Public Class aaformOptionsWindow
             ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
                 My.Settings.userOfficeVersion = "16"
             End If
+
+            ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
+            If radiobuttonCPUIs32Bit.Checked = True Then
+                My.Settings.cpuIsSixtyFourBit = False
+            ElseIf radiobuttonCPUIs64Bit.Checked = True Then
+                My.Settings.cpuIsSixtyFourBit = True
+            ElseIf radiobuttonCPUIsQBit.Checked = True Then
+                MessageBox.Show("Why do you have a quantum CPU?", "Q-Bits don't exist for consumers yet.", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error)
+            End If
 #End Region
 
 #Region "This is where the settings get saved."

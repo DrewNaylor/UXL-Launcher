@@ -45,6 +45,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
+        Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -253,6 +254,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
         Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
@@ -306,6 +308,17 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription.TabIndex = 0
         Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
         '
+        'radiobuttonCPUIsQBit
+        '
+        Me.radiobuttonCPUIsQBit.AutoSize = True
+        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(901, 321)
+        Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
+        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(412, 29)
+        Me.radiobuttonCPUIsQBit.TabIndex = 4
+        Me.radiobuttonCPUIsQBit.TabStop = True
+        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl."
+        Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -358,4 +371,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonHelpMeCPUType As Button
     Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
     Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
+    Friend WithEvents radiobuttonCPUIsQBit As RadioButton
 End Class
