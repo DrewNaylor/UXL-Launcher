@@ -193,7 +193,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
         Me.menubarAuthorsButton.Size = New System.Drawing.Size(389, 38)
-        Me.menubarAuthorsButton.Text = "A&uthors"
+        Me.menubarAuthorsButton.Text = "A&cknowledgments"
         '
         'menubarLicenseButton
         '
