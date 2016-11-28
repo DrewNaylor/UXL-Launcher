@@ -41,8 +41,8 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
+        Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -250,7 +250,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
-        Me.groupboxCPUType.Controls.Add(Me.Button1)
+        Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(6, 6)
         Me.groupboxCPUType.Name = "groupboxCPUType"
@@ -258,6 +258,15 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
+        '
+        'buttonHelpMeCPUType
+        '
+        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(202, 258)
+        Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
+        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(185, 66)
+        Me.buttonHelpMeCPUType.TabIndex = 1
+        Me.buttonHelpMeCPUType.Text = "Help Me!"
+        Me.buttonHelpMeCPUType.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
         '
@@ -267,15 +276,6 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription.Size = New System.Drawing.Size(742, 100)
         Me.labelCPUTypeDescription.TabIndex = 0
         Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(202, 258)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(185, 66)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -326,5 +326,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents checkboxUserHasO365 As CheckBox
     Friend WithEvents groupboxCPUType As GroupBox
     Friend WithEvents labelCPUTypeDescription As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents buttonHelpMeCPUType As Button
 End Class
