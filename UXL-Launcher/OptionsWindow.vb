@@ -149,8 +149,8 @@ Public Class aaformOptionsWindow
             aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
             ' Debug label for userOfficeVersion.
             aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
-            ' Debug label for fullLauncherCodeString.
-            aaformMainWindow.debugLabelForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
+            ' Debug textox for fullLauncherCodeString.
+            aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
             Me.Close()
         End If
