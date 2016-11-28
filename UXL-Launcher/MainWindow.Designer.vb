@@ -77,7 +77,7 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
-        Me.debugTextboxForFullLauncherCodeString = New System.Windows.Forms.TextBox()
+        Me.debugLabelForFullLauncherCodeString = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -537,7 +537,7 @@ Partial Class aaformMainWindow
         'groupboxExtraApps
         '
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxExtraApps.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
+        Me.groupboxExtraApps.Controls.Add(Me.debugLabelForFullLauncherCodeString)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunOneNoteQuickLaunch)
         Me.groupboxExtraApps.Controls.Add(Me.pictureQueryIcon)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunQuery)
@@ -639,13 +639,14 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
-        'debugTextboxForFullLauncherCodeString
+        'debugLabelForFullLauncherCodeString
         '
-        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(0, 578)
-        Me.debugTextboxForFullLauncherCodeString.Name = "debugTextboxForFullLauncherCodeString"
-        Me.debugTextboxForFullLauncherCodeString.Size = New System.Drawing.Size(373, 31)
-        Me.debugTextboxForFullLauncherCodeString.TabIndex = 26
-        Me.debugTextboxForFullLauncherCodeString.Text = "debugTextboxForFullLauncherCodeString"
+        Me.debugLabelForFullLauncherCodeString.AutoSize = True
+        Me.debugLabelForFullLauncherCodeString.Location = New System.Drawing.Point(14, 598)
+        Me.debugLabelForFullLauncherCodeString.Name = "debugLabelForFullLauncherCodeString"
+        Me.debugLabelForFullLauncherCodeString.Size = New System.Drawing.Size(389, 25)
+        Me.debugLabelForFullLauncherCodeString.TabIndex = 26
+        Me.debugLabelForFullLauncherCodeString.Text = "debugLabelForFullLauncherCodeString"
         '
         'aaformMainWindow
         '
@@ -745,5 +746,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForofficeInstallMethodString As Label
     Friend WithEvents debugLabelForuserOfficeVersion As Label
     Friend WithEvents debugLabelForofficeDriveLocation As Label
-    Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
+    Friend WithEvents debugLabelForFullLauncherCodeString As Label
 End Class

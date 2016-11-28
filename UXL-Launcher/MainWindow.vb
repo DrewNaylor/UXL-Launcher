@@ -56,7 +56,7 @@ Public Class aaformMainWindow
         ' Debug label for userOfficeVersion.
         debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
         ' Debug textbox for fullLauncherCodeString.
-        debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
+        debugLabelForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
 
 #End Region

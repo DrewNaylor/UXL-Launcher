@@ -135,6 +135,9 @@ Public Class aaformOptionsWindow
             My.Settings.Reload()
             MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
+            ' Update the fullLauncherCodeString.
+            OfficeLocater.combineStrings()
+
 
             ' Update the debug labels on the main window.
 
@@ -146,6 +149,8 @@ Public Class aaformOptionsWindow
             aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
             ' Debug label for userOfficeVersion.
             aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+            ' Debug label for fullLauncherCodeString.
+            aaformMainWindow.debugLabelForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
             Me.Close()
         End If
