@@ -129,4 +129,10 @@ are not permitted. Click the Clear Textbox button to clear the textbox.
 The most common drive Office is installed to is drive C. Drive C is the default
 for this setting.</value>
   </data>
+  <data name="labelCPUTypeDescription.Text" xml:space="preserve">
+    <value>Of the options below, please choose which edition of Windows you're using, 
+32-bit Windows or 64-bit Windows. As of 2016 most PCs built within the last 
+4 years use a 64-bit CPU and as such probably run Windows 64-bit. If you 
+don't know, click the "Help Me with This" button below.</value>
+  </data>
 </root>

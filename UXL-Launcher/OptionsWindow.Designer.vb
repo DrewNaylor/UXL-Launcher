@@ -40,11 +40,15 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
+        Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
+        Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
         Me.groupboxOfficeVersion.SuspendLayout()
         Me.groupboxOfficeLocation.SuspendLayout()
+        Me.tabpageAdvanced.SuspendLayout()
+        Me.groupboxCPUType.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -234,6 +238,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpageAdvanced
         '
+        Me.tabpageAdvanced.Controls.Add(Me.groupboxCPUType)
         Me.tabpageAdvanced.Location = New System.Drawing.Point(8, 39)
         Me.tabpageAdvanced.Name = "tabpageAdvanced"
         Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(3)
@@ -241,6 +246,25 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
+        '
+        'groupboxCPUType
+        '
+        Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
+        Me.groupboxCPUType.Location = New System.Drawing.Point(6, 6)
+        Me.groupboxCPUType.Name = "groupboxCPUType"
+        Me.groupboxCPUType.Size = New System.Drawing.Size(912, 376)
+        Me.groupboxCPUType.TabIndex = 0
+        Me.groupboxCPUType.TabStop = False
+        Me.groupboxCPUType.Text = "What edition of Windows do you run?"
+        '
+        'labelCPUTypeDescription
+        '
+        Me.labelCPUTypeDescription.AutoSize = True
+        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(66, 40)
+        Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
+        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(742, 100)
+        Me.labelCPUTypeDescription.TabIndex = 0
+        Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
         '
         'aaformOptionsWindow
         '
@@ -265,6 +289,9 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.PerformLayout()
         Me.groupboxOfficeLocation.ResumeLayout(False)
         Me.groupboxOfficeLocation.PerformLayout()
+        Me.tabpageAdvanced.ResumeLayout(False)
+        Me.groupboxCPUType.ResumeLayout(False)
+        Me.groupboxCPUType.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -286,4 +313,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents comboboxOfficeVersionSelector As ComboBox
     Friend WithEvents labelUserHasThisOfficeVersion As Label
     Friend WithEvents checkboxUserHasO365 As CheckBox
+    Friend WithEvents groupboxCPUType As GroupBox
+    Friend WithEvents labelCPUTypeDescription As Label
 End Class
