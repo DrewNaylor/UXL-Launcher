@@ -51,8 +51,14 @@ Public Class aaformMainWindow
         debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
         ' Debug label for cpuTypeString.
         debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
-        ' Debug label for officeInstallMethodString.
-        debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
+
+        ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
+        If My.Settings.userHasOfficeThreeSixFive = True Then
+            debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & "\root"
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
+            debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
+        End If
+
         ' Debug label for userOfficeVersion.
         debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
         ' Debug textbox for fullLauncherCodeString.
