@@ -29,10 +29,8 @@ Public Class aaformMainWindow
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
 
-        ' Run the code in the cpuType sub in OfficeLocater.vb.
-        OfficeLocater.cpuType()
-        ' Run the code in the officeInst sub in OfficeLocater.vb.
-        OfficeLocater.officeInst()
+        ' Run the code in the combineStrings sub in OfficeLocater.vb
+        OfficeLocater.combineStrings()
 
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
@@ -57,6 +55,8 @@ Public Class aaformMainWindow
         debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
         ' Debug label for userOfficeVersion.
         debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+        ' Debug textbox for fullLauncherCodeString.
+        debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
 
 #End Region
