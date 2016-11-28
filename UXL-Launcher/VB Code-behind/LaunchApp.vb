@@ -48,52 +48,52 @@ Public Class LaunchApp
 
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\OUTLOOK.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "OUTLOOK.EXE")
     End Sub
 
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\POWERPNT.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "POWERPNT.EXE")
     End Sub
 
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft SharePoint Workspace.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\GROOVE.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "GROOVE.EXE")
     End Sub
 
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\MSPUB.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "MSPUB.EXE")
     End Sub
 
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\WINWORD.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "WINWORD.EXE")
     End Sub
 
     Public Shared Sub LaunchQuery()
         ' Launch Microsoft Query.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\MSQRY32.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "MSQRY32.EXE")
     End Sub
 
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\MSTORE.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "MSTORE.EXE")
     End Sub
 
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Picture Manager.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\OIS.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "OIS.EXE")
     End Sub
 
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\ONENOTEM.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "ONENOTEM.EXE")
     End Sub
 
     Public Shared Sub LaunchOfficeLangPrefs()
         ' Launch Office Language Preferences.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\SETLANG.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE")
     End Sub
 
 
