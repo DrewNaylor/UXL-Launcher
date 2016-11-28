@@ -210,35 +210,33 @@ Public Class aaformOptionsWindow
 
         If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
                 Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
-            If MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
-                                "and installation method are untested and might not work properly." & vbCrLf &
-                                "Are you sure you want to save?", "Potentially incompatible settings detected!" _
-                                , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.No Then
-                Exit Sub
+            MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
+                                "and installation method are untested and might not work properly." _
+                                , "Potentially incompatible settings detected!" _
+                                , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-
-                ' If the user clicks the "Yes" button, My.Settings.userHasOfficeThreeSixFive will be set based on 
-                ' the .Checked state of the checkboxUserHasO365.
-                If checkboxUserHasO365.Checked = True Then
-                    My.Settings.userHasOfficeThreeSixFive = True
-                ElseIf checkboxUserHasO365.Checked = False Then
-                    My.Settings.userHasOfficeThreeSixFive = False
-                End If
-
-                ' If the user clicked the "Yes" button
-                If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
-                    My.Settings.userOfficeVersion = "14"
-                ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-                    My.Settings.userOfficeVersion = "15"
-                ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
-                    My.Settings.userOfficeVersion = "16"
-                End If
-
-
-                ' Save the settings.
-                settingsSaver()
-
+            ' My.Settings.userHasOfficeThreeSixFive will be set based on 
+            ' the .Checked state of the checkboxUserHasO365.
+            If checkboxUserHasO365.Checked = True Then
+                My.Settings.userHasOfficeThreeSixFive = True
+            ElseIf checkboxUserHasO365.Checked = False Then
+                My.Settings.userHasOfficeThreeSixFive = False
             End If
+
+            ' Set My.Settings.userOfficeVersion to a string based on whatever
+            ' comboboxOfficeVersionSelector.Text is set to.
+            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
+                My.Settings.userOfficeVersion = "14"
+            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
+                My.Settings.userOfficeVersion = "15"
+            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
+                My.Settings.userOfficeVersion = "16"
+            End If
+
+
+            ' Save the settings.
+            settingsSaver()
+
         End If
 
     End Sub
