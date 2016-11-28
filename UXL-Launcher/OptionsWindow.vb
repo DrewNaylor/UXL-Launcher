@@ -270,6 +270,8 @@ Public Class aaformOptionsWindow
                         "If an error message appears saying something about File not Found," & vbCrLf &
                         "you might need to change your settings. If the Office Language" & vbCrLf &
                         "Preferences application appears, you can just close it.")
+        buttonSaveSettings.PerformClick()
+
     End Sub
 #End Region
 
