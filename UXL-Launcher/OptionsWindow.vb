@@ -150,6 +150,20 @@ Public Class aaformOptionsWindow
             '
             '
 
+            ' Set My.Settings.userHasOfficeThreeSixFive to True or False based on the
+            ' current state of checkboxUserHasO365.
+
+            If checkboxUserHasO365.Checked = True Then
+                If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
+                    MessageBox.Show("Note that your combination of Office 2010 and" & vbCrLf &
+                                    "Office 365 are untested and might not work properly.",
+                                    )
+                End If
+                My.Settings.userHasOfficeThreeSixFive = True
+            ElseIf checkboxUserHasO365.Checked = False Then
+                My.Settings.userHasOfficeThreeSixFive = False
+            End If
+
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
 
