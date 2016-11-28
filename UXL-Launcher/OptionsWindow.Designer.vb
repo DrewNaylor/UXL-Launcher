@@ -30,13 +30,14 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.labelOfficeVersionDescription = New System.Windows.Forms.Label()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
         Me.buttonClearTextbox = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -127,13 +128,32 @@ Partial Class aaformOptionsWindow
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.labelOfficeVersionDescription)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 274)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(911, 382)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "What version of Microsoft Office do you use?"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(176, 179)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 33)
+        Me.ComboBox1.TabIndex = 1
+        '
+        'labelOfficeVersionDescription
+        '
+        Me.labelOfficeVersionDescription.AutoSize = True
+        Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(66, 40)
+        Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
+        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(77, 25)
+        Me.labelOfficeVersionDescription.TabIndex = 0
+        Me.labelOfficeVersionDescription.Text = "Label1"
         '
         'groupboxOfficeLocation
         '
@@ -198,15 +218,6 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(70, 55)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Label1"
-        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -247,5 +258,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents textboxOfficeDrive As TextBox
     Friend WithEvents buttonClearTextbox As Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labelOfficeVersionDescription As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
