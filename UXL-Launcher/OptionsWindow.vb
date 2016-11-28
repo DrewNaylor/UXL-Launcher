@@ -265,13 +265,18 @@ Public Class aaformOptionsWindow
 #Region "Code that runs when the user clicks the 'Test Settings' button."
     Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
         MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
-                        "Afterward we will attempt to launch the Office Language Preferences" & vbCrLf &
-                        "application. If no message appears, assume that it worked." & vbCrLf &
-                        "If an error message appears saying something about File not Found," & vbCrLf &
-                        "you might need to change your settings. If the Office Language" & vbCrLf &
-                        "Preferences application appears, you can just close it." & vbCrLf &
-                        "The Options window will close when the Office Language Preferences" & vbCrLf &
-                        "window appears.")
+                        "" & vbCrLf &
+                        "Afterward we will attempt to launch the Office Language Preferences application." & vbCrLf &
+                        "" & vbCrLf &
+                        "If no message appears, assume that it worked." & vbCrLf &
+                        "" & vbCrLf &
+                        "If an error message appears saying something about File not Found, you might need to adjust your settings. " & vbCrLf &
+                        "" & vbCrLf &
+                        "If the Office Language Preferences application appears," & vbCrLf &
+                        "you can just close it." & vbCrLf &
+                        "" & vbCrLf &
+                        "The Options window will close when the Office Language Preferences window appears.",
+                        "UXL Settings Test", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
         buttonSaveSettings.PerformClick()
         LaunchApp.LaunchOfficeLangPrefs()
     End Sub
