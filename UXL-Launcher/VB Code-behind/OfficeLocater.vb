@@ -85,10 +85,14 @@ Public Class OfficeLocater
         cpuType()
 
         ' Then we need to combine them.
-        fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office" & officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\"
-        ' Make the public string equal to the private string.
-        fullLauncherCodeString = fullLauncherCodePrivateString
-
+        If My.Settings.userHasOfficeThreeSixFive = True Then
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" & My.Settings.userOfficeVersion & "\"
+            fullLauncherCodeString = fullLauncherCodePrivateString
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" & My.Settings.userOfficeVersion & "\"
+            ' Make the public string equal to the private string.
+            fullLauncherCodeString = fullLauncherCodePrivateString
+        End If
         ' Update the debug labels on the main window.
 
         ' Debug label for officeDriveLocation.
