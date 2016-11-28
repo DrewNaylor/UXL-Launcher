@@ -269,9 +269,11 @@ Public Class aaformOptionsWindow
                         "application. If no message appears, assume that it worked." & vbCrLf &
                         "If an error message appears saying something about File not Found," & vbCrLf &
                         "you might need to change your settings. If the Office Language" & vbCrLf &
-                        "Preferences application appears, you can just close it.")
+                        "Preferences application appears, you can just close it." & vbCrLf &
+                        "The Options window will close when the Office Language Preferences" & vbCrLf &
+                        "window appears.")
         buttonSaveSettings.PerformClick()
-
+        LaunchApp.LaunchOfficeLangPrefs()
     End Sub
 #End Region
 
