@@ -38,6 +38,7 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -128,6 +129,7 @@ Partial Class aaformOptionsWindow
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.labelOfficeVersionDescription)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 274)
@@ -141,7 +143,7 @@ Partial Class aaformOptionsWindow
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(414, 187)
+        Me.ComboBox1.Location = New System.Drawing.Point(444, 168)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 33)
         Me.ComboBox1.TabIndex = 1
@@ -218,6 +220,15 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(66, 171)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(360, 25)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "I use this version of Microsoft Office:"
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -260,4 +271,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents labelOfficeVersionDescription As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label1 As Label
 End Class
