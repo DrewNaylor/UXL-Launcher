@@ -108,7 +108,7 @@ Public Class aaformOptionsWindow
 #End Region
 
 
-#Region "Code that runs when the user typs stuff in the textboxOfficeDrive."
+#Region "Code that runs when the user types stuff in the textboxOfficeDrive."
     Private Sub textboxOfficeDrive_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textboxOfficeDrive.KeyPress
         ' This sub is to make sure that people are only entering letters. Credit goes to this post on Stack Overflow
         ' for this solution.  <http://stackoverflow.com/a/31161593>
@@ -204,19 +204,6 @@ Public Class aaformOptionsWindow
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
 
-
-            ' Update the debug labels on the main window.
-
-            ' Debug label for officeDriveLocation.
-            aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
-            ' Debug label for cpuTypeString.
-            aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
-            ' Debug label for officeInstallMethodString.
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & OfficeLocater.officeInstallMethodString
-            ' Debug label for userOfficeVersion.
-            aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
-            ' Debug textox for fullLauncherCodeString.
-            aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
             Me.Close()
         End If

@@ -91,6 +91,19 @@ Public Class OfficeLocater
         ' Make the public string equal to the private string.
         fullLauncherCodeString = fullLauncherCodePrivateString
 
+        ' Update the debug labels on the main window.
+
+        ' Debug label for officeDriveLocation.
+        aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
+        ' Debug label for cpuTypeString.
+        aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & cpuTypeString
+        ' Debug label for officeInstallMethodString.
+        aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & officeInstallMethodString
+        ' Debug label for userOfficeVersion.
+        aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+        ' Debug textox for fullLauncherCodeString.
+        aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = fullLauncherCodeString
+
     End Sub
 #End Region
 
