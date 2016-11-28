@@ -30,6 +30,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.checkboxUserHasO365 = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.labelOfficeVersionDescription = New System.Windows.Forms.Label()
@@ -129,6 +130,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
+        Me.groupboxOfficeVersion.Controls.Add(Me.checkboxUserHasO365)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeVersionDescription)
@@ -138,6 +140,16 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use?"
+        '
+        'checkboxUserHasO365
+        '
+        Me.checkboxUserHasO365.AutoSize = True
+        Me.checkboxUserHasO365.Location = New System.Drawing.Point(66, 212)
+        Me.checkboxUserHasO365.Name = "checkboxUserHasO365"
+        Me.checkboxUserHasO365.Size = New System.Drawing.Size(454, 29)
+        Me.checkboxUserHasO365.TabIndex = 3
+        Me.checkboxUserHasO365.Text = "I used Office 365 to install Microsoft Office."
+        Me.checkboxUserHasO365.UseVisualStyleBackColor = True
         '
         'labelUserHasThisOfficeVersion
         '
@@ -273,4 +285,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOfficeVersionDescription As Label
     Friend WithEvents comboboxOfficeVersionSelector As ComboBox
     Friend WithEvents labelUserHasThisOfficeVersion As Label
+    Friend WithEvents checkboxUserHasO365 As CheckBox
 End Class

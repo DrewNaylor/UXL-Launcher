@@ -48,9 +48,15 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Load the settings from My.Settings."
-        ' Load the user's settings when the Options window is opened.
+        ' Load the user's settings for officeDriveLocation when the Options window loads.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
+        ' Load the user's settings for userHasOfficeThreeSixFive when the Options window loads.
+        If My.Settings.userHasOfficeThreeSixFive = True Then
+            checkboxUserHasO365.Checked = True
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
+            checkboxUserHasO365.Checked = False
+        End If
 
 #End Region
 
