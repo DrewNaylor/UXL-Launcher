@@ -149,14 +149,51 @@ Public Class aaformOptionsWindow
             ' This space reserved for more settings.
             '
             '
+#Region "Determine whether or not the settings the user chose are potentially incompatible."
 
-            ' The sub this references is used to save the settings for the
-            ' comboboxOfficeVersionSelector and checkboxUserHasO365
-            incompatibleSettingsChecker()
+            ' If the Office Version Selector combobox is set to Office 2010 and the Office 365 checkbox is checked
+            ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
+            ' then tell the user that the combination isn't tested and might not work.
 
+            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
+                Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
+                MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
+                                "and installation method are untested and might not work properly." _
+                                , "Potentially incompatible settings detected!" _
+                                , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+#End Region
 
+#Region "Things to save to My.Settings."
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
+
+            ' My.Settings.userHasOfficeThreeSixFive will be set based on 
+            ' the .Checked state of the checkboxUserHasO365.
+            If checkboxUserHasO365.Checked = True Then
+                My.Settings.userHasOfficeThreeSixFive = True
+            ElseIf checkboxUserHasO365.Checked = False Then
+                My.Settings.userHasOfficeThreeSixFive = False
+            End If
+
+            ' Set My.Settings.userOfficeVersion to a string based on whatever
+            ' comboboxOfficeVersionSelector.Text is set to.
+            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
+                My.Settings.userOfficeVersion = "14"
+            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
+                My.Settings.userOfficeVersion = "15"
+            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
+                My.Settings.userOfficeVersion = "16"
+            End If
+#End Region
+
+#Region "This is where the settings get saved."
+            ' Save settings.
+            My.Settings.Save()
+            My.Settings.Reload()
+            MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+#End Region
+
 
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
@@ -204,49 +241,8 @@ Public Class aaformOptionsWindow
     ' current state of checkboxUserHasO365.
     Public Sub incompatibleSettingsChecker()
 
-        ' If the Office Version Selector combobox is set to Office 2010 and the Office 365 checkbox is checked
-        ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
-        ' then tell the user that the combination isn't tested and might not work.
-
-        If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
-                Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
-            MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
-                                "and installation method are untested and might not work properly." _
-                                , "Potentially incompatible settings detected!" _
-                                , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-            ' My.Settings.userHasOfficeThreeSixFive will be set based on 
-            ' the .Checked state of the checkboxUserHasO365.
-            If checkboxUserHasO365.Checked = True Then
-                My.Settings.userHasOfficeThreeSixFive = True
-            ElseIf checkboxUserHasO365.Checked = False Then
-                My.Settings.userHasOfficeThreeSixFive = False
-            End If
-
-            ' Set My.Settings.userOfficeVersion to a string based on whatever
-            ' comboboxOfficeVersionSelector.Text is set to.
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
-                My.Settings.userOfficeVersion = "14"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-                My.Settings.userOfficeVersion = "15"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
-                My.Settings.userOfficeVersion = "16"
-            End If
-
-
-            ' Save the settings.
-            settingsSaver()
-
-        End If
 
     End Sub
 #End Region
-#Region "This is where the settings get saved."
-    Public Sub settingsSaver()
-        ' Save settings.
-        My.Settings.Save()
-        My.Settings.Reload()
-        MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-    End Sub
-#End Region
+
 End Class
