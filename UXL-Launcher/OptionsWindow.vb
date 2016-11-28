@@ -197,12 +197,13 @@ Public Class aaformOptionsWindow
             ' Save settings.
             My.Settings.Save()
             My.Settings.Reload()
+            ' Update the fullLauncherCodeString.
+            OfficeLocater.combineStrings()
             MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
 
 
-            ' Update the fullLauncherCodeString.
-            OfficeLocater.combineStrings()
+
 
 
             Me.Close()
