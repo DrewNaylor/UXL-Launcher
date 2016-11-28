@@ -154,10 +154,15 @@ Public Class aaformOptionsWindow
             ' current state of checkboxUserHasO365.
 
             If checkboxUserHasO365.Checked = True Then
-                If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
-                    MessageBox.Show("Note that your combination of Office 2010 and" & vbCrLf &
-                                    "Office 365 are untested and might not work properly.",
-                                    )
+                If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
+                    Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
+                    If MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
+                                    "and installation method are untested and might not work properly." & vbCrLf &
+                                    "Are you sure you want to save?", "Potentially incompatible settings detected!" _
+                                    , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.Yes Then
+
+
+                    End If
                 End If
                 My.Settings.userHasOfficeThreeSixFive = True
             ElseIf checkboxUserHasO365.Checked = False Then
