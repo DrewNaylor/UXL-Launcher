@@ -83,7 +83,9 @@ Public Class aaformOptionsWindow
 
 #Region "Code that runs when the user typs stuff in the textboxOfficeDrive."
     Private Sub textboxOfficeDrive_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textboxOfficeDrive.KeyPress
-        ' This sub is to make sure that people are only entering letters.
+        ' This sub is to make sure that people are only entering letters. Credit goes to this post on Stack Overflow
+        ' for this solution.  <http://stackoverflow.com/a/31161593>
+        ' 
         If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
 
             'Display a message box when the user presses characters that aren't allowed.
