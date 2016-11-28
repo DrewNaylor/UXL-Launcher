@@ -41,11 +41,12 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
+        Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
-        Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
+        Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -59,13 +60,14 @@ Partial Class aaformOptionsWindow
         '
         Me.tableLayoutPanelOptionsWindow.ColumnCount = 4
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 490.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 497.0!))
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152.0!))
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159.0!))
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonDefaultSettings, 0, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 3, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonCancel, 2, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.tabcontrolOptionsWindow, 0, 0)
+        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonTestSettings, 1, 1)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
@@ -80,9 +82,9 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonDefaultSettings.AutoSize = True
         Me.buttonDefaultSettings.Location = New System.Drawing.Point(15, 732)
-        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(3, 3, 20, 5)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(3, 3, 15, 5)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
-        Me.buttonDefaultSettings.Size = New System.Drawing.Size(134, 45)
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(132, 45)
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
@@ -266,6 +268,17 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
         '
+        'radiobuttonCPUIsQBit
+        '
+        Me.radiobuttonCPUIsQBit.AutoSize = True
+        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(901, 321)
+        Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
+        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(412, 29)
+        Me.radiobuttonCPUIsQBit.TabIndex = 4
+        Me.radiobuttonCPUIsQBit.TabStop = True
+        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl."
+        Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
+        '
         'radiobuttonCPUIs64Bit
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
@@ -308,16 +321,16 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription.TabIndex = 0
         Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
         '
-        'radiobuttonCPUIsQBit
+        'buttonTestSettings
         '
-        Me.radiobuttonCPUIsQBit.AutoSize = True
-        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(901, 321)
-        Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
-        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(412, 29)
-        Me.radiobuttonCPUIsQBit.TabIndex = 4
-        Me.radiobuttonCPUIsQBit.TabStop = True
-        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl."
-        Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
+        Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.buttonTestSettings.Location = New System.Drawing.Point(165, 732)
+        Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(3, 3, 3, 5)
+        Me.buttonTestSettings.Name = "buttonTestSettings"
+        Me.buttonTestSettings.Size = New System.Drawing.Size(134, 45)
+        Me.buttonTestSettings.TabIndex = 4
+        Me.buttonTestSettings.Text = "Button1"
+        Me.buttonTestSettings.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -372,4 +385,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
     Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
+    Friend WithEvents buttonTestSettings As Button
 End Class
