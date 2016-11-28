@@ -33,17 +33,17 @@ Public Class LaunchApp
 
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel.
-        Process.Start(My.Settings.officeDriveLocation & ":\Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\EXCEL.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "EXCEL.EXE")
     End Sub
 
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft InfoPath.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\INFOPATH.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "INFOPATH.EXE")
     End Sub
 
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote.
-        Process.Start(My.Settings.officeDriveLocation & ":Program Files" & OfficeLocater.cpuTypeString & "\Microsoft Office" & OfficeLocater.officeInstallMethodString & "\Office" & My.Settings.userOfficeVersion & "\ONENOTE.EXE")
+        Process.Start(OfficeLocater.fullLauncherCodeString & "ONENOTE.EXE")
     End Sub
 
     Public Shared Sub LaunchOutlook()
