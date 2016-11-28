@@ -72,18 +72,21 @@ Public Class OfficeLocater
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
+
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
         End If
+
+
         ' Update the debug labels on the main window.
 
         ' Debug label for officeDriveLocation.
         aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
         ' Debug label for cpuTypeString.
         aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & cpuTypeString
-        ' Debug label for officeInstallMethodString.
+        ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
         aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & officeInstallMethodString
         ' Debug label for userOfficeVersion.
         aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
