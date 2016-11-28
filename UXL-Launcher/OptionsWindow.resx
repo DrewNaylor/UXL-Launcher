@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelCPUTypeDescription.Text" xml:space="preserve">
-    <value>Of the options below, please choose which edition of Windows you're using, 
-32-bit Windows or 64-bit Windows. As of 2016 most PCs built within the last 
-4 years use a Windows 64-bit. If you don't know, click the "Help Me!" button 
-below and look for "64-bit Operating System," or "32-bit Operating System."</value>
-  </data>
   <data name="labelOfficeVersionDescription.Text" xml:space="preserve">
     <value>Of the choices available in the dropdown box below, please select the version
 of Microsoft Office you use the most frequently. Check the checkbox below
@@ -134,5 +128,11 @@ Office 2010 and the Office 365 checkbox is unchecked.</value>
 are not permitted. Click the Clear Textbox button to clear the textbox.
 The most common drive Office is installed to is drive C. Drive C is the default
 for this setting.</value>
+  </data>
+  <data name="labelCPUTypeDescription.Text" xml:space="preserve">
+    <value>Of the options below, please choose which edition of Windows you're using, 
+32-bit Windows or 64-bit Windows. As of 2016 most PCs built within the last 
+4 years use a Windows 64-bit. If you don't know, click the "Help Me!" button 
+below and look for "64-bit Operating System," or "32-bit Operating System."</value>
   </data>
 </root>
