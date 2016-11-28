@@ -324,12 +324,13 @@ Partial Class aaformOptionsWindow
         'buttonTestSettings
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.buttonTestSettings.AutoSize = True
         Me.buttonTestSettings.Location = New System.Drawing.Point(165, 732)
         Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(3, 3, 3, 5)
         Me.buttonTestSettings.Name = "buttonTestSettings"
-        Me.buttonTestSettings.Size = New System.Drawing.Size(134, 45)
+        Me.buttonTestSettings.Size = New System.Drawing.Size(148, 45)
         Me.buttonTestSettings.TabIndex = 4
-        Me.buttonTestSettings.Text = "Button1"
+        Me.buttonTestSettings.Text = "Test Settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
