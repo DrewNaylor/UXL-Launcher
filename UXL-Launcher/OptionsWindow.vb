@@ -180,8 +180,7 @@ Public Class aaformOptionsWindow
 
             If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
                 Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
-                MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
-                                "and installation method are untested and might not work properly." _
+                MessageBox.Show("Note that the combination of the Microsoft Office version you chose and installation method are untested and might not work properly." _
                                 , "Potentially incompatible settings detected!" _
                                 , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
@@ -264,6 +263,8 @@ Public Class aaformOptionsWindow
 #End Region
 #Region "Code that runs when the user clicks the 'Test Settings' button."
     Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
+        ' When the user clicks the "Test Settings" button, tell them exactly what will happen
+        ' then save the settings and attempt to launch the Office Language Preferences.
         MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
                         "" & vbCrLf &
                         "Afterward we will attempt to launch the Office Language Preferences application." & vbCrLf &
