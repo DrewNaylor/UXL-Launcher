@@ -59,17 +59,15 @@ Public Class OfficeLocater
     ' The officeVer sub is used to give officeVersionString data.
     Public Shared Sub officeInst()
         ' Create a string called userOfficeInst which is only used in this sub.
-        Dim officeInstallMethodPrivateString As String
+
 
         ' If userHasOfficeThreeSixFive is set to True, then userOfficeInst is set to "\root" 
         ' and officeInstallMethodString is set to userOfficeInst as well. If it's False, then
         ' userOfficeInst is set to "".
         If My.Settings.userHasOfficeThreeSixFive = True Then
-            officeInstallMethodPrivateString = "\root"
-            officeInstallMethodString = officeInstallMethodPrivateString
+            officeInstallMethodString = "\root"
         ElseIf My.Settings.userHasOfficeThreeSixFive Then
-            officeInstallMethodPrivateString = ""
-            officeInstallMethodString = officeInstallMethodPrivateString
+            officeInstallMethodString = ""
         End If
     End Sub
 #End Region
