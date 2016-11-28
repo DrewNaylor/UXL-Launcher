@@ -57,9 +57,6 @@ Public Class aaformOptionsWindow
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             checkboxUserHasO365.Checked = False
         End If
-
-
-
 #End Region
 
 
