@@ -47,15 +47,22 @@ Public Class aaformOptionsWindow
         "main window TopMost: " & aaformMainWindow.TopMost
 #End Region
 
+#Region "Load the settings from My.Settings."
         ' Load the user's settings when the Options window is opened.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
+
+#End Region
+
+
+#Region "Set the DataSource of the comboboxOfficeVersionSelector to a string."
         ' Create the string for the comboboxOfficeVersionSelector and
         ' set the DataSource of the combobox to that string.
         Dim officeVersionsAvailableString As String() =
             New String() {"Microsoft Office 2010",
             "Microsoft Office 2013", "Microsoft Office 2016"}
         comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+#End Region
 
 
 
