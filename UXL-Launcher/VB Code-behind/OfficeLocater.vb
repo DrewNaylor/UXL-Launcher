@@ -27,8 +27,6 @@ Public Class OfficeLocater
 
     ' Create a public, shared string called cpuTypeString. This string is used in the app launch code when the user clicks the buttons.
     Public Shared cpuTypeString As String
-    ' Create a public, shared string called officeVersionString which is used in the app launch code when the user clicks the buttons.
-    Public Shared officeInstallMethodString As String
     ' Create a public, shared string called titlebarBitMode which is used to show whether or not the app is in "64-bit Mode" or "32-bit Mode."
     Public Shared titlebarBitModeString As String
     ' Create a public, shared string called fullLauncherCodeString which is used to combine all the other launcher code strings into one that's much shorter.
@@ -55,22 +53,7 @@ Public Class OfficeLocater
         End If
     End Sub
 #End Region
-#Region "officeInstallMethodString and officeInst sub."
-    ' The officeVer sub is used to give officeVersionString data.
-    Public Shared Sub officeInst()
-        ' Create a string called userOfficeInst which is only used in this sub.
 
-
-        ' If userHasOfficeThreeSixFive is set to True, then userOfficeInst is set to "\root" 
-        ' and officeInstallMethodString is set to userOfficeInst as well. If it's False, then
-        ' userOfficeInst is set to "".
-        If My.Settings.userHasOfficeThreeSixFive = True Then
-            officeInstallMethodString = "\root"
-        ElseIf My.Settings.userHasOfficeThreeSixFive Then
-            officeInstallMethodString = ""
-        End If
-    End Sub
-#End Region
 #End Region
 #Region "This code combines all the launcher strings into one string to make modification easier."
     ' With this sub I'll be able to shorten the length of the button_click event strings for the launcher buttons.
@@ -81,12 +64,13 @@ Public Class OfficeLocater
         ' What this does is take all the other strings above and put them into one string along with the "Program Files"
         ' and "Microsoft Office" directories.
         ' First we need to run the other subs.
-        officeInst()
         cpuType()
 
-        ' Then we need to combine them.
+        ' Then we need to combine them. However, if userHasOfficeThreeSixFive is True, we'll use one string but if
+        ' it's False we'll use the other string.
         If My.Settings.userHasOfficeThreeSixFive = True Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" & My.Settings.userOfficeVersion & "\"
+            ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" & My.Settings.userOfficeVersion & "\"
