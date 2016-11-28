@@ -150,24 +150,8 @@ Public Class aaformOptionsWindow
             '
             '
 
-            ' Set My.Settings.userHasOfficeThreeSixFive to True or False based on the
-            ' current state of checkboxUserHasO365.
-
-            If checkboxUserHasO365.Checked = True Then
-                If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
-                    Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
-                    If MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
-                                    "and installation method are untested and might not work properly." & vbCrLf &
-                                    "Are you sure you want to save?", "Potentially incompatible settings detected!" _
-                                    , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.Yes Then
 
 
-                    End If
-                End If
-                My.Settings.userHasOfficeThreeSixFive = True
-            ElseIf checkboxUserHasO365.Checked = False Then
-                My.Settings.userHasOfficeThreeSixFive = False
-            End If
 
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
@@ -214,6 +198,31 @@ Public Class aaformOptionsWindow
         ' Clear the OfficeDrive textbox and set focus to it.
         textboxOfficeDrive.Text = ""
         textboxOfficeDrive.Select()
+    End Sub
+#End Region
+
+#Region "Determine whether or not the settings the user chose are potentially incompatible."
+
+    ' Set My.Settings.userHasOfficeThreeSixFive to True or False based on the
+    ' current state of checkboxUserHasO365.
+    Public Sub incompatibleSettingsSub()
+
+        ' If the Office Version Selector combobox is set to Office 2010 and the Office 365 checkbox is checked
+        ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
+        ' then tell the user that the combination isn't tested and might not work.
+
+        If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
+                Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
+            If MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
+                                "and installation method are untested and might not work properly." & vbCrLf &
+                                "Are you sure you want to save?", "Potentially incompatible settings detected!" _
+                                , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.Yes Then
+                My.Settings.userHasOfficeThreeSixFive = True
+            ElseIf checkboxUserHasO365.Checked = False Then
+                My.Settings.userHasOfficeThreeSixFive = False
+            End If
+        End If
+
     End Sub
 #End Region
 End Class
