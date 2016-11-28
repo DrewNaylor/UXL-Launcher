@@ -266,7 +266,10 @@ Public Class aaformOptionsWindow
     Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
         MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
                         "Afterward we will attempt to launch the Office Language Preferences" & vbCrLf &
-                        "application. If no message appears, assume that it worked.")
+                        "application. If no message appears, assume that it worked." & vbCrLf &
+                        "If an error message appears saying something about File not Found," & vbCrLf &
+                        "you might need to change your settings. If the Office Language" & vbCrLf &
+                        "Preferences application appears, you can just close it.")
     End Sub
 #End Region
 
