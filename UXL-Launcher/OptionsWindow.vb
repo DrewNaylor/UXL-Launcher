@@ -218,12 +218,25 @@ Public Class aaformOptionsWindow
                                 "Are you sure you want to save?", "Potentially incompatible settings detected!" _
                                 , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.Yes Then
 
-
+                ' If the user clicks the "Yes" button, My.Settings.userHasOfficeThreeSixFive will be set based on 
+                ' the .Checked state of the checkboxUserHasO365.
                 If checkboxUserHasO365.Checked = True Then
                     My.Settings.userHasOfficeThreeSixFive = True
                 ElseIf checkboxUserHasO365.Checked = False Then
                     My.Settings.userHasOfficeThreeSixFive = False
                 End If
+
+                ' If the user clicked the "Yes" button
+                If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
+                    My.Settings.userOfficeVersion = "14.0"
+                ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
+                    My.Settings.userOfficeVersion = "15.0"
+                ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
+                    My.Settings.userOfficeVersion = "16.0"
+                End If
+
+
+
             End If
         End If
 
