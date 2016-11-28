@@ -150,16 +150,13 @@ Public Class aaformOptionsWindow
             '
             '
 
-
+            ' The sub this references is used to save the settings for the
+            ' comboboxOfficeVersionSelector and checkboxUserHasO365
+            incompatibleSettingsChecker()
 
 
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
-
-            ' Save settings.
-            My.Settings.Save()
-            My.Settings.Reload()
-            MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
@@ -205,7 +202,7 @@ Public Class aaformOptionsWindow
 
     ' Set My.Settings.userHasOfficeThreeSixFive to True or False based on the
     ' current state of checkboxUserHasO365.
-    Public Sub incompatibleSettingsSub()
+    Public Sub incompatibleSettingsChecker()
 
         ' If the Office Version Selector combobox is set to Office 2010 and the Office 365 checkbox is checked
         ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
@@ -216,7 +213,9 @@ Public Class aaformOptionsWindow
             If MessageBox.Show("Note that the combination of the Microsoft Office version you chose" & vbCrLf &
                                 "and installation method are untested and might not work properly." & vbCrLf &
                                 "Are you sure you want to save?", "Potentially incompatible settings detected!" _
-                                , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.Yes Then
+                                , MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) <> MsgBoxResult.No Then
+                Exit Sub
+
 
                 ' If the user clicks the "Yes" button, My.Settings.userHasOfficeThreeSixFive will be set based on 
                 ' the .Checked state of the checkboxUserHasO365.
@@ -228,18 +227,28 @@ Public Class aaformOptionsWindow
 
                 ' If the user clicked the "Yes" button
                 If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
-                    My.Settings.userOfficeVersion = "14.0"
+                    My.Settings.userOfficeVersion = "14"
                 ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-                    My.Settings.userOfficeVersion = "15.0"
+                    My.Settings.userOfficeVersion = "15"
                 ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
-                    My.Settings.userOfficeVersion = "16.0"
+                    My.Settings.userOfficeVersion = "16"
                 End If
 
 
+                ' Save the settings.
+                settingsSaver()
 
             End If
         End If
 
+    End Sub
+#End Region
+#Region "This is where the settings get saved."
+    Public Sub settingsSaver()
+        ' Save settings.
+        My.Settings.Save()
+        My.Settings.Reload()
+        MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
     End Sub
 #End Region
 End Class

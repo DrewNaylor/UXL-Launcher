@@ -70,7 +70,6 @@ Partial Class aaformMainWindow
         Me.pictureSharepointIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxExtraApps = New System.Windows.Forms.GroupBox()
         Me.debugTextboxForFullLauncherCodeString = New System.Windows.Forms.TextBox()
-        Me.debugLabelForFullLauncherCodeString = New System.Windows.Forms.Label()
         Me.buttonRunOneNoteQuickLaunch = New System.Windows.Forms.Button()
         Me.pictureQueryIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunQuery = New System.Windows.Forms.Button()
@@ -539,7 +538,6 @@ Partial Class aaformMainWindow
         '
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxExtraApps.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
-        Me.groupboxExtraApps.Controls.Add(Me.debugLabelForFullLauncherCodeString)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunOneNoteQuickLaunch)
         Me.groupboxExtraApps.Controls.Add(Me.pictureQueryIcon)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunQuery)
@@ -559,21 +557,12 @@ Partial Class aaformMainWindow
         '
         'debugTextboxForFullLauncherCodeString
         '
-        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(0, 626)
+        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(0, 599)
         Me.debugTextboxForFullLauncherCodeString.Multiline = True
         Me.debugTextboxForFullLauncherCodeString.Name = "debugTextboxForFullLauncherCodeString"
         Me.debugTextboxForFullLauncherCodeString.Size = New System.Drawing.Size(380, 98)
         Me.debugTextboxForFullLauncherCodeString.TabIndex = 27
         Me.debugTextboxForFullLauncherCodeString.Text = "debugTextboxForFullLauncherCodeString"
-        '
-        'debugLabelForFullLauncherCodeString
-        '
-        Me.debugLabelForFullLauncherCodeString.AutoSize = True
-        Me.debugLabelForFullLauncherCodeString.Location = New System.Drawing.Point(14, 598)
-        Me.debugLabelForFullLauncherCodeString.Name = "debugLabelForFullLauncherCodeString"
-        Me.debugLabelForFullLauncherCodeString.Size = New System.Drawing.Size(389, 25)
-        Me.debugLabelForFullLauncherCodeString.TabIndex = 26
-        Me.debugLabelForFullLauncherCodeString.Text = "debugLabelForFullLauncherCodeString"
         '
         'buttonRunOneNoteQuickLaunch
         '
@@ -757,6 +746,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForofficeInstallMethodString As Label
     Friend WithEvents debugLabelForuserOfficeVersion As Label
     Friend WithEvents debugLabelForofficeDriveLocation As Label
-    Friend WithEvents debugLabelForFullLauncherCodeString As Label
     Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
 End Class
