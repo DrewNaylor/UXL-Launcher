@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelOfficeLocationDescription.Text" xml:space="preserve">
+    <value>Please enter the drive you installed Microsoft Office to below. Special characters
+are not permitted. Click the Clear Textbox button to clear the textbox.
+The most common drive Office is installed to is drive C. Drive C is the default
+for this setting.</value>
+  </data>
 </root>

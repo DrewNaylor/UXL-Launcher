@@ -22,21 +22,25 @@ Partial Class aaformOptionsWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformOptionsWindow))
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
         Me.buttonClearTextbox = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.groupboxOfficeLocation.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -111,6 +115,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpageGeneral
         '
+        Me.tabpageGeneral.Controls.Add(Me.GroupBox1)
         Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeLocation)
         Me.tabpageGeneral.Location = New System.Drawing.Point(8, 39)
         Me.tabpageGeneral.Name = "tabpageGeneral"
@@ -119,6 +124,16 @@ Partial Class aaformOptionsWindow
         Me.tabpageGeneral.TabIndex = 0
         Me.tabpageGeneral.Text = "General"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 274)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(911, 382)
+        Me.GroupBox1.TabIndex = 1
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "What version of Microsoft Office do you use?"
         '
         'groupboxOfficeLocation
         '
@@ -136,7 +151,7 @@ Partial Class aaformOptionsWindow
         'buttonClearTextbox
         '
         Me.buttonClearTextbox.AutoSize = True
-        Me.buttonClearTextbox.Location = New System.Drawing.Point(462, 128)
+        Me.buttonClearTextbox.Location = New System.Drawing.Point(502, 154)
         Me.buttonClearTextbox.Name = "buttonClearTextbox"
         Me.buttonClearTextbox.Size = New System.Drawing.Size(156, 45)
         Me.buttonClearTextbox.TabIndex = 3
@@ -146,7 +161,7 @@ Partial Class aaformOptionsWindow
         'textboxOfficeDrive
         '
         Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.textboxOfficeDrive.Location = New System.Drawing.Point(374, 135)
+        Me.textboxOfficeDrive.Location = New System.Drawing.Point(414, 161)
         Me.textboxOfficeDrive.MaxLength = 1
         Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
         Me.textboxOfficeDrive.ShortcutsEnabled = False
@@ -158,7 +173,7 @@ Partial Class aaformOptionsWindow
         '
         Me.labelOfficeInstalledToDrive.AutoSize = True
         Me.labelOfficeInstalledToDrive.ForeColor = System.Drawing.Color.Blue
-        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(26, 138)
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(66, 164)
         Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
         Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(342, 25)
         Me.labelOfficeInstalledToDrive.TabIndex = 1
@@ -167,12 +182,11 @@ Partial Class aaformOptionsWindow
         'labelOfficeLocationDescription
         '
         Me.labelOfficeLocationDescription.AutoSize = True
-        Me.labelOfficeLocationDescription.Location = New System.Drawing.Point(21, 39)
+        Me.labelOfficeLocationDescription.Location = New System.Drawing.Point(66, 40)
         Me.labelOfficeLocationDescription.Name = "labelOfficeLocationDescription"
-        Me.labelOfficeLocationDescription.Size = New System.Drawing.Size(597, 75)
+        Me.labelOfficeLocationDescription.Size = New System.Drawing.Size(781, 100)
         Me.labelOfficeLocationDescription.TabIndex = 0
-        Me.labelOfficeLocationDescription.Text = "Please enter the drive you installed Microsoft Office to below." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Special characte" &
-    "rs are not permitted. Click the Clear Textbox" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "button to clear the textbox."
+        Me.labelOfficeLocationDescription.Text = resources.GetString("labelOfficeLocationDescription.Text")
         '
         'tabpageAdvanced
         '
@@ -183,6 +197,15 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(70, 55)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(77, 25)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Label1"
         '
         'aaformOptionsWindow
         '
@@ -203,6 +226,8 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.PerformLayout()
         Me.tabcontrolOptionsWindow.ResumeLayout(False)
         Me.tabpageGeneral.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.groupboxOfficeLocation.ResumeLayout(False)
         Me.groupboxOfficeLocation.PerformLayout()
         Me.ResumeLayout(False)
@@ -221,4 +246,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOfficeInstalledToDrive As Label
     Friend WithEvents textboxOfficeDrive As TextBox
     Friend WithEvents buttonClearTextbox As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label1 As Label
 End Class
