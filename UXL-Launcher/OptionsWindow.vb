@@ -137,6 +137,16 @@ Public Class aaformOptionsWindow
     Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
         ' Reset the "Office Install Drive" to drive C.
         textboxOfficeDrive.Text = "C"
+
+        ' Reset the Office Version Selector to Office 2010.
+        comboboxOfficeVersionSelector.Text = "Microsoft Office 2010"
+
+        ' Reset the Office 365 checkbox to unchecked.
+        checkboxUserHasO365.Checked = False
+
+        ' Reset the CPUType radio buttons to 64-bit.
+        radiobuttonCPUIs64Bit.Checked = True
+
         '
         ' This space reserved for more settings.
         '
