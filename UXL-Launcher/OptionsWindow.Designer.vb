@@ -43,6 +43,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -250,6 +252,8 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
+        Me.groupboxCPUType.Controls.Add(Me.RadioButton2)
+        Me.groupboxCPUType.Controls.Add(Me.RadioButton1)
         Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(6, 6)
@@ -261,7 +265,7 @@ Partial Class aaformOptionsWindow
         '
         'buttonHelpMeCPUType
         '
-        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(202, 258)
+        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(721, 304)
         Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
         Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(185, 66)
         Me.buttonHelpMeCPUType.TabIndex = 1
@@ -276,6 +280,28 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription.Size = New System.Drawing.Size(742, 100)
         Me.labelCPUTypeDescription.TabIndex = 0
         Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(66, 164)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(173, 29)
+        Me.RadioButton1.TabIndex = 2
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "RadioButton1"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(66, 200)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(173, 29)
+        Me.RadioButton2.TabIndex = 3
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "RadioButton2"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -327,4 +353,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxCPUType As GroupBox
     Friend WithEvents labelCPUTypeDescription As Label
     Friend WithEvents buttonHelpMeCPUType As Button
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
 End Class
