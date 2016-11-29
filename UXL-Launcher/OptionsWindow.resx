@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelOfficeVersionDescription.Text" xml:space="preserve">
-    <value>Of the choices available in the dropdown box below, please select the version
-of Microsoft Office you use the most frequently. Check the checkbox below
-if you used Office 365 to install Office. By default the dropdown box is set to 
-Office 2010 and the Office 365 checkbox is unchecked.</value>
-  </data>
-  <data name="labelOfficeLocationDescription.Text" xml:space="preserve">
-    <value>Please enter the drive you installed Microsoft Office to below. Special characters
-are not permitted. Click the Clear Textbox button to clear the textbox.
-The most common drive Office is installed to is drive C. Drive C is the default
-for this setting.</value>
-  </data>
   <data name="labelCPUTypeDescription.Text" xml:space="preserve">
     <value>Of the options below, please choose which edition of Windows you're using, 
 32-bit Windows or 64-bit Windows. As of 2016 most PCs built within the last 

@@ -106,6 +106,7 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonCancel.AutoSize = True
+        Me.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.buttonCancel.Location = New System.Drawing.Point(336, 366)
         Me.buttonCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonCancel.Name = "buttonCancel"
@@ -191,12 +192,13 @@ Partial Class aaformOptionsWindow
         'labelOfficeVersionDescription
         '
         Me.labelOfficeVersionDescription.AutoSize = True
-        Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(33, 20)
+        Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(69, 28)
         Me.labelOfficeVersionDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
-        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(374, 52)
+        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(318, 26)
         Me.labelOfficeVersionDescription.TabIndex = 0
-        Me.labelOfficeVersionDescription.Text = resources.GetString("labelOfficeVersionDescription.Text")
+        Me.labelOfficeVersionDescription.Text = "Choose the version of Microsoft Office you use from the dropdown" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "box and check t" &
+    "he checkbox if you installed Office 365."
         '
         'groupboxOfficeLocation
         '
@@ -250,12 +252,12 @@ Partial Class aaformOptionsWindow
         'labelOfficeLocationDescription
         '
         Me.labelOfficeLocationDescription.AutoSize = True
-        Me.labelOfficeLocationDescription.Location = New System.Drawing.Point(33, 20)
+        Me.labelOfficeLocationDescription.Location = New System.Drawing.Point(65, 34)
         Me.labelOfficeLocationDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeLocationDescription.Name = "labelOfficeLocationDescription"
-        Me.labelOfficeLocationDescription.Size = New System.Drawing.Size(385, 52)
+        Me.labelOfficeLocationDescription.Size = New System.Drawing.Size(295, 13)
         Me.labelOfficeLocationDescription.TabIndex = 0
-        Me.labelOfficeLocationDescription.Text = resources.GetString("labelOfficeLocationDescription.Text")
+        Me.labelOfficeLocationDescription.Text = "Enter the drive you installed Microsoft Office to in the textbox."
         '
         'tabpageAdvanced
         '
