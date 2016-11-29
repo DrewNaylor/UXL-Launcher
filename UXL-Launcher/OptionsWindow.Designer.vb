@@ -359,6 +359,7 @@ Partial Class aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.CancelButton = Me.buttonCancel
         Me.ClientSize = New System.Drawing.Size(485, 394)
         Me.Controls.Add(Me.tableLayoutPanelOptionsWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
