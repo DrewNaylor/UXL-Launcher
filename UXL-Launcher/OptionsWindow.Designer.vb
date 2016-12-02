@@ -33,7 +33,6 @@ Partial Class aaformOptionsWindow
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
-        Me.labelOfficeVersionDescription = New System.Windows.Forms.Label()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
         Me.buttonClearTextbox = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
@@ -137,7 +136,6 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
-        Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeVersionDescription)
         Me.groupboxOfficeVersion.Location = New System.Drawing.Point(6, 274)
         Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(4)
         Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
@@ -150,7 +148,7 @@ Partial Class aaformOptionsWindow
         'checkboxMSIInstallMethod
         '
         Me.checkboxMSIInstallMethod.AutoSize = True
-        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(71, 249)
+        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(71, 185)
         Me.checkboxMSIInstallMethod.Name = "checkboxMSIInstallMethod"
         Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(212, 29)
         Me.checkboxMSIInstallMethod.TabIndex = 4
@@ -160,7 +158,7 @@ Partial Class aaformOptionsWindow
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(71, 213)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(71, 149)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(4)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(273, 29)
@@ -171,7 +169,7 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 133)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 69)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
         Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(360, 25)
@@ -182,22 +180,11 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(71, 162)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(71, 98)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(272, 33)
         Me.comboboxOfficeVersionSelector.TabIndex = 1
-        '
-        'labelOfficeVersionDescription
-        '
-        Me.labelOfficeVersionDescription.AutoSize = True
-        Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(247, 264)
-        Me.labelOfficeVersionDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
-        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(529, 50)
-        Me.labelOfficeVersionDescription.TabIndex = 0
-        Me.labelOfficeVersionDescription.Text = "Choose the apropriate version and installation method" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "you used to install Micros" &
-    "oft Office."
         '
         'groupboxOfficeLocation
         '
@@ -412,7 +399,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents textboxOfficeDrive As TextBox
     Friend WithEvents buttonClearTextbox As Button
     Friend WithEvents groupboxOfficeVersion As GroupBox
-    Friend WithEvents labelOfficeVersionDescription As Label
     Friend WithEvents comboboxOfficeVersionSelector As ComboBox
     Friend WithEvents labelUserHasThisOfficeVersion As Label
     Friend WithEvents checkboxO365InstallMethod As CheckBox

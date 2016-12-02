@@ -294,10 +294,10 @@ Public Class aaformOptionsWindow
         ' checkbox and enable the Office 365 install method checkbox.
         If comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
             checkboxO365InstallMethod.Enabled = False
-            checkboxMSIInstallMethod.Show()
+            checkboxMSIInstallMethod.Enabled = True
         Else
             checkboxO365InstallMethod.Enabled = True
-            checkboxMSIInstallMethod.Hide()
+            checkboxMSIInstallMethod.Enabled = False
         End If
     End Sub
 #End Region
