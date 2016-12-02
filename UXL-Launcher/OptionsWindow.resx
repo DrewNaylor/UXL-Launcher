@@ -129,7 +129,4 @@
 4 years use a Windows 64-bit. If you don't know, click the "Help Me!" button 
 below and look for "64-bit Operating System," or "32-bit Operating System."</value>
   </data>
-  <metadata name="tooltipMSIInstallMethodWorkaround.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
