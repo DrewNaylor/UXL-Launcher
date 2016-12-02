@@ -48,15 +48,17 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Load the settings from My.Settings."
-        ' Load the user's settings for officeDriveLocation when the Options window loads.
+        ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
-        ' Load the user's settings for userHasOfficeThreeSixFive when the Options window loads.
+        ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
         If My.Settings.userHasOfficeThreeSixFive = True Then
             checkboxO365InstallMethod.Checked = True
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             checkboxO365InstallMethod.Checked = False
         End If
+
+        ' Load the user's settings for My.Settings.installedViaMSIPackage
 #End Region
 
 
