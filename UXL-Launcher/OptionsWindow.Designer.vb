@@ -47,6 +47,7 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -132,6 +133,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
+        Me.groupboxOfficeVersion.Controls.Add(Me.Label1)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxMSIInstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
@@ -148,7 +150,7 @@ Partial Class aaformOptionsWindow
         'checkboxMSIInstallMethod
         '
         Me.checkboxMSIInstallMethod.AutoSize = True
-        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(71, 185)
+        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(71, 234)
         Me.checkboxMSIInstallMethod.Name = "checkboxMSIInstallMethod"
         Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(212, 29)
         Me.checkboxMSIInstallMethod.TabIndex = 4
@@ -158,7 +160,7 @@ Partial Class aaformOptionsWindow
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(71, 149)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(71, 198)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(4)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(273, 29)
@@ -355,6 +357,15 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(66, 169)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(406, 25)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Your Microsoft Office installation method:"
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -410,4 +421,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
     Friend WithEvents checkboxMSIInstallMethod As CheckBox
+    Friend WithEvents Label1 As Label
 End Class
