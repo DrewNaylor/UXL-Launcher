@@ -154,6 +154,9 @@ Public Class aaformOptionsWindow
         ' Reset the CPUType radio buttons to 64-bit.
         radiobuttonCPUIs64Bit.Checked = True
 
+        ' Reset the MSI Install Method to unchecked.
+        checkboxMSIInstallMethod.Checked = False
+
         '
         ' This space reserved for more settings.
         '
@@ -279,6 +282,7 @@ Public Class aaformOptionsWindow
         Process.Start("control.exe", "system")
     End Sub
 #End Region
+
 #Region "Code that runs when the user clicks the 'Test Settings' button."
     Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
         ' When the user clicks the "Test Settings" button, tell them exactly what will happen
