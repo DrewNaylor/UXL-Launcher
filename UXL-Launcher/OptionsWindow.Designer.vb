@@ -29,6 +29,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.checkboxMSIInstallMethod = New System.Windows.Forms.CheckBox()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
@@ -47,7 +48,6 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -146,6 +146,15 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(66, 169)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(389, 25)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "My Microsoft Office installation method:"
         '
         'checkboxMSIInstallMethod
         '
@@ -356,15 +365,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 169)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(406, 25)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Your Microsoft Office installation method:"
         '
         'aaformOptionsWindow
         '
