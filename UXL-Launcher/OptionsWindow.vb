@@ -200,6 +200,11 @@ Public Class aaformOptionsWindow
 
             ' My.Settings.installedViaMSIPackage will be set based on
             ' the .Checked state of the checkboxMSIInstallMethod.
+            If checkboxMSIInstallMethod.Checked = True Then
+                My.Settings.installedViaMSIPackage = True
+            ElseIf checkboxMSIInstallMethod.Checked = False Then
+                My.Settings.installedViaMSIPackage = False
+            End If
 
             ' Set My.Settings.userOfficeVersion to a string based on whatever
             ' comboboxOfficeVersionSelector.Text is set to.
