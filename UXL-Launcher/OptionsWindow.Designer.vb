@@ -182,7 +182,7 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(444, 168)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(434, 164)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(272, 33)
@@ -217,10 +217,11 @@ Partial Class aaformOptionsWindow
         'buttonClearTextbox
         '
         Me.buttonClearTextbox.AutoSize = True
-        Me.buttonClearTextbox.Location = New System.Drawing.Point(502, 154)
+        Me.buttonClearTextbox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.buttonClearTextbox.Location = New System.Drawing.Point(471, 158)
         Me.buttonClearTextbox.Margin = New System.Windows.Forms.Padding(4)
         Me.buttonClearTextbox.Name = "buttonClearTextbox"
-        Me.buttonClearTextbox.Size = New System.Drawing.Size(312, 70)
+        Me.buttonClearTextbox.Size = New System.Drawing.Size(156, 35)
         Me.buttonClearTextbox.TabIndex = 3
         Me.buttonClearTextbox.Text = "Clear Textbox"
         Me.buttonClearTextbox.UseVisualStyleBackColor = True
