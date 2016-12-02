@@ -68,7 +68,7 @@ Public Class OfficeLocater
 
         ' Then we need to combine them. However, if userHasOfficeThreeSixFive is True, we'll use one string but if
         ' it's False we'll use the other string.
-        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion IsNot "15" Then
+        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "14" Or My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
@@ -80,7 +80,7 @@ Public Class OfficeLocater
             fullLauncherCodeString = fullLauncherCodePrivateString
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string.
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "14" Or My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
