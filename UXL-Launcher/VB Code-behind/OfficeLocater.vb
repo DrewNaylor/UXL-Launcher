@@ -72,6 +72,10 @@ Public Class OfficeLocater
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
+            ' However, if the Office version is set to Office 2013 and the user didn't install via MSI,
+            ' we'll construct a different launcher code.
+        ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.installedViaMSIPackage = False Then
+
 
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" & My.Settings.userOfficeVersion & "\"
