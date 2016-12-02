@@ -145,33 +145,33 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.Size = New System.Drawing.Size(912, 374)
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
-        Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use?"
+        Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
         '
         'checkboxMSIInstallMethod
         '
         Me.checkboxMSIInstallMethod.AutoSize = True
-        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(66, 249)
+        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(71, 249)
         Me.checkboxMSIInstallMethod.Name = "checkboxMSIInstallMethod"
-        Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(218, 29)
+        Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(212, 29)
         Me.checkboxMSIInstallMethod.TabIndex = 4
-        Me.checkboxMSIInstallMethod.Text = "I installed via MSI."
+        Me.checkboxMSIInstallMethod.Text = "I installed via MSI"
         Me.checkboxMSIInstallMethod.UseVisualStyleBackColor = True
         '
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(66, 212)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(71, 213)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(4)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(279, 29)
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(273, 29)
         Me.checkboxO365InstallMethod.TabIndex = 3
-        Me.checkboxO365InstallMethod.Text = "I installed via Office 365."
+        Me.checkboxO365InstallMethod.Text = "I installed via Office 365"
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
         '
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 172)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 133)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
         Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(360, 25)
@@ -182,7 +182,7 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(434, 164)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(71, 162)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(272, 33)
@@ -191,7 +191,7 @@ Partial Class aaformOptionsWindow
         'labelOfficeVersionDescription
         '
         Me.labelOfficeVersionDescription.AutoSize = True
-        Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(138, 56)
+        Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(247, 264)
         Me.labelOfficeVersionDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
         Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(529, 50)

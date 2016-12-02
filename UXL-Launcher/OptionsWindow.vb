@@ -214,7 +214,7 @@ Public Class aaformOptionsWindow
             ElseIf radiobuttonCPUIs64Bit.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = True
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
-                MessageBox.Show("Why do you have a quantum CPU?", "Q-Bits don't exist for consumers yet.", MessageBoxButtons.OK,
+                MessageBox.Show("Why do you have a quantum CPU?", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
                 If My.Settings.cpuIsSixtyFourBit = True Then
                     radiobuttonCPUIs64Bit.Checked = True
