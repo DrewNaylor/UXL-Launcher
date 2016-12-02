@@ -82,7 +82,8 @@ Public Class OfficeLocater
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string.
         ElseIf My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "14" _
-            Or My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "16" Then
+            Or My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "16" _
+            Or My.Settings.installedViaMSIPackage = True And My.Settings.userOfficeVersion = "15" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" _
             & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
