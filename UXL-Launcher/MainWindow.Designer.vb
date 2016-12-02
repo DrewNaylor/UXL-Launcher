@@ -536,6 +536,7 @@ Partial Class aaformMainWindow
         '
         'groupboxExtraApps
         '
+        Me.groupboxExtraApps.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxExtraApps.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunOneNoteQuickLaunch)
