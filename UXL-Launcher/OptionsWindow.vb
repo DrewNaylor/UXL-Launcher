@@ -286,4 +286,10 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
+#Region "Workaround Microsoft's weird decision to put Office 2013 C2R in a different folder from MSI."
+    Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
+
+    End Sub
+#End Region
+
 End Class
