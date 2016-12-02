@@ -22,6 +22,7 @@ Partial Class aaformOptionsWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformOptionsWindow))
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
@@ -29,7 +30,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.labelOfficeInstallMethodDescription = New System.Windows.Forms.Label()
         Me.checkboxMSIInstallMethod = New System.Windows.Forms.CheckBox()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
@@ -48,6 +49,7 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
+        Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -133,7 +135,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
-        Me.groupboxOfficeVersion.Controls.Add(Me.Label1)
+        Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeInstallMethodDescription)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxMSIInstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
@@ -147,14 +149,14 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
         '
-        'Label1
+        'labelOfficeInstallMethodDescription
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(66, 169)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(389, 25)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "My Microsoft Office installation method:"
+        Me.labelOfficeInstallMethodDescription.AutoSize = True
+        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(66, 169)
+        Me.labelOfficeInstallMethodDescription.Name = "labelOfficeInstallMethodDescription"
+        Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(389, 25)
+        Me.labelOfficeInstallMethodDescription.TabIndex = 5
+        Me.labelOfficeInstallMethodDescription.Text = "My Microsoft Office installation method:"
         '
         'checkboxMSIInstallMethod
         '
@@ -164,6 +166,8 @@ Partial Class aaformOptionsWindow
         Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(212, 29)
         Me.checkboxMSIInstallMethod.TabIndex = 4
         Me.checkboxMSIInstallMethod.Text = "I installed via MSI"
+        Me.tooltipMSIInstallMethodWorkaround.SetToolTip(Me.checkboxMSIInstallMethod, "This option is only used when Office 2013 is chosen above." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Leave this unchecked " &
+        "if you don't know what the MSI install" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "method for Microsoft Office is.")
         Me.checkboxMSIInstallMethod.UseVisualStyleBackColor = True
         '
         'checkboxO365InstallMethod
@@ -421,5 +425,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
     Friend WithEvents checkboxMSIInstallMethod As CheckBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labelOfficeInstallMethodDescription As Label
+    Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
 End Class
