@@ -66,18 +66,16 @@ Public Class OfficeLocater
         ' First we need to run the other subs.
         cpuType()
 
-        ' Then we need to combine them. However, if userHasOfficeThreeSixFive is True, we'll use one string but if
-        ' it's False we'll use the other string.
-        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "15" _
-            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "14" _
+        ' Then we need to combine them. First up is the user installed via Office 365 and not via MSI package.
+        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "14" _
             Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" _
                 & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
 
-            ' However, if the Office version is set to Office 2013 and the user didn't install via MSI,
-            ' we'll construct a different launcher code.
+            ' If the user installed specifically Office 2013 and they didn't use an MSI package, then we have a special 
+            ' string for that install method.
         ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.installedViaMSIPackage = False Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\Root\Office15"
             fullLauncherCodeString = fullLauncherCodePrivateString
