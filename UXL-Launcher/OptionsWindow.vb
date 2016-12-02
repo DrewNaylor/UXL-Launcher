@@ -59,6 +59,11 @@ Public Class aaformOptionsWindow
         End If
 
         ' Load the user's settings for My.Settings.installedViaMSIPackage
+        If My.Settings.installedViaMSIPackage = True Then
+            checkboxMSIInstallMethod.Checked = True
+        ElseIf My.Settings.installedViaMSIPackage = False Then
+            checkboxMSIInstallMethod.Checked = False
+        End If
 #End Region
 
 
