@@ -43,6 +43,8 @@ More information to come in the future! In the meantime, please check the reposi
 
 # Known issues.
 
+[See all known issues.](https://github.com/DrewNaylor/UXL-Launcher/labels/known%20issue)
+
 - Launching Office 2013 installed via Office 365 on a 64-bit computer requires UXL Launcher to be set to 32-bit Windows. [(issue #43)](https://github.com/DrewNaylor/UXL-Launcher/issues/43)
 
 # Required software.
