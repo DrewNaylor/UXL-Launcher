@@ -67,8 +67,8 @@ Public Class OfficeLocater
         cpuType()
 
         ' Then we need to combine them. First up is the user installed via Office 365 and not via MSI package.
-        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "14" _
-            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "16" Then
+        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "14" _
+            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" _
                 & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
