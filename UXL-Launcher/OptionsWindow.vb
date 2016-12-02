@@ -53,9 +53,9 @@ Public Class aaformOptionsWindow
 
         ' Load the user's settings for userHasOfficeThreeSixFive when the Options window loads.
         If My.Settings.userHasOfficeThreeSixFive = True Then
-            checkboxUserHasO365.Checked = True
+            checkboxO365InstallMethod.Checked = True
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            checkboxUserHasO365.Checked = False
+            checkboxO365InstallMethod.Checked = False
         End If
 #End Region
 
@@ -142,7 +142,7 @@ Public Class aaformOptionsWindow
         comboboxOfficeVersionSelector.Text = "Microsoft Office 2010"
 
         ' Reset the Office 365 checkbox to unchecked.
-        checkboxUserHasO365.Checked = False
+        checkboxO365InstallMethod.Checked = False
 
         ' Reset the CPUType radio buttons to 64-bit.
         radiobuttonCPUIs64Bit.Checked = True
@@ -178,8 +178,8 @@ Public Class aaformOptionsWindow
             ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
             ' then tell the user that the combination isn't tested and might not work.
 
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxUserHasO365.Checked = True _
-                Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxUserHasO365.Checked = False Then
+            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxO365InstallMethod.Checked = True _
+                Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxO365InstallMethod.Checked = False Then
                 MessageBox.Show("Note that the combination of the Microsoft Office version you chose and installation method are untested and might not work properly." _
                                 , "Potentially incompatible settings detected!" _
                                 , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -192,9 +192,9 @@ Public Class aaformOptionsWindow
 
             ' My.Settings.userHasOfficeThreeSixFive will be set based on 
             ' the .Checked state of the checkboxUserHasO365.
-            If checkboxUserHasO365.Checked = True Then
+            If checkboxO365InstallMethod.Checked = True Then
                 My.Settings.userHasOfficeThreeSixFive = True
-            ElseIf checkboxUserHasO365.Checked = False Then
+            ElseIf checkboxO365InstallMethod.Checked = False Then
                 My.Settings.userHasOfficeThreeSixFive = False
             End If
 
