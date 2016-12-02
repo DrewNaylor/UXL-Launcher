@@ -59,9 +59,9 @@ Public Class aaformOptionsWindow
         End If
 
         ' Load the user's settings for My.Settings.installedViaMSIPackage.
-        If My.Settings.installedViaMSIPackage = True And My.Settings.msiCheckboxDisabled = False Then
+        If My.Settings.installedViaMSIPackage = True Then
             checkboxMSIInstallMethod.Checked = True
-        ElseIf My.Settings.installedViaMSIPackage = False And My.Settings.msiCheckboxDisabled = True Then
+        ElseIf My.Settings.installedViaMSIPackage = False Then
             checkboxMSIInstallMethod.Checked = False
         End If
 #End Region
@@ -209,10 +209,8 @@ Public Class aaformOptionsWindow
             ' the .Checked state of the checkboxMSIInstallMethod.
             If checkboxMSIInstallMethod.Checked = True Then
                 My.Settings.installedViaMSIPackage = True
-                My.Settings.msiCheckboxDisabled = False
             ElseIf checkboxMSIInstallMethod.Checked = False Then
                 My.Settings.installedViaMSIPackage = False
-                My.Settings.msiCheckboxDisabled = True
             End If
 
             ' Set My.Settings.userOfficeVersion to a string based on whatever

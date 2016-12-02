@@ -125,18 +125,6 @@ Namespace My
                 Me("installedViaMSIPackage") = value
             End Set
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property msiCheckboxDisabled() As Boolean
-            Get
-                Return CType(Me("msiCheckboxDisabled"),Boolean)
-            End Get
-            Set
-                Me("msiCheckboxDisabled") = value
-            End Set
-        End Property
     End Class
 End Namespace
 
