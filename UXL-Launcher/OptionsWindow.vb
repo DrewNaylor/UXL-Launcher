@@ -191,12 +191,15 @@ Public Class aaformOptionsWindow
             My.Settings.officeDriveLocation = textboxOfficeDrive.Text
 
             ' My.Settings.userHasOfficeThreeSixFive will be set based on 
-            ' the .Checked state of the checkboxUserHasO365.
+            ' the .Checked state of the checkboxO365InstallMethod.
             If checkboxO365InstallMethod.Checked = True Then
                 My.Settings.userHasOfficeThreeSixFive = True
             ElseIf checkboxO365InstallMethod.Checked = False Then
                 My.Settings.userHasOfficeThreeSixFive = False
             End If
+
+            ' My.Settings.installedViaMSIPackage will be set based on
+            ' the .Checked state of the checkboxMSIInstallMethod.
 
             ' Set My.Settings.userOfficeVersion to a string based on whatever
             ' comboboxOfficeVersionSelector.Text is set to.
