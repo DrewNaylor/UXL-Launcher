@@ -160,7 +160,6 @@ Partial Class aaformOptionsWindow
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.ForeColor = System.Drawing.Color.Blue
         Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(66, 212)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(4)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
@@ -172,7 +171,6 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.ForeColor = System.Drawing.Color.Blue
         Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 172)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
@@ -242,7 +240,6 @@ Partial Class aaformOptionsWindow
         'labelOfficeInstalledToDrive
         '
         Me.labelOfficeInstalledToDrive.AutoSize = True
-        Me.labelOfficeInstalledToDrive.ForeColor = System.Drawing.Color.Blue
         Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(66, 164)
         Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
