@@ -68,8 +68,9 @@ Public Class OfficeLocater
 
         ' Then we need to combine them. However, if userHasOfficeThreeSixFive is True, we'll use one string but if
         ' it's False we'll use the other string.
-        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = True And My.Settings.userOfficeVersion _
-            = "15" & My.Settings.userOfficeVersion = "14" Or My.Settings.userOfficeVersion = "16" Then
+        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "15" _
+            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "14" _
+            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" _
                 & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
