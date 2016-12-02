@@ -78,6 +78,7 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -97,6 +98,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -245,10 +247,10 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel.Controls.Add(Me.groupboxProApps)
         Me.flowLayoutPanel.Controls.Add(Me.groupboxExtraApps)
         Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 46)
+        Me.flowLayoutPanel.Location = New System.Drawing.Point(4, 4)
         Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.flowLayoutPanel.Name = "flowLayoutPanel"
-        Me.flowLayoutPanel.Size = New System.Drawing.Size(1280, 1008)
+        Me.flowLayoutPanel.Size = New System.Drawing.Size(1272, 962)
         Me.flowLayoutPanel.TabIndex = 2
         '
         'groupboxStandardApps
@@ -536,7 +538,6 @@ Partial Class aaformMainWindow
         '
         'groupboxExtraApps
         '
-        Me.groupboxExtraApps.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxExtraApps.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunOneNoteQuickLaunch)
@@ -551,7 +552,7 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(32, 4, 4, 4)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
         Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxExtraApps.Size = New System.Drawing.Size(380, 956)
+        Me.groupboxExtraApps.Size = New System.Drawing.Size(380, 951)
         Me.groupboxExtraApps.TabIndex = 2
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
@@ -649,13 +650,27 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.flowLayoutPanel, 0, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 46)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 99.99!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.01!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1280, 971)
+        Me.TableLayoutPanel1.TabIndex = 3
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(1280, 1054)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.statusbarMainWindow)
-        Me.Controls.Add(Me.flowLayoutPanel)
         Me.Controls.Add(Me.menubarMainWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -688,6 +703,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -748,4 +764,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForuserOfficeVersion As Label
     Friend WithEvents debugLabelForofficeDriveLocation As Label
     Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class
