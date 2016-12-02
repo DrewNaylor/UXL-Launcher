@@ -196,10 +196,10 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeVersionDescription.Location = New System.Drawing.Point(138, 56)
         Me.labelOfficeVersionDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelOfficeVersionDescription.Name = "labelOfficeVersionDescription"
-        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(644, 50)
+        Me.labelOfficeVersionDescription.Size = New System.Drawing.Size(529, 50)
         Me.labelOfficeVersionDescription.TabIndex = 0
-        Me.labelOfficeVersionDescription.Text = "Choose the version of Microsoft Office you use from the dropdown" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "box and check t" &
-    "he checkbox if you installed Office 365."
+        Me.labelOfficeVersionDescription.Text = "Choose the apropriate version and installation method" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "you used to install Micros" &
+    "oft Office."
         '
         'groupboxOfficeLocation
         '
