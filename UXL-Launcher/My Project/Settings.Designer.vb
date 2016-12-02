@@ -125,6 +125,18 @@ Namespace My
                 Me("installedViaMSIPackage") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property debugmodeShowLabels() As Boolean
+            Get
+                Return CType(Me("debugmodeShowLabels"),Boolean)
+            End Get
+            Set
+                Me("debugmodeShowLabels") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

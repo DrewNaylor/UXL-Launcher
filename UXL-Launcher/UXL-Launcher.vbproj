@@ -123,6 +123,7 @@
     <Compile Include="OptionsWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VB Code-behind\debugmodeStuff.vb" />
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
   </ItemGroup>
