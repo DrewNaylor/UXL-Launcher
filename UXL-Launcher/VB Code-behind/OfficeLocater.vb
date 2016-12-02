@@ -76,13 +76,13 @@ Public Class OfficeLocater
 
             ' If the user installed specifically Office 2013 and they didn't use an MSI package, then we have a special 
             ' string for that install method.
-        ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.installedViaMSIPackage = False Then
+        ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = True _
+            Or My.Settings.userOfficeVersion = "15" And My.Settings.installedViaMSIPackage = False And My.Settings.userOfficeVersion = False Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\Root\Office15"
             fullLauncherCodeString = fullLauncherCodePrivateString
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string.
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "15" _
-            Or My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "14" _
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "14" _
             Or My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" _
             & My.Settings.userOfficeVersion & "\"
