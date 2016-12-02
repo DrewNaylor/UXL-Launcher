@@ -188,8 +188,7 @@ Public Class aaformOptionsWindow
             ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
             ' then tell the user that the combination isn't tested and might not work.
 
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxO365InstallMethod.Checked = True _
-                Or comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" And checkboxO365InstallMethod.Checked = False Then
+            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxO365InstallMethod.Checked = True Then
                 MessageBox.Show("Note that the combination of the Microsoft Office version you chose and installation method are untested and might not work properly." _
                                 , "Potentially incompatible settings detected!" _
                                 , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
