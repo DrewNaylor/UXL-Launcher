@@ -50,6 +50,7 @@ Partial Class aaformOptionsWindow
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -179,6 +180,8 @@ Partial Class aaformOptionsWindow
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(273, 29)
         Me.checkboxO365InstallMethod.TabIndex = 3
         Me.checkboxO365InstallMethod.Text = "I installed via Office 365"
+        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, "If you're using Office 2016, there's a good chance you" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "installed via Office 365." &
+        " If you're using Office 2010," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "you probably didn't install via Office 365.")
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
         '
         'labelUserHasThisOfficeVersion
@@ -427,4 +430,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents checkboxMSIInstallMethod As CheckBox
     Friend WithEvents labelOfficeInstallMethodDescription As Label
     Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
+    Friend WithEvents tooltipO365InstallMethod As ToolTip
 End Class
