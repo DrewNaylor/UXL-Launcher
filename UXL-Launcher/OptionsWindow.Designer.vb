@@ -24,7 +24,6 @@ Partial Class aaformOptionsWindow
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformOptionsWindow))
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
-        Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
@@ -48,6 +47,7 @@ Partial Class aaformOptionsWindow
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
+        Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -79,18 +79,6 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
         Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(970, 788)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
-        '
-        'buttonDefaultSettings
-        '
-        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.buttonDefaultSettings.AutoSize = True
-        Me.buttonDefaultSettings.Location = New System.Drawing.Point(4, 728)
-        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(4, 4, 16, 4)
-        Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
-        Me.buttonDefaultSettings.Size = New System.Drawing.Size(122, 56)
-        Me.buttonDefaultSettings.TabIndex = 2
-        Me.buttonDefaultSettings.Text = "Defaults"
-        Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
         'buttonSaveSettings
         '
@@ -369,6 +357,18 @@ Partial Class aaformOptionsWindow
         Me.buttonTestSettings.TabIndex = 4
         Me.buttonTestSettings.Text = "Test Settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
+        '
+        'buttonDefaultSettings
+        '
+        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonDefaultSettings.AutoSize = True
+        Me.buttonDefaultSettings.Location = New System.Drawing.Point(16, 728)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(122, 56)
+        Me.buttonDefaultSettings.TabIndex = 2
+        Me.buttonDefaultSettings.Text = "Defaults"
+        Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
