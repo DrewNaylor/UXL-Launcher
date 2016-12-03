@@ -23,22 +23,49 @@ Partial Class RealAboutWindow
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.buttonClose = New System.Windows.Forms.Button()
+        Me.buttonUpdateCheck = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnCount = 4
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.05993!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.16479!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.81498!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.22907!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.buttonClose, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.buttonUpdateCheck, 2, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.20595!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.794055!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(534, 471)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'buttonClose
+        '
+        Me.buttonClose.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonClose.AutoSize = True
+        Me.buttonClose.Location = New System.Drawing.Point(457, 443)
+        Me.buttonClose.Name = "buttonClose"
+        Me.buttonClose.Size = New System.Drawing.Size(74, 23)
+        Me.buttonClose.TabIndex = 0
+        Me.buttonClose.Text = "Close"
+        Me.buttonClose.UseVisualStyleBackColor = True
+        '
+        'buttonUpdateCheck
+        '
+        Me.buttonUpdateCheck.AutoSize = True
+        Me.buttonUpdateCheck.Location = New System.Drawing.Point(347, 442)
+        Me.buttonUpdateCheck.Name = "buttonUpdateCheck"
+        Me.buttonUpdateCheck.Size = New System.Drawing.Size(104, 23)
+        Me.buttonUpdateCheck.TabIndex = 1
+        Me.buttonUpdateCheck.Text = "Check for Updates"
+        Me.buttonUpdateCheck.UseVisualStyleBackColor = True
         '
         'RealAboutWindow
         '
@@ -48,9 +75,13 @@ Partial Class RealAboutWindow
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "RealAboutWindow"
         Me.Text = "RealAboutWindow"
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents buttonClose As Button
+    Friend WithEvents buttonUpdateCheck As Button
 End Class
