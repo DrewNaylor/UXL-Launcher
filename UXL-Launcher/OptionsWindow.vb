@@ -285,8 +285,11 @@ Public Class aaformOptionsWindow
 #Region "Code that runs when the user clicks the 'Test Settings' button."
     Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
         ' When the user clicks the "Test Settings" button, tell them exactly what will happen
-        ' then save the settings and attempt to launch the Office Language Preferences.
-        MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
+        ' then save the settings and attempt to launch the Office Language Preferences. Using
+        ' variables to determine the button the user pressed is what this Stack Overflow answer
+        ' suggested: <http://stackoverflow.com/a/2256926>
+
+        Dim msgResult As Integer = MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
                         "" & vbCrLf &
                         "Afterward we will attempt to launch the Office Language Preferences application." & vbCrLf &
                         "" & vbCrLf &
@@ -298,9 +301,11 @@ Public Class aaformOptionsWindow
                         "you can just close it." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close when the Office Language Preferences window appears.",
-                        "UXL Settings Test", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-        buttonSaveSettings.PerformClick()
-        LaunchApp.LaunchOfficeLangPrefs()
+                        "UXL Settings Test", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)
+        If msgResult = DialogResult.Yes Then
+            buttonSaveSettings.PerformClick()
+            LaunchApp.LaunchOfficeLangPrefs()
+        End If
     End Sub
 #End Region
 
