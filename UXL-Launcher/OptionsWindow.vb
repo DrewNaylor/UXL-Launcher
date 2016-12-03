@@ -294,8 +294,7 @@ Public Class aaformOptionsWindow
                         "" & vbCrLf &
                         "If you don't want to proceed with testing your settings, click the No button." & vbCrLf &
                         "" & vbCrLf &
-                        "If no message appears, assume that it worked." & vbCrLf &
-                        "" & vbCrLf &
+                        "If no message appears, assume that it worked. " &
                         "However, you might need to adjust your settings if you see a File not Found error." & vbCrLf &
                         "" & vbCrLf &
                         "Close the Office Language Preferences application if it appears." & vbCrLf &
