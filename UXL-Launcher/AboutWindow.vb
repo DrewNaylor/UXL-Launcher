@@ -59,5 +59,11 @@ Public Class aaformAboutWindow
         Process.Start("https://github.com/DrewNaylor/UXL-Launcher/releases")
     End Sub
 #End Region
+#Region "Code to run when clicking the link to go to my website."
+    Private Sub linkMyWebsite_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkMyWebsite.LinkClicked
+        ' Go to my website.
+        Process.Start("http://drewnaylor.github.io")
+    End Sub
+#End Region
 
 End Class
