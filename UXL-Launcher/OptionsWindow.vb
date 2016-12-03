@@ -277,13 +277,17 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
-#Region "Code that runs when the user clicks the 'Help Me!' button on the Advanced tab."
+#Region "Code that runs when the user clicks the 'View system info' button on the Advanced tab."
     Private Sub buttonHelpMeCPUType_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
+        ' When the user clicks the "Test Settings" button, tell them exactly what will happen
+        ' then save the settings and attempt to launch the Office Language Preferences. Using
+        ' variables to determine the button the user pressed is what this Stack Overflow answer
+        ' suggested: <http://stackoverflow.com/a/2256926>
         Dim msgResult As Integer = MessageBox.Show("Would you like to open the System Info page in the Control Panel?" & vbCrLf &
                         "" & vbCrLf &
-                        "If you see ''32-bit Operating System'' in the System Info page, choose the 32-bit Windows option in the Options window." & vbCrLf &
+                        "If you see " & """32-bit Operating System""" & " in the System Info page, choose the 32-bit Windows option in the Options window." & vbCrLf &
                         "" & vbCrLf &
-                        "If you see ''64-bit Operating System'' in the System Info page, choose the 64-bit Windows option in the Options window.",
+                        "If you see " & """64-bit Operating System""" & " in the System Info page, choose the 64-bit Windows option in the Options window.",
                         "View system info", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             ' Open the System Properties Control Panel page if the user clicked Yes.
