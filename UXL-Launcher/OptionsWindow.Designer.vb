@@ -330,12 +330,13 @@ Partial Class aaformOptionsWindow
         '
         'buttonHelpMeCPUType
         '
-        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(360, 126)
+        Me.buttonHelpMeCPUType.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(347, 126)
         Me.buttonHelpMeCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
-        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(92, 33)
+        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(105, 33)
         Me.buttonHelpMeCPUType.TabIndex = 1
-        Me.buttonHelpMeCPUType.Text = "Help Me!"
+        Me.buttonHelpMeCPUType.Text = "View system info"
         Me.buttonHelpMeCPUType.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
@@ -357,7 +358,7 @@ Partial Class aaformOptionsWindow
         Me.buttonTestSettings.Name = "buttonTestSettings"
         Me.buttonTestSettings.Size = New System.Drawing.Size(84, 28)
         Me.buttonTestSettings.TabIndex = 4
-        Me.buttonTestSettings.Text = "Test Settings"
+        Me.buttonTestSettings.Text = "Test settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
         '
         'buttonDefaultSettings
