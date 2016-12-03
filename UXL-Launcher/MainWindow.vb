@@ -202,11 +202,10 @@ Public Class aaformMainWindow
         ' Run Office Language Preferences.
         LaunchApp.LaunchOfficeLangPrefs
     End Sub
-
-
-
-
 #End Region
+#Region "Help>About button."
+    Private Sub menubarAboutButton_Click(sender As Object, e As EventArgs) Handles menubarAboutButton.Click
 
-
+    End Sub
+#End Region
 End Class
