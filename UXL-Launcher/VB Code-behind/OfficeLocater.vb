@@ -92,24 +92,8 @@ Public Class OfficeLocater
 
 
         ' Update the debug labels on the main window.
+        debugmodeStuff.updateDebugLabels()
 
-        ' Debug label for officeDriveLocation.
-        aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
-        ' Debug label for cpuTypeString.
-        aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & cpuTypeString
-
-        ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
-        If My.Settings.userHasOfficeThreeSixFive = True Then
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & "\root"
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
-        End If
-
-
-        ' Debug label for userOfficeVersion.
-        aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
-        ' Debug textox for fullLauncherCodeString.
-        aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = fullLauncherCodeString
 
     End Sub
 #End Region

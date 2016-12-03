@@ -25,7 +25,7 @@
 
 Public Class debugmodeStuff
     ' This document is used to contain all the debug labels and textboxes.
-    Public Sub showDebugLabels()
+    Public Shared Sub showDebugLabels()
         If My.Settings.debugmodeShowLabels = True Then
             aaformMainWindow.debugLabelForAlwaysOnTop.Show()
             aaformMainWindow.debugLabelForofficeDriveLocation.Show()
@@ -36,4 +36,28 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForMSIInstall.Show()
         End If
     End Sub
+#Region "Update the debug labels on the main form."
+    Public Shared Sub updateDebugLabels()
+        ' Update the debug labels on the main window.
+
+        ' Debug label for officeDriveLocation.
+        aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
+        ' Debug label for cpuTypeString.
+        aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
+
+        ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
+        If My.Settings.userHasOfficeThreeSixFive = True Then
+            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & "\root"
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
+            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
+        End If
+
+
+        ' Debug label for userOfficeVersion.
+        aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+        ' Debug textox for fullLauncherCodeString.
+        aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
+
+    End Sub
+#End Region
 End Class
