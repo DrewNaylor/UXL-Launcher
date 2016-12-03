@@ -164,7 +164,7 @@ Public Class aaformOptionsWindow
 
 
         MessageBox.Show("Values reset to default. Click the Save button to save changes." & vbCrLf & "Note that Always On Top will" &
-                        " not be reset to its default value, along with any other settings modified outside this window.", "Reset UXL Launcher settings",
+                        " not be reset to its default value," & vbCrLf & "along with any other settings modified outside this window.", "Reset UXL Launcher settings",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
     End Sub
