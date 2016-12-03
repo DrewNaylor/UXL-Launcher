@@ -48,7 +48,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.TabControl1, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -114,8 +114,8 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
         Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
         Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.08333!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.41667!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.12469!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.96758!))
         Me.tableLayoutPanelAboutApp.Size = New System.Drawing.Size(514, 401)
         Me.tableLayoutPanelAboutApp.TabIndex = 1
         '
@@ -126,7 +126,7 @@ Partial Class aaformAboutWindow
         Me.pictureboxUXLBanner.Location = New System.Drawing.Point(3, 3)
         Me.pictureboxUXLBanner.Name = "pictureboxUXLBanner"
         Me.tableLayoutPanelAboutApp.SetRowSpan(Me.pictureboxUXLBanner, 5)
-        Me.pictureboxUXLBanner.Size = New System.Drawing.Size(161, 350)
+        Me.pictureboxUXLBanner.Size = New System.Drawing.Size(161, 341)
         Me.pictureboxUXLBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureboxUXLBanner.TabIndex = 0
         Me.pictureboxUXLBanner.TabStop = False
@@ -189,7 +189,7 @@ Partial Class aaformAboutWindow
         Me.textboxAppDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.textboxAppDescription.Multiline = True
         Me.textboxAppDescription.Name = "textboxAppDescription"
-        Me.textboxAppDescription.Size = New System.Drawing.Size(338, 202)
+        Me.textboxAppDescription.Size = New System.Drawing.Size(338, 193)
         Me.textboxAppDescription.TabIndex = 4
         Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
         '
