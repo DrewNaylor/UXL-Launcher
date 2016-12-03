@@ -38,6 +38,9 @@ Public Class aaformMainWindow
 
 #Region "Debug code for aaformMainWindow."
 
+        ' Figure out whether or not to show the debug labels based on a setting.
+        debugmodeStuff.showDebugLabels()
+
         ' Debug label for the Always On Top feature.
         debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
         "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
@@ -45,6 +48,7 @@ Public Class aaformMainWindow
 
         ' Update the debug labels.
         debugmodeStuff.updateDebugLabels()
+
 
 #End Region
 
