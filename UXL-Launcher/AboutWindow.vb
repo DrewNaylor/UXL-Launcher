@@ -24,7 +24,9 @@
 
 
 Public Class aaformAboutWindow
+#Region "Code that runs when the About window is opened."
     Private Sub RealAboutWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' This code was copied from Microsoft's template for About windows and I made some modifications.
         ' Set the title of the form.
         Dim ApplicationTitle As String
         If My.Application.Info.Title <> "" Then
@@ -41,4 +43,7 @@ Public Class aaformAboutWindow
         Me.labelCopyright.Text = My.Application.Info.Copyright
         Me.textboxAppDescription.Text = My.Application.Info.Description
     End Sub
+#End Region
+
+
 End Class
