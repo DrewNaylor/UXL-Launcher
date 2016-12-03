@@ -306,27 +306,25 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs64Bit
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.ForeColor = System.Drawing.Color.Blue
         Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(96, 74)
         Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
-        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(155, 17)
+        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(98, 17)
         Me.radiobuttonCPUIs64Bit.TabIndex = 3
         Me.radiobuttonCPUIs64Bit.TabStop = True
-        Me.radiobuttonCPUIs64Bit.Text = "I'm running 64-bit Windows."
+        Me.radiobuttonCPUIs64Bit.Text = "64-bit Windows"
         Me.radiobuttonCPUIs64Bit.UseVisualStyleBackColor = True
         '
         'radiobuttonCPUIs32Bit
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
-        Me.radiobuttonCPUIs32Bit.ForeColor = System.Drawing.Color.Blue
         Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(96, 56)
         Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
-        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(155, 17)
+        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(98, 17)
         Me.radiobuttonCPUIs32Bit.TabIndex = 2
         Me.radiobuttonCPUIs32Bit.TabStop = True
-        Me.radiobuttonCPUIs32Bit.Text = "I'm running 32-bit Windows."
+        Me.radiobuttonCPUIs32Bit.Text = "32-bit Windows"
         Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
         '
         'buttonHelpMeCPUType
