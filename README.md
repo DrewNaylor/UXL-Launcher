@@ -6,7 +6,7 @@ This software allows the user to launch Microsoft Office apps from one place ins
 
 The readme continues after this notice.
 
-<code>UXL Launcher - Launchers for Microsoft Office apps in one place.
+<code>UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 Copyright (C) 2013-2016  Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation.
