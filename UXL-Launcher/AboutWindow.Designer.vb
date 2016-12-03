@@ -48,7 +48,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.buttonUpdateCheck, 2, 1)
         Me.tableLayoutPanel.Controls.Add(Me.TabControl1, 0, 0)
@@ -76,7 +76,7 @@ Partial Class aaformAboutWindow
         '
         Me.buttonUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonUpdateCheck.AutoSize = True
-        Me.buttonUpdateCheck.Location = New System.Drawing.Point(332, 445)
+        Me.buttonUpdateCheck.Location = New System.Drawing.Point(330, 445)
         Me.buttonUpdateCheck.Name = "buttonUpdateCheck"
         Me.buttonUpdateCheck.Size = New System.Drawing.Size(106, 23)
         Me.buttonUpdateCheck.TabIndex = 1
@@ -156,9 +156,10 @@ Partial Class aaformAboutWindow
         '
         Me.LabelVersion.AutoSize = True
         Me.LabelVersion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelVersion.Location = New System.Drawing.Point(169, 37)
+        Me.LabelVersion.Location = New System.Drawing.Point(172, 37)
+        Me.LabelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelVersion.Name = "LabelVersion"
-        Me.LabelVersion.Size = New System.Drawing.Size(342, 37)
+        Me.LabelVersion.Size = New System.Drawing.Size(339, 37)
         Me.LabelVersion.TabIndex = 2
         Me.LabelVersion.Text = "Version"
         Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -167,9 +168,10 @@ Partial Class aaformAboutWindow
         '
         Me.labelCopyright.AutoSize = True
         Me.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelCopyright.Location = New System.Drawing.Point(169, 74)
+        Me.labelCopyright.Location = New System.Drawing.Point(172, 74)
+        Me.labelCopyright.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.labelCopyright.Name = "labelCopyright"
-        Me.labelCopyright.Size = New System.Drawing.Size(342, 37)
+        Me.labelCopyright.Size = New System.Drawing.Size(339, 37)
         Me.labelCopyright.TabIndex = 3
         Me.labelCopyright.Text = "Copyright"
         Me.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -177,10 +179,11 @@ Partial Class aaformAboutWindow
         'textboxAppDescription
         '
         Me.textboxAppDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.textboxAppDescription.Location = New System.Drawing.Point(169, 151)
+        Me.textboxAppDescription.Location = New System.Drawing.Point(172, 151)
+        Me.textboxAppDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.textboxAppDescription.Multiline = True
         Me.textboxAppDescription.Name = "textboxAppDescription"
-        Me.textboxAppDescription.Size = New System.Drawing.Size(342, 202)
+        Me.textboxAppDescription.Size = New System.Drawing.Size(339, 202)
         Me.textboxAppDescription.TabIndex = 4
         Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
         '

@@ -39,6 +39,6 @@ Public Class aaformAboutWindow
         Me.LabelProductName.Text = My.Application.Info.ProductName
         Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString & " Codename ""New Change""")
         Me.labelCopyright.Text = My.Application.Info.Copyright
-        ' Me.textboxAppDescription.Text = My.Application.Info.Description
+        Me.textboxAppDescription.Text = My.Application.Info.Description
     End Sub
 End Class
