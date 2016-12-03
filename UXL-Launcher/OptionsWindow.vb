@@ -308,7 +308,7 @@ Public Class aaformOptionsWindow
                         "Close the Office Language Preferences application if it appears." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close when the Office Language Preferences window appears.",
-                        "UXL Settings Test", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)
+                        "UXL Settings Test", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
             LaunchApp.LaunchOfficeLangPrefs()
