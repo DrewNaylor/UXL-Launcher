@@ -299,16 +299,16 @@ Public Class aaformOptionsWindow
         ' variables to determine the button the user pressed is what this Stack Overflow answer
         ' suggested: <http://stackoverflow.com/a/2256926>
 
-        Dim msgResult As Integer = MessageBox.Show("Would you like to test your UXL Launcher settings?" & vbCrLf &
-                        "This will save your settings and attempt to launch the Office Language Options app." & vbCrLf &
+        Dim msgResult As Integer = MessageBox.Show("Would you like to test your UXL Launcher settings?" &
+                        " This will save your settings and attempt to launch the Office Language Options app." & vbCrLf &
                         "" & vbCrLf &
-                        "If no message appears, assume that it worked. " &
+                        "If you choose to test your settings and no message appears, assume that it worked. " &
                         "However, you might need to adjust your settings if you see a File not Found error." & vbCrLf &
                         "" & vbCrLf &
-                        "Close the Office Language Preferences application if it appears." & vbCrLf &
+                        "Close the Office Language Preferences window if it appears." & vbCrLf &
                         "" & vbCrLf &
-                        "The Options window will close when the Office Language Preferences window appears.",
-                        "UXL Settings Test", MessageBoxButtons.YesNo)
+                        "The Options window will close after your settings are saved.",
+                        "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
             LaunchApp.LaunchOfficeLangPrefs()
