@@ -23,7 +23,7 @@
 
 
 
-Public Class RealAboutWindow
+Public Class aaformAboutWindow
     Private Sub RealAboutWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Set the title of the form.
         Dim ApplicationTitle As String

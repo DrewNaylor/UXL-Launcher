@@ -23,7 +23,7 @@
 
 
 
-Public NotInheritable Class aaformAboutWindow
+Public NotInheritable Class DummyAboutWindow
 
     'Private Sub AboutWindow_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
     ' Set the title of the form.
