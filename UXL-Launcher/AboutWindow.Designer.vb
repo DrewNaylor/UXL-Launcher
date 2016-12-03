@@ -43,7 +43,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.buttonUpdateCheck, 2, 1)
         Me.tableLayoutPanel.Controls.Add(Me.TabControl1, 0, 0)
@@ -71,7 +71,7 @@ Partial Class aaformAboutWindow
         '
         Me.buttonUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonUpdateCheck.AutoSize = True
-        Me.buttonUpdateCheck.Location = New System.Drawing.Point(341, 445)
+        Me.buttonUpdateCheck.Location = New System.Drawing.Point(339, 445)
         Me.buttonUpdateCheck.Name = "buttonUpdateCheck"
         Me.buttonUpdateCheck.Size = New System.Drawing.Size(106, 23)
         Me.buttonUpdateCheck.TabIndex = 1
@@ -110,19 +110,22 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
         Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
-        Me.tableLayoutPanelAboutApp.RowCount = 2
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.29427!))
+        Me.tableLayoutPanelAboutApp.RowCount = 5
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.29426!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29.0!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28.0!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 319.0!))
         Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.70574!))
         Me.tableLayoutPanelAboutApp.Size = New System.Drawing.Size(514, 401)
         Me.tableLayoutPanelAboutApp.TabIndex = 1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.UXL_Launcher_Banner
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(161, 324)
+        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.PictureBox1, 4)
+        Me.PictureBox1.Size = New System.Drawing.Size(160, 334)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
