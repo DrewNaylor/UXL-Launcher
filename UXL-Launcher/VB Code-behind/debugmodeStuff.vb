@@ -32,9 +32,8 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForcpuTypeString.Show()
             aaformMainWindow.debugLabelForofficeInstallMethodString.Show()
             aaformMainWindow.debugLabelForuserOfficeVersion.Show()
-            aaformMainWindow.debugLabelForcpuTypeString.Show()
-            aaformMainWindow.debugLabelForcpuTypeString.Show()
-            aaformMainWindow.debugLabelForcpuTypeString.Show()
+            aaformMainWindow.debugTextboxForFullLauncherCodeString.Show()
+            aaformMainWindow.debugLabelForMSIInstall.Show()
         End If
     End Sub
 End Class
