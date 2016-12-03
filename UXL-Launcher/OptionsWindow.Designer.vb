@@ -63,8 +63,8 @@ Partial Class aaformOptionsWindow
         '
         Me.tableLayoutPanelOptionsWindow.ColumnCount = 5
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138.0!))
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76.0!))
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 4, 1)
@@ -79,14 +79,14 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.RowCount = 2
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.0!))
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
-        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(485, 394)
+        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(446, 394)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
         '
         'buttonSaveSettings
         '
         Me.buttonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonSaveSettings.AutoSize = True
-        Me.buttonSaveSettings.Location = New System.Drawing.Point(407, 364)
+        Me.buttonSaveSettings.Location = New System.Drawing.Point(368, 364)
         Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(2, 2, 8, 2)
         Me.buttonSaveSettings.Name = "buttonSaveSettings"
         Me.buttonSaveSettings.Size = New System.Drawing.Size(70, 28)
@@ -99,7 +99,7 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonCancel.AutoSize = True
         Me.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.buttonCancel.Location = New System.Drawing.Point(331, 364)
+        Me.buttonCancel.Location = New System.Drawing.Point(292, 364)
         Me.buttonCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonCancel.Name = "buttonCancel"
         Me.buttonCancel.Size = New System.Drawing.Size(72, 28)
@@ -117,7 +117,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(8, 8, 8, 2)
         Me.tabcontrolOptionsWindow.Name = "tabcontrolOptionsWindow"
         Me.tabcontrolOptionsWindow.SelectedIndex = 0
-        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(469, 352)
+        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(430, 352)
         Me.tabcontrolOptionsWindow.TabIndex = 3
         '
         'tabpageGeneral
@@ -269,7 +269,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageAdvanced.Name = "tabpageAdvanced"
         Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabpageAdvanced.Size = New System.Drawing.Size(461, 326)
+        Me.tabpageAdvanced.Size = New System.Drawing.Size(422, 326)
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
@@ -285,7 +285,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxCPUType.Name = "groupboxCPUType"
         Me.groupboxCPUType.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxCPUType.Size = New System.Drawing.Size(456, 162)
+        Me.groupboxCPUType.Size = New System.Drawing.Size(415, 162)
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
@@ -331,7 +331,7 @@ Partial Class aaformOptionsWindow
         'buttonHelpMeCPUType
         '
         Me.buttonHelpMeCPUType.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(347, 126)
+        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(306, 125)
         Me.buttonHelpMeCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
         Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(105, 33)
@@ -356,7 +356,7 @@ Partial Class aaformOptionsWindow
         Me.buttonTestSettings.Location = New System.Drawing.Point(73, 364)
         Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonTestSettings.Name = "buttonTestSettings"
-        Me.buttonTestSettings.Size = New System.Drawing.Size(84, 28)
+        Me.buttonTestSettings.Size = New System.Drawing.Size(77, 28)
         Me.buttonTestSettings.TabIndex = 4
         Me.buttonTestSettings.Text = "Test settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
@@ -368,7 +368,7 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Location = New System.Drawing.Point(8, 364)
         Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
-        Me.buttonDefaultSettings.Size = New System.Drawing.Size(61, 28)
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(59, 28)
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
@@ -378,7 +378,7 @@ Partial Class aaformOptionsWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.CancelButton = Me.buttonCancel
-        Me.ClientSize = New System.Drawing.Size(485, 394)
+        Me.ClientSize = New System.Drawing.Size(446, 394)
         Me.Controls.Add(Me.tableLayoutPanelOptionsWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
