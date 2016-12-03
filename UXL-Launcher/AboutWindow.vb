@@ -53,4 +53,11 @@ Public Class aaformAboutWindow
         Process.Start("https://github.com/DrewNaylor/UXL-Launcher")
     End Sub
 #End Region
+#Region "Code to run when clicking the link to check for updates."
+    Private Sub linkUpdateCheck_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkUpdateCheck.LinkClicked
+        ' Go to the Releases page.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/releases")
+    End Sub
+#End Region
+
 End Class
