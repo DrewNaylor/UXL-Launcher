@@ -50,6 +50,7 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -337,6 +338,7 @@ Partial Class aaformOptionsWindow
         Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(105, 33)
         Me.buttonHelpMeCPUType.TabIndex = 1
         Me.buttonHelpMeCPUType.Text = "View system info"
+        Me.tooltipSystemInfo.SetToolTip(Me.buttonHelpMeCPUType, "Open the System Info page in the Control Panel.")
         Me.buttonHelpMeCPUType.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
@@ -430,4 +432,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
     Friend WithEvents tooltipO365InstallMethod As ToolTip
     Friend WithEvents labelDriveTextboxLabel As Label
+    Friend WithEvents tooltipSystemInfo As ToolTip
 End Class
