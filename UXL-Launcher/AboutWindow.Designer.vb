@@ -33,12 +33,12 @@ Partial Class aaformAboutWindow
         Me.labelVersion = New System.Windows.Forms.Label()
         Me.labelCopyright = New System.Windows.Forms.Label()
         Me.textboxAppDescription = New System.Windows.Forms.TextBox()
+        Me.flowLayoutPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.linkRepository = New System.Windows.Forms.LinkLabel()
+        Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
+        Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
         Me.tabpageLicense = New System.Windows.Forms.TabPage()
         Me.tabpageAcknowledgments = New System.Windows.Forms.TabPage()
-        Me.flowLayoutPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
-        Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
-        Me.linkRepository = New System.Windows.Forms.LinkLabel()
-        Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
         Me.tableLayoutPanel.SuspendLayout()
         Me.tabcontrolAboutWindow.SuspendLayout()
         Me.tabpageAbout.SuspendLayout()
@@ -53,7 +53,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -179,15 +179,66 @@ Partial Class aaformAboutWindow
         '
         'textboxAppDescription
         '
+        Me.textboxAppDescription.BackColor = System.Drawing.SystemColors.Window
         Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.textboxAppDescription, 2)
         Me.textboxAppDescription.Dock = System.Windows.Forms.DockStyle.Fill
         Me.textboxAppDescription.Location = New System.Drawing.Point(172, 151)
         Me.textboxAppDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.textboxAppDescription.Multiline = True
         Me.textboxAppDescription.Name = "textboxAppDescription"
+        Me.textboxAppDescription.ReadOnly = True
         Me.textboxAppDescription.Size = New System.Drawing.Size(339, 193)
-        Me.textboxAppDescription.TabIndex = 4
+        Me.textboxAppDescription.TabIndex = 0
+        Me.textboxAppDescription.TabStop = False
         Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
+        '
+        'flowLayoutPanelButtons
+        '
+        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.flowLayoutPanelButtons, 2)
+        Me.flowLayoutPanelButtons.Controls.Add(Me.linkRepository)
+        Me.flowLayoutPanelButtons.Controls.Add(Me.linkUpdateCheck)
+        Me.flowLayoutPanelButtons.Controls.Add(Me.linkMyWebsite)
+        Me.flowLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flowLayoutPanelButtons.Location = New System.Drawing.Point(169, 350)
+        Me.flowLayoutPanelButtons.Name = "flowLayoutPanelButtons"
+        Me.flowLayoutPanelButtons.Size = New System.Drawing.Size(342, 48)
+        Me.flowLayoutPanelButtons.TabIndex = 5
+        '
+        'linkRepository
+        '
+        Me.linkRepository.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.linkRepository.AutoSize = True
+        Me.linkRepository.Location = New System.Drawing.Point(3, 10)
+        Me.linkRepository.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.linkRepository.Name = "linkRepository"
+        Me.linkRepository.Size = New System.Drawing.Size(110, 13)
+        Me.linkRepository.TabIndex = 1
+        Me.linkRepository.TabStop = True
+        Me.linkRepository.Text = "Visit GitHub repository"
+        '
+        'linkUpdateCheck
+        '
+        Me.linkUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.linkUpdateCheck.AutoSize = True
+        Me.linkUpdateCheck.Location = New System.Drawing.Point(119, 10)
+        Me.linkUpdateCheck.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.linkUpdateCheck.Name = "linkUpdateCheck"
+        Me.linkUpdateCheck.Size = New System.Drawing.Size(94, 13)
+        Me.linkUpdateCheck.TabIndex = 0
+        Me.linkUpdateCheck.TabStop = True
+        Me.linkUpdateCheck.Text = "Check for updates"
+        '
+        'linkMyWebsite
+        '
+        Me.linkMyWebsite.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.linkMyWebsite.AutoSize = True
+        Me.linkMyWebsite.Location = New System.Drawing.Point(219, 10)
+        Me.linkMyWebsite.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
+        Me.linkMyWebsite.Name = "linkMyWebsite"
+        Me.linkMyWebsite.Size = New System.Drawing.Size(100, 13)
+        Me.linkMyWebsite.TabIndex = 2
+        Me.linkMyWebsite.TabStop = True
+        Me.linkMyWebsite.Text = "Visit Drew's website"
         '
         'tabpageLicense
         '
@@ -208,54 +259,6 @@ Partial Class aaformAboutWindow
         Me.tabpageAcknowledgments.TabIndex = 2
         Me.tabpageAcknowledgments.Text = "Acknowledgments"
         Me.tabpageAcknowledgments.UseVisualStyleBackColor = True
-        '
-        'flowLayoutPanelButtons
-        '
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.flowLayoutPanelButtons, 2)
-        Me.flowLayoutPanelButtons.Controls.Add(Me.linkRepository)
-        Me.flowLayoutPanelButtons.Controls.Add(Me.linkUpdateCheck)
-        Me.flowLayoutPanelButtons.Controls.Add(Me.linkMyWebsite)
-        Me.flowLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flowLayoutPanelButtons.Location = New System.Drawing.Point(169, 350)
-        Me.flowLayoutPanelButtons.Name = "flowLayoutPanelButtons"
-        Me.flowLayoutPanelButtons.Size = New System.Drawing.Size(342, 48)
-        Me.flowLayoutPanelButtons.TabIndex = 5
-        '
-        'linkUpdateCheck
-        '
-        Me.linkUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.linkUpdateCheck.AutoSize = True
-        Me.linkUpdateCheck.Location = New System.Drawing.Point(119, 10)
-        Me.linkUpdateCheck.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.linkUpdateCheck.Name = "linkUpdateCheck"
-        Me.linkUpdateCheck.Size = New System.Drawing.Size(94, 13)
-        Me.linkUpdateCheck.TabIndex = 0
-        Me.linkUpdateCheck.TabStop = True
-        Me.linkUpdateCheck.Text = "Check for updates"
-        '
-        'linkRepository
-        '
-        Me.linkRepository.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.linkRepository.AutoSize = True
-        Me.linkRepository.Location = New System.Drawing.Point(3, 10)
-        Me.linkRepository.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.linkRepository.Name = "linkRepository"
-        Me.linkRepository.Size = New System.Drawing.Size(110, 13)
-        Me.linkRepository.TabIndex = 1
-        Me.linkRepository.TabStop = True
-        Me.linkRepository.Text = "Visit GitHub repository"
-        '
-        'linkMyWebsite
-        '
-        Me.linkMyWebsite.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.linkMyWebsite.AutoSize = True
-        Me.linkMyWebsite.Location = New System.Drawing.Point(219, 10)
-        Me.linkMyWebsite.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
-        Me.linkMyWebsite.Name = "linkMyWebsite"
-        Me.linkMyWebsite.Size = New System.Drawing.Size(100, 13)
-        Me.linkMyWebsite.TabIndex = 2
-        Me.linkMyWebsite.TabStop = True
-        Me.linkMyWebsite.Text = "Visit Drew's website"
         '
         'aaformAboutWindow
         '
