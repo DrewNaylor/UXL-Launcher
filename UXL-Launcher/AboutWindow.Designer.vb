@@ -28,8 +28,13 @@ Partial Class aaformAboutWindow
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.tableLayoutPanelAboutApp = New System.Windows.Forms.TableLayoutPanel()
         Me.tableLayoutPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tableLayoutPanelAboutApp.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanel
@@ -38,7 +43,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.buttonUpdateCheck, 2, 1)
         Me.tableLayoutPanel.Controls.Add(Me.TabControl1, 0, 0)
@@ -66,7 +71,7 @@ Partial Class aaformAboutWindow
         '
         Me.buttonUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonUpdateCheck.AutoSize = True
-        Me.buttonUpdateCheck.Location = New System.Drawing.Point(344, 445)
+        Me.buttonUpdateCheck.Location = New System.Drawing.Point(343, 445)
         Me.buttonUpdateCheck.Name = "buttonUpdateCheck"
         Me.buttonUpdateCheck.Size = New System.Drawing.Size(106, 23)
         Me.buttonUpdateCheck.TabIndex = 1
@@ -87,6 +92,7 @@ Partial Class aaformAboutWindow
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.tableLayoutPanelAboutApp)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -105,6 +111,30 @@ Partial Class aaformAboutWindow
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(119, 324)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'tableLayoutPanelAboutApp
+        '
+        Me.tableLayoutPanelAboutApp.ColumnCount = 2
+        Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.31907!))
+        Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.68093!))
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.PictureBox1, 0, 0)
+        Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
+        Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
+        Me.tableLayoutPanelAboutApp.RowCount = 2
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.29427!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.70574!))
+        Me.tableLayoutPanelAboutApp.Size = New System.Drawing.Size(514, 401)
+        Me.tableLayoutPanelAboutApp.TabIndex = 1
+        '
         'aaformAboutWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -116,6 +146,9 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ResumeLayout(False)
         Me.tableLayoutPanel.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tableLayoutPanelAboutApp.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -126,4 +159,6 @@ Partial Class aaformAboutWindow
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
 End Class
