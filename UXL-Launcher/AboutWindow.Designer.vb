@@ -38,8 +38,8 @@ Partial Class aaformAboutWindow
         Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
         Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
         Me.tabpageLicense = New System.Windows.Forms.TabPage()
+        Me.webbrowserGPLViewer = New System.Windows.Forms.WebBrowser()
         Me.tabpageAcknowledgments = New System.Windows.Forms.TabPage()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.tableLayoutPanel.SuspendLayout()
         Me.tabcontrolAboutWindow.SuspendLayout()
         Me.tabpageAbout.SuspendLayout()
@@ -55,7 +55,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -244,7 +244,7 @@ Partial Class aaformAboutWindow
         '
         'tabpageLicense
         '
-        Me.tabpageLicense.Controls.Add(Me.WebBrowser1)
+        Me.tabpageLicense.Controls.Add(Me.webbrowserGPLViewer)
         Me.tabpageLicense.Location = New System.Drawing.Point(4, 22)
         Me.tabpageLicense.Name = "tabpageLicense"
         Me.tabpageLicense.Padding = New System.Windows.Forms.Padding(3)
@@ -252,6 +252,19 @@ Partial Class aaformAboutWindow
         Me.tabpageLicense.TabIndex = 1
         Me.tabpageLicense.Text = "License"
         Me.tabpageLicense.UseVisualStyleBackColor = True
+        '
+        'webbrowserGPLViewer
+        '
+        Me.webbrowserGPLViewer.AllowNavigation = False
+        Me.webbrowserGPLViewer.AllowWebBrowserDrop = False
+        Me.webbrowserGPLViewer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.webbrowserGPLViewer.Location = New System.Drawing.Point(3, 3)
+        Me.webbrowserGPLViewer.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.webbrowserGPLViewer.Name = "webbrowserGPLViewer"
+        Me.webbrowserGPLViewer.ScriptErrorsSuppressed = True
+        Me.webbrowserGPLViewer.Size = New System.Drawing.Size(514, 401)
+        Me.webbrowserGPLViewer.TabIndex = 0
+        Me.webbrowserGPLViewer.Url = New System.Uri("", System.UriKind.Relative)
         '
         'tabpageAcknowledgments
         '
@@ -262,18 +275,6 @@ Partial Class aaformAboutWindow
         Me.tabpageAcknowledgments.TabIndex = 2
         Me.tabpageAcknowledgments.Text = "Acknowledgments"
         Me.tabpageAcknowledgments.UseVisualStyleBackColor = True
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.AllowNavigation = False
-        Me.WebBrowser1.AllowWebBrowserDrop = False
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(3, 3)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.Size = New System.Drawing.Size(514, 401)
-        Me.WebBrowser1.TabIndex = 0
         '
         'aaformAboutWindow
         '
@@ -320,5 +321,5 @@ Partial Class aaformAboutWindow
     Friend WithEvents linkUpdateCheck As LinkLabel
     Friend WithEvents linkRepository As LinkLabel
     Friend WithEvents linkMyWebsite As LinkLabel
-    Friend WithEvents WebBrowser1 As WebBrowser
+    Friend WithEvents webbrowserGPLViewer As WebBrowser
 End Class

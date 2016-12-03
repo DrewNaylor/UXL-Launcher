@@ -71,7 +71,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2016-12-03T18:36:34
+        '''  Looks up a localized string similar to 2016-12-03T22:50:37
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -97,6 +97,27 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+        '''
+        '''&lt;html&gt;&lt;head&gt;
+        ''' &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+        ''' &lt;title&gt;GNU General Public License v3.0 - GNU Project - Free Software Foundation (FSF)&lt;/title&gt;
+        ''' &lt;link rel=&quot;alternate&quot; type=&quot;application/rdf+xml&quot;
+        '''       href=&quot;http://www.gnu.org/licenses/gpl-3.0.rdf&quot; /&gt; 
+        '''&lt;/head&gt;
+        '''&lt;body&gt;
+        '''&lt;h3 style=&quot;text-align: center;&quot;&gt;GNU GENERAL PUBLIC LICENSE&lt;/h3&gt;
+        '''&lt;p style=&quot;text-align: center;&quot;&gt;Version 3, 29 June 2007&lt;/p&gt;
+        '''
+        '''&lt;p&gt;Copyright &amp;copy; 200 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property gpl_3_0_standalone() As String
+            Get
+                Return ResourceManager.GetString("gpl_3_0_standalone", resourceCulture)
             End Get
         End Property
         

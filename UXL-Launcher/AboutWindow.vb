@@ -42,6 +42,9 @@ Public Class aaformAboutWindow
         Me.labelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString & " Codename ""New Change""")
         Me.labelCopyright.Text = My.Application.Info.Copyright
         Me.textboxAppDescription.Text = My.Application.Info.Description
+
+        ' Load the GPL document in the WebBrowser control.
+        webbrowserGPLViewer.DocumentText = My.Resources.gpl_3_0_standalone
     End Sub
 
 
