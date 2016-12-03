@@ -48,9 +48,9 @@ Partial Class RealAboutWindow
         '
         'buttonClose
         '
-        Me.buttonClose.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonClose.AutoSize = True
-        Me.buttonClose.Location = New System.Drawing.Point(457, 443)
+        Me.buttonClose.Location = New System.Drawing.Point(457, 445)
         Me.buttonClose.Name = "buttonClose"
         Me.buttonClose.Size = New System.Drawing.Size(74, 23)
         Me.buttonClose.TabIndex = 0
@@ -59,8 +59,9 @@ Partial Class RealAboutWindow
         '
         'buttonUpdateCheck
         '
+        Me.buttonUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonUpdateCheck.AutoSize = True
-        Me.buttonUpdateCheck.Location = New System.Drawing.Point(347, 442)
+        Me.buttonUpdateCheck.Location = New System.Drawing.Point(347, 445)
         Me.buttonUpdateCheck.Name = "buttonUpdateCheck"
         Me.buttonUpdateCheck.Size = New System.Drawing.Size(104, 23)
         Me.buttonUpdateCheck.TabIndex = 1
