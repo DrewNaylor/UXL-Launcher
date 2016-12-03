@@ -289,16 +289,17 @@ Public Class aaformOptionsWindow
         ' variables to determine the button the user pressed is what this Stack Overflow answer
         ' suggested: <http://stackoverflow.com/a/2256926>
 
-        Dim msgResult As Integer = MessageBox.Show("When you click the OK button your settings will be saved." & vbCrLf &
+        Dim msgResult As Integer = MessageBox.Show("After you click the Yes button, we'll save your settings and attempt to" &
+                        " launch the Office Language Preferences application." & vbCrLf &
                         "" & vbCrLf &
-                        "Afterward we will attempt to launch the Office Language Preferences application." & vbCrLf &
+                        "If you don't want to proceed with testing your settings, click the No button." & vbCrLf &
                         "" & vbCrLf &
                         "If no message appears, assume that it worked." & vbCrLf &
                         "" & vbCrLf &
-                        "If an error message appears saying something about File not Found, you might need to adjust your settings. " & vbCrLf &
+                        "If an error message appears saying something about File not Found, You might need to adjust your settings if you see an error" &
+                        "message" &
                         "" & vbCrLf &
-                        "If the Office Language Preferences application appears," & vbCrLf &
-                        "you can just close it." & vbCrLf &
+                        "Close the Office Language Preferences application if it appears." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close when the Office Language Preferences window appears.",
                         "UXL Settings Test", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)
