@@ -205,7 +205,7 @@ Public Class aaformMainWindow
 #End Region
 #Region "Help>About button."
     Private Sub menubarAboutButton_Click(sender As Object, e As EventArgs) Handles menubarAboutButton.Click
-
+        AboutWindow.ShowDialog()
     End Sub
 #End Region
 End Class
