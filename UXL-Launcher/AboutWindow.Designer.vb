@@ -115,16 +115,17 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.LabelProductName, 1, 0)
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.LabelVersion, 1, 1)
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.labelCopyright, 1, 2)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAppDescription, 1, 3)
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAppDescription, 1, 4)
         Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
         Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
-        Me.tableLayoutPanelAboutApp.RowCount = 5
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.48379!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.98005!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.45387!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111!))
+        Me.tableLayoutPanelAboutApp.RowCount = 6
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.08334!))
+        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.41667!))
         Me.tableLayoutPanelAboutApp.Size = New System.Drawing.Size(514, 401)
         Me.tableLayoutPanelAboutApp.TabIndex = 1
         '
@@ -133,7 +134,7 @@ Partial Class aaformAboutWindow
         Me.PictureBox1.Image = Global.UXL_Launcher.My.Resources.Resources.UXL_Launcher_Banner
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.PictureBox1, 4)
+        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.PictureBox1, 5)
         Me.PictureBox1.Size = New System.Drawing.Size(160, 334)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
@@ -146,7 +147,7 @@ Partial Class aaformAboutWindow
         Me.LabelProductName.Location = New System.Drawing.Point(172, 0)
         Me.LabelProductName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelProductName.Name = "LabelProductName"
-        Me.LabelProductName.Size = New System.Drawing.Size(339, 26)
+        Me.LabelProductName.Size = New System.Drawing.Size(339, 37)
         Me.LabelProductName.TabIndex = 1
         Me.LabelProductName.Text = "Product Name"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -155,9 +156,9 @@ Partial Class aaformAboutWindow
         '
         Me.LabelVersion.AutoSize = True
         Me.LabelVersion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelVersion.Location = New System.Drawing.Point(169, 26)
+        Me.LabelVersion.Location = New System.Drawing.Point(169, 37)
         Me.LabelVersion.Name = "LabelVersion"
-        Me.LabelVersion.Size = New System.Drawing.Size(342, 32)
+        Me.LabelVersion.Size = New System.Drawing.Size(342, 37)
         Me.LabelVersion.TabIndex = 2
         Me.LabelVersion.Text = "Version"
         Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -166,9 +167,9 @@ Partial Class aaformAboutWindow
         '
         Me.labelCopyright.AutoSize = True
         Me.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelCopyright.Location = New System.Drawing.Point(169, 58)
+        Me.labelCopyright.Location = New System.Drawing.Point(169, 74)
         Me.labelCopyright.Name = "labelCopyright"
-        Me.labelCopyright.Size = New System.Drawing.Size(342, 74)
+        Me.labelCopyright.Size = New System.Drawing.Size(342, 37)
         Me.labelCopyright.TabIndex = 3
         Me.labelCopyright.Text = "Copyright"
         Me.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -176,10 +177,10 @@ Partial Class aaformAboutWindow
         'textboxAppDescription
         '
         Me.textboxAppDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.textboxAppDescription.Location = New System.Drawing.Point(169, 135)
+        Me.textboxAppDescription.Location = New System.Drawing.Point(169, 151)
         Me.textboxAppDescription.Multiline = True
         Me.textboxAppDescription.Name = "textboxAppDescription"
-        Me.textboxAppDescription.Size = New System.Drawing.Size(342, 217)
+        Me.textboxAppDescription.Size = New System.Drawing.Size(342, 202)
         Me.textboxAppDescription.TabIndex = 4
         Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
         '
