@@ -30,7 +30,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LabelProductName = New System.Windows.Forms.Label()
         Me.tableLayoutPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -108,7 +108,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.49027!))
         Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.50973!))
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.PictureBox1, 0, 0)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.Label1, 1, 0)
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.LabelProductName, 1, 0)
         Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
         Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
@@ -142,16 +142,17 @@ Partial Class aaformAboutWindow
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label1
+        'LabelProductName
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(172, 15)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Label1"
+        Me.LabelProductName.AutoSize = True
+        Me.LabelProductName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelProductName.Location = New System.Drawing.Point(172, 0)
+        Me.LabelProductName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
+        Me.LabelProductName.Name = "LabelProductName"
+        Me.LabelProductName.Size = New System.Drawing.Size(339, 44)
+        Me.LabelProductName.TabIndex = 1
+        Me.LabelProductName.Text = "Product Name"
+        Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'aaformAboutWindow
         '
@@ -180,5 +181,5 @@ Partial Class aaformAboutWindow
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LabelProductName As Label
 End Class
