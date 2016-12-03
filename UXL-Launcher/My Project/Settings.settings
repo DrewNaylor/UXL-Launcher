@@ -12,16 +12,16 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userHasOfficeThreeSixFive" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userOfficeVersion" Type="System.String" Scope="User">
-      <Value Profile="(Default)">16</Value>
+      <Value Profile="(Default)">14</Value>
     </Setting>
     <Setting Name="installedViaMSIPackage" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowLabels" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

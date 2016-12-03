@@ -36,9 +36,6 @@ Public Class aaformMainWindow
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
 
 
-        ' Hide the debugging labels.
-        debugLabelForAlwaysOnTop.Hide()
-
 #Region "Debug code for aaformMainWindow."
 
         ' Debug label for the Always On Top feature.
@@ -46,24 +43,8 @@ Public Class aaformMainWindow
         "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
         "main window TopMost: " & Me.TopMost
 
-
-        ' Debug label for officeDriveLocation.
-        debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
-        ' Debug label for cpuTypeString.
-        debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
-
-        ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
-        If My.Settings.userHasOfficeThreeSixFive = True Then
-            debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & "\root"
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
-        End If
-
-        ' Debug label for userOfficeVersion.
-        debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
-        ' Debug textbox for fullLauncherCodeString.
-        debugtextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
-
+        ' Update the debug labels.
+        debugmodeStuff.updateDebugLabels()
 
 #End Region
 
@@ -135,6 +116,7 @@ Public Class aaformMainWindow
 
         End If
 
+        ' Update the debug label for alwaysOnTop.
         ' Debug label for the Always On Top feature.
         debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
         "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
