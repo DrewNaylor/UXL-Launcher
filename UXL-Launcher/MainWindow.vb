@@ -26,6 +26,8 @@
 Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        DummyAboutWindow.ShowDialog()
+
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
 
