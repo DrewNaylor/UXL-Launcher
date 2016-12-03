@@ -36,10 +36,9 @@ Public Class aaformAboutWindow
         ' Initialize all of the text displayed on the About Box.
         ' TODO: Customize the application's assembly information in the "Application" pane of the project 
         '    properties dialog (under the "Project" menu).
-        'Me.LabelProductName.Text = My.Application.Info.ProductName
-        'Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
-        'Me.labelCopyright.Text = My.Application.Info.Copyright
-        'Me.labelCompanyName.Text = My.Application.Info.CompanyName
+        Me.LabelProductName.Text = My.Application.Info.ProductName
+        Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
+        Me.labelCopyright.Text = My.Application.Info.Copyright
         ' Me.textboxAppDescription.Text = My.Application.Info.Description
     End Sub
 End Class

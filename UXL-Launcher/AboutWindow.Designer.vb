@@ -29,8 +29,10 @@ Partial Class aaformAboutWindow
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelAboutApp = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.LabelProductName = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.LabelVersion = New System.Windows.Forms.Label()
+        Me.labelCopyright = New System.Windows.Forms.Label()
         Me.tableLayoutPanel.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -44,7 +46,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.buttonUpdateCheck, 2, 1)
         Me.tableLayoutPanel.Controls.Add(Me.TabControl1, 0, 0)
@@ -72,7 +74,7 @@ Partial Class aaformAboutWindow
         '
         Me.buttonUpdateCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.buttonUpdateCheck.AutoSize = True
-        Me.buttonUpdateCheck.Location = New System.Drawing.Point(337, 445)
+        Me.buttonUpdateCheck.Location = New System.Drawing.Point(336, 445)
         Me.buttonUpdateCheck.Name = "buttonUpdateCheck"
         Me.buttonUpdateCheck.Size = New System.Drawing.Size(106, 23)
         Me.buttonUpdateCheck.TabIndex = 1
@@ -109,6 +111,8 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.50973!))
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.PictureBox1, 0, 0)
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.LabelProductName, 1, 0)
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.LabelVersion, 1, 1)
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.labelCopyright, 1, 2)
         Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
         Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
@@ -132,16 +136,6 @@ Partial Class aaformAboutWindow
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(520, 407)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
         'LabelProductName
         '
         Me.LabelProductName.AutoSize = True
@@ -153,6 +147,38 @@ Partial Class aaformAboutWindow
         Me.LabelProductName.TabIndex = 1
         Me.LabelProductName.Text = "Product Name"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(520, 407)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'LabelVersion
+        '
+        Me.LabelVersion.AutoSize = True
+        Me.LabelVersion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LabelVersion.Location = New System.Drawing.Point(169, 44)
+        Me.LabelVersion.Name = "LabelVersion"
+        Me.LabelVersion.Size = New System.Drawing.Size(342, 44)
+        Me.LabelVersion.TabIndex = 2
+        Me.LabelVersion.Text = "Version"
+        Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'labelCopyright
+        '
+        Me.labelCopyright.AutoSize = True
+        Me.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.labelCopyright.Location = New System.Drawing.Point(169, 88)
+        Me.labelCopyright.Name = "labelCopyright"
+        Me.labelCopyright.Size = New System.Drawing.Size(342, 44)
+        Me.labelCopyright.TabIndex = 3
+        Me.labelCopyright.Text = "Copyright"
+        Me.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'aaformAboutWindow
         '
@@ -182,4 +208,6 @@ Partial Class aaformAboutWindow
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
     Friend WithEvents LabelProductName As Label
+    Friend WithEvents LabelVersion As Label
+    Friend WithEvents labelCopyright As Label
 End Class
