@@ -123,12 +123,6 @@
   <metadata name="tooltipO365InstallMethod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>490, 17</value>
   </metadata>
-  <data name="labelCPUTypeDescription.Text" xml:space="preserve">
-    <value>Of the options below, please choose which edition of Windows you're using, 
-32-bit Windows or 64-bit Windows. As of 2016 most PCs built within the last 
-4 years use a Windows 64-bit. If you don't know, click the "Help Me!" button 
-below and look for "64-bit Operating System," or "32-bit Operating System."</value>
-  </data>
   <metadata name="tooltipMSIInstallMethodWorkaround.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

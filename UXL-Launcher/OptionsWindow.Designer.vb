@@ -23,7 +23,6 @@ Partial Class aaformOptionsWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformOptionsWindow))
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.buttonCancel = New System.Windows.Forms.Button()
@@ -307,7 +306,7 @@ Partial Class aaformOptionsWindow
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
         Me.radiobuttonCPUIs64Bit.ForeColor = System.Drawing.Color.Blue
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(33, 100)
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(29, 59)
         Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
         Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(155, 17)
@@ -320,7 +319,7 @@ Partial Class aaformOptionsWindow
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
         Me.radiobuttonCPUIs32Bit.ForeColor = System.Drawing.Color.Blue
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(33, 82)
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(29, 41)
         Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
         Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(155, 17)
@@ -342,12 +341,12 @@ Partial Class aaformOptionsWindow
         'labelCPUTypeDescription
         '
         Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(33, 20)
+        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(26, 26)
         Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
-        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(371, 52)
+        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(229, 13)
         Me.labelCPUTypeDescription.TabIndex = 0
-        Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
+        Me.labelCPUTypeDescription.Text = "Choose which edition of Windows you're using:"
         '
         'buttonTestSettings
         '
