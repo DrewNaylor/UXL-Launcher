@@ -36,7 +36,7 @@ Partial Class aaformOptionsWindow
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.labelDriveTextboxLabel = New System.Windows.Forms.Label()
         Me.buttonClearTextbox = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
@@ -207,7 +207,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeLocation
         '
-        Me.groupboxOfficeLocation.Controls.Add(Me.Label1)
+        Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
         Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearTextbox)
         Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
@@ -220,14 +220,14 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
         '
-        'Label1
+        'labelDriveTextboxLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 64)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Drive"
+        Me.labelDriveTextboxLabel.AutoSize = True
+        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(33, 64)
+        Me.labelDriveTextboxLabel.Name = "labelDriveTextboxLabel"
+        Me.labelDriveTextboxLabel.Size = New System.Drawing.Size(32, 13)
+        Me.labelDriveTextboxLabel.TabIndex = 4
+        Me.labelDriveTextboxLabel.Text = "Drive"
         '
         'buttonClearTextbox
         '
@@ -429,5 +429,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOfficeInstallMethodDescription As Label
     Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
     Friend WithEvents tooltipO365InstallMethod As ToolTip
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labelDriveTextboxLabel As Label
 End Class
