@@ -279,8 +279,8 @@ Public Class aaformOptionsWindow
 
 #Region "Code that runs when the user clicks the 'View system info' button on the Advanced tab."
     Private Sub buttonHelpMeCPUType_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
-        ' When the user clicks the "Test Settings" button, tell them exactly what will happen
-        ' then save the settings and attempt to launch the Office Language Preferences. Using
+        ' When the user clicks the "View system info" button, tell them exactly what will happen
+        ' then open the System Info page in the Control Panel. Using
         ' variables to determine the button the user pressed is what this Stack Overflow answer
         ' suggested: <http://stackoverflow.com/a/2256926>
         Dim msgResult As Integer = MessageBox.Show("Would you like to open the System Info page in the Control Panel?" & vbCrLf &
