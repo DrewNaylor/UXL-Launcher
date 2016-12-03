@@ -36,10 +36,10 @@ Partial Class aaformOptionsWindow
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.buttonClearTextbox = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
-        Me.labelOfficeLocationDescription = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
@@ -64,10 +64,10 @@ Partial Class aaformOptionsWindow
         '
         Me.tableLayoutPanelOptionsWindow.ColumnCount = 5
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 339.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 4, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonCancel, 3, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.tabcontrolOptionsWindow, 0, 0)
@@ -75,22 +75,22 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonDefaultSettings, 0, 1)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
-        Me.tableLayoutPanelOptionsWindow.Margin = New System.Windows.Forms.Padding(4)
+        Me.tableLayoutPanelOptionsWindow.Margin = New System.Windows.Forms.Padding(2)
         Me.tableLayoutPanelOptionsWindow.Name = "tableLayoutPanelOptionsWindow"
         Me.tableLayoutPanelOptionsWindow.RowCount = 2
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.0!))
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
-        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(970, 788)
+        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(485, 394)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
         '
         'buttonSaveSettings
         '
         Me.buttonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonSaveSettings.AutoSize = True
-        Me.buttonSaveSettings.Location = New System.Drawing.Point(814, 728)
-        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(4, 4, 16, 4)
+        Me.buttonSaveSettings.Location = New System.Drawing.Point(407, 364)
+        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(2, 2, 8, 2)
         Me.buttonSaveSettings.Name = "buttonSaveSettings"
-        Me.buttonSaveSettings.Size = New System.Drawing.Size(140, 56)
+        Me.buttonSaveSettings.Size = New System.Drawing.Size(70, 28)
         Me.buttonSaveSettings.TabIndex = 0
         Me.buttonSaveSettings.Text = "Save"
         Me.buttonSaveSettings.UseVisualStyleBackColor = True
@@ -100,10 +100,10 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonCancel.AutoSize = True
         Me.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.buttonCancel.Location = New System.Drawing.Point(662, 728)
-        Me.buttonCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonCancel.Location = New System.Drawing.Point(331, 364)
+        Me.buttonCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonCancel.Name = "buttonCancel"
-        Me.buttonCancel.Size = New System.Drawing.Size(144, 56)
+        Me.buttonCancel.Size = New System.Drawing.Size(72, 28)
         Me.buttonCancel.TabIndex = 1
         Me.buttonCancel.Text = "Cancel"
         Me.buttonCancel.UseVisualStyleBackColor = True
@@ -114,22 +114,22 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageGeneral)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageAdvanced)
         Me.tabcontrolOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(16, 16)
-        Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(16, 16, 16, 4)
+        Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(8, 8)
+        Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(8, 8, 8, 2)
         Me.tabcontrolOptionsWindow.Name = "tabcontrolOptionsWindow"
         Me.tabcontrolOptionsWindow.SelectedIndex = 0
-        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(938, 704)
+        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(469, 352)
         Me.tabcontrolOptionsWindow.TabIndex = 3
         '
         'tabpageGeneral
         '
         Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeVersion)
         Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeLocation)
-        Me.tabpageGeneral.Location = New System.Drawing.Point(8, 39)
-        Me.tabpageGeneral.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabpageGeneral.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageGeneral.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageGeneral.Name = "tabpageGeneral"
-        Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(4)
-        Me.tabpageGeneral.Size = New System.Drawing.Size(922, 657)
+        Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(2)
+        Me.tabpageGeneral.Size = New System.Drawing.Size(461, 326)
         Me.tabpageGeneral.TabIndex = 0
         Me.tabpageGeneral.Text = "General"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
@@ -141,11 +141,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
-        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(6, 274)
-        Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(4)
+        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(3, 137)
+        Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
-        Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(912, 374)
+        Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
+        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(456, 187)
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
@@ -153,18 +153,20 @@ Partial Class aaformOptionsWindow
         'labelOfficeInstallMethodDescription
         '
         Me.labelOfficeInstallMethodDescription.AutoSize = True
-        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(66, 169)
+        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(33, 84)
+        Me.labelOfficeInstallMethodDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstallMethodDescription.Name = "labelOfficeInstallMethodDescription"
-        Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(389, 25)
+        Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(191, 13)
         Me.labelOfficeInstallMethodDescription.TabIndex = 5
         Me.labelOfficeInstallMethodDescription.Text = "My Microsoft Office installation method:"
         '
         'checkboxMSIInstallMethod
         '
         Me.checkboxMSIInstallMethod.AutoSize = True
-        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(71, 234)
+        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(36, 117)
+        Me.checkboxMSIInstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxMSIInstallMethod.Name = "checkboxMSIInstallMethod"
-        Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(212, 29)
+        Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(109, 17)
         Me.checkboxMSIInstallMethod.TabIndex = 4
         Me.checkboxMSIInstallMethod.Text = "I installed via MSI"
         Me.tooltipMSIInstallMethodWorkaround.SetToolTip(Me.checkboxMSIInstallMethod, "This option is only used when Office 2013 is chosen above." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Leave this unchecked " &
@@ -174,10 +176,10 @@ Partial Class aaformOptionsWindow
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(71, 198)
-        Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(4)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(36, 99)
+        Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(273, 29)
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(139, 17)
         Me.checkboxO365InstallMethod.TabIndex = 3
         Me.checkboxO365InstallMethod.Text = "I installed via Office 365"
         Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, "If you're using Office 2016, there's a good chance you installed via Office 365." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If you're using Office 2010, you probably didn't install via Office 365.")
@@ -186,10 +188,10 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(66, 69)
-        Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(33, 34)
+        Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
-        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(360, 25)
+        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(178, 13)
         Me.labelUserHasThisOfficeVersion.TabIndex = 2
         Me.labelUserHasThisOfficeVersion.Text = "I use this version of Microsoft Office:"
         '
@@ -197,35 +199,44 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(71, 98)
-        Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(36, 49)
+        Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
-        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(272, 33)
+        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
         Me.comboboxOfficeVersionSelector.TabIndex = 1
         '
         'groupboxOfficeLocation
         '
+        Me.groupboxOfficeLocation.Controls.Add(Me.Label1)
         Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearTextbox)
         Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
-        Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeLocationDescription)
-        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(6, 6)
-        Me.groupboxOfficeLocation.Margin = New System.Windows.Forms.Padding(4)
+        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxOfficeLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeLocation.Name = "groupboxOfficeLocation"
-        Me.groupboxOfficeLocation.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(912, 260)
+        Me.groupboxOfficeLocation.Padding = New System.Windows.Forms.Padding(2)
+        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(456, 130)
         Me.groupboxOfficeLocation.TabIndex = 0
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(33, 64)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Drive"
         '
         'buttonClearTextbox
         '
         Me.buttonClearTextbox.AutoSize = True
         Me.buttonClearTextbox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonClearTextbox.Location = New System.Drawing.Point(471, 158)
-        Me.buttonClearTextbox.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonClearTextbox.Location = New System.Drawing.Point(103, 59)
+        Me.buttonClearTextbox.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonClearTextbox.Name = "buttonClearTextbox"
-        Me.buttonClearTextbox.Size = New System.Drawing.Size(156, 35)
+        Me.buttonClearTextbox.Size = New System.Drawing.Size(82, 23)
         Me.buttonClearTextbox.TabIndex = 3
         Me.buttonClearTextbox.Text = "Clear Textbox"
         Me.buttonClearTextbox.UseVisualStyleBackColor = True
@@ -233,43 +244,33 @@ Partial Class aaformOptionsWindow
         'textboxOfficeDrive
         '
         Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.textboxOfficeDrive.Location = New System.Drawing.Point(414, 160)
-        Me.textboxOfficeDrive.Margin = New System.Windows.Forms.Padding(4)
+        Me.textboxOfficeDrive.Location = New System.Drawing.Point(70, 61)
+        Me.textboxOfficeDrive.Margin = New System.Windows.Forms.Padding(2)
         Me.textboxOfficeDrive.MaxLength = 1
         Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
         Me.textboxOfficeDrive.ShortcutsEnabled = False
-        Me.textboxOfficeDrive.Size = New System.Drawing.Size(36, 31)
+        Me.textboxOfficeDrive.Size = New System.Drawing.Size(20, 20)
         Me.textboxOfficeDrive.TabIndex = 2
         Me.textboxOfficeDrive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'labelOfficeInstalledToDrive
         '
         Me.labelOfficeInstalledToDrive.AutoSize = True
-        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(66, 164)
-        Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(33, 40)
+        Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
-        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(342, 25)
+        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(188, 13)
         Me.labelOfficeInstalledToDrive.TabIndex = 1
-        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to drive:"
-        '
-        'labelOfficeLocationDescription
-        '
-        Me.labelOfficeLocationDescription.AutoSize = True
-        Me.labelOfficeLocationDescription.Location = New System.Drawing.Point(130, 68)
-        Me.labelOfficeLocationDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labelOfficeLocationDescription.Name = "labelOfficeLocationDescription"
-        Me.labelOfficeLocationDescription.Size = New System.Drawing.Size(600, 25)
-        Me.labelOfficeLocationDescription.TabIndex = 0
-        Me.labelOfficeLocationDescription.Text = "Enter the drive you installed Microsoft Office to in the textbox."
+        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to this drive:"
         '
         'tabpageAdvanced
         '
         Me.tabpageAdvanced.Controls.Add(Me.groupboxCPUType)
-        Me.tabpageAdvanced.Location = New System.Drawing.Point(8, 39)
-        Me.tabpageAdvanced.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabpageAdvanced.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageAdvanced.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageAdvanced.Name = "tabpageAdvanced"
-        Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(4)
-        Me.tabpageAdvanced.Size = New System.Drawing.Size(922, 657)
+        Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(2)
+        Me.tabpageAdvanced.Size = New System.Drawing.Size(461, 326)
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
@@ -281,11 +282,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
         Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
-        Me.groupboxCPUType.Location = New System.Drawing.Point(6, 6)
-        Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(4)
+        Me.groupboxCPUType.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxCPUType.Name = "groupboxCPUType"
-        Me.groupboxCPUType.Padding = New System.Windows.Forms.Padding(4)
-        Me.groupboxCPUType.Size = New System.Drawing.Size(912, 324)
+        Me.groupboxCPUType.Padding = New System.Windows.Forms.Padding(2)
+        Me.groupboxCPUType.Size = New System.Drawing.Size(456, 162)
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
@@ -293,10 +294,10 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIsQBit
         '
         Me.radiobuttonCPUIsQBit.AutoSize = True
-        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(900, 320)
-        Me.radiobuttonCPUIsQBit.Margin = New System.Windows.Forms.Padding(4)
+        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(450, 160)
+        Me.radiobuttonCPUIsQBit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
-        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(412, 29)
+        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(207, 17)
         Me.radiobuttonCPUIsQBit.TabIndex = 4
         Me.radiobuttonCPUIsQBit.TabStop = True
         Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl."
@@ -306,10 +307,10 @@ Partial Class aaformOptionsWindow
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
         Me.radiobuttonCPUIs64Bit.ForeColor = System.Drawing.Color.Blue
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(66, 200)
-        Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(4)
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(33, 100)
+        Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
-        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(306, 29)
+        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(155, 17)
         Me.radiobuttonCPUIs64Bit.TabIndex = 3
         Me.radiobuttonCPUIs64Bit.TabStop = True
         Me.radiobuttonCPUIs64Bit.Text = "I'm running 64-bit Windows."
@@ -319,10 +320,10 @@ Partial Class aaformOptionsWindow
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
         Me.radiobuttonCPUIs32Bit.ForeColor = System.Drawing.Color.Blue
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(66, 164)
-        Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(4)
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(33, 82)
+        Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
-        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(306, 29)
+        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(155, 17)
         Me.radiobuttonCPUIs32Bit.TabIndex = 2
         Me.radiobuttonCPUIs32Bit.TabStop = True
         Me.radiobuttonCPUIs32Bit.Text = "I'm running 32-bit Windows."
@@ -330,10 +331,10 @@ Partial Class aaformOptionsWindow
         '
         'buttonHelpMeCPUType
         '
-        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(720, 252)
-        Me.buttonHelpMeCPUType.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(360, 126)
+        Me.buttonHelpMeCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
-        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(184, 66)
+        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(92, 33)
         Me.buttonHelpMeCPUType.TabIndex = 1
         Me.buttonHelpMeCPUType.Text = "Help Me!"
         Me.buttonHelpMeCPUType.UseVisualStyleBackColor = True
@@ -341,10 +342,10 @@ Partial Class aaformOptionsWindow
         'labelCPUTypeDescription
         '
         Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(66, 40)
-        Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(33, 20)
+        Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
-        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(742, 100)
+        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(371, 52)
         Me.labelCPUTypeDescription.TabIndex = 0
         Me.labelCPUTypeDescription.Text = resources.GetString("labelCPUTypeDescription.Text")
         '
@@ -352,10 +353,10 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonTestSettings.AutoSize = True
-        Me.buttonTestSettings.Location = New System.Drawing.Point(147, 728)
-        Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonTestSettings.Location = New System.Drawing.Point(73, 364)
+        Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonTestSettings.Name = "buttonTestSettings"
-        Me.buttonTestSettings.Size = New System.Drawing.Size(168, 56)
+        Me.buttonTestSettings.Size = New System.Drawing.Size(84, 28)
         Me.buttonTestSettings.TabIndex = 4
         Me.buttonTestSettings.Text = "Test Settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
@@ -364,23 +365,22 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonDefaultSettings.AutoSize = True
-        Me.buttonDefaultSettings.Location = New System.Drawing.Point(16, 728)
-        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(4)
+        Me.buttonDefaultSettings.Location = New System.Drawing.Point(8, 364)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
-        Me.buttonDefaultSettings.Size = New System.Drawing.Size(122, 56)
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(61, 28)
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.CancelButton = Me.buttonCancel
-        Me.ClientSize = New System.Drawing.Size(970, 788)
+        Me.ClientSize = New System.Drawing.Size(485, 394)
         Me.Controls.Add(Me.tableLayoutPanelOptionsWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "aaformOptionsWindow"
@@ -411,7 +411,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tabpageGeneral As TabPage
     Friend WithEvents tabpageAdvanced As TabPage
     Friend WithEvents groupboxOfficeLocation As GroupBox
-    Friend WithEvents labelOfficeLocationDescription As Label
     Friend WithEvents labelOfficeInstalledToDrive As Label
     Friend WithEvents textboxOfficeDrive As TextBox
     Friend WithEvents buttonClearTextbox As Button
@@ -430,4 +429,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOfficeInstallMethodDescription As Label
     Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
     Friend WithEvents tooltipO365InstallMethod As ToolTip
+    Friend WithEvents Label1 As Label
 End Class

@@ -34,6 +34,7 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForuserOfficeVersion.Show()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Show()
             aaformMainWindow.debugLabelForMSIInstall.Show()
+
         ElseIf My.Settings.debugmodeShowLabels = False Then
             aaformMainWindow.debugLabelForAlwaysOnTop.Hide()
             aaformMainWindow.debugLabelForofficeDriveLocation.Hide()
