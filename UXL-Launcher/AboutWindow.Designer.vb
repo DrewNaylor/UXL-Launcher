@@ -66,17 +66,18 @@ Partial Class aaformAboutWindow
         Me.tabelLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tabelLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tabelLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tabelLayoutPanel.Size = New System.Drawing.Size(396, 258)
+        Me.tabelLayoutPanel.Size = New System.Drawing.Size(508, 330)
         Me.tabelLayoutPanel.TabIndex = 0
         '
         'pictureboxUXLBanner
         '
         Me.pictureboxUXLBanner.BackColor = System.Drawing.SystemColors.Window
+        Me.pictureboxUXLBanner.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pictureboxUXLBanner.Image = CType(resources.GetObject("pictureboxUXLBanner.Image"), System.Drawing.Image)
         Me.pictureboxUXLBanner.Location = New System.Drawing.Point(3, 3)
         Me.pictureboxUXLBanner.Name = "pictureboxUXLBanner"
         Me.tabelLayoutPanel.SetRowSpan(Me.pictureboxUXLBanner, 6)
-        Me.pictureboxUXLBanner.Size = New System.Drawing.Size(124, 252)
+        Me.pictureboxUXLBanner.Size = New System.Drawing.Size(161, 324)
         Me.pictureboxUXLBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureboxUXLBanner.TabIndex = 0
         Me.pictureboxUXLBanner.TabStop = False
@@ -84,11 +85,11 @@ Partial Class aaformAboutWindow
         'LabelProductName
         '
         Me.LabelProductName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelProductName.Location = New System.Drawing.Point(136, 0)
+        Me.LabelProductName.Location = New System.Drawing.Point(173, 0)
         Me.LabelProductName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelProductName.MaximumSize = New System.Drawing.Size(0, 17)
         Me.LabelProductName.Name = "LabelProductName"
-        Me.LabelProductName.Size = New System.Drawing.Size(257, 17)
+        Me.LabelProductName.Size = New System.Drawing.Size(332, 17)
         Me.LabelProductName.TabIndex = 0
         Me.LabelProductName.Text = "Product Name"
         Me.LabelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -96,11 +97,11 @@ Partial Class aaformAboutWindow
         'LabelVersion
         '
         Me.LabelVersion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelVersion.Location = New System.Drawing.Point(136, 25)
+        Me.LabelVersion.Location = New System.Drawing.Point(173, 33)
         Me.LabelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelVersion.MaximumSize = New System.Drawing.Size(0, 17)
         Me.LabelVersion.Name = "LabelVersion"
-        Me.LabelVersion.Size = New System.Drawing.Size(257, 17)
+        Me.LabelVersion.Size = New System.Drawing.Size(332, 17)
         Me.LabelVersion.TabIndex = 0
         Me.LabelVersion.Text = "Version"
         Me.LabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -108,11 +109,11 @@ Partial Class aaformAboutWindow
         'labelCopyright
         '
         Me.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelCopyright.Location = New System.Drawing.Point(136, 50)
+        Me.labelCopyright.Location = New System.Drawing.Point(173, 66)
         Me.labelCopyright.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.labelCopyright.MaximumSize = New System.Drawing.Size(0, 17)
         Me.labelCopyright.Name = "labelCopyright"
-        Me.labelCopyright.Size = New System.Drawing.Size(257, 17)
+        Me.labelCopyright.Size = New System.Drawing.Size(332, 17)
         Me.labelCopyright.TabIndex = 0
         Me.labelCopyright.Text = "Copyright"
         Me.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -120,11 +121,11 @@ Partial Class aaformAboutWindow
         'labelCompanyName
         '
         Me.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelCompanyName.Location = New System.Drawing.Point(136, 75)
+        Me.labelCompanyName.Location = New System.Drawing.Point(173, 99)
         Me.labelCompanyName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.labelCompanyName.MaximumSize = New System.Drawing.Size(0, 17)
         Me.labelCompanyName.Name = "labelCompanyName"
-        Me.labelCompanyName.Size = New System.Drawing.Size(257, 17)
+        Me.labelCompanyName.Size = New System.Drawing.Size(332, 17)
         Me.labelCompanyName.TabIndex = 0
         Me.labelCompanyName.Text = "Company Name"
         Me.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -132,13 +133,13 @@ Partial Class aaformAboutWindow
         'textboxAppDescription
         '
         Me.textboxAppDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.textboxAppDescription.Location = New System.Drawing.Point(136, 103)
+        Me.textboxAppDescription.Location = New System.Drawing.Point(173, 135)
         Me.textboxAppDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.textboxAppDescription.Multiline = True
         Me.textboxAppDescription.Name = "textboxAppDescription"
         Me.textboxAppDescription.ReadOnly = True
         Me.textboxAppDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.textboxAppDescription.Size = New System.Drawing.Size(257, 123)
+        Me.textboxAppDescription.Size = New System.Drawing.Size(332, 159)
         Me.textboxAppDescription.TabIndex = 0
         Me.textboxAppDescription.TabStop = False
         Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
@@ -147,7 +148,7 @@ Partial Class aaformAboutWindow
         '
         Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OKButton.Location = New System.Drawing.Point(318, 232)
+        Me.OKButton.Location = New System.Drawing.Point(430, 304)
         Me.OKButton.Name = "OKButton"
         Me.OKButton.Size = New System.Drawing.Size(75, 23)
         Me.OKButton.TabIndex = 0
@@ -158,7 +159,7 @@ Partial Class aaformAboutWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.OKButton
-        Me.ClientSize = New System.Drawing.Size(414, 276)
+        Me.ClientSize = New System.Drawing.Size(526, 348)
         Me.Controls.Add(Me.tabelLayoutPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
