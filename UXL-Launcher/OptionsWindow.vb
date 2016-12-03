@@ -296,8 +296,7 @@ Public Class aaformOptionsWindow
                         "" & vbCrLf &
                         "If no message appears, assume that it worked." & vbCrLf &
                         "" & vbCrLf &
-                        "If an error message appears saying something about File not Found, You might need to adjust your settings if you see an error" &
-                        "message" &
+                        "However, you might need to adjust your settings if you see a File not Found error." & vbCrLf &
                         "" & vbCrLf &
                         "Close the Office Language Preferences application if it appears." & vbCrLf &
                         "" & vbCrLf &
