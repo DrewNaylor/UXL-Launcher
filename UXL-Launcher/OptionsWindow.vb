@@ -279,8 +279,16 @@ Public Class aaformOptionsWindow
 
 #Region "Code that runs when the user clicks the 'Help Me!' button on the Advanced tab."
     Private Sub buttonHelpMeCPUType_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
-        ' Open the System Properties Control Panel page.
-        Process.Start("control.exe", "system")
+        Dim msgResult As Integer = MessageBox.Show("Would you like to open the System Info page in the Control Panel?" & vbCrLf &
+                        "" & vbCrLf &
+                        "If you see ''32-bit Operating System'' in the System Info page, choose the 32-bit Windows option in the Options window." & vbCrLf &
+                        "" & vbCrLf &
+                        "If you see ''64-bit Operating System'' in the System Info page, choose the 64-bit Windows option in the Options window.",
+                        "View system info", MessageBoxButtons.YesNo)
+        If msgResult = DialogResult.Yes Then
+            ' Open the System Properties Control Panel page if the user clicked Yes.
+            Process.Start("control.exe", "system")
+        End If
     End Sub
 #End Region
 
