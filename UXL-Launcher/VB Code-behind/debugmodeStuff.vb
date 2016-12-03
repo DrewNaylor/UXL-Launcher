@@ -55,6 +55,8 @@ Public Class debugmodeStuff
 
         ' Debug label for userOfficeVersion.
         aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+        ' Debug label for MSIInstall.
+        aaformMainWindow.debugLabelForMSIInstall.Text = "installedViaMSIPackage: " & My.Settings.installedViaMSIPackage
         ' Debug textox for fullLauncherCodeString.
         aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
