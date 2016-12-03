@@ -43,7 +43,14 @@ Public Class aaformAboutWindow
         Me.labelCopyright.Text = My.Application.Info.Copyright
         Me.textboxAppDescription.Text = My.Application.Info.Description
     End Sub
+
+
 #End Region
 
-
+#Region "Code to run when clicking the link to go to the GitHub repository."
+    Private Sub linkRepository_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkRepository.LinkClicked
+        ' Open the GitHub repository.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher")
+    End Sub
+#End Region
 End Class
