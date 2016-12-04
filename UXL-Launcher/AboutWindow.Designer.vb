@@ -29,9 +29,6 @@ Partial Class aaformAboutWindow
         Me.tabpageAbout = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelAboutApp = New System.Windows.Forms.TableLayoutPanel()
         Me.pictureboxUXLBanner = New System.Windows.Forms.PictureBox()
-        Me.labelProductName = New System.Windows.Forms.Label()
-        Me.labelVersion = New System.Windows.Forms.Label()
-        Me.labelCopyright = New System.Windows.Forms.Label()
         Me.textboxAppDescription = New System.Windows.Forms.TextBox()
         Me.flowLayoutPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.linkRepository = New System.Windows.Forms.LinkLabel()
@@ -55,7 +52,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -110,11 +107,8 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.72374!))
         Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.98055!))
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.pictureboxUXLBanner, 0, 0)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.labelProductName, 1, 0)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.labelVersion, 1, 1)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.labelCopyright, 1, 2)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAppDescription, 1, 4)
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.flowLayoutPanelButtons, 1, 5)
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAppDescription, 1, 0)
         Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
         Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
@@ -140,56 +134,17 @@ Partial Class aaformAboutWindow
         Me.pictureboxUXLBanner.TabIndex = 0
         Me.pictureboxUXLBanner.TabStop = False
         '
-        'labelProductName
-        '
-        Me.labelProductName.AutoSize = True
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.labelProductName, 2)
-        Me.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelProductName.Location = New System.Drawing.Point(172, 0)
-        Me.labelProductName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.labelProductName.Name = "labelProductName"
-        Me.labelProductName.Size = New System.Drawing.Size(339, 37)
-        Me.labelProductName.TabIndex = 1
-        Me.labelProductName.Text = "Product Name"
-        Me.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'labelVersion
-        '
-        Me.labelVersion.AutoSize = True
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.labelVersion, 2)
-        Me.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelVersion.Location = New System.Drawing.Point(172, 37)
-        Me.labelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.labelVersion.Name = "labelVersion"
-        Me.labelVersion.Size = New System.Drawing.Size(339, 37)
-        Me.labelVersion.TabIndex = 2
-        Me.labelVersion.Text = "Version"
-        Me.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'labelCopyright
-        '
-        Me.labelCopyright.AutoSize = True
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.labelCopyright, 2)
-        Me.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.labelCopyright.Location = New System.Drawing.Point(172, 74)
-        Me.labelCopyright.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
-        Me.labelCopyright.Name = "labelCopyright"
-        Me.labelCopyright.Size = New System.Drawing.Size(339, 37)
-        Me.labelCopyright.TabIndex = 3
-        Me.labelCopyright.Text = "Copyright"
-        Me.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'textboxAppDescription
         '
         Me.textboxAppDescription.BackColor = System.Drawing.SystemColors.Window
         Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.textboxAppDescription, 2)
-        Me.textboxAppDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.textboxAppDescription.Location = New System.Drawing.Point(172, 151)
+        Me.textboxAppDescription.Location = New System.Drawing.Point(172, 3)
         Me.textboxAppDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.textboxAppDescription.Multiline = True
         Me.textboxAppDescription.Name = "textboxAppDescription"
         Me.textboxAppDescription.ReadOnly = True
-        Me.textboxAppDescription.Size = New System.Drawing.Size(339, 193)
+        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.textboxAppDescription, 5)
+        Me.textboxAppDescription.Size = New System.Drawing.Size(339, 341)
         Me.textboxAppDescription.TabIndex = 0
         Me.textboxAppDescription.TabStop = False
         Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
@@ -312,9 +267,6 @@ Partial Class aaformAboutWindow
     Friend WithEvents tabpageLicense As TabPage
     Friend WithEvents pictureboxUXLBanner As PictureBox
     Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
-    Friend WithEvents labelProductName As Label
-    Friend WithEvents labelVersion As Label
-    Friend WithEvents labelCopyright As Label
     Friend WithEvents textboxAppDescription As TextBox
     Friend WithEvents tabpageAcknowledgments As TabPage
     Friend WithEvents flowLayoutPanelButtons As FlowLayoutPanel
