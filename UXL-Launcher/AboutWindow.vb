@@ -71,7 +71,7 @@ along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>." & Environ
 #Region "Code to run when clicking the link to check for updates."
     Private Sub linkUpdateCheck_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkUpdateCheck.LinkClicked
         ' Go to the Releases page.
-        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/releases")
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/releases/latest")
     End Sub
 #End Region
 #Region "Code to run when clicking the link to go to my website."
