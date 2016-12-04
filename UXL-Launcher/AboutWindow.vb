@@ -26,8 +26,27 @@
 Public Class aaformAboutWindow
 #Region "Code that runs when the About window is opened."
     Private Sub RealAboutWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' This code was copied from Microsoft's template for About windows and I made some modifications.
-        ' Set the title of the form.
+
+        ' Create a string with the BuildDate.txt file.
+        Dim BuildDateString As String = My.Resources.BuildDate
+
+        ' Put the text in the About box on launch.
+        textboxAboutApp.Text = ("Drew's App Launcher for Microsoft Office 2010 ProPlus" & Environment.NewLine)
+        textboxAboutApp.AppendText("Version 2.8 Stable - Codename ''Last Huzzah''" & Environment.NewLine)
+        textboxAboutApp.AppendText("Compiled for 64-bit systems with a 32-bit installation of Office 2010" & Environment.NewLine)
+        textboxAboutApp.AppendText("" & Environment.NewLine)
+        textboxAboutApp.AppendText("Copyright (C) 2013-2016 Drew Naylor" & Environment.NewLine)
+        textboxAboutApp.AppendText("This app is designed to quickly and easily launch Office 2010 ProPlus software." & Environment.NewLine)
+        textboxAboutApp.AppendText("It can also clear up space on your desktop." & Environment.NewLine)
+        textboxAboutApp.AppendText("I am not intending on infringing on Microsoft's copyrights, so this is only a shortcut application." & Environment.NewLine)
+        textboxAboutApp.AppendText("" & Environment.NewLine)
+        ' Note: In order for the date and time to be updated, you must tell Visual Studio to build the project BEFORE debugging it. In VS2010, you can right-click
+        ' on the toolbar at the top of the window and click "Build" to add the Build Toolbar.
+        textboxAboutApp.AppendText("App compiled at UTC " & BuildDateString)
+        textboxAboutApp.AppendText("" & Environment.NewLine)
+        textboxAboutApp.AppendText("Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, and all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft's copyrights." & Environment.NewLine)
+        textboxAboutApp.AppendText("" & Environment.NewLine)
+        textboxAboutApp.AppendText("This application is licensed under the Gnu GPL v3+ and Drew's Modification Exception.")
 
 
         ' Load the GPL document in the WebBrowser control.

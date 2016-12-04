@@ -29,11 +29,11 @@ Partial Class aaformAboutWindow
         Me.tabpageAbout = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelAboutApp = New System.Windows.Forms.TableLayoutPanel()
         Me.pictureboxUXLBanner = New System.Windows.Forms.PictureBox()
-        Me.textboxAppDescription = New System.Windows.Forms.TextBox()
         Me.flowLayoutPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.linkRepository = New System.Windows.Forms.LinkLabel()
         Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
         Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
+        Me.textboxAboutApp = New System.Windows.Forms.TextBox()
         Me.tabpageLicense = New System.Windows.Forms.TabPage()
         Me.webbrowserGPLViewer = New System.Windows.Forms.WebBrowser()
         Me.tabpageAcknowledgments = New System.Windows.Forms.TabPage()
@@ -52,7 +52,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -108,7 +108,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.98055!))
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.pictureboxUXLBanner, 0, 0)
         Me.tableLayoutPanelAboutApp.Controls.Add(Me.flowLayoutPanelButtons, 1, 5)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAppDescription, 1, 0)
+        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAboutApp, 1, 0)
         Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
         Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
@@ -133,21 +133,6 @@ Partial Class aaformAboutWindow
         Me.pictureboxUXLBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureboxUXLBanner.TabIndex = 0
         Me.pictureboxUXLBanner.TabStop = False
-        '
-        'textboxAppDescription
-        '
-        Me.textboxAppDescription.BackColor = System.Drawing.SystemColors.Window
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.textboxAppDescription, 2)
-        Me.textboxAppDescription.Location = New System.Drawing.Point(172, 3)
-        Me.textboxAppDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
-        Me.textboxAppDescription.Multiline = True
-        Me.textboxAppDescription.Name = "textboxAppDescription"
-        Me.textboxAppDescription.ReadOnly = True
-        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.textboxAppDescription, 5)
-        Me.textboxAppDescription.Size = New System.Drawing.Size(339, 341)
-        Me.textboxAppDescription.TabIndex = 0
-        Me.textboxAppDescription.TabStop = False
-        Me.textboxAppDescription.Text = resources.GetString("textboxAppDescription.Text")
         '
         'flowLayoutPanelButtons
         '
@@ -196,6 +181,21 @@ Partial Class aaformAboutWindow
         Me.linkMyWebsite.TabIndex = 2
         Me.linkMyWebsite.TabStop = True
         Me.linkMyWebsite.Text = "Visit Drew's website"
+        '
+        'textboxAboutApp
+        '
+        Me.textboxAboutApp.BackColor = System.Drawing.SystemColors.Window
+        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.textboxAboutApp, 2)
+        Me.textboxAboutApp.Location = New System.Drawing.Point(172, 3)
+        Me.textboxAboutApp.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
+        Me.textboxAboutApp.Multiline = True
+        Me.textboxAboutApp.Name = "textboxAboutApp"
+        Me.textboxAboutApp.ReadOnly = True
+        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.textboxAboutApp, 5)
+        Me.textboxAboutApp.Size = New System.Drawing.Size(339, 341)
+        Me.textboxAboutApp.TabIndex = 0
+        Me.textboxAboutApp.TabStop = False
+        Me.textboxAboutApp.Text = resources.GetString("textboxAboutApp.Text")
         '
         'tabpageLicense
         '
@@ -267,7 +267,7 @@ Partial Class aaformAboutWindow
     Friend WithEvents tabpageLicense As TabPage
     Friend WithEvents pictureboxUXLBanner As PictureBox
     Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
-    Friend WithEvents textboxAppDescription As TextBox
+    Friend WithEvents textboxAboutApp As TextBox
     Friend WithEvents tabpageAcknowledgments As TabPage
     Friend WithEvents flowLayoutPanelButtons As FlowLayoutPanel
     Friend WithEvents linkUpdateCheck As LinkLabel

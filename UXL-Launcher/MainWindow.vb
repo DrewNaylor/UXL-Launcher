@@ -26,9 +26,6 @@
 Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Create a string with the BuildDate.txt file.
-        Dim BuildDateString As String = My.Resources.BuildDate
-
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
 
