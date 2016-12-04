@@ -31,13 +31,13 @@ Public Class aaformAboutWindow
         Dim BuildDateString As String = My.Resources.BuildDate
 
         ' Put the text in the About box on launch.
-        textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & Environment.NewLine)
-        textboxAboutApp.AppendText("Version " & My.Application.Info.Version.ToString & " - Codename ""New Change""" & Environment.NewLine)
-        textboxAboutApp.AppendText("App compiled at UTC " & BuildDateString)
-        textboxAboutApp.AppendText("" & Environment.NewLine)
-        textboxAboutApp.AppendText(My.Application.Info.Copyright & Environment.NewLine)
-        textboxAboutApp.AppendText("UXL Launcher provides launchers for most Microsoft Office apps in one place." & Environment.NewLine)
-        textboxAboutApp.AppendText("License notice:
+        textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher
+Version  & My.Application.Info.Version.ToString & - Codename ""New Change""
+        App compiled at UTC  & BuildDateString
+
+        My.Application.Info.Copyright
+        UXL Launcher provides launchers for most Microsoft Office apps in one place.
+License notice:
 UXL Launcher is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -47,12 +47,9 @@ UXL Launcher is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>." & Environment.NewLine)
-        textboxAboutApp.AppendText("I am not intending on infringing on Microsoft's copyrights, so this is only a shortcut application." & Environment.NewLine)
-        textboxAboutApp.AppendText("" & Environment.NewLine)
-        ' Note: In order for the date and time to be updated, you must tell Visual Studio to build the project BEFORE debugging it. In VS2010, you can right-click
-        ' on the toolbar at the top of the window and click "Build" to add the Build Toolbar.
-        textboxAboutApp.AppendText("Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, and all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft's copyrights.")
+along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>." & vbCrLf &
+"I am not intending on infringing on Microsoft" & "'" & "s copyrights, so this is only a shortcut application.
+Copyright notice Office, Microsoft Office, Word, Excel, PowerPoint, And all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft" & "'" & "s copyrights.")
 
 
         ' Load the GPL document in the WebBrowser control.
