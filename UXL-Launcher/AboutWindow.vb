@@ -31,12 +31,11 @@ Public Class aaformAboutWindow
         Dim BuildDateString As String = My.Resources.BuildDate
 
         ' Put the text in the About box on launch.
-        textboxAboutApp.Text = ("Drew's App Launcher for Microsoft Office 2010 ProPlus" & Environment.NewLine)
-        textboxAboutApp.AppendText("Version 2.8 Stable - Codename ''Last Huzzah''" & Environment.NewLine)
-        textboxAboutApp.AppendText("Compiled for 64-bit systems with a 32-bit installation of Office 2010" & Environment.NewLine)
+        textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & Environment.NewLine)
+        textboxAboutApp.AppendText("Version " & My.Application.Info.Version.ToString & " - Codename ""New Change""" & Environment.NewLine)
         textboxAboutApp.AppendText("" & Environment.NewLine)
-        textboxAboutApp.AppendText("Copyright (C) 2013-2016 Drew Naylor" & Environment.NewLine)
-        textboxAboutApp.AppendText("This app is designed to quickly and easily launch Office 2010 ProPlus software." & Environment.NewLine)
+        textboxAboutApp.AppendText(My.Application.Info.Copyright & Environment.NewLine)
+        textboxAboutApp.AppendText("UXL Launcher provides launchers for most Microsoft Office apps in one place." & Environment.NewLine)
         textboxAboutApp.AppendText("It can also clear up space on your desktop." & Environment.NewLine)
         textboxAboutApp.AppendText("I am not intending on infringing on Microsoft's copyrights, so this is only a shortcut application." & Environment.NewLine)
         textboxAboutApp.AppendText("" & Environment.NewLine)
