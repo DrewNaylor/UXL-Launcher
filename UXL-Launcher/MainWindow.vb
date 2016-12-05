@@ -200,9 +200,20 @@ Public Class aaformMainWindow
         LaunchApp.LaunchOfficeLangPrefs
     End Sub
 #End Region
-#Region "Help>About button."
+#Region "Help menubar buttons."
     Private Sub menubarAboutButton_Click(sender As Object, e As EventArgs) Handles menubarAboutButton.Click
-        aaformAboutWindow.ShowDialog()
+        ' Open the About window to About tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+        Dim forceAboutWindowTab As New aaformAboutWindow
+        forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(0)
+        forceAboutWindowTab.ShowDialog()
+    End Sub
+
+    Private Sub menubarLicenseButton_Click(sender As Object, e As EventArgs) Handles menubarLicenseButton.Click
+        ' Open the About window to License tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+        Dim forceAboutWindowTab As New aaformAboutWindow
+        forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(1)
+        forceAboutWindowTab.ShowDialog()
+
     End Sub
 #End Region
 End Class
