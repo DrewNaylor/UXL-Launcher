@@ -81,6 +81,8 @@ In addition to the requirements for simply running UXL Launcher, your computer r
 - [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
 - [Windows PowerShell 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
 
+It's recommended to have [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) installed if you want the main window to be properly sized. If VS 2015 Community is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
+
 If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.
 
 ***
