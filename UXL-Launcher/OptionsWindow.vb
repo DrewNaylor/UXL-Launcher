@@ -192,7 +192,7 @@ Public Class aaformOptionsWindow
 
             If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxO365InstallMethod.Checked = True Then
                 MessageBox.Show("Note that the combination of the Microsoft Office version you chose and installation method are untested and might not work properly." _
-                                , "Potentially incompatible settings detected!" _
+                                , "Potentially incompatible settings detected" _
                                 , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
 #End Region
@@ -254,7 +254,7 @@ Public Class aaformOptionsWindow
             ' Update the text in the main window's titlebar.
             aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
             ' Tell the user that settings were saved.
-            MessageBox.Show("Settings saved.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            MessageBox.Show("Settings saved.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
             Me.Close()
         End If
@@ -307,7 +307,7 @@ Public Class aaformOptionsWindow
                         " This will save your settings and attempt to launch the Office Language Options app." & vbCrLf &
                         "" & vbCrLf &
                         "If you choose to test your settings and no message appears, assume that it worked. " &
-                        "However, you might need to adjust your settings if you see a File not Found error." & vbCrLf &
+                        "However, you might need to adjust your settings if you see a message saying that we couldn't find the file." & vbCrLf &
                         "" & vbCrLf &
                         "Close the Office Language Preferences window if it appears." & vbCrLf &
                         "" & vbCrLf &

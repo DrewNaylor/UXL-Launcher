@@ -62,7 +62,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "EXCEL.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Excel isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Excel in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
@@ -93,7 +93,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "INFOPATH.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Infopath isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft InfoPath in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
@@ -124,7 +124,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "ONENOTE.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Onenote isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft OneNote in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
@@ -155,7 +155,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "OUTLOOK.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Outlook isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Outlook in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
@@ -186,7 +186,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "POWERPNT.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Powerpoint isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft PowerPoint in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
@@ -217,7 +217,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "GROOVE.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Sharepoint Workspace isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft SharePoint Workspace in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
@@ -248,7 +248,7 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "MSPUB.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' If Microsoft Publisher isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Publisher in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?", "Couldn't find file",
