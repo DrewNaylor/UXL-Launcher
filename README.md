@@ -47,10 +47,50 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Launching Office 2013 installed via Office 365 on a 64-bit computer requires UXL Launcher to be set to 32-bit Windows. [(issue #43)](https://github.com/DrewNaylor/UXL-Launcher/issues/43)
 
-# System requirements
 
-The system requirements for UXL Launcher have been [moved to their own wiki page](../../wiki/System-Requirements).
+# System Requirements for running UXL Launcher
 
-# UXL Autobuild Script
+To run UXL Launcher, your computer requires the following:
 
-UXL Autobuild Script (or UAS) is a Batch script I made for developers and other people who want the latest changes from the Master branch right away. Note that I can't guarantee any stability by going this route rather than sticking with the stable releases, but if you want to use it anyway, I've made a [GitHub Gist with the code pasted into it](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde). To use the script, simply copy-and-paste the code into Notepad or your favorite text editor and save it as a ".bat" file. When you run the script it will tell you a bunch of important stuff as well as asking you if you want to run it, exit, or view the software required to build the project as written above.
+- [Microsoft .Net 4.6.1 Framework](https://www.microsoft.com/en-us/download/details.aspx?id=49981)
+
+  - Ignore the ad on that page, scroll down, and click the orange Download button. May take a while to download.
+
+- Windows versions: Windows 7 SP1, 8.1, 10.
+  - Windows 8.0 is untested although it might work.
+
+- Architectures: x86 (32-bit) and x64 (64-bit.)
+
+- Hardware requirements: At least a 1.2 GHz CPU; 1 GB of RAM or more.
+
+- Disk space:
+
+  - 32-bit: 3 GB space free.
+  - 64-bit: 3 GB space free.
+
+- To properly view the License and Acknowledgements in the About window, you'll need Internet Explorer.
+
+- Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems.
+<br>
+<br>
+<br>
+# System Requirements to build UXL Launcher from source
+
+In addition to the requirements for simply running UXL Launcher, your computer requires the following software to build it from source code:
+
+- [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
+- [Windows PowerShell 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
+
+If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.
+
+***
+
+If you don't want to use a script to build UXL Launcher, here's how to do it manually:
+
+1. First, clone the Git repository by running: <code>git clone https://github.com/DrewNaylor/UXL-Launcher.git</code> or [download the Zip file for the master branch](https://github.com/DrewNaylor/UXL-Launcher/archive/master.zip) and remember where you saved your files.
+
+2. Next, open the command prompt (<code>cmd.exe</code>) and type or copy/paste <code>cd C:\Program Files (x86)\MSBuild\14.0\Bin\ </code> if you have a 64-bit Windows install or <code>cd C:\Program Files\MSBuild\14.0\Bin\ </code> if you have a 32-bit Windows install Press the Enter or Return key when it's pasted.
+
+3. Third, type <code>msbuild.exe</code>, press the spacebar, and drag the <code>UXL-Launcher.vbproj</code> into the command prompt window and press the Enter or Return key.
+
+4. And finally, once the project is done being built, you'll find the UXL Launcher EXE file in <code>UXL-Launcher\UXL-Launcher\bin\Debug </code> wherever you saved the files to earlier along with a config file, a PDB file, and an XML file.
