@@ -49,8 +49,8 @@ Public Class aaformAboutWindow
         Dim BuildDateString As String = My.Resources.BuildDate
 
         ' Put the text in the About box on launch.
-        textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher
-Version " & My.Application.Info.Version.ToString & " - Codename ""New Change""
+        textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
+"Version " & My.Application.Info.Version.ToString & " - Codename ""New Change""
 App compiled at UTC" & BuildDateString &
 "Copyright (C) 2013-2016  Drew Naylor
 
