@@ -30,24 +30,24 @@ Public Class LaunchApp
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "MSACCESS.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
+            'Catch ex As System.ComponentModel.Win32Exception
             ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Access in the location specified in the Options window." &
-                            " Would you like to open the Options window to change your settings?", "Couldn't find file",
-                        MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            'Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Access in the location specified in the Options window." &
+            '" Would you like to open the Options window to change your settings?", "Couldn't find file",
+            'MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
+            'If msgResult = DialogResult.Yes Then
+            'Dim forceOptionsWindowTab As New aaformOptionsWindow
+            'forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+            'forceOptionsWindowTab.ShowDialog()
+            'End If
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." &
-                " Would you like to file a bug report?", "I just don't know what went wrong",
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
+                "Would you like to file a bug report online?", "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
         End Try
     End Sub
