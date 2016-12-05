@@ -31,9 +31,18 @@ Public Class LaunchApp
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & "MSACCESS.EXE")
         Catch ex As System.ComponentModel.Win32Exception
-            MessageBox.Show("We couldn't find the Microsoft Access file in the location specified in the Options window." &
+            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+            ' go to the Options window to change it.
+            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Access in the location specified in the Options window." &
                             " Would you like to open the Options window to change your settings?", "Couldn't find file",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            ' If the user chooses to open the Options window, open the Options window to the General tab.
+            If msgResult = DialogResult.Yes Then
+                Dim forceOptionsWindowTab As New aaformOptionsWindow
+                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                forceOptionsWindowTab.ShowDialog()
+            End If
         End Try
     End Sub
 
