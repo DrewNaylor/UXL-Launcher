@@ -25,7 +25,7 @@
 Public Class LaunchApp
 #Region "The code in this region is for launching the apps when buttons are pressed."
 
-
+#Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         Try
@@ -55,7 +55,8 @@ Public Class LaunchApp
             End If
         End Try
     End Sub
-
+#End Region
+#Region "Microsoft Excel Launcher Code."
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         Try
@@ -85,11 +86,13 @@ Public Class LaunchApp
             End If
         End Try
     End Sub
-
+#End Region
+#Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft InfoPath.
         Process.Start(OfficeLocater.fullLauncherCodeString & "INFOPATH.EXE")
     End Sub
+#End Region
 
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote.
