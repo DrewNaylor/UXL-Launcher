@@ -93,31 +93,36 @@ Public Class LaunchApp
         Process.Start(OfficeLocater.fullLauncherCodeString & "INFOPATH.EXE")
     End Sub
 #End Region
-
+#Region "Microsoft OneNote Launcher Code."
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote.
         Process.Start(OfficeLocater.fullLauncherCodeString & "ONENOTE.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft Outlook Launcher Code."
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook.
         Process.Start(OfficeLocater.fullLauncherCodeString & "OUTLOOK.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft PowerPoint Launcher Code."
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint.
         Process.Start(OfficeLocater.fullLauncherCodeString & "POWERPNT.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft SharePoint Workspace.
         Process.Start(OfficeLocater.fullLauncherCodeString & "GROOVE.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft Publisher Launcher Code."
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher.
         Process.Start(OfficeLocater.fullLauncherCodeString & "MSPUB.EXE")
     End Sub
+#End Region
 
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word.
