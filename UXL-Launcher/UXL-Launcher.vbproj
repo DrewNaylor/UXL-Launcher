@@ -209,6 +209,7 @@
     <None Include="Resources\uxl_icon_24x24.png" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\gpl-3.0-standalone.html" />
+    <None Include="Resources\Acknowledgments.html" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <ItemGroup />

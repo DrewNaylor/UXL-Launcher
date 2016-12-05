@@ -71,7 +71,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2016-12-03T23:05:06
+        '''  Looks up a localized string similar to .
+        '''</summary>
+        Public ReadOnly Property Acknowledgments() As String
+            Get
+                Return ResourceManager.GetString("Acknowledgments", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 2016-12-05T10:06:10
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -113,7 +122,7 @@ Namespace My.Resources
         '''&lt;h3 style=&quot;text-align: center;&quot;&gt;GNU GENERAL PUBLIC LICENSE&lt;/h3&gt;
         '''&lt;p style=&quot;text-align: center;&quot;&gt;Version 3, 29 June 2007&lt;/p&gt;
         '''
-        '''&lt;p&gt;Copyright &amp;copy; 200 [rest of string was truncated]&quot;;.
+        '''&lt;p&gt;Copyrigh [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property gpl_3_0_standalone() As String
             Get

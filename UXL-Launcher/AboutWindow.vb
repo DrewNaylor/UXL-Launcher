@@ -72,7 +72,9 @@ Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all rel
 
         ' Load the GPL document in the WebBrowser control.
         webbrowserGPLViewer.DocumentText = My.Resources.gpl_3_0_standalone
-        ' Load the 
+        ' Load the Acknowledgments HTML document in the WebBrowser Acknowledgments control.
+        webbrowserAcknowledgmentsViewer.DocumentText = My.Resources.Acknowledgments
+
     End Sub
 #End Region
 #Region "Code to run when clicking the link to go to the GitHub repository."
