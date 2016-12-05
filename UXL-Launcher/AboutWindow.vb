@@ -23,9 +23,27 @@
 
 
 
+Imports System.ComponentModel
+
 Public Class aaformAboutWindow
 #Region "Code that runs when the About window is opened."
     Private Sub RealAboutWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+#Region "Always on Top override code for dialog boxes."
+        ' If Always On Top is turned on, then turn it off when the Options window is opened.
+
+        If My.Settings.alwaysOnTop = True Then
+            aaformMainWindow.TopMost = False
+        ElseIf My.Settings.alwaysOnTop = False Then
+            aaformMainWindow.TopMost = False
+        End If
+
+        ' Debug labels for Always On Top code on the main form.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
+
+#End Region
+
 
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
@@ -75,6 +93,25 @@ Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all rel
     Private Sub linkMyWebsite_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linkMyWebsite.LinkClicked
         ' Go to my website.
         Process.Start("http://drewnaylor.github.io")
+    End Sub
+
+
+#End Region
+#Region "Always On Top override code for closing dialog boxes, including debug code."
+    Private Sub aaformAboutWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+
+        ' When the Options window is closing, tell the main window to be Always On Top if My.Settings.alwaysOnTop is set to True.
+        If My.Settings.alwaysOnTop = True Then
+            aaformMainWindow.TopMost = True
+        ElseIf My.Settings.alwaysOnTop = False Then
+            aaformMainWindow.TopMost = False
+        End If
+
+        ' Debug label for the Always On Top feature.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
     End Sub
 #End Region
 
