@@ -49,6 +49,10 @@ Public Class LaunchApp
             Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
                 "Would you like to file a bug report online?", "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
         End Try
     End Sub
 
