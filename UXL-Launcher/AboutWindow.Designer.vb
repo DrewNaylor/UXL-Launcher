@@ -54,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 257.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 258.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -272,7 +272,7 @@ Partial Class aaformAboutWindow
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "aaformAboutWindow"
+        Me.Text = "About UXL Launcher"
         Me.tableLayoutPanel.ResumeLayout(False)
         Me.tableLayoutPanel.PerformLayout()
         Me.tabcontrolAboutWindow.ResumeLayout(False)
