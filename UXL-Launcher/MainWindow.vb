@@ -221,5 +221,10 @@ Public Class aaformMainWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(2)
         forceAboutWindowTab.ShowDialog()
     End Sub
+
+    Private Sub menubarHelpTopicsButton_Click(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.Click
+        ' Go to the GitHub wiki.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/wiki")
+    End Sub
 #End Region
 End Class
