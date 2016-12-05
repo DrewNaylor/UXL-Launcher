@@ -27,8 +27,14 @@ Public Class LaunchApp
 
 
     Public Shared Sub LaunchAccess()
-        ' Launch Microsoft Access.
-        Process.Start(OfficeLocater.fullLauncherCodeString & "MSACCESS.EXE")
+        ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
+        Try
+            Process.Start(OfficeLocater.fullLauncherCodeString & "MSACCESS.EXE")
+        Catch ex As System.ComponentModel.Win32Exception
+            MessageBox.Show("We couldn't find the Microsoft Access file in the location specified in the Options window." &
+                            " Would you like to open the Options window to change your settings?", "Couldn't find file",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Public Shared Sub LaunchExcel()
