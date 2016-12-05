@@ -123,21 +123,24 @@ Public Class LaunchApp
         Process.Start(OfficeLocater.fullLauncherCodeString & "MSPUB.EXE")
     End Sub
 #End Region
-
+#Region "Microsoft Word Launcher Code."
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word.
         Process.Start(OfficeLocater.fullLauncherCodeString & "WINWORD.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft Query Launcher Code."
     Public Shared Sub LaunchQuery()
         ' Launch Microsoft Query.
         Process.Start(OfficeLocater.fullLauncherCodeString & "MSQRY32.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft Clip Organizer Launcher Code."
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer.
         Process.Start(OfficeLocater.fullLauncherCodeString & "MSTORE.EXE")
     End Sub
+#End Region
 
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Picture Manager.
