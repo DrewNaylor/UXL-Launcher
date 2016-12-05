@@ -43,6 +43,12 @@ Public Class LaunchApp
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog()
             End If
+        Catch ex As Exception
+            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
+            ' bug report.
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." &
+                " Would you like to file a bug report?", "I just don't know what went wrong",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
         End Try
     End Sub
 
