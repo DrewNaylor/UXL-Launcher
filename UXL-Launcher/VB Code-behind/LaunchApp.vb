@@ -141,24 +141,23 @@ Public Class LaunchApp
         Process.Start(OfficeLocater.fullLauncherCodeString & "MSTORE.EXE")
     End Sub
 #End Region
-
+#Region "Microsoft Picture Manager Launcher Code."
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Picture Manager.
         Process.Start(OfficeLocater.fullLauncherCodeString & "OIS.EXE")
     End Sub
-
+#End Region
+#Region "Microsoft OneNote Quick Launch Launcher Code."
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher.
         Process.Start(OfficeLocater.fullLauncherCodeString & "ONENOTEM.EXE")
     End Sub
-
+#End Region
+#Region "Office Language Preferences Launcher Code."
     Public Shared Sub LaunchOfficeLangPrefs()
         ' Launch Office Language Preferences.
         Process.Start(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE")
     End Sub
-
-
-
-
+#End Region
 #End Region
 End Class
