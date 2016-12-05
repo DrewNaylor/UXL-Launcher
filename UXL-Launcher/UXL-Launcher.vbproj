@@ -126,12 +126,6 @@
     <Compile Include="OptionsWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DummyAboutWindow.Designer.vb">
-      <DependentUpon>DummyAboutWindow.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DummyAboutWindow.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AboutWindow.Designer.vb">
       <DependentUpon>AboutWindow.vb</DependentUpon>
     </Compile>
@@ -154,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsWindow.resx">
       <DependentUpon>OptionsWindow.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DummyAboutWindow.resx">
-      <DependentUpon>DummyAboutWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutWindow.resx">
       <DependentUpon>AboutWindow.vb</DependentUpon>
