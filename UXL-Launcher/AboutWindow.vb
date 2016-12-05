@@ -97,9 +97,8 @@ Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all rel
 
 
 #End Region
-#Region "Always On Top override code for closing dialog boxes, including debug code."
+#Region "Code to run when closing the About window."
     Private Sub aaformAboutWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-
 
         ' When the Options window is closing, tell the main window to be Always On Top if My.Settings.alwaysOnTop is set to True.
         If My.Settings.alwaysOnTop = True Then
