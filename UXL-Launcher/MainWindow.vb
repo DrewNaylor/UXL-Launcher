@@ -213,7 +213,13 @@ Public Class aaformMainWindow
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(1)
         forceAboutWindowTab.ShowDialog()
+    End Sub
 
+    Private Sub menubarAuthorsButton_Click(sender As Object, e As EventArgs) Handles menubarAuthorsButton.Click
+        ' Open the About window to Acknowledgements tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+        Dim forceAboutWindowTab As New aaformAboutWindow
+        forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(2)
+        forceAboutWindowTab.ShowDialog()
     End Sub
 #End Region
 End Class
