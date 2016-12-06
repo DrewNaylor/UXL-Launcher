@@ -315,6 +315,7 @@ Public Class aaformOptionsWindow
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
+            Me.Hide()
             LaunchApp.LaunchOfficeLangPrefs()
         End If
     End Sub
