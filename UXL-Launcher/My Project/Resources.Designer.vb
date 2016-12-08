@@ -100,7 +100,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2016-12-08T17:46:14
+        '''  Looks up a localized string similar to 2016-12-08T17:49:28
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
