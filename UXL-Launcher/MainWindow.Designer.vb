@@ -692,30 +692,35 @@ Partial Class aaformMainWindow
         '
         'notifyiconWord
         '
+        Me.notifyiconWord.Image = Global.UXL_Launcher.My.Resources.Resources.Word
         Me.notifyiconWord.Name = "notifyiconWord"
         Me.notifyiconWord.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconWord.Text = "Microsoft Word"
         '
         'notifyiconExcel
         '
+        Me.notifyiconExcel.Image = Global.UXL_Launcher.My.Resources.Resources.Excel
         Me.notifyiconExcel.Name = "notifyiconExcel"
         Me.notifyiconExcel.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconExcel.Text = "Microsoft Excel"
         '
         'notifyiconPowerpoint
         '
+        Me.notifyiconPowerpoint.Image = Global.UXL_Launcher.My.Resources.Resources.Powerpoint
         Me.notifyiconPowerpoint.Name = "notifyiconPowerpoint"
         Me.notifyiconPowerpoint.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconPowerpoint.Text = "Microsoft PowerPoint"
         '
         'notifyiconOutlook
         '
+        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
         Me.notifyiconOutlook.Name = "notifyiconOutlook"
         Me.notifyiconOutlook.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconOutlook.Text = "Microsoft Outlook"
         '
         'notifyiconOnenote
         '
+        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
         Me.notifyiconOnenote.Name = "notifyiconOnenote"
         Me.notifyiconOnenote.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconOnenote.Text = "Microsoft OneNote"
@@ -727,24 +732,28 @@ Partial Class aaformMainWindow
         '
         'notifyiconAccess
         '
+        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.Access
         Me.notifyiconAccess.Name = "notifyiconAccess"
         Me.notifyiconAccess.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconAccess.Text = "Microsoft Access"
         '
         'notifyiconPublisher
         '
+        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.Publisher
         Me.notifyiconPublisher.Name = "notifyiconPublisher"
         Me.notifyiconPublisher.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconPublisher.Text = "Microsoft Publisher"
         '
         'notifyiconInfopath
         '
+        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.Infopath
         Me.notifyiconInfopath.Name = "notifyiconInfopath"
         Me.notifyiconInfopath.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconInfopath.Text = "Microsoft InfoPath"
         '
         'notifyiconSharepointWkSp
         '
+        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.Sharepoint_Workspace
         Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
         Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(246, 22)
         Me.notifyiconSharepointWkSp.Text = "Microsoft SharePoint Workspace"
