@@ -226,5 +226,13 @@ Public Class aaformMainWindow
         ' Go to the GitHub wiki.
         Process.Start("https://github.com/DrewNaylor/UXL-Launcher/wiki")
     End Sub
+
+
+#End Region
+#Region "Taskbar notification area launcher buttons."
+    Private Sub notifyiconWord_Click(sender As Object, e As EventArgs) Handles notifyiconWord.Click
+        ' Run Microsoft Word.
+        LaunchApp.LaunchWord()
+    End Sub
 #End Region
 End Class
