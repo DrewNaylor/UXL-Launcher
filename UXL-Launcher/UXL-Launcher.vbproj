@@ -207,15 +207,15 @@
     <None Include="Resources\gpl-3.0-standalone.html" />
     <None Include="Resources\Acknowledgments.html" />
     <None Include="Resources\UXL_Launcher_Icon_Small.ico" />
-    <Content Include="Resources\small-icons\Access.png" />
-    <Content Include="Resources\small-icons\Excel.png" />
-    <Content Include="Resources\small-icons\Infopath.png" />
-    <Content Include="Resources\small-icons\Onenote.png" />
-    <Content Include="Resources\small-icons\Outlook.png" />
-    <Content Include="Resources\small-icons\Powerpoint.png" />
-    <Content Include="Resources\small-icons\Publisher.png" />
-    <Content Include="Resources\small-icons\Sharepoint Workspace.png" />
-    <Content Include="Resources\small-icons\Word.png" />
+    <None Include="Resources\small-icons\small-Access.png" />
+    <None Include="Resources\small-icons\small-Excel.png" />
+    <None Include="Resources\small-icons\small-Infopath.png" />
+    <None Include="Resources\small-icons\small-Onenote.png" />
+    <None Include="Resources\small-icons\small-Outlook.png" />
+    <None Include="Resources\small-icons\small-Powerpoint.png" />
+    <None Include="Resources\small-icons\small-Publisher.png" />
+    <None Include="Resources\small-icons\small-Sharepoint.png" />
+    <None Include="Resources\small-icons\small-Word.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <ItemGroup />
