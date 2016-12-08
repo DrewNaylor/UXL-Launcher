@@ -688,7 +688,7 @@ Partial Class aaformMainWindow
         '
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 286)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 308)
         '
         'notifyiconWord
         '
@@ -737,28 +737,32 @@ Partial Class aaformMainWindow
         '
         'notifyiconAccess
         '
-        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.Access
+        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.small_Access
+        Me.notifyiconAccess.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconAccess.Name = "notifyiconAccess"
         Me.notifyiconAccess.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconAccess.Text = "Microsoft Access"
         '
         'notifyiconPublisher
         '
-        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.Publisher
+        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
+        Me.notifyiconPublisher.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPublisher.Name = "notifyiconPublisher"
         Me.notifyiconPublisher.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconPublisher.Text = "Microsoft Publisher"
         '
         'notifyiconInfopath
         '
-        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.Infopath
+        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.small_Infopath
+        Me.notifyiconInfopath.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconInfopath.Name = "notifyiconInfopath"
         Me.notifyiconInfopath.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconInfopath.Text = "Microsoft InfoPath"
         '
         'notifyiconSharepointWkSp
         '
-        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.Sharepoint_Workspace
+        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.small_Sharepoint
+        Me.notifyiconSharepointWkSp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
         Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconSharepointWkSp.Text = "Microsoft SharePoint Workspace"
