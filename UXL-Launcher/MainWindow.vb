@@ -259,5 +259,20 @@ Public Class aaformMainWindow
         ' Run Microsoft Access.
         LaunchApp.LaunchAccess()
     End Sub
+
+    Private Sub notifyiconPublisher_Click(sender As Object, e As EventArgs) Handles notifyiconPublisher.Click
+        ' Run Microsoft Publisher.
+        LaunchApp.LaunchPublisher()
+    End Sub
+
+    Private Sub notifyiconInfopath_Click(sender As Object, e As EventArgs) Handles notifyiconInfopath.Click
+        ' Run Microsoft InfoPath.
+        LaunchApp.LaunchInfopath()
+    End Sub
+
+    Private Sub notifyiconSharepointWkSp_Click(sender As Object, e As EventArgs) Handles notifyiconSharepointWkSp.Click
+        ' Run Microsoft SharePoint Workspace.
+        LaunchApp.LaunchSharepointWorkspace()
+    End Sub
 #End Region
 End Class
