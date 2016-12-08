@@ -234,5 +234,20 @@ Public Class aaformMainWindow
         ' Run Microsoft Word.
         LaunchApp.LaunchWord()
     End Sub
+
+    Private Sub notifyiconExcel_Click(sender As Object, e As EventArgs) Handles notifyiconExcel.Click
+        ' Run Microsoft Excel.
+        LaunchApp.LaunchExcel()
+    End Sub
+
+    Private Sub notifyiconPowerpoint_Click(sender As Object, e As EventArgs) Handles notifyiconPowerpoint.Click
+        ' Run Microsoft PowerPoint.
+        LaunchApp.LaunchPowerpoint()
+    End Sub
+
+    Private Sub notifyiconOutlook_Click(sender As Object, e As EventArgs) Handles notifyiconOutlook.Click
+        ' Run Microsoft Outlook.
+        LaunchApp.LaunchOutlook()
+    End Sub
 #End Region
 End Class
