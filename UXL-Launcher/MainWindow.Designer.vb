@@ -688,71 +688,71 @@ Partial Class aaformMainWindow
         '
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(184, 236)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(247, 236)
         '
         'notifyiconWord
         '
         Me.notifyiconWord.Name = "notifyiconWord"
-        Me.notifyiconWord.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconWord.Text = "ToolStripMenuItem1"
+        Me.notifyiconWord.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconWord.Text = "Microsoft Word"
         '
         'notifyiconExcel
         '
         Me.notifyiconExcel.Name = "notifyiconExcel"
-        Me.notifyiconExcel.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconExcel.Text = "ToolStripMenuItem2"
+        Me.notifyiconExcel.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconExcel.Text = "Microsoft Excel"
         '
         'notifyiconPowerpoint
         '
         Me.notifyiconPowerpoint.Name = "notifyiconPowerpoint"
-        Me.notifyiconPowerpoint.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconPowerpoint.Text = "ToolStripMenuItem3"
+        Me.notifyiconPowerpoint.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconPowerpoint.Text = "Microsoft PowerPoint"
         '
         'notifyiconOutlook
         '
         Me.notifyiconOutlook.Name = "notifyiconOutlook"
-        Me.notifyiconOutlook.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconOutlook.Text = "ToolStripMenuItem4"
+        Me.notifyiconOutlook.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconOutlook.Text = "Microsoft Outlook"
         '
         'notifyiconOnenote
         '
         Me.notifyiconOnenote.Name = "notifyiconOnenote"
-        Me.notifyiconOnenote.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconOnenote.Text = "ToolStripMenuItem5"
+        Me.notifyiconOnenote.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconOnenote.Text = "Microsoft OneNote"
         '
         'notifyiconSeparator1
         '
         Me.notifyiconSeparator1.Name = "notifyiconSeparator1"
-        Me.notifyiconSeparator1.Size = New System.Drawing.Size(180, 6)
+        Me.notifyiconSeparator1.Size = New System.Drawing.Size(243, 6)
         '
         'notifyiconAccess
         '
         Me.notifyiconAccess.Name = "notifyiconAccess"
-        Me.notifyiconAccess.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconAccess.Text = "ToolStripMenuItem6"
+        Me.notifyiconAccess.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconAccess.Text = "Microsoft Access"
         '
         'notifyiconPublisher
         '
         Me.notifyiconPublisher.Name = "notifyiconPublisher"
-        Me.notifyiconPublisher.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconPublisher.Text = "ToolStripMenuItem7"
+        Me.notifyiconPublisher.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconPublisher.Text = "Microsoft Publisher"
         '
         'notifyiconInfopath
         '
         Me.notifyiconInfopath.Name = "notifyiconInfopath"
-        Me.notifyiconInfopath.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconInfopath.Text = "ToolStripMenuItem8"
+        Me.notifyiconInfopath.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconInfopath.Text = "Microsoft InfoPath"
         '
         'notifyiconSharepointWkSp
         '
         Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
-        Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(183, 22)
-        Me.notifyiconSharepointWkSp.Text = "ToolStripMenuItem9"
+        Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(246, 22)
+        Me.notifyiconSharepointWkSp.Text = "Microsoft SharePoint Workspace"
         '
         'notifyiconSeparator2
         '
         Me.notifyiconSeparator2.Name = "notifyiconSeparator2"
-        Me.notifyiconSeparator2.Size = New System.Drawing.Size(180, 6)
+        Me.notifyiconSeparator2.Size = New System.Drawing.Size(243, 6)
         '
         'aaformMainWindow
         '
