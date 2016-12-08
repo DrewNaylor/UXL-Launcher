@@ -249,5 +249,15 @@ Public Class aaformMainWindow
         ' Run Microsoft Outlook.
         LaunchApp.LaunchOutlook()
     End Sub
+
+    Private Sub notifyiconOnenote_Click(sender As Object, e As EventArgs) Handles notifyiconOnenote.Click
+        ' Run Microsoft OneNote.
+        LaunchApp.LaunchOnenote()
+    End Sub
+
+    Private Sub notifyiconAccess_Click(sender As Object, e As EventArgs) Handles notifyiconAccess.Click
+        ' Run Microsoft Access.
+        LaunchApp.LaunchAccess()
+    End Sub
 #End Region
 End Class
