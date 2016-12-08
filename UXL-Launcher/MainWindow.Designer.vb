@@ -81,6 +81,7 @@ Partial Class aaformMainWindow
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.contextmenuNotifyicon = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -666,9 +667,15 @@ Partial Class aaformMainWindow
         '
         'notifyiconTaskbarLaunchers
         '
+        Me.notifyiconTaskbarLaunchers.ContextMenuStrip = Me.contextmenuNotifyicon
         Me.notifyiconTaskbarLaunchers.Icon = CType(resources.GetObject("notifyiconTaskbarLaunchers.Icon"), System.Drawing.Icon)
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher"
         Me.notifyiconTaskbarLaunchers.Visible = True
+        '
+        'contextmenuNotifyicon
+        '
+        Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(61, 4)
         '
         'aaformMainWindow
         '
@@ -770,4 +777,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
     Friend WithEvents debugLabelForMSIInstall As Label
     Friend WithEvents notifyiconTaskbarLaunchers As NotifyIcon
+    Friend WithEvents contextmenuNotifyicon As ContextMenuStrip
 End Class
