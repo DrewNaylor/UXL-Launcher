@@ -279,5 +279,17 @@ Public Class aaformMainWindow
         ' Exit UXL Launcher.
         Me.Close()
     End Sub
+
+    Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
+        ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+        Dim forceOptionsWindowTab As New aaformOptionsWindow
+        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+        forceOptionsWindowTab.ShowDialog()
+    End Sub
+
+    Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
+        ' Run Office Language Preferences.
+        LaunchApp.LaunchOfficeLangPrefs()
+    End Sub
 #End Region
 End Class
