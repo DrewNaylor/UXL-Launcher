@@ -137,6 +137,11 @@
     <Compile Include="AboutWindow.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Resources\small-icons\small-icons.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>small-icons.resx</DependentUpon>
+    </Compile>
     <Compile Include="VB Code-behind\debugmodeStuff.vb" />
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
@@ -156,6 +161,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AboutWindow.resx">
       <DependentUpon>AboutWindow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\small-icons\small-icons.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>small-icons.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +225,9 @@
     <Content Include="Resources\small-icons\Powerpoint.png" />
     <Content Include="Resources\small-icons\Publisher.png" />
     <Content Include="Resources\small-icons\Sharepoint Workspace.png" />
+    <None Include="Resources\small-icons\small Language Settings.png" />
+    <None Include="Resources\small-icons\uxl_icon_24x24.png" />
+    <None Include="Resources\small-icons\UXL_Launcher_Icon_Small.ico" />
     <Content Include="Resources\small-icons\Word.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
