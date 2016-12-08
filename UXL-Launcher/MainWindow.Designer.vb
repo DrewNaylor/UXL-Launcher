@@ -82,6 +82,17 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.contextmenuNotifyicon = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.notifyiconWord = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconExcel = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconPowerpoint = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconOutlook = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconOnenote = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.notifyiconAccess = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconPublisher = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconInfopath = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconSharepointWkSp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -101,6 +112,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.contextmenuNotifyicon.SuspendLayout()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -674,8 +686,73 @@ Partial Class aaformMainWindow
         '
         'contextmenuNotifyicon
         '
+        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(61, 4)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(184, 236)
+        '
+        'notifyiconWord
+        '
+        Me.notifyiconWord.Name = "notifyiconWord"
+        Me.notifyiconWord.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconWord.Text = "ToolStripMenuItem1"
+        '
+        'notifyiconExcel
+        '
+        Me.notifyiconExcel.Name = "notifyiconExcel"
+        Me.notifyiconExcel.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconExcel.Text = "ToolStripMenuItem2"
+        '
+        'notifyiconPowerpoint
+        '
+        Me.notifyiconPowerpoint.Name = "notifyiconPowerpoint"
+        Me.notifyiconPowerpoint.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconPowerpoint.Text = "ToolStripMenuItem3"
+        '
+        'notifyiconOutlook
+        '
+        Me.notifyiconOutlook.Name = "notifyiconOutlook"
+        Me.notifyiconOutlook.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconOutlook.Text = "ToolStripMenuItem4"
+        '
+        'notifyiconOnenote
+        '
+        Me.notifyiconOnenote.Name = "notifyiconOnenote"
+        Me.notifyiconOnenote.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconOnenote.Text = "ToolStripMenuItem5"
+        '
+        'notifyiconSeparator1
+        '
+        Me.notifyiconSeparator1.Name = "notifyiconSeparator1"
+        Me.notifyiconSeparator1.Size = New System.Drawing.Size(180, 6)
+        '
+        'notifyiconAccess
+        '
+        Me.notifyiconAccess.Name = "notifyiconAccess"
+        Me.notifyiconAccess.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconAccess.Text = "ToolStripMenuItem6"
+        '
+        'notifyiconPublisher
+        '
+        Me.notifyiconPublisher.Name = "notifyiconPublisher"
+        Me.notifyiconPublisher.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconPublisher.Text = "ToolStripMenuItem7"
+        '
+        'notifyiconInfopath
+        '
+        Me.notifyiconInfopath.Name = "notifyiconInfopath"
+        Me.notifyiconInfopath.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconInfopath.Text = "ToolStripMenuItem8"
+        '
+        'notifyiconSharepointWkSp
+        '
+        Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
+        Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(183, 22)
+        Me.notifyiconSharepointWkSp.Text = "ToolStripMenuItem9"
+        '
+        'notifyiconSeparator2
+        '
+        Me.notifyiconSeparator2.Name = "notifyiconSeparator2"
+        Me.notifyiconSeparator2.Size = New System.Drawing.Size(180, 6)
         '
         'aaformMainWindow
         '
@@ -715,6 +792,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.contextmenuNotifyicon.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -778,4 +856,15 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForMSIInstall As Label
     Friend WithEvents notifyiconTaskbarLaunchers As NotifyIcon
     Friend WithEvents contextmenuNotifyicon As ContextMenuStrip
+    Friend WithEvents notifyiconWord As ToolStripMenuItem
+    Friend WithEvents notifyiconExcel As ToolStripMenuItem
+    Friend WithEvents notifyiconPowerpoint As ToolStripMenuItem
+    Friend WithEvents notifyiconOutlook As ToolStripMenuItem
+    Friend WithEvents notifyiconOnenote As ToolStripMenuItem
+    Friend WithEvents notifyiconSeparator1 As ToolStripSeparator
+    Friend WithEvents notifyiconAccess As ToolStripMenuItem
+    Friend WithEvents notifyiconPublisher As ToolStripMenuItem
+    Friend WithEvents notifyiconInfopath As ToolStripMenuItem
+    Friend WithEvents notifyiconSharepointWkSp As ToolStripMenuItem
+    Friend WithEvents notifyiconSeparator2 As ToolStripSeparator
 End Class
