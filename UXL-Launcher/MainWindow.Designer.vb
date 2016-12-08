@@ -667,7 +667,7 @@ Partial Class aaformMainWindow
         'notifyiconTaskbarLaunchers
         '
         Me.notifyiconTaskbarLaunchers.Icon = CType(resources.GetObject("notifyiconTaskbarLaunchers.Icon"), System.Drawing.Icon)
-        Me.notifyiconTaskbarLaunchers.Text = "NotifyIcon1"
+        Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
         'aaformMainWindow
