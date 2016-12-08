@@ -688,7 +688,7 @@ Partial Class aaformMainWindow
         '
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 308)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 286)
         '
         'notifyiconWord
         '
@@ -716,14 +716,16 @@ Partial Class aaformMainWindow
         '
         'notifyiconOutlook
         '
-        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
+        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.notifyiconOutlook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOutlook.Name = "notifyiconOutlook"
         Me.notifyiconOutlook.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconOutlook.Text = "Microsoft Outlook"
         '
         'notifyiconOnenote
         '
-        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.small_Onenote
+        Me.notifyiconOnenote.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOnenote.Name = "notifyiconOnenote"
         Me.notifyiconOnenote.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconOnenote.Text = "Microsoft OneNote"
