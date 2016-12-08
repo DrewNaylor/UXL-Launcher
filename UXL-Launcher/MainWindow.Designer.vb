@@ -685,7 +685,7 @@ Partial Class aaformMainWindow
         '
         Me.notifyiconTaskbarLaunchers.ContextMenuStrip = Me.contextmenuNotifyicon
         Me.notifyiconTaskbarLaunchers.Icon = CType(resources.GetObject("notifyiconTaskbarLaunchers.Icon"), System.Drawing.Icon)
-        Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher"
+        Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
         'contextmenuNotifyicon
