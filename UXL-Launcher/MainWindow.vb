@@ -274,5 +274,10 @@ Public Class aaformMainWindow
         ' Run Microsoft SharePoint Workspace.
         LaunchApp.LaunchSharepointWorkspace()
     End Sub
+
+    Private Sub notifyiconExitApp_Click(sender As Object, e As EventArgs) Handles notifyiconExitApp.Click
+        ' Exit UXL Launcher.
+        Me.Close()
+    End Sub
 #End Region
 End Class

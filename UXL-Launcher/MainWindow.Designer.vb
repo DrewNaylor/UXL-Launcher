@@ -93,10 +93,10 @@ Partial Class aaformMainWindow
         Me.notifyiconInfopath = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSharepointWkSp = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconOfficeLang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -776,21 +776,6 @@ Partial Class aaformMainWindow
         Me.notifyiconSeparator2.Name = "notifyiconSeparator2"
         Me.notifyiconSeparator2.Size = New System.Drawing.Size(251, 6)
         '
-        'notifyiconUXLOptions
-        '
-        Me.notifyiconUXLOptions.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
-        Me.notifyiconUXLOptions.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.notifyiconUXLOptions.Name = "notifyiconUXLOptions"
-        Me.notifyiconUXLOptions.Size = New System.Drawing.Size(254, 30)
-        Me.notifyiconUXLOptions.Text = "Options..."
-        '
-        'notifyiconExitApp
-        '
-        Me.notifyiconExitApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.notifyiconExitApp.Name = "notifyiconExitApp"
-        Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
-        Me.notifyiconExitApp.Text = "Exit UXL Launcher"
-        '
         'notifyiconOfficeLang
         '
         Me.notifyiconOfficeLang.Image = Global.UXL_Launcher.My.Resources.Resources.small_Language_Settings
@@ -799,10 +784,25 @@ Partial Class aaformMainWindow
         Me.notifyiconOfficeLang.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconOfficeLang.Text = "Office Language Preferences"
         '
+        'notifyiconUXLOptions
+        '
+        Me.notifyiconUXLOptions.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
+        Me.notifyiconUXLOptions.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.notifyiconUXLOptions.Name = "notifyiconUXLOptions"
+        Me.notifyiconUXLOptions.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconUXLOptions.Text = "Options..."
+        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(251, 6)
+        '
+        'notifyiconExitApp
+        '
+        Me.notifyiconExitApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.notifyiconExitApp.Name = "notifyiconExitApp"
+        Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconExitApp.Text = "Exit UXL Launcher"
         '
         'aaformMainWindow
         '
