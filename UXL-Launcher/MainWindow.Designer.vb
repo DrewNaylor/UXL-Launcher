@@ -93,6 +93,7 @@ Partial Class aaformMainWindow
         Me.notifyiconInfopath = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSharepointWkSp = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -686,9 +687,9 @@ Partial Class aaformMainWindow
         '
         'contextmenuNotifyicon
         '
-        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2})
+        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 308)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 338)
         '
         'notifyiconWord
         '
@@ -771,6 +772,14 @@ Partial Class aaformMainWindow
         '
         Me.notifyiconSeparator2.Name = "notifyiconSeparator2"
         Me.notifyiconSeparator2.Size = New System.Drawing.Size(251, 6)
+        '
+        'notifyiconExitApp
+        '
+        Me.notifyiconExitApp.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
+        Me.notifyiconExitApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.notifyiconExitApp.Name = "notifyiconExitApp"
+        Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconExitApp.Text = "Exit UXL Launcher"
         '
         'aaformMainWindow
         '
@@ -885,4 +894,5 @@ Partial Class aaformMainWindow
     Friend WithEvents notifyiconInfopath As ToolStripMenuItem
     Friend WithEvents notifyiconSharepointWkSp As ToolStripMenuItem
     Friend WithEvents notifyiconSeparator2 As ToolStripSeparator
+    Friend WithEvents notifyiconExitApp As ToolStripMenuItem
 End Class
