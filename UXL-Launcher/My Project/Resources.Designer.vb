@@ -71,7 +71,27 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to .
+        '''  Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        '''&lt;html&gt;
+        '''&lt;head&gt;
+        '''&lt;meta charset=&quot;UTF-8&quot;&gt;
+        '''&lt;title&gt;UXL Launcher Acknowledgements&lt;/title&gt;
+        '''&lt;/head&gt;
+        '''
+        '''&lt;body&gt;
+        '''&lt;h3 style=&quot;text-align: center;&quot;&gt;UXL Launcher Acknowledgements&lt;/h3&gt;
+        '''
+        '''&lt;ul&gt;
+        '''	&lt;li&gt;Original idea: God
+        '''	&lt;li&gt;Moral support: My mom, Nana, and all my friends
+        '''	&lt;li&gt;UXL Launcher developer: Drew Naylor
+        '''	&lt;li&gt;UXL Launcher designer: Drew Naylor
+        '''	&lt;p&gt;
+        '''	&lt;li&gt;Programming language: VB.Net
+        '''	&lt;li&gt;IDE: Visual Studio 2015
+        '''	&lt;li&gt;IDE developer: Microsoft
+        '''	&lt;p&gt;
+        '''	&lt;li&gt;Spiritual predecessor: Office Launcher  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Acknowledgments() As String
             Get
@@ -80,7 +100,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2016-12-05T10:06:10
+        '''  Looks up a localized string similar to 2016-12-08T16:38:53
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -122,7 +142,7 @@ Namespace My.Resources
         '''&lt;h3 style=&quot;text-align: center;&quot;&gt;GNU GENERAL PUBLIC LICENSE&lt;/h3&gt;
         '''&lt;p style=&quot;text-align: center;&quot;&gt;Version 3, 29 June 2007&lt;/p&gt;
         '''
-        '''&lt;p&gt;Copyrigh [rest of string was truncated]&quot;;.
+        '''&lt;p&gt;Copyright &amp;copy; 200 [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property gpl_3_0_standalone() As String
             Get
