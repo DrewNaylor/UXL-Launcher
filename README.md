@@ -83,7 +83,7 @@ In addition to the requirements for simply running UXL Launcher, your computer r
 - [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
 - [Windows PowerShell 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
 
-It's recommended to have [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) installed if you want the main window to be properly sized. If VS 2015 Community is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
+If [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
 
 If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.
 
@@ -98,3 +98,9 @@ If you don't want to use a script to build UXL Launcher, here's how to do it man
 3. Third, type <code>msbuild.exe</code>, press the spacebar, and drag the <code>UXL-Launcher.vbproj</code> into the command prompt window and press the Enter or Return key.
 
 4. And finally, once the project is done being built, you'll find the UXL Launcher EXE file in <code>UXL-Launcher\UXL-Launcher\bin\Debug </code> wherever you saved the files to earlier along with a config file, a PDB file, and an XML file.
+<br>
+<br>
+<br>
+# How to Modify the Source Code
+
+In order to play around with the source code, it's recommended to install [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) in addition to the software to run UXL Launcher. To poke around in the code, simply double-click the <code>UXL-Launcher.sln</code> file in the root of the Git repository.
