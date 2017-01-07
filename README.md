@@ -1,13 +1,13 @@
 # What is UXL Launcher?
 
-UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launcher," and the first stable release will be version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release will be 3.0.)
+UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launcher," and the first stable release will be version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
 
 UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
 
 The readme continues after this notice.
 
 <code>UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-Copyright (C) 2013-2016  Drew Naylor
+Copyright (C) 2013-2017  Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation.
 (Note that the copyright years include the years left out by the hyphen.)</code>

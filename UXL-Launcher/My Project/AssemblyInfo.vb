@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("UXL Launcher provides launchers for most Microsoft Office apps in one place. This app is not associated with Microsoft Corporation. Microsoft Office and all related trademarks and words belong to Microsoft Corporation.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("UXL Launcher - Unified eXecutable Launcher")>
-<Assembly: AssemblyCopyright("Copyright © 2013-2016 Drew Naylor. Licensed under the Gnu GPL v3+.")>
+<Assembly: AssemblyCopyright("Copyright © 2013-2017 Drew Naylor. Licensed under the Gnu GPL v3+.")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.0.0.0")>
-<Assembly: AssemblyFileVersion("3.0.0.0")>
+<Assembly: AssemblyVersion("3.1.0.0")>
+<Assembly: AssemblyFileVersion("3.1.0.0")>

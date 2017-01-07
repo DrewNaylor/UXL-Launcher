@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2016  Drew Naylor
+'Copyright (C) 2013-2017  Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
@@ -50,9 +50,9 @@ Public Class aaformAboutWindow
 
         ' Put the text in the About box on launch.
         textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
-"Version " & My.Application.Info.Version.ToString & " Stable - Codename ""New Change""" & vbCrLf &
+"Version " & My.Application.Info.Version.ToString & " Git - Codename ""New Change""" & vbCrLf &
 "App compiled at UTC: " & BuildDateString &
-"Copyright (C) 2013-2016  Drew Naylor" & vbCrLf &
+"Copyright (C) 2013-2017  Drew Naylor" & vbCrLf &
 "" & vbCrLf &
 "UXL Launcher provides launchers for most Microsoft Office apps in one place." & vbCrLf &
 "" & vbCrLf &
