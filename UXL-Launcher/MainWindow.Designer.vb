@@ -253,9 +253,9 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(606, 17)
-        Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click an app's button t" &
-    "o launch it and explore the UI."
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(622, 17)
+        Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
+    "launch them and explore the UI."
         '
         'flowLayoutPanel
         '
