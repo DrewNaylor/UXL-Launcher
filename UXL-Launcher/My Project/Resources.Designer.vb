@@ -83,7 +83,7 @@ Namespace My.Resources
         '''
         '''&lt;ul&gt;
         '''	&lt;li&gt;Original idea: God
-        '''	&lt;li&gt;Moral support: My mom, Nana, and all my friends
+        '''	&lt;li&gt;Moral support: My mom, Nana, Mitty, and all my friends
         '''	&lt;li&gt;UXL Launcher developer: Drew Naylor
         '''	&lt;li&gt;UXL Launcher designer: Drew Naylor
         '''	&lt;p&gt;
@@ -91,7 +91,7 @@ Namespace My.Resources
         '''	&lt;li&gt;IDE: Visual Studio 2015
         '''	&lt;li&gt;IDE developer: Microsoft
         '''	&lt;p&gt;
-        '''	&lt;li&gt;Spiritual predecessor: Office Launcher  [rest of string was truncated]&quot;;.
+        '''	&lt;li&gt;Original influence: Microsoft Of [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Acknowledgments() As String
             Get
@@ -100,7 +100,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2016-12-08T17:49:28
+        '''  Looks up a localized string similar to 2017-01-22T05:31:56
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -130,6 +130,21 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fswiss Helvetica;}{\f1\fswiss\fcharset0 Helvetica;}{\f2\fnil Courier;}}
+        '''{\colortbl ;\red0\green0\blue255;}
+        '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+        '''\pard\sa180\b\f0\fs28\lang9 GNU GENERAL PUBLIC LICENSE\par
+        '''\b0\fs24 Version 3, 29 June 2007\par
+        '''Copyright \f1\&apos;a9 2007 Free Software Foundation, Inc. &lt;{{\field{\*\fldinst{HYPERLINK &quot;http://fsf.org/&quot;}}{\fldrslt{http://fsf.org/\ul0\cf0}}}}\f1\fs24 &gt;\par
+        '''\f0 Everyone is permitted to copy and distribute verbat [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property gpl() As String
+            Get
+                Return ResourceManager.GetString("gpl", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
         '''
         '''&lt;html&gt;&lt;head&gt;
@@ -142,7 +157,7 @@ Namespace My.Resources
         '''&lt;h3 style=&quot;text-align: center;&quot;&gt;GNU GENERAL PUBLIC LICENSE&lt;/h3&gt;
         '''&lt;p style=&quot;text-align: center;&quot;&gt;Version 3, 29 June 2007&lt;/p&gt;
         '''
-        '''&lt;p&gt;Copyright &amp;copy; 200 [rest of string was truncated]&quot;;.
+        '''&lt;p&gt;Copyrigh [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property gpl_3_0_standalone() As String
             Get

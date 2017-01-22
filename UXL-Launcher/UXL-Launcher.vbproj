@@ -187,6 +187,7 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gpl.rtf" />
     <None Include="Resources\Word.png" />
     <None Include="Resources\Sharepoint Workspace.png" />
     <None Include="Resources\Publisher.png" />
