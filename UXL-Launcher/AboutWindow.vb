@@ -117,8 +117,17 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY o
 #Region "Code to run when clicking links in the RTF documents."
     Private Sub rtftextboxLicense_LinkClicked(sender As Object, e As LinkClickedEventArgs) Handles rtftextboxLicense.LinkClicked
         ' When the user clicks a link in the RTF License rich textbox, go to that
-        ' page in the default browser.
-        Process.Start(e.LinkText)
+        ' page in the default browser if the user chooses to visit the
+        ' page in the messagebox.
+        Dim msgResult As Integer = MessageBox.Show("Are you sure you want open this link?" & vbCrLf &
+                "" & vbCrLf &
+                e.LinkText, "UXL Launcher",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+        ' If the user chooses to open the link, navigate the default browser there.
+        If msgResult = DialogResult.Yes Then
+            Process.Start(e.LinkText)
+        End If
     End Sub
 #End Region
 
