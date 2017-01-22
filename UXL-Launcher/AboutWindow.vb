@@ -114,5 +114,12 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY o
         "main window TopMost: " & aaformMainWindow.TopMost
     End Sub
 #End Region
+#Region "Code to run when clicking links in the RTF documents."
+    Private Sub rtftextboxLicense_LinkClicked(sender As Object, e As LinkClickedEventArgs) Handles rtftextboxLicense.LinkClicked
+        ' When the user clicks a link in the RTF License rich textbox, go to that
+        ' page in the default browser.
+        Process.Start(e.LinkText)
+    End Sub
+#End Region
 
 End Class
