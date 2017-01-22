@@ -5654,9 +5654,6 @@
         QVlAuw8wvxt4bE0B6z0APxMnC0gFAAFesPxfN/ooBgTdYaMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="gpl_3_0_standalone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gpl-3.0-standalone.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="UXL_Launcher_Banner" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAQAAAAIACAYAAABtmrL7AAAABGdBTUEAALGPC/xhBQAAH1JJREFUeF7t
@@ -5795,9 +5792,6 @@
         RgEAiVEAQGIUAJAYBQAkRgEAiVEAQGIUAJAYBQAkRgEAiVEAQGIUAJAYBQAkRgEAiVEAQGIUAJAYBQAk
         RgEAiVEAQGIUAJAYBQAkRgEAiVEAQGIUAJDW58//C5OBH5kVYPyXAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="Acknowledgments" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Acknowledgments.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="small_Access" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
