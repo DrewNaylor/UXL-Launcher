@@ -41,6 +41,7 @@ Partial Class aaformAboutWindow
         Me.tabpageRTFLicense = New System.Windows.Forms.TabPage()
         Me.rtftextboxLicense = New System.Windows.Forms.RichTextBox()
         Me.tabpageRTFAcknowledgments = New System.Windows.Forms.TabPage()
+        Me.rtftextboxAcknowledgements = New System.Windows.Forms.RichTextBox()
         Me.tableLayoutPanel.SuspendLayout()
         Me.tabcontrolAboutWindow.SuspendLayout()
         Me.tabpageAbout.SuspendLayout()
@@ -50,6 +51,7 @@ Partial Class aaformAboutWindow
         Me.tabpageLicense.SuspendLayout()
         Me.tabpageAcknowledgments.SuspendLayout()
         Me.tabpageRTFLicense.SuspendLayout()
+        Me.tabpageRTFAcknowledgments.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanel
@@ -58,7 +60,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 273.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -290,6 +292,7 @@ Partial Class aaformAboutWindow
         '
         'tabpageRTFAcknowledgments
         '
+        Me.tabpageRTFAcknowledgments.Controls.Add(Me.rtftextboxAcknowledgements)
         Me.tabpageRTFAcknowledgments.Location = New System.Drawing.Point(8, 39)
         Me.tabpageRTFAcknowledgments.Name = "tabpageRTFAcknowledgments"
         Me.tabpageRTFAcknowledgments.Padding = New System.Windows.Forms.Padding(3)
@@ -297,6 +300,20 @@ Partial Class aaformAboutWindow
         Me.tabpageRTFAcknowledgments.TabIndex = 4
         Me.tabpageRTFAcknowledgments.Text = "RTF Acknowledgments"
         Me.tabpageRTFAcknowledgments.UseVisualStyleBackColor = True
+        '
+        'rtftextboxAcknowledgements
+        '
+        Me.rtftextboxAcknowledgements.BackColor = System.Drawing.SystemColors.Window
+        Me.rtftextboxAcknowledgements.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtftextboxAcknowledgements.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtftextboxAcknowledgements.Location = New System.Drawing.Point(3, 3)
+        Me.rtftextboxAcknowledgements.Margin = New System.Windows.Forms.Padding(6)
+        Me.rtftextboxAcknowledgements.Name = "rtftextboxAcknowledgements"
+        Me.rtftextboxAcknowledgements.ReadOnly = True
+        Me.rtftextboxAcknowledgements.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
+        Me.rtftextboxAcknowledgements.Size = New System.Drawing.Size(1034, 813)
+        Me.rtftextboxAcknowledgements.TabIndex = 1
+        Me.rtftextboxAcknowledgements.Text = ""
         '
         'aaformAboutWindow
         '
@@ -326,6 +343,7 @@ Partial Class aaformAboutWindow
         Me.tabpageLicense.ResumeLayout(False)
         Me.tabpageAcknowledgments.ResumeLayout(False)
         Me.tabpageRTFLicense.ResumeLayout(False)
+        Me.tabpageRTFAcknowledgments.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -348,4 +366,5 @@ Partial Class aaformAboutWindow
     Friend WithEvents tabpageRTFLicense As TabPage
     Friend WithEvents tabpageRTFAcknowledgments As TabPage
     Friend WithEvents rtftextboxLicense As RichTextBox
+    Friend WithEvents rtftextboxAcknowledgements As RichTextBox
 End Class
