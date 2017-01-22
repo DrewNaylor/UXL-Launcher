@@ -184,9 +184,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Acknowledgements-RTF.rtf" />
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\gpl-rtf.rtf" />
     <None Include="Resources\gpl.rtf" />
     <None Include="Resources\Word.png" />
     <None Include="Resources\Sharepoint Workspace.png" />

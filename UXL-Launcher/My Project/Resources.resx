@@ -5980,7 +5980,10 @@
         ZwtvNOuzhQqGfraU2T5bKmGYRfLZYggwBBgCDF1kimrR/RtSjLQ54xBuKAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="gpl" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gpl.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="Acknowledgements_RTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Acknowledgements-RTF.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="gpl_RTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gpl-rtf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

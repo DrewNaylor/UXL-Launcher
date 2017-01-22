@@ -71,6 +71,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+        '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+        '''\pard\sa200\sl276\slmult1\f0\fs22\lang9 &lt;!DOCTYPE html&gt;\par
+        '''&lt;html&gt;\par
+        '''&lt;head&gt;\par
+        '''&lt;meta charset=&quot;UTF-8&quot;&gt;\par
+        '''&lt;title&gt;UXL Launcher Acknowledgements&lt;/title&gt;\par
+        '''&lt;/head&gt;\par
+        '''\par
+        '''&lt;body&gt;\par
+        '''&lt;h3 style=&quot;text-align: center;&quot;&gt;UXL Launcher Acknowledgements&lt;/h3&gt;\par
+        '''\par
+        '''&lt;ul&gt;\par
+        '''\tab &lt;li&gt;Original idea: God\par
+        '''\tab &lt;li&gt;Moral support: My mom, Nana, Mitty, and all  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Acknowledgements_RTF() As String
+            Get
+                Return ResourceManager.GetString("Acknowledgements_RTF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         '''&lt;html&gt;
         '''&lt;head&gt;
@@ -100,7 +123,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-01-22T05:31:56
+        '''  Looks up a localized string similar to 2017-01-22T06:22:13
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -130,21 +153,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to {\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fswiss Helvetica;}{\f1\fswiss\fcharset0 Helvetica;}{\f2\fnil Courier;}}
-        '''{\colortbl ;\red0\green0\blue255;}
-        '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
-        '''\pard\sa180\b\f0\fs28\lang9 GNU GENERAL PUBLIC LICENSE\par
-        '''\b0\fs24 Version 3, 29 June 2007\par
-        '''Copyright \f1\&apos;a9 2007 Free Software Foundation, Inc. &lt;{{\field{\*\fldinst{HYPERLINK &quot;http://fsf.org/&quot;}}{\fldrslt{http://fsf.org/\ul0\cf0}}}}\f1\fs24 &gt;\par
-        '''\f0 Everyone is permitted to copy and distribute verbat [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property gpl() As String
-            Get
-                Return ResourceManager.GetString("gpl", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
         '''
         '''&lt;html&gt;&lt;head&gt;
@@ -162,6 +170,21 @@ Namespace My.Resources
         Public ReadOnly Property gpl_3_0_standalone() As String
             Get
                 Return ResourceManager.GetString("gpl_3_0_standalone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fswiss Helvetica;}{\f1\fswiss\fcharset0 Helvetica;}{\f2\fnil Courier;}}
+        '''{\colortbl ;\red0\green0\blue255;}
+        '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+        '''\pard\sa180\b\f0\fs28\lang9 GNU GENERAL PUBLIC LICENSE\par
+        '''\b0\fs24 Version 3, 29 June 2007\par
+        '''Copyright \f1\&apos;a9 2007 Free Software Foundation, Inc. &lt;{{\field{\*\fldinst{HYPERLINK &quot;http://fsf.org/&quot;}}{\fldrslt{http://fsf.org/\ul0\cf0}}}}\f1\fs24 &gt;\par
+        '''\f0 Everyone is permitted to copy and distribute verbat [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property gpl_RTF() As String
+            Get
+                Return ResourceManager.GetString("gpl_RTF", resourceCulture)
             End Get
         End Property
         
