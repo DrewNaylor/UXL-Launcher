@@ -34,9 +34,9 @@ Partial Class aaformAboutWindow
         Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
         Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
         Me.textboxAboutApp = New System.Windows.Forms.TextBox()
-        Me.tabpageRTFLicense = New System.Windows.Forms.TabPage()
+        Me.tabpageLicense = New System.Windows.Forms.TabPage()
         Me.rtftextboxLicense = New System.Windows.Forms.RichTextBox()
-        Me.tabpageRTFAcknowledgments = New System.Windows.Forms.TabPage()
+        Me.tabpageAcknowledgments = New System.Windows.Forms.TabPage()
         Me.rtftextboxAcknowledgements = New System.Windows.Forms.RichTextBox()
         Me.tableLayoutPanel.SuspendLayout()
         Me.tabcontrolAboutWindow.SuspendLayout()
@@ -44,8 +44,8 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.SuspendLayout()
         CType(Me.pictureboxUXLBanner, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.flowLayoutPanelButtons.SuspendLayout()
-        Me.tabpageRTFLicense.SuspendLayout()
-        Me.tabpageRTFAcknowledgments.SuspendLayout()
+        Me.tabpageLicense.SuspendLayout()
+        Me.tabpageAcknowledgments.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanel
@@ -54,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -84,8 +84,8 @@ Partial Class aaformAboutWindow
         '
         Me.tableLayoutPanel.SetColumnSpan(Me.tabcontrolAboutWindow, 4)
         Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageAbout)
-        Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageRTFLicense)
-        Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageRTFAcknowledgments)
+        Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageLicense)
+        Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageAcknowledgments)
         Me.tabcontrolAboutWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolAboutWindow.Location = New System.Drawing.Point(6, 6)
         Me.tabcontrolAboutWindow.Margin = New System.Windows.Forms.Padding(6)
@@ -207,16 +207,16 @@ Partial Class aaformAboutWindow
         Me.textboxAboutApp.TabStop = False
         Me.textboxAboutApp.Text = resources.GetString("textboxAboutApp.Text")
         '
-        'tabpageRTFLicense
+        'tabpageLicense
         '
-        Me.tabpageRTFLicense.Controls.Add(Me.rtftextboxLicense)
-        Me.tabpageRTFLicense.Location = New System.Drawing.Point(8, 39)
-        Me.tabpageRTFLicense.Name = "tabpageRTFLicense"
-        Me.tabpageRTFLicense.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageRTFLicense.Size = New System.Drawing.Size(1040, 819)
-        Me.tabpageRTFLicense.TabIndex = 3
-        Me.tabpageRTFLicense.Text = "RTF License"
-        Me.tabpageRTFLicense.UseVisualStyleBackColor = True
+        Me.tabpageLicense.Controls.Add(Me.rtftextboxLicense)
+        Me.tabpageLicense.Location = New System.Drawing.Point(8, 39)
+        Me.tabpageLicense.Name = "tabpageLicense"
+        Me.tabpageLicense.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageLicense.Size = New System.Drawing.Size(1040, 819)
+        Me.tabpageLicense.TabIndex = 3
+        Me.tabpageLicense.Text = "License"
+        Me.tabpageLicense.UseVisualStyleBackColor = True
         '
         'rtftextboxLicense
         '
@@ -232,16 +232,16 @@ Partial Class aaformAboutWindow
         Me.rtftextboxLicense.TabIndex = 0
         Me.rtftextboxLicense.Text = ""
         '
-        'tabpageRTFAcknowledgments
+        'tabpageAcknowledgments
         '
-        Me.tabpageRTFAcknowledgments.Controls.Add(Me.rtftextboxAcknowledgements)
-        Me.tabpageRTFAcknowledgments.Location = New System.Drawing.Point(8, 39)
-        Me.tabpageRTFAcknowledgments.Name = "tabpageRTFAcknowledgments"
-        Me.tabpageRTFAcknowledgments.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageRTFAcknowledgments.Size = New System.Drawing.Size(1040, 819)
-        Me.tabpageRTFAcknowledgments.TabIndex = 4
-        Me.tabpageRTFAcknowledgments.Text = "RTF Acknowledgments"
-        Me.tabpageRTFAcknowledgments.UseVisualStyleBackColor = True
+        Me.tabpageAcknowledgments.Controls.Add(Me.rtftextboxAcknowledgements)
+        Me.tabpageAcknowledgments.Location = New System.Drawing.Point(8, 39)
+        Me.tabpageAcknowledgments.Name = "tabpageAcknowledgments"
+        Me.tabpageAcknowledgments.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageAcknowledgments.Size = New System.Drawing.Size(1040, 819)
+        Me.tabpageAcknowledgments.TabIndex = 4
+        Me.tabpageAcknowledgments.Text = "Acknowledgments"
+        Me.tabpageAcknowledgments.UseVisualStyleBackColor = True
         '
         'rtftextboxAcknowledgements
         '
@@ -282,8 +282,8 @@ Partial Class aaformAboutWindow
         CType(Me.pictureboxUXLBanner, System.ComponentModel.ISupportInitialize).EndInit()
         Me.flowLayoutPanelButtons.ResumeLayout(False)
         Me.flowLayoutPanelButtons.PerformLayout()
-        Me.tabpageRTFLicense.ResumeLayout(False)
-        Me.tabpageRTFAcknowledgments.ResumeLayout(False)
+        Me.tabpageLicense.ResumeLayout(False)
+        Me.tabpageAcknowledgments.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -299,8 +299,8 @@ Partial Class aaformAboutWindow
     Friend WithEvents linkUpdateCheck As LinkLabel
     Friend WithEvents linkRepository As LinkLabel
     Friend WithEvents linkMyWebsite As LinkLabel
-    Friend WithEvents tabpageRTFLicense As TabPage
-    Friend WithEvents tabpageRTFAcknowledgments As TabPage
+    Friend WithEvents tabpageLicense As TabPage
+    Friend WithEvents tabpageAcknowledgments As TabPage
     Friend WithEvents rtftextboxLicense As RichTextBox
     Friend WithEvents rtftextboxAcknowledgements As RichTextBox
 End Class
