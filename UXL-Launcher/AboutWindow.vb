@@ -71,10 +71,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY o
 "Any other companies mentioned own their respective copyrights/trademarks.")
 
 
-        ' Load the GPL document in the WebBrowser control.
-        webbrowserGPLViewer.DocumentText = My.Resources.gpl_3_0_standalone
-        ' Load the Acknowledgments HTML document in the WebBrowser Acknowledgments control.
-        webbrowserAcknowledgmentsViewer.DocumentText = My.Resources.Acknowledgments
         ' Load the GPL document in the RTF Textbox control.
         rtftextboxLicense.Rtf = My.Resources.gpl_RTF
         ' Load the Acknowledgements document in the RTF Textbox control.

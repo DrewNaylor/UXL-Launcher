@@ -34,10 +34,6 @@ Partial Class aaformAboutWindow
         Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
         Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
         Me.textboxAboutApp = New System.Windows.Forms.TextBox()
-        Me.tabpageLicense = New System.Windows.Forms.TabPage()
-        Me.webbrowserGPLViewer = New System.Windows.Forms.WebBrowser()
-        Me.tabpageAcknowledgments = New System.Windows.Forms.TabPage()
-        Me.webbrowserAcknowledgmentsViewer = New System.Windows.Forms.WebBrowser()
         Me.tabpageRTFLicense = New System.Windows.Forms.TabPage()
         Me.rtftextboxLicense = New System.Windows.Forms.RichTextBox()
         Me.tabpageRTFAcknowledgments = New System.Windows.Forms.TabPage()
@@ -48,8 +44,6 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanelAboutApp.SuspendLayout()
         CType(Me.pictureboxUXLBanner, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.flowLayoutPanelButtons.SuspendLayout()
-        Me.tabpageLicense.SuspendLayout()
-        Me.tabpageAcknowledgments.SuspendLayout()
         Me.tabpageRTFLicense.SuspendLayout()
         Me.tabpageRTFAcknowledgments.SuspendLayout()
         Me.SuspendLayout()
@@ -60,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 276.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 278.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -90,8 +84,6 @@ Partial Class aaformAboutWindow
         '
         Me.tableLayoutPanel.SetColumnSpan(Me.tabcontrolAboutWindow, 4)
         Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageAbout)
-        Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageLicense)
-        Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageAcknowledgments)
         Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageRTFLicense)
         Me.tabcontrolAboutWindow.Controls.Add(Me.tabpageRTFAcknowledgments)
         Me.tabcontrolAboutWindow.Dock = System.Windows.Forms.DockStyle.Fill
@@ -215,56 +207,6 @@ Partial Class aaformAboutWindow
         Me.textboxAboutApp.TabStop = False
         Me.textboxAboutApp.Text = resources.GetString("textboxAboutApp.Text")
         '
-        'tabpageLicense
-        '
-        Me.tabpageLicense.Controls.Add(Me.webbrowserGPLViewer)
-        Me.tabpageLicense.Location = New System.Drawing.Point(8, 39)
-        Me.tabpageLicense.Margin = New System.Windows.Forms.Padding(6)
-        Me.tabpageLicense.Name = "tabpageLicense"
-        Me.tabpageLicense.Padding = New System.Windows.Forms.Padding(6)
-        Me.tabpageLicense.Size = New System.Drawing.Size(1040, 819)
-        Me.tabpageLicense.TabIndex = 1
-        Me.tabpageLicense.Text = "License"
-        Me.tabpageLicense.UseVisualStyleBackColor = True
-        '
-        'webbrowserGPLViewer
-        '
-        Me.webbrowserGPLViewer.AllowNavigation = False
-        Me.webbrowserGPLViewer.AllowWebBrowserDrop = False
-        Me.webbrowserGPLViewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.webbrowserGPLViewer.IsWebBrowserContextMenuEnabled = False
-        Me.webbrowserGPLViewer.Location = New System.Drawing.Point(6, 6)
-        Me.webbrowserGPLViewer.Margin = New System.Windows.Forms.Padding(6)
-        Me.webbrowserGPLViewer.MinimumSize = New System.Drawing.Size(40, 40)
-        Me.webbrowserGPLViewer.Name = "webbrowserGPLViewer"
-        Me.webbrowserGPLViewer.ScriptErrorsSuppressed = True
-        Me.webbrowserGPLViewer.Size = New System.Drawing.Size(1028, 807)
-        Me.webbrowserGPLViewer.TabIndex = 0
-        Me.webbrowserGPLViewer.Url = New System.Uri("", System.UriKind.Relative)
-        '
-        'tabpageAcknowledgments
-        '
-        Me.tabpageAcknowledgments.Controls.Add(Me.webbrowserAcknowledgmentsViewer)
-        Me.tabpageAcknowledgments.Location = New System.Drawing.Point(8, 39)
-        Me.tabpageAcknowledgments.Margin = New System.Windows.Forms.Padding(6)
-        Me.tabpageAcknowledgments.Name = "tabpageAcknowledgments"
-        Me.tabpageAcknowledgments.Padding = New System.Windows.Forms.Padding(6)
-        Me.tabpageAcknowledgments.Size = New System.Drawing.Size(1040, 819)
-        Me.tabpageAcknowledgments.TabIndex = 2
-        Me.tabpageAcknowledgments.Text = "Acknowledgments"
-        Me.tabpageAcknowledgments.UseVisualStyleBackColor = True
-        '
-        'webbrowserAcknowledgmentsViewer
-        '
-        Me.webbrowserAcknowledgmentsViewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.webbrowserAcknowledgmentsViewer.IsWebBrowserContextMenuEnabled = False
-        Me.webbrowserAcknowledgmentsViewer.Location = New System.Drawing.Point(6, 6)
-        Me.webbrowserAcknowledgmentsViewer.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.webbrowserAcknowledgmentsViewer.Name = "webbrowserAcknowledgmentsViewer"
-        Me.webbrowserAcknowledgmentsViewer.ScriptErrorsSuppressed = True
-        Me.webbrowserAcknowledgmentsViewer.Size = New System.Drawing.Size(1028, 807)
-        Me.webbrowserAcknowledgmentsViewer.TabIndex = 0
-        '
         'tabpageRTFLicense
         '
         Me.tabpageRTFLicense.Controls.Add(Me.rtftextboxLicense)
@@ -340,8 +282,6 @@ Partial Class aaformAboutWindow
         CType(Me.pictureboxUXLBanner, System.ComponentModel.ISupportInitialize).EndInit()
         Me.flowLayoutPanelButtons.ResumeLayout(False)
         Me.flowLayoutPanelButtons.PerformLayout()
-        Me.tabpageLicense.ResumeLayout(False)
-        Me.tabpageAcknowledgments.ResumeLayout(False)
         Me.tabpageRTFLicense.ResumeLayout(False)
         Me.tabpageRTFAcknowledgments.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -352,17 +292,13 @@ Partial Class aaformAboutWindow
     Friend WithEvents buttonClose As Button
     Friend WithEvents tabcontrolAboutWindow As TabControl
     Friend WithEvents tabpageAbout As TabPage
-    Friend WithEvents tabpageLicense As TabPage
     Friend WithEvents pictureboxUXLBanner As PictureBox
     Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
     Friend WithEvents textboxAboutApp As TextBox
-    Friend WithEvents tabpageAcknowledgments As TabPage
     Friend WithEvents flowLayoutPanelButtons As FlowLayoutPanel
     Friend WithEvents linkUpdateCheck As LinkLabel
     Friend WithEvents linkRepository As LinkLabel
     Friend WithEvents linkMyWebsite As LinkLabel
-    Friend WithEvents webbrowserGPLViewer As WebBrowser
-    Friend WithEvents webbrowserAcknowledgmentsViewer As WebBrowser
     Friend WithEvents tabpageRTFLicense As TabPage
     Friend WithEvents tabpageRTFAcknowledgments As TabPage
     Friend WithEvents rtftextboxLicense As RichTextBox
