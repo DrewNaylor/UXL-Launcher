@@ -58,7 +58,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 270.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 273.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -276,11 +276,13 @@ Partial Class aaformAboutWindow
         '
         'rtftextboxLicense
         '
+        Me.rtftextboxLicense.BackColor = System.Drawing.SystemColors.Window
         Me.rtftextboxLicense.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtftextboxLicense.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtftextboxLicense.Location = New System.Drawing.Point(3, 3)
         Me.rtftextboxLicense.Margin = New System.Windows.Forms.Padding(6)
         Me.rtftextboxLicense.Name = "rtftextboxLicense"
+        Me.rtftextboxLicense.ReadOnly = True
         Me.rtftextboxLicense.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
         Me.rtftextboxLicense.Size = New System.Drawing.Size(1034, 813)
         Me.rtftextboxLicense.TabIndex = 0
