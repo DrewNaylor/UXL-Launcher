@@ -71,21 +71,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+        '''  Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
         '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
-        '''\pard\sa200\sl276\slmult1\f0\fs22\lang9 &lt;!DOCTYPE html&gt;\par
-        '''&lt;html&gt;\par
-        '''&lt;head&gt;\par
-        '''&lt;meta charset=&quot;UTF-8&quot;&gt;\par
-        '''&lt;title&gt;UXL Launcher Acknowledgements&lt;/title&gt;\par
-        '''&lt;/head&gt;\par
-        '''\par
-        '''&lt;body&gt;\par
-        '''&lt;h3 style=&quot;text-align: center;&quot;&gt;UXL Launcher Acknowledgements&lt;/h3&gt;\par
-        '''\par
-        '''&lt;ul&gt;\par
-        '''\tab &lt;li&gt;Original idea: God\par
-        '''\tab &lt;li&gt;Moral support: My mom, Nana, Mitty, and all  [rest of string was truncated]&quot;;.
+        '''\pard\sl240\slmult1\qc\b\f0\fs10\lang9\par
+        '''
+        '''\pard\sl276\slmult1\qc\fs32 UXL Launcher Acknowledgements\b0\par
+        '''
+        '''\pard\sl360\slmult1\fs24\par
+        '''
+        '''\pard{\pntext\f1\&apos;B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\&apos;B7}}\fi-360\li720\sl360\slmult1 Original idea: God\par
+        '''{\pntext\f1\&apos;B7\tab}Moral support: My mom, Nana, Mitty, and all my friend [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Acknowledgements_RTF() As String
             Get
@@ -94,36 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        '''&lt;html&gt;
-        '''&lt;head&gt;
-        '''&lt;meta charset=&quot;UTF-8&quot;&gt;
-        '''&lt;title&gt;UXL Launcher Acknowledgements&lt;/title&gt;
-        '''&lt;/head&gt;
-        '''
-        '''&lt;body&gt;
-        '''&lt;h3 style=&quot;text-align: center;&quot;&gt;UXL Launcher Acknowledgements&lt;/h3&gt;
-        '''
-        '''&lt;ul&gt;
-        '''	&lt;li&gt;Original idea: God
-        '''	&lt;li&gt;Moral support: My mom, Nana, Mitty, and all my friends
-        '''	&lt;li&gt;UXL Launcher developer: Drew Naylor
-        '''	&lt;li&gt;UXL Launcher designer: Drew Naylor
-        '''	&lt;p&gt;
-        '''	&lt;li&gt;Programming language: VB.Net
-        '''	&lt;li&gt;IDE: Visual Studio 2015
-        '''	&lt;li&gt;IDE developer: Microsoft
-        '''	&lt;p&gt;
-        '''	&lt;li&gt;Original influence: Microsoft Of [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property Acknowledgments() As String
-            Get
-                Return ResourceManager.GetString("Acknowledgments", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to 2017-01-22T06:22:13
+        '''  Looks up a localized string similar to 2017-01-22T06:40:14
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -149,27 +115,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
-        '''
-        '''&lt;html&gt;&lt;head&gt;
-        ''' &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
-        ''' &lt;title&gt;GNU General Public License v3.0 - GNU Project - Free Software Foundation (FSF)&lt;/title&gt;
-        ''' &lt;link rel=&quot;alternate&quot; type=&quot;application/rdf+xml&quot;
-        '''       href=&quot;http://www.gnu.org/licenses/gpl-3.0.rdf&quot; /&gt; 
-        '''&lt;/head&gt;
-        '''&lt;body&gt;
-        '''&lt;h3 style=&quot;text-align: center;&quot;&gt;GNU GENERAL PUBLIC LICENSE&lt;/h3&gt;
-        '''&lt;p style=&quot;text-align: center;&quot;&gt;Version 3, 29 June 2007&lt;/p&gt;
-        '''
-        '''&lt;p&gt;Copyrigh [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property gpl_3_0_standalone() As String
-            Get
-                Return ResourceManager.GetString("gpl_3_0_standalone", resourceCulture)
             End Get
         End Property
         
