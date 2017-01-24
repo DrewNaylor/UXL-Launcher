@@ -45,6 +45,9 @@ Public Class UXLTheme_TestTheme
             ' Set colors for the "Professional Apps" groupbox.
             aaformMainWindow.groupboxProApps.BackColor = Color.Green
             aaformMainWindow.groupboxProApps.ForeColor = Color.Blue
+            ' Set colors for the "Extra Apps + Tools" groupbox.
+            aaformMainWindow.groupboxExtraApps.BackColor = Color.Green
+            aaformMainWindow.groupboxExtraApps.ForeColor = Color.Blue
 
 
             'If (ctrl.GetType() Is GetType(CheckBox)) Then
