@@ -24,7 +24,7 @@
 
 Public Class UXLTheme_TestTheme
 
-    ' This file tells the theme engine what to color things. Theme engine is from this Stack Overflow question: http://stackoverflow.com/q/199521
+    ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Test Theme."
     Public Shared Sub applyTheme_TestTheme()
 
@@ -41,8 +41,8 @@ Public Class UXLTheme_TestTheme
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color = Color.Yellow
         Dim colorFlowLayoutPanelForeColor As Color = Color.Purple
-        ' Menubar colors:
-        Dim colorMenubarBackColor As Color = Color.CadetBlue
+        ' Menubar and status bar colors:
+        Dim colorMenubarAndStatusBarBackColor As Color = Color.CadetBlue
 
 
 
@@ -86,8 +86,9 @@ Public Class UXLTheme_TestTheme
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-        'Set color for menubar.
-        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
+        'Set color for menubar and status bar.
+        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
+        aaformMainWindow.statusbarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
 
     End Sub
 #End Region
