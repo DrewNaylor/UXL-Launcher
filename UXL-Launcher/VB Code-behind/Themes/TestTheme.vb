@@ -38,6 +38,7 @@ Public Class UXLTheme_TestTheme
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color = Color.Green
         Dim colorGroupBoxForeColor As Color = Color.Blue
+        ' Panel colors:
 
 
 

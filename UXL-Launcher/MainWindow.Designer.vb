@@ -45,6 +45,7 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.buttonDefaultThemeTest = New System.Windows.Forms.Button()
         Me.buttonRunOneNote = New System.Windows.Forms.Button()
         Me.buttonTestThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOutlook = New System.Windows.Forms.Button()
@@ -96,9 +97,8 @@ Partial Class aaformMainWindow
         Me.notifyiconSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.notifyiconOfficeLang = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.notifyiconSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.buttonDefaultThemeTest = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -295,6 +295,15 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'buttonDefaultThemeTest
+        '
+        Me.buttonDefaultThemeTest.Location = New System.Drawing.Point(100, 363)
+        Me.buttonDefaultThemeTest.Name = "buttonDefaultThemeTest"
+        Me.buttonDefaultThemeTest.Size = New System.Drawing.Size(75, 58)
+        Me.buttonDefaultThemeTest.TabIndex = 11
+        Me.buttonDefaultThemeTest.Text = "Apply Default Theme"
+        Me.buttonDefaultThemeTest.UseVisualStyleBackColor = True
         '
         'buttonRunOneNote
         '
@@ -703,9 +712,9 @@ Partial Class aaformMainWindow
         '
         'contextmenuNotifyicon
         '
-        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.ToolStripSeparator1, Me.notifyiconExitApp})
+        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 382)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 404)
         '
         'notifyiconWord
         '
@@ -805,10 +814,10 @@ Partial Class aaformMainWindow
         Me.notifyiconUXLOptions.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconUXLOptions.Text = "Options..."
         '
-        'ToolStripSeparator1
+        'notifyiconSeparator3
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(251, 6)
+        Me.notifyiconSeparator3.Name = "notifyiconSeparator3"
+        Me.notifyiconSeparator3.Size = New System.Drawing.Size(251, 6)
         '
         'notifyiconExitApp
         '
@@ -816,15 +825,6 @@ Partial Class aaformMainWindow
         Me.notifyiconExitApp.Name = "notifyiconExitApp"
         Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconExitApp.Text = "Exit UXL Launcher"
-        '
-        'buttonDefaultThemeTest
-        '
-        Me.buttonDefaultThemeTest.Location = New System.Drawing.Point(100, 363)
-        Me.buttonDefaultThemeTest.Name = "buttonDefaultThemeTest"
-        Me.buttonDefaultThemeTest.Size = New System.Drawing.Size(75, 58)
-        Me.buttonDefaultThemeTest.TabIndex = 11
-        Me.buttonDefaultThemeTest.Text = "Apply Default Theme"
-        Me.buttonDefaultThemeTest.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
@@ -942,7 +942,7 @@ Partial Class aaformMainWindow
     Friend WithEvents notifyiconExitApp As ToolStripMenuItem
     Friend WithEvents notifyiconUXLOptions As ToolStripMenuItem
     Friend WithEvents notifyiconOfficeLang As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents notifyiconSeparator3 As ToolStripSeparator
     Friend WithEvents buttonTestThemeSetter As Button
     Friend WithEvents buttonDefaultThemeTest As Button
 End Class
