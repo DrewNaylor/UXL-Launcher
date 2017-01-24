@@ -57,15 +57,14 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
-
             ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
-
         Next
+
 
         ' Look at all the buttons in the "Professional Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxProApps.Controls
@@ -74,15 +73,14 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
-
             ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
-
         Next
+
 
         ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxExtraApps.Controls
@@ -91,15 +89,14 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
-
             ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
-
         Next
+
 
         ' Set colors for the "Standard Apps" groupbox.
         aaformMainWindow.groupboxStandardApps.BackColor = colorGroupBoxBackColor
@@ -140,8 +137,8 @@ Public Class UXLTheme_TestTheme
         ' Menubar and status bar colors:
         Dim colorMenubarAndStatusBarBackColor As Color = Color.FromKnownColor(KnownColor.Control)
         ' Label colors:
-        Dim colorLabelBackColor As Color = Color.Maroon
-        Dim colorLabelForeColor As Color = Color.White
+        Dim colorLabelBackColor As Color = Color.Transparent
+        Dim colorLabelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
 
 
 
@@ -152,7 +149,12 @@ Public Class UXLTheme_TestTheme
                 Dim button As Button = CType(ctrl, Button)
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
-
+            End If
+            ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(Label)) Then
+                Dim label As Label = CType(ctrl, Label)
+                label.BackColor = colorLabelBackColor
+                label.ForeColor = colorLabelForeColor
             End If
         Next
 
@@ -163,6 +165,12 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+            ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(Label)) Then
+                Dim label As Label = CType(ctrl, Label)
+                label.BackColor = colorLabelBackColor
+                label.ForeColor = colorLabelForeColor
+            End If
         Next
 
         ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
@@ -171,6 +179,12 @@ Public Class UXLTheme_TestTheme
                 Dim button As Button = CType(ctrl, Button)
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
+            End If
+            ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(Label)) Then
+                Dim label As Label = CType(ctrl, Label)
+                label.BackColor = colorLabelBackColor
+                label.ForeColor = colorLabelForeColor
             End If
         Next
 
