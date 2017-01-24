@@ -88,32 +88,52 @@ Public Class UXLTheme_TestTheme
         ' Create a short-form word for "Control."
         Dim ctrl As Control
 
+        ' Colors as defined for this theme.
+        ' Button colors:
+        Dim colorButtonBackColor As Color = Color.Transparent
+        Dim colorButtonForeColor As Color = Color.Empty
+        ' Groupbox colors:
+        Dim colorGroupBoxBackColor As Color = Color.Transparent
+        Dim colorGroupBoxForeColor As Color = Color.Empty
+
+
+
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
-                button.BackColor = Color.Empty
-                button.ForeColor = Color.Empty
+                button.BackColor = colorButtonBackColor
+                button.ForeColor = colorButtonForeColor
             End If
-
-
-            aaformMainWindow.groupboxStandardApps.BackColor = Color.Transparent
-            aaformMainWindow.groupboxStandardApps.ForeColor = Color.Empty
-
-
-            'If (ctrl.GetType() Is GetType(CheckBox)) Then
-            '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
-            '    chkbx.Checked = False
-            'End If
-            'If (ctrl.GetType() Is GetType(ComboBox)) Then
-            '    Dim cbobx As ComboBox = CType(ctrl, ComboBox)
-            '    cbobx.SelectedIndex = -1
-            'End If
-            'If (ctrl.GetType() Is GetType(DateTimePicker)) Then
-            '    Dim dtp As DateTimePicker = CType(ctrl, DateTimePicker)
-            '    dtp.Value = Now()
-            'End If
         Next
+
+        ' Look at all the buttons in the "Professional Apps" groupbox and change their theme.
+        For Each ctrl In aaformMainWindow.groupboxProApps.Controls
+            If (ctrl.GetType() Is GetType(Button)) Then
+                Dim button As Button = CType(ctrl, Button)
+                button.BackColor = colorButtonBackColor
+                button.ForeColor = colorButtonForeColor
+            End If
+        Next
+
+        ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
+        For Each ctrl In aaformMainWindow.groupboxExtraApps.Controls
+            If (ctrl.GetType() Is GetType(Button)) Then
+                Dim button As Button = CType(ctrl, Button)
+                button.BackColor = colorButtonBackColor
+                button.ForeColor = colorButtonForeColor
+            End If
+        Next
+
+        ' Set colors for the "Standard Apps" groupbox.
+        aaformMainWindow.groupboxStandardApps.BackColor = colorGroupBoxBackColor
+        aaformMainWindow.groupboxStandardApps.ForeColor = colorGroupBoxForeColor
+        ' Set colors for the "Professional Apps" groupbox.
+        aaformMainWindow.groupboxProApps.BackColor = colorGroupBoxBackColor
+        aaformMainWindow.groupboxProApps.ForeColor = colorGroupBoxForeColor
+        ' Set colors for the "Extra Apps + Tools" groupbox.
+        aaformMainWindow.groupboxExtraApps.BackColor = colorGroupBoxBackColor
+        aaformMainWindow.groupboxExtraApps.ForeColor = colorGroupBoxForeColor
     End Sub
 #End Region
 End Class
