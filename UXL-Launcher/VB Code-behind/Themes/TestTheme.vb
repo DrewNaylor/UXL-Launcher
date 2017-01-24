@@ -32,15 +32,21 @@ Public Class UXLTheme_TestTheme
         Dim ctrl As Control
 
         ' Colors as defined for this theme.
-        Dim colorBackColorButton As Color = Color.Maroon
-        Dim colorForeColorButton As Color = Color.White
+        ' Button colors:
+        Dim colorButtonBackColor As Color = Color.Maroon
+        Dim colorButtonForeColor As Color = Color.White
+        ' Groupbox colors:
+        Dim colorGroupBoxBackColor As Color = Color.Maroon
+        Dim colorGroupBoxForeColor As Color = Color.White
+
+
 
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
-                button.BackColor = colorBackColorButton
-                button.ForeColor = colorForeColorButton
+                button.BackColor = colorButtonBackColor
+                button.ForeColor = colorButtonForeColor
             End If
         Next
 
@@ -48,8 +54,8 @@ Public Class UXLTheme_TestTheme
         For Each ctrl In aaformMainWindow.groupboxProApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
-                button.BackColor = colorBackColorButton
-                button.ForeColor = colorForeColorButton
+                button.BackColor = colorButtonBackColor
+                button.ForeColor = colorButtonForeColor
             End If
         Next
 
@@ -57,8 +63,8 @@ Public Class UXLTheme_TestTheme
         For Each ctrl In aaformMainWindow.groupboxExtraApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
-                button.BackColor = colorBackColorButton
-                button.ForeColor = colorForeColorButton
+                button.BackColor = colorButtonBackColor
+                button.ForeColor = colorButtonForeColor
             End If
         Next
 
