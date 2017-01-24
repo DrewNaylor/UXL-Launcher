@@ -291,5 +291,10 @@ Public Class aaformMainWindow
         ' Run Office Language Preferences.
         LaunchApp.LaunchOfficeLangPrefs()
     End Sub
+
+    Private Sub buttonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles buttonTestThemeSetter.Click
+        ' Attempt to apply the test theme.
+        UXLTheme_TestTheme.applyTheme_TestTheme()
+    End Sub
 #End Region
 End Class

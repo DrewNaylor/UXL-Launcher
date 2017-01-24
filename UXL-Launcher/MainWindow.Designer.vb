@@ -55,6 +55,7 @@ Partial Class aaformMainWindow
         Me.picturePowerpointIcon = New System.Windows.Forms.PictureBox()
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
+        Me.buttonTestThemeSetter = New System.Windows.Forms.Button()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
@@ -274,6 +275,7 @@ Partial Class aaformMainWindow
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOneNote)
+        Me.groupboxStandardApps.Controls.Add(Me.buttonTestThemeSetter)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOutlook)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunPowerPoint)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunExcel)
@@ -396,6 +398,15 @@ Partial Class aaformMainWindow
         Me.pictureWordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureWordIcon.TabIndex = 0
         Me.pictureWordIcon.TabStop = False
+        '
+        'buttonTestThemeSetter
+        '
+        Me.buttonTestThemeSetter.Location = New System.Drawing.Point(49, 388)
+        Me.buttonTestThemeSetter.Name = "buttonTestThemeSetter"
+        Me.buttonTestThemeSetter.Size = New System.Drawing.Size(75, 58)
+        Me.buttonTestThemeSetter.TabIndex = 10
+        Me.buttonTestThemeSetter.Text = "Apply Test Theme"
+        Me.buttonTestThemeSetter.UseVisualStyleBackColor = True
         '
         'groupboxProApps
         '
@@ -921,4 +932,5 @@ Partial Class aaformMainWindow
     Friend WithEvents notifyiconUXLOptions As ToolStripMenuItem
     Friend WithEvents notifyiconOfficeLang As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents buttonTestThemeSetter As Button
 End Class

@@ -26,14 +26,14 @@ Public Class UXLTheme_TestTheme
 
     ' This file tells the theme engine what to color things. Theme engine is from this Stack Overflow question: http://stackoverflow.com/q/199521
 
-    Public Shared Sub applyTheme_TestTheme(ByRef container As Panel, Optional Recurse As Boolean = True)
-        'Clear all of the controls within the container object
-        'If "Recurse" is true, then also clear controls within any sub-containers
+    Public Shared Sub applyTheme_TestTheme()
+
         Dim ctrl As Control
-        For Each ctrl In container.Controls
+        For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
-                button.ForeColor = Color.Maroon
+                button.BackColor = Color.Maroon
+                button.ForeColor = Color.White
             End If
             'If (ctrl.GetType() Is GetType(CheckBox)) Then
             '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
