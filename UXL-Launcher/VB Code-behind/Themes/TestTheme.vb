@@ -83,7 +83,7 @@ Public Class UXLTheme_TestTheme
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-
+        'Set color for menubar.
         aaformMainWindow.menubarMainWindow.BackColor = Color.FromKnownColor(KnownColor.CadetBlue)
 
     End Sub
@@ -99,13 +99,16 @@ Public Class UXLTheme_TestTheme
         ' Colors as defined for this theme.
         ' Button colors:
         Dim colorButtonBackColor As Color = Color.Transparent
-        Dim colorButtonForeColor As Color = Color.Empty
+        Dim colorButtonForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color = Color.Transparent
-        Dim colorGroupBoxForeColor As Color = Color.Empty
+        Dim colorGroupBoxForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color = Color.White
-        Dim colorFlowLayoutPanelForeColor As Color = Color.Empty
+        Dim colorFlowLayoutPanelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
+        ' Menubar colors:
+        Dim colorMenubarBackColor As Color = Color.FromKnownColor(KnownColor.Control)
+
 
 
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
@@ -148,7 +151,7 @@ Public Class UXLTheme_TestTheme
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-
+        'Set color for menubar.
         aaformMainWindow.menubarMainWindow.BackColor = Color.FromKnownColor(KnownColor.Control)
 
     End Sub
