@@ -44,7 +44,7 @@ Public Class UXLTheme_TestTheme
             End If
         Next
 
-        ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
+        ' Look at all the buttons in the "Professional Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxProApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
@@ -52,6 +52,16 @@ Public Class UXLTheme_TestTheme
                 button.ForeColor = colorForeColorButton
             End If
         Next
+
+        ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
+        For Each ctrl In aaformMainWindow.groupboxExtraApps.Controls
+            If (ctrl.GetType() Is GetType(Button)) Then
+                Dim button As Button = CType(ctrl, Button)
+                button.BackColor = colorBackColorButton
+                button.ForeColor = colorForeColorButton
+            End If
+        Next
+
         ' Set colors for the "Standard Apps" groupbox.
         aaformMainWindow.groupboxStandardApps.BackColor = Color.Green
         aaformMainWindow.groupboxStandardApps.ForeColor = Color.Blue
