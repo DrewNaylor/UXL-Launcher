@@ -106,13 +106,13 @@ Public Class UXLTheme_TestTheme
         Dim colorFlowLayoutPanelForeColor As Color = Color.Empty
 
 
-
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
+
             End If
         Next
 
