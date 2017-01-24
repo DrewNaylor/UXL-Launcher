@@ -28,13 +28,23 @@ Public Class UXLTheme_TestTheme
 
     Public Shared Sub applyTheme_TestTheme()
 
+        ' Create a short-form word for "Control."
         Dim ctrl As Control
+
+        ' Look at all the controls in the "Standard Apps" groupbox.
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
                 button.BackColor = Color.Maroon
                 button.ForeColor = Color.White
             End If
+
+            If (ctrl.GetType() Is GetType(GroupBox)) Then
+                Dim groupbox As GroupBox = CType(ctrl, GroupBox)
+                groupbox.BackColor = Color.Green
+                groupbox.ForeColor = Color.Blue
+            End If
+
             'If (ctrl.GetType() Is GetType(CheckBox)) Then
             '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
             '    chkbx.Checked = False

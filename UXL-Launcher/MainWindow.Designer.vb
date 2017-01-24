@@ -46,6 +46,7 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
         Me.buttonRunOneNote = New System.Windows.Forms.Button()
+        Me.buttonTestThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOutlook = New System.Windows.Forms.Button()
         Me.buttonRunPowerPoint = New System.Windows.Forms.Button()
         Me.buttonRunExcel = New System.Windows.Forms.Button()
@@ -55,7 +56,6 @@ Partial Class aaformMainWindow
         Me.picturePowerpointIcon = New System.Windows.Forms.PictureBox()
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
-        Me.buttonTestThemeSetter = New System.Windows.Forms.Button()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
         Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
@@ -304,6 +304,15 @@ Partial Class aaformMainWindow
         Me.buttonRunOneNote.Text = "Microsoft OneNote"
         Me.buttonRunOneNote.UseVisualStyleBackColor = True
         '
+        'buttonTestThemeSetter
+        '
+        Me.buttonTestThemeSetter.Location = New System.Drawing.Point(49, 388)
+        Me.buttonTestThemeSetter.Name = "buttonTestThemeSetter"
+        Me.buttonTestThemeSetter.Size = New System.Drawing.Size(75, 58)
+        Me.buttonTestThemeSetter.TabIndex = 10
+        Me.buttonTestThemeSetter.Text = "Apply Test Theme"
+        Me.buttonTestThemeSetter.UseVisualStyleBackColor = True
+        '
         'buttonRunOutlook
         '
         Me.buttonRunOutlook.Location = New System.Drawing.Point(63, 212)
@@ -398,15 +407,6 @@ Partial Class aaformMainWindow
         Me.pictureWordIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureWordIcon.TabIndex = 0
         Me.pictureWordIcon.TabStop = False
-        '
-        'buttonTestThemeSetter
-        '
-        Me.buttonTestThemeSetter.Location = New System.Drawing.Point(49, 388)
-        Me.buttonTestThemeSetter.Name = "buttonTestThemeSetter"
-        Me.buttonTestThemeSetter.Size = New System.Drawing.Size(75, 58)
-        Me.buttonTestThemeSetter.TabIndex = 10
-        Me.buttonTestThemeSetter.Text = "Apply Test Theme"
-        Me.buttonTestThemeSetter.UseVisualStyleBackColor = True
         '
         'groupboxProApps
         '
