@@ -57,6 +57,8 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+
+            ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
@@ -72,6 +74,8 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+
+            ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
@@ -87,6 +91,8 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+
+            ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
@@ -133,6 +139,9 @@ Public Class UXLTheme_TestTheme
         Dim colorFlowLayoutPanelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' Menubar and status bar colors:
         Dim colorMenubarAndStatusBarBackColor As Color = Color.FromKnownColor(KnownColor.Control)
+        ' Label colors:
+        Dim colorLabelBackColor As Color = Color.Maroon
+        Dim colorLabelForeColor As Color = Color.White
 
 
 
