@@ -139,6 +139,10 @@ Public Class UXLTheme_TestTheme
         ' Label colors:
         Dim colorLabelBackColor As Color = Color.Transparent
         Dim colorLabelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
+        ' Textbox colors:
+        Dim colorTextboxBackColor As Color = Color.FromKnownColor(KnownColor.Window)
+        Dim colorTextboxForeColor As Color = Color.FromKnownColor(KnownColor.WindowText)
+
 
 
 
@@ -186,6 +190,13 @@ Public Class UXLTheme_TestTheme
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
+            ' Look at all the textboxes in the "Extra Apps + Tools" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim textbox As TextBox = CType(ctrl, TextBox)
+                textbox.BackColor = colorTextboxBackColor
+                textbox.ForeColor = colorTextboxForeColor
+            End If
+
         Next
 
         ' Set colors for the "Standard Apps" groupbox.
