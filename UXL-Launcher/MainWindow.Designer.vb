@@ -98,6 +98,7 @@ Partial Class aaformMainWindow
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.buttonDefaultThemeTest = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -274,6 +275,7 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxStandardApps.Controls.Add(Me.buttonDefaultThemeTest)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOneNote)
         Me.groupboxStandardApps.Controls.Add(Me.buttonTestThemeSetter)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOutlook)
@@ -306,7 +308,7 @@ Partial Class aaformMainWindow
         '
         'buttonTestThemeSetter
         '
-        Me.buttonTestThemeSetter.Location = New System.Drawing.Point(49, 388)
+        Me.buttonTestThemeSetter.Location = New System.Drawing.Point(19, 363)
         Me.buttonTestThemeSetter.Name = "buttonTestThemeSetter"
         Me.buttonTestThemeSetter.Size = New System.Drawing.Size(75, 58)
         Me.buttonTestThemeSetter.TabIndex = 10
@@ -815,6 +817,15 @@ Partial Class aaformMainWindow
         Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconExitApp.Text = "Exit UXL Launcher"
         '
+        'buttonDefaultThemeTest
+        '
+        Me.buttonDefaultThemeTest.Location = New System.Drawing.Point(100, 363)
+        Me.buttonDefaultThemeTest.Name = "buttonDefaultThemeTest"
+        Me.buttonDefaultThemeTest.Size = New System.Drawing.Size(75, 58)
+        Me.buttonDefaultThemeTest.TabIndex = 11
+        Me.buttonDefaultThemeTest.Text = "Apply Default Theme"
+        Me.buttonDefaultThemeTest.UseVisualStyleBackColor = True
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -933,4 +944,5 @@ Partial Class aaformMainWindow
     Friend WithEvents notifyiconOfficeLang As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents buttonTestThemeSetter As Button
+    Friend WithEvents buttonDefaultThemeTest As Button
 End Class
