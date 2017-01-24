@@ -140,6 +140,7 @@
     <Compile Include="VB Code-behind\debugmodeStuff.vb" />
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
+    <Compile Include="VB Code-behind\Themes\TestTheme.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
