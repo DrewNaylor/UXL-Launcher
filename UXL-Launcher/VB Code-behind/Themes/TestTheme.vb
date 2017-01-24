@@ -38,31 +38,26 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = Color.Maroon
                 button.ForeColor = Color.White
             End If
-
-            ' Set colors for the "Standard Apps" groupbox.
-            aaformMainWindow.groupboxStandardApps.BackColor = Color.Green
-            aaformMainWindow.groupboxStandardApps.ForeColor = Color.Blue
-            ' Set colors for the "Professional Apps" groupbox.
-            aaformMainWindow.groupboxProApps.BackColor = Color.Green
-            aaformMainWindow.groupboxProApps.ForeColor = Color.Blue
-            ' Set colors for the "Extra Apps + Tools" groupbox.
-            aaformMainWindow.groupboxExtraApps.BackColor = Color.Green
-            aaformMainWindow.groupboxExtraApps.ForeColor = Color.Blue
-
-
-            'If (ctrl.GetType() Is GetType(CheckBox)) Then
-            '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
-            '    chkbx.Checked = False
-            'End If
-            'If (ctrl.GetType() Is GetType(ComboBox)) Then
-            '    Dim cbobx As ComboBox = CType(ctrl, ComboBox)
-            '    cbobx.SelectedIndex = -1
-            'End If
-            'If (ctrl.GetType() Is GetType(DateTimePicker)) Then
-            '    Dim dtp As DateTimePicker = CType(ctrl, DateTimePicker)
-            '    dtp.Value = Now()
-            'End If
         Next
+
+        ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
+        For Each ctrl In aaformMainWindow.groupboxProApps.Controls
+            If (ctrl.GetType() Is GetType(Button)) Then
+                Dim button As Button = CType(ctrl, Button)
+                button.BackColor = Color.Maroon
+                button.ForeColor = Color.White
+            End If
+        Next
+        ' Set colors for the "Standard Apps" groupbox.
+        aaformMainWindow.groupboxStandardApps.BackColor = Color.Green
+        aaformMainWindow.groupboxStandardApps.ForeColor = Color.Blue
+        ' Set colors for the "Professional Apps" groupbox.
+        aaformMainWindow.groupboxProApps.BackColor = Color.Green
+        aaformMainWindow.groupboxProApps.ForeColor = Color.Blue
+        ' Set colors for the "Extra Apps + Tools" groupbox.
+        aaformMainWindow.groupboxExtraApps.BackColor = Color.Green
+        aaformMainWindow.groupboxExtraApps.ForeColor = Color.Blue
+
     End Sub
 #End Region
 
