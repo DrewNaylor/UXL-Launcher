@@ -40,7 +40,7 @@ Public Class UXLTheme_TestTheme
         Dim colorGroupBoxForeColor As Color = Color.Blue
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color = Color.Yellow
-
+        Dim colorFlowLayoutPanelForeColor As Color = Color.Purple
 
 
 
@@ -82,6 +82,7 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.groupboxExtraApps.ForeColor = colorGroupBoxForeColor
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
+        aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
 
     End Sub
 #End Region
@@ -102,6 +103,7 @@ Public Class UXLTheme_TestTheme
         Dim colorGroupBoxForeColor As Color = Color.Empty
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color = Color.White
+        Dim colorFlowLayoutPanelForeColor As Color = Color.Empty
 
 
 
@@ -141,6 +143,10 @@ Public Class UXLTheme_TestTheme
         ' Set colors for the "Extra Apps + Tools" groupbox.
         aaformMainWindow.groupboxExtraApps.BackColor = colorGroupBoxBackColor
         aaformMainWindow.groupboxExtraApps.ForeColor = colorGroupBoxForeColor
+        ' Set color for the Flow Layout Panel.
+        aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
+        aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
+
     End Sub
 #End Region
 End Class
