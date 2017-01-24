@@ -31,22 +31,22 @@ Public Class UXLTheme_TestTheme
         'If "Recurse" is true, then also clear controls within any sub-containers
         Dim ctrl As Control
         For Each ctrl In container.Controls
-            If (ctrl.GetType() Is GetType(TextBox)) Then
-                Dim txt As TextBox = CType(ctrl, TextBox)
-                txt.Text = ""
+            If (ctrl.GetType() Is GetType(Button)) Then
+                Dim button As Button = CType(ctrl, Button)
+                button.ForeColor = Color.Maroon
             End If
-            If (ctrl.GetType() Is GetType(CheckBox)) Then
-                Dim chkbx As CheckBox = CType(ctrl, CheckBox)
-                chkbx.Checked = False
-            End If
-            If (ctrl.GetType() Is GetType(ComboBox)) Then
-                Dim cbobx As ComboBox = CType(ctrl, ComboBox)
-                cbobx.SelectedIndex = -1
-            End If
-            If (ctrl.GetType() Is GetType(DateTimePicker)) Then
-                Dim dtp As DateTimePicker = CType(ctrl, DateTimePicker)
-                dtp.Value = Now()
-            End If
+            'If (ctrl.GetType() Is GetType(CheckBox)) Then
+            '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
+            '    chkbx.Checked = False
+            'End If
+            'If (ctrl.GetType() Is GetType(ComboBox)) Then
+            '    Dim cbobx As ComboBox = CType(ctrl, ComboBox)
+            '    cbobx.SelectedIndex = -1
+            'End If
+            'If (ctrl.GetType() Is GetType(DateTimePicker)) Then
+            '    Dim dtp As DateTimePicker = CType(ctrl, DateTimePicker)
+            '    dtp.Value = Now()
+            'End If
         Next
     End Sub
 
