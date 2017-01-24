@@ -36,8 +36,8 @@ Public Class UXLTheme_TestTheme
         Dim colorButtonBackColor As Color = Color.Maroon
         Dim colorButtonForeColor As Color = Color.White
         ' Groupbox colors:
-        Dim colorGroupBoxBackColor As Color = Color.Maroon
-        Dim colorGroupBoxForeColor As Color = Color.White
+        Dim colorGroupBoxBackColor As Color = Color.Green
+        Dim colorGroupBoxForeColor As Color = Color.Blue
 
 
 
@@ -69,14 +69,14 @@ Public Class UXLTheme_TestTheme
         Next
 
         ' Set colors for the "Standard Apps" groupbox.
-        aaformMainWindow.groupboxStandardApps.BackColor = Color.Green
-        aaformMainWindow.groupboxStandardApps.ForeColor = Color.Blue
+        aaformMainWindow.groupboxStandardApps.BackColor = colorGroupBoxBackColor
+        aaformMainWindow.groupboxStandardApps.ForeColor = colorGroupBoxForeColor
         ' Set colors for the "Professional Apps" groupbox.
-        aaformMainWindow.groupboxProApps.BackColor = Color.Green
-        aaformMainWindow.groupboxProApps.ForeColor = Color.Blue
+        aaformMainWindow.groupboxProApps.BackColor = colorGroupBoxBackColor
+        aaformMainWindow.groupboxProApps.ForeColor = colorGroupBoxForeColor
         ' Set colors for the "Extra Apps + Tools" groupbox.
-        aaformMainWindow.groupboxExtraApps.BackColor = Color.Green
-        aaformMainWindow.groupboxExtraApps.ForeColor = Color.Blue
+        aaformMainWindow.groupboxExtraApps.BackColor = colorGroupBoxBackColor
+        aaformMainWindow.groupboxExtraApps.ForeColor = colorGroupBoxForeColor
 
     End Sub
 #End Region
