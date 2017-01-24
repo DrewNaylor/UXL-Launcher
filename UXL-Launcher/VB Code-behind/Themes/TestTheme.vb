@@ -60,4 +60,38 @@ Public Class UXLTheme_TestTheme
     End Sub
 
 
+    'Apply Default Theme
+    Public Shared Sub applyTheme_DefaultTheme()
+
+        ' Create a short-form word for "Control."
+        Dim ctrl As Control
+
+        ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
+        For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
+            If (ctrl.GetType() Is GetType(Button)) Then
+                Dim button As Button = CType(ctrl, Button)
+                button.BackColor = Color.Empty
+                button.ForeColor = Color.Empty
+            End If
+
+
+            aaformMainWindow.groupboxStandardApps.BackColor = Color.Transparent
+            aaformMainWindow.groupboxStandardApps.ForeColor = Color.Empty
+
+
+            'If (ctrl.GetType() Is GetType(CheckBox)) Then
+            '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
+            '    chkbx.Checked = False
+            'End If
+            'If (ctrl.GetType() Is GetType(ComboBox)) Then
+            '    Dim cbobx As ComboBox = CType(ctrl, ComboBox)
+            '    cbobx.SelectedIndex = -1
+            'End If
+            'If (ctrl.GetType() Is GetType(DateTimePicker)) Then
+            '    Dim dtp As DateTimePicker = CType(ctrl, DateTimePicker)
+            '    dtp.Value = Now()
+            'End If
+        Next
+    End Sub
+
 End Class

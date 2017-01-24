@@ -296,5 +296,10 @@ Public Class aaformMainWindow
         ' Attempt to apply the test theme.
         UXLTheme_TestTheme.applyTheme_TestTheme()
     End Sub
+
+    Private Sub buttonDefaultThemeTest_Click(sender As Object, e As EventArgs) Handles buttonDefaultThemeTest.Click
+        ' Attempt to apply the default theme.
+        UXLTheme_TestTheme.applyTheme_DefaultTheme()
+    End Sub
 #End Region
 End Class
