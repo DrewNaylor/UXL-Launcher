@@ -25,7 +25,7 @@
 Public Class UXLTheme_TestTheme
 
     ' This file tells the theme engine what to color things. Theme engine is from this Stack Overflow question: http://stackoverflow.com/q/199521
-
+#Region "Set Test Theme."
     Public Shared Sub applyTheme_TestTheme()
 
         ' Create a short-form word for "Control."
@@ -39,9 +39,12 @@ Public Class UXLTheme_TestTheme
                 button.ForeColor = Color.White
             End If
 
-
+            ' Set colors for the "Standard Apps" groupbox.
             aaformMainWindow.groupboxStandardApps.BackColor = Color.Green
             aaformMainWindow.groupboxStandardApps.ForeColor = Color.Blue
+            ' Set colors for the "Professional Apps" groupbox.
+            aaformMainWindow.groupboxProApps.BackColor = Color.Green
+            aaformMainWindow.groupboxProApps.ForeColor = Color.Blue
 
 
             'If (ctrl.GetType() Is GetType(CheckBox)) Then
@@ -58,8 +61,9 @@ Public Class UXLTheme_TestTheme
             'End If
         Next
     End Sub
+#End Region
 
-
+#Region "Set Default Theme."
     'Apply Default Theme
     Public Shared Sub applyTheme_DefaultTheme()
 
@@ -93,5 +97,5 @@ Public Class UXLTheme_TestTheme
             'End If
         Next
     End Sub
-
+#End Region
 End Class
