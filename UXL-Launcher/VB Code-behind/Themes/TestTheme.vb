@@ -39,11 +39,11 @@ Public Class UXLTheme_TestTheme
                 button.ForeColor = Color.White
             End If
 
-            If (ctrl.GetType() Is GetType(GroupBox)) Then
-                Dim groupbox As GroupBox = CType(ctrl, GroupBox)
-                groupbox.BackColor = Color.Green
-                groupbox.ForeColor = Color.Blue
-            End If
+
+
+            aaformMainWindow.groupboxStandardApps.BackColor = Color.Green
+            aaformMainWindow.groupboxStandardApps.ForeColor = Color.Blue
+
 
             'If (ctrl.GetType() Is GetType(CheckBox)) Then
             '    Dim chkbx As CheckBox = CType(ctrl, CheckBox)
