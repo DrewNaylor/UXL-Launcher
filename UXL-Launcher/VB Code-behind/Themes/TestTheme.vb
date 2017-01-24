@@ -84,6 +84,8 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
 
+        aaformMainWindow.menubarMainWindow.BackColor = Color.FromKnownColor(KnownColor.CadetBlue)
+
     End Sub
 #End Region
 
@@ -146,6 +148,8 @@ Public Class UXLTheme_TestTheme
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
+
+        aaformMainWindow.menubarMainWindow.BackColor = Color.FromKnownColor(KnownColor.Control)
 
     End Sub
 #End Region
