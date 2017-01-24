@@ -152,7 +152,7 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
         'Set color for menubar.
-        aaformMainWindow.menubarMainWindow.BackColor = Color.FromKnownColor(KnownColor.Control)
+        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
 
     End Sub
 #End Region
