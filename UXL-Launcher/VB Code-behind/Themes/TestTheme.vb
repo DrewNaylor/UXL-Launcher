@@ -43,6 +43,9 @@ Public Class UXLTheme_TestTheme
         Dim colorFlowLayoutPanelForeColor As Color = Color.Purple
         ' Menubar and status bar colors:
         Dim colorMenubarAndStatusBarBackColor As Color = Color.CadetBlue
+        ' Label colors:
+        Dim colorLabelBackColor As Color = Color.Maroon
+        Dim colorLabelForeColor As Color = Color.White
 
 
 
@@ -54,6 +57,12 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+            If (ctrl.GetType() Is GetType(Label)) Then
+                Dim label As Label = CType(ctrl, Label)
+                label.BackColor = colorLabelBackColor
+                label.ForeColor = colorLabelForeColor
+            End If
+
         Next
 
         ' Look at all the buttons in the "Professional Apps" groupbox and change their theme.
@@ -63,6 +72,12 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+            If (ctrl.GetType() Is GetType(Label)) Then
+                Dim label As Label = CType(ctrl, Label)
+                label.BackColor = colorLabelBackColor
+                label.ForeColor = colorLabelForeColor
+            End If
+
         Next
 
         ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
@@ -72,6 +87,12 @@ Public Class UXLTheme_TestTheme
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
             End If
+            If (ctrl.GetType() Is GetType(Label)) Then
+                Dim label As Label = CType(ctrl, Label)
+                label.BackColor = colorLabelBackColor
+                label.ForeColor = colorLabelForeColor
+            End If
+
         Next
 
         ' Set colors for the "Standard Apps" groupbox.
