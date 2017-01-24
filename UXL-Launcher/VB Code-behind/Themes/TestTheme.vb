@@ -41,6 +41,9 @@ Public Class UXLTheme_TestTheme
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color = Color.Yellow
         Dim colorFlowLayoutPanelForeColor As Color = Color.Purple
+        ' Menubar colors:
+        Dim colorMenubarBackColor As Color = Color.CadetBlue
+
 
 
 
@@ -84,7 +87,7 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
         'Set color for menubar.
-        aaformMainWindow.menubarMainWindow.BackColor = Color.FromKnownColor(KnownColor.CadetBlue)
+        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
 
     End Sub
 #End Region
