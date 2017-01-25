@@ -20,12 +20,12 @@
       </FlowLayoutPanel>
 
       <MenuBarAndStatusBar>
-        <BackColor>CadetBlue</BackColor>
+        <BackColor>Control</BackColor>
       </MenuBarAndStatusBar>
 
       <Label>
-        <BackColor>Maroon</BackColor>
-        <ForeColor>White</ForeColor>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </Label>
 
       <TextBox>
