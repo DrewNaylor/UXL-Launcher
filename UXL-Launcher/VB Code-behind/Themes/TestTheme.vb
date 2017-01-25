@@ -122,31 +122,27 @@ Public Class UXLTheme_TestTheme
             End If
         Next
 
+
+
+
+
+
         ' Look at all the menubar entries in the main menubar and change their theme.
-        Dim tsMenuItem As ToolStripMenuItem
-        For Each tsMenuItem In aaformMainWindow.menubarFileMenu.DropDownItems
-            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
-                tsMenuItem.BackColor = colorMenuItemBackColor
-                tsMenuItem.ForeColor = colorMenuItemForeColor
-            End If
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarFileMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
-        For Each tsMenuItem In aaformMainWindow.menubarViewMenu.DropDownItems
-            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
-                tsMenuItem.BackColor = colorMenuItemBackColor
-                tsMenuItem.ForeColor = colorMenuItemForeColor
-            End If
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarViewMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
-        For Each tsMenuItem In aaformMainWindow.menubarToolsMenu.DropDownItems
-            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
-                tsMenuItem.BackColor = colorMenuItemBackColor
-                tsMenuItem.ForeColor = colorMenuItemForeColor
-            End If
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarToolsMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
-        For Each tsMenuItem In aaformMainWindow.menubarHelpMenu.DropDownItems
-            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
-                tsMenuItem.BackColor = colorMenuItemBackColor
-                tsMenuItem.ForeColor = colorMenuItemForeColor
-            End If
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarHelpMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
 
 
