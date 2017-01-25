@@ -42,9 +42,30 @@ Public Class UXLTheme_TestTheme
         Dim themeSheetTitle As String
         Dim themeSheetDescription As String
 
-        ' Create strings for button colors.
+        ' Button colors:
         Dim colorButtonBackColor As Color
         Dim colorButtonForeColor As Color
+        ' Groupbox colors:
+        Dim colorGroupBoxBackColor As Color
+        Dim colorGroupBoxForeColor As Color
+        ' FlowLayoutPanel colors:
+        Dim colorFlowLayoutPanelBackColor As Color
+        Dim colorFlowLayoutPanelForeColor As Color
+        ' Menubar and status bar colors:
+        Dim colorMenubarAndStatusBarBackColor As Color
+        ' Label colors:
+        Dim colorLabelBackColor As Color
+        Dim colorLabelForeColor As Color
+        ' Textbox colors:
+        Dim colorTextboxBackColor As Color
+        Dim colorTextboxForeColor As Color
+        ' Menubar entry colors:
+        Dim colorMenuItemBackColor As Color
+        Dim colorMenuItemForeColor As Color
+        ' Statusbar label colors:
+        Dim colorStatusLabelBackColor As Color
+        Dim colorStatusLabelForeColor As Color
+
 
         ' Pull the title from XML.
         themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
@@ -58,6 +79,9 @@ Public Class UXLTheme_TestTheme
         colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
         colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
 
+        ' Pull the groupbox colors from XML.
+        colorGroupBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager).InnerText)
+        colorGroupBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager).InnerText)
 
 
 
@@ -70,26 +94,6 @@ Public Class UXLTheme_TestTheme
         ' Button colors:
         'Dim colorButtonBackColor As Color = Color.Maroon
         'Dim colorButtonForeColor As Color = Color.White
-        ' Groupbox colors:
-        Dim colorGroupBoxBackColor As Color = Color.Green
-        Dim colorGroupBoxForeColor As Color = Color.Blue
-        ' FlowLayoutPanel colors:
-        Dim colorFlowLayoutPanelBackColor As Color = Color.Yellow
-        Dim colorFlowLayoutPanelForeColor As Color = Color.Purple
-        ' Menubar and status bar colors:
-        Dim colorMenubarAndStatusBarBackColor As Color = Color.CadetBlue
-        ' Label colors:
-        Dim colorLabelBackColor As Color = Color.Maroon
-        Dim colorLabelForeColor As Color = Color.White
-        ' Textbox colors:
-        Dim colorTextboxBackColor As Color = Color.FromKnownColor(KnownColor.Beige)
-        Dim colorTextboxForeColor As Color = Color.FromKnownColor(KnownColor.DarkViolet)
-        ' Menubar entry colors:
-        Dim colorMenuItemBackColor As Color = Color.FromKnownColor(KnownColor.Purple)
-        Dim colorMenuItemForeColor As Color = Color.FromKnownColor(KnownColor.AntiqueWhite)
-        ' Statusbar label colors:
-        Dim colorStatusLabelBackColor As Color = Color.FromKnownColor(KnownColor.Maroon)
-        Dim colorStatusLabelForeColor As Color = Color.FromKnownColor(KnownColor.White)
 #End Region
 
 #Region "Set colors for controls in groupboxes."

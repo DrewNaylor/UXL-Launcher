@@ -3,10 +3,47 @@
   <Description>UXL Launcher Test Theme</Description>
   
     <Theme_Colors>
+      
       <Button>
         <BackColor>Maroon</BackColor>
         <ForeColor>White</ForeColor>
       </Button>
+      
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+      
     </Theme_Colors>
   
 </UXL_Launcher_Theme>
