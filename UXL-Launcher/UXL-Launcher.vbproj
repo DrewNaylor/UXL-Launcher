@@ -100,6 +100,7 @@
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Xml.XPath" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalSuppressions.vb" />
@@ -140,6 +141,7 @@
     <Compile Include="VB Code-behind\debugmodeStuff.vb" />
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
+    <Compile Include="VB Code-behind\Themes\UXLLauncher_ThemeEngine.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
@@ -188,6 +190,8 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
+    <Content Include="VB Code-behind\Themes\TestTheme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
     <None Include="Resources\gpl.rtf" />
     <None Include="Resources\Word.png" />
@@ -221,7 +225,9 @@
     <None Include="Resources\small-icons\small-Word.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -Command "((Get-Date).ToUniversalTime()).ToString(\"s\") | Out-File '$(ProjectDir)Resources\BuildDate.txt'"</PreBuildEvent>

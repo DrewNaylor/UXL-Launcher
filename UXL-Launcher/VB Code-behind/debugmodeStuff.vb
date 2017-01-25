@@ -34,6 +34,11 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForuserOfficeVersion.Show()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Show()
             aaformMainWindow.debugLabelForMSIInstall.Show()
+            aaformMainWindow.debugLabelXmlThemeTitle.Show()
+            aaformMainWindow.debugLabelXmlThemeDescription.Show()
+            ' Theme tester buttons.
+            aaformMainWindow.debugButtonDefaultThemeSetter.Show()
+            aaformMainWindow.debugButtonTestThemeSetter.Show()
 
         ElseIf My.Settings.debugmodeShowLabels = False Then
             aaformMainWindow.debugLabelForAlwaysOnTop.Hide()
@@ -43,6 +48,11 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForuserOfficeVersion.Hide()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Hide()
             aaformMainWindow.debugLabelForMSIInstall.Hide()
+            aaformMainWindow.debugLabelXmlThemeTitle.Hide()
+            aaformMainWindow.debugLabelXmlThemeDescription.Hide()
+            ' Theme tester buttons.
+            aaformMainWindow.debugButtonDefaultThemeSetter.Hide()
+            aaformMainWindow.debugButtonTestThemeSetter.Hide()
         End If
     End Sub
 #Region "Update the debug labels on the main form."
@@ -61,13 +71,22 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
         End If
 
+        ' Debug label for the Always On Top feature.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
+
 
         ' Debug label for userOfficeVersion.
         aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
         ' Debug label for MSIInstall.
         aaformMainWindow.debugLabelForMSIInstall.Text = "installedViaMSIPackage: " & My.Settings.installedViaMSIPackage
-        ' Debug textox for fullLauncherCodeString.
+        ' Debug textbox for fullLauncherCodeString.
         aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
+
+        ' Debug labels for theme titles and descriptions.
+        aaformMainWindow.debugLabelXmlThemeTitle.Text = UXLLauncher_ThemeEngine.themeSheetTitle
+        aaformMainWindow.debugLabelXmlThemeDescription.Text = UXLLauncher_ThemeEngine.themeSheetDescription
 
     End Sub
 #End Region

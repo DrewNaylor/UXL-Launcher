@@ -1,0 +1,48 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Test Theme</Title>
+  <Description>UXL Launcher Test Theme</Description>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>Green</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Yellow</BackColor>
+        <ForeColor>Purple</ForeColor>
+      </FlowLayoutPanel>
+
+      <MenuBarAndStatusBar>
+        <BackColor>CadetBlue</BackColor>
+      </MenuBarAndStatusBar>
+
+      <Label>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <TextBox>
+        <BackColor>Beige</BackColor>
+        <ForeColor>DarkViolet</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <BackColor>Purple</BackColor>
+        <ForeColor>AntiqueWhite</ForeColor>
+      </MenuItem>
+
+      <StatusLabel>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>

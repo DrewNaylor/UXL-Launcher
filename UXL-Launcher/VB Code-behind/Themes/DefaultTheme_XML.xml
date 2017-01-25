@@ -1,0 +1,48 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Default Theme</Title>
+  <Description>Default theme for UXL Launcher</Description>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Window</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </FlowLayoutPanel>
+
+      <MenuBarAndStatusBar>
+        <BackColor>Control</BackColor>
+      </MenuBarAndStatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </Label>
+
+      <TextBox>
+        <BackColor>Window</BackColor>
+        <ForeColor>WindowText</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <BackColor>Control</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </MenuItem>
+
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>

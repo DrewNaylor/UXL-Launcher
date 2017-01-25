@@ -24,29 +24,28 @@
 
 
 Public Class aaformMainWindow
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
+
+#Region "Start the theme engine and apply the user's theme."
+
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+
+#End Region
 
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
 
 
 #Region "Debug code for aaformMainWindow."
-
         ' Figure out whether or not to show the debug labels based on a setting.
         debugmodeStuff.showDebugLabels()
 
-        ' Debug label for the Always On Top feature.
-        debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & menubarAlwaysOnTopButton.CheckState & vbNewLine &
-        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
-        "main window TopMost: " & Me.TopMost
-
         ' Update the debug labels.
         debugmodeStuff.updateDebugLabels()
-
-
 #End Region
 
 #Region "Main form loading code for Always On Top menubar button."
@@ -197,7 +196,7 @@ Public Class aaformMainWindow
 
     Private Sub menubarOfficeLangPrefsButton_Click(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.Click
         ' Run Office Language Preferences.
-        LaunchApp.LaunchOfficeLangPrefs
+        LaunchApp.LaunchOfficeLangPrefs()
     End Sub
 #End Region
 #Region "Help menubar buttons."
@@ -291,5 +290,27 @@ Public Class aaformMainWindow
         ' Run Office Language Preferences.
         LaunchApp.LaunchOfficeLangPrefs()
     End Sub
+
 #End Region
+
+
+
+#Region "Theme Tester Buttons."
+    '    Private Sub buttonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles buttonTestThemeSetter.Click
+    '        ' Attempt to apply the test theme.
+    '        userTheme = My.Resources.TestTheme_XML
+    '        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+    '    End Sub
+
+    '    Private Sub buttonDefaultThemeTest_Click(sender As Object, e As EventArgs) Handles buttonDefaultThemeTest.Click
+    '        ' Attempt to apply the default theme.
+    '        If My.Settings.alwaysOnTop = True Then
+    '            userTheme = My.Resources.DefaultTheme_XML
+    '        ElseIf My.Settings.alwaysOnTop = False Then
+    '            userTheme = My.Resources.TestTheme_XML
+    '        End If
+    '        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+    '    End Sub
+#End Region
+
 End Class
