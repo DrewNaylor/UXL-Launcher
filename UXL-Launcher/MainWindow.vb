@@ -133,6 +133,16 @@ Public Class aaformMainWindow
     Private Sub menubarOfficeLangPrefsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.MouseLeave
         menubarOfficeLangPrefsButton.ForeColor = colorPreviousMenuColor
     End Sub
+#End Region
+
+#Region "UXL Launcher Options button."
+
+    ' This code changes the color of the Options button in the Tools menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarOptionsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarOptionsButton.MouseEnter
+        colorPreviousMenuColor = menubarOptionsButton.ForeColor
+        menubarOptionsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
 
 #End Region
 
