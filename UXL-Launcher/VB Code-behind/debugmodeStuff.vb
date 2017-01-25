@@ -65,6 +65,11 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
         End If
 
+        ' Debug label for the Always On Top feature.
+        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
+        "main window TopMost: " & aaformMainWindow.TopMost
+
 
         ' Debug label for userOfficeVersion.
         aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
