@@ -34,6 +34,8 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForuserOfficeVersion.Show()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Show()
             aaformMainWindow.debugLabelForMSIInstall.Show()
+            aaformMainWindow.debugLabelXmlThemeTitle.Show()
+            aaformMainWindow.debugLabelXmlThemeDescription.Show()
 
         ElseIf My.Settings.debugmodeShowLabels = False Then
             aaformMainWindow.debugLabelForAlwaysOnTop.Hide()
@@ -43,6 +45,8 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForuserOfficeVersion.Hide()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Hide()
             aaformMainWindow.debugLabelForMSIInstall.Hide()
+            aaformMainWindow.debugLabelXmlThemeTitle.Hide()
+            aaformMainWindow.debugLabelXmlThemeDescription.Hide()
         End If
     End Sub
 #Region "Update the debug labels on the main form."
