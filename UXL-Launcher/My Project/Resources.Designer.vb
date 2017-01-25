@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-01-22T06:40:14
+        '''  Looks up a localized string similar to 2017-01-25T06:04:39
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -320,6 +320,22 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("small_Word", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt; 
+        '''&lt;ThemeDescription&gt;UXL Launcher Test Theme&lt;/ThemeDescription&gt;
+        '''&lt;Colors&gt;
+        '''  &lt;Button&gt;
+        '''    &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
+        '''    &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''  &lt;/Button&gt;
+        '''&lt;/Colors&gt;.
+        '''</summary>
+        Public ReadOnly Property TestTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("TestTheme_XML", resourceCulture)
             End Get
         End Property
         

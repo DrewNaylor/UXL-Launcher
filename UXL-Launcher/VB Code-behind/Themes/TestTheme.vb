@@ -31,6 +31,7 @@ Public Class UXLTheme_TestTheme
     Public Shared Sub applyTheme_TestTheme()
 
         Dim ThemeSheet As New XmlDocument()
+        ThemeSheet.LoadXml(My.Resources.TestTheme_XML)
 
 #Region "Define Colors and Short-words."
         ' Create a short-form word for "Control."
