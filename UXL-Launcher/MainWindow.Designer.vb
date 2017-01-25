@@ -443,7 +443,7 @@ Partial Class aaformMainWindow
         Me.debugButtonTestThemeSetter.Name = "debugButtonTestThemeSetter"
         Me.debugButtonTestThemeSetter.Size = New System.Drawing.Size(150, 116)
         Me.debugButtonTestThemeSetter.TabIndex = 10
-        Me.debugButtonTestThemeSetter.Text = "Apply Test Theme"
+        Me.debugButtonTestThemeSetter.Text = "Apply Chosen Theme"
         Me.debugButtonTestThemeSetter.UseVisualStyleBackColor = True
         '
         'buttonRunOutlook
