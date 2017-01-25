@@ -88,6 +88,7 @@ Public Class aaformMainWindow
 
     ' Create a Color variable to store the color of the menubar entry as it was before the mouse was moved over it.
     Public colorPreviousMenuColor As Color
+
 #Region "Exit button"
     ' This code changes the color of the Exit button in the File menu when
     ' the mouse is moved over it so that it's readable.
@@ -116,6 +117,23 @@ Public Class aaformMainWindow
     Private Sub menubarAlwaysOnTopButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.MouseLeave
         menubarAlwaysOnTopButton.ForeColor = colorPreviousMenuColor
     End Sub
+#End Region
+
+#Region "Office Language Preferences button."
+
+    ' This code changes the color of the Office Language Preferences button in the Tools menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarOfficeLangPrefsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.MouseEnter
+        colorPreviousMenuColor = menubarOfficeLangPrefsButton.ForeColor
+        menubarOfficeLangPrefsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
+
+    ' Change the Office Language Preferences button in the Tools menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarOfficeLangPrefsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.MouseLeave
+        menubarOfficeLangPrefsButton.ForeColor = colorPreviousMenuColor
+    End Sub
+
 #End Region
 
 #End Region
