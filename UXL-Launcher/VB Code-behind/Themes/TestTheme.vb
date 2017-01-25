@@ -28,12 +28,13 @@ Public Class UXLTheme_TestTheme
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Test Theme."
+
     Public Shared Sub applyTheme_TestTheme()
 
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
-        themeSheet.LoadXml(My.Resources.TestTheme_XML)
+        themeSheet.LoadXml(aaformMainWindow.userTheme)
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")

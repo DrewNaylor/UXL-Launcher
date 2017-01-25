@@ -292,8 +292,15 @@ Public Class aaformMainWindow
         LaunchApp.LaunchOfficeLangPrefs()
     End Sub
 
+#End Region
+
+    ' Make a variable that differs based on what theme is chosen.
+    Public Shared userTheme As String
+
+#Region "Theme Tester Buttons."
     Private Sub buttonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles buttonTestThemeSetter.Click
         ' Attempt to apply the test theme.
+        userTheme = My.Resources.TestTheme_XML
         UXLTheme_TestTheme.applyTheme_TestTheme()
     End Sub
 
@@ -302,4 +309,5 @@ Public Class aaformMainWindow
         UXLTheme_TestTheme.applyTheme_DefaultTheme()
     End Sub
 #End Region
+
 End Class
