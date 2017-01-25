@@ -58,6 +58,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.labelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.labelXmlThemeDescription = New System.Windows.Forms.Label()
         Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
@@ -100,7 +101,6 @@ Partial Class aaformMainWindow
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.labelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -139,35 +139,35 @@ Partial Class aaformMainWindow
         '
         Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
-        Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
+        Me.menubarFileMenu.Size = New System.Drawing.Size(39, 19)
         Me.menubarFileMenu.Text = "&File"
         '
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(138, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
         '
         Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton})
         Me.menubarViewMenu.Name = "menubarViewMenu"
-        Me.menubarViewMenu.Size = New System.Drawing.Size(44, 19)
+        Me.menubarViewMenu.Size = New System.Drawing.Size(46, 19)
         Me.menubarViewMenu.Text = "&View"
         '
         'menubarAlwaysOnTopButton
         '
         Me.menubarAlwaysOnTopButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarAlwaysOnTopButton.Name = "menubarAlwaysOnTopButton"
-        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(154, 22)
+        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(159, 22)
         Me.menubarAlwaysOnTopButton.Text = "&Always On Top"
         '
         'menubarToolsMenu
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOfficeLangPrefsButton, Me.zseparatorToolsMenu1, Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(50, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOfficeLangPrefsButton
@@ -176,57 +176,57 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOfficeLangPrefsButton.Name = "menubarOfficeLangPrefsButton"
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
-        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
+        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(248, 28)
         Me.menubarOfficeLangPrefsButton.Text = "Office Language Preferences"
         '
         'zseparatorToolsMenu1
         '
         Me.zseparatorToolsMenu1.Name = "zseparatorToolsMenu1"
-        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(230, 6)
+        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(245, 6)
         '
         'menubarOptionsButton
         '
         Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
         Me.menubarOptionsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(233, 30)
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(248, 30)
         Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
         '
         Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
         Me.menubarHelpMenu.Name = "menubarHelpMenu"
-        Me.menubarHelpMenu.Size = New System.Drawing.Size(44, 19)
+        Me.menubarHelpMenu.Size = New System.Drawing.Size(45, 19)
         Me.menubarHelpMenu.Text = "&Help"
         '
         'menubarHelpTopicsButton
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(220, 22)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(217, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(220, 22)
         Me.menubarAuthorsButton.Text = "A&cknowledgments"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(220, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(220, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
@@ -257,7 +257,7 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(622, 17)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(678, 17)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
     "launch them and explore the UI."
         '
@@ -448,6 +448,15 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
+        '
+        'labelXmlThemeTitle
+        '
+        Me.labelXmlThemeTitle.AutoSize = True
+        Me.labelXmlThemeTitle.Location = New System.Drawing.Point(10, 393)
+        Me.labelXmlThemeTitle.Name = "labelXmlThemeTitle"
+        Me.labelXmlThemeTitle.Size = New System.Drawing.Size(77, 13)
+        Me.labelXmlThemeTitle.TabIndex = 24
+        Me.labelXmlThemeTitle.Text = "XmlThemeTitle"
         '
         'labelXmlThemeDescription
         '
@@ -838,15 +847,6 @@ Partial Class aaformMainWindow
         Me.notifyiconExitApp.Name = "notifyiconExitApp"
         Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconExitApp.Text = "Exit UXL Launcher"
-        '
-        'labelXmlThemeTitle
-        '
-        Me.labelXmlThemeTitle.AutoSize = True
-        Me.labelXmlThemeTitle.Location = New System.Drawing.Point(10, 393)
-        Me.labelXmlThemeTitle.Name = "labelXmlThemeTitle"
-        Me.labelXmlThemeTitle.Size = New System.Drawing.Size(77, 13)
-        Me.labelXmlThemeTitle.TabIndex = 24
-        Me.labelXmlThemeTitle.Text = "XmlThemeTitle"
         '
         'aaformMainWindow
         '
