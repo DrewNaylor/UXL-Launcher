@@ -260,6 +260,25 @@ Public Class UXLTheme_TestTheme
             End If
         Next
 
+        ' Look at all the menubar entries in the main menubar and change their theme.
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarFileMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
+        Next
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarViewMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
+        Next
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarToolsMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
+        Next
+        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarHelpMenu.DropDownItems
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
+        Next
+
+
         ' Set colors for the "Standard Apps" groupbox.
         aaformMainWindow.groupboxStandardApps.BackColor = colorGroupBoxBackColor
         aaformMainWindow.groupboxStandardApps.ForeColor = colorGroupBoxForeColor
