@@ -32,12 +32,14 @@ Public Class UXLTheme_TestTheme
 
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
-        Dim themeSheet As New XmlDocument()
+        Dim themeSheet As XmlDocument = New XmlDocument()
         themeSheet.LoadXml(My.Resources.TestTheme_XML)
+
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
-        Dim themeTitle As String = themeSheet.SelectSingleNode("/uxl:Theme[1]/@Title", themeNamespaceManager).InnerText
-        aaformMainWindow.labelXmlThemeTitle.Text = themeTitle
+        Dim themeSheetTitle As String
+        themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        aaformMainWindow.labelXmlThemeTitle.Text = themeSheetTitle
 #End Region
 
 #Region "Define Colors and Short-words."

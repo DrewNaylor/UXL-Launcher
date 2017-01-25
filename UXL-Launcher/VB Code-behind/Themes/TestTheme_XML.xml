@@ -1,8 +1,12 @@
-﻿<Theme Title="Test Theme" Description="UXL Launcher Test Theme">
-  <Colors>
+﻿<UXL_Launcher_Theme>
+<Title>Test Theme</Title>
+  <Description>UXL Launcher Test Theme</Description>
+  
+    <Colors>
     <Button>
       <BackColor>Maroon</BackColor>
       <ForeColor>White</ForeColor>
     </Button>
   </Colors>
-</Theme>
+  
+</UXL_Launcher_Theme>
