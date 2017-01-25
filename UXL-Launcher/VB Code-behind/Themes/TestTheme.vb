@@ -166,6 +166,7 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.menubarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
         aaformMainWindow.statusbarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
 #End Region
+
     End Sub
 #End Region
 
@@ -311,6 +312,7 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.menubarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
         aaformMainWindow.statusbarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
 #End Region
+
     End Sub
 #End Region
 End Class

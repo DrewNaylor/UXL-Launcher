@@ -189,6 +189,7 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VB Code-behind\Themes\TestTheme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
     <None Include="Resources\gpl.rtf" />
     <None Include="Resources\Word.png" />
