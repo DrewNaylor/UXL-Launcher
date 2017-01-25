@@ -144,7 +144,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(152, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu

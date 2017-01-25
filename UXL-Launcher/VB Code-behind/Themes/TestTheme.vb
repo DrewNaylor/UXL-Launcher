@@ -197,9 +197,9 @@ Public Class UXLTheme_TestTheme
         ' Menubar entry colors:
         Dim colorMenuItemBackColor As Color = Color.FromKnownColor(KnownColor.Control)
         Dim colorMenuItemForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
-
-
-
+        ' Statusbar label colors:
+        Dim colorStatusLabelBackColor As Color = Color.FromKnownColor(KnownColor.Transparent)
+        Dim colorStatusLabelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
 
 
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
@@ -282,6 +282,11 @@ Public Class UXLTheme_TestTheme
             tsMenuItem.BackColor = colorMenuItemBackColor
             tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
+
+        ' Set the colors for the status bar label.
+        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
+        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
+
 
 
         ' Set colors for the "Standard Apps" groupbox.
