@@ -293,8 +293,6 @@ Public Class aaformMainWindow
 
 #End Region
 
-
-
 #Region "Theme Tester Buttons."
     '    Private Sub buttonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles buttonTestThemeSetter.Click
     '        ' Attempt to apply the test theme.
