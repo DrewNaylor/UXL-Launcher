@@ -5,18 +5,18 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>Maroon</BackColor>
-        <ForeColor>White</ForeColor>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </Button>
       
       <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Yellow</BackColor>
-        <ForeColor>Purple</ForeColor>
+        <BackColor>Window</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </FlowLayoutPanel>
 
       <MenuBarAndStatusBar>
