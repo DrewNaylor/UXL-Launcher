@@ -149,6 +149,22 @@ Public Class aaformMainWindow
     Private Sub menubarOptionsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarOptionsButton.MouseLeave
         menubarOptionsButton.ForeColor = colorPreviousMenuColor
     End Sub
+#End Region
+
+#Region "View Help Topics button."
+
+    ' This code changes the color of the View Help Topics button in the Help menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarHelpTopicsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.MouseEnter
+        colorPreviousMenuColor = menubarHelpTopicsButton.ForeColor
+        menubarHelpTopicsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
+
+    ' Change the View Help Topics button in the Help menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarHelpTopicsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.MouseLeave
+        menubarHelpTopicsButton.ForeColor = colorPreviousMenuColor
+    End Sub
 
 #End Region
 
