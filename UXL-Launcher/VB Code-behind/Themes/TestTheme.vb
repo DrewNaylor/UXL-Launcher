@@ -43,8 +43,8 @@ Public Class UXLTheme_TestTheme
         Dim themeSheetDescription As String
 
         ' Create strings for button colors.
-        Dim intermediateColorButtonBackColor As String
-        Dim intermediateColorButtonForeColor As String
+        Dim colorButtonBackColor As Color
+        Dim colorButtonForeColor As Color
 
         ' Pull the title from XML.
         themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
@@ -55,13 +55,8 @@ Public Class UXLTheme_TestTheme
         aaformMainWindow.debugLabelXmlThemeDescription.Text = themeSheetDescription
 
         ' Pull the button colors from XML.
-        intermediateColorButtonBackColor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText
-        Dim colorButtonBackColor As Color
-        colorButtonBackColor = Drawing.ColorTranslator.FromHtml(intermediateColorButtonBackColor)
-
-        intermediateColorButtonForeColor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText
-        Dim colorButtonForeColor As Color
-        colorButtonForeColor = Drawing.ColorTranslator.FromHtml(intermediateColorButtonForeColor)
+        colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
+        colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
 
 
 
