@@ -126,10 +126,10 @@ Public Class UXLTheme_TestTheme
 
         ' Colors as defined for this theme.
         ' Button colors:
-        Dim colorButtonBackColor As Color = Color.Transparent
+        Dim colorButtonBackColor As Color = Color.FromKnownColor(KnownColor.Transparent)
         Dim colorButtonForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' Groupbox colors:
-        Dim colorGroupBoxBackColor As Color = Color.Transparent
+        Dim colorGroupBoxBackColor As Color = Color.FromKnownColor(KnownColor.Transparent)
         Dim colorGroupBoxForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color = Color.FromKnownColor(KnownColor.Window)
@@ -137,7 +137,7 @@ Public Class UXLTheme_TestTheme
         ' Menubar and status bar colors:
         Dim colorMenubarAndStatusBarBackColor As Color = Color.FromKnownColor(KnownColor.Control)
         ' Label colors:
-        Dim colorLabelBackColor As Color = Color.Transparent
+        Dim colorLabelBackColor As Color = Color.FromKnownColor(KnownColor.Transparent)
         Dim colorLabelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' Textbox colors:
         Dim colorTextboxBackColor As Color = Color.FromKnownColor(KnownColor.Window)
