@@ -38,8 +38,14 @@ Public Class UXLTheme_TestTheme
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
         Dim themeSheetTitle As String
+        Dim themeSheetDescription As String
+
+
         themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
         aaformMainWindow.labelXmlThemeTitle.Text = themeSheetTitle
+
+        themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
+        aaformMainWindow.labelXmlThemeDescription.Text = themeSheetDescription
 #End Region
 
 #Region "Define Colors and Short-words."
