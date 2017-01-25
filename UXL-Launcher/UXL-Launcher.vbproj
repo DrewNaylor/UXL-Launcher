@@ -100,6 +100,7 @@
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Xml.XPath" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalSuppressions.vb" />
@@ -223,7 +224,9 @@
     <None Include="Resources\small-icons\small-Word.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -Command "((Get-Date).ToUniversalTime()).ToString(\"s\") | Out-File '$(ProjectDir)Resources\BuildDate.txt'"</PreBuildEvent>

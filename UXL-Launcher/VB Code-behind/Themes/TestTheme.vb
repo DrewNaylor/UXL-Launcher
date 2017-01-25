@@ -22,11 +22,15 @@
 'along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 
 
+Imports System.Xml
+
 Public Class UXLTheme_TestTheme
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Test Theme."
     Public Shared Sub applyTheme_TestTheme()
+
+        Dim ThemeSheet As New XmlDocument()
 
 #Region "Define Colors and Short-words."
         ' Create a short-form word for "Control."
