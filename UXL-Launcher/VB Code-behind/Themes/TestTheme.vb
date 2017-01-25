@@ -48,11 +48,11 @@ Public Class UXLTheme_TestTheme
 
         ' Pull the title from XML.
         themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-        aaformMainWindow.labelXmlThemeTitle.Text = themeSheetTitle
+        aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
 
         ' Pull the description from XML.
         themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
-        aaformMainWindow.labelXmlThemeDescription.Text = themeSheetDescription
+        aaformMainWindow.debugLabelXmlThemeDescription.Text = themeSheetDescription
 
         ' Pull the button colors from XML.
         intermediateColorButtonBackColor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText
