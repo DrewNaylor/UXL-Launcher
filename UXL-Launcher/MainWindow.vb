@@ -301,7 +301,7 @@ Public Class aaformMainWindow
     Private Sub buttonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles buttonTestThemeSetter.Click
         ' Attempt to apply the test theme.
         userTheme = My.Resources.TestTheme_XML
-        UXLTheme_TestTheme.applyTheme_TestTheme()
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     End Sub
 
     Private Sub buttonDefaultThemeTest_Click(sender As Object, e As EventArgs) Handles buttonDefaultThemeTest.Click
@@ -311,7 +311,7 @@ Public Class aaformMainWindow
         ElseIf My.Settings.alwaysOnTop = False Then
             userTheme = My.Resources.TestTheme_XML
         End If
-        UXLTheme_TestTheme.applyTheme_TestTheme()
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     End Sub
 #End Region
 

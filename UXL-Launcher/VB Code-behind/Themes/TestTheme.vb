@@ -24,12 +24,12 @@
 
 Imports System.Xml
 
-Public Class UXLTheme_TestTheme
+Public Class UXLLauncher_ThemeEngine
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
-#Region "Set Test Theme."
+#Region "Set Theme via UXL Launcher Theme Engine."
 
-    Public Shared Sub applyTheme_TestTheme()
+    Public Shared Sub themeEngine_ApplyTheme()
 
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
@@ -38,6 +38,8 @@ Public Class UXLTheme_TestTheme
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
+
+#Region "Define strings for controls and things in the XML document."
 
         ' Create strings for theme title and description.
         Dim themeSheetTitle As String
@@ -66,8 +68,9 @@ Public Class UXLTheme_TestTheme
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color
         Dim colorStatusLabelForeColor As Color
+#End Region
 
-
+#Region "Pull theme colors from XML documents."
         ' Pull the title from XML.
         themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
         aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
@@ -106,16 +109,13 @@ Public Class UXLTheme_TestTheme
         ' Pull the StatusLabel colors from XML.
         colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
         colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
+#End Region
 
 #End Region
 
-#Region "Define Colors and Short-words."
+#Region "Define Short-words."
         ' Create a short-form word for "Control."
         Dim ctrl As Control
-        ' Colors as defined for this theme.
-        ' Button colors:
-        'Dim colorButtonBackColor As Color = Color.Maroon
-        'Dim colorButtonForeColor As Color = Color.White
 #End Region
 
 #Region "Set colors for controls in groupboxes."
