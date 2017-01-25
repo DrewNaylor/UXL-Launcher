@@ -124,9 +124,6 @@ Public Class UXLTheme_TestTheme
 
 
 
-
-
-
         ' Look at all the menubar entries in the main menubar and change their theme.
         For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarFileMenu.DropDownItems
             tsMenuItem.BackColor = colorMenuItemBackColor
