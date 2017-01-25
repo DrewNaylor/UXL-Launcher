@@ -1,2 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <ThemeDescription>UXL Launcher Test Theme</ThemeDescription>
+<Colors>
+  <Button>
+    <BackColor>Maroon</BackColor>
+    <ForeColor>White</ForeColor>
+  </Button>
+</Colors>
