@@ -122,12 +122,34 @@ Public Class UXLTheme_TestTheme
             End If
         Next
 
+        ' Look at all the menubar entries in the main menubar and change their theme.
         Dim tsMenuItem As ToolStripMenuItem
-        ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
-        For Each tsMenuItem In aaformMainWindow.menubarMainWindow.Items
-            tsMenuItem.BackColor = colorMenuItemBackColor
-            tsMenuItem.ForeColor = colorMenuItemForeColor
+        For Each tsMenuItem In aaformMainWindow.menubarFileMenu.DropDownItems
+            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
+                tsMenuItem.BackColor = colorMenuItemBackColor
+                tsMenuItem.ForeColor = colorMenuItemForeColor
+            End If
         Next
+        For Each tsMenuItem In aaformMainWindow.menubarViewMenu.DropDownItems
+            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
+                tsMenuItem.BackColor = colorMenuItemBackColor
+                tsMenuItem.ForeColor = colorMenuItemForeColor
+            End If
+        Next
+        For Each tsMenuItem In aaformMainWindow.menubarToolsMenu.DropDownItems
+            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
+                tsMenuItem.BackColor = colorMenuItemBackColor
+                tsMenuItem.ForeColor = colorMenuItemForeColor
+            End If
+        Next
+        For Each tsMenuItem In aaformMainWindow.menubarHelpMenu.DropDownItems
+            If (tsMenuItem.GetType() Is GetType(ToolStripMenuItem)) Then
+                tsMenuItem.BackColor = colorMenuItemBackColor
+                tsMenuItem.ForeColor = colorMenuItemForeColor
+            End If
+        Next
+
+
 
 
         ' Set colors for the "Standard Apps" groupbox.
