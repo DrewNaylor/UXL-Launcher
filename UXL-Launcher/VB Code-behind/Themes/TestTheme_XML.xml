@@ -4,8 +4,8 @@
   
     <Theme_Colors>
       <Button>
-        <BackColor>Color.Maroon</BackColor>
-        <ForeColor>Color.White</ForeColor>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
       </Button>
     </Theme_Colors>
   

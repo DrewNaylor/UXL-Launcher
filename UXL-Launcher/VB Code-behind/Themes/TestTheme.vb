@@ -57,7 +57,12 @@ Public Class UXLTheme_TestTheme
         ' Pull the button colors from XML.
         intermediateColorButtonBackColor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText
         Dim colorButtonBackColor As Color
-        colorButtonBackColor = Color.FromKnownColor(CType(intermediateColorButtonBackColor, KnownColor))
+        colorButtonBackColor = Drawing.ColorTranslator.FromHtml(intermediateColorButtonBackColor)
+
+        intermediateColorButtonForeColor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText
+        Dim colorButtonForeColor As Color
+        colorButtonForeColor = Drawing.ColorTranslator.FromHtml(intermediateColorButtonForeColor)
+
 
 #End Region
 
