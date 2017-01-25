@@ -82,8 +82,43 @@ Public Class aaformMainWindow
         Dim forceOptionsWindowTab As New aaformOptionsWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
         forceOptionsWindowTab.ShowDialog()
-
     End Sub
+
+#Region "Menubar button entry theming override."
+
+    ' Create a Color variable to store the color of the menubar entry as it was before the mouse was moved over it.
+    Public colorPreviousMenuColor As Color
+#Region "Exit button"
+    ' This code changes the color of the Exit button in the File menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarExitButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarExitButton.MouseEnter
+        colorPreviousMenuColor = menubarExitButton.ForeColor
+        menubarExitButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
+
+    ' Change the Exit button in the File menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarExitButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarExitButton.MouseLeave
+        menubarExitButton.ForeColor = colorPreviousMenuColor
+    End Sub
+#End Region
+
+#Region "Always On Top button"
+    ' This code changes the color of the Always On Top button in the View menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarAlwaysOnTopButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.MouseEnter
+        colorPreviousMenuColor = menubarAlwaysOnTopButton.ForeColor
+        menubarAlwaysOnTopButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
+
+    ' Change the Always On Top button in the View menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarAlwaysOnTopButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.MouseLeave
+        menubarAlwaysOnTopButton.ForeColor = colorPreviousMenuColor
+    End Sub
+#End Region
+
+#End Region
 
 #Region "Always On Top menubar button checkbox and stuff."
     Private Sub menubarAlwaysOnTopButton_Click(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.Click
@@ -302,7 +337,7 @@ Public Class aaformMainWindow
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
         ' Attempt to apply the default theme.
         UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
-            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     End Sub
 #End Region
 
