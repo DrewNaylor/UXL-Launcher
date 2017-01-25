@@ -19,30 +19,29 @@
         <ForeColor>Purple</ForeColor>
       </FlowLayoutPanel>
 
-      <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
-      </GroupBox>
+      <MenuBarAndStatusBar>
+        <BackColor>CadetBlue</BackColor>
+      </MenuBarAndStatusBar>
 
-      <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
-      </GroupBox>
+      <Label>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
 
-      <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
-      </GroupBox>
+      <TextBox>
+        <BackColor>Beige</BackColor>
+        <ForeColor>DarkViolet</ForeColor>
+      </TextBox>
 
-      <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
-      </GroupBox>
+      <MenuItem>
+        <BackColor>Purple</BackColor>
+        <ForeColor>AntiqueWhite</ForeColor>
+      </MenuItem>
 
-      <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
-      </GroupBox>
+      <StatusLabel>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </StatusLabel>
       
     </Theme_Colors>
   
