@@ -29,6 +29,8 @@ Public Class UXLLauncher_ThemeEngine
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Theme via UXL Launcher Theme Engine."
 
+    ' Make a variable that differs based on what theme is chosen.
+    Public Shared userTheme As String
     ' Create strings for theme title and description.
     Public Shared themeSheetTitle As String
     Public Shared themeSheetDescription As String
@@ -38,7 +40,7 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
-        themeSheet.LoadXml(aaformMainWindow.userTheme)
+        themeSheet.LoadXml(userTheme)
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -231,4 +233,20 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 
+
+    Public Shared Sub themeEngine_ChooseUserTheme()
+
+#Region "Start the theme engine and apply the user's theme."
+        ' Choose the proper theme based on what the user chose.
+        If My.Settings.userChosenTheme = "TestTheme" Or My.Settings.userChosenTheme = "Test" Then
+            userTheme = My.Resources.TestTheme_XML
+        ElseIf My.Settings.userChosenTheme = "Default" Or My.Settings.userChosenTheme = "DefaultTheme" Then
+            userTheme = My.Resources.DefaultTheme_XML
+        Else
+            userTheme = My.Resources.DefaultTheme_XML
+        End If
+        ' Apply the theme.
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+#End Region
+    End Sub
 End Class

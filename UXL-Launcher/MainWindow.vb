@@ -25,25 +25,15 @@
 
 Public Class aaformMainWindow
 
-    ' Make a variable that differs based on what theme is chosen.
-    Public Shared userTheme As String
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
 
 #Region "Start the theme engine and apply the user's theme."
-        ' Choose the proper theme based on what the user chose.
-        If My.Settings.userChosenTheme = "TestTheme" Or My.Settings.userChosenTheme = "Test" Then
-            userTheme = My.Resources.TestTheme_XML
-        ElseIf My.Settings.userChosenTheme = "Default" Or My.Settings.userChosenTheme = "DefaultTheme" Then
-            userTheme = My.Resources.DefaultTheme_XML
-        Else
-            userTheme = My.Resources.DefaultTheme_XML
-        End If
-        ' Apply the theme.
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+
 #End Region
 
         ' Put text in the titlebar.
@@ -51,16 +41,11 @@ Public Class aaformMainWindow
 
 
 #Region "Debug code for aaformMainWindow."
-
         ' Figure out whether or not to show the debug labels based on a setting.
         debugmodeStuff.showDebugLabels()
 
-
-
         ' Update the debug labels.
         debugmodeStuff.updateDebugLabels()
-
-
 #End Region
 
 #Region "Main form loading code for Always On Top menubar button."
