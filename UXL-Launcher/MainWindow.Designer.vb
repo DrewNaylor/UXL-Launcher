@@ -33,6 +33,12 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.zseparatorToolsMenu1 = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarOptionsButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarHelpMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarHelpTopicsButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zseparatorHelpMenu = New System.Windows.Forms.ToolStripSeparator()
+        Me.menubarAuthorsButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarLicenseButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarAboutButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.contextmenuNotifyicon = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.notifyiconWord = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconExcel = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,12 +55,6 @@ Partial Class aaformMainWindow
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menubarHelpMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menubarHelpTopicsButton = New System.Windows.Forms.ToolStripMenuItem()
-        Me.zseparatorHelpMenu = New System.Windows.Forms.ToolStripSeparator()
-        Me.menubarAuthorsButton = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menubarLicenseButton = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menubarAboutButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.zotherstuffFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.zotherstuffFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.statusbarMainWindow = New System.Windows.Forms.StatusStrip()
@@ -193,6 +193,43 @@ Partial Class aaformMainWindow
         Me.menubarOptionsButton.Size = New System.Drawing.Size(421, 38)
         Me.menubarOptionsButton.Text = "&Options..."
         '
+        'menubarHelpMenu
+        '
+        Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
+        Me.menubarHelpMenu.Name = "menubarHelpMenu"
+        Me.menubarHelpMenu.Size = New System.Drawing.Size(77, 38)
+        Me.menubarHelpMenu.Text = "&Help"
+        '
+        'menubarHelpTopicsButton
+        '
+        Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
+        Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarHelpTopicsButton.Text = "&View Help Topics"
+        '
+        'zseparatorHelpMenu
+        '
+        Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(386, 6)
+        '
+        'menubarAuthorsButton
+        '
+        Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarAuthorsButton.Text = "A&cknowledgments"
+        '
+        'menubarLicenseButton
+        '
+        Me.menubarLicenseButton.Name = "menubarLicenseButton"
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarLicenseButton.Text = "&License"
+        '
+        'menubarAboutButton
+        '
+        Me.menubarAboutButton.Name = "menubarAboutButton"
+        Me.menubarAboutButton.Size = New System.Drawing.Size(389, 38)
+        Me.menubarAboutButton.Text = "&About"
+        '
         'contextmenuNotifyicon
         '
         Me.contextmenuNotifyicon.ImageScalingSize = New System.Drawing.Size(32, 32)
@@ -309,43 +346,6 @@ Partial Class aaformMainWindow
         Me.notifyiconExitApp.Name = "notifyiconExitApp"
         Me.notifyiconExitApp.Size = New System.Drawing.Size(459, 38)
         Me.notifyiconExitApp.Text = "Exit UXL Launcher"
-        '
-        'menubarHelpMenu
-        '
-        Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
-        Me.menubarHelpMenu.Name = "menubarHelpMenu"
-        Me.menubarHelpMenu.Size = New System.Drawing.Size(77, 38)
-        Me.menubarHelpMenu.Text = "&Help"
-        '
-        'menubarHelpTopicsButton
-        '
-        Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
-        Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(389, 38)
-        Me.menubarHelpTopicsButton.Text = "&View Help Topics"
-        '
-        'zseparatorHelpMenu
-        '
-        Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(386, 6)
-        '
-        'menubarAuthorsButton
-        '
-        Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(389, 38)
-        Me.menubarAuthorsButton.Text = "A&cknowledgments"
-        '
-        'menubarLicenseButton
-        '
-        Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(389, 38)
-        Me.menubarLicenseButton.Text = "&License"
-        '
-        'menubarAboutButton
-        '
-        Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(389, 38)
-        Me.menubarAboutButton.Text = "&About"
         '
         'zotherstuffFileToolStripMenuItem
         '
