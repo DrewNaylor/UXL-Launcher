@@ -132,7 +132,7 @@ Public Class UXLTheme_TestTheme
         Dim colorGroupBoxBackColor As Color = Color.Transparent
         Dim colorGroupBoxForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' FlowLayoutPanel colors:
-        Dim colorFlowLayoutPanelBackColor As Color = Color.White
+        Dim colorFlowLayoutPanelBackColor As Color = Color.FromKnownColor(KnownColor.Window)
         Dim colorFlowLayoutPanelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
         ' Menubar and status bar colors:
         Dim colorMenubarAndStatusBarBackColor As Color = Color.FromKnownColor(KnownColor.Control)
