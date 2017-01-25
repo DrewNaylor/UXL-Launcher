@@ -306,7 +306,7 @@ Public Class aaformMainWindow
 
     Private Sub buttonDefaultThemeTest_Click(sender As Object, e As EventArgs) Handles buttonDefaultThemeTest.Click
         ' Attempt to apply the default theme.
-        userTheme = My.Resources.TestTheme_XML
+        userTheme = My.Resources.DefaultTheme_XML
         UXLTheme_TestTheme.applyTheme_TestTheme()
     End Sub
 #End Region
