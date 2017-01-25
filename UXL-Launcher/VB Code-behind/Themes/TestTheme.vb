@@ -46,6 +46,13 @@ Public Class UXLTheme_TestTheme
         ' Label colors:
         Dim colorLabelBackColor As Color = Color.Maroon
         Dim colorLabelForeColor As Color = Color.White
+        ' Textbox colors:
+        Dim colorTextboxBackColor As Color = Color.FromKnownColor(KnownColor.Beige)
+        Dim colorTextboxForeColor As Color = Color.FromKnownColor(KnownColor.DarkViolet)
+        ' Menubar entry colors:
+        Dim colorMenuItemBackColor As Color = Color.FromKnownColor(KnownColor.Control)
+        Dim colorMenuItemForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
+
 
 
 
@@ -63,6 +70,12 @@ Public Class UXLTheme_TestTheme
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
+            ' Look at all the textboxes in the "Standard Apps" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim textbox As TextBox = CType(ctrl, TextBox)
+                textbox.BackColor = colorTextboxBackColor
+                textbox.ForeColor = colorTextboxForeColor
+            End If
         Next
 
 
@@ -79,6 +92,12 @@ Public Class UXLTheme_TestTheme
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
+            ' Look at all the textboxes in the "Professional Apps" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim textbox As TextBox = CType(ctrl, TextBox)
+                textbox.BackColor = colorTextboxBackColor
+                textbox.ForeColor = colorTextboxForeColor
+            End If
         Next
 
 
@@ -94,6 +113,12 @@ Public Class UXLTheme_TestTheme
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
+            End If
+            ' Look at all the textboxes in the "Extra Apps + Tools" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim textbox As TextBox = CType(ctrl, TextBox)
+                textbox.BackColor = colorTextboxBackColor
+                textbox.ForeColor = colorTextboxForeColor
             End If
         Next
 
@@ -142,6 +167,9 @@ Public Class UXLTheme_TestTheme
         ' Textbox colors:
         Dim colorTextboxBackColor As Color = Color.FromKnownColor(KnownColor.Window)
         Dim colorTextboxForeColor As Color = Color.FromKnownColor(KnownColor.WindowText)
+        ' Menubar entry colors:
+        Dim colorMenuItemBackColor As Color = Color.FromKnownColor(KnownColor.Control)
+        Dim colorMenuItemForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
 
 
 

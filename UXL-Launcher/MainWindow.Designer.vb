@@ -714,14 +714,14 @@ Partial Class aaformMainWindow
         '
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(239, 382)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 382)
         '
         'notifyiconWord
         '
         Me.notifyiconWord.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
         Me.notifyiconWord.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconWord.Name = "notifyiconWord"
-        Me.notifyiconWord.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconWord.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconWord.Text = "Microsoft Word"
         '
         'notifyiconExcel
@@ -729,7 +729,7 @@ Partial Class aaformMainWindow
         Me.notifyiconExcel.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
         Me.notifyiconExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconExcel.Name = "notifyiconExcel"
-        Me.notifyiconExcel.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconExcel.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconExcel.Text = "Microsoft Excel"
         '
         'notifyiconPowerpoint
@@ -737,7 +737,7 @@ Partial Class aaformMainWindow
         Me.notifyiconPowerpoint.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
         Me.notifyiconPowerpoint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPowerpoint.Name = "notifyiconPowerpoint"
-        Me.notifyiconPowerpoint.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconPowerpoint.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconPowerpoint.Text = "Microsoft PowerPoint"
         '
         'notifyiconOutlook
@@ -745,7 +745,7 @@ Partial Class aaformMainWindow
         Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
         Me.notifyiconOutlook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOutlook.Name = "notifyiconOutlook"
-        Me.notifyiconOutlook.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconOutlook.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconOutlook.Text = "Microsoft Outlook"
         '
         'notifyiconOnenote
@@ -753,20 +753,20 @@ Partial Class aaformMainWindow
         Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.small_Onenote
         Me.notifyiconOnenote.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOnenote.Name = "notifyiconOnenote"
-        Me.notifyiconOnenote.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconOnenote.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconOnenote.Text = "Microsoft OneNote"
         '
         'notifyiconSeparator1
         '
         Me.notifyiconSeparator1.Name = "notifyiconSeparator1"
-        Me.notifyiconSeparator1.Size = New System.Drawing.Size(235, 6)
+        Me.notifyiconSeparator1.Size = New System.Drawing.Size(251, 6)
         '
         'notifyiconAccess
         '
         Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.small_Access
         Me.notifyiconAccess.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconAccess.Name = "notifyiconAccess"
-        Me.notifyiconAccess.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconAccess.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconAccess.Text = "Microsoft Access"
         '
         'notifyiconPublisher
@@ -774,7 +774,7 @@ Partial Class aaformMainWindow
         Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
         Me.notifyiconPublisher.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPublisher.Name = "notifyiconPublisher"
-        Me.notifyiconPublisher.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconPublisher.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconPublisher.Text = "Microsoft Publisher"
         '
         'notifyiconInfopath
@@ -782,7 +782,7 @@ Partial Class aaformMainWindow
         Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.small_Infopath
         Me.notifyiconInfopath.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconInfopath.Name = "notifyiconInfopath"
-        Me.notifyiconInfopath.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconInfopath.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconInfopath.Text = "Microsoft InfoPath"
         '
         'notifyiconSharepointWkSp
@@ -790,20 +790,20 @@ Partial Class aaformMainWindow
         Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.small_Sharepoint
         Me.notifyiconSharepointWkSp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
-        Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconSharepointWkSp.Text = "Microsoft SharePoint Workspace"
         '
         'notifyiconSeparator2
         '
         Me.notifyiconSeparator2.Name = "notifyiconSeparator2"
-        Me.notifyiconSeparator2.Size = New System.Drawing.Size(235, 6)
+        Me.notifyiconSeparator2.Size = New System.Drawing.Size(251, 6)
         '
         'notifyiconOfficeLang
         '
         Me.notifyiconOfficeLang.Image = Global.UXL_Launcher.My.Resources.Resources.small_Language_Settings
         Me.notifyiconOfficeLang.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOfficeLang.Name = "notifyiconOfficeLang"
-        Me.notifyiconOfficeLang.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconOfficeLang.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconOfficeLang.Text = "Office Language Preferences"
         '
         'notifyiconUXLOptions
@@ -811,19 +811,19 @@ Partial Class aaformMainWindow
         Me.notifyiconUXLOptions.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
         Me.notifyiconUXLOptions.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconUXLOptions.Name = "notifyiconUXLOptions"
-        Me.notifyiconUXLOptions.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconUXLOptions.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconUXLOptions.Text = "Options..."
         '
         'notifyiconSeparator3
         '
         Me.notifyiconSeparator3.Name = "notifyiconSeparator3"
-        Me.notifyiconSeparator3.Size = New System.Drawing.Size(235, 6)
+        Me.notifyiconSeparator3.Size = New System.Drawing.Size(251, 6)
         '
         'notifyiconExitApp
         '
         Me.notifyiconExitApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconExitApp.Name = "notifyiconExitApp"
-        Me.notifyiconExitApp.Size = New System.Drawing.Size(238, 30)
+        Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconExitApp.Text = "Exit UXL Launcher"
         '
         'aaformMainWindow
