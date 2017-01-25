@@ -160,6 +160,12 @@ Public Class UXLTheme_TestTheme
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
             End If
+            ' Look at all the textboxes in the "Standard Apps" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim textbox As TextBox = CType(ctrl, TextBox)
+                textbox.BackColor = colorTextboxBackColor
+                textbox.ForeColor = colorTextboxForeColor
+            End If
         Next
 
         ' Look at all the buttons in the "Professional Apps" groupbox and change their theme.
@@ -174,6 +180,12 @@ Public Class UXLTheme_TestTheme
                 Dim label As Label = CType(ctrl, Label)
                 label.BackColor = colorLabelBackColor
                 label.ForeColor = colorLabelForeColor
+            End If
+            ' Look at all the textboxes in the "Professional Apps" groupbox and change their theme.
+            If (ctrl.GetType() Is GetType(TextBox)) Then
+                Dim textbox As TextBox = CType(ctrl, TextBox)
+                textbox.BackColor = colorTextboxBackColor
+                textbox.ForeColor = colorTextboxForeColor
             End If
         Next
 
@@ -196,7 +208,6 @@ Public Class UXLTheme_TestTheme
                 textbox.BackColor = colorTextboxBackColor
                 textbox.ForeColor = colorTextboxForeColor
             End If
-
         Next
 
         ' Set colors for the "Standard Apps" groupbox.
