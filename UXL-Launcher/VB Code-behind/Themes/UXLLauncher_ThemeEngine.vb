@@ -233,10 +233,9 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 
-
+#Region "Start the theme engine and apply the user's theme."
     Public Shared Sub themeEngine_ChooseUserTheme()
 
-#Region "Start the theme engine and apply the user's theme."
         ' Choose the proper theme based on what the user chose.
         If My.Settings.userChosenTheme = "TestTheme" Or My.Settings.userChosenTheme = "Test" Then
             userTheme = My.Resources.TestTheme_XML
@@ -245,8 +244,10 @@ Public Class UXLLauncher_ThemeEngine
         Else
             userTheme = My.Resources.DefaultTheme_XML
         End If
+
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
-#End Region
     End Sub
+#End Region
+
 End Class
