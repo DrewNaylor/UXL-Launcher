@@ -37,8 +37,10 @@ Public Class aaformMainWindow
         ' Choose the proper theme based on what the user chose.
         If My.Settings.userChosenTheme = "TestTheme" Then
             userTheme = My.Resources.TestTheme_XML
-        Else
+        ElseIf My.Settings.userChosenTheme = "Default" Or My.Settings.userChosenTheme = "DefaultTheme" Then
             userTheme = My.Resources.DefaultTheme_XML
+        Else
+            userTheme = My.Resources.TestTheme_XML
         End If
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
