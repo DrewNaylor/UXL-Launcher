@@ -28,9 +28,9 @@ Public Class UXLTheme_TestTheme
 #Region "Set Test Theme."
     Public Shared Sub applyTheme_TestTheme()
 
+#Region "Define Colors and Short-words."
         ' Create a short-form word for "Control."
         Dim ctrl As Control
-
         ' Colors as defined for this theme.
         ' Button colors:
         Dim colorButtonBackColor As Color = Color.Maroon
@@ -55,11 +55,9 @@ Public Class UXLTheme_TestTheme
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color = Color.FromKnownColor(KnownColor.Maroon)
         Dim colorStatusLabelForeColor As Color = Color.FromKnownColor(KnownColor.White)
+#End Region
 
-
-
-
-
+#Region "Set colors for controls in groupboxes."
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
@@ -124,9 +122,9 @@ Public Class UXLTheme_TestTheme
                 textbox.ForeColor = colorTextboxForeColor
             End If
         Next
+#End Region
 
-
-
+#Region "Set colors for menubar entries."
         ' Look at all the menubar entries in the main menubar and change their theme.
         For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarFileMenu.DropDownItems
             tsMenuItem.BackColor = colorMenuItemBackColor
@@ -144,7 +142,9 @@ Public Class UXLTheme_TestTheme
             tsMenuItem.BackColor = colorMenuItemBackColor
             tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
+#End Region
 
+#Region "Set colors for statusbar label and groupboxes."
         ' Set the colors for the status bar label.
         aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
         aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
@@ -165,7 +165,7 @@ Public Class UXLTheme_TestTheme
         'Set color for menubar and status bar.
         aaformMainWindow.menubarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
         aaformMainWindow.statusbarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
-
+#End Region
     End Sub
 #End Region
 
@@ -173,6 +173,7 @@ Public Class UXLTheme_TestTheme
     'Apply Default Theme
     Public Shared Sub applyTheme_DefaultTheme()
 
+#Region "Define Colors and Short-words."
         ' Create a short-form word for "Control."
         Dim ctrl As Control
 
@@ -200,8 +201,9 @@ Public Class UXLTheme_TestTheme
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color = Color.FromKnownColor(KnownColor.Transparent)
         Dim colorStatusLabelForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
+#End Region
 
-
+#Region "Set colors for controls in groupboxes."
         ' Look at all the buttons in the "Standard Apps" groupbox and change their theme.
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
@@ -264,7 +266,9 @@ Public Class UXLTheme_TestTheme
                 textbox.ForeColor = colorTextboxForeColor
             End If
         Next
+#End Region
 
+#Region "Set colors for menubar entries."
         ' Look at all the menubar entries in the main menubar and change their theme.
         For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarFileMenu.DropDownItems
             tsMenuItem.BackColor = colorMenuItemBackColor
@@ -282,7 +286,9 @@ Public Class UXLTheme_TestTheme
             tsMenuItem.BackColor = colorMenuItemBackColor
             tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
+#End Region
 
+#Region "Set colors for statusbar label and groupboxes."
         ' Set the colors for the status bar label.
         aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
         aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
@@ -304,7 +310,7 @@ Public Class UXLTheme_TestTheme
         'Set color for menubar and status bar.
         aaformMainWindow.menubarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
         aaformMainWindow.statusbarMainWindow.BackColor = colorMenubarAndStatusBarBackColor
-
+#End Region
     End Sub
 #End Region
 End Class
