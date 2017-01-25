@@ -35,12 +35,12 @@ Public Class aaformMainWindow
 
 #Region "Start the theme engine and apply the user's theme."
         ' Choose the proper theme based on what the user chose.
-        If My.Settings.userChosenTheme = "TestTheme" Then
+        If My.Settings.userChosenTheme = "TestTheme" Or My.Settings.userChosenTheme = "Test" Then
             userTheme = My.Resources.TestTheme_XML
         ElseIf My.Settings.userChosenTheme = "Default" Or My.Settings.userChosenTheme = "DefaultTheme" Then
             userTheme = My.Resources.DefaultTheme_XML
         Else
-            userTheme = My.Resources.TestTheme_XML
+            userTheme = My.Resources.DefaultTheme_XML
         End If
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
