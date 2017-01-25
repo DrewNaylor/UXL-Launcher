@@ -14,10 +14,10 @@
         <ForeColor>Blue</ForeColor>
       </GroupBox>
 
-      <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
-      </GroupBox>
+      <FlowLayoutPanel>
+        <BackColor>Yellow</BackColor>
+        <ForeColor>Purple</ForeColor>
+      </FlowLayoutPanel>
 
       <GroupBox>
         <BackColor>Green</BackColor>
