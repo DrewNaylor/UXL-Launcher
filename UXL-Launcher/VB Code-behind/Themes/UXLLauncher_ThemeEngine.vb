@@ -29,6 +29,10 @@ Public Class UXLLauncher_ThemeEngine
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Theme via UXL Launcher Theme Engine."
 
+    ' Create strings for theme title and description.
+    Public Shared themeSheetTitle As String
+    Public Shared themeSheetDescription As String
+
     Public Shared Sub themeEngine_ApplyTheme()
 
 #Region "Read XML Theme Document."
@@ -40,10 +44,6 @@ Public Class UXLLauncher_ThemeEngine
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
 #Region "Define strings for controls and things in the XML document."
-
-        ' Create strings for theme title and description.
-        Dim themeSheetTitle As String
-        Dim themeSheetDescription As String
 
         ' Button colors:
         Dim colorButtonBackColor As Color

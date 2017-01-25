@@ -33,6 +33,7 @@ Public Class aaformMainWindow
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
 
+#Region "Start the theme engine and apply the user's theme."
         ' Choose the proper theme based on what the user chose.
         If My.Settings.userChosenTheme = "TestTheme" Then
             userTheme = My.Resources.TestTheme_XML
@@ -41,6 +42,7 @@ Public Class aaformMainWindow
         End If
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+#End Region
 
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"

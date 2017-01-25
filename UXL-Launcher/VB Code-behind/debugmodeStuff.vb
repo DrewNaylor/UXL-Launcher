@@ -70,8 +70,13 @@ Public Class debugmodeStuff
         aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
         ' Debug label for MSIInstall.
         aaformMainWindow.debugLabelForMSIInstall.Text = "installedViaMSIPackage: " & My.Settings.installedViaMSIPackage
-        ' Debug textox for fullLauncherCodeString.
+        ' Debug textbox for fullLauncherCodeString.
         aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
+
+        ' Debug labels for theme titles and descriptions.
+        aaformMainWindow.debugLabelXmlThemeTitle.Text = UXLLauncher_ThemeEngine.themeSheetTitle
+        aaformMainWindow.debugLabelXmlThemeDescription.Text = UXLLauncher_ThemeEngine.themeSheetDescription
+
 
     End Sub
 #End Region
