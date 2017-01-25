@@ -1,4 +1,4 @@
-﻿<Theme Description="UXL Launcher Test Theme">
+﻿<Theme Title="Test Theme" Description="UXL Launcher Test Theme">
   <Colors>
     <Button>
       <BackColor>Maroon</BackColor>

@@ -58,6 +58,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.labelXmlThemeDescription = New System.Windows.Forms.Label()
         Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
         Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
@@ -99,6 +100,7 @@ Partial Class aaformMainWindow
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.labelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
         Me.flowLayoutPanel.SuspendLayout()
@@ -422,6 +424,8 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.labelXmlThemeTitle)
+        Me.groupboxProApps.Controls.Add(Me.labelXmlThemeDescription)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForMSIInstall)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeDriveLocation)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForuserOfficeVersion)
@@ -444,6 +448,15 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
+        '
+        'labelXmlThemeDescription
+        '
+        Me.labelXmlThemeDescription.AutoSize = True
+        Me.labelXmlThemeDescription.Location = New System.Drawing.Point(10, 406)
+        Me.labelXmlThemeDescription.Name = "labelXmlThemeDescription"
+        Me.labelXmlThemeDescription.Size = New System.Drawing.Size(110, 13)
+        Me.labelXmlThemeDescription.TabIndex = 23
+        Me.labelXmlThemeDescription.Text = "XmlThemeDescription"
         '
         'debugLabelForMSIInstall
         '
@@ -826,6 +839,15 @@ Partial Class aaformMainWindow
         Me.notifyiconExitApp.Size = New System.Drawing.Size(254, 30)
         Me.notifyiconExitApp.Text = "Exit UXL Launcher"
         '
+        'labelXmlThemeTitle
+        '
+        Me.labelXmlThemeTitle.AutoSize = True
+        Me.labelXmlThemeTitle.Location = New System.Drawing.Point(10, 393)
+        Me.labelXmlThemeTitle.Name = "labelXmlThemeTitle"
+        Me.labelXmlThemeTitle.Size = New System.Drawing.Size(77, 13)
+        Me.labelXmlThemeTitle.TabIndex = 24
+        Me.labelXmlThemeTitle.Text = "XmlThemeTitle"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -945,4 +967,6 @@ Partial Class aaformMainWindow
     Friend WithEvents notifyiconSeparator3 As ToolStripSeparator
     Friend WithEvents buttonTestThemeSetter As Button
     Friend WithEvents buttonDefaultThemeTest As Button
+    Friend WithEvents labelXmlThemeDescription As Label
+    Friend WithEvents labelXmlThemeTitle As Label
 End Class
