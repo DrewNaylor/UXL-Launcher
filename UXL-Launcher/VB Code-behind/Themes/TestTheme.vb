@@ -50,8 +50,8 @@ Public Class UXLTheme_TestTheme
         Dim colorTextboxBackColor As Color = Color.FromKnownColor(KnownColor.Beige)
         Dim colorTextboxForeColor As Color = Color.FromKnownColor(KnownColor.DarkViolet)
         ' Menubar entry colors:
-        Dim colorMenuItemBackColor As Color = Color.FromKnownColor(KnownColor.Control)
-        Dim colorMenuItemForeColor As Color = Color.FromKnownColor(KnownColor.ControlText)
+        Dim colorMenuItemBackColor As Color = Color.FromKnownColor(KnownColor.Purple)
+        Dim colorMenuItemForeColor As Color = Color.FromKnownColor(KnownColor.AntiqueWhite)
 
 
 
@@ -120,6 +120,13 @@ Public Class UXLTheme_TestTheme
                 textbox.BackColor = colorTextboxBackColor
                 textbox.ForeColor = colorTextboxForeColor
             End If
+        Next
+
+        Dim tsMenuItem As ToolStripMenuItem
+        ' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
+        For Each tsMenuItem In aaformMainWindow.menubarMainWindow.Items
+            tsMenuItem.BackColor = colorMenuItemBackColor
+            tsMenuItem.ForeColor = colorMenuItemForeColor
         Next
 
 
