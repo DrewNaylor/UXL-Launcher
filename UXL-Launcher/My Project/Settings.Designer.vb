@@ -137,6 +137,18 @@ Namespace My
                 Me("debugmodeShowLabels") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("testtheme")>  _
+        Public Property userChosenTheme() As String
+            Get
+                Return CType(Me("userChosenTheme"),String)
+            End Get
+            Set
+                Me("userChosenTheme") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
