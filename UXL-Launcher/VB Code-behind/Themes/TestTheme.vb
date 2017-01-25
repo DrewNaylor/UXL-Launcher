@@ -37,15 +37,28 @@ Public Class UXLTheme_TestTheme
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
+
+        ' Create strings for theme title and description.
         Dim themeSheetTitle As String
         Dim themeSheetDescription As String
 
+        ' Create strings for button colors.
+        Dim intermediateColorButtonBackColor As String
+        Dim intermediateColorButtonForeColor As String
 
+        ' Pull the title from XML.
         themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
         aaformMainWindow.labelXmlThemeTitle.Text = themeSheetTitle
 
+        ' Pull the description from XML.
         themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
         aaformMainWindow.labelXmlThemeDescription.Text = themeSheetDescription
+
+        ' Pull the button colors from XML.
+        intermediateColorButtonBackColor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText
+        Dim colorButtonBackColor As Color
+        colorButtonBackColor = Color.FromKnownColor(CType(intermediateColorButtonBackColor, KnownColor))
+
 #End Region
 
 #Region "Define Colors and Short-words."
@@ -53,8 +66,8 @@ Public Class UXLTheme_TestTheme
         Dim ctrl As Control
         ' Colors as defined for this theme.
         ' Button colors:
-        Dim colorButtonBackColor As Color = Color.Maroon
-        Dim colorButtonForeColor As Color = Color.White
+        'Dim colorButtonBackColor As Color = Color.Maroon
+        'Dim colorButtonForeColor As Color = Color.White
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color = Color.Green
         Dim colorGroupBoxForeColor As Color = Color.Blue
