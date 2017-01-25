@@ -29,18 +29,18 @@
       </Label>
 
       <TextBox>
-        <BackColor>Beige</BackColor>
-        <ForeColor>DarkViolet</ForeColor>
+        <BackColor>Window</BackColor>
+        <ForeColor>WindowText</ForeColor>
       </TextBox>
 
       <MenuItem>
-        <BackColor>Purple</BackColor>
-        <ForeColor>AntiqueWhite</ForeColor>
+        <BackColor>Control</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </MenuItem>
 
       <StatusLabel>
-        <BackColor>Maroon</BackColor>
-        <ForeColor>White</ForeColor>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </StatusLabel>
       
     </Theme_Colors>
