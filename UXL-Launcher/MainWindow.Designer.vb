@@ -45,9 +45,9 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
-        Me.buttonDefaultThemeTest = New System.Windows.Forms.Button()
+        Me.debugButtonDefaultThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOneNote = New System.Windows.Forms.Button()
-        Me.buttonTestThemeSetter = New System.Windows.Forms.Button()
+        Me.debugButtonTestThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOutlook = New System.Windows.Forms.Button()
         Me.buttonRunPowerPoint = New System.Windows.Forms.Button()
         Me.buttonRunExcel = New System.Windows.Forms.Button()
@@ -278,9 +278,9 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxStandardApps.Controls.Add(Me.buttonDefaultThemeTest)
+        Me.groupboxStandardApps.Controls.Add(Me.debugButtonDefaultThemeSetter)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOneNote)
-        Me.groupboxStandardApps.Controls.Add(Me.buttonTestThemeSetter)
+        Me.groupboxStandardApps.Controls.Add(Me.debugButtonTestThemeSetter)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOutlook)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunPowerPoint)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunExcel)
@@ -299,15 +299,15 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
         '
-        'buttonDefaultThemeTest
+        'debugButtonDefaultThemeSetter
         '
-        Me.buttonDefaultThemeTest.Location = New System.Drawing.Point(200, 726)
-        Me.buttonDefaultThemeTest.Margin = New System.Windows.Forms.Padding(6)
-        Me.buttonDefaultThemeTest.Name = "buttonDefaultThemeTest"
-        Me.buttonDefaultThemeTest.Size = New System.Drawing.Size(150, 116)
-        Me.buttonDefaultThemeTest.TabIndex = 11
-        Me.buttonDefaultThemeTest.Text = "Apply Default Theme"
-        Me.buttonDefaultThemeTest.UseVisualStyleBackColor = True
+        Me.debugButtonDefaultThemeSetter.Location = New System.Drawing.Point(200, 726)
+        Me.debugButtonDefaultThemeSetter.Margin = New System.Windows.Forms.Padding(6)
+        Me.debugButtonDefaultThemeSetter.Name = "debugButtonDefaultThemeSetter"
+        Me.debugButtonDefaultThemeSetter.Size = New System.Drawing.Size(150, 116)
+        Me.debugButtonDefaultThemeSetter.TabIndex = 11
+        Me.debugButtonDefaultThemeSetter.Text = "Apply Default Theme"
+        Me.debugButtonDefaultThemeSetter.UseVisualStyleBackColor = True
         '
         'buttonRunOneNote
         '
@@ -319,15 +319,15 @@ Partial Class aaformMainWindow
         Me.buttonRunOneNote.Text = "Microsoft OneNote"
         Me.buttonRunOneNote.UseVisualStyleBackColor = True
         '
-        'buttonTestThemeSetter
+        'debugButtonTestThemeSetter
         '
-        Me.buttonTestThemeSetter.Location = New System.Drawing.Point(38, 726)
-        Me.buttonTestThemeSetter.Margin = New System.Windows.Forms.Padding(6)
-        Me.buttonTestThemeSetter.Name = "buttonTestThemeSetter"
-        Me.buttonTestThemeSetter.Size = New System.Drawing.Size(150, 116)
-        Me.buttonTestThemeSetter.TabIndex = 10
-        Me.buttonTestThemeSetter.Text = "Apply Test Theme"
-        Me.buttonTestThemeSetter.UseVisualStyleBackColor = True
+        Me.debugButtonTestThemeSetter.Location = New System.Drawing.Point(38, 726)
+        Me.debugButtonTestThemeSetter.Margin = New System.Windows.Forms.Padding(6)
+        Me.debugButtonTestThemeSetter.Name = "debugButtonTestThemeSetter"
+        Me.debugButtonTestThemeSetter.Size = New System.Drawing.Size(150, 116)
+        Me.debugButtonTestThemeSetter.TabIndex = 10
+        Me.debugButtonTestThemeSetter.Text = "Apply Test Theme"
+        Me.debugButtonTestThemeSetter.UseVisualStyleBackColor = True
         '
         'buttonRunOutlook
         '
@@ -974,8 +974,8 @@ Partial Class aaformMainWindow
     Friend WithEvents notifyiconUXLOptions As ToolStripMenuItem
     Friend WithEvents notifyiconOfficeLang As ToolStripMenuItem
     Friend WithEvents notifyiconSeparator3 As ToolStripSeparator
-    Friend WithEvents buttonTestThemeSetter As Button
-    Friend WithEvents buttonDefaultThemeTest As Button
+    Friend WithEvents debugButtonTestThemeSetter As Button
+    Friend WithEvents debugButtonDefaultThemeSetter As Button
     Friend WithEvents debugLabelXmlThemeDescription As Label
     Friend WithEvents debugLabelXmlThemeTitle As Label
 End Class

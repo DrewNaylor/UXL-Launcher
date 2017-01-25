@@ -36,6 +36,9 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForMSIInstall.Show()
             aaformMainWindow.debugLabelXmlThemeTitle.Show()
             aaformMainWindow.debugLabelXmlThemeDescription.Show()
+            ' Theme tester buttons.
+            aaformMainWindow.debugButtonDefaultThemeSetter.Show()
+            aaformMainWindow.debugButtonTestThemeSetter.Show()
 
         ElseIf My.Settings.debugmodeShowLabels = False Then
             aaformMainWindow.debugLabelForAlwaysOnTop.Hide()
@@ -47,6 +50,9 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForMSIInstall.Hide()
             aaformMainWindow.debugLabelXmlThemeTitle.Hide()
             aaformMainWindow.debugLabelXmlThemeDescription.Hide()
+            ' Theme tester buttons.
+            aaformMainWindow.debugButtonDefaultThemeSetter.Hide()
+            aaformMainWindow.debugButtonTestThemeSetter.Hide()
         End If
     End Sub
 #Region "Update the debug labels on the main form."
@@ -81,7 +87,6 @@ Public Class debugmodeStuff
         ' Debug labels for theme titles and descriptions.
         aaformMainWindow.debugLabelXmlThemeTitle.Text = UXLLauncher_ThemeEngine.themeSheetTitle
         aaformMainWindow.debugLabelXmlThemeDescription.Text = UXLLauncher_ThemeEngine.themeSheetDescription
-
 
     End Sub
 #End Region

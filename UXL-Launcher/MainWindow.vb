@@ -295,7 +295,7 @@ Public Class aaformMainWindow
 
 
 
-    '#Region "Theme Tester Buttons."
+#Region "Theme Tester Buttons."
     '    Private Sub buttonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles buttonTestThemeSetter.Click
     '        ' Attempt to apply the test theme.
     '        userTheme = My.Resources.TestTheme_XML
@@ -311,6 +311,6 @@ Public Class aaformMainWindow
     '        End If
     '        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     '    End Sub
-    '#End Region
+#End Region
 
 End Class
