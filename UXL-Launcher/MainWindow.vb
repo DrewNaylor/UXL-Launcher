@@ -144,6 +144,12 @@ Public Class aaformMainWindow
         menubarOptionsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
     End Sub
 
+    ' Change the Options button in the Tools menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarOptionsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarOptionsButton.MouseLeave
+        menubarOptionsButton.ForeColor = colorPreviousMenuColor
+    End Sub
+
 #End Region
 
 #End Region
