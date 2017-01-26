@@ -19,9 +19,13 @@
         <ForeColor>Purple</ForeColor>
       </FlowLayoutPanel>
 
-      <MenuBarAndStatusBar>
+      <MenuBar>
         <BackColor>CadetBlue</BackColor>
-      </MenuBarAndStatusBar>
+      </MenuBar>
+
+      <StatusBar>
+        <BackColor>CadetBlue</BackColor>
+      </StatusBar>
 
       <Label>
         <BackColor>Maroon</BackColor>

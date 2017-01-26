@@ -24,7 +24,7 @@
       </MenuBar>
       
       <StatusBar>
-        <BackColor>DarkGray</BackColor>
+        <BackColor>LightGray</BackColor>
       </StatusBar>
 
       <Label>
@@ -38,8 +38,8 @@
       </TextBox>
 
       <MenuItem>
-        <BackColor>Control</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
       </MenuItem>
 
       <StatusLabel>
