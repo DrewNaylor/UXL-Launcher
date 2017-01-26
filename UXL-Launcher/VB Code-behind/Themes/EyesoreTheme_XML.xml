@@ -45,6 +45,8 @@
       <StatusLabel>
         <BackColor>Transparent</BackColor>
         <ForeColor>Black</ForeColor>
+        <BorderSides>All</BorderSides>
+        <BorderStyle>SunkenInner</BorderStyle>
       </StatusLabel>
       
     </Theme_Colors>
