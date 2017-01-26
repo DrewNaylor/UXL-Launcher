@@ -19,13 +19,13 @@
         <ForeColor>ControlText</ForeColor>
       </FlowLayoutPanel>
 
-      <MenuBarAndStatusBar>
+      <MenuBar>
         <BackColor>White</BackColor>
-      </MenuBarAndStatusBar>
+      </MenuBar>
       
-      <StatusBarOnly>
+      <StatusBar>
         <BackColor>DarkGray</BackColor>
-      </StatusBarOnly>
+      </StatusBar>
 
       <Label>
         <BackColor>Transparent</BackColor>
