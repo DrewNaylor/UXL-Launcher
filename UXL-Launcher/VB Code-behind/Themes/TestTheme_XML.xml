@@ -45,6 +45,8 @@
       <StatusLabel>
         <BackColor>Maroon</BackColor>
         <ForeColor>White</ForeColor>
+        <BorderSides>All</BorderSides>
+        <BorderStyle>SunkenInner</BorderStyle>
       </StatusLabel>
       
     </Theme_Colors>

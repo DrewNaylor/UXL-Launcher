@@ -363,10 +363,10 @@ Partial Class aaformMainWindow
         '
         Me.statusbarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
-        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 1013)
+        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 1016)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
         Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(0, 0, 14, 0)
-        Me.statusbarMainWindow.Size = New System.Drawing.Size(1280, 41)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(1280, 38)
         Me.statusbarMainWindow.SizingGrip = False
         Me.statusbarMainWindow.TabIndex = 1
         Me.statusbarMainWindow.Text = "StatusStrip1"
@@ -374,12 +374,8 @@ Partial Class aaformMainWindow
         'statusbarLabelWelcomeText
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
-        Me.statusbarLabelWelcomeText.BorderSides = CType((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
-            Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.statusbarLabelWelcomeText.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(1268, 36)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(1264, 33)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
     "launch them and explore the UI."
         '
