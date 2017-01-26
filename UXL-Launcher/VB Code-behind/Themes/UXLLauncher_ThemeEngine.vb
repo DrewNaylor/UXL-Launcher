@@ -73,7 +73,7 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorStatusLabelBackColor As Color
         Dim colorStatusLabelForeColor As Color
         ' Other statusbar label properties
-        Dim propertyStatusLabelBorderSides As String
+        Dim propertyStatusLabelBorderSides As ToolStripStatusLabelBorderSides
         Dim propertyStatusLabelBorderStyle As String
 #End Region
 
@@ -122,7 +122,9 @@ Public Class UXLLauncher_ThemeEngine
         colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
 
         ' Pull other StatusLabel stuff from XML.
-        propertyStatusLabelBorderSides = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText = "All" Then
+            propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
+        End If
         propertyStatusLabelBorderStyle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText
 
 #End Region
@@ -222,10 +224,6 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Set colors for statusbar label and groupboxes."
-        ' Set the colors for the status bar label.
-        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
-        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
-
 
         ' Set colors for the "Standard Apps" groupbox.
         aaformMainWindow.groupboxStandardApps.BackColor = colorGroupBoxBackColor
@@ -239,9 +237,17 @@ Public Class UXLLauncher_ThemeEngine
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-        'Set color for menubar and status bar.
+        ' Set color for menubar and status bar.
         aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
         aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
+        ' Set the colors for the status bar label.
+        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
+        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
+        ' Set other properties for StatusLabel.
+        aaformMainWindow.statusbarLabelWelcomeText.BorderSides = propertyStatusLabelBorderSides
+
+
+
 #End Region
 
     End Sub
