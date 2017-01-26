@@ -43,8 +43,8 @@
       </MenuItem>
 
       <StatusLabel>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>Silver</BackColor>
+        <ForeColor>Black</ForeColor>
       </StatusLabel>
       
     </Theme_Colors>
