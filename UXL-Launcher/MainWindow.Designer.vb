@@ -101,6 +101,7 @@ Partial Class aaformMainWindow
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -363,10 +364,10 @@ Partial Class aaformMainWindow
         '
         Me.statusbarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
-        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 1016)
+        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 1017)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
         Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(0, 0, 14, 0)
-        Me.statusbarMainWindow.Size = New System.Drawing.Size(1280, 38)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(1280, 37)
         Me.statusbarMainWindow.SizingGrip = False
         Me.statusbarMainWindow.TabIndex = 1
         Me.statusbarMainWindow.Text = "StatusStrip1"
@@ -375,7 +376,7 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(1264, 33)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(1264, 32)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
     "launch them and explore the UI."
         '
@@ -544,6 +545,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeTitle)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeDescription)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForMSIInstall)
@@ -572,7 +574,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeTitle
         '
         Me.debugLabelXmlThemeTitle.AutoSize = True
-        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(20, 786)
+        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(20, 763)
         Me.debugLabelXmlThemeTitle.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.debugLabelXmlThemeTitle.Name = "debugLabelXmlThemeTitle"
         Me.debugLabelXmlThemeTitle.Size = New System.Drawing.Size(268, 25)
@@ -582,7 +584,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeDescription
         '
         Me.debugLabelXmlThemeDescription.AutoSize = True
-        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(20, 812)
+        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(20, 789)
         Me.debugLabelXmlThemeDescription.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.debugLabelXmlThemeDescription.Name = "debugLabelXmlThemeDescription"
         Me.debugLabelXmlThemeDescription.Size = New System.Drawing.Size(335, 25)
@@ -856,6 +858,15 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
+        'debugLabelXmlThemeAuthor
+        '
+        Me.debugLabelXmlThemeAuthor.AutoSize = True
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(25, 816)
+        Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
+        Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(290, 25)
+        Me.debugLabelXmlThemeAuthor.TabIndex = 25
+        Me.debugLabelXmlThemeAuthor.Text = "debugLabelXmlThemeAuthor"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(192.0!, 192.0!)
@@ -978,4 +989,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugButtonDefaultThemeSetter As Button
     Friend WithEvents debugLabelXmlThemeDescription As Label
     Friend WithEvents debugLabelXmlThemeTitle As Label
+    Friend WithEvents debugLabelXmlThemeAuthor As Label
 End Class

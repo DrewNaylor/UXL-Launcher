@@ -21,10 +21,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowLabels" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Test</Value>
+      <Value Profile="(Default)">Eyesore</Value>
     </Setting>
   </Settings>
 </SettingsFile>

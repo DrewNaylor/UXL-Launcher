@@ -31,9 +31,10 @@ Public Class UXLLauncher_ThemeEngine
 
     ' Make a variable that differs based on what theme is chosen.
     Public Shared userTheme As String
-    ' Create strings for theme title and description.
+    ' Create strings for theme title, description, and author.
     Public Shared themeSheetTitle As String
     Public Shared themeSheetDescription As String
+    Public Shared themeSheetAuthor As String
 
     Public Shared Sub themeEngine_ApplyTheme()
 
@@ -85,6 +86,11 @@ Public Class UXLLauncher_ThemeEngine
         ' Pull the description from XML.
         themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
         aaformMainWindow.debugLabelXmlThemeDescription.Text = themeSheetDescription
+
+        ' Pull the author from XML.
+        themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
+        aaformMainWindow.debugLabelXmlThemeAuthor.Text = themeSheetAuthor
+
 
         ' Pull the Button colors from XML.
         colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
