@@ -43,7 +43,7 @@
       </MenuItem>
 
       <StatusLabel>
-        <BackColor>Silver</BackColor>
+        <BackColor>Transparent</BackColor>
         <ForeColor>Black</ForeColor>
       </StatusLabel>
       
