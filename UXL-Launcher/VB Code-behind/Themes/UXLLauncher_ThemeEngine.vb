@@ -74,7 +74,7 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorStatusLabelForeColor As Color
         ' Other statusbar label properties
         Dim propertyStatusLabelBorderSides As ToolStripStatusLabelBorderSides
-        Dim propertyStatusLabelBorderStyle As String
+        Dim propertyStatusLabelBorderStyle As Border3DStyle
 #End Region
 
 #Region "Pull theme colors from XML documents."
@@ -124,8 +124,15 @@ Public Class UXLLauncher_ThemeEngine
         ' Pull other StatusLabel stuff from XML.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText = "All" Then
             propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
+        Else
+            propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
         End If
-        propertyStatusLabelBorderStyle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText = "SunkenInner" Then
+            propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
+        Else
+            propertyStatusLabelBorderStyle = Border3DStyle.Flat
+        End If
+
 
 #End Region
 
@@ -245,6 +252,7 @@ Public Class UXLLauncher_ThemeEngine
         aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
         ' Set other properties for StatusLabel.
         aaformMainWindow.statusbarLabelWelcomeText.BorderSides = propertyStatusLabelBorderSides
+        aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
 
 
 
