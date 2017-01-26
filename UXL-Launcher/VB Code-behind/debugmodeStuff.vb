@@ -36,6 +36,7 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForMSIInstall.Show()
             aaformMainWindow.debugLabelXmlThemeTitle.Show()
             aaformMainWindow.debugLabelXmlThemeDescription.Show()
+            aaformMainWindow.debugLabelXmlThemeAuthor.Show()
             ' Theme tester buttons.
             aaformMainWindow.debugButtonDefaultThemeSetter.Show()
             aaformMainWindow.debugButtonTestThemeSetter.Show()
@@ -50,6 +51,7 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForMSIInstall.Hide()
             aaformMainWindow.debugLabelXmlThemeTitle.Hide()
             aaformMainWindow.debugLabelXmlThemeDescription.Hide()
+            aaformMainWindow.debugLabelXmlThemeAuthor.Hide()
             ' Theme tester buttons.
             aaformMainWindow.debugButtonDefaultThemeSetter.Hide()
             aaformMainWindow.debugButtonTestThemeSetter.Hide()
