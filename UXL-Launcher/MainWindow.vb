@@ -168,19 +168,53 @@ Public Class aaformMainWindow
 #End Region
 
 #Region "Acknowledgements button."
-    ' This code changes the color of the View Help Topics button in the Help menu when
+    ' This code changes the color of the Acknowledgements button in the Help menu when
     ' the mouse is moved over it so that it's readable.
     Private Sub menubarAuthorsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarAuthorsButton.MouseEnter
         colorPreviousMenuColor = menubarAuthorsButton.ForeColor
         menubarAuthorsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
     End Sub
 
-    ' Change the View Help Topics button in the Help menu to what it was
+    ' Change the Acknowledgements button in the Help menu to what it was
     ' before we put the mouse over the entry.
     Private Sub menubarAuthorsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAuthorsButton.MouseLeave
         menubarAuthorsButton.ForeColor = colorPreviousMenuColor
     End Sub
 #End Region
+
+#Region "License button."
+    ' This code changes the color of the License button in the Help menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarLicenseButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarLicenseButton.MouseEnter
+        colorPreviousMenuColor = menubarLicenseButton.ForeColor
+        menubarLicenseButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
+
+    ' Change the License button in the Help menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarLicenseButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarLicenseButton.MouseLeave
+        menubarLicenseButton.ForeColor = colorPreviousMenuColor
+    End Sub
+#End Region
+
+#Region "About button"
+    ' This code changes the color of the About button in the Help menu when
+    ' the mouse is moved over it so that it's readable.
+    Private Sub menubarAboutButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarAboutButton.MouseEnter
+        colorPreviousMenuColor = menubarAboutButton.ForeColor
+        menubarAboutButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+    End Sub
+
+    ' Change the About button in the Help menu to what it was
+    ' before we put the mouse over the entry.
+    Private Sub menubarAboutButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAboutButton.MouseLeave
+        menubarAboutButton.ForeColor = colorPreviousMenuColor
+    End Sub
+
+#End Region
+
+
+
 
 #End Region
 
