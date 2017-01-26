@@ -72,6 +72,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color
         Dim colorStatusLabelForeColor As Color
+        ' Other statusbar label properties
+        Dim propertyStatusLabelBorderSides As String
+        Dim propertyStatusLabelBorderStyle As String
 #End Region
 
 #Region "Pull theme colors from XML documents."
@@ -117,6 +120,11 @@ Public Class UXLLauncher_ThemeEngine
         ' Pull the StatusLabel colors from XML.
         colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
         colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
+
+        ' Pull other StatusLabel stuff from XML.
+        propertyStatusLabelBorderSides = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText
+        propertyStatusLabelBorderStyle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText
+
 #End Region
 
 #End Region
