@@ -237,11 +237,16 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared Sub themeEngine_ChooseUserTheme()
 
         ' Choose the proper theme based on what the user chose.
-        If My.Settings.userChosenTheme = "TestTheme" Or My.Settings.userChosenTheme = "Test" Then
+        If My.Settings.userChosenTheme = "Test" Then
             userTheme = My.Resources.TestTheme_XML
-        ElseIf My.Settings.userChosenTheme = "Default" Or My.Settings.userChosenTheme = "DefaultTheme" Then
+
+        ElseIf My.Settings.userChosenTheme = "Default" Then
             userTheme = My.Resources.DefaultTheme_XML
+
+        ElseIf My.Settings.userChosenTheme = "Eyesore" Then
+            userTheme = My.Resources.EyesoreTheme_XML
         Else
+
             userTheme = My.Resources.DefaultTheme_XML
         End If
 

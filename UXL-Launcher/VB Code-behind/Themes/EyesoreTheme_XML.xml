@@ -1,0 +1,48 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Eyesore</Title>
+  <Description>Eyesore is a theme that's meant to be a tribute to Windows 3.1's Hot Dog Stand theme.</Description>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>LightGray</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Yellow</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </FlowLayoutPanel>
+
+      <MenuBarAndStatusBar>
+        <BackColor>White</BackColor>
+      </MenuBarAndStatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <TextBox>
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <BackColor>Control</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </MenuItem>
+
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>

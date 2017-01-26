@@ -5986,4 +5986,7 @@
   <data name="DefaultTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vb code-behind\themes\defaulttheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="EyesoreTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\vb code-behind\themes\eyesoretheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

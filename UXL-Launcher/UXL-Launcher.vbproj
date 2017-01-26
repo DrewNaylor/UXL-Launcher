@@ -190,6 +190,7 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\TestTheme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />

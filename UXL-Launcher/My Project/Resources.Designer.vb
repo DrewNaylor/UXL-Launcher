@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-01-25T20:24:55
+        '''  Looks up a localized string similar to 2017-01-26T03:03:49
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -111,26 +111,23 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;Default theme for UXL Launcher&lt;/Description&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
         '''      &lt;/Button&gt;
         '''      
         '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
         '''      &lt;/GroupBox&gt;
         '''
         '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Yellow&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Purple&lt;/ForeColor&gt;
-        '''      &lt;/FlowLayoutPanel&gt;
-        '''
-        '''   [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property DefaultTheme_XML() As String
             Get
@@ -145,6 +142,32 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
+        '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme.&lt;/Description&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;BackColor&gt;Window&lt;/BackColo [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property EyesoreTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("EyesoreTheme_XML", resourceCulture)
             End Get
         End Property
         
