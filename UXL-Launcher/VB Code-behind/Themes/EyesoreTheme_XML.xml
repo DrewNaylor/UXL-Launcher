@@ -22,6 +22,10 @@
       <MenuBarAndStatusBar>
         <BackColor>White</BackColor>
       </MenuBarAndStatusBar>
+      
+      <StatusBarOnly>
+        <BackColor>DarkGray</BackColor>
+      </StatusBarOnly>
 
       <Label>
         <BackColor>Transparent</BackColor>

@@ -58,6 +58,8 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorFlowLayoutPanelForeColor As Color
         ' Menubar and status bar colors:
         Dim colorMenubarAndStatusBarBackColor As Color
+        ' Status Bar color only:
+        Dim colorStatusBarOnlyBackColor As Color
         ' Label colors:
         Dim colorLabelBackColor As Color
         Dim colorLabelForeColor As Color
@@ -95,6 +97,10 @@ Public Class UXLLauncher_ThemeEngine
 
         ' Pull the MenuBarAndStatusBar colors from XML.
         colorMenubarAndStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBarAndStatusBar/BackColor[1]", themeNamespaceManager).InnerText)
+
+        ' Pull the StatusBarOnly colors from XML.
+        colorStatusBarOnlyBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBarOnly/BackColor[1]", themeNamespaceManager).InnerText)
+
 
         ' Pull the Label colors from XML.
         colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
