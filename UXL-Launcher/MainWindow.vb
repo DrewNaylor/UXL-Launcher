@@ -25,6 +25,9 @@
 
 Public Class aaformMainWindow
 
+    ' Create the renderer for the toolstrip:
+    Public Shared UXLToolstripRenderer As New uxlProToolstripRenderer
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Run the code in the combineStrings sub in OfficeLocater.vb
@@ -36,9 +39,7 @@ Public Class aaformMainWindow
 
 #End Region
 
-        Dim renderer As New uxlProToolstripRenderer
-        renderer.BackColor = Color.Lime
-        menubarMainWindow.Renderer = renderer
+        menubarMainWindow.Renderer = UXLToolstripRenderer
 
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"

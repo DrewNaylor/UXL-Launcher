@@ -237,6 +237,8 @@ Public Class UXLLauncher_ThemeEngine
         '        Next
         '#End Region
 
+        aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenuItemBackColor
+
 #Region "Set colors for statusbar label and groupboxes."
 
         ' Set colors for the "Standard Apps" groupbox.
@@ -311,9 +313,8 @@ Public Class uxlProToolstripRenderer
 
     Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
         MyBase.OnRenderToolStripBackground(e)
-        Dim darkColor As Color = ControlPaint.Dark(Me.BackColor, 0.1)
-        Dim lightColor As Color = ControlPaint.Light(Me.BackColor)
-        Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, darkColor, LinearGradientMode.Vertical)
+        Dim lightColor As Color = ControlPaint.Light(Me.BackColor, 1.0)
+        Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, lightColor, LinearGradientMode.Vertical)
             e.Graphics.FillRectangle(b, e.AffectedBounds)
         End Using
     End Sub
