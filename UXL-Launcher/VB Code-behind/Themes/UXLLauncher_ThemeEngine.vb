@@ -309,9 +309,9 @@ Public Class uxlProToolstripRenderer
         End Set
     End Property
 
-    Protected Overrides Sub OnRenderToolStripBackground(ByVal e As System.Windows.Forms.ToolStripRenderEventArgs)
+    Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
         MyBase.OnRenderToolStripBackground(e)
-        Dim darkColor As Color = ControlPaint.Dark(Me.BackColor, 0.25)
+        Dim darkColor As Color = ControlPaint.Dark(Me.BackColor, 0.1)
         Dim lightColor As Color = ControlPaint.Light(Me.BackColor)
         Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, darkColor, LinearGradientMode.Vertical)
             e.Graphics.FillRectangle(b, e.AffectedBounds)
