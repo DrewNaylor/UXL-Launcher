@@ -217,7 +217,7 @@ Public Class UXLLauncher_ThemeEngine
         Next
 #End Region
 
-        '#Region "Set colors for menubar entries."
+#Region "Set colors for menubar entries."
         '        ' Look at all the menubar entries in the main menubar and change their theme.
         '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarMainWindow.Items
         '            tsMenuItem.BackColor = colorMenuItemBackColor
@@ -235,8 +235,9 @@ Public Class UXLLauncher_ThemeEngine
         '            tsMenuItem.BackColor = colorMenuItemBackColor
         '            tsMenuItem.ForeColor = colorMenuItemForeColor
         '        Next
-        '#End Region
+#End Region
 
+        ' Set color for menubar.
         aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenuItemBackColor
 
 #Region "Set colors for statusbar label and groupboxes."
@@ -294,6 +295,8 @@ Public Class UXLLauncher_ThemeEngine
 
 End Class
 
+
+#Region "The new menubar renderer. It's better than the old method."
 ' All credit for the original code professional toolstrip renderer
 ' code below goes to this VBForums post: 
 ' http://www.vbforums.com/showthread.php?581374-menustrip-amp-toolstrip-color&p=3590240&viewfull=1#post3590240
@@ -302,12 +305,25 @@ Public Class uxlProToolstripRenderer
     Inherits ToolStripProfessionalRenderer
 
     Private _BackColor As Color
+    Private _ForeColor As Color
+
+    ' Get and set the backcolor for the menubar.
     Public Property BackColor() As Color
         Get
             Return _BackColor
         End Get
         Set(ByVal value As Color)
             _BackColor = value
+        End Set
+    End Property
+
+    ' Get and set the forecolor for the menubar.
+    Public Property ForeColor() As Color
+        Get
+            Return _ForeColor
+        End Get
+        Set(ByVal value As Color)
+            _ForeColor = value
         End Set
     End Property
 
@@ -319,3 +335,4 @@ Public Class uxlProToolstripRenderer
         End Using
     End Sub
 End Class
+#End Region
