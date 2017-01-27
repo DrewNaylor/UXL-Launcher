@@ -343,5 +343,10 @@ Public Class uxlProToolstripRenderer
         MyBase.OnRenderItemText(e)
     End Sub
 
+    ' Change the colors for the menubar text.
+    Protected Overrides Sub OnRenderButtonBackground(e As ToolStripItemRenderEventArgs)
+        MyBase.OnRenderButtonBackground(e)
+    End Sub
+
 End Class
 #End Region
