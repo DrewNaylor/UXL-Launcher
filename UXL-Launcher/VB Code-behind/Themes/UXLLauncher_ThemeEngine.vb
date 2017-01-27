@@ -337,9 +337,8 @@ Public Class uxlProToolstripRenderer
     End Sub
 
     Protected Overrides Sub OnRenderItemText(e As ToolStripItemTextRenderEventArgs)
+        e.TextColor = _ForeColor
         MyBase.OnRenderItemText(e)
-        Dim textcolor As Color = ControlPaint.Dark(Me.ForeColor)
-        e.TextColor = textcolor
     End Sub
 
 End Class
