@@ -39,7 +39,7 @@
       </TextBox>
 
       <MenuItem>
-        <BackColor>Control</BackColor>
+        <BackColor>ControlLightLight</BackColor>
         <ForeColor>ControlText</ForeColor>
       </MenuItem>
 
