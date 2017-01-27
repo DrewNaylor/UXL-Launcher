@@ -33,13 +33,16 @@ Public Class aaformMainWindow
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
 
-#Region "Start the theme engine and apply the user's theme."
+#Region "Start the theme engine."
 
+        ' First, choose the user's theme and apply it.
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+        ' Next, give the menubar a renderer.
+        menubarMainWindow.Renderer = UXLToolstripRenderer
 
 #End Region
 
-        menubarMainWindow.Renderer = UXLToolstripRenderer
+
 
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"

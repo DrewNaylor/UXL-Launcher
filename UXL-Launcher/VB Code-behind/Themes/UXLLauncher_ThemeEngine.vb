@@ -239,6 +239,7 @@ Public Class UXLLauncher_ThemeEngine
 
         ' Set color for menubar.
         aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenuItemBackColor
+        aaformMainWindow.UXLToolstripRenderer.ForeColor = colorMenuItemForeColor
 
 #Region "Set colors for statusbar label and groupboxes."
 
@@ -334,5 +335,12 @@ Public Class uxlProToolstripRenderer
             e.Graphics.FillRectangle(b, e.AffectedBounds)
         End Using
     End Sub
+
+    Protected Overrides Sub OnRenderItemText(e As ToolStripItemTextRenderEventArgs)
+        MyBase.OnRenderItemText(e)
+        Dim textcolor As Color = ControlPaint.Dark(Me.ForeColor)
+        e.TextColor = textcolor
+    End Sub
+
 End Class
 #End Region
