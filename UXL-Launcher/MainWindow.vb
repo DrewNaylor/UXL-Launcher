@@ -39,6 +39,7 @@ Public Class aaformMainWindow
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
         ' Next, give the menubar a renderer.
         menubarMainWindow.Renderer = UXLToolstripRenderer
+        contextmenuNotifyicon.Renderer = UXLToolstripRenderer
 
 #End Region
 
@@ -91,140 +92,6 @@ Public Class aaformMainWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
         forceOptionsWindowTab.ShowDialog()
     End Sub
-
-    '#Region "Menubar button entry theming override."
-
-    '    ' Create a Color variable to store the color of the menubar entry as it was before the mouse was moved over it.
-    '    Public colorPreviousMenuColor As Color
-
-    '#Region "Exit button"
-    '    ' This code changes the color of the Exit button in the File menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarExitButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarExitButton.MouseEnter
-    '        colorPreviousMenuColor = menubarExitButton.ForeColor
-    '        menubarExitButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the Exit button in the File menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarExitButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarExitButton.MouseLeave
-    '        menubarExitButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "Always On Top button"
-    '    ' This code changes the color of the Always On Top button in the View menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarAlwaysOnTopButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.MouseEnter
-    '        colorPreviousMenuColor = menubarAlwaysOnTopButton.ForeColor
-    '        menubarAlwaysOnTopButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the Always On Top button in the View menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarAlwaysOnTopButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.MouseLeave
-    '        menubarAlwaysOnTopButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "Office Language Preferences button."
-
-    '    ' This code changes the color of the Office Language Preferences button in the Tools menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarOfficeLangPrefsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.MouseEnter
-    '        colorPreviousMenuColor = menubarOfficeLangPrefsButton.ForeColor
-    '        menubarOfficeLangPrefsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the Office Language Preferences button in the Tools menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarOfficeLangPrefsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarOfficeLangPrefsButton.MouseLeave
-    '        menubarOfficeLangPrefsButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "UXL Launcher Options button."
-
-    '    ' This code changes the color of the Options button in the Tools menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarOptionsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarOptionsButton.MouseEnter
-    '        colorPreviousMenuColor = menubarOptionsButton.ForeColor
-    '        menubarOptionsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the Options button in the Tools menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarOptionsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarOptionsButton.MouseLeave
-    '        menubarOptionsButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "View Help Topics button."
-
-    '    ' This code changes the color of the View Help Topics button in the Help menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarHelpTopicsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.MouseEnter
-    '        colorPreviousMenuColor = menubarHelpTopicsButton.ForeColor
-    '        menubarHelpTopicsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the View Help Topics button in the Help menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarHelpTopicsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.MouseLeave
-    '        menubarHelpTopicsButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "Acknowledgements button."
-    '    ' This code changes the color of the Acknowledgements button in the Help menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarAuthorsButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarAuthorsButton.MouseEnter
-    '        colorPreviousMenuColor = menubarAuthorsButton.ForeColor
-    '        menubarAuthorsButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the Acknowledgements button in the Help menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarAuthorsButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAuthorsButton.MouseLeave
-    '        menubarAuthorsButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "License button."
-    '    ' This code changes the color of the License button in the Help menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarLicenseButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarLicenseButton.MouseEnter
-    '        colorPreviousMenuColor = menubarLicenseButton.ForeColor
-    '        menubarLicenseButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the License button in the Help menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarLicenseButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarLicenseButton.MouseLeave
-    '        menubarLicenseButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-    '#End Region
-
-    '#Region "About button"
-    '    ' This code changes the color of the About button in the Help menu when
-    '    ' the mouse is moved over it so that it's readable.
-    '    Private Sub menubarAboutButton_MouseEnter(sender As Object, e As EventArgs) Handles menubarAboutButton.MouseEnter
-    '        colorPreviousMenuColor = menubarAboutButton.ForeColor
-    '        menubarAboutButton.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
-    '    End Sub
-
-    '    ' Change the About button in the Help menu to what it was
-    '    ' before we put the mouse over the entry.
-    '    Private Sub menubarAboutButton_MouseLeave(sender As Object, e As EventArgs) Handles menubarAboutButton.MouseLeave
-    '        menubarAboutButton.ForeColor = colorPreviousMenuColor
-    '    End Sub
-
-    '#End Region
-
-
-
-
-    '#End Region
 
 #Region "Always On Top menubar button checkbox and stuff."
     Private Sub menubarAlwaysOnTopButton_Click(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.Click

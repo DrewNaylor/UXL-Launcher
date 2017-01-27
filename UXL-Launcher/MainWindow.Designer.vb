@@ -148,7 +148,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(269, 38)
+        Me.menubarExitButton.Size = New System.Drawing.Size(237, 38)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
@@ -236,7 +236,8 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(460, 478)
+        Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(460, 522)
         '
         'notifyiconWord
         '
