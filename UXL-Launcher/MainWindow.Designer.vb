@@ -74,6 +74,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeDescription = New System.Windows.Forms.Label()
         Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
@@ -101,7 +102,6 @@ Partial Class aaformMainWindow
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -148,7 +148,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(237, 38)
+        Me.menubarExitButton.Size = New System.Drawing.Size(269, 38)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
@@ -571,6 +571,15 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
         '
+        'debugLabelXmlThemeAuthor
+        '
+        Me.debugLabelXmlThemeAuthor.AutoSize = True
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(25, 816)
+        Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
+        Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(290, 25)
+        Me.debugLabelXmlThemeAuthor.TabIndex = 25
+        Me.debugLabelXmlThemeAuthor.Text = "debugLabelXmlThemeAuthor"
+        '
         'debugLabelXmlThemeTitle
         '
         Me.debugLabelXmlThemeTitle.AutoSize = True
@@ -857,15 +866,6 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Icon = CType(resources.GetObject("notifyiconTaskbarLaunchers.Icon"), System.Drawing.Icon)
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
-        '
-        'debugLabelXmlThemeAuthor
-        '
-        Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(25, 816)
-        Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
-        Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(290, 25)
-        Me.debugLabelXmlThemeAuthor.TabIndex = 25
-        Me.debugLabelXmlThemeAuthor.Text = "debugLabelXmlThemeAuthor"
         '
         'aaformMainWindow
         '

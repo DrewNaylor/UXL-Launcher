@@ -22,6 +22,7 @@
 'along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 
 
+Imports System.Drawing.Drawing2D
 Imports System.Xml
 
 Public Class UXLLauncher_ThemeEngine
@@ -216,25 +217,25 @@ Public Class UXLLauncher_ThemeEngine
         Next
 #End Region
 
-#Region "Set colors for menubar entries."
-        ' Look at all the menubar entries in the main menubar and change their theme.
-        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarFileMenu.DropDownItems
-            tsMenuItem.BackColor = colorMenuItemBackColor
-            tsMenuItem.ForeColor = colorMenuItemForeColor
-        Next
-        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarViewMenu.DropDownItems
-            tsMenuItem.BackColor = colorMenuItemBackColor
-            tsMenuItem.ForeColor = colorMenuItemForeColor
-        Next
-        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarToolsMenu.DropDownItems
-            tsMenuItem.BackColor = colorMenuItemBackColor
-            tsMenuItem.ForeColor = colorMenuItemForeColor
-        Next
-        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarHelpMenu.DropDownItems
-            tsMenuItem.BackColor = colorMenuItemBackColor
-            tsMenuItem.ForeColor = colorMenuItemForeColor
-        Next
-#End Region
+        '#Region "Set colors for menubar entries."
+        '        ' Look at all the menubar entries in the main menubar and change their theme.
+        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarMainWindow.Items
+        '            tsMenuItem.BackColor = colorMenuItemBackColor
+        '            tsMenuItem.ForeColor = colorMenuItemForeColor
+        '        Next
+        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarViewMenu.DropDownItems
+        '            tsMenuItem.BackColor = colorMenuItemBackColor
+        '            tsMenuItem.ForeColor = colorMenuItemForeColor
+        '        Next
+        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarToolsMenu.DropDownItems
+        '            tsMenuItem.BackColor = colorMenuItemBackColor
+        '            tsMenuItem.ForeColor = colorMenuItemForeColor
+        '        Next
+        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarHelpMenu.DropDownItems
+        '            tsMenuItem.BackColor = colorMenuItemBackColor
+        '            tsMenuItem.ForeColor = colorMenuItemForeColor
+        '        Next
+        '#End Region
 
 #Region "Set colors for statusbar label and groupboxes."
 
@@ -289,4 +290,31 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 
+End Class
+
+' All credit for the original code professional toolstrip renderer
+' code below goes to this VBForums post: 
+' http://www.vbforums.com/showthread.php?581374-menustrip-amp-toolstrip-color&p=3590240&viewfull=1#post3590240
+
+Public Class uxlProToolstripRenderer
+    Inherits ToolStripProfessionalRenderer
+
+    Private _BackColor As Color
+    Public Property BackColor() As Color
+        Get
+            Return _BackColor
+        End Get
+        Set(ByVal value As Color)
+            _BackColor = value
+        End Set
+    End Property
+
+    Protected Overrides Sub OnRenderToolStripBackground(ByVal e As System.Windows.Forms.ToolStripRenderEventArgs)
+        MyBase.OnRenderToolStripBackground(e)
+        Dim darkColor As Color = ControlPaint.Dark(Me.BackColor, 0.25)
+        Dim lightColor As Color = ControlPaint.Light(Me.BackColor)
+        Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, darkColor, LinearGradientMode.Vertical)
+            e.Graphics.FillRectangle(b, e.AffectedBounds)
+        End Using
+    End Sub
 End Class
