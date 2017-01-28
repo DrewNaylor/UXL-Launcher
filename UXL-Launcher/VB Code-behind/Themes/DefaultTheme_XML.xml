@@ -39,8 +39,8 @@
       </TextBox>
 
       <MenuItem>
-        <BackColor>White</BackColor>
-        <ForeColor>Black</ForeColor>
+        <BackColor>Window</BackColor>
+        <ForeColor>ControlText</ForeColor>
       </MenuItem>
 
       <StatusLabel>

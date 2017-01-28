@@ -7,7 +7,7 @@
       
       <Button>
         <BackColor>LightGray</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
       </Button>
       
       <GroupBox>
@@ -17,7 +17,7 @@
 
       <FlowLayoutPanel>
         <BackColor>Yellow</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
 
       <MenuBar>

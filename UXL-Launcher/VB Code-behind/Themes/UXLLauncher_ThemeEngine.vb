@@ -58,8 +58,6 @@ Public Class UXLLauncher_ThemeEngine
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color
         Dim colorFlowLayoutPanelForeColor As Color
-        ' Menubar colors:
-        Dim colorMenubarBackColor As Color
         ' Status Bar colors:
         Dim colorStatusBarBackColor As Color
         ' Label colors:
@@ -105,12 +103,8 @@ Public Class UXLLauncher_ThemeEngine
         colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
         colorFlowLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
 
-        ' Pull the MenuBar colors from XML.
-        colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
-
         ' Pull the StatusBar colors from XML.
         colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
-
 
         ' Pull the Label colors from XML.
         colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
@@ -218,29 +212,14 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Set colors for menubar entries."
-        '        ' Look at all the menubar entries in the main menubar and change their theme.
-        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarMainWindow.Items
-        '            tsMenuItem.BackColor = colorMenuItemBackColor
-        '            tsMenuItem.ForeColor = colorMenuItemForeColor
-        '        Next
-        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarViewMenu.DropDownItems
-        '            tsMenuItem.BackColor = colorMenuItemBackColor
-        '            tsMenuItem.ForeColor = colorMenuItemForeColor
-        '        Next
-        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarToolsMenu.DropDownItems
-        '            tsMenuItem.BackColor = colorMenuItemBackColor
-        '            tsMenuItem.ForeColor = colorMenuItemForeColor
-        '        Next
-        '        For Each tsMenuItem As ToolStripItem In aaformMainWindow.menubarHelpMenu.DropDownItems
-        '            tsMenuItem.BackColor = colorMenuItemBackColor
-        '            tsMenuItem.ForeColor = colorMenuItemForeColor
-        '        Next
-#End Region
 
         ' Set color for menubar.
         aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenuItemBackColor
         aaformMainWindow.UXLToolstripRenderer.ForeColor = colorMenuItemForeColor
         aaformMainWindow.UXLToolstripRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
+#End Region
+
 
 #Region "Set colors for statusbar label and groupboxes."
 
@@ -256,8 +235,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Set color for the Flow Layout Panel.
         aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-        ' Set color for menubar and status bar.
-        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
+        ' Set color for status bar.
         aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
         ' Set the colors for the status bar label.
         aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
@@ -286,7 +264,6 @@ Public Class UXLLauncher_ThemeEngine
         ElseIf My.Settings.userChosenTheme = "Eyesore" Then
             userTheme = My.Resources.EyesoreTheme_XML
         Else
-
             userTheme = My.Resources.DefaultTheme_XML
         End If
 
