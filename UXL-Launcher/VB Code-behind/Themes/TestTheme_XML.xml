@@ -20,10 +20,6 @@
         <ForeColor>Purple</ForeColor>
       </FlowLayoutPanel>
 
-      <MenuBar>
-        <BackColor>CadetBlue</BackColor>
-      </MenuBar>
-
       <StatusBar>
         <BackColor>CadetBlue</BackColor>
       </StatusBar>

@@ -19,10 +19,6 @@
         <BackColor>Window</BackColor>
         <ForeColor>ControlText</ForeColor>
       </FlowLayoutPanel>
-
-      <MenuBar>
-        <BackColor>Control</BackColor>
-      </MenuBar>
       
       <StatusBar>
         <BackColor>Control</BackColor>

@@ -19,10 +19,6 @@
         <BackColor>Yellow</BackColor>
         <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
-
-      <MenuBar>
-        <BackColor>White</BackColor>
-      </MenuBar>
       
       <StatusBar>
         <BackColor>LightGray</BackColor>
