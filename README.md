@@ -51,6 +51,8 @@ More information to come in the future! In the meantime, please check the reposi
 
 - CryptoPrevent Maximum protection settings block Windows PowerShell from running thus halting the build process. [(issue #52)](https://github.com/DrewNaylor/UXL-Launcher/issues/52)
 
+- Known issue: Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
+
 
 # System Requirements for running UXL Launcher
 
@@ -58,7 +60,7 @@ To run UXL Launcher, your computer requires the following:
 
 - [Microsoft .Net 4.6.1 Framework](https://www.microsoft.com/en-us/download/details.aspx?id=49981)
 
-  - Ignore the ad on that page, scroll down, and click the orange Download button. May take a while to download.
+  - Ignore the ad on that page, scroll down, and click the orange Download button. Note that this is the web installer and it'll download its components after it's opened. May take a while to download.
 
 - Windows versions: Windows 7 SP1, 8.1, 10.
   - Windows 8.0 is untested although it might work.
