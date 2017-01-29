@@ -81,7 +81,7 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Pull theme colors from XML documents."
 
-#Region "Try/Catch block for theme title element."
+#Region "Try/Catch block for theme Title element."
         ' Try to pull the title from XML.
         Try
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
@@ -143,6 +143,20 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf msgResult = DialogResult.No Then
                 aaformMainWindow.Close()
             End If
+
+        Catch ex As Exception
+            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
+            ' bug report.
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
+                "Would you like to file a bug report online?" & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
+
         End Try
 #End Region
 
