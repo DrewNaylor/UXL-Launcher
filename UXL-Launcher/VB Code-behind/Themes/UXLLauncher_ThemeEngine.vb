@@ -93,9 +93,9 @@ Public Class UXLLauncher_ThemeEngine
                 "" & vbCrLf &
                 "Click ""Yes"" to update your chosen theme settings to the Default theme and attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
                 "" & vbCrLf &
+                "Click ""No"" to attempt to use the Default theme for this session only." & vbCrLf &
                 "" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Theme missing XML element",
+                "Full error message: " & vbCrLf & ex.Message & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
