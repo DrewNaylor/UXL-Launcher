@@ -93,9 +93,7 @@ Public Class UXLLauncher_ThemeEngine
                 "" & vbCrLf &
                 "Click ""Yes"" to update your chosen theme settings to the Default theme and attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
                 "" & vbCrLf &
-                "Click ""No"" to attempt to use the Default theme for this session only." & vbCrLf &
-                "" & vbCrLf &
-                "Click ""Cancel"" to close UXL Launcher." & vbCrLf &
+                "Click ""No"" to close UXL Launcher." & vbCrLf &
                 "" & vbCrLf &
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
@@ -103,10 +101,9 @@ Public Class UXLLauncher_ThemeEngine
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            ElseIf msgResult = DialogResult.Cancel Then
+                My.Settings.userChosenTheme = "Default"
+
+            ElseIf msgResult = DialogResult.No Then
                 aaformMainWindow.Close()
             End If
         End Try
