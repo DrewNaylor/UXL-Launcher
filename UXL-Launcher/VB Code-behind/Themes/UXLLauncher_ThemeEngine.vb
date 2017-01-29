@@ -88,10 +88,10 @@ Public Class UXLLauncher_ThemeEngine
         Catch ex As NullReferenceException
             ' If the Title tag is missing, then ask the user if they want to set their theme to Default in My.Settings
             ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Access in the location specified in the Options window." &
+            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Title displayed in the Options window." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
+                "Full error message: " & ex.Message, "Theme missing XML element",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
