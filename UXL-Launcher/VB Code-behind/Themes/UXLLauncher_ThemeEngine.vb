@@ -99,7 +99,7 @@ Public Class UXLLauncher_ThemeEngine
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
+            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
             If msgResult = DialogResult.Yes Then
                 My.Settings.userChosenTheme = "Default"
                 ' Save settings.
