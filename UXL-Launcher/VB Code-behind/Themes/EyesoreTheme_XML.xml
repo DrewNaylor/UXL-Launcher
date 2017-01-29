@@ -7,11 +7,11 @@
       
       <Button>
         <BackColor>LightGray</BackColor>
-        <!--<ForeColor>Black</ForeColor>-->
+        <ForeColor>Black</ForeColor>
       </Button>
       
       <GroupBox>
-        <BackColor>Red</BackColor>
+        <!--<BackColor>Red</BackColor>-->
         <ForeColor>White</ForeColor>
       </GroupBox>
 
