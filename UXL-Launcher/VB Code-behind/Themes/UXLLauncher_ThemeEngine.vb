@@ -251,7 +251,6 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
-
 #Region "Button ForeColor"
 
         Try
@@ -297,6 +296,9 @@ Public Class UXLLauncher_ThemeEngine
             End If
         End Try
 #End Region
+
+#End Region
+
         ' Pull the GroupBox colors from XML.
         colorGroupBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager).InnerText)
         colorGroupBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager).InnerText)
@@ -338,11 +340,6 @@ Public Class UXLLauncher_ThemeEngine
         Else
             propertyStatusLabelBorderStyle = Border3DStyle.Flat
         End If
-
-
-#End Region
-
-#End Region
 
 #Region "Define Short-words."
         ' Create a short-form word for "Control."
@@ -479,7 +476,7 @@ Public Class UXLLauncher_ThemeEngine
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     End Sub
 #End Region
-
+#End Region
 End Class
 
 
