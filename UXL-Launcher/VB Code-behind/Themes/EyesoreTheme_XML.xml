@@ -6,8 +6,8 @@
     <Theme_Colors>
       
       <Button>
-        <!--<BackColor>LightGray</BackColor>-->
-        <ForeColor>Black</ForeColor>
+        <BackColor>LightGray</BackColor>
+        <!--<ForeColor>Black</ForeColor>-->
       </Button>
       
       <GroupBox>
