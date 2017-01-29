@@ -91,17 +91,20 @@ Public Class UXLLauncher_ThemeEngine
             Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Title displayed in the Options window." & vbCrLf &
             "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
                 "" & vbCrLf &
-                "Click ""Yes"" to update your chosen theme settings to the Default theme and attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
+               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher. Then, we will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
                 "" & vbCrLf &
                 "Click ""No"" to close UXL Launcher." & vbCrLf &
                 "" & vbCrLf &
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
-            MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error)
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
                 My.Settings.userChosenTheme = "Default"
+                ' Save settings.
+                My.Settings.Save()
+                Application.Restart()
 
             ElseIf msgResult = DialogResult.No Then
                 aaformMainWindow.Close()
