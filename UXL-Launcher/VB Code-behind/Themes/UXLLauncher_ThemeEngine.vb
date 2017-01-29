@@ -80,6 +80,8 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Pull theme colors from XML documents."
+
+#Region "Try/Catch block for theme title element."
         ' Try to pull the title from XML.
         Try
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
@@ -105,15 +107,42 @@ Public Class UXLLauncher_ThemeEngine
                 ' Save settings.
                 My.Settings.Save()
                 Application.Restart()
-
             ElseIf msgResult = DialogResult.No Then
                 aaformMainWindow.Close()
             End If
         End Try
+#End Region
 
-        ' Pull the description from XML.
-        themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
-        aaformMainWindow.debugLabelXmlThemeDescription.Text = themeSheetDescription
+        ' Try to pull the description from XML.
+        Try
+            themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
+            aaformMainWindow.debugLabelXmlThemeDescription.Text = themeSheetDescription
+
+
+        Catch ex As NullReferenceException
+            ' If the Title tag is missing, then ask the user if they want to set their theme to Default in My.Settings
+            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
+            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Title displayed in the Options window." & vbCrLf &
+            "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
+                "" & vbCrLf &
+               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher. Then, we will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
+                "" & vbCrLf &
+                "Click ""No"" to close UXL Launcher." & vbCrLf &
+                "" & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
+            If msgResult = DialogResult.Yes Then
+                My.Settings.userChosenTheme = "Default"
+                ' Save settings.
+                My.Settings.Save()
+                Application.Restart()
+            ElseIf msgResult = DialogResult.No Then
+                aaformMainWindow.Close()
+            End If
+        End Try
 
         ' Pull the author from XML.
         themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
