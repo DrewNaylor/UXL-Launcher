@@ -35,11 +35,13 @@ Public Class aaformMainWindow
 
 #Region "Start the theme engine."
 
-        ' First, choose the user's theme and apply it.
-        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
-        ' Next, give the menubar a renderer.
-        menubarMainWindow.Renderer = UXLToolstripRenderer
-        contextmenuNotifyicon.Renderer = UXLToolstripRenderer
+        If My.Settings.enableThemeEngine = True Then
+            ' First, choose the user's theme and apply it.
+            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            ' Next, give the menubar a renderer.
+            menubarMainWindow.Renderer = UXLToolstripRenderer
+            contextmenuNotifyicon.Renderer = UXLToolstripRenderer
+        End If
 
 #End Region
 
@@ -304,13 +306,17 @@ Public Class aaformMainWindow
 #Region "Theme Tester Buttons."
     Private Sub debugButtonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonTestThemeSetter.Click
         ' Attempt to apply the theme the user chose.
-        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+        If My.Settings.enableThemeEngine = True Then
+            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+        End If
     End Sub
 
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
         ' Attempt to apply the default theme.
-        UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+        If My.Settings.enableThemeEngine = True Then
+            UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
+            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+        End If
     End Sub
 #End Region
 

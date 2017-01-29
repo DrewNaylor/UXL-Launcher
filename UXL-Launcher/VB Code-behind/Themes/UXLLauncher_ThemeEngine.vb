@@ -58,6 +58,8 @@ Public Class UXLLauncher_ThemeEngine
         ' FlowLayoutPanel colors:
         Dim colorFlowLayoutPanelBackColor As Color
         Dim colorFlowLayoutPanelForeColor As Color
+        ' Menubar colors:
+        Dim colorMenubarBackColor As Color
         ' Status Bar colors:
         Dim colorStatusBarBackColor As Color
         ' Label colors:
@@ -102,6 +104,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Pull the FlowLayoutPanel colors from XML.
         colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
         colorFlowLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
+
+        ' Pull the MenuBar colors from XML.
+        colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
 
         ' Pull the StatusBar colors from XML.
         colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
@@ -237,6 +242,8 @@ Public Class UXLLauncher_ThemeEngine
         aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
         ' Set color for status bar.
         aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
+        ' Set color for menubar.
+        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
         ' Set the colors for the status bar label.
         aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
         aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
