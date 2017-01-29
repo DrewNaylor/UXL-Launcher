@@ -88,8 +88,12 @@ Public Class UXLLauncher_ThemeEngine
         Catch ex As NullReferenceException
             ' If the Title tag is missing, then ask the user if they want to set their theme to Default in My.Settings
             ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Title displayed in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Title displayed in the Options window." & vbCrLf &
+            "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
+                "" & vbCrLf &
+                "Click ""Yes"" to update your chosen theme settings to the Default theme and attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
+                "" & vbCrLf &
+                "" & vbCrLf &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message, "Theme missing XML element",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
