@@ -80,12 +80,26 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Pull theme colors from XML documents."
-        ' Pull the title from XML.
+        ' Try to pull the title from XML.
         Try
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
             aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
-        Catch ex As NullReferenceException
 
+        Catch ex As NullReferenceException
+            ' If the Title tag is missing, then ask the user if they want to set their theme to Default in My.Settings
+            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
+            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Access in the location specified in the Options window." &
+            " Would you like to open the Options window to change your settings?" & vbCrLf &
+                "" & vbCrLf &
+                "Full error message: " & ex.Message, "Couldn't find file",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            ' If the user chooses to open the Options window, open the Options window to the General tab.
+            If msgResult = DialogResult.Yes Then
+                Dim forceOptionsWindowTab As New aaformOptionsWindow
+                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                forceOptionsWindowTab.ShowDialog()
+            End If
         End Try
 
         ' Pull the description from XML.
