@@ -147,7 +147,7 @@ Public Class UXLLauncher_ThemeEngine
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error happened along with the text below" &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
                 " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
