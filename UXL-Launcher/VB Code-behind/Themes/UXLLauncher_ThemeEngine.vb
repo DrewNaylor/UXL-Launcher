@@ -210,6 +210,8 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Button BackColor"
         Try
             colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
+
+
         Catch ex As NullReferenceException
             ' If the Button BackColor tag is missing, then ask the user if they want to set their theme to Default in My.Settings
             ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
