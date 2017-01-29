@@ -21,6 +21,8 @@
       </FlowLayoutPanel>
       
       <MenuBar>
+        <!--The MenuBar BackColor variable is here because of problems with the custom ProfessionalRenderer.
+        The BackColor value of MenuItem overrides the BackColor value of MenuBar.-->
         <BackColor>White</BackColor>
       </MenuBar>
       
@@ -46,7 +48,11 @@
       <StatusLabel>
         <BackColor>Transparent</BackColor>
         <ForeColor>Black</ForeColor>
+        
+        <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
         <BorderSides>All</BorderSides>
+
+        <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
         <BorderStyle>SunkenInner</BorderStyle>
       </StatusLabel>
       
