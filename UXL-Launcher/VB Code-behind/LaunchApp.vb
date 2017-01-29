@@ -48,10 +48,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -83,10 +83,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -118,8 +118,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?", "I just don't know what went wrong!",
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -151,8 +153,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?", "I just don't know what went wrong!",
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -184,10 +188,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -219,10 +223,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -254,10 +258,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -289,10 +293,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -324,10 +328,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -359,10 +363,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -394,10 +398,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -429,10 +433,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -464,10 +468,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
@@ -499,10 +503,10 @@ Public Class LaunchApp
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet." & vbCrLf &
-                "Would you like to file a bug report online?" & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "I just don't know what went wrong!",
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
