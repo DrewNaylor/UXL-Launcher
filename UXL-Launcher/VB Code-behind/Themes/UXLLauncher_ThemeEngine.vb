@@ -113,6 +113,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "Try/Catch block for Description theme element."
         ' Try to pull the description from XML.
         Try
             themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
@@ -120,7 +121,7 @@ Public Class UXLLauncher_ThemeEngine
 
 
         Catch ex As NullReferenceException
-            ' If the Title tag is missing, then ask the user if they want to set their theme to Default in My.Settings
+            ' If the Description tag is missing, then ask the user if they want to set their theme to Default in My.Settings
             ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
             Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Description XML element for the theme's Description displayed in the Options window." & vbCrLf &
                 "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
@@ -143,6 +144,7 @@ Public Class UXLLauncher_ThemeEngine
                 aaformMainWindow.Close()
             End If
         End Try
+#End Region
 
         ' Pull the author from XML.
         themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
