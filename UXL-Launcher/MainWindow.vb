@@ -66,8 +66,9 @@ Public Class aaformMainWindow
         ' the window to be on top of other windows.
 
         If My.Settings.alwaysOnTop = True Then
-            menubarAlwaysOnTopButton.CheckState = CheckState.Checked
             Me.TopMost = True
+            menubarAlwaysOnTopButton.CheckState = CheckState.Checked
+            debugmodeStuff.updateDebugLabels()
 
             ' But if the Always On Top setting is false, then set the window to not
             ' be on top of other windows.
@@ -75,6 +76,7 @@ Public Class aaformMainWindow
         ElseIf My.Settings.alwaysOnTop = False Then
             Me.TopMost = False
             menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
+            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
