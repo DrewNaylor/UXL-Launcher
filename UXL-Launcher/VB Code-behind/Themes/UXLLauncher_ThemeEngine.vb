@@ -106,6 +106,8 @@ Public Class UXLLauncher_ThemeEngine
                 Dim forceOptionsWindowTab As New aaformOptionsWindow
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog()
+            ElseIf msgResult = DialogResult.Cancel Then
+                aaformMainWindow.Close()
             End If
         End Try
 
