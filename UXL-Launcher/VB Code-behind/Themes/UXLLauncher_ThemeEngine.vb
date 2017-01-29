@@ -95,8 +95,11 @@ Public Class UXLLauncher_ThemeEngine
                 "" & vbCrLf &
                 "Click ""No"" to attempt to use the Default theme for this session only." & vbCrLf &
                 "" & vbCrLf &
+                "Click ""Cancel"" to close UXL Launcher." & vbCrLf &
+                "" & vbCrLf &
+                "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
