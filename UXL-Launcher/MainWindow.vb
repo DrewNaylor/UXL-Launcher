@@ -35,6 +35,7 @@ Public Class aaformMainWindow
 
 #Region "Start the theme engine."
 
+        ' If the user wants to use the theme engine, then use it.
         If My.Settings.enableThemeEngine = True Then
             ' First, choose the user's theme and apply it.
             UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
