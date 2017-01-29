@@ -81,8 +81,12 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Pull theme colors from XML documents."
         ' Pull the title from XML.
-        themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-        aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
+        Try
+            themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+            aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
+        Catch ex As NullReferenceException
+
+        End Try
 
         ' Pull the description from XML.
         themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
