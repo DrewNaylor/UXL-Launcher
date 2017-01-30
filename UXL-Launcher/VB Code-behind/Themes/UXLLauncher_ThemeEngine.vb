@@ -482,7 +482,7 @@ Public Class UXLLauncher_ThemeEngine
 #Region "MenuBar BackColor"
         ' Try to pull the MenuBar colors from XML. Although this element isn't used due to the custom Professional Renderer, there was
         ' a problem with the menubar being properly set when switching themes so it's still here. The BackColor value of MenuItem
-        ' overrides the BackColor value Of MenuBar.
+        ' overrides the BackColor value of MenuBar.
         Try
             colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
 
