@@ -41,8 +41,8 @@
       </TextBox>
 
       <MenuItem>
-        <!--<BackColor>White</BackColor>-->
-        <ForeColor>Black</ForeColor>
+        <BackColor>White</BackColor>
+        <!--<ForeColor>Black</ForeColor>-->
       </MenuItem>
 
       <StatusLabel>
