@@ -936,6 +936,7 @@ Public Class UXLLauncher_ThemeEngine
                 propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
             End If
 
+
         Catch ex As NullReferenceException
             ' If the StatusLabel BorderSides tag is missing, then ask the user if they want to set their theme to Default in My.Settings
             ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
@@ -974,12 +975,53 @@ Public Class UXLLauncher_ThemeEngine
             End If
         End Try
 #End Region
+        ' Try to pull StatusLabel BorderStyle stuff from XML.
+        Try
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText = "SunkenInner" Then
+                propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
+            Else
+                propertyStatusLabelBorderStyle = Border3DStyle.Flat
+            End If
 
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText = "SunkenInner" Then
-            propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
-        Else
-            propertyStatusLabelBorderStyle = Border3DStyle.Flat
-        End If
+
+        Catch ex As NullReferenceException
+            ' If the StatusLabel BorderStyle tag is missing, then ask the user if they want to set their theme to Default in My.Settings
+            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
+            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper StatusLabel BorderStyle XML element for the BorderStyle property on the StatusLabel control." & vbCrLf &
+                "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
+                "" & vbCrLf &
+               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
+                "" & vbCrLf &
+                "Click ""No"" to close UXL Launcher." & vbCrLf &
+                "" & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
+            If msgResult = DialogResult.Yes Then
+                My.Settings.userChosenTheme = "Default"
+                ' Save settings.
+                My.Settings.Save()
+                Application.Restart()
+            ElseIf msgResult = DialogResult.No Then
+                aaformMainWindow.Close()
+            End If
+
+        Catch ex As Exception
+            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
+            ' bug report.
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
+        End Try
+
 
 #Region "Define Short-words."
         ' Create a short-form word for "Control."
