@@ -837,8 +837,49 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
-        ' Pull the StatusLabel colors from XML.
-        colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
+        ' Try to pull the StatusLabel colors from XML.
+        Try
+            colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
+
+
+        Catch ex As NullReferenceException
+            ' If the StatusLabel BackColor tag is missing, then ask the user if they want to set their theme to Default in My.Settings
+            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
+            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper StatusLabel BackColor XML element for the BackColor property on the StatusLabel control." & vbCrLf &
+                "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
+                "" & vbCrLf &
+               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
+                "" & vbCrLf &
+                "Click ""No"" to close UXL Launcher." & vbCrLf &
+                "" & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
+            If msgResult = DialogResult.Yes Then
+                My.Settings.userChosenTheme = "Default"
+                ' Save settings.
+                My.Settings.Save()
+                Application.Restart()
+            ElseIf msgResult = DialogResult.No Then
+                aaformMainWindow.Close()
+            End If
+
+        Catch ex As Exception
+            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
+            ' bug report.
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
+        End Try
+
         colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
 
         ' Pull other StatusLabel stuff from XML.

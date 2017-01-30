@@ -42,11 +42,11 @@
 
       <MenuItem>
         <BackColor>White</BackColor>
-        <!--<ForeColor>Black</ForeColor>-->
+        <ForeColor>Black</ForeColor>
       </MenuItem>
 
       <StatusLabel>
-        <BackColor>Transparent</BackColor>
+        <!--<BackColor>Transparent</BackColor>-->
         <ForeColor>Black</ForeColor>
         
         <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
