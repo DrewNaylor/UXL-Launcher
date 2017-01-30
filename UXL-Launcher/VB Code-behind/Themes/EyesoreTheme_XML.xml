@@ -37,11 +37,11 @@
 
       <TextBox>
         <BackColor>Red</BackColor>
-        <!--<ForeColor>White</ForeColor>-->
+        <ForeColor>White</ForeColor>
       </TextBox>
 
       <MenuItem>
-        <BackColor>White</BackColor>
+        <!--<BackColor>White</BackColor>-->
         <ForeColor>Black</ForeColor>
       </MenuItem>
 
