@@ -11,7 +11,7 @@
       </Button>
       
       <GroupBox>
-        <!--<BackColor>Red</BackColor>-->
+        <BackColor>Red</BackColor>
         <ForeColor>White</ForeColor>
       </GroupBox>
 

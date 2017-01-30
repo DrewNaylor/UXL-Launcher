@@ -132,7 +132,7 @@ Partial Class aaformMainWindow
         Me.menubarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarFileMenu, Me.menubarViewMenu, Me.menubarToolsMenu, Me.menubarHelpMenu})
         Me.menubarMainWindow.Location = New System.Drawing.Point(0, 0)
         Me.menubarMainWindow.Name = "menubarMainWindow"
-        Me.menubarMainWindow.Size = New System.Drawing.Size(640, 23)
+        Me.menubarMainWindow.Size = New System.Drawing.Size(630, 23)
         Me.menubarMainWindow.TabIndex = 0
         Me.menubarMainWindow.Text = "MenuStrip1"
         '
@@ -364,10 +364,10 @@ Partial Class aaformMainWindow
         '
         Me.statusbarMainWindow.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.statusbarMainWindow.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusbarLabelWelcomeText})
-        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 505)
+        Me.statusbarMainWindow.Location = New System.Drawing.Point(0, 494)
         Me.statusbarMainWindow.Name = "statusbarMainWindow"
         Me.statusbarMainWindow.Padding = New System.Windows.Forms.Padding(0, 0, 7, 0)
-        Me.statusbarMainWindow.Size = New System.Drawing.Size(640, 22)
+        Me.statusbarMainWindow.Size = New System.Drawing.Size(630, 22)
         Me.statusbarMainWindow.SizingGrip = False
         Me.statusbarMainWindow.TabIndex = 1
         Me.statusbarMainWindow.Text = "StatusStrip1"
@@ -390,7 +390,7 @@ Partial Class aaformMainWindow
         Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 23)
         Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(2)
         Me.flowLayoutPanel.Name = "flowLayoutPanel"
-        Me.flowLayoutPanel.Size = New System.Drawing.Size(640, 504)
+        Me.flowLayoutPanel.Size = New System.Drawing.Size(630, 493)
         Me.flowLayoutPanel.TabIndex = 2
         '
         'groupboxStandardApps
@@ -412,7 +412,7 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
         Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 478)
+        Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 467)
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
@@ -564,7 +564,7 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxProApps.Name = "groupboxProApps"
         Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxProApps.Size = New System.Drawing.Size(190, 478)
+        Me.groupboxProApps.Size = New System.Drawing.Size(190, 467)
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
@@ -572,7 +572,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(12, 408)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(12, 394)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
         Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(144, 13)
@@ -582,7 +582,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeTitle
         '
         Me.debugLabelXmlThemeTitle.AutoSize = True
-        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(10, 382)
+        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(10, 368)
         Me.debugLabelXmlThemeTitle.Name = "debugLabelXmlThemeTitle"
         Me.debugLabelXmlThemeTitle.Size = New System.Drawing.Size(133, 13)
         Me.debugLabelXmlThemeTitle.TabIndex = 24
@@ -591,7 +591,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeDescription
         '
         Me.debugLabelXmlThemeDescription.AutoSize = True
-        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(10, 394)
+        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(10, 380)
         Me.debugLabelXmlThemeDescription.Name = "debugLabelXmlThemeDescription"
         Me.debugLabelXmlThemeDescription.Size = New System.Drawing.Size(166, 13)
         Me.debugLabelXmlThemeDescription.TabIndex = 23
@@ -600,7 +600,7 @@ Partial Class aaformMainWindow
         'debugLabelForMSIInstall
         '
         Me.debugLabelForMSIInstall.AutoSize = True
-        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(7, 363)
+        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(7, 349)
         Me.debugLabelForMSIInstall.Name = "debugLabelForMSIInstall"
         Me.debugLabelForMSIInstall.Size = New System.Drawing.Size(124, 13)
         Me.debugLabelForMSIInstall.TabIndex = 22
@@ -609,7 +609,7 @@ Partial Class aaformMainWindow
         'debugLabelForofficeDriveLocation
         '
         Me.debugLabelForofficeDriveLocation.AutoSize = True
-        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(7, 300)
+        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(7, 286)
         Me.debugLabelForofficeDriveLocation.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeDriveLocation.Name = "debugLabelForofficeDriveLocation"
         Me.debugLabelForofficeDriveLocation.Size = New System.Drawing.Size(170, 13)
@@ -619,7 +619,7 @@ Partial Class aaformMainWindow
         'debugLabelForuserOfficeVersion
         '
         Me.debugLabelForuserOfficeVersion.AutoSize = True
-        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(7, 350)
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(7, 336)
         Me.debugLabelForuserOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
         Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(161, 13)
@@ -629,7 +629,7 @@ Partial Class aaformMainWindow
         'debugLabelForofficeInstallMethodString
         '
         Me.debugLabelForofficeInstallMethodString.AutoSize = True
-        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(7, 324)
+        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(7, 310)
         Me.debugLabelForofficeInstallMethodString.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
         Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(167, 26)
@@ -639,7 +639,7 @@ Partial Class aaformMainWindow
         'debugLabelForcpuTypeString
         '
         Me.debugLabelForcpuTypeString.AutoSize = True
-        Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(7, 312)
+        Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(7, 298)
         Me.debugLabelForcpuTypeString.Name = "debugLabelForcpuTypeString"
         Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(147, 13)
         Me.debugLabelForcpuTypeString.TabIndex = 18
@@ -648,7 +648,7 @@ Partial Class aaformMainWindow
         'debugLabelForAlwaysOnTop
         '
         Me.debugLabelForAlwaysOnTop.AutoSize = True
-        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 432)
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 418)
         Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
         Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(167, 26)
@@ -756,7 +756,7 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
         Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 478)
+        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 467)
         Me.groupboxExtraApps.TabIndex = 2
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
@@ -866,7 +866,7 @@ Partial Class aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(640, 527)
+        Me.ClientSize = New System.Drawing.Size(630, 516)
         Me.Controls.Add(Me.statusbarMainWindow)
         Me.Controls.Add(Me.flowLayoutPanel)
         Me.Controls.Add(Me.menubarMainWindow)
