@@ -46,8 +46,8 @@
       </MenuItem>
 
       <StatusLabel>
-        <!--<BackColor>Transparent</BackColor>-->
-        <ForeColor>Black</ForeColor>
+        <BackColor>Transparent</BackColor>
+        <!--<ForeColor>Black</ForeColor>-->
         
         <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
         <BorderSides>All</BorderSides>
