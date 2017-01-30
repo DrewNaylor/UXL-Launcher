@@ -32,11 +32,11 @@
 
       <Label>
         <BackColor>Transparent</BackColor>
-        <!--<ForeColor>White</ForeColor>-->
+        <ForeColor>White</ForeColor>
       </Label>
 
       <TextBox>
-        <BackColor>Red</BackColor>
+        <!--<BackColor>Red</BackColor>-->
         <ForeColor>White</ForeColor>
       </TextBox>
 
