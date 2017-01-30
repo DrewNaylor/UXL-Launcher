@@ -658,6 +658,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "TextBox BackColor."
         ' Try to pull the TextBox BackColor from XML.
         Try
             colorTextboxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager).InnerText)
@@ -700,6 +701,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
+#End Region
 
         colorTextboxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/ForeColor[1]", themeNamespaceManager).InnerText)
 
