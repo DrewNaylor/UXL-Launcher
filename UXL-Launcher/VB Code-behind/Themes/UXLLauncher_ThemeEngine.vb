@@ -569,7 +569,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
-
+#Region "Label BackColor"
         ' Try to pull the Label colors from XML.
         Try
             colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
@@ -612,6 +612,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
+#End Region
 
         colorLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager).InnerText)
 
