@@ -976,7 +976,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
-
+#Region "StatusLabel BorderStyle."
         ' Try to pull StatusLabel BorderStyle stuff from XML.
         Try
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText = "SunkenInner" Then
@@ -1023,7 +1023,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
-
+#End Region
 
 #Region "Define Short-words."
         ' Create a short-form word for "Control."
