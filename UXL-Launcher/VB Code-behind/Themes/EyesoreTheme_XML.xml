@@ -31,7 +31,7 @@
       </StatusBar>
 
       <Label>
-        <BackColor>Transparent</BackColor>
+        <!--<BackColor>Transparent</BackColor>-->
         <ForeColor>White</ForeColor>
       </Label>
 
