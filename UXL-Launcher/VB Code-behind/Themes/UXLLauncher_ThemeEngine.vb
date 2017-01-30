@@ -614,6 +614,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "Label ForeColor"
         ' Try to pull the Label ForeColor from XML.
         Try
             colorLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager).InnerText)
@@ -655,7 +656,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
-
+#End Region
 
         ' Pull the TextBox colors from XML.
         colorTextboxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager).InnerText)
