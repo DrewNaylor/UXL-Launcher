@@ -27,7 +27,7 @@
       </MenuBar>
       
       <StatusBar>
-        <BackColor>LightGray</BackColor>
+        <!--<BackColor>LightGray</BackColor>-->
       </StatusBar>
 
       <Label>
