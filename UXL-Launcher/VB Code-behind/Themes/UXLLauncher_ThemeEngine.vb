@@ -975,6 +975,8 @@ Public Class UXLLauncher_ThemeEngine
             End If
         End Try
 #End Region
+
+
         ' Try to pull StatusLabel BorderStyle stuff from XML.
         Try
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText = "SunkenInner" Then
