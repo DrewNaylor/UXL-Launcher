@@ -792,6 +792,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "MenuItem ForeColor."
         ' Try to pull the MenuItem ForeColor from XML.
         Try
             colorMenuItemForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ForeColor[1]", themeNamespaceManager).InnerText)
@@ -834,7 +835,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
-
+#End Region
 
         ' Pull the StatusLabel colors from XML.
         colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
