@@ -525,6 +525,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "StatusBar BackColor."
         ' Try to pull the StatusBar colors from XML.
         Try
             colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
@@ -566,6 +567,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
+#End Region
 
 
         ' Pull the Label colors from XML.
