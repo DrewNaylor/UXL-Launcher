@@ -16,8 +16,8 @@
       </GroupBox>
 
       <FlowLayoutPanel>
-        <!--<BackColor>Yellow</BackColor>-->
-        <ForeColor>Black</ForeColor>
+        <BackColor>Yellow</BackColor>
+        <!--<ForeColor>Black</ForeColor>-->
       </FlowLayoutPanel>
       
       <MenuBar>
