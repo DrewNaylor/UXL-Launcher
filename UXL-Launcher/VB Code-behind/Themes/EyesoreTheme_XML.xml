@@ -36,8 +36,8 @@
       </Label>
 
       <TextBox>
-        <!--<BackColor>Red</BackColor>-->
-        <ForeColor>White</ForeColor>
+        <BackColor>Red</BackColor>
+        <!--<ForeColor>White</ForeColor>-->
       </TextBox>
 
       <MenuItem>

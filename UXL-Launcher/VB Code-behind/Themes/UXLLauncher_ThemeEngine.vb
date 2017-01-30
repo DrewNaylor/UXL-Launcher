@@ -703,6 +703,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "TextBox ForeColor."
         ' Try to pull the TextBox ForeColor from XML.
         Try
             colorTextboxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/ForeColor[1]", themeNamespaceManager).InnerText)
@@ -744,6 +745,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
+#End Region
 
 
         ' Pull the MenuItem colors from XML.
