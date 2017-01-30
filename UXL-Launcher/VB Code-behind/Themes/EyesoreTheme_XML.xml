@@ -17,7 +17,7 @@
 
       <FlowLayoutPanel>
         <BackColor>Yellow</BackColor>
-        <!--<ForeColor>Black</ForeColor>-->
+        <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
       
       <MenuBar>
