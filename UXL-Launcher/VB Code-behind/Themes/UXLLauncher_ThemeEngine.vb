@@ -751,6 +751,8 @@ Public Class UXLLauncher_ThemeEngine
         ' Try to pull the MenuItem BackColor from XML.
         Try
             colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
+
+
         Catch ex As NullReferenceException
             ' If the MenuItem BackColor tag is missing, then ask the user if they want to set their theme to Default in My.Settings
             ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
