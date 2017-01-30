@@ -837,6 +837,7 @@ Public Class UXLLauncher_ThemeEngine
         End Try
 #End Region
 
+#Region "StatusLabel BackColor."
         ' Try to pull the StatusLabel colors from XML.
         Try
             colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
@@ -879,6 +880,7 @@ Public Class UXLLauncher_ThemeEngine
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
+#End Region
 
         colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
 
