@@ -37,16 +37,26 @@ Public Class aaformMainWindow
 
         ' If the user wants to use the theme engine, then use it.
         If My.Settings.enableThemeEngine = True Then
-            ' First, choose the user's theme and apply it.
+
+            ' If the theme engine is enabled, make the 
+            ' Revert to Default Theme button enabled.
+            menubarRevertThemeButton.Enabled = True
+
+            ' Next, choose the user's theme and apply it.
             UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
-            ' Next, give the menubar a renderer.
+
+            ' Then, give the menubar a renderer.
             menubarMainWindow.Renderer = UXLToolstripRenderer
             contextmenuNotifyicon.Renderer = UXLToolstripRenderer
+        Else
+
+            ' If the theme engine is disabled, make the
+            ' Revert to Default Theme button disabled.
+            menubarRevertThemeButton.Enabled = False
         End If
 
+
 #End Region
-
-
 
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
@@ -97,6 +107,16 @@ Public Class aaformMainWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
         forceOptionsWindowTab.ShowDialog()
     End Sub
+
+#Region "Revert to Default Theme button."
+    Private Sub menubarRevertThemeButton_Click(sender As Object, e As EventArgs) Handles menubarRevertThemeButton.Click
+        ' Attempt to revert to the default theme.
+        If My.Settings.enableThemeEngine = True Then
+            UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
+            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+        End If
+    End Sub
+#End Region
 
 #Region "Always On Top menubar button checkbox and stuff."
     Private Sub menubarAlwaysOnTopButton_Click(sender As Object, e As EventArgs) Handles menubarAlwaysOnTopButton.Click
