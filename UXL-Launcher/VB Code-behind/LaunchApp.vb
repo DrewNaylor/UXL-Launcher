@@ -25,284 +25,62 @@
 Public Class LaunchApp
 #Region "The code in this region is for launching the apps when buttons are pressed."
 
+    Public Shared exeName As String
+
 #Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "MSACCESS.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Access in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "MSACCESS.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft Excel Launcher Code."
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "EXCEL.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Excel isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Excel in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "EXCEL.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "INFOPATH.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Infopath isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft InfoPath in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "INFOPATH.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft OneNote Launcher Code."
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "ONENOTE.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Onenote isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft OneNote in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "ONENOTE.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft Outlook Launcher Code."
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "OUTLOOK.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Outlook isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Outlook in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "OUTLOOK.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft PowerPoint Launcher Code."
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "POWERPNT.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Powerpoint isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft PowerPoint in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "POWERPNT.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "GROOVE.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Sharepoint Workspace isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft SharePoint Workspace in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "GROOVE.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft Publisher Launcher Code."
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & "MSPUB.EXE")
-        Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Publisher isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find Microsoft Publisher in the location specified in the Options window." &
-            " Would you like to open the Options window to change your settings?" & vbCrLf &
-                "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses to open the Options window, open the Options window to the General tab.
-            If msgResult = DialogResult.Yes Then
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
-            End If
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        exeName = "MSPUB.EXE"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft Word Launcher Code."
