@@ -47,11 +47,12 @@ Public Class aaformAboutWindow
 
         ' Create a string with the BuildDate.txt file.
         Dim BuildDateString As String = My.Resources.BuildDate
+        BuildDateString = BuildDateString.TrimEnd(CType(vbCrLf, Char()))
 
         ' Put the text in the About box on launch.
         textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
 "Version " & My.Application.Info.Version.ToString & " Git - Codename ""Personalizationizer 3000""" & vbCrLf &
-"App compiled at UTC: " & BuildDateString &
+"App compiled at UTC: " & BuildDateString & vbCrLf &
 "Copyright (C) 2013-2017  Drew Naylor" & vbCrLf &
 "" & vbCrLf &
 "UXL Launcher provides launchers for most Microsoft Office apps in one place." & vbCrLf &
