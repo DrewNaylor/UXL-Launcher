@@ -40,6 +40,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "EXCEL.EXE"
+        exeFriendlyName = "Microsoft Excel"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
@@ -47,6 +48,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "INFOPATH.EXE"
+        exeFriendlyName = "Microsoft InfoPath"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
@@ -54,6 +56,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "ONENOTE.EXE"
+        exeFriendlyName = "Microsoft OneNote"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
