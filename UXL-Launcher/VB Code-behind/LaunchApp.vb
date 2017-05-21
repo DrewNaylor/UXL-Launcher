@@ -128,6 +128,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "ONENOTEM.EXE"
+        exeFriendlyName = "Microsoft OneNote Quick Launch"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
