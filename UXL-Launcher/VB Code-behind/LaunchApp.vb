@@ -80,6 +80,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "GROOVE.EXE"
+        exeFriendlyName = "Microsoft SharePoint Workspace"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
@@ -87,6 +88,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "MSPUB.EXE"
+        exeFriendlyName = "Microsoft Publisher"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
@@ -94,6 +96,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "WINWORD.EXE"
+        exeFriendlyName = "Microsoft Word"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
