@@ -26,11 +26,13 @@ Public Class LaunchApp
 #Region "The code in this region is for launching the apps when buttons are pressed."
 
     Public Shared exeName As String
+    Public Shared exeFriendlyName As String
 
 #Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "MSACCESS.EXE"
+        exeFriendlyName = "Microsoft Access"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
