@@ -104,20 +104,23 @@ Public Class LaunchApp
     Public Shared Sub LaunchQuery()
         ' Launch Microsoft Query. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "MSQRY32.EXE"
-            isolated_error_handler.launcherErrorHandler()
+        exeFriendlyName = "Microsoft Query"
+        isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
 #Region "Microsoft Clip Organizer Launcher Code."
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "MSTORE.EXE"
+        exeFriendlyName = "Microsoft Clip Organizer"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
-#Region "Microsoft Picture Manager Launcher Code."
+#Region "Microsoft Office Picture Manager Launcher Code."
     Public Shared Sub LaunchPictureManager()
-        ' Launch Microsoft Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
+        ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "OIS.EXE"
+        exeFriendlyName = "Microsoft Office Picture Manager"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
