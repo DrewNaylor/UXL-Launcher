@@ -57,8 +57,12 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
 
+<br>
+<br>
 
-# System Requirements for running UXL Launcher
+# System Requirements
+
+## System Requirements for running UXL Launcher
 
 To run UXL Launcher, your computer requires the following:
 
@@ -78,13 +82,11 @@ To run UXL Launcher, your computer requires the following:
   - 32-bit: 3 GB space free.
   - 64-bit: 3 GB space free.
 
-- To properly view the License and Acknowledgements in the About window, you'll need Internet Explorer.
+- To properly view the License and Acknowledgements in the About window, you'll need Internet Explorer if you're using Version 3.0. Version 3.1 removes this requirement.
 
 - Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems.
-<br>
-<br>
-<br>
-# System Requirements to build UXL Launcher from source
+
+## Building UXL Launcher from Source: System Requirements and Guide
 
 In addition to the requirements for simply running UXL Launcher, your computer requires the following software to build it from source code:
 
@@ -106,9 +108,7 @@ If you don't want to use a script to build UXL Launcher, here's how to do it man
 3. Third, type <code>msbuild.exe</code>, press the spacebar, and drag the <code>UXL-Launcher.vbproj</code> into the command prompt window and press the Enter or Return key.
 
 4. And finally, once the project is done being built, you'll find the UXL Launcher EXE file in <code>UXL-Launcher\UXL-Launcher\bin\Debug </code> wherever you saved the files to earlier along with a config file, a PDB file, and an XML file.
-<br>
-<br>
-<br>
-# How to Modify the Source Code
+
+## How to Modify the Source Code
 
 In order to play around with the source code, it's recommended to install [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) in addition to the software to run UXL Launcher. To poke around in the code, simply double-click the <code>UXL-Launcher.sln</code> file in the root of the Git repository.

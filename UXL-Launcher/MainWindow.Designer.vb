@@ -170,7 +170,8 @@ Partial Class aaformMainWindow
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
         Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
-        Me.menubarRevertThemeButton.Text = "Revert to Default Theme"
+
+        Me.menubarRevertThemeButton.Text = "&Revert to Default Theme"
         Me.menubarRevertThemeButton.ToolTipText = resources.GetString("menubarRevertThemeButton.ToolTipText")
         '
         'menubarToolsMenu
@@ -187,7 +188,8 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.Name = "menubarOfficeLangPrefsButton"
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
         Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
-        Me.menubarOfficeLangPrefsButton.Text = "Office Language Preferences"
+        Me.menubarOfficeLangPrefsButton.Text = "O&ffice Language Preferences"
+
         '
         'zseparatorToolsMenu1
         '

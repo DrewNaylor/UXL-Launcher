@@ -195,7 +195,6 @@
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\TestTheme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
-    <None Include="Resources\gpl.rtf" />
     <None Include="Resources\Word.png" />
     <None Include="Resources\Sharepoint Workspace.png" />
     <None Include="Resources\Publisher.png" />
@@ -213,8 +212,6 @@
     <None Include="Resources\small Language Settings.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
-    <None Include="Resources\gpl-3.0-standalone.html" />
-    <None Include="Resources\Acknowledgments.html" />
     <None Include="Resources\UXL_Launcher_Icon_Small.ico" />
     <None Include="Resources\small-icons\small-Access.png" />
     <None Include="Resources\small-icons\small-Excel.png" />
