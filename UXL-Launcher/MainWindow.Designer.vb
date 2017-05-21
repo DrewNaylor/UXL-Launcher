@@ -170,6 +170,7 @@ Partial Class aaformMainWindow
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
         Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
+
         Me.menubarRevertThemeButton.Text = "&Revert to Default Theme"
         Me.menubarRevertThemeButton.ToolTipText = resources.GetString("menubarRevertThemeButton.ToolTipText")
         '
@@ -188,6 +189,7 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
         Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
         Me.menubarOfficeLangPrefsButton.Text = "O&ffice Language Preferences"
+
         '
         'zseparatorToolsMenu1
         '
@@ -829,7 +831,7 @@ Partial Class aaformMainWindow
         Me.buttonRunPictureManager.Name = "buttonRunPictureManager"
         Me.buttonRunPictureManager.Size = New System.Drawing.Size(105, 50)
         Me.buttonRunPictureManager.TabIndex = 24
-        Me.buttonRunPictureManager.Text = "Microsoft Picture Manager"
+        Me.buttonRunPictureManager.Text = "Microsoft Office Picture Manager"
         Me.buttonRunPictureManager.UseVisualStyleBackColor = True
         '
         'picturePictureManagerIcon
