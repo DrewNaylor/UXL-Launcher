@@ -64,6 +64,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "OUTLOOK.EXE"
+        exeFriendlyName = "Microsoft Outlook"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
@@ -71,6 +72,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeName = "POWERPNT.EXE"
+        exeFriendlyName = "Microsoft PowerPoint"
         isolated_error_handler.launcherErrorHandler()
     End Sub
 #End Region
