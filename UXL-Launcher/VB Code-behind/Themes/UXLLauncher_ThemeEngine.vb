@@ -42,7 +42,11 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
-        themeSheet.LoadXml(userTheme)
+        If userTheme = Nothing Then
+            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+        Else
+            themeSheet.LoadXml(userTheme)
+        End If
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -1146,21 +1150,21 @@ Public Class UXLLauncher_ThemeEngine
         Dim settingsThemeName As String = My.Settings.userChosenTheme
 
         If settingsThemeName.Contains("Theme") Then
-
+            userTheme
         End If
 
         ' Choose the proper theme based on what the user chose.
-        If My.Settings.userChosenTheme = "Test" Then
-            userTheme = My.Resources.TestTheme_XML
+        'If My.Settings.userChosenTheme = "Test" Then
+        '    userTheme = My.Resources.TestTheme_XML
 
-        ElseIf My.Settings.userChosenTheme = "Default" Then
-            userTheme = My.Resources.DefaultTheme_XML
+        'ElseIf My.Settings.userChosenTheme = "Default" Then
+        '    userTheme = My.Resources.DefaultTheme_XML
 
-        ElseIf My.Settings.userChosenTheme = "Eyesore" Then
-            userTheme = My.Resources.EyesoreTheme_XML
-        Else
-            userTheme = My.Resources.DefaultTheme_XML
-        End If
+        'ElseIf My.Settings.userChosenTheme = "Eyesore" Then
+        '    userTheme = My.Resources.EyesoreTheme_XML
+        'Else
+        '    userTheme = My.Resources.DefaultTheme_XML
+        'End If
 
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
