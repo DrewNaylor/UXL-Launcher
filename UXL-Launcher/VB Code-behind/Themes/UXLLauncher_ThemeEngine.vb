@@ -338,10 +338,10 @@ Public Class UXLLauncher_ThemeEngine
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-        ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-        If msgResult = DialogResult.Yes Then
-            Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-        End If
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
         End Try
 
 #End Region
@@ -428,10 +428,10 @@ Public Class UXLLauncher_ThemeEngine
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-        ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-        If msgResult = DialogResult.Yes Then
-            Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-        End If
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
         End Try
 #End Region
 
@@ -1142,6 +1142,12 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Start the theme engine and apply the user's theme."
     Public Shared Sub themeEngine_ChooseUserTheme()
+
+        Dim settingsThemeName As String = My.Settings.userChosenTheme
+
+        If settingsThemeName.Contains("Theme") Then
+
+        End If
 
         ' Choose the proper theme based on what the user chose.
         If My.Settings.userChosenTheme = "Test" Then
