@@ -109,11 +109,22 @@ Public Class UXLLauncher_ThemeEngine
             themeengine_ErrorMessageBox.themeengineError()
         ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
 #Region "Pull Description theme element from XML."
-        ' Try to pull the description from XML.
+        ' Only pull the description element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) Is Nothing Then
+            themeErrorElementName = "Title"
+            themeErrorElementDescription = "Title XML element for the theme's Title displayed in the Options window."
+            themeengine_ErrorMessageBox.themeengineError()
+        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        End If
+
+
         Try
             themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
             aaformMainWindow.debugLabelXmlThemeDescription.Text = themeSheetDescription
