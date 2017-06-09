@@ -37,18 +37,18 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
 
+    ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
+    ' the messagebox "No" button for a missing XML element will instead close
+    ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
     Friend Shared safetynetThemeSheet As String = "0"
 
     Public Shared Sub themeEngine_ApplyTheme()
-
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
-        ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
-        ' the messagebox "No" button for a missing XML element will instead close
-        ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
 
-
+        ' Make sure the user's computer doesn't crash; see comment about
+        ' safetynetThemeSheet above.
         If userTheme = Nothing Then
             themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             safetynetThemeSheet = "1"
