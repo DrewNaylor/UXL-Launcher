@@ -89,7 +89,36 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-01-26T03:03:49
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;YAY&lt;/Title&gt;
+        '''  &lt;Description&gt;This is another theme&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;blue&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;blue&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;BackColor&gt;Yellow&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Purple&lt;/ForeColor&gt;
+        '''      &lt;/FlowLayoutPa [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property AnotherTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("AnotherTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 2017-06-09T01:46:27
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -112,6 +141,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
@@ -126,8 +156,7 @@ Namespace My.Resources
         '''      &lt;/GroupBox&gt;
         '''
         '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property DefaultTheme_XML() As String
             Get
@@ -149,21 +178,18 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
         '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme.&lt;/Description&gt;
+        '''  &lt;Author&gt;Original Hotdog Stand theme by Microsoft; implemented as UXL Launcher theme by Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''        &lt;BackColor&gt;LightGray&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Black&lt;/ForeColor&gt;
         '''      &lt;/Button&gt;
         '''      
         '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Window&lt;/BackColo [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;Red&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/Fore [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property EyesoreTheme_XML() As String
             Get
@@ -378,8 +404,9 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Test Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;UXL Launcher Test Theme&lt;/Description&gt;
+        '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
+        '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
@@ -391,14 +418,7 @@ Namespace My.Resources
         '''      &lt;GroupBox&gt;
         '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
         '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Yellow&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Purple&lt;/ForeColor&gt;
-        '''      &lt;/FlowLayoutPanel&gt;
-        '''
-        '''      &lt;MenuB [rest of string was truncated]&quot;;.
+        '''      &lt;/GroupBox&gt;        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property TestTheme_XML() As String
             Get

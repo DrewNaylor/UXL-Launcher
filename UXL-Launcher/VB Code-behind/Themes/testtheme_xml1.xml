@@ -1,0 +1,61 @@
+﻿<UXL_Launcher_Theme>
+  <Title>YAY</Title>
+  <Description>This is another theme</Description>
+  <Author>Drew Naylor</Author>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>blue</BackColor>
+        <ForeColor>White</ForeColor>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>blue</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Yellow</BackColor>
+        <ForeColor>Purple</ForeColor>
+      </FlowLayoutPanel>
+      
+      <MenuBar>
+        <!--The MenuBar BackColor variable is here because of problems with the custom ProfessionalRenderer.
+        The BackColor value of MenuItem overrides the BackColor value of MenuBar.-->
+        <BackColor>Purple</BackColor>
+      </MenuBar>
+
+      <StatusBar>
+        <BackColor>CadetBlue</BackColor>
+      </StatusBar>
+
+      <Label>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <TextBox>
+        <BackColor>Beige</BackColor>
+        <ForeColor>DarkViolet</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <BackColor>Purple</BackColor>
+        <ForeColor>AntiqueWhite</ForeColor>
+      </MenuItem>
+
+      <StatusLabel>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+        
+        <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
+        <BorderSides>All</BorderSides>
+        
+        <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
+        <BorderStyle>SunkenInner</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>
