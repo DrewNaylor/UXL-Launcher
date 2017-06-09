@@ -1147,11 +1147,11 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Start the theme engine and apply the user's theme."
     Public Shared Sub themeEngine_ChooseUserTheme()
 
-        Dim settingsThemeName As String = My.Settings.userChosenTheme.ToUpper
+        Dim settingsThemeName As String = My.Settings.userChosenTheme
 
-        If Not settingsThemeName.Contains("THEME") Then
+        If Not settingsThemeName.IndexOf("Theme", 0, StringComparison.CurrentCultureIgnoreCase) > -1 Then
             userTheme = My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML")
-        ElseIf settingsThemeName.Contains("THEME") Then
+        ElseIf settingsThemeName.IndexOf("Theme", 0, StringComparison.CurrentCultureIgnoreCase) > -1 Then
             userTheme = My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML")
         Else
             userTheme = My.Resources.DefaultTheme_XML
