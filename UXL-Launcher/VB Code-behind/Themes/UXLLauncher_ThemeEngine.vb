@@ -46,13 +46,14 @@ Public Class UXLLauncher_ThemeEngine
         ' the messagebox "No" button for a missing XML element will instead close
         ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
         Dim safetynetThemeSheet As String = "0"
-        If userTheme = Nothing Then
-            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-            safetynetThemeSheet = "1"
-        Else
-            themeSheet.LoadXml(userTheme)
-            safetynetThemeSheet = "1"
-        End If
+
+        'If userTheme = Nothing Then
+        '    themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+        '    safetynetThemeSheet = "1"
+        'Else
+        '    themeSheet.LoadXml(userTheme)
+        '    safetynetThemeSheet = "1"
+        'End If
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -112,21 +113,29 @@ Public Class UXLLauncher_ThemeEngine
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
-            If msgResult = DialogResult.Yes Then
+            If msgResult = DialogResult.Yes And safetynetThemeSheet = "1" Then
                 My.Settings.userChosenTheme = "Default"
                 ' Save settings.
                 My.Settings.Save()
                 Application.Restart()
+
+            ElseIf msgResult = DialogResult.Yes And safetynetThemeSheet IsNot "1" Then
+                MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML is not commented out. Aborting...")
+                Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
+
+            ElseIf msgResult = DialogResult.No And safetynetThemeSheet IsNot "1" Then
                 ' If the safteynetThemeSheet didn't get updated to "1," use TaskKill to immediately
                 ' terminate all instances of UXL-Launcher.exe so that it doesn't lock up the user's computer.
-            ElseIf msgResult = DialogResult.No And safetynetThemeSheet IsNot "1" Then
+
                 ' Only problem with using taskkill is that a CMD window will briefly show up, but
                 ' this should only show up if the safetynetThemeSheet wasn't updated to "1"
                 ' which would only happen if someone didn't allow the code at the top of
                 ' themeEngine_ApplyTheme() to run where the XML document is loaded.
                 Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
             ElseIf msgResult = DialogResult.No Then
+                ' Otherwise, just exit the app.
                 Application.Exit()
+
             End If
         End Try
 #End Region
