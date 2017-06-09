@@ -1151,8 +1151,13 @@ Public Class UXLLauncher_ThemeEngine
 
         If Not settingsThemeName.Contains("Theme") Then
             userTheme = My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML")
-            Debug.WriteLine(userTheme)
+        ElseIf settingsThemeName.Contains("Theme") Then
+            userTheme = My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML")
+        Else
+            userTheme = My.Resources.DefaultTheme_XML
         End If
+
+        Debug.WriteLine(userTheme)
 
         ' Choose the proper theme based on what the user chose.
         'If My.Settings.userChosenTheme = "Test" Then
