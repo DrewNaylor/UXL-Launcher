@@ -1161,7 +1161,12 @@ Public Class UXLLauncher_ThemeEngine
         Else
             userTheme = My.Resources.DefaultTheme_XML
         End If
+        ' After this is all done, we then write the settingsThemeName string and the actual XML document
+        ' containing the theme to the Debugger.
+        Debug.WriteLine("Theme name in config file:")
         Debug.WriteLine(settingsThemeName)
+        Debug.WriteLine("")
+        Debug.WriteLine("Theme XML Document:")
         Debug.WriteLine(userTheme)
 
         ' Choose the proper theme based on what the user chose.
