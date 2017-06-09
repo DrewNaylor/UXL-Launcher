@@ -49,7 +49,7 @@ Public Class themeengine_ErrorMessageBox
         ElseIf msgResult = DialogResult.Yes And UXLLauncher_ThemeEngine.safetynetThemeSheet IsNot "1" Then
             ' If the user clicked Yes but the safetynetThemeSheet isn't "1," kill the app so it doesn't crash
             ' their computer.
-            MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...")
+            MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...", "safetynetThemeSheet not set to 1", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
 
         ElseIf msgResult = DialogResult.No And UXLLauncher_ThemeEngine.safetynetThemeSheet IsNot "1" Then
@@ -60,7 +60,7 @@ Public Class themeengine_ErrorMessageBox
             ' this should only show up if the safetynetThemeSheet wasn't updated to "1"
             ' which would only happen if someone didn't allow the code at the top of
             ' themeEngine_ApplyTheme() to run where the XML document is loaded.
-            MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...")
+            MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...", "safetynetThemeSheet not set to 1", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
         ElseIf msgResult = DialogResult.No Then
             ' Otherwise, just exit the app.
