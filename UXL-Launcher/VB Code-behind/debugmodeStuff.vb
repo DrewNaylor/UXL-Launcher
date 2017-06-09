@@ -89,6 +89,7 @@ Public Class debugmodeStuff
         ' Debug labels for theme titles and descriptions.
         aaformMainWindow.debugLabelXmlThemeTitle.Text = UXLLauncher_ThemeEngine.themeSheetTitle
         aaformMainWindow.debugLabelXmlThemeDescription.Text = UXLLauncher_ThemeEngine.themeSheetDescription
+        aaformMainWindow.debugLabelXmlThemeAuthor.Text = UXLLauncher_ThemeEngine.themeSheetAuthor
 
     End Sub
 #End Region
