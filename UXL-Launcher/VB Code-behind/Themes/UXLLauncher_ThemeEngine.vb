@@ -95,12 +95,10 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Pull theme colors from XML documents."
 
 #Region "Try/Catch block for Title theme element."
-        ' Try to pull the title from XML.
 
-        'aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
-
+        ' Only pull the title element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) Is Nothing Then
-            MessageBox.Show("Theme missing title element.")
+            themeengine_ErrorMessageBox.themeengineError()
         ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
         End If

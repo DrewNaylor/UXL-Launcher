@@ -25,20 +25,19 @@
 
 Public Class themeengine_ErrorMessageBox
 
-    Public Sub themeengineError()
+    Public Shared Sub themeengineError()
         ' Instead of using Try...Catch for the theme engine when checking
         ' to see if an element exists in the XML document, I'm just going
         ' to use an If statement then call messageboxes.
 
         ' If the Description tag is missing, then ask the user if they want to set their theme to Default in My.Settings
         ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-        Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Description XML element for the theme's Description displayed in the Options window." & vbCrLf &
+        Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Description displayed in the Options window." & vbCrLf &
                 "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
                 "" & vbCrLf &
                "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
                 "" & vbCrLf &
-                "Click ""No"" to close UXL Launcher." & vbCrLf &
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                "Click ""No"" to close UXL Launcher.", "title", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
         ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
         If msgResult = DialogResult.Yes And UXLLauncher_ThemeEngine.safetynetThemeSheet = "1" Then
