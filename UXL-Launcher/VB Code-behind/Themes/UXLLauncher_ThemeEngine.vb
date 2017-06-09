@@ -1150,8 +1150,8 @@ Public Class UXLLauncher_ThemeEngine
         Dim settingsThemeName As String = My.Settings.userChosenTheme
 
         If Not settingsThemeName.Contains("Theme") Then
-            userTheme = CType(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML"), String)
-            aaformMainWindow.debugTextboxForFullLauncherCodeString.AppendText(userTheme)
+            userTheme = My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML")
+            Debug.WriteLine(userTheme)
         End If
 
         ' Choose the proper theme based on what the user chose.
