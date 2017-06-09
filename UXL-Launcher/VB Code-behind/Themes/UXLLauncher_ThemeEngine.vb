@@ -100,7 +100,7 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Pull theme colors from XML documents."
 
-#Region "Try/Catch block for Title theme element."
+#Region "Pull Title theme element from XML."
 
         ' Only pull the title element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) Is Nothing Then
@@ -112,7 +112,7 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
-#Region "Try/Catch block for Description theme element."
+#Region "Pull Description theme element from XML."
         ' Try to pull the description from XML.
         Try
             themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText

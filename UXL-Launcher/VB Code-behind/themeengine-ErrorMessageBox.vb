@@ -60,6 +60,7 @@ Public Class themeengine_ErrorMessageBox
             ' this should only show up if the safetynetThemeSheet wasn't updated to "1"
             ' which would only happen if someone didn't allow the code at the top of
             ' themeEngine_ApplyTheme() to run where the XML document is loaded.
+            MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...")
             Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
         ElseIf msgResult = DialogResult.No Then
             ' Otherwise, just exit the app.
