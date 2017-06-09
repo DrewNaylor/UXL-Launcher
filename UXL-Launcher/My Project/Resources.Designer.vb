@@ -89,36 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;YAY&lt;/Title&gt;
-        '''  &lt;Description&gt;This is another theme&lt;/Description&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;blue&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;blue&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Yellow&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Purple&lt;/ForeColor&gt;
-        '''      &lt;/FlowLayoutPa [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property AnotherTheme_XML() As String
-            Get
-                Return ResourceManager.GetString("AnotherTheme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to 2017-06-09T01:46:27
+        '''  Looks up a localized string similar to 2017-06-09T01:50:54
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String

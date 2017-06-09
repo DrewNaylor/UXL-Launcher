@@ -194,7 +194,6 @@
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\TestTheme_XML.xml" />
-    <None Include="VB Code-behind\Themes\testtheme_xml1.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
     <None Include="Resources\Word.png" />
     <None Include="Resources\Sharepoint Workspace.png" />
