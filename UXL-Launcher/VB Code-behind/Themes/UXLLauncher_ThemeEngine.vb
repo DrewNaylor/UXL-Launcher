@@ -511,7 +511,7 @@ Public Class UXLLauncher_ThemeEngine
                 My.Settings.Save()
                 Application.Restart()
             ElseIf msgResult = DialogResult.No Then
-                aaformMainWindow.Close()
+                Application.Exit()
             End If
 
         Catch ex As Exception
