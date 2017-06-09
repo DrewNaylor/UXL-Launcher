@@ -37,7 +37,7 @@ Public Class themeengine_ErrorMessageBox
                 "" & vbCrLf &
                "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
                 "" & vbCrLf &
-                "Click ""No"" to close UXL Launcher.", "title", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                "Click ""No"" to close UXL Launcher.", "Theme missing XML element", MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
         ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
         If msgResult = DialogResult.Yes And UXLLauncher_ThemeEngine.safetynetThemeSheet = "1" Then
