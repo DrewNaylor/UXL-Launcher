@@ -42,10 +42,16 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
+        ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
+        ' the messagebox "No" button for a missing XML element will instead close
+        ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
+        Dim safetynetThemeSheet As String = "0"
         If userTheme = Nothing Then
             themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            safetynetThemeSheet = "1"
         Else
             themeSheet.LoadXml(userTheme)
+            safetynetThemeSheet = "1"
         End If
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
@@ -111,8 +117,16 @@ Public Class UXLLauncher_ThemeEngine
                 ' Save settings.
                 My.Settings.Save()
                 Application.Restart()
+                ' If the safteynetThemeSheet didn't get updated to "1," use TaskKill to immediately
+                ' terminate all instances of UXL-Launcher.exe so that it doesn't lock up the user's computer.
+            ElseIf msgResult = DialogResult.No And safetynetThemeSheet IsNot "1" Then
+                ' Only problem with using taskkill is that a CMD window will briefly show up, but
+                ' this should only show up if the safetynetThemeSheet wasn't updated to "1"
+                ' which would only happen if someone didn't allow the code at the top of
+                ' themeEngine_ApplyTheme() to run where the XML document is loaded.
+                Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
             ElseIf msgResult = DialogResult.No Then
-                aaformMainWindow.Close()
+                Application.Exit()
             End If
         End Try
 #End Region
@@ -144,8 +158,10 @@ Public Class UXLLauncher_ThemeEngine
                 ' Save settings.
                 My.Settings.Save()
                 Application.Restart()
-            ElseIf msgResult = DialogResult.No Then
+            ElseIf msgResult = DialogResult.No And userTheme = Nothing Then
                 aaformMainWindow.Close()
+            ElseIf msgResult = DialogResult.No Then
+                Application.ExitThread()
             End If
 
         Catch ex As Exception
@@ -510,8 +526,8 @@ Public Class UXLLauncher_ThemeEngine
                 ' Save settings.
                 My.Settings.Save()
                 Application.Restart()
-            ElseIf msgResult = DialogResult.No Then
-                Application.Exit()
+                'ElseIf msgResult = DialogResult.No Then
+                '    Application.Exit()
             End If
 
         Catch ex As Exception
