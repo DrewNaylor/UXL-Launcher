@@ -47,13 +47,13 @@ Public Class UXLLauncher_ThemeEngine
         ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
         Dim safetynetThemeSheet As String = "0"
 
-        'If userTheme = Nothing Then
-        '    themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-        '    safetynetThemeSheet = "1"
-        'Else
-        '    themeSheet.LoadXml(userTheme)
-        '    safetynetThemeSheet = "1"
-        'End If
+        If userTheme = Nothing Then
+            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            safetynetThemeSheet = "1"
+        Else
+            themeSheet.LoadXml(userTheme)
+            safetynetThemeSheet = "1"
+        End If
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -94,52 +94,14 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Try/Catch block for Title theme element."
         ' Try to pull the title from XML.
-        Try
+
+        'aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
+
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) Is Nothing Then
+            MessageBox.Show("Theme missing title element.")
+        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-            aaformMainWindow.debugLabelXmlThemeTitle.Text = themeSheetTitle
-
-        Catch ex As NullReferenceException
-            ' If the Title tag is missing, then ask the user if they want to set their theme to Default in My.Settings
-            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper Title XML element for the theme's Title displayed in the Options window." & vbCrLf &
-            "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
-                "" & vbCrLf &
-               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher. We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
-                "" & vbCrLf &
-                "Click ""No"" to close UXL Launcher." & vbCrLf &
-                "" & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
-            If msgResult = DialogResult.Yes And safetynetThemeSheet = "1" Then
-                My.Settings.userChosenTheme = "Default"
-                ' Save settings.
-                My.Settings.Save()
-                Application.Restart()
-
-            ElseIf msgResult = DialogResult.Yes And safetynetThemeSheet IsNot "1" Then
-                ' If the user clicked Yes but the safetynetThemeSheet isn't "1," kill the app so it doesn't crash
-                ' their computer.
-                MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...")
-                Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
-
-            ElseIf msgResult = DialogResult.No And safetynetThemeSheet IsNot "1" Then
-                ' If the safteynetThemeSheet didn't get updated to "1," use TaskKill to immediately
-                ' terminate all instances of UXL-Launcher.exe so that it doesn't lock up the user's computer.
-
-                ' Only problem with using taskkill is that a CMD window will briefly show up, but
-                ' this should only show up if the safetynetThemeSheet wasn't updated to "1"
-                ' which would only happen if someone didn't allow the code at the top of
-                ' themeEngine_ApplyTheme() to run where the XML document is loaded.
-                Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
-            ElseIf msgResult = DialogResult.No Then
-                ' Otherwise, just exit the app.
-                Application.Exit()
-
-            End If
-        End Try
+        End If
 #End Region
 
 #Region "Try/Catch block for Description theme element."
