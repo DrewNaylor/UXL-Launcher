@@ -126,8 +126,20 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
-#Region "Try/Catch block for Author theme element."
-        ' Try to pull the Author from XML.
+#Region "Pull Author theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) Is Nothing Then
+            themeErrorElementName = "Author"
+            themeErrorElementDescription = "Description XML element for the theme's Description displayed in the Options window."
+            themeengine_ErrorMessageBox.themeengineError()
+            ' If there's an Author element, then use it.
+        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        End If
+
+
+
         Try
             themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
             aaformMainWindow.debugLabelXmlThemeAuthor.Text = themeSheetAuthor
