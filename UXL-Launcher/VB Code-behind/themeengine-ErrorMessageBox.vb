@@ -32,7 +32,7 @@ Public Class themeengine_ErrorMessageBox
 
         ' If the Description tag is missing, then ask the user if they want to set their theme to Default in My.Settings
         ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-        Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper " & UXLLauncher_ThemeEngine.themeErrorElementName & " XML element for the theme's Description displayed in the Options window." & vbCrLf &
+        Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper " & UXLLauncher_ThemeEngine.themeErrorElementDescription & vbCrLf &
                 "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
                 "" & vbCrLf &
                "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
