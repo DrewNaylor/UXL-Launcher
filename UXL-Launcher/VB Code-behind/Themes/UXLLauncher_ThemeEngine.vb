@@ -37,10 +37,6 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
 
-    ' This variable is used to give the user an error message if the element
-    ' is missing.
-    Friend Shared themeErrorElementDescription As String
-
     ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
     ' the messagebox "No" button for a missing XML element will instead close
     ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
