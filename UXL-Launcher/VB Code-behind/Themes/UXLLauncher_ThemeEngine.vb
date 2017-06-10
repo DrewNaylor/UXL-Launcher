@@ -204,7 +204,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "MenuBar BackColor"
-        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        ' Only pull the MenuBar BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
