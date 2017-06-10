@@ -41,6 +41,8 @@ Public Class UXLLauncher_ThemeEngine
     ' is missing.
     Friend Shared themeErrorElementDescription As String
 
+    ' Ensure only one messagebox shows up at a time.
+    Friend Shared messageboxCount As Int32 = 0
 
     ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
     ' the messagebox "No" button for a missing XML element will instead close
@@ -172,6 +174,20 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "GroupBox BackColor"
+
+        ' Only pull the GroupBox BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager) Is Nothing Then
+            themeErrorElementDescription = "Button ForeColor XML element for the ForeColor property on the Button control."
+            themeengine_ErrorMessageBox.themeengineError()
+            ' If there's a Button BackColor element, then use it.
+        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just ignore it.
+            Catch ex As Exception
+            End Try
+        End If
 
         ' Try to pull the GroupBox BackColor from XML.
         Try

@@ -6,8 +6,8 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>Maroon</BackColor>
-        <ForeColor>White</ForeColor>
+        <!--<BackColor>Maroon</BackColor>-->
+        <!--<ForeColor>White</ForeColor>-->
       </Button>
       
       <GroupBox>
