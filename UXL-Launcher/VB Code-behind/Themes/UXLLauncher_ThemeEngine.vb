@@ -37,9 +37,14 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
 
+
     ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
     ' the messagebox "No" button for a missing XML element will instead close
     ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
+
+    ' safetynetThemeSheet won't be required after replacing the Try...Catch blocks
+    ' with messageboxes to alert the user to missing theme elements with the more
+    ' streamlined version I'm in the process of implementing.
     Friend Shared safetynetThemeSheet As String = "0"
 
     Public Shared Sub themeEngine_ApplyTheme()
