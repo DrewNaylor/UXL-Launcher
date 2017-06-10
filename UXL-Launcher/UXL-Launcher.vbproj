@@ -142,7 +142,6 @@
     <Compile Include="VB Code-behind\isolated-error-handler.vb" />
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
-    <Compile Include="VB Code-behind\themeengine-ErrorMessageBox.vb" />
     <Compile Include="VB Code-behind\Themes\UXLLauncher_ThemeEngine.vb" />
   </ItemGroup>
   <ItemGroup>
