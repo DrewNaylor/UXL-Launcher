@@ -138,7 +138,6 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Try/Catch block for Button theme element."
         ' Try to pull the Button colors from XML.
 #Region "Button BackColor"
-
         ' Only pull the Button BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager) Is Nothing Then
             themeErrorElementDescription = "Button BackColor XML element for the BackColor property on the Button control."

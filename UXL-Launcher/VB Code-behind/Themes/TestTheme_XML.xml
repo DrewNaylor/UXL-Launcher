@@ -6,7 +6,7 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>nMaroon</BackColor>
+        <BackColor>Maroon</BackColor>
         <ForeColor>White</ForeColor>
       </Button>
       
