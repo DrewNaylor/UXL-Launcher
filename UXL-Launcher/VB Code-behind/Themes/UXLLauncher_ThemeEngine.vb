@@ -53,13 +53,13 @@ Public Class UXLLauncher_ThemeEngine
 
         ' Make sure the user's computer doesn't crash; see comment about
         ' safetynetThemeSheet above.
-        'If userTheme = Nothing Then
-        '    themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-        '    safetynetThemeSheet = "1"
-        'Else
-        '    themeSheet.LoadXml(userTheme)
-        '    safetynetThemeSheet = "1"
-        'End If
+        If userTheme = Nothing Then
+            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            safetynetThemeSheet = "1"
+        Else
+            themeSheet.LoadXml(userTheme)
+            safetynetThemeSheet = "1"
+        End If
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -228,6 +228,15 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Label BackColor"
+        ' Only pull the StatusBar BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just ignore it.
+            Catch ex As Exception
+            End Try
+        End If
         ' Try to pull the Label BackColor from XML.
         Try
             colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
