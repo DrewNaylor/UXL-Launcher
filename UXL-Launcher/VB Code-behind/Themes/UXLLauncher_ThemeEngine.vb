@@ -180,66 +180,15 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "FlowLayoutPanel BackColor."
-        '        Try
-        '            ' Try to pull the FlowLayoutPanel BackColor from XML.
-        '            colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '        Catch ex As NullReferenceException
-        '            ' If the FlowLayoutPanel BackColor tag is missing, then ask the user if they want to set their theme to Default in My.Settings
-        '            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-        '            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper FlowLayoutPanel BackColor XML element for the BackColor property on the FlowLayoutPanel control." & vbCrLf &
-        '                "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
-        '                "" & vbCrLf &
-        '               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
-        '                "" & vbCrLf &
-        '                "Click ""No"" to close UXL Launcher." & vbCrLf &
-        '                "" & vbCrLf &
-        '                "" & vbCrLf &
-        '                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
-        '            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-
-        '#Region "Messagebox Results"
-        '            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
-        '            If msgResult = DialogResult.Yes And safetynetThemeSheet = "1" Then
-        '                My.Settings.userChosenTheme = "Default"
-        '                ' Save settings.
-        '                My.Settings.Save()
-        '                Application.Restart()
-
-        '            ElseIf msgResult = DialogResult.Yes And safetynetThemeSheet IsNot "1" Then
-        '                ' If the user clicked Yes but the safetynetThemeSheet isn't "1," kill the app so it doesn't crash
-        '                ' their computer.
-        '                MessageBox.Show("safetynetThemeSheet isn't set to 1. Check to ensure themeSheet.LoadXML and related code is not commented out. Aborting...")
-        '                Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
-
-        '            ElseIf msgResult = DialogResult.No And safetynetThemeSheet IsNot "1" Then
-        '                ' If the safteynetThemeSheet didn't get updated to "1," use TaskKill to immediately
-        '                ' terminate all instances of UXL-Launcher.exe so that it doesn't lock up the user's computer.
-
-        '                ' Only problem with using taskkill is that a CMD window will briefly show up, but
-        '                ' this should only show up if the safetynetThemeSheet wasn't updated to "1"
-        '                ' which would only happen if someone didn't allow the code at the top of
-        '                ' themeEngine_ApplyTheme() to run where the XML document is loaded.
-        '                Process.Start("taskkill", "/F /IM UXL-Launcher.exe")
-        '            ElseIf msgResult = DialogResult.No Then
-        '                ' Otherwise, just exit the app.
-        '                Application.Exit()
-        '            End If
-        '#End Region
-
-        '        Catch ex As Exception
-        '            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-        '            ' bug report.
-        '            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-        '                " and use that to fill out the bug report." & vbCrLf &
-        '                "" & vbCrLf &
-        '                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-        '            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-        '            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-        '            If msgResult = DialogResult.Yes Then
-        '                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-        '            End If
-        '        End Try
+        ' Only pull the FlowLayoutPanel BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just ignore it.
+            Catch ex As Exception
+            End Try
+        End If
 #End Region
 
 #Region "FlowLayoutPanel ForeColor"
