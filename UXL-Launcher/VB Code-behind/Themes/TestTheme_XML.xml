@@ -7,7 +7,7 @@
       
       <Button>
         <BackColor>Maroon</BackColor>
-        <ForeColor>White</ForeColor>
+        <ForeColor>dWhite</ForeColor>
       </Button>
       
       <GroupBox>
