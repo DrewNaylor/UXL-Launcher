@@ -41,9 +41,6 @@ Public Class UXLLauncher_ThemeEngine
     ' is missing.
     Friend Shared themeErrorElementDescription As String
 
-    ' Ensure only one messagebox shows up at a time.
-    Friend Shared messageboxCount As Int32 = 0
-
     ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
     ' the messagebox "No" button for a missing XML element will instead close
     ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
@@ -104,34 +101,27 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Pull Title theme element from XML."
 
         ' Only pull the title element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) Is Nothing Then
-            themeErrorElementDescription = "Title XML element for the theme's Title displayed in the Options window."
-            themeengine_ErrorMessageBox.themeengineError()
-        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetTitle = ""
         End If
 #End Region
 
 #Region "Pull Description theme element from XML."
         ' Only pull the description element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) Is Nothing Then
-            themeErrorElementDescription = "Description XML element for the theme's Description displayed in the Options window."
-            themeengine_ErrorMessageBox.themeengineError()
-            ' If there's a Description element, then use it.
-        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetDescription = ""
         End If
 #End Region
 
 #Region "Pull Author theme element from XML."
         ' Only pull the Author element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) Is Nothing Then
-            themeErrorElementDescription = "Author XML element for the theme's Author displayed in the Options window."
-            themeengine_ErrorMessageBox.themeengineError()
-            ' If there's an Author element, then use it.
-        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
         End If
@@ -141,11 +131,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Try to pull the Button colors from XML.
 #Region "Button BackColor"
         ' Only pull the Button BackColor element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager) Is Nothing Then
-            themeErrorElementDescription = "Button BackColor XML element for the BackColor property on the Button control."
-            themeengine_ErrorMessageBox.themeengineError()
-            ' If there's a Button BackColor element, then use it.
-        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
@@ -157,11 +143,7 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Button ForeColor"
         ' Only pull the Button ForeColor element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager) Is Nothing Then
-            themeErrorElementDescription = "Button ForeColor XML element for the ForeColor property on the Button control."
-            themeengine_ErrorMessageBox.themeengineError()
-            ' If there's a Button BackColor element, then use it.
-        ElseIf themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
