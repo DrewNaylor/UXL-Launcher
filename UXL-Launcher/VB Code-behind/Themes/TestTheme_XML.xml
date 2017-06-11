@@ -32,7 +32,7 @@
 
       <Label>
         <BackColor>Maroon</BackColor>
-        <!--<ForeColor>White</ForeColor>-->
+        <ForeColor>White</ForeColor>
       </Label>
 
       <TextBox>
