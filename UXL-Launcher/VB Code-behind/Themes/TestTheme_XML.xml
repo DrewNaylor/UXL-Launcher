@@ -50,8 +50,8 @@
       <StatusLabel>
         <BackColor>Maroon</BackColor>
         <ForeColor>White</ForeColor>
-        
-        <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
+
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>All</BorderSides>
         
         <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
