@@ -220,6 +220,9 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
         End If
 #End Region
 
