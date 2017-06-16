@@ -160,6 +160,9 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
         End If
 #End Region
 
@@ -172,6 +175,9 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
