@@ -20,12 +20,6 @@
         <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
       
-      <MenuBar>
-        <!--The MenuBar BackColor variable is here because of problems with the custom ProfessionalRenderer.
-        The BackColor value of MenuItem overrides the BackColor value of MenuBar.-->
-        <BackColor>White</BackColor>
-      </MenuBar>
-      
       <StatusBar>
         <BackColor>LightGray</BackColor>
       </StatusBar>
@@ -41,6 +35,14 @@
       </TextBox>
 
       <MenuItem>
+        <!--The MenuBar BackColor variable used to be required because of problems
+        with the custom ProfessionalRenderer, but is now set to the same value as
+        MenuItem BackColor as there seems to not be a problem if the MenuBar BackColor
+        cannot be set if MenuItem also cannot be set, which doesn't make much sense.
+        
+        Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
+        to the same thing as MenuItem BackColor, otherwise it's set to the WinForms
+        default value.-->
         <BackColor>White</BackColor>
         <ForeColor>Black</ForeColor>
       </MenuItem>
