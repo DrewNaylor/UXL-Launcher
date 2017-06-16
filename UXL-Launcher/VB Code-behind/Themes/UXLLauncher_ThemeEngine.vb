@@ -112,6 +112,8 @@ Public Class UXLLauncher_ThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetAuthor = ""
         End If
 #End Region
 
