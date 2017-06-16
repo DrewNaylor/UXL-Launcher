@@ -43,7 +43,11 @@ Public Class UXLLauncher_ThemeEngine
         Dim themeSheet As XmlDocument = New XmlDocument()
 
         ' Load the user's theme. If it's not written to, just load the default theme.
-        themeSheet.LoadXml(userTheme)
+        Try
+            themeSheet.LoadXml(userTheme)
+        Catch ex As XmlException
+            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+        End Try
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
