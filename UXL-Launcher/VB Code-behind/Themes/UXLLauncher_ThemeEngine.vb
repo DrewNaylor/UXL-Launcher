@@ -31,36 +31,19 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Set Theme via UXL Launcher Theme Engine."
 
     ' Make a variable that differs based on what theme is chosen.
-    Public Shared userTheme As String
+    Public Shared userTheme As String = My.Resources.DefaultTheme_XML
     ' Create strings for theme title, description, and author.
     Public Shared themeSheetTitle As String
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
-
-
-    ' The safetynetThemeSheet is to ensure this code runs and if it doesn't,
-    ' the messagebox "No" button for a missing XML element will instead close
-    ' all the UXL-Launcher.exe processes to ensure the user's PC doesn't have problems.
-
-    ' safetynetThemeSheet won't be required after replacing the Try...Catch blocks
-    ' with messageboxes to alert the user to missing theme elements with the more
-    ' streamlined version I'm in the process of implementing.
-    Friend Shared safetynetThemeSheet As String = "0"
 
     Public Shared Sub themeEngine_ApplyTheme()
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
 
-        ' Make sure the user's computer doesn't crash; see comment about
-        ' safetynetThemeSheet above.
-        If userTheme = Nothing Then
-            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-            safetynetThemeSheet = "1"
-        Else
-            themeSheet.LoadXml(userTheme)
-            safetynetThemeSheet = "1"
-        End If
+        ' Load the user's theme. If it's not written to, just load the default theme.
+        themeSheet.LoadXml(userTheme)
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
