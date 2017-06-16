@@ -482,6 +482,7 @@ Public Class UXLLauncher_ThemeEngine
         aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
         ' Set other properties for StatusLabel.
         aaformMainWindow.statusbarLabelWelcomeText.BorderSides = propertyStatusLabelBorderSides
+        ' I was having some issues with setting the BorderStyle, so Try...Catch.
         Try
             aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
         Catch ex As Exception
