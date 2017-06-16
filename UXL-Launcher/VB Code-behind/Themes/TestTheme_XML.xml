@@ -52,10 +52,10 @@
         <ForeColor>White</ForeColor>
 
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
-        <BorderSides>All</BorderSides>
+        <!--<BorderSides>All</BorderSides>-->
         
         <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
-        <BorderStyle>SunkenInner</BorderStyle>
+        <!--<BorderStyle>SunkenInner</BorderStyle>-->
       </StatusLabel>
       
     </Theme_Colors>
