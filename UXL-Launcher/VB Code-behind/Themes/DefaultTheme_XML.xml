@@ -52,7 +52,7 @@
         <ForeColor>ControlText</ForeColor>
         
         <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
-        <BorderSides>None</BorderSides>
+        <BorderSides>Right</BorderSides>
         
         <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
         <BorderStyle>Flat</BorderStyle>

@@ -52,7 +52,7 @@
         <ForeColor>White</ForeColor>
         
         <!--Accepted BorderSides values are None and All. Other values will be set to None.-->
-        <BorderSides>All</BorderSides>
+        <BorderSides></BorderSides>
         
         <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
         <BorderStyle>SunkenInner</BorderStyle>

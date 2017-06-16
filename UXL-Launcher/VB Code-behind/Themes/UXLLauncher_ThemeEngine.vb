@@ -314,52 +314,77 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "StatusLabel BorderSides."
-        ' Try to pull StatusLabel BorderSides stuff from XML.
-        Try
-            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText = "All" Then
-                propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
-            Else
-                propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
-            End If
+        ' Only pull the StatusLabel BorderSides element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText IsNot Nothing Then
+            Try
+                Dim tempBorderSidesXMLValue As String
+                tempBorderSidesXMLValue = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText
+                ' Because I can't find an easy way to set propertyStatusLabelBorderSides to the XML element directly, I have to set it with a string comparison.
+                If tempBorderSidesXMLValue = "All" Then
+                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
+                ElseIf tempBorderSidesXMLValue = "Top" Then
+                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Top
+                ElseIf tempBorderSidesXMLValue = "Left" Then
+                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Left
+                ElseIf tempBorderSidesXMLValue = "Bottom" Then
+                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Bottom
+                ElseIf tempBorderSidesXMLValue = "Right" Then
+                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Right
+                    ' If the theme file has something else, then we'll just set it to None.
+                Else
+                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
+                End If
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just ignore it.
+            Catch ex As Exception
+            End Try
+        End If
+        '' Try to pull StatusLabel BorderSides stuff from XML.
+        'Try
+        '    If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText = "All" Then
+        '        propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
+        '    Else
+        '        propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
+        '    End If
 
 
-        Catch ex As NullReferenceException
-            ' If the StatusLabel BorderSides tag is missing, then ask the user if they want to set their theme to Default in My.Settings
-            ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
-            Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper StatusLabel BorderSides XML element for the BorderSides property on the StatusLabel control." & vbCrLf &
-                "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
-                "" & vbCrLf &
-               "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
-                "" & vbCrLf &
-                "Click ""No"" to close UXL Launcher." & vbCrLf &
-                "" & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+        'Catch ex As NullReferenceException
+        '    ' If the StatusLabel BorderSides tag is missing, then ask the user if they want to set their theme to Default in My.Settings
+        '    ' and reload the Default theme, use the Default theme for this session only, or close UXL Launcher.
+        '    Dim msgResult As Integer = MessageBox.Show("It appears that the chosen theme is missing a proper StatusLabel BorderSides XML element for the BorderSides property on the StatusLabel control." & vbCrLf &
+        '        "Would you like to update your chosen theme settings to the Default theme and attempt to load the Default theme for UXL Launcher?" & vbCrLf &
+        '        "" & vbCrLf &
+        '       "Click ""Yes"" to update your chosen theme settings to the Default theme and restart UXL Launcher." & vbCrLf & "We will attempt to use the Default theme until you change your theme in the Options window." & vbCrLf &
+        '        "" & vbCrLf &
+        '        "Click ""No"" to close UXL Launcher." & vbCrLf &
+        '        "" & vbCrLf &
+        '        "" & vbCrLf &
+        '        "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "Theme missing XML element",
+        '    MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
-            ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
-            If msgResult = DialogResult.Yes Then
-                My.Settings.userChosenTheme = "Default"
-                ' Save settings.
-                My.Settings.Save()
-                Application.Restart()
-            ElseIf msgResult = DialogResult.No Then
-                aaformMainWindow.Close()
-            End If
+        '    ' If the user chooses reset their chosen theme to Default, set My.Settings.userChosenTheme to Default and restart.
+        '    If msgResult = DialogResult.Yes Then
+        '        My.Settings.userChosenTheme = "Default"
+        '        ' Save settings.
+        '        My.Settings.Save()
+        '        Application.Restart()
+        '    ElseIf msgResult = DialogResult.No Then
+        '        aaformMainWindow.Close()
+        '    End If
 
-        Catch ex As Exception
-            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
-            ' bug report.
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
-                "" & vbCrLf &
-                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
-            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
-            If msgResult = DialogResult.Yes Then
-                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
-            End If
-        End Try
+        'Catch ex As Exception
+        '    ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
+        '    ' bug report.
+        '    Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+        '        " and use that to fill out the bug report." & vbCrLf &
+        '        "" & vbCrLf &
+        '        "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
+        '    MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+        '    ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+        '    If msgResult = DialogResult.Yes Then
+        '        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+        '    End If
+        'End Try
 #End Region
 
 #Region "StatusLabel BorderStyle."
