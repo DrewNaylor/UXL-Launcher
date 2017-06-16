@@ -48,10 +48,14 @@ Public Class UXLLauncher_ThemeEngine
         Catch ex As XmlException
             themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             Debug.WriteLine(ex.Message)
+            ' Complain to the user if the chosen theme doesn't have a root element.
             MessageBox.Show("There was a problem trying to load the " &
                             My.Settings.userChosenTheme & " theme." & vbCrLf &
-                            "Please notify the theme's author." & vbCrLf & vbCrLf &
-                            "Error message: " & vbCrLf & ex.Message, "UXL Launcher Theme Engine")
+                            "Please notify the theme's author of the message below." & vbCrLf & vbCrLf & vbCrLf &
+                            "Theme file chosen:" & vbCrLf & My.Settings.userChosenTheme & vbCrLf & vbCrLf &
+                            "Error message: " & vbCrLf & ex.Message & vbCrLf &
+                            vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "UXL Launcher Theme Engine",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
