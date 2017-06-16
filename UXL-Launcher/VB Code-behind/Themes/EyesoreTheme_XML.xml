@@ -54,7 +54,8 @@
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>All</BorderSides>
 
-        <!--Accepted BorderStyle values are Flat and SunkenInner. Other values will be set to Flat.-->
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
         <BorderStyle>SunkenInner</BorderStyle>
       </StatusLabel>
       
