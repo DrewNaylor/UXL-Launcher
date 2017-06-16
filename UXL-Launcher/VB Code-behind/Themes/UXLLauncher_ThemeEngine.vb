@@ -103,6 +103,7 @@ Public Class UXLLauncher_ThemeEngine
             debugmodeStuff.updateDebugLabels()
         Else
             themeSheetTitle = ""
+            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
@@ -113,6 +114,7 @@ Public Class UXLLauncher_ThemeEngine
             debugmodeStuff.updateDebugLabels()
         Else
             themeSheetDescription = ""
+            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
@@ -123,6 +125,7 @@ Public Class UXLLauncher_ThemeEngine
             debugmodeStuff.updateDebugLabels()
         Else
             themeSheetAuthor = ""
+            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
@@ -350,6 +353,9 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
