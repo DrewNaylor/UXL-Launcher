@@ -348,24 +348,24 @@ Public Class UXLLauncher_ThemeEngine
                 Dim tempBorderStyleXMLValue As String
                 tempBorderStyleXMLValue = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText
                 ' Because I can't find an easy way to set propertyStatusLabelBorderSides to the XML element directly, I have to set it with a string comparison.
-                If tempBorderStyleXMLValue = "RaisedOuter" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.RaisedOuter
-                ElseIf tempBorderStyleXMLValue = "SunkenOuter" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.SunkenOuter
-                ElseIf tempBorderStyleXMLValue = "RaisedInner" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.RaisedInner
-                ElseIf tempBorderStyleXMLValue = "Raised" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.Raised
-                ElseIf tempBorderStyleXMLValue = "Etched" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.Etched
-                ElseIf tempBorderStyleXMLValue = "SunkenInner" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
+                If tempBorderStyleXMLValue = "Adjust" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.Adjust
                 ElseIf tempBorderStyleXMLValue = "Bump" Then
                     propertyStatusLabelBorderStyle = Border3DStyle.Bump
+                ElseIf tempBorderStyleXMLValue = "Etched" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.Etched
+                ElseIf tempBorderStyleXMLValue = "Raised" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.Raised
+                ElseIf tempBorderStyleXMLValue = "RaisedInner" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.RaisedInner
+                ElseIf tempBorderStyleXMLValue = "RaisedOuter" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.RaisedOuter
                 ElseIf tempBorderStyleXMLValue = "Sunken" Then
                     propertyStatusLabelBorderStyle = Border3DStyle.Sunken
-                ElseIf tempBorderStyleXMLValue = "Adjust" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.Adjust
+                ElseIf tempBorderStyleXMLValue = "SunkenInner" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
+                ElseIf tempBorderStyleXMLValue = "SunkenOuter" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.SunkenOuter
                     ' If the theme file has something else, then we'll just set it to Flat.
                 Else
                     propertyStatusLabelBorderStyle = Border3DStyle.Flat
