@@ -47,6 +47,9 @@ Public Class UXLLauncher_ThemeEngine
             themeSheet.LoadXml(userTheme)
         Catch ex As XmlException
             themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            Debug.WriteLine(ex.Message)
+            MessageBox.Show("There was a problem trying to load the " &
+                            My.Settings.userChosenTheme & " theme." & ex.Message, "UXL Launcher Theme Engine")
         End Try
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
@@ -280,6 +283,7 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
+
         End If
 #End Region
 

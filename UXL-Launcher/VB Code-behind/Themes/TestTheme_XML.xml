@@ -1,4 +1,4 @@
-﻿<UXL_Launcher_Theme>
+﻿<!--<UXL_Launcher_Theme>
   <Title>Eyesore 2</Title>
   <Description>Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.</Description>
   <Author>Drew Naylor</Author>
@@ -35,14 +35,14 @@
       </TextBox>
 
       <MenuItem>
-        <!--The MenuBar BackColor variable used to be required because of problems
+        --><!--The MenuBar BackColor variable used to be required because of problems
         with the custom ProfessionalRenderer, but is now set to the same value as
         MenuItem BackColor as there seems to not be a problem if the MenuBar BackColor
         cannot be set if MenuItem also cannot be set, which doesn't make much sense.
         
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the WinForms
-        default value.-->
+        default value.--><!--
         <BackColor>Purple</BackColor>
         <ForeColor>AntiqueWhite</ForeColor>
       </MenuItem>
@@ -51,14 +51,14 @@
         <BackColor>Maroon</BackColor>
         <ForeColor>White</ForeColor>
 
-        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        --><!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.--><!--
         <BorderSides>All</BorderSides>
 
-        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
-        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        --><!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.--><!--
         <BorderStyle>SunkenInner</BorderStyle>
       </StatusLabel>
       
     </Theme_Colors>
   
-</UXL_Launcher_Theme>
+</UXL_Launcher_Theme>-->
