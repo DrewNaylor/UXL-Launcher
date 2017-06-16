@@ -360,12 +360,12 @@ Public Class UXLLauncher_ThemeEngine
                     propertyStatusLabelBorderStyle = Border3DStyle.Etched
                 ElseIf tempBorderStyleXMLValue = "SunkenInner" Then
                     propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
-                ElseIf tempBorderStyleXMLValue = "Etched" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.Etched
-                ElseIf tempBorderStyleXMLValue = "Etched" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.Etched
-                ElseIf tempBorderStyleXMLValue = "Etched" Then
-                    propertyStatusLabelBorderStyle = Border3DStyle.Etched
+                ElseIf tempBorderStyleXMLValue = "Bump" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.Bump
+                ElseIf tempBorderStyleXMLValue = "Sunken" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.Sunken
+                ElseIf tempBorderStyleXMLValue = "Adjust" Then
+                    propertyStatusLabelBorderStyle = Border3DStyle.Adjust
                     ' If the theme file has something else, then we'll just set it to Flat.
                 Else
                     propertyStatusLabelBorderStyle = Border3DStyle.Flat
