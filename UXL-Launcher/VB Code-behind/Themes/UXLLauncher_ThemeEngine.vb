@@ -49,7 +49,9 @@ Public Class UXLLauncher_ThemeEngine
             themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             Debug.WriteLine(ex.Message)
             MessageBox.Show("There was a problem trying to load the " &
-                            My.Settings.userChosenTheme & " theme." & ex.Message, "UXL Launcher Theme Engine")
+                            My.Settings.userChosenTheme & " theme." & vbCrLf &
+                            "Please notify the theme's author." & vbCrLf & vbCrLf &
+                            "Error message: " & vbCrLf & ex.Message, "UXL Launcher Theme Engine")
         End Try
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
