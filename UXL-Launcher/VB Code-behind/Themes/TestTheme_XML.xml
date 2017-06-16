@@ -41,7 +41,7 @@
       </TextBox>
 
       <MenuItem>
-        <BackColor>Purple</BackColor>
+        <!--<BackColor>Purple</BackColor>-->
         <ForeColor>AntiqueWhite</ForeColor>
       </MenuItem>
 
