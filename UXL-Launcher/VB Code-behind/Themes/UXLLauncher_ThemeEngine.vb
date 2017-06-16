@@ -204,18 +204,6 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
-#Region "MenuBar BackColor"
-        ' Only pull the MenuBar BackColor element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-            Try
-                colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
-                debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
-            Catch ex As Exception
-            End Try
-        End If
-#End Region
-
 #Region "StatusBar BackColor."
         ' Only pull the StatusBar BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
@@ -281,6 +269,7 @@ Public Class UXLLauncher_ThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
+                colorMenubarBackColor = colorMenuItemBackColor
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception

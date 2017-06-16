@@ -23,7 +23,7 @@
       <MenuBar>
         <!--The MenuBar BackColor variable is here because of problems with the custom ProfessionalRenderer.
         The BackColor value of MenuItem overrides the BackColor value of MenuBar.-->
-        <BackColor>Control</BackColor>
+        <!--<BackColor>Control</BackColor>-->
       </MenuBar>
       
       <StatusBar>
