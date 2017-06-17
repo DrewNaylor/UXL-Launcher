@@ -5989,4 +5989,8 @@
   <data name="EyesoreTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vb code-behind\themes\eyesoretheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="isStable" xml:space="preserve">
+    <value>Git</value>
+    <comment>This value is used for the titlebar to tell the user if this app is stable or not. "Git" means that it's in development. "Beta" means it's a beta. "Release Candidate" means Release Candidate, plus any numbers. "Stable" means a stable release.</comment>
+  </data>
 </root>

@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-06-09T01:50:54
+        '''  Looks up a localized string similar to 2017-06-17T00:02:45
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -190,6 +190,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Infopath", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Git.
+        '''</summary>
+        Public ReadOnly Property isStable() As String
+            Get
+                Return ResourceManager.GetString("isStable", resourceCulture)
             End Get
         End Property
         
