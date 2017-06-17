@@ -46,6 +46,13 @@ Public Class isolated_error_handler
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog()
             End If
+
+            ' Because there was an error, we're going to log it. We know most of what's going on, so
+            ' we don't need as much info here.
+            Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
+                UXL_Launcher_Error_Logging.uxlLogger("Couldn't find file. " & ex.Message, writer)
+            End Using
+
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
