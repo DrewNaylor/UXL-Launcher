@@ -252,7 +252,7 @@ Public Class aaformOptionsWindow
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
             ' Update the text in the main window's titlebar.
-            aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
+            aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
             ' Tell the user that settings were saved.
             MessageBox.Show("Settings saved.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
