@@ -42,6 +42,9 @@ Public Class UXL_Launcher_Error_Logging
         ' https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-open-and-append-to-a-log-file
         write.Write(vbCrLf & "UXL Launcher Error Log Entry: ")
         write.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString)
+        write.WriteLine("  :")
+        write.WriteLine("  :{0}", logMessage)
+        write.WriteLine("-------------------------------")
     End Sub
 
 End Class
