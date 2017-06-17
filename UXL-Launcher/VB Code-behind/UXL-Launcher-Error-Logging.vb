@@ -27,5 +27,13 @@
 Imports System
 Imports System.IO
 Public Class UXL_Launcher_Error_Logging
+    ' This class allows UXL Launcher to log errors to a text file.
+    ' It'll only log the date and time along with the error message,
+    ' error message type, stack trace, (other important error info,)
+    ' whether Windows is 32-bit or 64-bit, the Office version chosen,
+    ' whether the user said Windows was 32-bit or 64-bit, Office drive
+    ' location, whether the user said it was installed via 365/CTR or MSI,
+    ' whether alwaysOnTop is enabled, and maybe other settings as I add them.
+    ' All this logging depends on what I want to log in the other parts of this app.
 
 End Class
