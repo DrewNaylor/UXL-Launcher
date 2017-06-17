@@ -32,6 +32,15 @@ Public Class isolated_error_handler
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & LaunchApp.exeName)
         Catch ex As System.ComponentModel.Win32Exception
+
+#Region "Error logging for files we couldn't find."
+            ' Because there was an error, we're going to log it. We know most of what's going on, so
+            ' we don't need as much info here.
+            Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
+                UXL_Launcher_Error_Logging.uxlLogger("Couldn't find file. " & ex.Message, writer)
+            End Using
+#End Region
+
             ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
@@ -46,12 +55,6 @@ Public Class isolated_error_handler
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog()
             End If
-
-            ' Because there was an error, we're going to log it. We know most of what's going on, so
-            ' we don't need as much info here.
-            Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
-                UXL_Launcher_Error_Logging.uxlLogger("Couldn't find file. " & ex.Message, writer)
-            End Using
 
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
