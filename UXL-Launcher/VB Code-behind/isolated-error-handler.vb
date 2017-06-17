@@ -37,7 +37,7 @@ Public Class isolated_error_handler
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
             If My.Settings.allowLogging = True Then
-
+                ' Only log if the user says it's ok.
                 Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
                     UXL_Launcher_Error_Logging.uxlLogger(" We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
                                                      vbCrLf & "    Please check your settings and try again." &
@@ -45,7 +45,10 @@ Public Class isolated_error_handler
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
                                                      vbCrLf & "  : Error Code: " & ex.ErrorCode &
                                                      vbCrLf & "  : Stack trace: " & vbCrLf & "" & ex.StackTrace &
-                                                     vbCrLf & "  : Error Code: " & ex.ErrorCode, writer)
+                                                     vbCrLf & "  : Error Code: " & ex.ErrorCode &
+                                                     vbCrLf & "  : Office launch string: " & OfficeLocater.fullLauncherCodeString &
+                                                     vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
+                                                     vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString, writer)
                 End Using
             End If
 #End Region
