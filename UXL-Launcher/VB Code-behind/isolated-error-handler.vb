@@ -38,7 +38,7 @@ Public Class isolated_error_handler
             ' we don't need as much info here.
             If My.Settings.allowLogging = True Then
                 ' Only log if the user says it's ok.
-                Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
+                Using writer As StreamWriter = File.AppendText(Environment.SpecialFolder.LocalApplicationData & "\UXL_Launcher\uxlErrorLog.txt")
                     UXL_Launcher_Error_Logging.uxlLogger(" We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
                                                      vbCrLf & "    Please check your settings and try again." &
                                                      vbCrLf & "  : Error message: " & ex.Message &
