@@ -37,7 +37,11 @@ Public Class isolated_error_handler
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
             Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
-                UXL_Launcher_Error_Logging.uxlLogger("Couldn't find file. " & ex.Message, writer)
+                UXL_Launcher_Error_Logging.uxlLogger(" Couldn't find file. " &
+                                                     vbCrLf & "  : Error message: " & ex.Message &
+                                                     vbCrLf & "  : Error type: " & ex.GetType.ToString &
+                                                     vbCrLf & "  : HResult: " & ex.HResult &
+                                                     vbCrLf & "  : Stack trace:" & vbCrLf & "" & ex.StackTrace, writer)
             End Using
 #End Region
 
