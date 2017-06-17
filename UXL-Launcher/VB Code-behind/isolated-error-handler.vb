@@ -61,3 +61,8 @@ Public Class isolated_error_handler
         End Try
     End Sub
 End Class
+
+
+Class logIsolatedErrorHandlerErrors
+
+End Class
