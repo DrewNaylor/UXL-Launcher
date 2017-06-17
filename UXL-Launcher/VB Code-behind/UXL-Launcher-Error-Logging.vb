@@ -36,8 +36,12 @@ Public Class UXL_Launcher_Error_Logging
     ' whether alwaysOnTop is enabled, and maybe other settings as I add them.
     ' All this logging depends on what I want to log in the other parts of this app.
 
-    Friend Shared Sub uxlLogger(logMessage As String, write As TextWriter)
 
+    Friend Shared Sub uxlLogger(logMessage As String, write As TextWriter)
+        ' I got the instructions from here: 
+        ' https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-open-and-append-to-a-log-file
+        write.Write(vbCrLf & "UXL Launcher Error Log Entry: ")
+        write.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString)
     End Sub
 
 End Class
