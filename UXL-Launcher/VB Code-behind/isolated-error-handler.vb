@@ -36,13 +36,16 @@ Public Class isolated_error_handler
 #Region "Error logging for files we couldn't find."
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
-            Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
-                UXL_Launcher_Error_Logging.uxlLogger(" Couldn't find file. " &
+            If My.Settings.allowLogging = True Then
+
+                Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
+                    UXL_Launcher_Error_Logging.uxlLogger(" Couldn't find file. " &
                                                      vbCrLf & "  : Error message: " & ex.Message &
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
                                                      vbCrLf & "  : HResult: " & ex.HResult &
                                                      vbCrLf & "  : Stack trace:" & vbCrLf & "" & ex.StackTrace, writer)
-            End Using
+                End Using
+            End If
 #End Region
 
             ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
