@@ -36,4 +36,8 @@ Public Class UXL_Launcher_Error_Logging
     ' whether alwaysOnTop is enabled, and maybe other settings as I add them.
     ' All this logging depends on what I want to log in the other parts of this app.
 
+    Friend Shared Sub uxlLogger(logMessage As String, write As TextWriter)
+
+    End Sub
+
 End Class
