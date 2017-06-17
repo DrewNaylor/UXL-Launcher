@@ -39,11 +39,13 @@ Public Class isolated_error_handler
             If My.Settings.allowLogging = True Then
 
                 Using writer As StreamWriter = File.AppendText("uxlErrorLog.txt")
-                    UXL_Launcher_Error_Logging.uxlLogger(" Couldn't find file. " &
+                    UXL_Launcher_Error_Logging.uxlLogger(" We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
+                                                     vbCrLf & "    Please check your settings and try again." &
                                                      vbCrLf & "  : Error message: " & ex.Message &
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
-                                                     vbCrLf & "  : HResult: " & ex.HResult &
-                                                     vbCrLf & "  : Stack trace:" & vbCrLf & "" & ex.StackTrace, writer)
+                                                     vbCrLf & "  : Error Code: " & ex.ErrorCode &
+                                                     vbCrLf & "  : Stack trace: " & vbCrLf & "" & ex.StackTrace &
+                                                     vbCrLf & "  : Error Code: " & ex.ErrorCode, writer)
                 End Using
             End If
 #End Region
