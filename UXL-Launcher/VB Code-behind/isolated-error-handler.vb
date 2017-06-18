@@ -115,7 +115,7 @@ Public Class isolated_error_handler
 
             ' If logging is disabled, don't tell the user that a log was written.
             If My.Settings.allowLogging = False Or My.Settings.logLevel < 1 Then
-                logWrittenToFolder = "Because logging is disabled, before clicking ""Yes,"" please write down what you were doing when the error occurred along with the text below" &
+                logWrittenToFolder = vbCrLf & "Because logging is disabled, before clicking ""Yes,"" please write down what you were doing when the error occurred along with the text below" &
                 " and use that to fill out the bug report."
             End If
 
