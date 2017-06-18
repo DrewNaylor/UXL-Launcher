@@ -31,8 +31,8 @@ Public Class isolated_error_handler
     Public Shared Sub launcherErrorHandler()
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & LaunchApp.exeName)
+#Region "Couldn't launch Office app."
         Catch ex As System.ComponentModel.Win32Exception
-
 #Region "Error logging for files we couldn't find."
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
@@ -80,7 +80,8 @@ Public Class isolated_error_handler
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog()
             End If
-
+#End Region
+#Region "Other exceptions we don't know of yet."
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
@@ -94,5 +95,6 @@ Public Class isolated_error_handler
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
+#End Region
     End Sub
 End Class
