@@ -55,7 +55,7 @@ Public Class isolated_error_handler
             End If
 #End Region
             ' Make a string to tell the user if logging is enabled.
-            Dim logWrittenToFolder As String = "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt."
+            Dim logWrittenToFolder As String = vbCrLf & "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt." & vbCrLf
 
             If My.Settings.allowLogging = False Then
                 logWrittenToFolder = ""
@@ -65,7 +65,7 @@ Public Class isolated_error_handler
             ' go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
-            vbCrLf & logWrittenToFolder &
+            logWrittenToFolder &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message, "Couldn't find file",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
