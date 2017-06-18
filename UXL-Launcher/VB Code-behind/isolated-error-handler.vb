@@ -93,8 +93,8 @@ Public Class isolated_error_handler
                 Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
                 ' Log error to file.
                 Using writer As StreamWriter = File.AppendText(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt")
-                    UXL_Launcher_Error_Logging.uxlLogger(" There was a problem while trying to launch " & LaunchApp.exeFriendlyName & "." &
-                                                     vbCrLf & "    Please check your settings and try again." &
+                    UXL_Launcher_Error_Logging.uxlLogger(" An error occurred that we can't handle yet. Please attach this log file" &
+                                                     vbCrLf & "  to the bug reporting page linked below." &
                                                      vbCrLf & "  : Error message: " & ex.Message &
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
                                                      vbCrLf & "  : HResult/Error Code: " & ex.HResult &
@@ -103,7 +103,8 @@ Public Class isolated_error_handler
                                                      vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
                                                      vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString &
                                                      vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging &
-                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel, writer)
+                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel &
+                                                     vbCrLf & "  : Is alwaysOnTop enabled?: " & My.Settings.alwaysOnTop, writer)
                 End Using
             End If
 #End Region
@@ -124,9 +125,18 @@ Public Class isolated_error_handler
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            ' Output the stack trace in the debugger.
-            Debug.WriteLine(vbCrLf & "Stack trace:" & vbCrLf &
-                            ex.StackTrace)
+
+            ' Output some important info in the debugger if logging is disabled.
+            If My.Settings.allowLogging = False Then
+                Debug.WriteLine(vbCrLf & "  : Error message: " & ex.Message &
+                                                     vbCrLf & "  : Error type: " & ex.GetType.ToString &
+                                                     vbCrLf & "  : HResult/Error Code: " & ex.HResult &
+                                                     vbCrLf & "  : Stack trace: " & vbCrLf & "" & ex.StackTrace &
+                                                     vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging &
+                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel)
+            End If
+
+
             ' If the user chooses to file a bug report online, open the folder with the
             ' log and go to the GitHub "new issue" page.
             If msgResult = DialogResult.Yes Then
