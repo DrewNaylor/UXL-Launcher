@@ -57,6 +57,7 @@ Public Class isolated_error_handler
             ' Make a string to tell the user if logging is enabled.
             Dim logWrittenToFolder As String = vbCrLf & "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt." & vbCrLf
 
+            ' If logging is disabled, don't tell the user that a log was written.
             If My.Settings.allowLogging = False Then
                 logWrittenToFolder = ""
             End If
