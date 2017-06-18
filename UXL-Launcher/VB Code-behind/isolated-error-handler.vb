@@ -92,9 +92,11 @@ Public Class isolated_error_handler
                 ' Only log if the user says it's ok, but first make the folder if it doesn't exist.
                 Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
                 ' Log error to file.
+                ex.HelpLink = "https://github.com/DrewNaylor/UXL-Launcher/issues/new"
                 Using writer As StreamWriter = File.AppendText(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt")
                     UXL_Launcher_Error_Logging.uxlLogger(" An error occurred that we can't handle yet. Please attach this log file" &
                                                      vbCrLf & "  to the bug reporting page linked below." &
+                                                     vbCrLf & "  : Bug report link: " & ex.HelpLink &
                                                      vbCrLf & "  : Error message: " & ex.Message &
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
                                                      vbCrLf & "  : HResult/Error Code: " & ex.HResult &
