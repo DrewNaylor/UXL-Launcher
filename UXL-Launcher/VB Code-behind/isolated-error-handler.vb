@@ -37,10 +37,11 @@ Public Class isolated_error_handler
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
             If My.Settings.allowLogging = True Then
-                ' Only log if the user says it's ok, but first ensure the folder exists.
-
-                Using writer As StreamWriter = File.AppendText(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt")
-                    UXL_Launcher_Error_Logging.uxlLogger(" We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
+                ' Only log if the user says it's ok, but first make the folder if it doesn't exist.
+                Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
+                    ' Log error to file.
+                    Using writer As StreamWriter = File.AppendText(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt")
+                    UXL_Launcher_Error_Logging.uxlLogger(" There was a problem while trying to launch " & LaunchApp.exeFriendlyName & "." &
                                                      vbCrLf & "    Please check your settings and try again." &
                                                      vbCrLf & "  : Error message: " & ex.Message &
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
@@ -51,12 +52,12 @@ Public Class isolated_error_handler
                                                      vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
                                                      vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString, writer)
                 End Using
-            End If
+                End If
 #End Region
 
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
+                ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
+                ' go to the Options window to change it.
+                Dim msgResult As Integer = MessageBox.Show("We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message, "Couldn't find file",

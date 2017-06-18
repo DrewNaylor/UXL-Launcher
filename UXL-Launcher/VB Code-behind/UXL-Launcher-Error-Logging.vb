@@ -46,9 +46,4 @@ Public Class UXL_Launcher_Error_Logging
         write.WriteLine("-------------------------------")
     End Sub
 
-    Friend Shared Sub ensureFolderExists(folder As String)
-        ' Make sure the log file folder exists.
-
-    End Sub
-
 End Class
