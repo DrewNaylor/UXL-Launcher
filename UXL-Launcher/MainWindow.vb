@@ -32,8 +32,8 @@ Public Class aaformMainWindow
 
         ' Tell the user that this branch won't be merged into master.
         MessageBox.Show("Please note that this branch won't be merged into master as I don't feel comfortable with logging errors on disk even though I'm not" & vbCrLf &
-                        " dealing with personal information directly. I'm leaving this here as I might need to write to a file in the future or do something like" & vbCrLf &
-                        "")
+                        "dealing with personal information directly. I'm leaving this here as I might need to write to a file in the future or do something like" & vbCrLf &
+                        "Friend Shared Sub uxlLogger(logMessage As String, write As TextWriter) to directly influence strings instead of strings everywhere.", "Branch won't be merged")
 
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
