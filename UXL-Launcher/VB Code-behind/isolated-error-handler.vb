@@ -46,9 +46,8 @@ Public Class isolated_error_handler
                                                      vbCrLf & "    Please check your settings and try again." &
                                                      vbCrLf & "  : Error message: " & ex.Message &
                                                      vbCrLf & "  : Error type: " & ex.GetType.ToString &
-                                                     vbCrLf & "  : Error Code: " & ex.ErrorCode &
+                                                     vbCrLf & "  : HResult/Error Code: " & ex.HResult &
                                                      vbCrLf & "  : Stack trace: " & vbCrLf & "" & ex.StackTrace &
-                                                     vbCrLf & "  : Error Code: " & ex.ErrorCode &
                                                      vbCrLf & "  : Office launch string: " & OfficeLocater.fullLauncherCodeString &
                                                      vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
                                                      vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString &
@@ -85,6 +84,29 @@ Public Class isolated_error_handler
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
             ' bug report.
+#Region "Error logging for other exceptions."
+            ' Because there was an error, we're going to log it. We don't know what's going on, so we're going
+            ' to log a few more things that are not personally identifiable.
+
+            If My.Settings.allowLogging = True And My.Settings.logLevel >= 2 Then
+                ' Only log if the user says it's ok, but first make the folder if it doesn't exist.
+                Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
+                ' Log error to file.
+                Using writer As StreamWriter = File.AppendText(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt")
+                    UXL_Launcher_Error_Logging.uxlLogger(" There was a problem while trying to launch " & LaunchApp.exeFriendlyName & "." &
+                                                     vbCrLf & "    Please check your settings and try again." &
+                                                     vbCrLf & "  : Error message: " & ex.Message &
+                                                     vbCrLf & "  : Error type: " & ex.GetType.ToString &
+                                                     vbCrLf & "  : HResult/Error Code: " & ex.HResult &
+                                                     vbCrLf & "  : Stack trace: " & vbCrLf & "" & ex.StackTrace &
+                                                     vbCrLf & "  : Office launch string: " & OfficeLocater.fullLauncherCodeString &
+                                                     vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
+                                                     vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString &
+                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel &
+                                                     vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging, writer)
+                End Using
+            End If
+#End Region
             Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
                 " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
