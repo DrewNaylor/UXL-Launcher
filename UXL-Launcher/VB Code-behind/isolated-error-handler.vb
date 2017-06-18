@@ -60,7 +60,7 @@ Public Class isolated_error_handler
             Dim logWrittenToFolder As String = vbCrLf & "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt." & vbCrLf
 
             ' If logging is disabled, don't tell the user that a log was written.
-            If My.Settings.allowLogging = False Or My.Settings.logLevel < 2 Then
+            If My.Settings.allowLogging = False Or My.Settings.logLevel < 1 Then
                 logWrittenToFolder = ""
             End If
 
@@ -88,7 +88,7 @@ Public Class isolated_error_handler
             ' Because there was an error, we're going to log it. We don't know what's going on, so we're going
             ' to log a few more things that are not personally identifiable.
 
-            If My.Settings.allowLogging = True And My.Settings.logLevel >= 2 Then
+            If My.Settings.allowLogging = True And My.Settings.logLevel >= 1 Then
                 ' Only log if the user says it's ok, but first make the folder if it doesn't exist.
                 Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
                 ' Log error to file.
