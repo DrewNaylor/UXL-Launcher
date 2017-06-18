@@ -36,7 +36,9 @@ Public Class isolated_error_handler
 #Region "Error logging for files we couldn't find."
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
-            If My.Settings.allowLogging = True Then
+            Dim logLevel As Integer = My.Settings.logLevel
+
+            If My.Settings.allowLogging = True And logLevel >= 2 Then
                 ' Only log if the user says it's ok, but first make the folder if it doesn't exist.
                 Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
                 ' Log error to file.
@@ -50,7 +52,8 @@ Public Class isolated_error_handler
                                                      vbCrLf & "  : Error Code: " & ex.ErrorCode &
                                                      vbCrLf & "  : Office launch string: " & OfficeLocater.fullLauncherCodeString &
                                                      vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
-                                                     vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString, writer)
+                                                     vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString &
+                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel, writer)
                 End Using
             End If
 #End Region
@@ -58,7 +61,7 @@ Public Class isolated_error_handler
             Dim logWrittenToFolder As String = vbCrLf & "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt." & vbCrLf
 
             ' If logging is disabled, don't tell the user that a log was written.
-            If My.Settings.allowLogging = False Then
+            If My.Settings.allowLogging = False Or logLevel < 2 Then
                 logWrittenToFolder = ""
             End If
 
