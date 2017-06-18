@@ -30,6 +30,11 @@ Public Class aaformMainWindow
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ' Tell the user that this branch won't be merged into master.
+        MessageBox.Show("Please note that this branch won't be merged into master as I don't feel comfortable with logging errors on disk even though I'm not" & vbCrLf &
+                        " dealing with personal information directly. I'm leaving this here as I might need to write to a file in the future or do something like" & vbCrLf &
+                        "")
+
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
 
