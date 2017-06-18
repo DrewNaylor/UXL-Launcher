@@ -124,6 +124,9 @@ Public Class isolated_error_handler
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            ' Output the stack trace in the debugger.
+            Debug.WriteLine(vbCrLf & "Stack trace:" & vbCrLf &
+                            ex.StackTrace)
             ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
             If msgResult = DialogResult.Yes Then
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
