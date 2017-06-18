@@ -51,8 +51,8 @@ Public Class isolated_error_handler
                                                      vbCrLf & "  : Office launch string: " & OfficeLocater.fullLauncherCodeString &
                                                      vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
                                                      vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString &
-                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel &
-                                                     vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging, writer)
+                                                     vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging &
+                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel, writer)
                 End Using
             End If
 #End Region
@@ -102,8 +102,8 @@ Public Class isolated_error_handler
                                                      vbCrLf & "  : Office launch string: " & OfficeLocater.fullLauncherCodeString &
                                                      vbCrLf & "  : Windows version: " & Environment.OSVersion.ToString &
                                                      vbCrLf & "  : Is Windows 64-bit?: " & Environment.Is64BitOperatingSystem.ToString &
-                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel &
-                                                     vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging, writer)
+                                                     vbCrLf & "  : Is logging enabled?: " & My.Settings.allowLogging &
+                                                     vbCrLf & "  : Log Level: " & My.Settings.logLevel, writer)
                 End Using
             End If
 #End Region
