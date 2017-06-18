@@ -25,7 +25,6 @@
 
 ' These imports are used for the log functionality.
 Imports System.IO
-Imports System
 Imports System.Environment
 
 Public Class isolated_error_handler
@@ -38,7 +37,8 @@ Public Class isolated_error_handler
             ' Because there was an error, we're going to log it. We know most of what's going on, so
             ' we don't need as much info here.
             If My.Settings.allowLogging = True Then
-                ' Only log if the user says it's ok.
+                ' Only log if the user says it's ok, but first ensure the folder exists.
+
                 Using writer As StreamWriter = File.AppendText(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt")
                     UXL_Launcher_Error_Logging.uxlLogger(" We couldn't find " & LaunchApp.exeFriendlyName & " in the location specified in the Options window." &
                                                      vbCrLf & "    Please check your settings and try again." &

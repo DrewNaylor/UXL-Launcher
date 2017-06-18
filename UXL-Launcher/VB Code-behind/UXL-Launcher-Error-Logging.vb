@@ -24,7 +24,6 @@
 
 
 ' These imports are used for the log functionality.
-Imports System
 Imports System.IO
 Public Class UXL_Launcher_Error_Logging
     ' This class allows UXL Launcher to log errors to a text file.
@@ -45,6 +44,11 @@ Public Class UXL_Launcher_Error_Logging
         write.WriteLine("  :")
         write.WriteLine("  :{0}", logMessage)
         write.WriteLine("-------------------------------")
+    End Sub
+
+    Friend Shared Sub ensureFolderExists(folder As String)
+        ' Make sure the log file folder exists.
+
     End Sub
 
 End Class
