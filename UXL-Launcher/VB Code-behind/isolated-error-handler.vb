@@ -107,7 +107,20 @@ Public Class isolated_error_handler
                 End Using
             End If
 #End Region
-            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+            ' Make a string to tell the user if logging is enabled.
+            Dim logWrittenToFolder As String = vbCrLf & "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt." & vbCrLf &
+                vbCrLf & "Please attach this file to the bug report." & vbCrLf & "After you click ""Yes,"" the file location will appear and" & vbCrLf &
+                "your default browser will be opened to the bug report" & vbCrLf & "filing page."
+
+
+            ' If logging is disabled, don't tell the user that a log was written.
+            If My.Settings.allowLogging = False Or My.Settings.logLevel < 2 Then
+                logWrittenToFolder = "Because logging is disabled, before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report."
+            End If
+
+            ' If some other error shows up, tell the user what to do.
+            Dim msgResult As Integer = MessageBox.Show("An Error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
                 " and use that to fill out the bug report." & vbCrLf &
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
