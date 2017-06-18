@@ -127,8 +127,12 @@ Public Class isolated_error_handler
             ' Output the stack trace in the debugger.
             Debug.WriteLine(vbCrLf & "Stack trace:" & vbCrLf &
                             ex.StackTrace)
-            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            ' If the user chooses to file a bug report online, open the folder with the
+            ' log and go to the GitHub "new issue" page.
             If msgResult = DialogResult.Yes Then
+                If My.Settings.allowLogging = True And My.Settings.logLevel >= 1 Then
+                    Process.Start(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
+                End If
                 Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
             End If
         End Try
