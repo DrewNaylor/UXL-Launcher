@@ -109,8 +109,8 @@ Public Class isolated_error_handler
 #End Region
             ' Make a string to tell the user if logging is enabled.
             Dim logWrittenToFolder As String = vbCrLf & "A log file has been written to " & GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\uxlErrorLog.txt." & vbCrLf &
-                vbCrLf & "Please attach this file to the bug report." & vbCrLf & "After you click ""Yes,"" the file location will appear and" & vbCrLf &
-                "your default browser will be opened to the bug report" & vbCrLf & "filing page."
+                vbCrLf & "Please attach this log file to the bug report." & vbCrLf & "After you click ""Yes,"" the file location will appear and your" & vbCrLf &
+                "default browser will be opened to the bug report filing page."
 
 
             ' If logging is disabled, don't tell the user that a log was written.
@@ -120,8 +120,7 @@ Public Class isolated_error_handler
             End If
 
             ' If some other error shows up, tell the user what to do.
-            Dim msgResult As Integer = MessageBox.Show("An Error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
-                " and use that to fill out the bug report." & vbCrLf &
+            Dim msgResult As Integer = MessageBox.Show("An Error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & logWrittenToFolder & vbCrLf &
                 "" & vbCrLf &
                 "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
