@@ -88,7 +88,7 @@ Public Class isolated_error_handler
             ' Because there was an error, we're going to log it. We don't know what's going on, so we're going
             ' to log a few more things that are not personally identifiable.
 
-            If My.Settings.allowLogging = True And My.Settings.logLevel >= 2 Then
+            If My.Settings.allowLogging = True And My.Settings.logLevel >= 1 Then
                 ' Only log if the user says it's ok, but first make the folder if it doesn't exist.
                 Directory.CreateDirectory(GetFolderPath(SpecialFolder.LocalApplicationData) & "\UXL_Launcher\")
                 ' Log error to file.
@@ -114,8 +114,8 @@ Public Class isolated_error_handler
 
 
             ' If logging is disabled, don't tell the user that a log was written.
-            If My.Settings.allowLogging = False Or My.Settings.logLevel < 2 Then
-                logWrittenToFolder = "Because logging is disabled, before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+            If My.Settings.allowLogging = False Or My.Settings.logLevel < 1 Then
+                logWrittenToFolder = "Because logging is disabled, before clicking ""Yes,"" please write down what you were doing when the error occurred along with the text below" &
                 " and use that to fill out the bug report."
             End If
 
