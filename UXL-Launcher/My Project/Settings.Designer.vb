@@ -128,7 +128,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property debugmodeShowLabels() As Boolean
             Get
                 Return CType(Me("debugmodeShowLabels"),Boolean)
@@ -140,7 +140,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Test2")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("ReturnOfNight")>  _
         Public Property userChosenTheme() As String
             Get
                 Return CType(Me("userChosenTheme"),String)

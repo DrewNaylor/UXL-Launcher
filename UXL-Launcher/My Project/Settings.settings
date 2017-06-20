@@ -21,10 +21,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowLabels" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Test2</Value>
+      <Value Profile="(Default)">ReturnOfNight</Value>
     </Setting>
     <Setting Name="enableThemeEngine" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

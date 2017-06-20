@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-05-21T05:02:16
+        '''  Looks up a localized string similar to 2017-06-20T01:09:09
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -273,6 +273,30 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
+        '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;MidnightBlue&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ReturnOfNightTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("ReturnOfNightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property Sharepoint_Workspace() As System.Drawing.Bitmap
@@ -391,18 +415,18 @@ Namespace My.Resources
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
+        '''        &lt;BackColor&gt;MidnightBlue&lt;/BackColor&gt;
         '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
         '''      &lt;/Button&gt;
         '''      
         '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
+        '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
         '''      &lt;/GroupBox&gt;
         '''
         '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Yellow&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Purple&lt;/ForeColo [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;DarkViolet&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Whit [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Test2Theme_XML() As String
             Get
