@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2017-06-17T00:02:45
+        '''  Looks up a localized string similar to 2017-05-21T05:02:16
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -379,6 +379,34 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("small_Word", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Test2&lt;/Title&gt;
+        '''  &lt;Description&gt;An improved test theme for UXL Launcher.&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;BackColor&gt;Yellow&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Purple&lt;/ForeColo [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Test2Theme_XML() As String
+            Get
+                Return ResourceManager.GetString("Test2Theme_XML", resourceCulture)
             End Get
         End Property
         
