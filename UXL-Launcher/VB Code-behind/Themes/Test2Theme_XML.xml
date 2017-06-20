@@ -25,7 +25,7 @@
       </StatusBar>
 
       <Label>
-        <BackColor>Maroon</BackColor>
+        <BackColor>Purple</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
 
@@ -43,7 +43,7 @@
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the WinForms
         default value.-->
-        <BackColor>Blue</BackColor>
+        <BackColor>MediumBlue</BackColor>
         <ForeColor>White</ForeColor>
       </MenuItem>
 
