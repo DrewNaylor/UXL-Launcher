@@ -16,8 +16,8 @@
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Yellow</BackColor>
-        <ForeColor>Purple</ForeColor>
+        <BackColor>DarkViolet</BackColor>
+        <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
 
       <StatusBar>
