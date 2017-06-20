@@ -21,7 +21,7 @@
       </FlowLayoutPanel>
 
       <StatusBar>
-        <BackColor>CadetBlue</BackColor>
+        <BackColor>MediumBlue</BackColor>
       </StatusBar>
 
       <Label>
@@ -48,7 +48,7 @@
       </MenuItem>
 
       <StatusLabel>
-        <BackColor>Maroon</BackColor>
+        <BackColor>Purple</BackColor>
         <ForeColor>White</ForeColor>
 
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
