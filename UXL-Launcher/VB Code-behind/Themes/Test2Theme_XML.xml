@@ -6,13 +6,13 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>Maroon</BackColor>
+        <BackColor>MidnightBlue</BackColor>
         <ForeColor>White</ForeColor>
       </Button>
       
       <GroupBox>
-        <BackColor>Green</BackColor>
-        <ForeColor>Blue</ForeColor>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>White</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
@@ -43,8 +43,8 @@
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the WinForms
         default value.-->
-        <BackColor>Purple</BackColor>
-        <ForeColor>AntiqueWhite</ForeColor>
+        <BackColor>Blue</BackColor>
+        <ForeColor>White</ForeColor>
       </MenuItem>
 
       <StatusLabel>
