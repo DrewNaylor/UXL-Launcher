@@ -41,8 +41,8 @@
         cannot be set if MenuItem also cannot be set, which doesn't make much sense.
         
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
-        to the same thing as MenuItem BackColor, otherwise it's set to the WinForms
-        default value.-->
+        to the same thing as MenuItem BackColor, otherwise it's set to the value the
+        Default theme uses.-->
         <BackColor>Window</BackColor>
         <ForeColor>ControlText</ForeColor>
       </MenuItem>
