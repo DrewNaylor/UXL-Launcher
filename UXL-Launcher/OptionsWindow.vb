@@ -42,9 +42,7 @@ Public Class aaformOptionsWindow
         End If
 
         ' Debug labels for Always On Top code on the main form.
-        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
-        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
-        "main window TopMost: " & aaformMainWindow.TopMost
+        debugmodeStuff.updateDebugLabels()
 #End Region
 
 #Region "Load the settings from My.Settings."
