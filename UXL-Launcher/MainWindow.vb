@@ -59,7 +59,7 @@ Public Class aaformMainWindow
 #End Region
 
         ' Put text in the titlebar.
-        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
+        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
 
 
 #Region "Debug code for aaformMainWindow."

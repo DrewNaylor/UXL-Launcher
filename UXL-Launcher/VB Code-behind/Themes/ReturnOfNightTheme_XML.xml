@@ -1,37 +1,37 @@
 ﻿<UXL_Launcher_Theme>
-  <Title>Default Theme</Title>
-  <Description>Default is the theme UXL Launcher ships with.</Description>
+  <Title>Return of the Night</Title>
+  <Description>Based on the Test2 theme, "Return of the Night" is a purple theme best suited for those who like proper day/night cycles.</Description>
   <Author>Drew Naylor</Author>
   
     <Theme_Colors>
       
       <Button>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>MidnightBlue</BackColor>
+        <ForeColor>White</ForeColor>
       </Button>
       
       <GroupBox>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>White</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>DarkViolet</BackColor>
+        <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
-      
+
       <StatusBar>
-        <BackColor>Control</BackColor>
+        <BackColor>MediumBlue</BackColor>
       </StatusBar>
 
       <Label>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>Purple</BackColor>
+        <ForeColor>White</ForeColor>
       </Label>
 
       <TextBox>
-        <BackColor>Window</BackColor>
-        <ForeColor>WindowText</ForeColor>
+        <BackColor>Beige</BackColor>
+        <ForeColor>DarkViolet</ForeColor>
       </TextBox>
 
       <MenuItem>
@@ -43,20 +43,20 @@
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the value the
         Default theme uses.-->
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>MediumBlue</BackColor>
+        <ForeColor>White</ForeColor>
       </MenuItem>
 
       <StatusLabel>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
-        
+        <ForeColor>White</ForeColor>
+
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>None</BorderSides>
 
         <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
         and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
-        <BorderStyle>Flat</BorderStyle>
+        <BorderStyle>SunkenInner</BorderStyle>
       </StatusLabel>
       
     </Theme_Colors>

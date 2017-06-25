@@ -170,7 +170,6 @@ Partial Class aaformMainWindow
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
         Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
-
         Me.menubarRevertThemeButton.Text = "&Revert to Default Theme"
         Me.menubarRevertThemeButton.ToolTipText = resources.GetString("menubarRevertThemeButton.ToolTipText")
         '
@@ -189,7 +188,6 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
         Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
         Me.menubarOfficeLangPrefsButton.Text = "O&ffice Language Preferences"
-
         '
         'zseparatorToolsMenu1
         '
@@ -583,7 +581,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(12, 394)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(4, 393)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
         Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(144, 13)
@@ -593,7 +591,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeTitle
         '
         Me.debugLabelXmlThemeTitle.AutoSize = True
-        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(10, 368)
+        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(4, 368)
         Me.debugLabelXmlThemeTitle.Name = "debugLabelXmlThemeTitle"
         Me.debugLabelXmlThemeTitle.Size = New System.Drawing.Size(133, 13)
         Me.debugLabelXmlThemeTitle.TabIndex = 24
@@ -602,7 +600,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeDescription
         '
         Me.debugLabelXmlThemeDescription.AutoSize = True
-        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(10, 380)
+        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(4, 381)
         Me.debugLabelXmlThemeDescription.Name = "debugLabelXmlThemeDescription"
         Me.debugLabelXmlThemeDescription.Size = New System.Drawing.Size(166, 13)
         Me.debugLabelXmlThemeDescription.TabIndex = 23
@@ -611,7 +609,7 @@ Partial Class aaformMainWindow
         'debugLabelForMSIInstall
         '
         Me.debugLabelForMSIInstall.AutoSize = True
-        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(7, 349)
+        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 341)
         Me.debugLabelForMSIInstall.Name = "debugLabelForMSIInstall"
         Me.debugLabelForMSIInstall.Size = New System.Drawing.Size(124, 13)
         Me.debugLabelForMSIInstall.TabIndex = 22
@@ -620,7 +618,7 @@ Partial Class aaformMainWindow
         'debugLabelForofficeDriveLocation
         '
         Me.debugLabelForofficeDriveLocation.AutoSize = True
-        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(7, 286)
+        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(4, 278)
         Me.debugLabelForofficeDriveLocation.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeDriveLocation.Name = "debugLabelForofficeDriveLocation"
         Me.debugLabelForofficeDriveLocation.Size = New System.Drawing.Size(170, 13)
@@ -630,7 +628,7 @@ Partial Class aaformMainWindow
         'debugLabelForuserOfficeVersion
         '
         Me.debugLabelForuserOfficeVersion.AutoSize = True
-        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(7, 336)
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(4, 328)
         Me.debugLabelForuserOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
         Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(161, 13)
@@ -640,7 +638,7 @@ Partial Class aaformMainWindow
         'debugLabelForofficeInstallMethodString
         '
         Me.debugLabelForofficeInstallMethodString.AutoSize = True
-        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(7, 310)
+        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(4, 302)
         Me.debugLabelForofficeInstallMethodString.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
         Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(167, 26)
@@ -650,7 +648,7 @@ Partial Class aaformMainWindow
         'debugLabelForcpuTypeString
         '
         Me.debugLabelForcpuTypeString.AutoSize = True
-        Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(7, 298)
+        Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(4, 290)
         Me.debugLabelForcpuTypeString.Name = "debugLabelForcpuTypeString"
         Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(147, 13)
         Me.debugLabelForcpuTypeString.TabIndex = 18

@@ -42,9 +42,7 @@ Public Class aaformOptionsWindow
         End If
 
         ' Debug labels for Always On Top code on the main form.
-        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
-        "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
-        "main window TopMost: " & aaformMainWindow.TopMost
+        debugmodeStuff.updateDebugLabels()
 #End Region
 
 #Region "Load the settings from My.Settings."
@@ -252,7 +250,7 @@ Public Class aaformOptionsWindow
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
             ' Update the text in the main window's titlebar.
-            aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & OfficeLocater.titlebarBitModeString & " Mode)"
+            aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
             ' Tell the user that settings were saved.
             MessageBox.Show("Settings saved.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
