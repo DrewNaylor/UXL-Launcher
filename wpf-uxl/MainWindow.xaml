@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_uxl"
         mc:Ignorable="d"
-        Title="UXL Launcher (WPF test)" Height="550.5" Width="643" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="UXL Launcher (WPF test)" Height="555" Width="646" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Standard Apps" Margin="14.5,4,4,4">
             
