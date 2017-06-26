@@ -8,7 +8,7 @@
         Title="UXL Launcher (WPF test)" Height="555" Width="646" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Standard Apps" Margin="14.5,4,4,4">
-            <Image Source="/Images/Word.png" Margin="10,10,497.5,381.5" Stretch="Fill" Width="50" Height="50"/>
+            <Image Source="/Images/Word.png" Margin="10,10,497.5,381.5" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </GroupBox>
 
     </Grid>
