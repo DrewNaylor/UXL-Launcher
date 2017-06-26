@@ -66,6 +66,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
@@ -135,7 +136,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
     </EmbeddedResource>
@@ -159,6 +160,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Access.png" />
+    <Resource Include="Images\Clip Organizer.png" />
+    <Resource Include="Images\Excel.png" />
+    <Resource Include="Images\Infopath.png" />
+    <Resource Include="Images\Language Settings.png" />
+    <Resource Include="Images\Microsoft Query.png" />
+    <Resource Include="Images\Onenote.png" />
+    <Resource Include="Images\Outlook.png" />
+    <Resource Include="Images\picture manager.png" />
+    <Resource Include="Images\Powerpoint.png" />
+    <Resource Include="Images\Publisher.png" />
+    <Resource Include="Images\Sharepoint Workspace.png" />
+    <Resource Include="Images\Word.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
