@@ -11,6 +11,7 @@
             <Grid>
                 
                 <Image Source="/Images/Word.png" Margin="10,10,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button Margin="75,10,0,0" Width="105" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Image Source="/Images/Excel.png" Margin="10,75,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
