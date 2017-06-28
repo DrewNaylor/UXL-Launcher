@@ -10,8 +10,8 @@
         <GroupBox Header="Standard Apps" Margin="14.5,4,4,4">
             <Grid>
                 
-                <Image Source="/Images/Word.png" Margin="2,10,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Button Margin="70,10,0,0" Width="105" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Source="/Images/Word.png" Margin="2,5,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button Margin="58.25,5,0,0" Width="105" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0.5"/>
                 <Image Source="/Images/Excel.png" Margin="10,75,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
