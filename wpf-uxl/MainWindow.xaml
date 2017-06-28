@@ -9,15 +9,9 @@
     <Grid>
         <GroupBox Header="Standard Apps" Margin="14.5,4,4,4">
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0" Source="/Images/Word.png" Margin="10,10,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Image Source="/Images/Excel.png" Margin="10,75,497.5,381.5" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                
+                <Image Source="/Images/Word.png" Margin="10,10,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Image Source="/Images/Excel.png" Margin="10,75,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
 
