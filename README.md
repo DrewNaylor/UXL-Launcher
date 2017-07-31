@@ -4,6 +4,8 @@ UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launc
 
 UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
 
+Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+
 The readme continues after this notice.
 
 ```
@@ -12,6 +14,8 @@ Copyright (C) 2013-2017  Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation.
 (Note that the copyright years include the years left out by the hyphen.)
+
+Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
 This file is part of UXL Launcher
 (Program is also known as "Unified eXecutable Launcher." Not to be confused with

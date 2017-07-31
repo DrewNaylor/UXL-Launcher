@@ -4,6 +4,8 @@
 'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
+'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+'
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
 'another software titled "[Kindle] Unified Application Launcher".)
