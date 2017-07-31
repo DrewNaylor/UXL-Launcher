@@ -4,6 +4,8 @@
 'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
+'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+'
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
 'another software titled "[Kindle] Unified Application Launcher".)
@@ -56,6 +58,7 @@ Public Class aaformAboutWindow
 "Copyright (C) 2013-2017  Drew Naylor" & vbCrLf &
 "" & vbCrLf &
 "UXL Launcher provides launchers for most Microsoft Office apps in one place." & vbCrLf &
+"Please be aware that UXL Launcher is unofficial and not made by Microsoft." & vbCrLf &
 "" & vbCrLf &
 "License notice:" & vbCrLf &
 "UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by" &
