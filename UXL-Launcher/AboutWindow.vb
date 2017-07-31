@@ -68,7 +68,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY o
 "" & vbCrLf &
 "Drew is not intending on infringing on Microsoft's copyrights, so UXL Launcher is only a shortcut application." & vbCrLf &
 "" & vbCrLf &
-"Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft" & "'" & "s copyrights." & vbCrLf &
+"Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft's copyrights." & vbCrLf &
 "Any other companies mentioned own their respective copyrights/trademarks.")
 
 
