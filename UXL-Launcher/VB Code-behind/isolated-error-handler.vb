@@ -25,9 +25,6 @@
 
 
 
-' These imports are used for the log functionality.
-Imports System.IO
-Imports System
 
 Public Class isolated_error_handler
     Public Shared Sub launcherErrorHandler()
