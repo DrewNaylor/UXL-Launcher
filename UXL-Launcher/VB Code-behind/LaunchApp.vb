@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2017  Drew Naylor
+'Copyright (C) 2013-2018 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
