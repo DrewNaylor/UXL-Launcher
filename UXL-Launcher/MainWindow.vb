@@ -121,21 +121,21 @@ Public Class aaformMainWindow
         ' Open the About window to About tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(0)
-        forceAboutWindowTab.ShowDialog()
+        forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarLicenseButton_Click(sender As Object, e As EventArgs) Handles menubarLicenseButton.Click
         ' Open the About window to License tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(1)
-        forceAboutWindowTab.ShowDialog()
+        forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarAuthorsButton_Click(sender As Object, e As EventArgs) Handles menubarAuthorsButton.Click
         ' Open the About window to Acknowledgements tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(2)
-        forceAboutWindowTab.ShowDialog()
+        forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarHelpTopicsButton_Click(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.Click
