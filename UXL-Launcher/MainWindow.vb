@@ -41,7 +41,9 @@ Public Class aaformMainWindow
         If My.Settings.enableThemeEngine = True Then
 
             ' If the theme engine is enabled, make the 
-            ' Revert to Default Theme button enabled.
+            ' Revert to Default Theme button visible
+            ' and enabled.
+            menubarRevertThemeButton.Visible = True
             menubarRevertThemeButton.Enabled = True
 
             ' Next, choose the user's theme and apply it.
@@ -53,7 +55,11 @@ Public Class aaformMainWindow
         Else
 
             ' If the theme engine is disabled, make the
-            ' Revert to Default Theme button disabled.
+            ' Revert to Default Theme button invisible
+            ' and disable it so that Ctrl + 0 doesn't
+            ' do anything if the theme engine is
+            ' disabled.
+            menubarRevertThemeButton.Visible = False
             menubarRevertThemeButton.Enabled = False
         End If
 

@@ -122,13 +122,11 @@
   </metadata>
   <data name="menubarRevertThemeButton.ToolTipText" xml:space="preserve">
     <value>Change the theme back to Default for this session only.
-This can only be used if the UXL Launcher Theme Engine
-is enabled in the Options window.
 
-The theme will be set to the one chosen in the Options
-window the next time this app is started or when a
-different theme is chosen in the Options window,
-whichever comes first.</value>
+The theme will change to the one selected in the
+Options window either the next time this app is
+started or when a different theme is chosen in the
+Options window, whichever comes first.</value>
   </data>
   <metadata name="contextmenuNotifyicon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>561, 17</value>
