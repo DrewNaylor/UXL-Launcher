@@ -113,7 +113,7 @@ Public Class aaformMainWindow
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceOptionsWindowTab As New aaformOptionsWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog()
+        forceOptionsWindowTab.ShowDialog(Me)
     End Sub
 
 #Region "Help menubar buttons."
@@ -320,7 +320,7 @@ Public Class aaformMainWindow
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceOptionsWindowTab As New aaformOptionsWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog()
+        forceOptionsWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
