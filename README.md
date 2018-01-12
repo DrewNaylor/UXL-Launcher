@@ -4,14 +4,18 @@ UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launc
 
 UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
 
+Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+
 The readme continues after this notice.
 
 ```
 UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-Copyright (C) 2013-2017  Drew Naylor
+Copyright (C) 2013-2018  Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation.
 (Note that the copyright years include the years left out by the hyphen.)
+
+Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
 This file is part of UXL Launcher
 (Program is also known as "Unified eXecutable Launcher." Not to be confused with
@@ -103,7 +107,7 @@ If you don't want to use a script to build UXL Launcher, here's how to do it man
 
 1. First, clone the Git repository by running: <code>git clone https://github.com/DrewNaylor/UXL-Launcher.git</code> or [download the Zip file for the master branch](https://github.com/DrewNaylor/UXL-Launcher/archive/master.zip) and remember where you saved your files.
 
-2. Next, open the command prompt from the Start menu (<code>cmd.exe</code>) and type or copy/paste <code>cd C:\Program Files (x86)\MSBuild\14.0\Bin\ </code> if you have a 64-bit Windows install or <code>cd C:\Program Files\MSBuild\14.0\Bin\ </code> if you have a 32-bit Windows install Press the Enter or Return key when it's pasted. Don't run <code>cmd.exe</code> from the Git Shell or else the next step won't work.
+2. Next, open the command prompt from the Start menu (<code>cmd.exe</code>) and type or copy/paste <code>cd C:\Program Files (x86)\MSBuild\14.0\Bin\ </code> if you have a 64-bit Windows install or <code>cd C:\Program Files\MSBuild\14.0\Bin\ </code> if you have a 32-bit Windows install. Press the Enter or Return key when it's pasted. Don't run <code>cmd.exe</code> from the Git Shell or else the next step won't work.
 
 3. Third, type <code>msbuild.exe</code>, press the spacebar, and drag the <code>UXL-Launcher.vbproj</code> into the command prompt window and press the Enter or Return key.
 

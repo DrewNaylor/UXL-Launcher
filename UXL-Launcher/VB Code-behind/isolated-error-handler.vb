@@ -1,8 +1,10 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2017  Drew Naylor
+'Copyright (C) 2013-2018 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
+'
+'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 '
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
@@ -23,9 +25,6 @@
 
 
 
-' These imports are used for the log functionality.
-Imports System.IO
-Imports System
 
 Public Class isolated_error_handler
     Public Shared Sub launcherErrorHandler()

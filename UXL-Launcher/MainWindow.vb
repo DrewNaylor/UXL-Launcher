@@ -1,8 +1,10 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2017  Drew Naylor
+'Copyright (C) 2013-2018 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation.
 '(Note that the copyright years include the years left out by the hyphen.)
+'
+'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 '
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
@@ -39,7 +41,9 @@ Public Class aaformMainWindow
         If My.Settings.enableThemeEngine = True Then
 
             ' If the theme engine is enabled, make the 
-            ' Revert to Default Theme button enabled.
+            ' Revert to Default Theme button visible
+            ' and enabled.
+            menubarRevertThemeButton.Visible = True
             menubarRevertThemeButton.Enabled = True
 
             ' Next, choose the user's theme and apply it.
@@ -51,7 +55,11 @@ Public Class aaformMainWindow
         Else
 
             ' If the theme engine is disabled, make the
-            ' Revert to Default Theme button disabled.
+            ' Revert to Default Theme button invisible
+            ' and disable it so that Ctrl + 0 doesn't
+            ' do anything if the theme engine is
+            ' disabled.
+            menubarRevertThemeButton.Visible = False
             menubarRevertThemeButton.Enabled = False
         End If
 
@@ -105,7 +113,7 @@ Public Class aaformMainWindow
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceOptionsWindowTab As New aaformOptionsWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog()
+        forceOptionsWindowTab.ShowDialog(Me)
     End Sub
 
 #Region "Help menubar buttons."
@@ -113,21 +121,21 @@ Public Class aaformMainWindow
         ' Open the About window to About tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(0)
-        forceAboutWindowTab.ShowDialog()
+        forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarLicenseButton_Click(sender As Object, e As EventArgs) Handles menubarLicenseButton.Click
         ' Open the About window to License tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(1)
-        forceAboutWindowTab.ShowDialog()
+        forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarAuthorsButton_Click(sender As Object, e As EventArgs) Handles menubarAuthorsButton.Click
         ' Open the About window to Acknowledgements tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(2)
-        forceAboutWindowTab.ShowDialog()
+        forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarHelpTopicsButton_Click(sender As Object, e As EventArgs) Handles menubarHelpTopicsButton.Click
@@ -312,7 +320,7 @@ Public Class aaformMainWindow
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceOptionsWindowTab As New aaformOptionsWindow
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog()
+        forceOptionsWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
