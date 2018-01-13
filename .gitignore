@@ -1,6 +1,3 @@
-# Make sure some resource files are included.
-!"TempPE/My Project.Resources.Designer.vb.dll"
-
 # Ignore Windows Thumbs.db files.
 Thumbs.db
 
