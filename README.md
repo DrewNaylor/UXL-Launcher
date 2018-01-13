@@ -53,13 +53,15 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Launching Office 2013 installed via Office 365 on a 64-bit computer requires UXL Launcher to be set to 32-bit Windows. [(issue #43)](https://github.com/DrewNaylor/UXL-Launcher/issues/43)
 
-- ~~If the user chooses to test their settings and Office Language Preferences can't be launched and they choose to open the Options window, a duplicate Options window spawns. [(issue #46)](https://github.com/DrewNaylor/UXL-Launcher/issues/46)~~ [Fixed in f697e75](https://github.com/DrewNaylor/UXL-Launcher/commit/f697e75552dd19e8d66db12e775adc559c87e953)
+- ~~If the user chooses to test their settings and Office Language Preferences can't be launched and they choose to open the Options window, a duplicate Options window spawns. [(issue #46)](https://github.com/DrewNaylor/UXL-Launcher/issues/46)~~ Fixed in [f697e75](https://github.com/DrewNaylor/UXL-Launcher/commit/f697e75552dd19e8d66db12e775adc559c87e953)
 
 - CryptoPrevent Maximum protection settings block Windows PowerShell from running thus halting the build process. [(issue #52)](https://github.com/DrewNaylor/UXL-Launcher/issues/52)
 
-- If the main window is set to Always On Top and the user opens the Options window from the Quickmenu and clicks on a window behind the UXL Launcher window, the Options window will not be able to be interacted with until the user right-clicks on the Quickmenu icon again. [(issue #53)](https://github.com/DrewNaylor/UXL-Launcher/issues/53)
+- ~~If the main window is set to Always On Top and the user opens the Options window from the Quickmenu and clicks on a window behind the UXL Launcher window, the Options window will not be able to be interacted with until the user right-clicks on the Quickmenu icon again. [(issue #53)](https://github.com/DrewNaylor/UXL-Launcher/issues/53)~~ Fixed in [94edb9d](https://github.com/DrewNaylor/UXL-Launcher/commit/94edb9d042fb9e06c9244cda54ff83ae7bd6ab03) and [7875980](https://github.com/DrewNaylor/UXL-Launcher/commit/7875980c2c8c8c272d544146788e96f0fa9aad35)
 
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
+
+- Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
 <br>
 <br>
@@ -116,3 +118,5 @@ If you don't want to use a script to build UXL Launcher, here's how to do it man
 ## How to Modify the Source Code
 
 In order to play around with the source code, it's recommended to install [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) in addition to the software to run UXL Launcher. To poke around in the code, simply double-click the <code>UXL-Launcher.sln</code> file in the root of the Git repository.
+
+Please be aware that you may need to build the project before forms show up properly in the designer. See [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97) for details.
