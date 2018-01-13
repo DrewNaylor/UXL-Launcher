@@ -1,6 +1,5 @@
 # Make sure some resource files are included.
-!UXL-Launcher/obj/Debug/TempPE/My Project.Resources.Designer.vb.dll
-!Resources.small-icons.small-icons.Designer.vb.dll
+!"TempPE/My Project.Resources.Designer.vb.dll"
 
 # Ignore Windows Thumbs.db files.
 Thumbs.db
