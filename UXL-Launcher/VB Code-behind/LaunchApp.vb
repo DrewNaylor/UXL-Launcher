@@ -33,9 +33,9 @@ Public Class LaunchApp
 #Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "MSACCESS.EXE"
+        'exeName = "MSACCESS.EXE"
         exeFriendlyName = "Microsoft Access"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("MSACCESS.EXE")
     End Sub
 #End Region
 #Region "Microsoft Excel Launcher Code."

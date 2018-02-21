@@ -27,9 +27,9 @@
 
 
 Public Class isolated_error_handler
-    Public Shared Sub launcherErrorHandler()
+    Public Shared Sub launcherErrorHandler(Optional localExeName As String = "SETLANG.EXE")
         Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & LaunchApp.exeName)
+            Process.Start(OfficeLocater.fullLauncherCodeString & localExeName)
         Catch ex As System.ComponentModel.Win32Exception
             ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
