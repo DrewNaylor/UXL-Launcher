@@ -41,105 +41,105 @@ Public Class LaunchApp
 #Region "Microsoft Excel Launcher Code."
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "EXCEL.EXE"
+        'exeName = "EXCEL.EXE"
         exeFriendlyName = "Microsoft Excel"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("EXCEL.EXE")
     End Sub
 #End Region
 #Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "INFOPATH.EXE"
+        'exeName = "INFOPATH.EXE"
         exeFriendlyName = "Microsoft InfoPath"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("INFOPATH.EXE")
     End Sub
 #End Region
 #Region "Microsoft OneNote Launcher Code."
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "ONENOTE.EXE"
+        'exeName = "ONENOTE.EXE"
         exeFriendlyName = "Microsoft OneNote"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("ONENOTE.EXE")
     End Sub
 #End Region
 #Region "Microsoft Outlook Launcher Code."
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "OUTLOOK.EXE"
+        'exeName = "OUTLOOK.EXE"
         exeFriendlyName = "Microsoft Outlook"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE")
     End Sub
 #End Region
 #Region "Microsoft PowerPoint Launcher Code."
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "POWERPNT.EXE"
+        'exeName = "POWERPNT.EXE"
         exeFriendlyName = "Microsoft PowerPoint"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("POWERPNT.EXE")
     End Sub
 #End Region
 #Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "GROOVE.EXE"
+        'exeName = "GROOVE.EXE"
         exeFriendlyName = "Microsoft SharePoint Workspace"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("GROOVE.EXE")
     End Sub
 #End Region
 #Region "Microsoft Publisher Launcher Code."
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "MSPUB.EXE"
+        'exeName = "MSPUB.EXE"
         exeFriendlyName = "Microsoft Publisher"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("MSPUB.EXE")
     End Sub
 #End Region
 #Region "Microsoft Word Launcher Code."
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "WINWORD.EXE"
+        'exeName = "WINWORD.EXE"
         exeFriendlyName = "Microsoft Word"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("WINWORD.EXE")
     End Sub
 #End Region
 #Region "Microsoft Query Launcher Code."
     Public Shared Sub LaunchQuery()
         ' Launch Microsoft Query. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "MSQRY32.EXE"
+        'exeName = "MSQRY32.EXE"
         exeFriendlyName = "Microsoft Query"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("MSQRY32.EXE")
     End Sub
 #End Region
 #Region "Microsoft Clip Organizer Launcher Code."
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "MSTORE.EXE"
+        'exeName = "MSTORE.EXE"
         exeFriendlyName = "Microsoft Clip Organizer"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("MSTORE.EXE")
     End Sub
 #End Region
 #Region "Microsoft Office Picture Manager Launcher Code."
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "OIS.EXE"
+        'exeName = "OIS.EXE"
         exeFriendlyName = "Microsoft Office Picture Manager"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("OIS.EXE")
     End Sub
 #End Region
 #Region "Microsoft OneNote Quick Launch Launcher Code."
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "ONENOTEM.EXE"
+        'exeName = "ONENOTEM.EXE"
         exeFriendlyName = "Microsoft OneNote Quick Launch"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("ONENOTEM.EXE")
     End Sub
 #End Region
 #Region "Office Language Preferences Launcher Code."
     Public Shared Sub LaunchOfficeLangPrefs()
         ' Launch Office Language Preferences. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeName = "SETLANG.EXE"
+        'exeName = "SETLANG.EXE"
         exeFriendlyName = "Office Language Preferences"
-        isolated_error_handler.launcherErrorHandler()
+        isolated_error_handler.launcherErrorHandler("SETLANG.EXE")
     End Sub
 #End Region
 #End Region
