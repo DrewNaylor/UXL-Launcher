@@ -27,7 +27,6 @@
 Public Class LaunchApp
 #Region "The code in this region is for launching the apps when buttons are pressed."
 
-    Public Shared exeName As String
     Public Shared exeFriendlyName As String
 
 #Region "Microsoft Access Launcher Code."
@@ -111,14 +110,14 @@ Public Class LaunchApp
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeFriendlyName = "Microsoft Office Picture Manager"
-        isolated_error_handler.launcherErrorHandler("OIS.EXE")
+        isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager")
     End Sub
 #End Region
 #Region "Microsoft OneNote Quick Launch Launcher Code."
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeFriendlyName = "Microsoft OneNote Quick Launch"
-        isolated_error_handler.launcherErrorHandler("ONENOTEM.EXE")
+        isolated_error_handler.launcherErrorHandler("ONENOTEM.EXE", "Microsoft OneNote Quick Launch")
     End Sub
 #End Region
 #Region "Office Language Preferences Launcher Code."
