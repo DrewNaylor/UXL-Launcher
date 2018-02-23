@@ -27,13 +27,13 @@
 
 
 Public Class isolated_error_handler
-    Public Shared Sub launcherErrorHandler(Optional localExeName As String = "SETLANG.EXE", Optional localExeFriendlyName As String = "Office Language Preferences")
+    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "SETLANG.EXE", Optional launcherErrorHandler_ExeFriendlyName As String = "Office Language Preferences")
         Try
-            Process.Start(OfficeLocater.fullLauncherCodeString & localExeName)
+            Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
         Catch ex As System.ComponentModel.Win32Exception
             ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & localExeFriendlyName & " in the location specified in the Options window." &
+            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the location specified in the Options window." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message, "Couldn't find file",
