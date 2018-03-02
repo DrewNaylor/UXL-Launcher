@@ -26,70 +26,58 @@
 
 Public Class LaunchApp
 #Region "The code in this region is for launching the apps when buttons are pressed."
-
-    Public Shared exeFriendlyName As String
-
 #Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Access"
-        isolated_error_handler.launcherErrorHandler("MSACCESS.EXE")
+        isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access")
     End Sub
 #End Region
 #Region "Microsoft Excel Launcher Code."
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Excel"
-        isolated_error_handler.launcherErrorHandler("EXCEL.EXE")
+        isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel")
     End Sub
 #End Region
 #Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft InfoPath"
-        isolated_error_handler.launcherErrorHandler("INFOPATH.EXE")
+        isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath")
     End Sub
 #End Region
 #Region "Microsoft OneNote Launcher Code."
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft OneNote"
-        isolated_error_handler.launcherErrorHandler("ONENOTE.EXE")
+        isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote")
     End Sub
 #End Region
 #Region "Microsoft Outlook Launcher Code."
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Outlook"
-        isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE")
+        isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook")
     End Sub
 #End Region
 #Region "Microsoft PowerPoint Launcher Code."
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft PowerPoint"
-        isolated_error_handler.launcherErrorHandler("POWERPNT.EXE")
+        isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint")
     End Sub
 #End Region
 #Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft SharePoint Workspace"
-        isolated_error_handler.launcherErrorHandler("GROOVE.EXE")
+        isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace")
     End Sub
 #End Region
 #Region "Microsoft Publisher Launcher Code."
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Publisher"
-        isolated_error_handler.launcherErrorHandler("MSPUB.EXE")
+        isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher")
     End Sub
 #End Region
 #Region "Microsoft Word Launcher Code."
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Word"
-        isolated_error_handler.launcherErrorHandler("WINWORD.EXE")
+        isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word")
     End Sub
 #End Region
 #Region "Microsoft Query Launcher Code."
