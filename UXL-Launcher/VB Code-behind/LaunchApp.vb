@@ -103,27 +103,24 @@ Public Class LaunchApp
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         exeFriendlyName = "Microsoft Clip Organizer"
-        isolated_error_handler.launcherErrorHandler("MSTORE.EXE")
+        isolated_error_handler.launcherErrorHandler("MSTORE.EXE", "Microsoft Clip Organizer")
     End Sub
 #End Region
 #Region "Microsoft Office Picture Manager Launcher Code."
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Office Picture Manager"
         isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager")
     End Sub
 #End Region
 #Region "Microsoft OneNote Quick Launch Launcher Code."
     Public Shared Sub LaunchOnenoteQuickLaunch()
         ' Launch Microsoft OneNote Quick Launcher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft OneNote Quick Launch"
         isolated_error_handler.launcherErrorHandler("ONENOTEM.EXE", "Microsoft OneNote Quick Launch")
     End Sub
 #End Region
 #Region "Office Language Preferences Launcher Code."
     Public Shared Sub LaunchOfficeLangPrefs()
         ' Launch Office Language Preferences. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Office Language Preferences"
         isolated_error_handler.launcherErrorHandler("SETLANG.EXE")
     End Sub
 #End Region

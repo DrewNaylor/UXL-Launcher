@@ -27,7 +27,7 @@
 
 
 Public Class isolated_error_handler
-    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "SETLANG.EXE", Optional launcherErrorHandler_ExeFriendlyName As String = "Office Language Preferences")
+    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "dummy.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "dummy string")
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
         Catch ex As System.ComponentModel.Win32Exception
