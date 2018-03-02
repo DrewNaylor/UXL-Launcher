@@ -121,7 +121,7 @@ Public Class LaunchApp
 #Region "Office Language Preferences Launcher Code."
     Public Shared Sub LaunchOfficeLangPrefs()
         ' Launch Office Language Preferences. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("SETLANG.EXE")
+        isolated_error_handler.launcherErrorHandler("SETLANG.EXE", "Office Language Preferences")
     End Sub
 #End Region
 #End Region
