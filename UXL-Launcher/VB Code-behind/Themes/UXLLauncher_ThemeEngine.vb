@@ -564,12 +564,14 @@ Public Class UXLLauncher_ThemeEngine
         End If
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
-        ' containing the theme to the Debugger.
-        Debug.WriteLine("Theme name in config file:")
-        Debug.WriteLine(settingsThemeName)
-        Debug.WriteLine("")
-        Debug.WriteLine("Theme XML Document:")
-        Debug.WriteLine(userTheme)
+        ' containing the theme to the Debugger, if debug labels are showing.
+        If My.Settings.debugmodeShowLabels = True Then
+            Debug.WriteLine("Theme name in config file:")
+            Debug.WriteLine(settingsThemeName)
+            Debug.WriteLine("")
+            Debug.WriteLine("Theme XML Document:")
+            Debug.WriteLine(userTheme)
+        End If
 
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
