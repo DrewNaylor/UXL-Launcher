@@ -95,14 +95,12 @@ Public Class LaunchApp
 #Region "Microsoft Query Launcher Code."
     Public Shared Sub LaunchQuery()
         ' Launch Microsoft Query. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Query"
-        isolated_error_handler.launcherErrorHandler("MSQRY32.EXE")
+        isolated_error_handler.launcherErrorHandler("MSQRY32.EXE", "Microsoft Query")
     End Sub
 #End Region
 #Region "Microsoft Clip Organizer Launcher Code."
     Public Shared Sub LaunchClipOrganizer()
         ' Launch Microsoft Clip Organizer. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        exeFriendlyName = "Microsoft Clip Organizer"
         isolated_error_handler.launcherErrorHandler("MSTORE.EXE", "Microsoft Clip Organizer")
     End Sub
 #End Region

@@ -27,7 +27,7 @@
 
 
 Public Class isolated_error_handler
-    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "dummy.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "dummy string")
+    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "ExeToLaunch.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "Application Name Here")
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
         Catch ex As System.ComponentModel.Win32Exception
