@@ -92,6 +92,8 @@ Public Class debugmodeStuff
         aaformMainWindow.debugLabelXmlThemeTitle.Text = UXLLauncher_ThemeEngine.themeSheetTitle
         aaformMainWindow.debugLabelXmlThemeDescription.Text = UXLLauncher_ThemeEngine.themeSheetDescription
         aaformMainWindow.debugLabelXmlThemeAuthor.Text = UXLLauncher_ThemeEngine.themeSheetAuthor
+        aaformMainWindow.debugLabelXmlThemeAuthor.Text = aaformMainWindow.debugLabelXmlThemeAuthor.Text & vbCrLf & "UseThemeEngineVersion string:" &
+            vbCrLf & UXLLauncher_ThemeEngine.themeSheetUseThemeEngineVersion
 
     End Sub
 #End Region

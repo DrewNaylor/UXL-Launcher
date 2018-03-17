@@ -6005,6 +6005,8 @@
 
 This decimal number exists just in case themes want to specify a version of the theme engine they're compatible with. By doing this, certain features can be used by the theme if those features were introduced in newer versions of the theme engine and might change how the theme behaves when that change is used.
 
-If there's no theme engine version specified in the theme file, or if the version is specified but it's "1.01", the theme engine won't use any changes that were introduced after 1.01.</comment>
+If there's no theme engine version specified in the theme file, or if the version is specified but it's "1.01", the theme engine won't use any changes that were introduced after 1.01.
+
+This decimal is to be used for the About window when talking about what version of the UXL Launcher Theme Engine is included with a certain version of UXL Launcher.</comment>
   </data>
 </root>
