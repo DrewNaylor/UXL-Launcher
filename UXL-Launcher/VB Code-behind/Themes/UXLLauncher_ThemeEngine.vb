@@ -39,6 +39,8 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetTitle As String
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
+    ' Create string for version of Theme Engine the theme is compatible with.
+    Friend Shared themeSheetUseThemeEngineVersion As String
 
     Public Shared Sub themeEngine_ApplyTheme()
 #Region "Read XML Theme Document."
@@ -96,7 +98,20 @@ Public Class UXLLauncher_ThemeEngine
         Dim propertyStatusLabelBorderStyle As Border3DStyle
 #End Region
 
-#Region "Pull theme colors from XML documents."
+#Region "Pull theme colors and other elements from XML documents."
+
+#Region "Pull UseThemeEngineVersion element from XML."
+
+        ' Only pull the UseThemeEngineVersion element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetUseThemeEngineVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetUseThemeEngineVersion = "1.0"
+            debugmodeStuff.updateDebugLabels()
+        End If
+
+#End Region
 
 #Region "Pull Title theme element from XML."
 
@@ -571,6 +586,9 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("")
             Debug.WriteLine("Theme XML Document:")
             Debug.WriteLine(userTheme)
+            Debug.WriteLine("")
+            Debug.WriteLine("UseThemeEngineVersion string:")
+            Debug.WriteLine(themeSheetUseThemeEngineVersion)
         End If
 
         ' Apply the theme.
