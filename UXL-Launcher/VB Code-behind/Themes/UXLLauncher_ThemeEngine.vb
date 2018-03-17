@@ -40,7 +40,7 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
     ' Create string for version of Theme Engine the theme is compatible with.
-    Friend Shared themeSheetUseThemeEngineVersion As String
+    Friend Shared themeSheetUseThemeEngineVersion As Decimal
 
     Public Shared Sub themeEngine_ApplyTheme()
 #Region "Read XML Theme Document."
@@ -104,10 +104,10 @@ Public Class UXLLauncher_ThemeEngine
 
         ' Only pull the UseThemeEngineVersion element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
-            themeSheetUseThemeEngineVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText
+            themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
             debugmodeStuff.updateDebugLabels()
         Else
-            themeSheetUseThemeEngineVersion = "1.0"
+            themeSheetUseThemeEngineVersion = CDec(1.01)
             debugmodeStuff.updateDebugLabels()
         End If
 

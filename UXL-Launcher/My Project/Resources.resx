@@ -6000,11 +6000,11 @@
     <value>..\vb code-behind\themes\test2theme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="themeEngineVersion" xml:space="preserve">
-    <value>1.0</value>
-    <comment>This is the version of the UXL Launcher Theme Engine included with this version of UXL Launcher. The first version of the theme engine that's available is version 1.0 and debuted in UXL Launcher Version 3.1. When anything changes in the UXL Launcher Theme Engine, the "y-value" (1.0; x.y; 1=x, 0=y) will be increased. When a breaking change is implemented into the theme engine, the "x-value" will be increased.
+    <value>1.01</value>
+    <comment>This is the version of the UXL Launcher Theme Engine included with this version of UXL Launcher. The first version of the theme engine that's available is version 1.01 and debuted in UXL Launcher Version 3.1. When anything changes in the UXL Launcher Theme Engine, the "y-value" (1.01; x.y; 1=x, 01=y) will be increased. When a breaking change is implemented into the theme engine, the "x-value" will be increased.
 
-This string exists just in case themes want to specify a version of the theme engine they're compatible with. By doing this, certain features can be used by the theme if those features were introduced in newer versions of the theme engine and might change how the theme behaves when that change is used.
+This decimal number exists just in case themes want to specify a version of the theme engine they're compatible with. By doing this, certain features can be used by the theme if those features were introduced in newer versions of the theme engine and might change how the theme behaves when that change is used.
 
-If there's no theme engine version specified in the theme file, or if the version is specified but it's "1.0", the theme engine won't use any changes that were introduced after 1.0.</comment>
+If there's no theme engine version specified in the theme file, or if the version is specified but it's "1.01", the theme engine won't use any changes that were introduced after 1.01.</comment>
   </data>
 </root>
