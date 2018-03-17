@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-01-13T01:32:23
+        '''  Looks up a localized string similar to 2018-03-17T16:48:29
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -455,6 +455,15 @@ Namespace My.Resources
         Public ReadOnly Property TestTheme_XML() As String
             Get
                 Return ResourceManager.GetString("TestTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 1.0.
+        '''</summary>
+        Public ReadOnly Property themeEngineVersion() As String
+            Get
+                Return ResourceManager.GetString("themeEngineVersion", resourceCulture)
             End Get
         End Property
         
