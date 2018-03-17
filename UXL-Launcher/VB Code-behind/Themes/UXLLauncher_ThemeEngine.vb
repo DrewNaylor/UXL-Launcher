@@ -565,7 +565,7 @@ Public Class UXLLauncher_ThemeEngine
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
         ' containing the theme to the Debugger, if debug labels are showing.
-        If My.Settings.debugmodeShowLabels = True Then
+        If My.Settings.debugmodeShowThemeEngineOutput = True Then
             Debug.WriteLine("Theme name in config file:")
             Debug.WriteLine(settingsThemeName)
             Debug.WriteLine("")
