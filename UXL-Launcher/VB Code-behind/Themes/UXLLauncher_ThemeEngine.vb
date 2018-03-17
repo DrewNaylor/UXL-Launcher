@@ -107,16 +107,20 @@ Public Class UXLLauncher_ThemeEngine
             ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
             If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
                 themeSheetUseThemeEngineVersion = CDec(1.01)
+                debugmodeStuff.outputThemeVersionToUse(themeSheetUseThemeEngineVersion)
+
                 ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
                 ' set it to whatever the version is specified in the theme file.
             ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
                 themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
+                debugmodeStuff.outputThemeVersionToUse(themeSheetUseThemeEngineVersion)
             End If
         Else
             ' If the XML element is missing, manually force the value to be 1.01.
             themeSheetUseThemeEngineVersion = CDec(1.01)
             debugmodeStuff.updateDebugLabels()
+            debugmodeStuff.outputThemeVersionToUse(themeSheetUseThemeEngineVersion)
         End If
 
 #End Region

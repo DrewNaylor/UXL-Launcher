@@ -96,5 +96,13 @@ Public Class debugmodeStuff
             vbCrLf & UXLLauncher_ThemeEngine.themeSheetUseThemeEngineVersion
 
     End Sub
+
+    Public Shared Sub outputThemeVersionToUse(themeVersionToUse As Decimal)
+        If My.Settings.debugmodeShowThemeEngineOutput = True Then
+            Debug.WriteLine("")
+            Debug.WriteLine("UseThemeEngineVersion string:")
+            Debug.WriteLine(themeVersionToUse)
+        End If
+    End Sub
 #End Region
 End Class
