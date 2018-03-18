@@ -97,9 +97,33 @@ Public Class aaformMainWindow
             debugmodeStuff.updateDebugLabels()
         End If
 #End Region
+        ' End of Form1_Load sub.
+    End Sub
+
+#Region "Hide when minimized code."
+    Private Sub aaformMainWindow_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        ' If the user has "Hide When Minimized" enabled, hide the window when they minimize it.
+        ' Code based on this sample code: 
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        If My.Settings.hideWhenMinimized = True Then
+            If WindowState = FormWindowState.Minimized Then
+                ShowInTaskbar = False
+            End If
+        End If
 
     End Sub
 
+    Private Sub notifyiconTaskbarLaunchers_DoubleClick(sender As Object, e As EventArgs) Handles notifyiconTaskbarLaunchers.DoubleClick
+        ' When the user double-clicks on the notification icon, show the main window again.
+        ' Code based on this sample code:
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        ShowInTaskbar = True
+        WindowState = FormWindowState.Normal
+
+    End Sub
+#End Region
 
 #Region "Menubar code, including menubar buttons."
 
