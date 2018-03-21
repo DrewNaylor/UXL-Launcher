@@ -78,24 +78,41 @@ Public Class aaformMainWindow
         debugmodeStuff.updateDebugLabels()
 #End Region
 
-#Region "Main form loading code for Always On Top menubar button."
+#Region "Main form loading code for Always On Top menubar button and window properties."
 
-        ' See if the Always On Top setting is set to true and if it is, then set
-        ' the window to be on top of other windows.
+        ' See if the Always On Top setting is set to true and if it is,
+        ' then set the window to be on top of other windows
+        ' and check the checkbox in the "Always On Top" menubar button.
 
         If My.Settings.alwaysOnTop = True Then
             Me.TopMost = True
             menubarAlwaysOnTopButton.CheckState = CheckState.Checked
             debugmodeStuff.updateDebugLabels()
 
-            ' But if the Always On Top setting is false, then set the window to not
-            ' be on top of other windows.
+            ' But if the Always On Top setting is false, then set the window
+            ' to not be on top of other windows.
 
         ElseIf My.Settings.alwaysOnTop = False Then
             Me.TopMost = False
             menubarAlwaysOnTopButton.CheckState = CheckState.Unchecked
             debugmodeStuff.updateDebugLabels()
         End If
+#End Region
+
+#Region "Main form loading code for Hide When Minimized menubar button."
+
+        ' See if the Hide When Minimized setting is set to true and if it is,
+        ' check the checkbox in the "Hide When Minimized" menubar button.
+
+        If My.Settings.hideWhenMinimized = True Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Checked
+
+            ' Otherwise, if it's false, make the "Hide When Minimized" checkbox
+            ' be unchecked.
+        ElseIf My.Settings.hideWhenMinimized = False Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Unchecked
+        End If
+
 #End Region
         ' End of Form1_Load sub.
     End Sub
