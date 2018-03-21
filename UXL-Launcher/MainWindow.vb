@@ -231,6 +231,35 @@ Public Class aaformMainWindow
 
     End Sub
 #End Region
+
+#Region "Hide When Minimized menubar button checkbox and stuff."
+    Private Sub menubarHideWhenMinimizedButton_Click(sender As Object, e As EventArgs) Handles menubarHideWhenMinimizedButton.Click
+        ' When the user clicks on the Hide When Minimized menubar button, the following code will run.
+        ' First, the app will see if the Hide When Minimized menubar button is unchecked, then it will
+        ' check the box for that button.
+        ' Then, the app will check to see what My.Settings.hideWhenMinimized is set to. If it's set to
+        ' False, then the app will set it to True, and the other way if it's set to True.
+        ' After that, My.Settings will be saved.
+
+        If menubarHideWhenMinimizedButton.CheckState = CheckState.Unchecked Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Checked
+            If My.Settings.hideWhenMinimized = False Then
+                My.Settings.hideWhenMinimized = True
+            End If
+            My.Settings.Save()
+            My.Settings.Reload()
+
+        ElseIf menubarHideWhenMinimizedButton.CheckState = CheckState.Checked Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Unchecked
+            If My.Settings.hideWhenMinimized = True Then
+                My.Settings.hideWhenMinimized = False
+            End If
+            My.Settings.Save()
+            My.Settings.Reload()
+
+        End If
+    End Sub
+#End Region
 #End Region
 
 #Region "App Launcher Code."
