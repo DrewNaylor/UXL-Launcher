@@ -103,6 +103,7 @@ Partial Class aaformMainWindow
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.menubarHideWhenMinimizedButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -153,7 +154,7 @@ Partial Class aaformMainWindow
         '
         'menubarViewMenu
         '
-        Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton, Me.menubarRevertThemeButton})
+        Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton, Me.menubarHideWhenMinimizedButton, Me.menubarRevertThemeButton})
         Me.menubarViewMenu.Name = "menubarViewMenu"
         Me.menubarViewMenu.Size = New System.Drawing.Size(44, 19)
         Me.menubarViewMenu.Text = "&View"
@@ -871,6 +872,12 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
+        'menubarHideWhenMinimizedButton
+        '
+        Me.menubarHideWhenMinimizedButton.Name = "menubarHideWhenMinimizedButton"
+        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarHideWhenMinimizedButton.Text = "&Hide When Minimized"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -994,4 +1001,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelXmlThemeTitle As Label
     Friend WithEvents debugLabelXmlThemeAuthor As Label
     Friend WithEvents menubarRevertThemeButton As ToolStripMenuItem
+    Friend WithEvents menubarHideWhenMinimizedButton As ToolStripMenuItem
 End Class
