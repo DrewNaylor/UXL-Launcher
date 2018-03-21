@@ -589,7 +589,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 406)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 407)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
         Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(233, 13)
         Me.debugLabelXmlThemeUseThemeEngineVersion.TabIndex = 26
@@ -598,7 +598,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(4, 393)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(4, 394)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
         Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(144, 13)
@@ -626,7 +626,7 @@ Partial Class aaformMainWindow
         'debugLabelForMSIInstall
         '
         Me.debugLabelForMSIInstall.AutoSize = True
-        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 341)
+        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 342)
         Me.debugLabelForMSIInstall.Name = "debugLabelForMSIInstall"
         Me.debugLabelForMSIInstall.Size = New System.Drawing.Size(124, 13)
         Me.debugLabelForMSIInstall.TabIndex = 22
@@ -645,7 +645,7 @@ Partial Class aaformMainWindow
         'debugLabelForuserOfficeVersion
         '
         Me.debugLabelForuserOfficeVersion.AutoSize = True
-        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(4, 328)
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(4, 329)
         Me.debugLabelForuserOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
         Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(161, 13)
@@ -655,7 +655,7 @@ Partial Class aaformMainWindow
         'debugLabelForofficeInstallMethodString
         '
         Me.debugLabelForofficeInstallMethodString.AutoSize = True
-        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(4, 302)
+        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(4, 303)
         Me.debugLabelForofficeInstallMethodString.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
         Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(167, 26)
