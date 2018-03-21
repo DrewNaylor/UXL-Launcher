@@ -105,6 +105,7 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.notifyiconShowApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -169,12 +170,14 @@ Partial Class aaformMainWindow
         '
         'menubarHideWhenMinimizedButton
         '
+        Me.menubarHideWhenMinimizedButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarHideWhenMinimizedButton.Name = "menubarHideWhenMinimizedButton"
         Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(242, 22)
         Me.menubarHideWhenMinimizedButton.Text = "&Hide When Minimized"
         '
         'menubarRevertThemeButton
         '
+        Me.menubarRevertThemeButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
         Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
@@ -250,10 +253,10 @@ Partial Class aaformMainWindow
         'contextmenuNotifyicon
         '
         Me.contextmenuNotifyicon.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconExitApp})
+        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 382)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 434)
         '
         'notifyiconWord
         '
@@ -889,6 +892,12 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
+        'notifyiconShowApp
+        '
+        Me.notifyiconShowApp.Name = "notifyiconShowApp"
+        Me.notifyiconShowApp.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconShowApp.Text = "Show UXL Launcher"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1014,4 +1023,5 @@ Partial Class aaformMainWindow
     Friend WithEvents menubarRevertThemeButton As ToolStripMenuItem
     Friend WithEvents menubarHideWhenMinimizedButton As ToolStripMenuItem
     Friend WithEvents debugLabelXmlThemeUseThemeEngineVersion As Label
+    Friend WithEvents notifyiconShowApp As ToolStripMenuItem
 End Class

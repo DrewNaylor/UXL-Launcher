@@ -357,6 +357,16 @@ Public Class aaformMainWindow
         Me.Close()
     End Sub
 
+    Private Sub notifyiconShowApp_Click(sender As Object, e As EventArgs) Handles notifyiconShowApp.Click
+        ' Show UXL Launcher. Useful if "Hide When Minimized" is enabled.
+        ' When the user clicks the "Show UXL Launcher" menu entry, show the main window again.
+        ' Code based on this sample code:
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        ShowInTaskbar = True
+        WindowState = FormWindowState.Normal
+    End Sub
+
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
         Dim forceOptionsWindowTab As New aaformOptionsWindow
