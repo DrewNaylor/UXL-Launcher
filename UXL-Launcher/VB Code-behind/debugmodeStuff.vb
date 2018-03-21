@@ -89,15 +89,17 @@ Public Class debugmodeStuff
         aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
         ' Debug labels for theme titles and descriptions.
-        aaformMainWindow.debugLabelXmlThemeTitle.Text = UXLLauncher_ThemeEngine.themeSheetTitle
-        aaformMainWindow.debugLabelXmlThemeDescription.Text = UXLLauncher_ThemeEngine.themeSheetDescription
-        aaformMainWindow.debugLabelXmlThemeAuthor.Text = UXLLauncher_ThemeEngine.themeSheetAuthor
-        aaformMainWindow.debugLabelXmlThemeAuthor.Text = aaformMainWindow.debugLabelXmlThemeAuthor.Text & vbCrLf & "UseThemeEngineVersion string:" &
-            vbCrLf & UXLLauncher_ThemeEngine.themeSheetUseThemeEngineVersion
+        aaformMainWindow.debugLabelXmlThemeTitle.Text = "Title string: " & UXLLauncher_ThemeEngine.themeSheetTitle
+        aaformMainWindow.debugLabelXmlThemeDescription.Text = "Description string: " & UXLLauncher_ThemeEngine.themeSheetDescription
+        aaformMainWindow.debugLabelXmlThemeAuthor.Text = "Author string: " & UXLLauncher_ThemeEngine.themeSheetAuthor
+        aaformMainWindow.debugLabelXmlThemeUseThemeEngineVersion.Text = "UseThemeEngineVersion string: " &
+            CType(UXLLauncher_ThemeEngine.themeSheetUseThemeEngineVersion, String)
 
     End Sub
 
     Public Shared Sub outputThemeVersionToUse(themeVersionToUse As Decimal)
+        ' Show theme engine version that the theme wants to use in the Immediate Window
+        ' if the proper setting is enabled.
         If My.Settings.debugmodeShowThemeEngineOutput = True Then
             Debug.WriteLine("")
             Debug.WriteLine("UseThemeEngineVersion string:")
