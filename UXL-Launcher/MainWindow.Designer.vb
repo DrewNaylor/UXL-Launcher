@@ -29,6 +29,7 @@ Partial Class aaformMainWindow
         Me.menubarExitButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarAlwaysOnTopButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarHideWhenMinimizedButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarRevertThemeButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarOfficeLangPrefsButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,6 +76,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.debugLabelXmlThemeUseThemeEngineVersion = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeDescription = New System.Windows.Forms.Label()
@@ -83,7 +85,6 @@ Partial Class aaformMainWindow
         Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.debugLabelForofficeInstallMethodString = New System.Windows.Forms.Label()
         Me.debugLabelForcpuTypeString = New System.Windows.Forms.Label()
-        Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.buttonRunSharePointWkSp = New System.Windows.Forms.Button()
         Me.buttonRunAccess = New System.Windows.Forms.Button()
         Me.buttonRunInfoPath = New System.Windows.Forms.Button()
@@ -102,7 +103,9 @@ Partial Class aaformMainWindow
         Me.picturePictureManagerIcon = New System.Windows.Forms.PictureBox()
         Me.pictureClipOrganizerIcon = New System.Windows.Forms.PictureBox()
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
+        Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.notifyiconShowApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -153,7 +156,7 @@ Partial Class aaformMainWindow
         '
         'menubarViewMenu
         '
-        Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton, Me.menubarRevertThemeButton})
+        Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton, Me.menubarHideWhenMinimizedButton, Me.menubarRevertThemeButton})
         Me.menubarViewMenu.Name = "menubarViewMenu"
         Me.menubarViewMenu.Size = New System.Drawing.Size(44, 19)
         Me.menubarViewMenu.Text = "&View"
@@ -165,8 +168,16 @@ Partial Class aaformMainWindow
         Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(242, 22)
         Me.menubarAlwaysOnTopButton.Text = "&Always On Top"
         '
+        'menubarHideWhenMinimizedButton
+        '
+        Me.menubarHideWhenMinimizedButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menubarHideWhenMinimizedButton.Name = "menubarHideWhenMinimizedButton"
+        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarHideWhenMinimizedButton.Text = "&Hide When Minimized"
+        '
         'menubarRevertThemeButton
         '
+        Me.menubarRevertThemeButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
         Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
@@ -242,10 +253,10 @@ Partial Class aaformMainWindow
         'contextmenuNotifyicon
         '
         Me.contextmenuNotifyicon.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconExitApp})
+        Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 382)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 434)
         '
         'notifyiconWord
         '
@@ -552,6 +563,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeUseThemeEngineVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeTitle)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeDescription)
@@ -560,7 +572,6 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Controls.Add(Me.debugLabelForuserOfficeVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeInstallMethodString)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForcpuTypeString)
-        Me.groupboxProApps.Controls.Add(Me.debugLabelForAlwaysOnTop)
         Me.groupboxProApps.Controls.Add(Me.buttonRunSharePointWkSp)
         Me.groupboxProApps.Controls.Add(Me.buttonRunAccess)
         Me.groupboxProApps.Controls.Add(Me.buttonRunInfoPath)
@@ -578,10 +589,19 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
         '
+        'debugLabelXmlThemeUseThemeEngineVersion
+        '
+        Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 407)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(233, 13)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.TabIndex = 26
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Text = "debugLabelXmlThemeUseThemeEngineVersion"
+        '
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(4, 393)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(4, 394)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
         Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(144, 13)
@@ -609,7 +629,7 @@ Partial Class aaformMainWindow
         'debugLabelForMSIInstall
         '
         Me.debugLabelForMSIInstall.AutoSize = True
-        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 341)
+        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 342)
         Me.debugLabelForMSIInstall.Name = "debugLabelForMSIInstall"
         Me.debugLabelForMSIInstall.Size = New System.Drawing.Size(124, 13)
         Me.debugLabelForMSIInstall.TabIndex = 22
@@ -628,7 +648,7 @@ Partial Class aaformMainWindow
         'debugLabelForuserOfficeVersion
         '
         Me.debugLabelForuserOfficeVersion.AutoSize = True
-        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(4, 328)
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(4, 329)
         Me.debugLabelForuserOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
         Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(161, 13)
@@ -638,7 +658,7 @@ Partial Class aaformMainWindow
         'debugLabelForofficeInstallMethodString
         '
         Me.debugLabelForofficeInstallMethodString.AutoSize = True
-        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(4, 302)
+        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(4, 303)
         Me.debugLabelForofficeInstallMethodString.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
         Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(167, 26)
@@ -653,16 +673,6 @@ Partial Class aaformMainWindow
         Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(147, 13)
         Me.debugLabelForcpuTypeString.TabIndex = 18
         Me.debugLabelForcpuTypeString.Text = "debugLabelForcpuTypeString"
-        '
-        'debugLabelForAlwaysOnTop
-        '
-        Me.debugLabelForAlwaysOnTop.AutoSize = True
-        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 418)
-        Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
-        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(167, 26)
-        Me.debugLabelForAlwaysOnTop.TabIndex = 10
-        Me.debugLabelForAlwaysOnTop.Text = "This debug label shows the status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of the Always On Top feature."
         '
         'buttonRunSharePointWkSp
         '
@@ -761,6 +771,7 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.Controls.Add(Me.picturePictureManagerIcon)
         Me.groupboxExtraApps.Controls.Add(Me.pictureClipOrganizerIcon)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunClipOrganizer)
+        Me.groupboxExtraApps.Controls.Add(Me.debugLabelForAlwaysOnTop)
         Me.groupboxExtraApps.Location = New System.Drawing.Point(432, 2)
         Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
@@ -864,12 +875,28 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer.Text = "Microsoft Clip Organizer"
         Me.buttonRunClipOrganizer.UseVisualStyleBackColor = True
         '
+        'debugLabelForAlwaysOnTop
+        '
+        Me.debugLabelForAlwaysOnTop.AutoSize = True
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 368)
+        Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
+        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(167, 26)
+        Me.debugLabelForAlwaysOnTop.TabIndex = 10
+        Me.debugLabelForAlwaysOnTop.Text = "This debug label shows the status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of the Always On Top feature."
+        '
         'notifyiconTaskbarLaunchers
         '
         Me.notifyiconTaskbarLaunchers.ContextMenuStrip = Me.contextmenuNotifyicon
         Me.notifyiconTaskbarLaunchers.Icon = CType(resources.GetObject("notifyiconTaskbarLaunchers.Icon"), System.Drawing.Icon)
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
+        '
+        'notifyiconShowApp
+        '
+        Me.notifyiconShowApp.Name = "notifyiconShowApp"
+        Me.notifyiconShowApp.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconShowApp.Text = "Show UXL Launcher"
         '
         'aaformMainWindow
         '
@@ -994,4 +1021,7 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelXmlThemeTitle As Label
     Friend WithEvents debugLabelXmlThemeAuthor As Label
     Friend WithEvents menubarRevertThemeButton As ToolStripMenuItem
+    Friend WithEvents menubarHideWhenMinimizedButton As ToolStripMenuItem
+    Friend WithEvents debugLabelXmlThemeUseThemeEngineVersion As Label
+    Friend WithEvents notifyiconShowApp As ToolStripMenuItem
 End Class

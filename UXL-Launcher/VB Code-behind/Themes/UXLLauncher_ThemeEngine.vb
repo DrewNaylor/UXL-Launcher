@@ -39,6 +39,8 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetTitle As String
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
+    ' Create string for version of Theme Engine the theme is compatible with.
+    Friend Shared themeSheetUseThemeEngineVersion As Decimal
 
     Public Shared Sub themeEngine_ApplyTheme()
 #Region "Read XML Theme Document."
@@ -96,7 +98,32 @@ Public Class UXLLauncher_ThemeEngine
         Dim propertyStatusLabelBorderStyle As Border3DStyle
 #End Region
 
-#Region "Pull theme colors from XML documents."
+#Region "Pull theme colors and other elements from XML documents."
+
+#Region "Pull UseThemeEngineVersion element from XML."
+
+        ' Only pull the UseThemeEngineVersion element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
+            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
+            If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                themeSheetUseThemeEngineVersion = CDec(1.01)
+                debugmodeStuff.outputThemeVersionToUse(themeSheetUseThemeEngineVersion)
+
+                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                ' set it to whatever the version is specified in the theme file.
+            ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                debugmodeStuff.outputThemeVersionToUse(themeSheetUseThemeEngineVersion)
+            End If
+        Else
+            ' If the XML element is missing, manually force the value to be 1.01.
+            themeSheetUseThemeEngineVersion = CDec(1.01)
+            debugmodeStuff.updateDebugLabels()
+            debugmodeStuff.outputThemeVersionToUse(themeSheetUseThemeEngineVersion)
+        End If
+
+#End Region
 
 #Region "Pull Title theme element from XML."
 
@@ -564,12 +591,15 @@ Public Class UXLLauncher_ThemeEngine
         End If
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
-        ' containing the theme to the Debugger.
-        Debug.WriteLine("Theme name in config file:")
-        Debug.WriteLine(settingsThemeName)
-        Debug.WriteLine("")
-        Debug.WriteLine("Theme XML Document:")
-        Debug.WriteLine(userTheme)
+        ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
+        ' this happens BEFORE any theme colors are applied.
+        If My.Settings.debugmodeShowThemeEngineOutput = True Then
+            Debug.WriteLine("Theme name in config file:")
+            Debug.WriteLine(settingsThemeName)
+            Debug.WriteLine("")
+            Debug.WriteLine("Theme XML Document:")
+            Debug.WriteLine(userTheme)
+        End If
 
         ' Apply the theme.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()

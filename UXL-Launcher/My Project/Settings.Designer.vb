@@ -161,6 +161,30 @@ Namespace My
                 Me("enableThemeEngine") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property debugmodeShowThemeEngineOutput() As Boolean
+            Get
+                Return CType(Me("debugmodeShowThemeEngineOutput"),Boolean)
+            End Get
+            Set
+                Me("debugmodeShowThemeEngineOutput") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property hideWhenMinimized() As Boolean
+            Get
+                Return CType(Me("hideWhenMinimized"),Boolean)
+            End Get
+            Set
+                Me("hideWhenMinimized") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

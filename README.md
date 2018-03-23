@@ -38,6 +38,25 @@ along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 <br>
 <br>
 
+Screenshots:
+
+![](/docs/images/uxl-launcher-3.0_screenshot.PNG?raw=true)
+<br>
+>^ Main UXL Launcher 3.0 window running on Windows 7.
+
+<br>
+
+![](/docs/images/uxl-launcher-quickmenu_from-3.0_screenshot.PNG?raw=true)
+<br>
+>^ UXL Launcher Quickmenu - a context menu for its system tray icon that exposes a few functions.
+
+<br>
+
+[More screenshots](https://github.com/DrewNaylor/UXL-Launcher/wiki/Screenshots)
+
+<br>
+<br>
+
 More information to come in the future! In the meantime, please check the repositories of Drew's App Launcher, linked here:
 
 [Drew's App Launcher 32-bit](https://github.com/DrewNaylor/MSOfficeAppLauncherNext32)

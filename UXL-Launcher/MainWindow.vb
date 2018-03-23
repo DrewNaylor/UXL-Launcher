@@ -78,18 +78,19 @@ Public Class aaformMainWindow
         debugmodeStuff.updateDebugLabels()
 #End Region
 
-#Region "Main form loading code for Always On Top menubar button."
+#Region "Main form loading code for Always On Top menubar button and window properties."
 
-        ' See if the Always On Top setting is set to true and if it is, then set
-        ' the window to be on top of other windows.
+        ' See if the Always On Top setting is set to true and if it is,
+        ' then set the window to be on top of other windows
+        ' and check the checkbox in the "Always On Top" menubar button.
 
         If My.Settings.alwaysOnTop = True Then
             Me.TopMost = True
             menubarAlwaysOnTopButton.CheckState = CheckState.Checked
             debugmodeStuff.updateDebugLabels()
 
-            ' But if the Always On Top setting is false, then set the window to not
-            ' be on top of other windows.
+            ' But if the Always On Top setting is false, then set the window
+            ' to not be on top of other windows.
 
         ElseIf My.Settings.alwaysOnTop = False Then
             Me.TopMost = False
@@ -98,8 +99,48 @@ Public Class aaformMainWindow
         End If
 #End Region
 
+#Region "Main form loading code for Hide When Minimized menubar button."
+
+        ' See if the Hide When Minimized setting is set to true and if it is,
+        ' check the checkbox in the "Hide When Minimized" menubar button.
+
+        If My.Settings.hideWhenMinimized = True Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Checked
+
+            ' Otherwise, if it's false, make the "Hide When Minimized" checkbox
+            ' be unchecked.
+        ElseIf My.Settings.hideWhenMinimized = False Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Unchecked
+        End If
+
+#End Region
+        ' End of Form1_Load sub.
     End Sub
 
+#Region "Hide when minimized code."
+    Private Sub aaformMainWindow_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        ' If the user has "Hide When Minimized" enabled, hide the window when they minimize it.
+        ' Code based on this sample code: 
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        If My.Settings.hideWhenMinimized = True Then
+            If WindowState = FormWindowState.Minimized Then
+                ShowInTaskbar = False
+            End If
+        End If
+
+    End Sub
+
+    Private Sub notifyiconTaskbarLaunchers_DoubleClick(sender As Object, e As EventArgs) Handles notifyiconTaskbarLaunchers.DoubleClick
+        ' When the user double-clicks on the notification icon, show the main window again.
+        ' Code based on this sample code:
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        ShowInTaskbar = True
+        WindowState = FormWindowState.Normal
+
+    End Sub
+#End Region
 
 #Region "Menubar code, including menubar buttons."
 
@@ -188,6 +229,35 @@ Public Class aaformMainWindow
         ' Update the debug label for alwaysOnTop.
         debugmodeStuff.updateDebugLabels()
 
+    End Sub
+#End Region
+
+#Region "Hide When Minimized menubar button checkbox and stuff."
+    Private Sub menubarHideWhenMinimizedButton_Click(sender As Object, e As EventArgs) Handles menubarHideWhenMinimizedButton.Click
+        ' When the user clicks on the Hide When Minimized menubar button, the following code will run.
+        ' First, the app will see if the Hide When Minimized menubar button is unchecked, then it will
+        ' check the box for that button.
+        ' Then, the app will check to see what My.Settings.hideWhenMinimized is set to. If it's set to
+        ' False, then the app will set it to True, and the other way if it's set to True.
+        ' After that, My.Settings will be saved.
+
+        If menubarHideWhenMinimizedButton.CheckState = CheckState.Unchecked Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Checked
+            If My.Settings.hideWhenMinimized = False Then
+                My.Settings.hideWhenMinimized = True
+            End If
+            My.Settings.Save()
+            My.Settings.Reload()
+
+        ElseIf menubarHideWhenMinimizedButton.CheckState = CheckState.Checked Then
+            menubarHideWhenMinimizedButton.CheckState = CheckState.Unchecked
+            If My.Settings.hideWhenMinimized = True Then
+                My.Settings.hideWhenMinimized = False
+            End If
+            My.Settings.Save()
+            My.Settings.Reload()
+
+        End If
     End Sub
 #End Region
 #End Region
@@ -314,6 +384,16 @@ Public Class aaformMainWindow
     Private Sub notifyiconExitApp_Click(sender As Object, e As EventArgs) Handles notifyiconExitApp.Click
         ' Exit UXL Launcher.
         Me.Close()
+    End Sub
+
+    Private Sub notifyiconShowApp_Click(sender As Object, e As EventArgs) Handles notifyiconShowApp.Click
+        ' Show UXL Launcher. Useful if "Hide When Minimized" is enabled.
+        ' When the user clicks the "Show UXL Launcher" menu entry, show the main window again.
+        ' Code based on this sample code:
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        ShowInTaskbar = True
+        WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
