@@ -7,7 +7,7 @@ UXL Launcher allows the user to launch Microsoft Office apps from one place inst
 Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
 The readme continues after this notice.
-test
+
 ```
 UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 Copyright (C) 2013-2018  Drew Naylor
