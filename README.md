@@ -124,9 +124,11 @@ To run UXL Launcher, your computer requires the following:
 In addition to the requirements for simply running UXL Launcher, your computer requires the following software to build it from source code:
 
 - [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
+  - If [Visual Studio 2015 Community](https://www.visualstudio.com/vs/older-downloads/) is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
 - [Windows PowerShell 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
+  - It may be necessary to read the Windows PowerShell 5.0 [install instructions](https://docs.microsoft.com/en-us/powershell/wmf/5.0/requirements) as the download page can be a bit confusing. The install instructions link has a table with the links needed for each version of Windows.
+  - Windows 10 does not require PowerShell to be manually installed as it already has PowerShell 5.0.
 
-If [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
 
 ~~If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.~~ Please be aware that this script no longer works as of February 23, 2018, due to changes with GitHub's servers. See [here](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde#gistcomment-2367291). An alternate method to trying the latest changes from the master branch is by downloading the latest build's [artifacts from AppVeyor](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/build/artifacts). When the download has completed, extract the archive, then open the `Debug` folder. In this folder, double-click on `UXL-Launcher.exe`.
 
