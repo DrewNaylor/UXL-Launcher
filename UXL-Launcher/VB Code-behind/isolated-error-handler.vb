@@ -43,7 +43,7 @@ Public Class isolated_error_handler
             If msgResult = DialogResult.Yes Then
                 Dim forceOptionsWindowTab As New aaformOptionsWindow
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog()
+                forceOptionsWindowTab.ShowDialog(aaformMainWindow)
             End If
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
