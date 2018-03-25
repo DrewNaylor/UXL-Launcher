@@ -128,11 +128,11 @@ In addition to the requirements for simply running UXL Launcher, your computer r
 
 If [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
 
-If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.
+~~If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.~~ Please be aware that this script no longer works as of February 23, 2018, due to changes with GitHub's servers. See [here](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde#gistcomment-2367291). An alternate method to trying the latest changes from the master branch is by downloading the latest build's [artifacts from AppVeyor](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/build/artifacts). When the download has completed, extract the archive, then open the `Debug` folder. In this folder, double-click on `UXL-Launcher.exe`.
 
 ***
 
-If you don't want to use a script to build UXL Launcher, here's how to do it manually:
+If you don't want to use a script (or download from AppVeyor) to build UXL Launcher, here's how to do it manually:
 
 1. First, clone the Git repository by running: <code>git clone https://github.com/DrewNaylor/UXL-Launcher.git</code> or [download the Zip file for the master branch](https://github.com/DrewNaylor/UXL-Launcher/archive/master.zip) and remember where you saved your files.
 
