@@ -585,9 +585,17 @@ Public Class UXLLauncher_ThemeEngine
             ' However, if it does, then we only add "_XML" to the string.
         ElseIf settingsThemeName.Contains("Theme") Then
             userTheme = My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML")
+            ' If the user has a custom theme enabled, use that instead.
+        ElseIf settingsThemeName = "(Custom theme)" And My.Settings.userCustomThemePath IsNot Nothing Then
+            ' Make sure the theme path and file exists.
+            If System.IO.File.Exists(My.Settings.userCustomThemePath) Then
+                userTheme = My.Settings.userCustomThemePath
+            Else
+                userTheme = My.Resources.DefaultTheme_XML
+            End If
             ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
         Else
-            userTheme = My.Resources.DefaultTheme_XML
+                userTheme = My.Resources.DefaultTheme_XML
         End If
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document

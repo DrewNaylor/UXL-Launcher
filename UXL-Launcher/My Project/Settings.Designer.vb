@@ -185,6 +185,18 @@ Namespace My
                 Me("hideWhenMinimized") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property userCustomThemePath() As String
+            Get
+                Return CType(Me("userCustomThemePath"),String)
+            End Get
+            Set
+                Me("userCustomThemePath") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
