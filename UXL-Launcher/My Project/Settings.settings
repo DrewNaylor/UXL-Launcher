@@ -36,7 +36,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userCustomThemePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\test</Value>
+      <Value Profile="(Default)">"C:\Users\Drew\Visual Studio 2015\UXL-Launcher\testfolder\testTheme.xml"</Value>
     </Setting>
   </Settings>
 </SettingsFile>

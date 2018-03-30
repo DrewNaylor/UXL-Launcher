@@ -602,11 +602,20 @@ Public Class UXLLauncher_ThemeEngine
         ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
         ' this happens BEFORE any theme colors are applied.
         If My.Settings.debugmodeShowThemeEngineOutput = True Then
+            Debug.WriteLine("")
+            Debug.WriteLine("")
+            Debug.WriteLine("")
             Debug.WriteLine("Theme name in config file:")
             Debug.WriteLine(settingsThemeName)
             Debug.WriteLine("")
             Debug.WriteLine("Theme XML Document:")
             Debug.WriteLine(userTheme)
+            If My.Settings.userChosenTheme = "(Custom theme)" Then
+                ' Also output the configured custom theme's file path if the user has a custom theme.
+                Debug.WriteLine("")
+                Debug.WriteLine("Custom theme path:")
+                Debug.WriteLine(My.Settings.userCustomThemePath.ToString)
+            End If
         End If
 
         ' Apply the theme.
