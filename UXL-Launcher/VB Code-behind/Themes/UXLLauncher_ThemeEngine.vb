@@ -580,6 +580,10 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Start the theme engine and apply the user's theme."
     Public Shared Sub themeEngine_ChooseUserTheme()
+
+        ' This documentation page helped a lot for getting this working:
+        ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
+
         Try ' Make sure the theme engine doesn't break.
 
             ' Then we see if the userChosenTheme setting contains the word "Theme."
