@@ -417,6 +417,8 @@ Public Class aaformMainWindow
         ' Attempt to apply the theme the user chose.
         If My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            Debug.WriteLine("userTheme:")
+            Debug.WriteLine(UXLLauncher_ThemeEngine.userTheme)
         End If
     End Sub
 
@@ -425,6 +427,8 @@ Public Class aaformMainWindow
         If My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            Debug.WriteLine("userTheme:")
+            Debug.WriteLine(UXLLauncher_ThemeEngine.userTheme)
         End If
     End Sub
 #End Region
