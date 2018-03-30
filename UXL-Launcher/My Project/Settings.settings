@@ -24,7 +24,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ReturnOfNight</Value>
+      <Value Profile="(Default)">(Custom theme)</Value>
     </Setting>
     <Setting Name="enableThemeEngine" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -36,7 +36,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userCustomThemePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\test</Value>
     </Setting>
   </Settings>
 </SettingsFile>
