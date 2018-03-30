@@ -201,7 +201,7 @@ Public Class aaformMainWindow
     Private Sub menubarRevertThemeButton_Click(sender As Object, e As EventArgs) Handles menubarRevertThemeButton.Click
         ' Attempt to revert to the default theme.
         If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
+            UXLLauncher_ThemeEngine.userTheme = XDocument.Load(My.Resources.DefaultTheme_XML)
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
         End If
     End Sub
@@ -425,7 +425,7 @@ Public Class aaformMainWindow
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
         ' Attempt to apply the default theme.
         If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
+            UXLLauncher_ThemeEngine.userTheme = XDocument.Parse(My.Resources.DefaultTheme_XML)
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
             Debug.WriteLine("userTheme:")
             Debug.WriteLine(UXLLauncher_ThemeEngine.userTheme)
