@@ -55,8 +55,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY o
 "" & vbCrLf &
 "Drew is not intending on infringing on Microsoft's copyrights, so UXL Launcher is only a shortcut application." & vbCrLf &
 "" & vbCrLf &
-"Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft's copyrights." & vbCrLf &
-"Any other companies mentioned own their respective copyrights/trademarks.")
+"Copyright notice: Windows, Microsoft Windows, Office, Microsoft Office, Word, Excel, PowerPoint, and all related words and trademarks/registered trademarks owned by Microsoft in the United States and/or other countries are Copyright 2018 Microsoft Corporation. All Rights Reserved to Microsoft for Microsoft's copyrights, trademarks, and registered trademarks." & vbCrLf &
+"Any other companies mentioned own their respective copyrights/trademarks." & vbCrLf &
+"Microsoft is not affiliated with either UXL Launcher or Drew Naylor and does not endorse this software.")
 
 
         ' Load the GPL document in the RTF Textbox control.
