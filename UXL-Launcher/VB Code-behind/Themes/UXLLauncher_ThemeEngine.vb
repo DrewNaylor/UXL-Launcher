@@ -1,14 +1,16 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 'Copyright (C) 2013-2018 Drew Naylor
 'Microsoft Office and all related words are copyright
-'and trademark Microsoft Corporation.
+'and trademark Microsoft Corporation. More details in the About window.
+'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
+'and does not endorse this software.
+'Any other companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
-'
-'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 '
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
-'another software titled "[Kindle] Unified Application Launcher".)
+'other software titled "[Kindle] Unified Application Launcher",
+'"UX Launcher" [an Android launcher], or "Ulauncher" [a Linux app launcher].)
 '
 'UXL Launcher is free software: you can redistribute it and/or modify
 'it under the terms of the GNU General Public License as published by
