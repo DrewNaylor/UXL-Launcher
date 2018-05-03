@@ -597,11 +597,24 @@ Public Class UXLLauncher_ThemeEngine
                 userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML"))
                 ' If the user has a custom theme enabled, use that instead.
                 ' Make sure the theme path and file exists.
-            ElseIf My.Settings.userChosenTheme = "(Custom)" Then
+            ElseIf My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
                 userTheme.Load(My.Settings.userCustomThemePath)
                 ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
             Else
                 userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                ' If the theme engine output debug setting is enabled, output an error
+                ' in the Immediate Window or debug textbox if this particular Else statement is used
+                ' so that developers/theme designers know there's something going wrong with the theme settings.
+                If My.Settings.debugmodeShowThemeEngineOutput = True Then
+                    Debug.WriteLine("")
+                    Debug.WriteLine("Begin theme engine output:")
+                    Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
+                                    "file specified for userCustomThemePath wasn't found, or the theme name in userChosenTheme" & vbCrLf &
+                                    "is invalid.")
+                    Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                    Debug.WriteLine("End theme engine output.")
+                End If
             End If
         Catch ex As ArgumentNullException
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
