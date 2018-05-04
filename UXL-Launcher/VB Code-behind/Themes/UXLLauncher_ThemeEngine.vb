@@ -648,7 +648,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 #End Region
 
-    Private Shared Sub themeSettingsInvalidMessage(Optional exceptionType As String = "default")
+    Private Shared Sub themeSettingsInvalidMessage(Optional exceptionType As String = "(None)", Optional exceptionMessage As String = "(None)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -667,7 +667,7 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("--------------------------------------")
             Debug.WriteLine("Begin theme engine output:")
 
-            If exceptionType = "default" Then
+            If exceptionType = "(None)" Then
                 ' If "default" is used and no exception is specified, just output the generic message.
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
                             "file specified for userCustomThemePath wasn't found, or the theme name in userChosenTheme" & vbCrLf &
@@ -686,10 +686,11 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
                 ' say that the chosen theme has no root element.
                 Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
                             "chosen theme that My.Settings.userChosenTheme is set to or the" & vbCrLf &
                             "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
-                            "doesn't have a root element.")
+                            "doesn't have a root element or otherwise has malformed XML.")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
             End If
