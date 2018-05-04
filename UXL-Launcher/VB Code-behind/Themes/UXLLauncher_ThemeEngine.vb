@@ -607,13 +607,13 @@ Public Class UXLLauncher_ThemeEngine
                 ' so that developers/theme designers know there's something going wrong with the theme settings.
                 themeSettingsInvalidMessage("default")
             End If
-        Catch ex As ArgumentNullException
+        Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
             ' included in My.Resources, the ArgumentNullException will be fired and the default theme
             ' will be used instead temporarily. The developer, user, or theme designer will be notified
             ' about this error in the Immediate Window.
-            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             themeSettingsInvalidMessage("ArgumentNullException")
+            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
         Catch ex As XmlException
             ' If there's an XmlException (which can occur if the selected theme has no
             ' root element), tell the user, developer, or theme designer
@@ -666,14 +666,16 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
                 Debug.WriteLine("End theme engine output.")
+            ElseIf exceptionType = "ArgumentNullException" Then
+                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+                ' a theme file in My.Resources, give a message for this problem.
+                Debug.WriteLine("")
+                Debug.WriteLine("Begin theme engine output:")
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
+                            "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
+                            "match any theme files in My.Resources.")
             End If
-        ElseIf exceptionType = "ArgumentNullException" Then
-            ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
-            ' a theme file in My.Resources, give a message for this problem.
-            Debug.WriteLine("")
-            Debug.WriteLine("Begin theme engine output:")
-            Debug.WriteLine("Exception: " & exceptionType)
-
         End If
     End Sub
 
