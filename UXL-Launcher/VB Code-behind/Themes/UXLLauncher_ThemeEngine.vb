@@ -612,14 +612,14 @@ Public Class UXLLauncher_ThemeEngine
             ' included in My.Resources, the ArgumentNullException will be fired and the default theme
             ' will be used instead temporarily. The developer, user, or theme designer will be notified
             ' about this error in the Immediate Window.
-            themeSettingsInvalidMessage("ArgumentNullException")
+            themeSettingsInvalidMessage("ArgumentNullException", ex.Message)
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
         Catch ex As XmlException
             ' If there's an XmlException (which can occur if the selected theme has no
             ' root element), tell the user, developer, or theme designer
             ' and use the default theme.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeSettingsInvalidMessage("XmlException")
+            themeSettingsInvalidMessage("XmlException", ex.Message)
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
