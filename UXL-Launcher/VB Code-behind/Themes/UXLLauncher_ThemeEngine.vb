@@ -605,19 +605,21 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the theme engine output debug setting is enabled, output an error
                 ' in the Immediate Window or debug textbox if this particular Else statement is used
                 ' so that developers/theme designers know there's something going wrong with the theme settings.
-                If My.Settings.debugmodeShowThemeEngineOutput = True Then
-                    Debug.WriteLine("")
-                    Debug.WriteLine("Begin theme engine output:")
-                    Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
-                                    "file specified for userCustomThemePath wasn't found, or the theme name in userChosenTheme" & vbCrLf &
-                                    "is invalid.")
-                    Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                    Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
-                    Debug.WriteLine("End theme engine output.")
-                End If
+                themeSettingsInvalidMessage()
             End If
         Catch ex As ArgumentNullException
+            ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
+            ' included in My.Resources, the ArgumentNullException will be fired and the default theme
+            ' will be used instead temporarily. The developer, user, or theme designer will be notified
+            ' about this error in the Immediate Window.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+            themeSettingsInvalidMessage()
+        Catch ex As XmlException
+            ' If there's an XmlException (which can occur if the selected theme has no
+            ' root element), tell the user, developer, or theme designer
+            ' and use the default theme.
+            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+            themeSettingsInvalidMessage()
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
@@ -630,16 +632,14 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("Theme name in config file:")
             Debug.WriteLine(My.Settings.userChosenTheme)
             Debug.WriteLine("")
-            Debug.WriteLine("Theme XML Document:")
-            Debug.WriteLine(userTheme)
-            If My.Settings.userChosenTheme = "(Custom)" Then
-                ' Also output the configured custom theme's file path if the user has a custom theme.
+            If My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
+                ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
                 Debug.WriteLine("")
                 Debug.WriteLine("Custom theme path:")
                 Debug.WriteLine(My.Settings.userCustomThemePath.ToString)
-                Debug.WriteLine("userTheme:")
-                Debug.WriteLine(userTheme)
             End If
+            Debug.WriteLine("Theme XML file:")
+            Debug.WriteLine(userTheme)
         End If
 
         ' Apply the theme.
@@ -647,6 +647,23 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 #End Region
+
+    Private Shared Sub themeSettingsInvalidMessage()
+        ' Tell the user, developer, or theme designer that there's a problem with the
+        ' chosen theme or custom theme. This can range from not having a root element
+        ' in the chosen theme to typing the theme incorrectly in the config file.
+        If My.Settings.debugmodeShowThemeEngineOutput = True Then
+            Debug.WriteLine("")
+            Debug.WriteLine("Begin theme engine output:")
+            Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
+                            "file specified for userCustomThemePath wasn't found, or the theme name in userChosenTheme" & vbCrLf &
+                            "is invalid.")
+            Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+            Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+            Debug.WriteLine("End theme engine output.")
+        End If
+    End Sub
+
 End Class
 
 

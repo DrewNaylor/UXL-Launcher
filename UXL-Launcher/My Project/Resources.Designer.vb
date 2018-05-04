@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-03-17T18:40:13
+        '''  Looks up a localized string similar to 2018-05-04T22:41:56
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -223,6 +223,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to .
+        '''</summary>
+        Public ReadOnly Property NoneTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("NoneTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property Onenote() As System.Drawing.Bitmap
@@ -277,7 +286,7 @@ Namespace My.Resources
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  &lt;!--&lt;UseThemeEngineVersion&gt;2.01&lt;/UseThemeEngineVersion&gt;--&gt;
+        '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
@@ -286,7 +295,9 @@ Namespace My.Resources
         '''      &lt;/Button&gt;
         '''      
         '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Indigo&lt;/BackColor [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ReturnOfNightTheme_XML() As String
             Get

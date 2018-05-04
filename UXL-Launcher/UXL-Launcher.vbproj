@@ -191,6 +191,7 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\NoneTheme_XML.txt" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\ReturnOfNightTheme_XML.xml" />
