@@ -605,7 +605,7 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the theme engine output debug setting is enabled, output an error
                 ' in the Immediate Window or debug textbox if this particular Else statement is used
                 ' so that developers/theme designers know there's something going wrong with the theme settings.
-                themeSettingsInvalidMessage()
+                themeSettingsInvalidMessage("default")
             End If
         Catch ex As ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -613,13 +613,13 @@ Public Class UXLLauncher_ThemeEngine
             ' will be used instead temporarily. The developer, user, or theme designer will be notified
             ' about this error in the Immediate Window.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeSettingsInvalidMessage()
+            themeSettingsInvalidMessage("ArgumentNullException")
         Catch ex As XmlException
             ' If there's an XmlException (which can occur if the selected theme has no
             ' root element), tell the user, developer, or theme designer
             ' and use the default theme.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeSettingsInvalidMessage()
+            themeSettingsInvalidMessage("XmlException")
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
@@ -648,19 +648,32 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 #End Region
 
-    Private Shared Sub themeSettingsInvalidMessage()
+    Private Shared Sub themeSettingsInvalidMessage(Optional exceptionType As String = "default")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
+
+        ' This sub accepts parameters for choosing which exceptionType message to show.
+
+
         If My.Settings.debugmodeShowThemeEngineOutput = True Then
-            Debug.WriteLine("")
-            Debug.WriteLine("Begin theme engine output:")
-            Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
+            If exceptionType = "default" Then ' If "default" is used and no exception is specified, just output the generic message.
+                Debug.WriteLine("")
+                Debug.WriteLine("Begin theme engine output:")
+                Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
                             "file specified for userCustomThemePath wasn't found, or the theme name in userChosenTheme" & vbCrLf &
                             "is invalid.")
-            Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-            Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
-            Debug.WriteLine("End theme engine output.")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("End theme engine output.")
+            End If
+        ElseIf exceptionType = "ArgumentNullException" Then
+            ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+            ' a theme file in My.Resources, give a message for this problem.
+            Debug.WriteLine("")
+            Debug.WriteLine("Begin theme engine output:")
+            Debug.WriteLine("Exception: " & exceptionType)
+
         End If
     End Sub
 
