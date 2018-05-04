@@ -661,7 +661,7 @@ Public Class UXLLauncher_ThemeEngine
             ' and that it's output for invalid theme settings.
 
             Debug.WriteLine("")
-            Debug.WriteLine("////////////////////////////////////////////////////////////////////////////////")
+            Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
             Debug.WriteLine("UXL Launcher Theme Engine Version " & My.Resources.themeEngineVersion)
             Debug.WriteLine("Invalid Theme Settings Message Handler")
             Debug.WriteLine("--------------------------------------")
@@ -684,12 +684,19 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
             ElseIf exceptionType = "XmlException" Then
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
-                ' 
+                ' say that the chosen theme has no root element.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
+                            "chosen theme that My.Settings.userChosenTheme is set to or the" & vbCrLf &
+                            "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
+                            "doesn't have a root element.")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
             End If
 
             ' End theme engine invalid settings output.
             Debug.WriteLine("End theme engine output.")
-            Debug.WriteLine("////////////////////////////////////////////////////////////////////////////////")
+            Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
         End If
     End Sub
 
