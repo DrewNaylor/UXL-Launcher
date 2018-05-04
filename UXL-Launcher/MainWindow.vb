@@ -152,9 +152,19 @@ Public Class aaformMainWindow
         ' Code based on this sample code:
         ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
 
+        ' First, the window needs to be shown on the desktop, in the taskbar, and
+        ' with a regular window state.
         Me.Show()
         ShowInTaskbar = True
         WindowState = FormWindowState.Normal
+        ' If the main window is behind another window, it needs to be brought to the front
+        ' and the focus needs to be set to the main window as well.
+        Me.TopMost = True
+        Me.Focus()
+        ' Don't set the main window to not be on top if Always On Top is enabled.
+        If My.Settings.alwaysOnTop = False Then
+            Me.TopMost = False
+        End If
     End Sub
 #End Region
 
