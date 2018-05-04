@@ -675,6 +675,8 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
                             "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
                             "match any theme files in My.Resources.")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("End theme engine output.")
             End If
         End If
     End Sub
