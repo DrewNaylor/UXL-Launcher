@@ -141,14 +141,16 @@ Public Class aaformMainWindow
         ' Code based on this sample code:
         ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
 
-        Me.Show()
-        ShowInTaskbar = True
-        WindowState = FormWindowState.Normal
+        ' The code that was here was moved to the showMainWindowFromQuickmenu sub, or whatever
+        ' the name of the sub that appears below is.
+
+        showMainWindowFromQuickmenu()
     End Sub
 
-    Private Sub notifyiconShowApp_Click(sender As Object, e As EventArgs) Handles notifyiconShowApp.Click
+    Private Sub showMainWindowFromQuickmenu()
         ' Show UXL Launcher. Useful if "Hide When Minimized" is enabled.
-        ' When the user clicks the "Show UXL Launcher" menu entry, show the main window again.
+        ' When the user clicks on the "Show UXL Launcher" Quickmenu menu entry
+        ' or double-clicks on the notification icon, show the main window again.
         ' Code based on this sample code:
         ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
 
@@ -165,6 +167,18 @@ Public Class aaformMainWindow
         If My.Settings.alwaysOnTop = False Then
             Me.TopMost = False
         End If
+    End Sub
+
+    Private Sub notifyiconShowApp_Click(sender As Object, e As EventArgs) Handles notifyiconShowApp.Click
+        ' Show UXL Launcher. Useful if "Hide When Minimized" is enabled.
+        ' When the user double-clicks on the notification icon, show the main window again.
+        ' Code based on this sample code:
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        ' The code that was here was moved to the showMainWindowFromQuickmenu sub, or whatever
+        ' the name of the sub that appears below is.
+
+        showMainWindowFromQuickmenu()
     End Sub
 #End Region
 
