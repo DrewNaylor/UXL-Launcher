@@ -666,6 +666,10 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("Invalid Theme Settings Message Handler")
             Debug.WriteLine("--------------------------------------")
             Debug.WriteLine("Begin theme engine output:")
+            Debug.WriteLine("")
+            Debug.WriteLine("Parameters for this message handler:")
+            Debug.WriteLine("Exception type: " & exceptionType)
+            Debug.WriteLine("Exception message: " & exceptionMessage)
 
             If exceptionType = "(None)" Then
                 ' If "default" is used and no exception is specified, just output the generic message.
