@@ -674,23 +674,30 @@ Public Class UXLLauncher_ThemeEngine
                             "is invalid.")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+
             ElseIf exceptionType = "ArgumentNullException" Then
                 ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
                 ' a theme file in My.Resources, give a message for this problem.
                 Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
                             "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
-                            "match any theme files in My.Resources.")
+                            "match any theme files in My.Resources." & vbCrLf &
+                            "Please refer to the exception message above for more details.")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+
             ElseIf exceptionType = "XmlException" Then
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
                 ' say that the chosen theme has no root element.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
                             "chosen theme that My.Settings.userChosenTheme is set to or the" & vbCrLf &
                             "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
-                            "doesn't have a root element or otherwise has malformed XML.")
+                            "doesn't have a root element or otherwise has malformed XML." & vbCrLf &
+                            "Please refer to the exception message above for more details.")
+                Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
             End If
