@@ -605,7 +605,7 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the theme engine output debug setting is enabled, output an error
                 ' in the Immediate Window or debug textbox if this particular Else statement is used
                 ' so that developers/theme designers know there's something going wrong with the theme settings.
-                themeSettingsInvalidMessage("default")
+                themeSettingsInvalidMessage("(None)")
             End If
         Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -667,9 +667,11 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("--------------------------------------")
             Debug.WriteLine("Begin theme engine output:")
             Debug.WriteLine("")
-            Debug.WriteLine("Parameters for this message handler:")
-            Debug.WriteLine("Exception type: " & exceptionType)
-            Debug.WriteLine("Exception message: " & exceptionMessage)
+            ' The following lines are commented out because I was having an issue with no output showing up.
+            ' It turned out that this sub was still being called with "default" as its parameter instead of "(None)".
+            'Debug.WriteLine("Parameters for this message handler:")
+            'Debug.WriteLine("Exception type: " & exceptionType)
+            'Debug.WriteLine("Exception message: " & exceptionMessage)
 
             If exceptionType = "(None)" Then
                 ' If "default" is used and no exception is specified, just output the generic message.
@@ -707,10 +709,6 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
-
-            ElseIf exceptionType = "default" Then
-                ' If code is using "default" as the exception type, say that it's deprecated.
-                Debug.WriteLine("Using ""default"" as an input for exceptionType is deprecated. Use ""(None)"" instead.")
             End If
 
             ' End theme engine invalid settings output.
