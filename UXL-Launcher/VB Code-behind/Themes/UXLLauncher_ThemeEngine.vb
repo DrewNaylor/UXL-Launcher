@@ -712,6 +712,7 @@ Public Class UXLLauncher_ThemeEngine
             End If
 
             ' End theme engine invalid settings output.
+            Debug.WriteLine("")
             Debug.WriteLine("End theme engine output.")
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
         End If
