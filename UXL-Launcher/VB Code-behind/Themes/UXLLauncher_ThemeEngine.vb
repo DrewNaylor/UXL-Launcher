@@ -647,6 +647,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 #End Region
 
+#Region "Theme Settings Invalid Message output code."
     Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(None)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
@@ -724,6 +725,7 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
         End If
     End Sub
+#End Region
 
 End Class
 
