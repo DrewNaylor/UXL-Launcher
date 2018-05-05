@@ -680,11 +680,14 @@ Public Class UXLLauncher_ThemeEngine
                 ' a theme file in My.Resources, give a message for this problem.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
                             "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
                             "match any theme files in My.Resources." & vbCrLf &
                             "Please refer to the exception message above for more details.")
+                Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
 
             ElseIf exceptionType = "XmlException" Then
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
