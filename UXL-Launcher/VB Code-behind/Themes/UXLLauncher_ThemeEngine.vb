@@ -707,6 +707,10 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+
+            ElseIf exceptionType = "default" Then
+                ' If code is using "default" as the exception type, say that it's deprecated.
+                Debug.WriteLine("Using ""default"" as an input for exceptionType is deprecated. Use ""(None)"" instead.")
             End If
 
             ' End theme engine invalid settings output.
