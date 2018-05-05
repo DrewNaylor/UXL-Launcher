@@ -604,7 +604,7 @@ Public Class UXLLauncher_ThemeEngine
                 userTheme.LoadXml(My.Resources.DefaultTheme_XML)
                 ' If the theme engine output debug setting is enabled, output an error
                 ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
-                themeSettingsInvalidMessage("Custom theme file not found", "Couldn't find custom theme file.")
+                themeSettingsInvalidMessage("FileNotFound_CustomTheme", "Couldn't find custom theme file.")
             End If
         Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -712,6 +712,10 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+
+            Else
+                ' If there's an input that's not listed here, say that it's not supported.
+                Debug.WriteLine("Input not supported: " & exceptionType)
             End If
 
             ' End theme engine invalid settings output.
