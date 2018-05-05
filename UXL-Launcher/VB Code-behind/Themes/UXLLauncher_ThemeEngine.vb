@@ -600,12 +600,11 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
                 userTheme.Load(My.Settings.userCustomThemePath)
                 ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
-            Else
+            ElseIf My.Settings.userChosenTheme = "(Custom)" And Not File.Exists(My.Settings.userCustomThemePath) Then
                 userTheme.LoadXml(My.Resources.DefaultTheme_XML)
                 ' If the theme engine output debug setting is enabled, output an error
-                ' in the Immediate Window or debug textbox if this particular Else statement is used
-                ' so that developers/theme designers know there's something going wrong with the theme settings.
-                themeSettingsInvalidMessage("(None)")
+                ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
+                themeSettingsInvalidMessage("Custom theme file not found", "Couldn't find custom theme file.")
             End If
         Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -648,7 +647,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 #End Region
 
-    Private Shared Sub themeSettingsInvalidMessage(Optional exceptionType As String = "(None)", Optional exceptionMessage As String = "(None)")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(None)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -673,11 +672,15 @@ Public Class UXLLauncher_ThemeEngine
             'Debug.WriteLine("Exception type: " & exceptionType)
             'Debug.WriteLine("Exception message: " & exceptionMessage)
 
-            If exceptionType = "(None)" Then
-                ' If "default" is used and no exception is specified, just output the generic message.
-                Debug.WriteLine("The theme was temporarily reset to the Default theme because either the custom theme" & vbCrLf &
-                            "file specified for userCustomThemePath wasn't found, or the theme name in userChosenTheme" & vbCrLf &
-                            "is invalid.")
+            If exceptionType = "FileNotFound_CustomTheme" Then
+                ' If the custom theme file cannot be found, output it to the Immediate Window.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("The theme was temporarily reset to the Default theme because the custom theme" & vbCrLf &
+                            "file specified for My.Settings.userCustomThemePath wasn't found. Please ensure that" & vbCrLf &
+                            "the filename below exists in the listed path.")
+                Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
 
