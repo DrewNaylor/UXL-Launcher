@@ -702,7 +702,8 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the custom theme" & vbCrLf &
                             "file specified for My.Settings.userCustomThemePath wasn't found. Please ensure that" & vbCrLf &
-                            "the filename below exists in the listed path.")
+                            "the filename below exists in the listed path. Quotation marks in the custom theme" & vbCrLf &
+                            "path are not supported.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
