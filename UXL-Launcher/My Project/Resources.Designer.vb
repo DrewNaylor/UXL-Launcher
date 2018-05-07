@@ -520,6 +520,22 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &apos; Put the text in the About box on launch.
+        '''        textboxAboutApp.Text = (&quot;UXL Launcher - Unified eXecutable Launcher&quot; &amp; vbCrLf &amp;
+        '''&quot;Version &quot; &amp; My.Application.Info.Version.ToString &amp; &quot; &quot; &amp; My.Resources.isStable &amp; &quot; - Codename &quot;&quot;Personalizationizer 3000&quot;&quot;&quot; &amp; vbCrLf &amp;
+        '''&quot;App compiled at UTC: &quot; &amp; BuildDateString &amp; vbCrLf &amp;
+        '''&quot;Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.&quot; &amp; vbCrLf &amp;
+        '''&quot;&quot; &amp; vbCrLf &amp;
+        '''&quot;UXL Launcher provides launchers for most Microsoft Office apps in one place.&quot; &amp; vbCrLf &amp;
+        '''&quot;Pl [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property UXLLauncherInfo_TXT() As String
+            Get
+                Return ResourceManager.GetString("UXLLauncherInfo_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property Word() As System.Drawing.Bitmap
