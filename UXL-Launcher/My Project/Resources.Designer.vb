@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-05-04T22:41:56
+        '''  Looks up a localized string similar to 2018-05-03T21:42:18
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -223,7 +223,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to .
+        '''  Looks up a localized string similar to &lt;j&gt;
+        '''
+        '''&lt;test&gt;
+        '''
+        '''&lt;/j&gt;.
         '''</summary>
         Public ReadOnly Property NoneTheme_XML() As String
             Get
@@ -302,6 +306,15 @@ Namespace My.Resources
         Public ReadOnly Property ReturnOfNightTheme_XML() As String
             Get
                 Return ResourceManager.GetString("ReturnOfNightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ----------------------------------------------------------------------------------------.
+        '''</summary>
+        Public ReadOnly Property separator() As String
+            Get
+                Return ResourceManager.GetString("separator", resourceCulture)
             End Get
         End Property
         
