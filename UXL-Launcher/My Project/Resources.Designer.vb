@@ -89,7 +89,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-05-03T21:42:18
+        '''  Looks up a localized string similar to 2018-05-08T01:37:33
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -481,6 +481,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
+        '''The copyright is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
+        '''
+        '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
+        '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+        '''Note that the &quot;License&quot; tab contains only the license for UXL Launcher. Other licenses are linked to from each component&apos;s information area belo [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ThemeEngineInfo_TXT() As String
+            Get
+                Return ResourceManager.GetString("ThemeEngineInfo_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to 1.01.
         '''</summary>
         Public ReadOnly Property themeEngineVersion() As String
@@ -520,14 +534,14 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &apos; Put the text in the About box on launch.
-        '''        textboxAboutApp.Text = (&quot;UXL Launcher - Unified eXecutable Launcher&quot; &amp; vbCrLf &amp;
-        '''&quot;Version &quot; &amp; My.Application.Info.Version.ToString &amp; &quot; &quot; &amp; My.Resources.isStable &amp; &quot; - Codename &quot;&quot;Personalizationizer 3000&quot;&quot;&quot; &amp; vbCrLf &amp;
-        '''&quot;App compiled at UTC: &quot; &amp; BuildDateString &amp; vbCrLf &amp;
-        '''&quot;Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.&quot; &amp; vbCrLf &amp;
-        '''&quot;&quot; &amp; vbCrLf &amp;
-        '''&quot;UXL Launcher provides launchers for most Microsoft Office apps in one place.&quot; &amp; vbCrLf &amp;
-        '''&quot;Pl [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
+        '''
+        '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
+        '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+        '''Note that the &quot;License&quot; tab contains only the license for UXL Launcher. Other licenses are linked to from each component&apos;s information area below, if they are different.
+        '''
+        '''License notice:
+        '''UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU G [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property UXLLauncherInfo_TXT() As String
             Get

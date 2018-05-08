@@ -193,6 +193,7 @@
   <ItemGroup>
     <None Include="Resources\NoneTheme_XML.txt" />
     <None Include="Resources\UXLLauncherInfo_TXT.txt" />
+    <None Include="Resources\ThemeEngineInfo_TXT.txt" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\ReturnOfNightTheme_XML.xml" />

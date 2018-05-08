@@ -43,7 +43,9 @@ Public Class aaformAboutWindow
 "App compiled at UTC: " & BuildDateString & vbCrLf &
 My.Resources.UXLLauncherInfo_TXT & vbCrLf & vbCrLf & ' UXL Launcher info for the About window such as copyright stuff.
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
-"TODO: Add theme engine info." & vbCrLf & vbCrLf & ' Theme engine info.
+"UXL Launcher Theme Engine" & vbCrLf &
+"Version " & My.Resources.themeEngineVersion & vbCrLf & ' Theme engine info.
+My.Resources.ThemeEngineInfo_TXT & vbCrLf & vbCrLf &
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
 "TODO: Add info on the set of icons used in UXL Launcher. <https://github.com/DrewNaylor/applauncher-icons>" ' Icon set for UXL Launcher info.
 )
