@@ -78,6 +78,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Button colors:
         Dim colorButtonBackColor As Color
         Dim colorButtonForeColor As Color
+        Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is = 0, the flatstyle is Flat.
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color
         Dim colorGroupBoxForeColor As Color
