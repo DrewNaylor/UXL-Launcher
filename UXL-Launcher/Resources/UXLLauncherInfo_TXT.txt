@@ -1,23 +1,18 @@
-' Put the text in the About box on launch.
-        textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
-"Version " & My.Application.Info.Version.ToString & " " & My.Resources.isStable & " - Codename ""Personalizationizer 3000""" & vbCrLf &
-"App compiled at UTC: " & BuildDateString & vbCrLf &
-"Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+." & vbCrLf &
-"" & vbCrLf &
-"UXL Launcher provides launchers for most Microsoft Office apps in one place." & vbCrLf &
-"Please be aware that UXL Launcher is unofficial and not made by Microsoft." & vbCrLf &
-"" & vbCrLf &
-"License notice:" & vbCrLf &
-"UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by" &
-" the Free Software Foundation, either version 3 of the License, or (at your option) any later version." & vbCrLf &
-"" & vbCrLf &
-"UXL Launcher is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details." & vbCrLf &
-"" & vbCrLf &
-"You should have received a copy of the GNU General Public License along with UXL Launcher. If not, see <http://www.gnu.org/licenses/>." & vbCrLf &
-"" & vbCrLf &
-"Drew is not intending on infringing on Microsoft's copyrights, so UXL Launcher is only a shortcut application." & vbCrLf &
-"" & vbCrLf &
-"Copyright notice: Windows, Microsoft Windows, Office, Microsoft Office, Word, Excel, PowerPoint, and all related words and trademarks/registered trademarks owned by Microsoft in the United States and/or other countries are Copyright 2018 Microsoft Corporation. All Rights Reserved to Microsoft for Microsoft's copyrights, trademarks, and registered trademarks." & vbCrLf &
-"Any other companies mentioned own their respective copyrights/trademarks." & vbCrLf &
-"Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor and does not endorse this software.")
+
+UXL Launcher provides launchers for most Microsoft Office apps in one place.
+Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+
+License notice:
+UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+UXL Launcher is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with UXL Launcher. If not, see <http://www.gnu.org/licenses/>.
+
+Drew is not intending on infringing on Microsoft's copyrights, so UXL Launcher is only a shortcut application.
+
+Copyright notice: Windows, Microsoft Windows, Office, Microsoft Office, Word, Excel, PowerPoint, and all related words and trademarks/registered trademarks owned by Microsoft in the United States and/or other countries are Copyright 2018 Microsoft Corporation. All Rights Reserved to Microsoft for Microsoft's copyrights, trademarks, and registered trademarks.
+Any other companies mentioned own their respective copyrights/trademarks.
+Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor and does not endorse this software.
