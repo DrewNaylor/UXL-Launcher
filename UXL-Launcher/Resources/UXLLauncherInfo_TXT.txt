@@ -2,6 +2,7 @@ Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
 
 UXL Launcher provides launchers for most Microsoft Office apps in one place.
 Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+Note that the "License" tab contains only the license for UXL Launcher. Other licenses are linked to from each component's information area, if they are different.
 
 License notice:
 UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
