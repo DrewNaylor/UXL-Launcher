@@ -12,6 +12,8 @@ https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.0
 
 The version of applauncher-icons used in UXL Launcher has been modified from the original source. Namely, the smaller icons used in the UXL Launcher Quickmenu and some menubar entries were resized from the original files.
 
+No warranty is provided with applauncher-icons. Use at your own risk. Drew Naylor is not responsible for any problems that use of applauncher-icons may cause.
+
 This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
 
 Microsoft is not associated with either the applauncher-icons project or Drew Naylor and does not condone this project.
