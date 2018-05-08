@@ -1,0 +1,13 @@
+applauncher-icons
+By Drew Naylor. Licensed under CC BY 4.0.
+Version 2.0
+
+The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+Link to applauncher-icons project repository: https://github.com/DrewNaylor/applauncher-icons
+Link to applauncher-icons version 2.0 GitHub Releases page: https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.0
+
+The version of applauncher-icons used in UXL Launcher has not been modified from the original source.
+
+This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+Microsoft is not associated with either the applauncher-icons project or Drew Naylor and does not condone this project.

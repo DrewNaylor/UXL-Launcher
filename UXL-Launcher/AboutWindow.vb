@@ -47,7 +47,7 @@ My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
 "Version " & My.Resources.themeEngineVersion & vbCrLf & ' Theme engine info.
 My.Resources.ThemeEngineInfo_TXT & vbCrLf & vbCrLf &
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
-"TODO: Add info on the set of icons used in UXL Launcher. <https://github.com/DrewNaylor/applauncher-icons>" ' Icon set for UXL Launcher info.
+My.Resources.ApplauncherIconsInfo_TXT ' Icon set for UXL Launcher info.
 )
 
 

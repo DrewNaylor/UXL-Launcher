@@ -89,7 +89,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-05-08T01:37:33
+        '''  Looks up a localized string similar to .
+        '''</summary>
+        Public ReadOnly Property ApplauncherIconsInfo_TXT() As String
+            Get
+                Return ResourceManager.GetString("ApplauncherIconsInfo_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 2018-05-08T01:45:27
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -482,11 +491,11 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
-        '''The copyright is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
+        '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
         '''
-        '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
-        '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
-        '''Note that the &quot;License&quot; tab contains only the license for UXL Launcher. Other licenses are linked to from each component&apos;s information area belo [rest of string was truncated]&quot;;.
+        '''The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
+        '''Please be aware that UXL Launcher and the UXL Launcher Theme Engine are both unofficial and not made by Microsoft.
+        '''Note that the &quot;License&quot; tab contains only t [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ThemeEngineInfo_TXT() As String
             Get
