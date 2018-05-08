@@ -41,7 +41,12 @@ Public Class aaformAboutWindow
         textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
 "Version " & My.Application.Info.Version.ToString & " " & My.Resources.isStable & " - Codename ""Personalizationizer 3000""" & vbCrLf &
 "App compiled at UTC: " & BuildDateString & vbCrLf &
-My.Resources.UXLLauncherInfo_TXT) ' UXL Launcher info for the About window such as copyright stuff.
+My.Resources.UXLLauncherInfo_TXT & vbCrLf & vbCrLf & ' UXL Launcher info for the About window such as copyright stuff.
+My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
+"TODO: Add theme engine info." & vbCrLf & vbCrLf & ' Theme engine info.
+My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
+"TODO: Add info on the set of icons used in UXL Launcher. <https://github.com/DrewNaylor/applauncher-icons>" ' Icon set for UXL Launcher info.
+)
 
 
         ' Load the GPL document in the RTF Textbox control.
