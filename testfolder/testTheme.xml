@@ -3,7 +3,9 @@
 <Title>Test</Title>
 <Theme_Colors>
 <Button>
-<ForeColor>Blue</ForeColor>
+<ForeColor>White</ForeColor>
+<BackColor>Black</BackColor>
+<FlatStyle>Flat</FlatStyle>
 </Button>
 </Theme_Colors>
 
