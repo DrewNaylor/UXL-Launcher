@@ -780,7 +780,8 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
-                Debug.WriteLine("The StatusLabel BorderStyle property isn't set properly," & vbCrLf &
+                Debug.WriteLine("The StatusLabel BorderStyle property could not be found" & vbCrLf &
+                            "in the chosen custom theme file listed below," & vbCrLf &
                             "but this shouldn't cause any problems." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
