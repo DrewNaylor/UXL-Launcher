@@ -618,8 +618,8 @@ Public Class UXLLauncher_ThemeEngine
         ' I was having some issues with setting the BorderStyle, so Try...Catch.
         Try
             aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
-        Catch ex As Exception
-            Debug.WriteLine("SatusLabel BorderStyle try...catch code.")
+        Catch ex As System.ComponentModel.InvalidEnumArgumentException
+            themeSettingsInvalidMessage(ex.ToString, ex.Message)
         End Try
 
 
