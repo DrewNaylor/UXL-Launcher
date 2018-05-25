@@ -619,7 +619,7 @@ Public Class UXLLauncher_ThemeEngine
         Try
             aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
         Catch ex As System.ComponentModel.InvalidEnumArgumentException
-            themeSettingsInvalidMessage(ex.ToString, ex.Message)
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
         End Try
 
 
@@ -654,7 +654,7 @@ Public Class UXLLauncher_ThemeEngine
                 userTheme.LoadXml(My.Resources.DefaultTheme_XML)
                 ' If the theme engine output debug setting is enabled, output an error
                 ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
-                themeSettingsInvalidMessage("FileNotFound_CustomTheme", "Couldn't find custom theme file.")
+                themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
             End If
         Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -723,7 +723,7 @@ Public Class UXLLauncher_ThemeEngine
             'Debug.WriteLine("Exception type: " & exceptionType)
             'Debug.WriteLine("Exception message: " & exceptionMessage)
 
-            If exceptionType.ToString = "FileNotFound_CustomTheme" Then
+            If exceptionType.ToString = "UXLLauncher.ThemeEngine.FileNotFound_CustomTheme" Then
                 ' If the custom theme file cannot be found, output it to the Immediate Window.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
