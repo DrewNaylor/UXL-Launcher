@@ -524,7 +524,9 @@ Public Class UXLLauncher_ThemeEngine
         For Each ctrl In aaformMainWindow.groupboxProApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
+                ' Set button BackColor (background color).
                 button.BackColor = colorButtonBackColor
+                ' Set button ForeColor (text color).
                 button.ForeColor = colorButtonForeColor
                 ' Set button style, whether that be flat, "Standard", or another
                 ' supported style.
@@ -533,13 +535,17 @@ Public Class UXLLauncher_ThemeEngine
             ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
+                ' Set label BackColor (background color).
                 label.BackColor = colorLabelBackColor
+                ' Set label ForeColor (text color).
                 label.ForeColor = colorLabelForeColor
             End If
             ' Look at all the textboxes in the "Professional Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(TextBox)) Then
                 Dim textbox As TextBox = CType(ctrl, TextBox)
+                ' Set textbox BackColor (background color).
                 textbox.BackColor = colorTextboxBackColor
+                ' Set textbox ForeColor (text color).
                 textbox.ForeColor = colorTextboxForeColor
             End If
         Next
@@ -549,7 +555,9 @@ Public Class UXLLauncher_ThemeEngine
         For Each ctrl In aaformMainWindow.groupboxExtraApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
+                ' Set button BackColor (background color).
                 button.BackColor = colorButtonBackColor
+                ' Set button ForeColor (text color).
                 button.ForeColor = colorButtonForeColor
                 ' Set button style, whether that be flat, "Standard", or another
                 ' supported style.
@@ -558,13 +566,17 @@ Public Class UXLLauncher_ThemeEngine
             ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
                 Dim label As Label = CType(ctrl, Label)
+                ' Set label BackColor (background color).
                 label.BackColor = colorLabelBackColor
+                ' Set label ForeColor (text color).
                 label.ForeColor = colorLabelForeColor
             End If
             ' Look at all the textboxes in the "Extra Apps + Tools" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(TextBox)) Then
                 Dim textbox As TextBox = CType(ctrl, TextBox)
+                ' Set textbox BackColor (background color).
                 textbox.BackColor = colorTextboxBackColor
+                ' Set textbox ForeColor (text color).
                 textbox.ForeColor = colorTextboxForeColor
             End If
         Next
