@@ -211,12 +211,13 @@ Public Class UXLLauncher_ThemeEngine
                     flatstyleButtonFlatStyle = FlatStyle.Standard
                 End If
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't valid, just ignore it.
             Catch ex As Exception
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             flatstyleButtonFlatStyle = FlatStyle.Standard
+
         End If
 #End Region
 
@@ -492,8 +493,13 @@ Public Class UXLLauncher_ThemeEngine
         For Each ctrl In aaformMainWindow.groupboxStandardApps.Controls
             If (ctrl.GetType() Is GetType(Button)) Then
                 Dim button As Button = CType(ctrl, Button)
+                ' Set button BackColor (background color).
                 button.BackColor = colorButtonBackColor
+                ' Set button ForeColor (text color).
                 button.ForeColor = colorButtonForeColor
+                ' Set button style, whether that be flat, "Standard", or another
+                ' supported style.
+                button.FlatStyle = flatstyleButtonFlatStyle
             End If
             ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
