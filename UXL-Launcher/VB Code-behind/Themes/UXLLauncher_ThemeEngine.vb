@@ -773,6 +773,23 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "System.ComponentModel.InvalidEnumArgumentException" Then
+                ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
+                ' say that the chosen theme has no root element.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("The StatusLabel BorderStyle property isn't set properly," & vbCrLf &
+                            "but this shouldn't cause any problems." & vbCrLf &
+                            "Please refer to the exception message above for more details.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
             Else
                 ' If there's an input that's not listed here, say that it's not supported.
                 Debug.WriteLine("Input not supported: " & exceptionType)
