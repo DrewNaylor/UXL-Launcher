@@ -661,14 +661,14 @@ Public Class UXLLauncher_ThemeEngine
             ' included in My.Resources, the ArgumentNullException will be fired and the default theme
             ' will be used instead temporarily. The developer, user, or theme designer will be notified
             ' about this error in the Immediate Window.
-            themeSettingsInvalidMessage("ArgumentNullException", ex.Message)
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
         Catch ex As XmlException
             ' If there's an XmlException (which can occur if the selected theme has no
             ' root element), tell the user, developer, or theme designer
             ' and use the default theme.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeSettingsInvalidMessage("XmlException", ex.Message)
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
@@ -698,7 +698,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Theme Settings Invalid Message output code."
-    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(None)")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(None provided)", Optional fullException As String = "(None provided)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -723,7 +723,7 @@ Public Class UXLLauncher_ThemeEngine
             'Debug.WriteLine("Exception type: " & exceptionType)
             'Debug.WriteLine("Exception message: " & exceptionMessage)
 
-            If exceptionType = "FileNotFound_CustomTheme" Then
+            If exceptionType.ToString = "FileNotFound_CustomTheme" Then
                 ' If the custom theme file cannot be found, output it to the Immediate Window.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
@@ -736,7 +736,7 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
 
-            ElseIf exceptionType = "ArgumentNullException" Then
+            ElseIf exceptionType.ToString = "System.ArgumentNullException" Then
                 ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
                 ' a theme file in My.Resources, give a message for this problem.
                 Debug.WriteLine("Exception: " & exceptionType)
@@ -747,10 +747,12 @@ Public Class UXLLauncher_ThemeEngine
                             "match any theme files in My.Resources." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
 
-            ElseIf exceptionType = "XmlException" Then
+            ElseIf exceptionType.ToString = "XmlException" Then
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
                 ' say that the chosen theme has no root element.
                 Debug.WriteLine("Exception: " & exceptionType)
