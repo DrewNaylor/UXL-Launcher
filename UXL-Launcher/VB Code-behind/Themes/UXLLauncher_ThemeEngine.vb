@@ -735,6 +735,9 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
 
             ElseIf exceptionType.ToString = "System.ArgumentNullException" Then
                 ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
@@ -747,12 +750,13 @@ Public Class UXLLauncher_ThemeEngine
                             "match any theme files in My.Resources." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
-                Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
 
-            ElseIf exceptionType.ToString = "XmlException" Then
+            ElseIf exceptionType.ToString = "System.Xml.XmlException" Then
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
                 ' say that the chosen theme has no root element.
                 Debug.WriteLine("Exception: " & exceptionType)
@@ -766,7 +770,9 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
-
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
             Else
                 ' If there's an input that's not listed here, say that it's not supported.
                 Debug.WriteLine("Input not supported: " & exceptionType)
