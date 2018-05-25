@@ -526,6 +526,9 @@ Public Class UXLLauncher_ThemeEngine
                 Dim button As Button = CType(ctrl, Button)
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
+                ' Set button style, whether that be flat, "Standard", or another
+                ' supported style.
+                button.FlatStyle = flatstyleButtonFlatStyle
             End If
             ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
@@ -548,6 +551,9 @@ Public Class UXLLauncher_ThemeEngine
                 Dim button As Button = CType(ctrl, Button)
                 button.BackColor = colorButtonBackColor
                 button.ForeColor = colorButtonForeColor
+                ' Set button style, whether that be flat, "Standard", or another
+                ' supported style.
+                button.FlatStyle = flatstyleButtonFlatStyle
             End If
             ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
