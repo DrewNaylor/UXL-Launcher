@@ -221,22 +221,17 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Button flat appearance border color"
-        ' Only pull the Button BackColor element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatStyle[1]", themeNamespaceManager) IsNot Nothing Then
+        ' Only pull the Button FlatAppearance BorderColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
-                ' See what the theme file has flat style set up as. Currently, only "Flat" and "Standard" are supported.
-                If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatStyle[1]", themeNamespaceManager).InnerText = "Flat" Then
-                    flatstyleButtonFlatStyle = FlatStyle.Flat
-                Else
-                    flatstyleButtonFlatStyle = FlatStyle.Standard
-                End If
+                colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't valid, just ignore it.
+                ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            flatstyleButtonFlatStyle = FlatStyle.Standard
+            colorButtonBackColor = Color.Transparent
         End If
 #End Region
 
