@@ -442,11 +442,11 @@ Public Class UXLLauncher_ThemeEngine
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
-                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xF1F1F1")
+                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xF1F1F1")
+            colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
         End If
 #End Region
 #End Region
