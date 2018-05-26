@@ -38,17 +38,17 @@
       </FlowLayoutPanel>
       
       <StatusBar>
-        <BackColor>Control</BackColor>
+        <BackColor>Black</BackColor>
       </StatusBar>
 
       <Label>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>White</ForeColor>
       </Label>
 
       <TextBox>
-        <BackColor>Window</BackColor>
-        <ForeColor>WindowText</ForeColor>
+        <BackColor>DimGray</BackColor>
+        <ForeColor>White</ForeColor>
       </TextBox>
 
       <MenuItem>
@@ -60,13 +60,13 @@
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the value the
         Default theme uses.-->
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
       </MenuItem>
 
       <StatusLabel>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>White</ForeColor>
         
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>None</BorderSides>
