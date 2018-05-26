@@ -52,10 +52,10 @@
       </TextBox>
 
       <MenuItem>
-        <!--The MenuBar BackColor variable used to be required because of problems
+        <!--The MenuBar BackColor variable was previously required because of problems
         with the custom ProfessionalRenderer, but is now set to the same value as
-        MenuItem BackColor as there seems to not be a problem if the MenuBar BackColor
-        cannot be set if MenuItem also cannot be set, which doesn't make much sense.
+        MenuItem BackColor as the problem seems to be gone if the MenuBar BackColor
+        cannot be set when MenuItem also cannot be set, which doesn't make much sense.
         
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the value the
