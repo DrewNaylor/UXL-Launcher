@@ -29,12 +29,12 @@
       
       <GroupBox>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>White</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>DimGray</BackColor>
+        <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
       
       <StatusBar>
