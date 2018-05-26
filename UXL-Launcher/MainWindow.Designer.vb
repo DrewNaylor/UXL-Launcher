@@ -600,7 +600,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeFileVersion
         '
         Me.debugLabelXmlThemeFileVersion.AutoSize = True
-        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(5, 408)
+        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(4, 407)
         Me.debugLabelXmlThemeFileVersion.Name = "debugLabelXmlThemeFileVersion"
         Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(164, 13)
         Me.debugLabelXmlThemeFileVersion.TabIndex = 27
@@ -609,7 +609,7 @@ Partial Class aaformMainWindow
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 421)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 420)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
         Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(233, 13)
         Me.debugLabelXmlThemeUseThemeEngineVersion.TabIndex = 26
