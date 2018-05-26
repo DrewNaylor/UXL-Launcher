@@ -514,6 +514,9 @@ Public Class UXLLauncher_ThemeEngine
                 ' Set button style, whether that be flat, "Standard", or another
                 ' supported style.
                 button.FlatStyle = flatstyleButtonFlatStyle
+                ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+                ' Note that this can be any valid HTML or system color, including "Nothing"
+                ' ("Nothing" is the default value based on my testing).
                 button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
             End If
             ' Look at all the labels in the "Standard Apps" groupbox and change their theme.

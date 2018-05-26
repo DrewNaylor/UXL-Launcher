@@ -56,6 +56,7 @@ Partial Class aaformMainWindow
         Me.notifyiconOfficeLang = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.notifyiconShowApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.zotherstuffFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.zotherstuffFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -105,7 +106,6 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.notifyiconShowApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -144,35 +144,35 @@ Partial Class aaformMainWindow
         '
         Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
-        Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
+        Me.menubarFileMenu.Size = New System.Drawing.Size(35, 19)
         Me.menubarFileMenu.Text = "&File"
         '
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(128, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
         '
         Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton, Me.menubarHideWhenMinimizedButton, Me.menubarRevertThemeButton})
         Me.menubarViewMenu.Name = "menubarViewMenu"
-        Me.menubarViewMenu.Size = New System.Drawing.Size(44, 19)
+        Me.menubarViewMenu.Size = New System.Drawing.Size(42, 19)
         Me.menubarViewMenu.Text = "&View"
         '
         'menubarAlwaysOnTopButton
         '
         Me.menubarAlwaysOnTopButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarAlwaysOnTopButton.Name = "menubarAlwaysOnTopButton"
-        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(225, 22)
         Me.menubarAlwaysOnTopButton.Text = "&Always On Top"
         '
         'menubarHideWhenMinimizedButton
         '
         Me.menubarHideWhenMinimizedButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarHideWhenMinimizedButton.Name = "menubarHideWhenMinimizedButton"
-        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(225, 22)
         Me.menubarHideWhenMinimizedButton.Text = "&Hide When Minimized"
         '
         'menubarRevertThemeButton
@@ -180,7 +180,7 @@ Partial Class aaformMainWindow
         Me.menubarRevertThemeButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
-        Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarRevertThemeButton.Size = New System.Drawing.Size(225, 22)
         Me.menubarRevertThemeButton.Text = "&Revert to Default Theme"
         Me.menubarRevertThemeButton.ToolTipText = resources.GetString("menubarRevertThemeButton.ToolTipText")
         '
@@ -188,7 +188,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOfficeLangPrefsButton, Me.zseparatorToolsMenu1, Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(45, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOfficeLangPrefsButton
@@ -197,57 +197,57 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOfficeLangPrefsButton.Name = "menubarOfficeLangPrefsButton"
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
-        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
+        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(221, 28)
         Me.menubarOfficeLangPrefsButton.Text = "O&ffice Language Preferences"
         '
         'zseparatorToolsMenu1
         '
         Me.zseparatorToolsMenu1.Name = "zseparatorToolsMenu1"
-        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(230, 6)
+        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(218, 6)
         '
         'menubarOptionsButton
         '
         Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
         Me.menubarOptionsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(233, 30)
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(221, 30)
         Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
         '
         Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
         Me.menubarHelpMenu.Name = "menubarHelpMenu"
-        Me.menubarHelpMenu.Size = New System.Drawing.Size(44, 19)
+        Me.menubarHelpMenu.Size = New System.Drawing.Size(41, 19)
         Me.menubarHelpMenu.Text = "&Help"
         '
         'menubarHelpTopicsButton
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(197, 22)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(194, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(197, 22)
         Me.menubarAuthorsButton.Text = "A&cknowledgments"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(197, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(197, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'contextmenuNotifyicon
@@ -256,7 +256,7 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 434)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 412)
         '
         'notifyiconWord
         '
@@ -361,6 +361,12 @@ Partial Class aaformMainWindow
         Me.notifyiconSeparator3.Name = "notifyiconSeparator3"
         Me.notifyiconSeparator3.Size = New System.Drawing.Size(251, 6)
         '
+        'notifyiconShowApp
+        '
+        Me.notifyiconShowApp.Name = "notifyiconShowApp"
+        Me.notifyiconShowApp.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconShowApp.Text = "Show UXL Launcher"
+        '
         'notifyiconExitApp
         '
         Me.notifyiconExitApp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -396,7 +402,7 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(622, 17)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(566, 17)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
     "launch them and explore the UI."
         '
@@ -891,12 +897,6 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Icon = CType(resources.GetObject("notifyiconTaskbarLaunchers.Icon"), System.Drawing.Icon)
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
-        '
-        'notifyiconShowApp
-        '
-        Me.notifyiconShowApp.Name = "notifyiconShowApp"
-        Me.notifyiconShowApp.Size = New System.Drawing.Size(254, 30)
-        Me.notifyiconShowApp.Text = "Show UXL Launcher"
         '
         'aaformMainWindow
         '
