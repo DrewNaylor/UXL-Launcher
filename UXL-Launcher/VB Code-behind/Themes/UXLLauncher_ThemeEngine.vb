@@ -309,8 +309,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorFlowLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -324,8 +325,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -339,8 +341,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
