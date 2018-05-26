@@ -930,6 +930,8 @@ Public Class uxlProToolstripRenderer
     Private _BackColor As Color
     ' "_DropdownBackColor" determines the colors in the menubar dropdown.
     Private _DropdownBackColor As Color
+    Private _ImageMarginGradientStartColor As Color
+    Private _ImageMarginGradientEndColor As Color
     Private _ForeColor As Color
     Private _TextHighlightColor As Color
 
@@ -950,6 +952,26 @@ Public Class uxlProToolstripRenderer
         End Get
         Set(ByVal value As Color)
             _DropdownBackColor = value
+        End Set
+    End Property
+
+    ' Get and set the start color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientStartColor As Color
+        Get
+            Return _ImageMarginGradientStartColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientStartColor = value
+        End Set
+    End Property
+
+    ' Get and set the end color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientEndColor As Color
+        Get
+            Return _ImageMarginGradientEndColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientEndColor = value
         End Set
     End Property
 
@@ -990,7 +1012,9 @@ Public Class uxlProToolstripRenderer
         MyBase.OnRenderImageMargin(e)
         Dim color As Color = Me.DropdownBackColor
         Dim b As New SolidBrush(color)
+        ' Make the menuitem background set to the theme's color.
         Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
+        ' Fill the background of the menuitem.
         e.Graphics.FillRectangle(b, itembgcolor)
     End Sub
 
