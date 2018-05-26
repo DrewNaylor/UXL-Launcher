@@ -1010,8 +1010,12 @@ Public Class uxlProToolstripRenderer
     ' http://www.vbforums.com/showthread.php?539578-Custom-VisualStudio2008-style-MenuStrip-and-ToolStrip-Renderer&p=3333808&viewfull=1#post3333808
     Protected Overrides Sub OnRenderImageMargin(e As ToolStripRenderEventArgs)
         MyBase.OnRenderImageMargin(e)
+        ' Colors and brushes for menuitem background color.
         Dim DropDownItemBackColor As Color = Me.DropdownBackColor
         Dim dropdownBrush As New SolidBrush(DropdownBackColor)
+        ' Colors and brushes for image margin gradiant.
+        Dim ImageMarginGradientBrush As New LinearGradientBrush(e.AffectedBounds, Me.ImageMarginGradientStartColor,
+                                                                Me.ImageMarginGradientEndColor, LinearGradientMode.Horizontal)
         ' Make the menuitem background set to the theme's color.
         Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
         ' Fill the background of the menuitem.
