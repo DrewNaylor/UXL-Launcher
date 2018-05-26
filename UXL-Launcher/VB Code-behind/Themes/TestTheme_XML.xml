@@ -46,6 +46,10 @@
         <BackColor>Purple</BackColor>
         <ForeColor>AntiqueWhite</ForeColor>
       </MenuItem>
+      
+      <MenuBar>
+        <BackColor>Purple</BackColor>
+        </MenuBar>
 
       <StatusLabel>
         <BackColor>Maroon</BackColor>

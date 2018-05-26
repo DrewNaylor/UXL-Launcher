@@ -47,6 +47,10 @@
         <ForeColor>ControlText</ForeColor>
       </MenuItem>
 
+      <MenuBar>
+        <BackColor>Control</BackColor>
+      </MenuBar>
+      
       <StatusLabel>
         <BackColor>Transparent</BackColor>
         <ForeColor>ControlText</ForeColor>
