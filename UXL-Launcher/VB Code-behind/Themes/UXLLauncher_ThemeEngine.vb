@@ -1005,8 +1005,7 @@ Public Class uxlProToolstripRenderer
     End Sub
 
     ' Change the color for the menubar dropdowns.
-    ' Based on the code from the "gray itembackground"
-    ' area here:
+    ' Based on the code "Step 3" here:
     ' http://www.vbforums.com/showthread.php?539578-Custom-VisualStudio2008-style-MenuStrip-and-ToolStrip-Renderer&p=3333808&viewfull=1#post3333808
     Protected Overrides Sub OnRenderImageMargin(e As ToolStripRenderEventArgs)
         MyBase.OnRenderImageMargin(e)
