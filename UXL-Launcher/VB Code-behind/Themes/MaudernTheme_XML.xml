@@ -13,6 +13,9 @@
         to either "Flat" or "Standard". Anything else will be set to "Standard".
         Quotation marks are not supported.-->
         <FlatStyle>Flat</FlatStyle>
+        <FlatAppearance>
+          <BorderColor>LightGray</BorderColor>
+        </FlatAppearance>
       </Button>
       
       <GroupBox>
