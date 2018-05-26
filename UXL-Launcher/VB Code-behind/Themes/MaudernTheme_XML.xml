@@ -16,7 +16,7 @@
       <Button>
         <BackColor>Gray</BackColor>
         <ForeColor>White</ForeColor>
-        <!-- The FlatStyle determins the "depth" of the buttons. This can be set
+        <!-- The FlatStyle determines the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
         Quotation marks are not supported. -->
         <FlatStyle>Flat</FlatStyle>
