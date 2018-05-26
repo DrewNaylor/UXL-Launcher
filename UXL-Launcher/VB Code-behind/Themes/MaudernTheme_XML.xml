@@ -3,6 +3,13 @@
   <Description>Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.</Description>
   <Version>v1.0</Version>
   <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.01</UseThemeEngineVersion>
   
     <Theme_Colors>
       
@@ -11,8 +18,10 @@
         <ForeColor>ControlText</ForeColor>
         <!-- The FlatStyle determins the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
-        Quotation marks are not supported.-->
+        Quotation marks are not supported. -->
         <FlatStyle>Flat</FlatStyle>
+        <!-- Anything within the "FlatAppearance" element will only be used if
+        "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
           <BorderColor>LightGray</BorderColor>
         </FlatAppearance>
