@@ -729,7 +729,7 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine(My.Settings.userCustomThemePath.ToString)
             End If
             Debug.WriteLine("Theme XML file:")
-            Debug.WriteLine(userTheme)
+            Debug.WriteLine(userTheme.OuterXml)
         End If
 
         ' Apply the theme.
