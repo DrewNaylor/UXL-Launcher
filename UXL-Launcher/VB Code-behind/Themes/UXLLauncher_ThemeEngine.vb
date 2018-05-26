@@ -78,8 +78,8 @@ Public Class UXLLauncher_ThemeEngine
         ' Button colors:
         Dim colorButtonBackColor As Color
         Dim colorButtonForeColor As Color
-        Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is = 0, the flatstyle is Flat. Standard is = 2.
-        Dim flatappearanceButtonBorderColor As Color ' The border of the buttons.
+        Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is "= Flat", the flatstyle is Flat. Standard is "FlatStyle = FlatStyle.Standard".
+        Dim flatappearanceButtonBorderColor As Color ' The border of the buttons if "FlatStyle = FlatStyle.Flat".
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color
         Dim colorGroupBoxForeColor As Color
@@ -217,7 +217,26 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             flatstyleButtonFlatStyle = FlatStyle.Standard
+        End If
+#End Region
 
+#Region "Button flat appearance border color"
+        ' Only pull the Button BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatStyle[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                ' See what the theme file has flat style set up as. Currently, only "Flat" and "Standard" are supported.
+                If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatStyle[1]", themeNamespaceManager).InnerText = "Flat" Then
+                    flatstyleButtonFlatStyle = FlatStyle.Flat
+                Else
+                    flatstyleButtonFlatStyle = FlatStyle.Standard
+                End If
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't valid, just ignore it.
+            Catch ex As Exception
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            flatstyleButtonFlatStyle = FlatStyle.Standard
         End If
 #End Region
 
