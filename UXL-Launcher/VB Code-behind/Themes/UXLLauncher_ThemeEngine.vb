@@ -619,6 +619,7 @@ Public Class UXLLauncher_ThemeEngine
         Try
             aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
         Catch ex As System.ComponentModel.InvalidEnumArgumentException
+            ' It may be a good idea to output text talking about this exception if people run into it.
             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
         End Try
 
