@@ -912,7 +912,7 @@ Public Class uxlProToolstripRenderer
     ' Change the colors for the menubar background.
     Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
         MyBase.OnRenderToolStripBackground(e)
-        Dim lightColor As Color = ControlPaint.Light(Me.BackColor)
+        Dim lightColor As Color = Me.BackColor
         Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, lightColor, LinearGradientMode.Vertical)
             e.Graphics.FillRectangle(b, e.AffectedBounds)
         End Using
