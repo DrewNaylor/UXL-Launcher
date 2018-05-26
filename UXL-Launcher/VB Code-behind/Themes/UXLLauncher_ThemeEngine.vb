@@ -42,6 +42,9 @@ Public Class UXLLauncher_ThemeEngine
     Public Shared themeSheetTitle As String
     Public Shared themeSheetDescription As String
     Public Shared themeSheetAuthor As String
+    ' This is the version number for the theme file itself. Not to
+    ' be confused with the decimal below known as themeSheetUseThemeEngineVersion.
+    Public Shared themeSheetFileVersion As String
     ' Create string for version of Theme Engine the theme is compatible with.
     Friend Shared themeSheetUseThemeEngineVersion As Decimal
 
@@ -141,7 +144,7 @@ Public Class UXLLauncher_ThemeEngine
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
         Else
-            themeSheetTitle = ""
+            themeSheetTitle = "(No title specified)"
             debugmodeStuff.updateDebugLabels()
         End If
 #End Region
@@ -152,7 +155,7 @@ Public Class UXLLauncher_ThemeEngine
             themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
         Else
-            themeSheetDescription = ""
+            themeSheetDescription = "(No description specified)"
             debugmodeStuff.updateDebugLabels()
         End If
 #End Region
@@ -163,7 +166,18 @@ Public Class UXLLauncher_ThemeEngine
             themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
         Else
-            themeSheetAuthor = ""
+            themeSheetAuthor = "(No author specified)"
+            debugmodeStuff.updateDebugLabels()
+        End If
+#End Region
+
+#Region "Pull Version theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetFileVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetFileVersion = "(No version specified)"
             debugmodeStuff.updateDebugLabels()
         End If
 #End Region
