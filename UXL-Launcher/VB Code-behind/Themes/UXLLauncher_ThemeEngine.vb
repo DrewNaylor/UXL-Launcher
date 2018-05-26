@@ -190,8 +190,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorButtonBackColor = Color.Transparent
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -205,8 +206,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -225,8 +227,9 @@ Public Class UXLLauncher_ThemeEngine
                     flatstyleButtonFlatStyle = FlatStyle.Standard
                 End If
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't valid, just ignore it.
+                ' If the element isn't valid, just replace it with the default.
             Catch ex As Exception
+                flatstyleButtonFlatStyle = FlatStyle.Standard
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -240,8 +243,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 flatappearanceButtonBorderColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                flatappearanceButtonBorderColor = Nothing
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -257,8 +261,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorGroupBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -272,8 +277,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorGroupBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -287,8 +293,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
