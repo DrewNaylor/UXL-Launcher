@@ -77,6 +77,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.debugLabelXmlThemeFileVersion = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeUseThemeEngineVersion = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeTitle = New System.Windows.Forms.Label()
@@ -144,35 +145,35 @@ Partial Class aaformMainWindow
         '
         Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
-        Me.menubarFileMenu.Size = New System.Drawing.Size(35, 19)
+        Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
         Me.menubarFileMenu.Text = "&File"
         '
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(128, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
         '
         Me.menubarViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarAlwaysOnTopButton, Me.menubarHideWhenMinimizedButton, Me.menubarRevertThemeButton})
         Me.menubarViewMenu.Name = "menubarViewMenu"
-        Me.menubarViewMenu.Size = New System.Drawing.Size(42, 19)
+        Me.menubarViewMenu.Size = New System.Drawing.Size(44, 19)
         Me.menubarViewMenu.Text = "&View"
         '
         'menubarAlwaysOnTopButton
         '
         Me.menubarAlwaysOnTopButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarAlwaysOnTopButton.Name = "menubarAlwaysOnTopButton"
-        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(225, 22)
+        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(242, 22)
         Me.menubarAlwaysOnTopButton.Text = "&Always On Top"
         '
         'menubarHideWhenMinimizedButton
         '
         Me.menubarHideWhenMinimizedButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarHideWhenMinimizedButton.Name = "menubarHideWhenMinimizedButton"
-        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(225, 22)
+        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(242, 22)
         Me.menubarHideWhenMinimizedButton.Text = "&Hide When Minimized"
         '
         'menubarRevertThemeButton
@@ -180,7 +181,7 @@ Partial Class aaformMainWindow
         Me.menubarRevertThemeButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
         Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
-        Me.menubarRevertThemeButton.Size = New System.Drawing.Size(225, 22)
+        Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
         Me.menubarRevertThemeButton.Text = "&Revert to Default Theme"
         Me.menubarRevertThemeButton.ToolTipText = resources.GetString("menubarRevertThemeButton.ToolTipText")
         '
@@ -188,7 +189,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOfficeLangPrefsButton, Me.zseparatorToolsMenu1, Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(45, 19)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOfficeLangPrefsButton
@@ -197,57 +198,57 @@ Partial Class aaformMainWindow
         Me.menubarOfficeLangPrefsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOfficeLangPrefsButton.Name = "menubarOfficeLangPrefsButton"
         Me.menubarOfficeLangPrefsButton.Padding = New System.Windows.Forms.Padding(0)
-        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(221, 28)
+        Me.menubarOfficeLangPrefsButton.Size = New System.Drawing.Size(233, 28)
         Me.menubarOfficeLangPrefsButton.Text = "O&ffice Language Preferences"
         '
         'zseparatorToolsMenu1
         '
         Me.zseparatorToolsMenu1.Name = "zseparatorToolsMenu1"
-        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(218, 6)
+        Me.zseparatorToolsMenu1.Size = New System.Drawing.Size(230, 6)
         '
         'menubarOptionsButton
         '
         Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
         Me.menubarOptionsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
-        Me.menubarOptionsButton.Size = New System.Drawing.Size(221, 30)
+        Me.menubarOptionsButton.Size = New System.Drawing.Size(233, 30)
         Me.menubarOptionsButton.Text = "&Options..."
         '
         'menubarHelpMenu
         '
         Me.menubarHelpMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarHelpTopicsButton, Me.zseparatorHelpMenu, Me.menubarAuthorsButton, Me.menubarLicenseButton, Me.menubarAboutButton})
         Me.menubarHelpMenu.Name = "menubarHelpMenu"
-        Me.menubarHelpMenu.Size = New System.Drawing.Size(41, 19)
+        Me.menubarHelpMenu.Size = New System.Drawing.Size(44, 19)
         Me.menubarHelpMenu.Text = "&Help"
         '
         'menubarHelpTopicsButton
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(197, 22)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(194, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(197, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAuthorsButton.Text = "A&cknowledgments"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(197, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(197, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'contextmenuNotifyicon
@@ -402,7 +403,7 @@ Partial Class aaformMainWindow
         '
         Me.statusbarLabelWelcomeText.BackColor = System.Drawing.Color.Transparent
         Me.statusbarLabelWelcomeText.Name = "statusbarLabelWelcomeText"
-        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(566, 17)
+        Me.statusbarLabelWelcomeText.Size = New System.Drawing.Size(622, 17)
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
     "launch them and explore the UI."
         '
@@ -569,6 +570,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeFileVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeUseThemeEngineVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeTitle)
@@ -595,10 +597,19 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
         '
+        'debugLabelXmlThemeFileVersion
+        '
+        Me.debugLabelXmlThemeFileVersion.AutoSize = True
+        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(5, 408)
+        Me.debugLabelXmlThemeFileVersion.Name = "debugLabelXmlThemeFileVersion"
+        Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(164, 13)
+        Me.debugLabelXmlThemeFileVersion.TabIndex = 27
+        Me.debugLabelXmlThemeFileVersion.Text = "debugLabelXmlThemeFileVersion"
+        '
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 407)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 421)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
         Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(233, 13)
         Me.debugLabelXmlThemeUseThemeEngineVersion.TabIndex = 26
@@ -1024,4 +1035,5 @@ Partial Class aaformMainWindow
     Friend WithEvents menubarHideWhenMinimizedButton As ToolStripMenuItem
     Friend WithEvents debugLabelXmlThemeUseThemeEngineVersion As Label
     Friend WithEvents notifyiconShowApp As ToolStripMenuItem
+    Friend WithEvents debugLabelXmlThemeFileVersion As Label
 End Class
