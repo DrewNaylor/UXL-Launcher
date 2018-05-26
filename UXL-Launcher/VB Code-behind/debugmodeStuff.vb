@@ -99,13 +99,13 @@ Public Class debugmodeStuff
 
     End Sub
 
-    Public Shared Sub outputThemeVersionToUse(themeVersionToUse As Decimal)
+    Public Shared Sub outputThemeEngineVersionToUse(themeEngineVersionToUse As Decimal)
         ' Show theme engine version that the theme wants to use in the Immediate Window
         ' if the proper setting is enabled.
         If My.Settings.debugmodeShowThemeEngineOutput = True Then
             Debug.WriteLine("")
             Debug.WriteLine("UseThemeEngineVersion string:")
-            Debug.WriteLine(themeVersionToUse)
+            Debug.WriteLine(themeEngineVersionToUse)
         End If
     End Sub
 #End Region
