@@ -89,7 +89,19 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to .
+        '''  Looks up a localized string similar to applauncher-icons
+        '''By Drew Naylor. Licensed under CC BY 4.0.
+        '''Version 2.1
+        '''
+        '''The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+        '''
+        '''Link to applauncher-icons project repository:
+        '''https://github.com/DrewNaylor/applauncher-icons
+        '''
+        '''Link to applauncher-icons version 2.1 GitHub Releases page:
+        '''https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.1
+        '''
+        '''T [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ApplauncherIconsInfo_TXT() As String
             Get
@@ -98,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-05-08T01:45:27
+        '''  Looks up a localized string similar to 2018-05-26T01:16:54
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -218,6 +230,33 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Language_Settings", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property MaudernTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("MaudernTheme_XML", resourceCulture)
             End Get
         End Property
         
