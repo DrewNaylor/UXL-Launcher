@@ -406,7 +406,7 @@ Public Class UXLLauncher_ThemeEngine
                 colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
                 colorMenubarBackColor = colorMenuItemBackColor
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
             End Try
@@ -422,8 +422,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorMenuItemForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorMenuItemForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
