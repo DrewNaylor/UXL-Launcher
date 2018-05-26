@@ -224,14 +224,14 @@ Public Class UXLLauncher_ThemeEngine
         ' Only pull the Button FlatAppearance BorderColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
-                colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager).InnerText)
+                flatappearanceButtonBorderColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just ignore it.
             Catch ex As Exception
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorButtonBackColor = Color.Transparent
+            flatappearanceButtonBorderColor = Nothing
         End If
 #End Region
 
@@ -514,6 +514,7 @@ Public Class UXLLauncher_ThemeEngine
                 ' Set button style, whether that be flat, "Standard", or another
                 ' supported style.
                 button.FlatStyle = flatstyleButtonFlatStyle
+                button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
             End If
             ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
