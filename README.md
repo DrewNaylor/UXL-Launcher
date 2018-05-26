@@ -1,6 +1,14 @@
 # What is UXL Launcher?
 
+Project build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher)
+
+Master branch build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master)
+
+
+
 UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
+
+![](/UXL-Launcher/Resources/UXL-Standalone-Icon.png?raw=true)
 
 UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
 
@@ -10,16 +18,18 @@ The readme continues after this notice.
 
 ```
 UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-Copyright (C) 2013-2018  Drew Naylor
+Copyright (C) 2013-2018 Drew Naylor
 Microsoft Office and all related words are copyright
-and trademark Microsoft Corporation.
+and trademark Microsoft Corporation. More details in the About window.
+Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
+and does not endorse this software.
+Any other companies mentioned own their respective copyrights/trademarks.
 (Note that the copyright years include the years left out by the hyphen.)
-
-Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
 This file is part of UXL Launcher
 (Program is also known as "Unified eXecutable Launcher." Not to be confused with
-another software titled "[Kindle] Unified Application Launcher".)
+other software titled "[Kindle] Unified Application Launcher",
+"UX Launcher" [an Android launcher], or "Ulauncher" [a Linux app launcher].)
 
 UXL Launcher is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,6 +45,30 @@ You should have received a copy of the GNU General Public License
 along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 ```
 
+Below is information on the icon set used in UXL Launcher.
+
+```
+applauncher-icons
+By Drew Naylor. Licensed under CC BY 4.0.
+Version 2.1
+
+The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+
+Link to applauncher-icons project repository:
+https://github.com/DrewNaylor/applauncher-icons
+
+Link to applauncher-icons version 2.1 GitHub Releases page:
+https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.1
+
+The version of applauncher-icons used in UXL Launcher has been modified from the original source. Namely, the smaller icons used in the UXL Launcher Quickmenu and some menubar entries were resized from the original files.
+
+No warranty is provided with applauncher-icons. Use at your own risk. Drew Naylor is not responsible for any problems that use of applauncher-icons may cause.
+
+This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+
+Microsoft is not associated with either the applauncher-icons project or Drew Naylor and does not condone this project.
+```
+
 <br>
 <br>
 
@@ -42,13 +76,13 @@ Screenshots:
 
 ![](/docs/images/uxl-launcher-3.0_screenshot.PNG?raw=true)
 <br>
->^ Main UXL Launcher 3.0 window running on Windows 7.
+`^ Main UXL Launcher 3.0 window running on Windows 7.`
 
 <br>
 
 ![](/docs/images/uxl-launcher-quickmenu_from-3.0_screenshot.PNG?raw=true)
 <br>
->^ UXL Launcher Quickmenu - a context menu for its system tray icon that exposes a few functions.
+`^ UXL Launcher Quickmenu - a context menu for its system tray icon that exposes a few functions.`
 
 <br>
 
@@ -116,23 +150,25 @@ To run UXL Launcher, your computer requires the following:
 In addition to the requirements for simply running UXL Launcher, your computer requires the following software to build it from source code:
 
 - [Microsoft Build Tools 2015](https://www.microsoft.com/en-us/download/details.aspx?id=48159)
+  - If [Visual Studio 2015 Community](https://www.visualstudio.com/vs/older-downloads/) is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
 - [Windows PowerShell 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
+  - It may be necessary to read the Windows PowerShell 5.0 [install instructions](https://docs.microsoft.com/en-us/powershell/wmf/5.0/requirements) as the download page can be a bit confusing. The install instructions link has a table with the links needed for each version of Windows.
+  - Windows 10 does not require PowerShell to be manually installed as it already has PowerShell 5.0.
 
-If [Visual Studio 2015 Community](https://www.visualstudio.com/vs/) is installed, Microsoft Build Tools 2015 is not required for building UXL Launcher.
 
-If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.
+~~If you would like to automatically build UXL Launcher from source, you can use my [UXL Autobuild Script](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde) (AKA UAS) Batch script to automatically download, build, and run the latest, bleeding-edge changes from the master branch. Do note, however, UAS isn't recommended for people who want stable software due to the fact that things may break at any time.~~ Please be aware that this script no longer works as of February 23, 2018, due to changes with GitHub's servers. See [here](https://gist.github.com/DrewNaylor/22e3f1cded702fff494a46dabe643fde#gistcomment-2367291). An alternate method to trying the latest changes from the master branch is by downloading the latest build's [artifacts from AppVeyor](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/build/artifacts). When the download has completed, extract the archive, then open the `Debug` folder. In this folder, double-click on `UXL-Launcher.exe`.
 
 ***
 
-If you don't want to use a script to build UXL Launcher, here's how to do it manually:
+If you don't want to use a script (or download from AppVeyor) to build UXL Launcher, here's how to do it manually:
 
 1. First, clone the Git repository by running: <code>git clone https://github.com/DrewNaylor/UXL-Launcher.git</code> or [download the Zip file for the master branch](https://github.com/DrewNaylor/UXL-Launcher/archive/master.zip) and remember where you saved your files.
 
-2. Next, open the command prompt from the Start menu (<code>cmd.exe</code>) and type or copy/paste <code>cd C:\Program Files (x86)\MSBuild\14.0\Bin\ </code> if you have a 64-bit Windows install or <code>cd C:\Program Files\MSBuild\14.0\Bin\ </code> if you have a 32-bit Windows install. Press the Enter or Return key when it's pasted. Don't run <code>cmd.exe</code> from the Git Shell or else the next step won't work.
+2. Next, open the command prompt from the Start menu (`cmd.exe`) and type or copy/paste `cd C:\Program Files (x86)\MSBuild\14.0\Bin\` if you have a 64-bit Windows install or `cd C:\Program Files\MSBuild\14.0\Bin\` if you have a 32-bit Windows install. Press the Enter or Return key when it's pasted. Don't run `cmd.exe` from the Git Shell or else the next step won't work.
 
-3. Third, type <code>msbuild.exe</code>, press the spacebar, and drag the <code>UXL-Launcher.vbproj</code> into the command prompt window and press the Enter or Return key.
+3. Third, type `msbuild.exe`, press the spacebar, and drag the `UXL-Launcher.vbproj` into the command prompt window and press the Enter or Return key.
 
-4. And finally, once the project is done being built, you'll find the UXL Launcher EXE file in <code>UXL-Launcher\UXL-Launcher\bin\Debug </code> wherever you saved the files to earlier along with a config file, a PDB file, and an XML file.
+4. And finally, once the project is done being built, you'll find the UXL Launcher EXE file in `UXL-Launcher\UXL-Launcher\bin\Debug` wherever you saved the files to earlier along with a config file, a PDB file, and an XML file.
 
 ## How to Modify the Source Code
 

@@ -1,14 +1,16 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 'Copyright (C) 2013-2018 Drew Naylor
 'Microsoft Office and all related words are copyright
-'and trademark Microsoft Corporation.
+'and trademark Microsoft Corporation. More details in the About window.
+'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
+'and does not endorse this software.
+'Any other companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
-'
-'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 '
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
-'another software titled "[Kindle] Unified Application Launcher".)
+'other software titled "[Kindle] Unified Application Launcher",
+'"UX Launcher" [an Android launcher], or "Ulauncher" [a Linux app launcher].)
 '
 'UXL Launcher is free software: you can redistribute it and/or modify
 'it under the terms of the GNU General Public License as published by
@@ -39,24 +41,14 @@ Public Class aaformAboutWindow
         textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
 "Version " & My.Application.Info.Version.ToString & " " & My.Resources.isStable & " - Codename ""Personalizationizer 3000""" & vbCrLf &
 "App compiled at UTC: " & BuildDateString & vbCrLf &
-"Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+." & vbCrLf &
-"" & vbCrLf &
-"UXL Launcher provides launchers for most Microsoft Office apps in one place." & vbCrLf &
-"Please be aware that UXL Launcher is unofficial and not made by Microsoft." & vbCrLf &
-"" & vbCrLf &
-"License notice:" & vbCrLf &
-"UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by" &
-" the Free Software Foundation, either version 3 of the License, or (at your option) any later version." & vbCrLf &
-"" & vbCrLf &
-"UXL Launcher is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details." & vbCrLf &
-"" & vbCrLf &
-"You should have received a copy of the GNU General Public License along with UXL Launcher. If not, see <http://www.gnu.org/licenses/>." & vbCrLf &
-"" & vbCrLf &
-"Drew is not intending on infringing on Microsoft's copyrights, so UXL Launcher is only a shortcut application." & vbCrLf &
-"" & vbCrLf &
-"Copyright notice: Office, Microsoft Office, Word, Excel, PowerPoint, And all related words (by MSFT) are Copyright [a long time ago]-[sometime in the future] Microsoft Corp. All Rights Reserved for Microsoft's copyrights." & vbCrLf &
-"Any other companies mentioned own their respective copyrights/trademarks.")
+My.Resources.UXLLauncherInfo_TXT & vbCrLf & vbCrLf & ' UXL Launcher info for the About window such as copyright stuff.
+My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
+"UXL Launcher Theme Engine" & vbCrLf &
+"Version " & My.Resources.themeEngineVersion & vbCrLf & ' Theme engine info.
+My.Resources.ThemeEngineInfo_TXT & vbCrLf & vbCrLf &
+My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
+My.Resources.ApplauncherIconsInfo_TXT ' Icon set for UXL Launcher info.
+)
 
 
         ' Load the GPL document in the RTF Textbox control.

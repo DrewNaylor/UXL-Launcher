@@ -89,7 +89,28 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-03-17T18:40:13
+        '''  Looks up a localized string similar to applauncher-icons
+        '''By Drew Naylor. Licensed under CC BY 4.0.
+        '''Version 2.1
+        '''
+        '''The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+        '''
+        '''Link to applauncher-icons project repository:
+        '''https://github.com/DrewNaylor/applauncher-icons
+        '''
+        '''Link to applauncher-icons version 2.1 GitHub Releases page:
+        '''https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.1
+        '''
+        '''T [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ApplauncherIconsInfo_TXT() As String
+            Get
+                Return ResourceManager.GetString("ApplauncherIconsInfo_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 2018-05-26T01:16:54
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -213,12 +234,52 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property MaudernTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("MaudernTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property Microsoft_Query() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Microsoft_Query", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;j&gt;
+        '''
+        '''&lt;test&gt;
+        '''
+        '''&lt;/j&gt;.
+        '''</summary>
+        Public ReadOnly Property NoneTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("NoneTheme_XML", resourceCulture)
             End Get
         End Property
         
@@ -277,7 +338,7 @@ Namespace My.Resources
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  &lt;!--&lt;UseThemeEngineVersion&gt;2.01&lt;/UseThemeEngineVersion&gt;--&gt;
+        '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
@@ -286,11 +347,22 @@ Namespace My.Resources
         '''      &lt;/Button&gt;
         '''      
         '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Indigo&lt;/BackColor [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ReturnOfNightTheme_XML() As String
             Get
                 Return ResourceManager.GetString("ReturnOfNightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to ----------------------------------------------------------------------------------------.
+        '''</summary>
+        Public ReadOnly Property separator() As String
+            Get
+                Return ResourceManager.GetString("separator", resourceCulture)
             End Get
         End Property
         
@@ -457,6 +529,20 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
+        '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
+        '''
+        '''The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
+        '''Please be aware that UXL Launcher and the UXL Launcher Theme Engine are both unofficial and not made by Microsoft.
+        '''Note that the &quot;License&quot; tab contains only t [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ThemeEngineInfo_TXT() As String
+            Get
+                Return ResourceManager.GetString("ThemeEngineInfo_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to 1.01.
         '''</summary>
         Public ReadOnly Property themeEngineVersion() As String
@@ -492,6 +578,22 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("UXL_Standalone_Icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
+        '''
+        '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
+        '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
+        '''Note that the &quot;License&quot; tab contains only the license for UXL Launcher. Other licenses are linked to from each component&apos;s information area below, if they are different.
+        '''
+        '''License notice:
+        '''UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU G [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property UXLLauncherInfo_TXT() As String
+            Get
+                Return ResourceManager.GetString("UXLLauncherInfo_TXT", resourceCulture)
             End Get
         End Property
         

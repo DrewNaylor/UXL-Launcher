@@ -1,14 +1,16 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 'Copyright (C) 2013-2018 Drew Naylor
 'Microsoft Office and all related words are copyright
-'and trademark Microsoft Corporation.
+'and trademark Microsoft Corporation. More details in the About window.
+'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
+'and does not endorse this software.
+'Any other companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
-'
-'Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 '
 'This file is part of UXL Launcher
 '(Program is also known as "Unified eXecutable Launcher." Not to be confused with
-'another software titled "[Kindle] Unified Application Launcher".)
+'other software titled "[Kindle] Unified Application Launcher",
+'"UX Launcher" [an Android launcher], or "Ulauncher" [a Linux app launcher].)
 '
 'UXL Launcher is free software: you can redistribute it and/or modify
 'it under the terms of the GNU General Public License as published by
@@ -24,6 +26,8 @@
 'along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 
 
+
+Imports System.Xml
 
 Public Class aaformMainWindow
 
@@ -137,20 +141,44 @@ Public Class aaformMainWindow
         ' Code based on this sample code:
         ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
 
+        ' The code that was here was moved to the showMainWindowFromQuickmenu sub, or whatever
+        ' the name of the sub that appears below is.
+
+        showMainWindowFromQuickmenu()
+    End Sub
+
+    Private Sub showMainWindowFromQuickmenu()
+        ' Show UXL Launcher. Useful if "Hide When Minimized" is enabled.
+        ' When the user clicks on the "Show UXL Launcher" Quickmenu menu entry
+        ' or double-clicks on the notification icon, show the main window again.
+        ' Code based on this sample code:
+        ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
+
+        ' First, the window needs to be shown on the desktop, in the taskbar, and
+        ' with a regular window state.
         Me.Show()
         ShowInTaskbar = True
         WindowState = FormWindowState.Normal
+        ' If the main window is behind another window, it needs to be brought to the front
+        ' and the focus needs to be set to the main window as well.
+        Me.TopMost = True
+        Me.Focus()
+        ' Don't set the main window to not be on top if Always On Top is enabled.
+        If My.Settings.alwaysOnTop = False Then
+            Me.TopMost = False
+        End If
     End Sub
 
     Private Sub notifyiconShowApp_Click(sender As Object, e As EventArgs) Handles notifyiconShowApp.Click
         ' Show UXL Launcher. Useful if "Hide When Minimized" is enabled.
-        ' When the user clicks the "Show UXL Launcher" menu entry, show the main window again.
+        ' When the user double-clicks on the notification icon, show the main window again.
         ' Code based on this sample code:
         ' https://www.aspsnippets.com/Articles/Minimize-Windows-Forms-WinForms-Application-to-System-Tray-using-C-And-VBNet.aspx
 
-        Me.Show()
-        ShowInTaskbar = True
-        WindowState = FormWindowState.Normal
+        ' The code that was here was moved to the showMainWindowFromQuickmenu sub, or whatever
+        ' the name of the sub that appears below is.
+
+        showMainWindowFromQuickmenu()
     End Sub
 #End Region
 
@@ -201,7 +229,7 @@ Public Class aaformMainWindow
     Private Sub menubarRevertThemeButton_Click(sender As Object, e As EventArgs) Handles menubarRevertThemeButton.Click
         ' Attempt to revert to the default theme.
         If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
+            UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
         End If
     End Sub
@@ -423,8 +451,18 @@ Public Class aaformMainWindow
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
         ' Attempt to apply the default theme.
         If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.userTheme = My.Resources.DefaultTheme_XML
+            UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            ' First make sure theme engine output is enabled.
+            If My.Settings.debugmodeShowThemeEngineOutput = True Then
+                Debug.WriteLine("userTheme:")
+                ' Due to changes to the theme engine, I had to change
+                ' how the theme engine outputs the user's theme file
+                ' and it doesn't look as good as it used to, but this
+                ' should be fine. "OuterXml" property from here:
+                ' https://msdn.microsoft.com/en-us/library/system.xml.xmlnode.outerxml.aspx
+                Debug.Print(UXLLauncher_ThemeEngine.userTheme.OuterXml)
+            End If
         End If
     End Sub
 #End Region

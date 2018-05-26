@@ -56,6 +56,7 @@ Partial Class aaformMainWindow
         Me.notifyiconOfficeLang = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconUXLOptions = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.notifyiconShowApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.notifyiconExitApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.zotherstuffFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.zotherstuffFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -76,6 +77,7 @@ Partial Class aaformMainWindow
         Me.pictureExcelIcon = New System.Windows.Forms.PictureBox()
         Me.pictureWordIcon = New System.Windows.Forms.PictureBox()
         Me.groupboxProApps = New System.Windows.Forms.GroupBox()
+        Me.debugLabelXmlThemeFileVersion = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeUseThemeEngineVersion = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeTitle = New System.Windows.Forms.Label()
@@ -105,7 +107,6 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.notifyiconShowApp = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -256,7 +257,7 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 434)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 412)
         '
         'notifyiconWord
         '
@@ -360,6 +361,12 @@ Partial Class aaformMainWindow
         '
         Me.notifyiconSeparator3.Name = "notifyiconSeparator3"
         Me.notifyiconSeparator3.Size = New System.Drawing.Size(251, 6)
+        '
+        'notifyiconShowApp
+        '
+        Me.notifyiconShowApp.Name = "notifyiconShowApp"
+        Me.notifyiconShowApp.Size = New System.Drawing.Size(254, 30)
+        Me.notifyiconShowApp.Text = "Show UXL Launcher"
         '
         'notifyiconExitApp
         '
@@ -563,6 +570,7 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
+        Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeFileVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeUseThemeEngineVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeTitle)
@@ -589,10 +597,19 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
         '
+        'debugLabelXmlThemeFileVersion
+        '
+        Me.debugLabelXmlThemeFileVersion.AutoSize = True
+        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(4, 407)
+        Me.debugLabelXmlThemeFileVersion.Name = "debugLabelXmlThemeFileVersion"
+        Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(164, 13)
+        Me.debugLabelXmlThemeFileVersion.TabIndex = 27
+        Me.debugLabelXmlThemeFileVersion.Text = "debugLabelXmlThemeFileVersion"
+        '
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 407)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 420)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
         Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(233, 13)
         Me.debugLabelXmlThemeUseThemeEngineVersion.TabIndex = 26
@@ -892,12 +909,6 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
-        'notifyiconShowApp
-        '
-        Me.notifyiconShowApp.Name = "notifyiconShowApp"
-        Me.notifyiconShowApp.Size = New System.Drawing.Size(254, 30)
-        Me.notifyiconShowApp.Text = "Show UXL Launcher"
-        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1024,4 +1035,5 @@ Partial Class aaformMainWindow
     Friend WithEvents menubarHideWhenMinimizedButton As ToolStripMenuItem
     Friend WithEvents debugLabelXmlThemeUseThemeEngineVersion As Label
     Friend WithEvents notifyiconShowApp As ToolStripMenuItem
+    Friend WithEvents debugLabelXmlThemeFileVersion As Label
 End Class

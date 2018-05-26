@@ -140,7 +140,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("ReturnOfNight")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Maudern")>  _
         Public Property userChosenTheme() As String
             Get
                 Return CType(Me("userChosenTheme"),String)
@@ -183,6 +183,19 @@ Namespace My
             End Get
             Set
                 Me("hideWhenMinimized") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Drew\Documents\Visual Studio 2015\Projects\UXL-Launcher\testfolder\testT"& _ 
+            "heme.xml")>  _
+        Public Property userCustomThemePath() As String
+            Get
+                Return CType(Me("userCustomThemePath"),String)
+            End Get
+            Set
+                Me("userCustomThemePath") = value
             End Set
         End Property
     End Class
