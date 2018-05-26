@@ -438,8 +438,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorStatusLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -453,8 +454,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -484,8 +486,9 @@ Public Class UXLLauncher_ThemeEngine
                     propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
                 End If
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't valid, just ignore it.
+                ' If the element isn't valid, just replace it with the default.
             Catch ex As Exception
+                propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
             End Try
         End If
 #End Region
@@ -520,8 +523,9 @@ Public Class UXLLauncher_ThemeEngine
                     propertyStatusLabelBorderStyle = Border3DStyle.Flat
                 End If
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't valid, just ignore it.
+                ' If the element isn't valid, just replace it with the default.
             Catch ex As Exception
+                propertyStatusLabelBorderStyle = Border3DStyle.Flat
             End Try
         End If
 #End Region
