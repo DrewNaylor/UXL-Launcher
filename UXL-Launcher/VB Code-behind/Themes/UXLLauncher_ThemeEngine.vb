@@ -419,19 +419,34 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "MenuItem Image margin background gradient"
-#Region "Color 1 (first color)"
-        ' Only pull the MenuItem BackColor element from XML if it exists.
+#Region "Start color"
+        ' Only pull the MenuItem Image Margin Gradient Start Color element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
-                colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
-                colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("FCFCFC")
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("FCFCFC")
+        End If
+#End Region
+#Region "End color"
+        ' Only pull the MenuItem Image Margin Gradient Start Color element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("F1F1F1")
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("F1F1F1")
         End If
 #End Region
 #End Region
