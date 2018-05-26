@@ -451,10 +451,18 @@ Public Class aaformMainWindow
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
         ' Attempt to apply the default theme.
         If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.ReturnOfNightTheme_XML)
+            UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
-            Debug.WriteLine("userTheme:")
-            Debug.WriteLine(UXLLauncher_ThemeEngine.userTheme)
+            ' First make sure theme engine output is enabled.
+            If My.Settings.debugmodeShowThemeEngineOutput = True Then
+                Debug.WriteLine("userTheme:")
+                ' Due to changes to the theme engine, I had to change
+                ' how the theme engine outputs the user's theme file
+                ' and it doesn't look as good as it used to, but this
+                ' should be fine. "OuterXml" property from here:
+                ' https://msdn.microsoft.com/en-us/library/system.xml.xmlnode.outerxml.aspx
+                Debug.Print(UXLLauncher_ThemeEngine.userTheme.OuterXml)
+            End If
         End If
     End Sub
 #End Region
