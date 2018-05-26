@@ -102,6 +102,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Menubar entry colors:
         Dim colorMenuItemBackColor As Color
         Dim colorMenuItemForeColor As Color
+        ' Menubar item margin colors:
+        Dim colorMenuItemImageMarginGradientStartColor As Color
+        Dim colorMenuItemImageMarginGradientEndColor As Color
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color
         Dim colorStatusLabelForeColor As Color
@@ -413,6 +416,24 @@ Public Class UXLLauncher_ThemeEngine
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
         End If
+#End Region
+
+#Region "MenuItem Image margin background gradient"
+#Region "Color 1 (first color)"
+        ' Only pull the MenuItem BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
+        End If
+#End Region
 #End Region
 
 #Region "MenuBar BackColor"
