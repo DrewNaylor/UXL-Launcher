@@ -357,8 +357,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
@@ -372,8 +373,9 @@ Public Class UXLLauncher_ThemeEngine
             Try
                 colorTextboxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just ignore it.
+                ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
+                colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
