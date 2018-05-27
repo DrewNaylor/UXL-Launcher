@@ -102,6 +102,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Menubar entry colors:
         Dim colorMenuItemBackColor As Color
         Dim colorMenuItemForeColor As Color
+        ' Menubar item margin colors:
+        Dim colorMenuItemImageMarginGradientStartColor As Color
+        Dim colorMenuItemImageMarginGradientEndColor As Color
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color
         Dim colorStatusLabelForeColor As Color
@@ -404,7 +407,6 @@ Public Class UXLLauncher_ThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
-                colorMenubarBackColor = colorMenuItemBackColor
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
@@ -413,6 +415,55 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
+        End If
+#End Region
+
+#Region "MenuItem Image margin background gradient"
+#Region "Start color"
+        ' Only pull the MenuItem Image Margin Gradient Start Color element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
+        End If
+#End Region
+#Region "End color"
+        ' Only pull the MenuItem Image Margin Gradient End Color element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
+        End If
+#End Region
+#End Region
+
+#Region "MenuBar BackColor"
+        ' Only pull the MenuBar BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
         End If
 #End Region
 
@@ -644,8 +695,11 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Set colors for menubar entries."
 
         ' Set color for menubar.
-        aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenuItemBackColor
+        aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenubarBackColor
         aaformMainWindow.UXLToolstripRenderer.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.UXLToolstripRenderer.DropdownBackColor = colorMenuItemBackColor
+        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
+        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
         aaformMainWindow.UXLToolstripRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
 #End Region
@@ -876,6 +930,10 @@ Public Class uxlProToolstripRenderer
     Inherits ToolStripProfessionalRenderer
 
     Private _BackColor As Color
+    ' "_DropdownBackColor" determines the colors in the menubar dropdown.
+    Private _DropdownBackColor As Color
+    Private _ImageMarginGradientStartColor As Color
+    Private _ImageMarginGradientEndColor As Color
     Private _ForeColor As Color
     Private _TextHighlightColor As Color
 
@@ -886,6 +944,36 @@ Public Class uxlProToolstripRenderer
         End Get
         Set(ByVal value As Color)
             _BackColor = value
+        End Set
+    End Property
+
+    ' Get and set the backcolor for menubar dropdown items.
+    Public Property DropdownBackColor As Color
+        Get
+            Return _DropdownBackColor
+        End Get
+        Set(ByVal value As Color)
+            _DropdownBackColor = value
+        End Set
+    End Property
+
+    ' Get and set the start color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientStartColor As Color
+        Get
+            Return _ImageMarginGradientStartColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientStartColor = value
+        End Set
+    End Property
+
+    ' Get and set the end color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientEndColor As Color
+        Get
+            Return _ImageMarginGradientEndColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientEndColor = value
         End Set
     End Property
 
@@ -913,13 +1001,32 @@ Public Class uxlProToolstripRenderer
     Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
         MyBase.OnRenderToolStripBackground(e)
         Dim lightColor As Color = Me.BackColor
-        Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, lightColor, LinearGradientMode.Vertical)
+        Using b As New SolidBrush(lightColor)
             e.Graphics.FillRectangle(b, e.AffectedBounds)
         End Using
     End Sub
 
+    ' Change the color for the menubar dropdowns.
+    ' Based on the code "Step 3" here:
+    ' http://www.vbforums.com/showthread.php?539578-Custom-VisualStudio2008-style-MenuStrip-and-ToolStrip-Renderer&p=3333808&viewfull=1#post3333808
+    Protected Overrides Sub OnRenderImageMargin(e As ToolStripRenderEventArgs)
+        MyBase.OnRenderImageMargin(e)
+        ' Colors and brushes for menuitem background color.
+        Dim DropDownItemBackColor As Color = Me.DropdownBackColor
+        Dim dropdownBrush As New SolidBrush(DropdownBackColor)
+        ' Colors and brushes for image margin gradiant.
+        Dim ImageMarginGradientBrush As New LinearGradientBrush(e.AffectedBounds, Me.ImageMarginGradientStartColor,
+                                                                Me.ImageMarginGradientEndColor, LinearGradientMode.Horizontal)
+        ' Make the menuitem background set to the theme's color.
+        Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
+        ' Fill the background of the menuitem.
+        e.Graphics.FillRectangle(dropdownBrush, itembgcolor)
+        ' Fill the item image margin gradient.
+        e.Graphics.FillRectangle(ImageMarginGradientBrush, e.AffectedBounds)
+    End Sub
+
     ' Change the colors for the menubar text.
-    Protected Overrides Sub OnRenderItemText(e As ToolStripItemTextRenderEventArgs)
+    Protected Overrides Sub OnRenderItemText(ByVal e As ToolStripItemTextRenderEventArgs)
         If e.Item.Selected = True Then
             e.TextColor = _TextHighlightColor
         Else

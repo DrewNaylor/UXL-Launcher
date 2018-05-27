@@ -43,9 +43,17 @@
         Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
         to the same thing as MenuItem BackColor, otherwise it's set to the value the
         Default theme uses.-->
-        <BackColor>Purple</BackColor>
+        <BackColor>Teal</BackColor>
         <ForeColor>AntiqueWhite</ForeColor>
+        <ImageMarginGradient>
+          <StartColor>Red</StartColor>
+          <EndColor>Blue</EndColor>
+        </ImageMarginGradient>
       </MenuItem>
+      
+      <MenuBar>
+        <BackColor>Purple</BackColor>
+      </MenuBar>
 
       <StatusLabel>
         <BackColor>Maroon</BackColor>
