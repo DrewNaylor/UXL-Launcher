@@ -63,7 +63,7 @@
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </MenuItem>
-
+      <make >sure to</ add> the customized image margin gradient to the Maudern theme. Maybe it could go from DimGray to Black in the dropdown boxes and the dropdown boxes can be black. 5/26/2017
       <StatusLabel>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
