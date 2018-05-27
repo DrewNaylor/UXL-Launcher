@@ -39,7 +39,6 @@
         <BackColor>Window</BackColor>
         <!-- Text color for menubar dropdown items. -->
         <ForeColor>ControlText</ForeColor>
-        
         <ImageMarginGradient>
           <!-- The "ImageMarginGradient" is the small box on the
           left side of many Windows dropdown menu items. 
