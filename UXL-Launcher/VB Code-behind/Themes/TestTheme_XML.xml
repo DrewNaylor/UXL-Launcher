@@ -45,11 +45,15 @@
         Default theme uses.-->
         <BackColor>Purple</BackColor>
         <ForeColor>AntiqueWhite</ForeColor>
+        <ImageMarginGradient>
+          <StartColor>Red</StartColor>
+          <EndColor>Blue</EndColor>
+        </ImageMarginGradient>
       </MenuItem>
       
       <MenuBar>
         <BackColor>Purple</BackColor>
-        </MenuBar>
+      </MenuBar>
 
       <StatusLabel>
         <BackColor>Maroon</BackColor>
