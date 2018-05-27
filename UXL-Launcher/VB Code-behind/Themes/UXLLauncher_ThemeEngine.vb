@@ -698,6 +698,8 @@ Public Class UXLLauncher_ThemeEngine
         aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenubarBackColor
         aaformMainWindow.UXLToolstripRenderer.ForeColor = colorMenuItemForeColor
         aaformMainWindow.UXLToolstripRenderer.DropdownBackColor = colorMenuItemBackColor
+        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
+        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
         aaformMainWindow.UXLToolstripRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
 #End Region
@@ -1019,6 +1021,8 @@ Public Class uxlProToolstripRenderer
         Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
         ' Fill the background of the menuitem.
         e.Graphics.FillRectangle(dropdownBrush, itembgcolor)
+        ' Fill the item image margin gradient.
+        e.Graphics.FillRectangle(ImageMarginGradientBrush, e.AffectedBounds)
     End Sub
 
     ' Change the colors for the menubar text.
