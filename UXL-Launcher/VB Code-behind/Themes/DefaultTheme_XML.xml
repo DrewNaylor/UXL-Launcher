@@ -1,6 +1,7 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Default Theme</Title>
   <Description>Default is the theme UXL Launcher ships with.</Description>
+  <Version>v1.0</Version>
   <Author>Drew Naylor</Author>
   
     <Theme_Colors>
