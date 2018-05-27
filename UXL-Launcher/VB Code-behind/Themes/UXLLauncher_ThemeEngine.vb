@@ -435,7 +435,7 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 #Region "End color"
-        ' Only pull the MenuItem Image Margin Gradient Start Color element from XML if it exists.
+        ' Only pull the MenuItem Image Margin Gradient End Color element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager).InnerText)
