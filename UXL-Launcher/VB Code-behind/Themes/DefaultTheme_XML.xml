@@ -45,6 +45,10 @@
         Default theme uses.-->
         <BackColor>Window</BackColor>
         <ForeColor>ControlText</ForeColor>
+        <ImageMarginGradient>
+          <StartColor>0xFCFCFC</StartColor>
+          <EndColor>0xF1F1F1</EndColor>
+        </ImageMarginGradient>
       </MenuItem>
 
       <MenuBar>
