@@ -977,7 +977,7 @@ Public Class uxlProToolstripRenderer
         End Set
     End Property
 
-    ' Get and set the forecolor for the menubar.
+    ' Get and set the text highlight color for the menubar.
     Public Property TextHighlightColor() As Color
         Get
             Return _TextHighlightColor
@@ -987,7 +987,7 @@ Public Class uxlProToolstripRenderer
         End Set
     End Property
 
-    ' Get and set the text highlight color for the menubar.
+    ' Get and set the forecolor for the menubar.
     Public Property ForeColor() As Color
         Get
             Return _ForeColor
@@ -1027,10 +1027,12 @@ Public Class uxlProToolstripRenderer
 
     ' Change the colors for the menubar text.
     Protected Overrides Sub OnRenderItemText(ByVal e As ToolStripItemTextRenderEventArgs)
-        If e.Item.Selected = True Then
-            e.TextColor = _TextHighlightColor
+        If e.Item.Selected = True Or e.Item.Pressed = True Then
+            e.Item.ForeColor = Me.TextHighlightColor
+            e.TextColor = Me.TextHighlightColor
         Else
-            e.TextColor = _ForeColor
+            e.Item.ForeColor = Me.ForeColor
+            e.TextColor = Me.ForeColor
         End If
         MyBase.OnRenderItemText(e)
     End Sub

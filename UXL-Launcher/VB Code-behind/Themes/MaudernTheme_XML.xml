@@ -52,18 +52,11 @@
       </TextBox>
 
       <MenuItem>
-        <!--The MenuBar BackColor variable was previously required because of problems
-        with the custom ProfessionalRenderer, but is now set to the same value as
-        MenuItem BackColor as the problem seems to be gone if the MenuBar BackColor
-        cannot be set when MenuItem also cannot be set, which doesn't make much sense.
-        
-        Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
-        to the same thing as MenuItem BackColor, otherwise it's set to the value the
-        Default theme uses.-->
+        <!-- Background color for menubar dropdown items. -->
         <BackColor>Black</BackColor>
+        <!-- Text color for menubar dropdown items. -->
         <ForeColor>White</ForeColor>
       </MenuItem>
-      <make >sure to</ add> the customized image margin gradient to the Maudern theme. Maybe it could go from DimGray to Black in the dropdown boxes and the dropdown boxes can be black. 5/26/2017
       <StatusLabel>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
