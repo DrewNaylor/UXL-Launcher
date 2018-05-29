@@ -1030,6 +1030,9 @@ Public Class uxlProToolstripRenderer
         If e.Item.Selected = True Or e.Item.Pressed = True Then
             e.Item.ForeColor = Me.TextHighlightColor
             e.TextColor = Me.TextHighlightColor
+            'ElseIf e.Item.Selected = False Or e.Item.Pressed = False Then
+            '    e.Item.ForeColor = Me.ForeColor
+            '    e.TextColor = Me.ForeColor
         Else
             e.Item.ForeColor = Me.ForeColor
             e.TextColor = Me.ForeColor
