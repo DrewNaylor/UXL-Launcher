@@ -702,6 +702,12 @@ Public Class UXLLauncher_ThemeEngine
         aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
         aaformMainWindow.UXLToolstripRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
+        ' Sometimes the menubar forecolor doesn't update, so I'm forcing the items to update their colors.
+        aaformMainWindow.menubarFileMenu.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.menubarViewMenu.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.menubarToolsMenu.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.menubarHelpMenu.ForeColor = colorMenuItemForeColor
+
 #End Region
 
 
