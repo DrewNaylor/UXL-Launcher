@@ -1033,14 +1033,28 @@ Public Class uxlProToolstripRenderer
 
     ' Change the colors for the menubar text.
     Protected Overrides Sub OnRenderItemText(ByVal e As ToolStripItemTextRenderEventArgs)
+        ' If the menuitem is selected or pressed, use the TextHighlightColor for its text color.
         If e.Item.Selected = True Or e.Item.Pressed = True Then
-            e.Item.ForeColor = Me.TextHighlightColor
             e.TextColor = Me.TextHighlightColor
         Else
-            e.Item.ForeColor = Me.ForeColor
+            ' Otherwise, just use its regular ForeColor for text color.
             e.TextColor = Me.ForeColor
         End If
         MyBase.OnRenderItemText(e)
+    End Sub
+
+    ' Make sure the button arrow is visible using the ForeColor property.
+    Protected Overrides Sub OnRenderArrow(e As ToolStripArrowRenderEventArgs)
+        ' If the menuitem is highlighted, make the arrow the same color
+        ' as the menuitem's TextHighlightColor.
+        If e.Item.Selected = True Or e.Item.Pressed = True Then
+            e.ArrowColor = Me.TextHighlightColor
+            ' If the menuitem is not highlighted, make the arrow the same
+            ' color as the menuitem's forecolor.
+        Else
+            e.ArrowColor = Me.ForeColor
+        End If
+        MyBase.OnRenderArrow(e)
     End Sub
 End Class
 #End Region
