@@ -1,14 +1,14 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Experience - Blue</Title>
-  <Description>"Experience - Blue" is a tribute to the default Windows XP theme, Luna, and its default color.</Description>
+  <Description>"Experience - Blue" is a tribute to the default Windows XP theme, Luna, and its default color. Colors are approximated based on what the colors looked like in Drew's App Launcher running on Windows XP rather than using the original color code values from Windows XP, so things might not look the best.</Description>
   <Version>v1.0</Version>
   <Author>Drew Naylor</Author>
   
     <Theme_Colors>
       
       <Button>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>244, 244, 242</BackColor>
+        <ForeColor>Black</ForeColor>
       </Button>
       
       <GroupBox>
@@ -17,29 +17,32 @@
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>240, 238, 232</BackColor>
+        <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
       
       <StatusBar>
-        <BackColor>Control</BackColor>
+        <!-- The statusbar color isn't exactly the same as Windows XP, but
+        I wanted to take some artistic liberties with this theme to make it
+        a bit different from Windows XP's colors.-->
+        <BackColor>OldLace</BackColor>
       </StatusBar>
 
       <Label>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
       </Label>
 
       <TextBox>
-        <BackColor>Window</BackColor>
-        <ForeColor>WindowText</ForeColor>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
       </TextBox>
 
       <MenuItem>
         <!-- Background color for menubar dropdown items. -->
-        <BackColor>Window</BackColor>
+        <BackColor>White</BackColor>
         <!-- Text color for menubar dropdown items. -->
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
         <ImageMarginGradient>
           <!-- The "ImageMarginGradient" is the small box on the
           left side of many Windows dropdown menu items. 
@@ -49,24 +52,27 @@
           
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>0xFCFCFC</StartColor>
+          <StartColor>White</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
-          <EndColor>0xF1F1F1</EndColor>
+          <EndColor>White</EndColor>
         </ImageMarginGradient>
       </MenuItem>
 
       <MenuBar>
         <!-- Background color for the menubar itself. -->
-        <BackColor>Control</BackColor>
+        <!-- The menubar color isn't exactly the same as Windows XP, but
+        I wanted to take some artistic liberties with this theme to make it
+        a bit different from Windows XP's colors.-->
+        <BackColor>OldLace</BackColor>
       </MenuBar>
       
       <StatusLabel>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
         
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
-        <BorderSides>None</BorderSides>
+        <BorderSides>Top</BorderSides>
 
         <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
         and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
