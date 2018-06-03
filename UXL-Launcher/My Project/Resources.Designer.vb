@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-05-26T01:16:54
+        '''  Looks up a localized string similar to 2018-06-03T01:00:30
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -133,6 +133,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -148,7 +149,7 @@ Namespace My.Resources
         '''      &lt;/GroupBox&gt;
         '''
         '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
+        '''        &lt;B [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property DefaultTheme_XML() As String
             Get
@@ -168,8 +169,37 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;B [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ExpBlueTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("ExpBlueTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
         '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Original Hotdog Stand theme by Microsoft; implemented as UXL Launcher theme by Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -181,7 +211,7 @@ Namespace My.Resources
         '''      
         '''      &lt;GroupBox&gt;
         '''        &lt;BackColor&gt;Red&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/Fore [rest of string was truncated]&quot;;.
+        '''    [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property EyesoreTheme_XML() As String
             Get
@@ -235,24 +265,15 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Title&gt;Maudern&lt;/Title&gt;
+        '''  &lt;Description&gt;Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
         '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property MaudernTheme_XML() As String
             Get
@@ -337,6 +358,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -348,8 +370,7 @@ Namespace My.Resources
         '''      
         '''      &lt;GroupBox&gt;
         '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt; [rest of string was truncated]&quot;;.
+        '''        &lt;ForeColor&gt;White&lt;/Fo [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ReturnOfNightTheme_XML() As String
             Get
@@ -478,8 +499,8 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Test2&lt;/Title&gt;
-        '''  &lt;Description&gt;An improved test theme for UXL Launcher.&lt;/Description&gt;
+        '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2017)&lt;/Title&gt;
+        '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead.&lt;/Description&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -491,12 +512,7 @@ Namespace My.Resources
         '''      
         '''      &lt;GroupBox&gt;
         '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;DarkViolet&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Whit [rest of string was truncated]&quot;;.
+        '''        &lt;ForeColor&gt;Whi [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Test2Theme_XML() As String
             Get
@@ -508,6 +524,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
         '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -519,8 +536,7 @@ Namespace My.Resources
         '''      
         '''      &lt;GroupBox&gt;
         '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;        ''' [rest of string was truncated]&quot;;.
+        '''        &lt;ForeColor&gt;Blue&lt;/For [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property TestTheme_XML() As String
             Get
