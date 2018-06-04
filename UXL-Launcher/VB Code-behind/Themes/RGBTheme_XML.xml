@@ -22,7 +22,7 @@
       </FlowLayoutPanel>
       
       <StatusBar>
-        <BackColor>Control</BackColor>
+        <BackColor>RoyalBlue</BackColor>
       </StatusBar>
 
       <Label>
@@ -63,7 +63,7 @@
       
       <StatusLabel>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>White</ForeColor>
         
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>None</BorderSides>
