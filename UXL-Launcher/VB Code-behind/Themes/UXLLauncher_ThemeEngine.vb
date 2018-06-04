@@ -766,15 +766,29 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf My.Settings.userChosenTheme.Contains("Theme") Then
                 userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML"))
                 ' If the user has a custom theme enabled, use that instead.
-                ' Make sure the theme path and file exists.
-            ElseIf My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
-                userTheme.Load(My.Settings.userCustomThemePath)
-                ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
-            ElseIf My.Settings.userChosenTheme = "(Custom)" And Not File.Exists(My.Settings.userCustomThemePath) Then
+            ElseIf My.Settings.userChosenTheme = "(Custom)" Then
+                ' Make sure the theme path and file exists and custom themes are allowed
+                ' to be used.
+                If File.Exists(My.Settings.userCustomThemePath) And My.Settings.allowCustomThemes = True Then
+                    userTheme.Load(My.Settings.userCustomThemePath)
+                    ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
+                    ' Then we output that the custom theme file wasn't found if that's the problem, or if custom
+                    ' themes are not allowed to be used.
+                ElseIf Not File.Exists(My.Settings.userCustomThemePath) Then
+                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                    ' If the theme engine output debug setting is enabled, output an error
+                    ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
+                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
+                ElseIf My.Settings.allowCustomThemes = False Then
+                    ' If custom themes are not allowed to be used, use the Default theme and tell the
+                    ' user in the debug output that they're not allowed.
+                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.CustomThemesNotAllowed", "Custom themes are not allowed to be used." & vbCrLf &
+                                                "Please contact your administrator for further assistance.")
+                End If
+            Else
+                ' If none of the above conditions apply, just load the Default theme.
                 userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-                ' If the theme engine output debug setting is enabled, output an error
-                ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
-                themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
             End If
         Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -852,6 +866,21 @@ Public Class UXLLauncher_ThemeEngine
                             "file specified for My.Settings.userCustomThemePath wasn't found. Please ensure that" & vbCrLf &
                             "the filename below exists in the listed path. Quotation marks in the custom theme" & vbCrLf &
                             "path are not supported.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "UXLLauncher.ThemeEngine.CustomThemesNotAllowed" Then
+                ' If custom themes are not supported, output it to the Immediate Window.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("Your administrator has disabled custom themes from being used in UXL Launcher." & vbCrLf &
+                                "If you believe you've received this message in error, you can try to modify the" & vbCrLf &
+                                "configuration files for UXL Launcher located in this folder:")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)

@@ -140,7 +140,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Test2")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("(Custom)")>  _
         Public Property userChosenTheme() As String
             Get
                 Return CType(Me("userChosenTheme"),String)
@@ -196,6 +196,18 @@ Namespace My
             End Get
             Set
                 Me("userCustomThemePath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property allowCustomThemes() As Boolean
+            Get
+                Return CType(Me("allowCustomThemes"),Boolean)
+            End Get
+            Set
+                Me("allowCustomThemes") = value
             End Set
         End Property
     End Class

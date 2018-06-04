@@ -24,7 +24,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Test2</Value>
+      <Value Profile="(Default)">(Custom)</Value>
     </Setting>
     <Setting Name="enableThemeEngine" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -37,6 +37,9 @@
     </Setting>
     <Setting Name="userCustomThemePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\Drew\Documents\Visual Studio 2015\Projects\UXL-Launcher\testfolder\testTheme.xml</Value>
+    </Setting>
+    <Setting Name="allowCustomThemes" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
