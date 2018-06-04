@@ -26,8 +26,8 @@
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
       
       <StatusBar>
@@ -36,12 +36,12 @@
 
       <Label>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
       </Label>
 
       <TextBox>
-        <BackColor>Window</BackColor>
-        <ForeColor>WindowText</ForeColor>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
       </TextBox>
 
       <MenuItem>
