@@ -13,7 +13,7 @@
       
       <GroupBox>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Blue</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
@@ -37,9 +37,9 @@
 
       <MenuItem>
         <!-- Background color for menubar dropdown items. -->
-        <BackColor>Window</BackColor>
+        <BackColor>RoyalBlue</BackColor>
         <!-- Text color for menubar dropdown items. -->
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>White</ForeColor>
         <ImageMarginGradient>
           <!-- The "ImageMarginGradient" is the small box on the
           left side of many Windows dropdown menu items. 
@@ -49,16 +49,16 @@
           
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>0xFCFCFC</StartColor>
+          <StartColor>Red</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
-          <EndColor>0xF1F1F1</EndColor>
+          <EndColor>Lime</EndColor>
         </ImageMarginGradient>
       </MenuItem>
 
       <MenuBar>
         <!-- Background color for the menubar itself. -->
-        <BackColor>Control</BackColor>
+        <BackColor>RoyalBlue</BackColor>
       </MenuBar>
       
       <StatusLabel>
