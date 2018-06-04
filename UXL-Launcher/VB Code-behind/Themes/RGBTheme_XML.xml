@@ -7,8 +7,17 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>RoyalBlue</BackColor>
+        <ForeColor>Lime</ForeColor>
+        <!-- The FlatStyle determines the "depth" of the buttons. This can be set
+        to either "Flat" or "Standard". Anything else will be set to "Standard".
+        Quotation marks are not supported. -->
+        <FlatStyle>Flat</FlatStyle>
+        <!-- Anything within the "FlatAppearance" element will only be used if
+        "FlatStyle" is set to "Flat". -->
+        <FlatAppearance>
+          <BorderColor>Red</BorderColor>
+        </FlatAppearance>
       </Button>
       
       <GroupBox>
