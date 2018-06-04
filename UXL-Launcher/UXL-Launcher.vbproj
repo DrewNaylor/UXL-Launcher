@@ -195,6 +195,7 @@
     <None Include="Resources\UXLLauncherInfo_TXT.txt" />
     <None Include="Resources\ThemeEngineInfo_TXT.txt" />
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
+    <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\ExpBlueTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\MaudernTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />

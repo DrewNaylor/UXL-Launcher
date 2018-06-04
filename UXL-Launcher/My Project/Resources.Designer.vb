@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-03T01:00:30
+        '''  Looks up a localized string similar to 2018-06-04T19:35:55
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -169,25 +169,8 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;B [rest of string was truncated]&quot;;.
+        '''  &lt;Title&gt;Experience - Blue&lt;/Title&gt;
+        '''  &lt;Description&gt;&quot;Experience - Blue&quot; is a tribute to the default Windows XP theme, Luna, and its default color. Some colors are approximated based on what the colors looked like in Drew&apos;s App Launcher running on Windows XP rather than using the original color code values from Windows XP, so things might not look the best. Drew Naylor and the &quot;Experience - Blue&quot; theme are not associated with Microsoft Corporation in any way, shape, or form. Windows and  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ExpBlueTheme_XML() As String
             Get
@@ -198,20 +181,7 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
-        '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
-        '''  &lt;Author&gt;Original Hotdog Stand theme by Microsoft; implemented as UXL Launcher theme by Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;LightGray&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Black&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Red&lt;/BackColor&gt;
-        '''    [rest of string was truncated]&quot;;.
+        '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme. The &quot;Eyesore&quot; theme and Drew Naylor are not associated with Microsoft Corporation in any way, shape, or form. Windows 3.1 and all related words are copyright and trademark/registered trademark Microsoft Corporation in the United States and other countries. All rights reserved to Microsoft Corp. for Microsoft Corp.&apos;s copyrights and trademarks/registered trademar [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property EyesoreTheme_XML() As String
             Get
@@ -375,6 +345,34 @@ Namespace My.Resources
         Public ReadOnly Property ReturnOfNightTheme_XML() As String
             Get
                 Return ResourceManager.GetString("ReturnOfNightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;B [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property RGBTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("RGBTheme_XML", resourceCulture)
             End Get
         End Property
         
