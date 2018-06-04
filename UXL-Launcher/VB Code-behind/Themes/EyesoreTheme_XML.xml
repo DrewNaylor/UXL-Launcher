@@ -49,10 +49,10 @@
 
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>0xFCFCFC</StartColor>
+          <StartColor>White</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
-          <EndColor>0xF1F1F1</EndColor>
+          <EndColor>White</EndColor>
         </ImageMarginGradient>
       </MenuItem>
 
