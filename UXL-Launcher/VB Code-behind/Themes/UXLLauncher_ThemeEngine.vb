@@ -961,6 +961,14 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 
+#Region "Get theme file info."
+    ' This code is based on this issue in the
+    ' GitHub repository:
+    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
+
+
+#End Region
+
 End Class
 
 
