@@ -967,7 +967,10 @@ Public Class UXLLauncher_ThemeEngine
     ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
     Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False) As String
-
+        ' This function takes the themeFile as input along with whether or not the themeFile
+        ' is a custom theme and returns information from the file including the theme's
+        ' title, author, description, and theme file version in one string for easy
+        ' display such as in the Options window.
     End Function
 #End Region
 
