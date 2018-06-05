@@ -966,7 +966,9 @@ Public Class UXLLauncher_ThemeEngine
     ' GitHub repository:
     ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
+    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False) As String
 
+    End Function
 #End Region
 
 End Class
