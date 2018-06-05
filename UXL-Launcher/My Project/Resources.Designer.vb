@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-04T19:35:55
+        '''  Looks up a localized string similar to 2018-06-05T01:05:21
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -164,17 +164,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Experience - Blue&lt;/Title&gt;
-        '''  &lt;Description&gt;&quot;Experience - Blue&quot; is a tribute to the default Windows XP theme, Luna, and its default color. Some colors are approximated based on what the colors looked like in Drew&apos;s App Launcher running on Windows XP rather than using the original color code values from Windows XP, so things might not look the best. Drew Naylor and the &quot;Experience - Blue&quot; theme are not associated with Microsoft Corporation in any way, shape, or form. Windows and  [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property ExpBlueTheme_XML() As String
-            Get
-                Return ResourceManager.GetString("ExpBlueTheme_XML", resourceCulture)
             End Get
         End Property
         
@@ -350,25 +339,19 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Title&gt;Arr G. Bee&lt;/Title&gt;
+        '''  &lt;Description&gt;Arr G. Bee is a theme that&apos;s influenced by the UXL Launcher logo.&lt;/Description&gt;
         '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;B [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;RoyalBlue&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Lime&lt;/ForeColor&gt;
+        '''        &lt;!-- The FlatStyle determines the &quot;depth&quot; of the buttons. This can be set
+        '''        to either &quot;Flat&quot; or &quot;Standard&quot;. Anything else will be set to &quot;Standard&quot;.
+        '''        Quotat [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property RGBTheme_XML() As String
             Get
@@ -497,20 +480,15 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2017)&lt;/Title&gt;
-        '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead.&lt;/Description&gt;
+        '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2018)&lt;/Title&gt;
+        '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead if you want similar colors to this theme, or Test (the theme file for Eyesore 2) if you want a test theme.&lt;/Description&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
         '''        &lt;BackColor&gt;MidnightBlue&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Whi [rest of string was truncated]&quot;;.
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Test2Theme_XML() As String
             Get
