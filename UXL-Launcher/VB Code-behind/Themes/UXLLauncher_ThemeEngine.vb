@@ -1098,6 +1098,15 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 #End Region
+
+#Region "Put together theme info into one string."
+        themeDetailsComplete = "Title: " & themeTitle & vbCrLf &
+                               "Description: " & themeDescription & vbCrLf &
+                               "Version: " & themeVersion & vbCrLf &
+                               "Author: " & themeAuthor & vbCrLf &
+                               "Theme Engine version to use: " & themeUseThemeEngineVersion
+#End Region
+        Return themeDetailsComplete
     End Function
 #End Region
 
