@@ -971,12 +971,14 @@ Public Class UXLLauncher_ThemeEngine
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
         ' display such as in the Options window.
+        Dim themeFileReader As XmlDocument = New XmlDocument()
+        ' Theme file information properties.
         Dim themeTitle As String = "(Not provided)"
         Dim themeAuthor As String = "(Not provided)"
         Dim themeDescription As String = "(Not provided)"
         Dim themeVersion As String = "(Not provided)"
         Dim themeUseThemeEngineVersion As Decimal = CDec(1.01)
-        Dim themeFileReader As XmlDocument = New XmlDocument()
+        ' The completed string for use wherever it's needed.
         Dim themeDetailsComplete As String = "Please wait..."
 
         If isCustomTheme = True Then
