@@ -899,7 +899,7 @@ Public Class UXLLauncher_ThemeEngine
                                 "configuration files for UXL Launcher located in this folder:" & vbCrLf &
                                 My.Application.Info.DirectoryPath & vbCrLf &
                                 "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," & vbCrLf &
-                                "close UXL Launcher. Next, open this file in your favorite text editor such as Notepad++." & vbCrLf &
+                                "make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." & vbCrLf &
                                 "You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." & vbCrLf &
                                 "Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." & vbCrLf &
                                 "Afterward, restart UXL Launcher.")
@@ -1012,6 +1012,16 @@ Public Class UXLLauncher_ThemeEngine
                 Return themeDetailsComplete
             ElseIf My.Settings.allowCustomThemes = False Then
                 ' If custom themes aren't allowed, let the user know.
+                themeDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher." &
+                                       " This may be due to data protection policies put in place by your organization." &
+                                       " If you believe you've received this message in error, you can try to modify the" &
+                                       " configuration files for UXL Launcher located in this folder:" & vbCrLf &
+                                       My.Application.Info.DirectoryPath & vbCrLf &
+                                       "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," & vbCrLf &
+                                       "make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." & vbCrLf &
+                                       "You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." & vbCrLf &
+                                       "Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." & vbCrLf &
+                                       "Afterward, restart UXL Launcher."
             End If
 
         End If
