@@ -830,7 +830,7 @@ Public Class UXLLauncher_ThemeEngine
             ' First check that the theme to use is a custom theme.
             ' If it is, specify that it is.
             If My.Settings.userChosenTheme = "(Custom)" Then
-                Debug.WriteLine(getThemeFileInfo(userTheme.ToString, True))
+                Debug.WriteLine(getThemeFileInfo(My.Settings.userCustomThemePath, True))
             Else
                 ' Otherwise, just write it out.
                 Debug.WriteLine(getThemeFileInfo(userTheme.ToString))
@@ -1003,6 +1003,7 @@ Public Class UXLLauncher_ThemeEngine
             If File.Exists(themeFile) And My.Settings.allowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
                 themeFileReader.Load(themeFile)
+                Return themeDetailsComplete
             ElseIf Not File.Exists(themeFile) Then
                 ' If the file doesn't exist, say that the Default theme will be used
                 ' temporarily.

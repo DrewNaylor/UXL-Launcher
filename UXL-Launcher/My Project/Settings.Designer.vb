@@ -140,7 +140,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Maudern")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("(Custom)")>  _
         Public Property userChosenTheme() As String
             Get
                 Return CType(Me("userChosenTheme"),String)
@@ -189,7 +189,7 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Drew\Documents\Visual Studio 2015\Projects\UXL-Launcher\testfolder\testT"& _ 
-            "heme.xml")>  _
+            "heme.xmlhb")>  _
         Public Property userCustomThemePath() As String
             Get
                 Return CType(Me("userCustomThemePath"),String)
@@ -201,7 +201,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property allowCustomThemes() As Boolean
             Get
                 Return CType(Me("allowCustomThemes"),Boolean)
