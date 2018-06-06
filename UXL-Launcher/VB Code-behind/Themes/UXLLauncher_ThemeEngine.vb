@@ -1009,8 +1009,6 @@ Public Class UXLLauncher_ThemeEngine
             If File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
                 themeFileReader.LoadXml(themeFile.OuterXml)
-                Debug.WriteLine("output custom theme...")
-                Debug.WriteLine(themeFileReader.OuterXml)
             ElseIf Not File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
                 ' If the file doesn't exist but custom themes are allowed,
                 ' say that the Default theme will be used temporarily.
@@ -1034,8 +1032,6 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the selected theme is a built-in theme, just load the file.
             themeFileReader.LoadXml(themeFile.OuterXml)
-            Debug.WriteLine("output builtin theme...")
-            Debug.WriteLine(themeFileReader.OuterXml)
         End If
 #End Region
 
@@ -1100,12 +1096,14 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Put together theme info into one string."
+        ' Put each string together into one string to present to the user.
         themeDetailsComplete = "Title: " & themeTitle & vbCrLf &
                                "Description: " & themeDescription & vbCrLf &
                                "Version: " & themeVersion & vbCrLf &
                                "Author: " & themeAuthor & vbCrLf &
                                "Theme Engine version to use: " & themeUseThemeEngineVersion
 #End Region
+        ' Show the user the completed string.
         Return themeDetailsComplete
     End Function
 #End Region
