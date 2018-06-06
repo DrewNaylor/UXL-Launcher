@@ -985,6 +985,7 @@ Public Class UXLLauncher_ThemeEngine
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
         ' display such as in the Options window.
+#Region "Objects to store theme info."
         Dim themeFileReader As XmlDocument = New XmlDocument()
         ' Theme file information properties.
         Dim themeTitle As String = "(Not provided)"
@@ -994,7 +995,9 @@ Public Class UXLLauncher_ThemeEngine
         Dim themeUseThemeEngineVersion As Decimal = CDec(1.01)
         ' The completed string for use wherever it's needed.
         Dim themeDetailsComplete As String = "Please wait..."
+#End Region
 
+#Region "Loading theme files."
         If isCustomTheme = True Then
             ' Code to run if the selected theme is a custom theme.
             ' First, make sure the theme file exists.
@@ -1025,14 +1028,15 @@ Public Class UXLLauncher_ThemeEngine
                                        " Afterward, restart UXL Launcher."
                 Return themeDetailsComplete
             End If
-
         Else
             ' If the selected theme is a built-in theme, just load the file.
             themeFileReader.LoadXml(themeFile.OuterXml)
             Debug.WriteLine("output builtin theme...")
             Debug.WriteLine(themeFileReader.OuterXml)
-
         End If
+#End Region
+
+        ' Now that loading is done, get the theme info.
 
     End Function
 #End Region
