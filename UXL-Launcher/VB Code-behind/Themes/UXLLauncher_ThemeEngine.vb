@@ -1007,8 +1007,11 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf Not File.Exists(themeFile) Then
                 ' If the file doesn't exist, say that the Default theme will be used
                 ' temporarily.
-                themeDetailsComplete = "We couldn't find the custom theme file previously located in the folder listed below, so the Default theme will be used temporarily."
+                themeDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
+                                        My.Settings.userCustomThemePath
                 Return themeDetailsComplete
+            ElseIf My.Settings.allowCustomThemes = False Then
+                ' If custom themes aren't allowed, let the user know.
             End If
 
         End If
