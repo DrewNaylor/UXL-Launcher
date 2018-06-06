@@ -24,7 +24,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">(Custom)</Value>
+      <Value Profile="(Default)">Maudern</Value>
     </Setting>
     <Setting Name="enableThemeEngine" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

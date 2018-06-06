@@ -1037,7 +1037,79 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
         ' Now that loading is done, get the theme info.
+        ' This code was copy-pasted from above to make work
+        ' a bit easier.
+#Region "Pull info from file."
+#Region "Pull Title theme element from XML."
 
+        ' Only pull the title element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetTitle = "(No title specified)"
+            debugmodeStuff.updateDebugLabels()
+        End If
+#End Region
+
+#Region "Pull Description theme element from XML."
+        ' Only pull the description element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetDescription = "(No description specified)"
+            debugmodeStuff.updateDebugLabels()
+        End If
+#End Region
+
+#Region "Pull Author theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetAuthor = "(No author specified)"
+            debugmodeStuff.updateDebugLabels()
+        End If
+#End Region
+
+#Region "Pull Version theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
+            themeSheetFileVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
+            debugmodeStuff.updateDebugLabels()
+        Else
+            themeSheetFileVersion = "(No version specified)"
+            debugmodeStuff.updateDebugLabels()
+        End If
+#End Region
+
+#Region "Pull UseThemeEngineVersion element from XML."
+
+        ' Only pull the UseThemeEngineVersion element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
+            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
+            If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                themeSheetUseThemeEngineVersion = CDec(1.01)
+                debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+
+                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                ' set it to whatever the version is specified in the theme file.
+            ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+            End If
+        Else
+            ' If the XML element is missing, manually force the value to be 1.01.
+            themeSheetUseThemeEngineVersion = CDec(1.01)
+            debugmodeStuff.updateDebugLabels()
+            debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+        End If
+
+#End Region
+#End Region
     End Function
 #End Region
 
