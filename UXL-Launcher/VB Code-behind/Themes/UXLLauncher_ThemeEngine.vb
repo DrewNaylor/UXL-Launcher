@@ -966,7 +966,7 @@ Public Class UXLLauncher_ThemeEngine
     ' GitHub repository:
     ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
-    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False) As String
+    Public Shared Function getThemeFileInfo(themeFile As String, Optional isCustomTheme As Boolean = False) As String
         ' This function takes the themeFile as input along with whether or not the themeFile
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
@@ -983,6 +983,13 @@ Public Class UXLLauncher_ThemeEngine
 
         If isCustomTheme = True Then
             ' Code to run if the selected theme is a custom theme.
+            ' First, make sure the theme file exists.
+            ' Make sure the theme path and file exists and custom themes are allowed
+            ' to be used.
+            If File.Exists(themeFile) And My.Settings.allowCustomThemes = True Then
+                ' Load the custom theme file into the file reader.
+                themeFileReader.Load(themeFile)
+            End If
 
         End If
 
