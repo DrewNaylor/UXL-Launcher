@@ -823,10 +823,24 @@ Public Class UXLLauncher_ThemeEngine
             End If
             Debug.WriteLine("Theme XML file:")
             Debug.WriteLine(userTheme.OuterXml)
+
+            ' Also output theme info for testing purposes.
+            ' This will be used in the Options window soon.
+            Debug.WriteLine("getThemeFileInfo function.")
+            ' First check that the theme to use is a custom theme.
+            ' If it is, specify that it is.
+            If My.Settings.userChosenTheme = "(Custom)" Then
+                Debug.WriteLine(getThemeFileInfo(userTheme.ToString, True))
+            Else
+                ' Otherwise, just write it out.
+                Debug.WriteLine(getThemeFileInfo(userTheme.ToString))
+            End If
+
+
         End If
 
-        ' Apply the theme.
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            ' Apply the theme.
+            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     End Sub
 #End Region
 #End Region
