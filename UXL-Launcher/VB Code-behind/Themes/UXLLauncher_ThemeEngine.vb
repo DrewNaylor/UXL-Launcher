@@ -1004,15 +1004,15 @@ Public Class UXLLauncher_ThemeEngine
                 ' Load the custom theme file into the file reader.
                 themeFileReader.Load(themeFile)
                 Return themeDetailsComplete
-            ElseIf Not File.Exists(themeFile) Then
-                ' If the file doesn't exist, say that the Default theme will be used
-                ' temporarily.
+            ElseIf Not File.Exists(themeFile) And My.Settings.allowCustomThemes = True Then
+                ' If the file doesn't exist but custom themes are allowed,
+                ' say that the Default theme will be used temporarily.
                 themeDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
                                         My.Settings.userCustomThemePath
                 Return themeDetailsComplete
             ElseIf My.Settings.allowCustomThemes = False Then
                 ' If custom themes aren't allowed, let the user know.
-                themeDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher." &
+                themeDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
                                        " This may be due to data protection policies put in place by your organization." &
                                        " If you believe you've received this message in error, you can try to modify the" &
                                        " configuration files for UXL Launcher located in this folder:" & vbCrLf &
@@ -1022,6 +1022,7 @@ Public Class UXLLauncher_ThemeEngine
                                        " You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." &
                                        " Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." &
                                        " Afterward, restart UXL Launcher."
+                Return themeDetailsComplete
             End If
 
         End If
