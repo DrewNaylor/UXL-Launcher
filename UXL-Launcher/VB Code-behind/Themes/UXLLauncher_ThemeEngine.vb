@@ -830,10 +830,10 @@ Public Class UXLLauncher_ThemeEngine
             ' First check that the theme to use is a custom theme.
             ' If it is, specify that it is.
             If My.Settings.userChosenTheme = "(Custom)" Then
-                Debug.WriteLine(getThemeFileInfo(My.Settings.userCustomThemePath, True))
+                Debug.WriteLine(getThemeFileInfo(userTheme, True, My.Settings.userCustomThemePath))
             Else
                 ' Otherwise, just write it out.
-                Debug.WriteLine(getThemeFileInfo(userTheme.ToString))
+                Debug.WriteLine(getThemeFileInfo(userTheme))
             End If
 
 
@@ -980,7 +980,7 @@ Public Class UXLLauncher_ThemeEngine
     ' GitHub repository:
     ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
-    Public Shared Function getThemeFileInfo(themeFile As String, Optional isCustomTheme As Boolean = False) As String
+    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
         ' This function takes the themeFile as input along with whether or not the themeFile
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
@@ -1000,11 +1000,12 @@ Public Class UXLLauncher_ThemeEngine
             ' First, make sure the theme file exists.
             ' Make sure the theme path and file exists and custom themes are allowed
             ' to be used.
-            If File.Exists(themeFile) And My.Settings.allowCustomThemes = True Then
+            If File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
-                themeFileReader.Load(themeFile)
-                Return themeDetailsComplete
-            ElseIf Not File.Exists(themeFile) And My.Settings.allowCustomThemes = True Then
+                themeFileReader.LoadXml(themeFile.OuterXml)
+                Debug.WriteLine("output custom theme...")
+                Debug.WriteLine(themeFileReader.OuterXml)
+            ElseIf Not File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
                 ' If the file doesn't exist but custom themes are allowed,
                 ' say that the Default theme will be used temporarily.
                 themeDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
@@ -1024,6 +1025,12 @@ Public Class UXLLauncher_ThemeEngine
                                        " Afterward, restart UXL Launcher."
                 Return themeDetailsComplete
             End If
+
+        Else
+            ' If the selected theme is a built-in theme, just load the file.
+            themeFileReader.LoadXml(themeFile.OuterXml)
+            Debug.WriteLine("output builtin theme...")
+            Debug.WriteLine(themeFileReader.OuterXml)
 
         End If
 
