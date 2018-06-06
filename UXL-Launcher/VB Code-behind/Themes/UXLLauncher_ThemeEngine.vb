@@ -1048,10 +1048,8 @@ Public Class UXLLauncher_ThemeEngine
         ' Only pull the title element from XML if it exists.
         If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             themeTitle = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
         Else
             themeTitle = "(No title specified)"
-            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
@@ -1059,32 +1057,26 @@ Public Class UXLLauncher_ThemeEngine
         ' Only pull the description element from XML if it exists.
         If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
             themeDescription = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
         Else
             themeDescription = "(No description specified)"
-            debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
 #Region "Pull Author theme element from XML."
         ' Only pull the Author element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
-            themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
+            themeAuthor = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
         Else
-            themeSheetAuthor = "(No author specified)"
-            debugmodeStuff.updateDebugLabels()
+            themeAuthor = "(No author specified)"
         End If
 #End Region
 
 #Region "Pull Version theme element from XML."
         ' Only pull the Author element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
-            themeSheetFileVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
+            themeVersion = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
         Else
-            themeSheetFileVersion = "(No version specified)"
-            debugmodeStuff.updateDebugLabels()
+            themeVersion = "(No version specified)"
         End If
 #End Region
 
