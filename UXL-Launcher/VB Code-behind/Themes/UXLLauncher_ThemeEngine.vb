@@ -995,6 +995,9 @@ Public Class UXLLauncher_ThemeEngine
         Dim themeUseThemeEngineVersion As Decimal = CDec(1.01)
         ' The completed string for use wherever it's needed.
         Dim themeDetailsComplete As String = "Please wait..."
+        ' Theme namespace manager.
+        Dim themeNamespaceManager As New XmlNamespaceManager(themeFileReader.NameTable)
+        themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 #End Region
 
 #Region "Loading theme files."
@@ -1043,22 +1046,22 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Pull Title theme element from XML."
 
         ' Only pull the title element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
-            themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+            themeTitle = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
         Else
-            themeSheetTitle = "(No title specified)"
+            themeTitle = "(No title specified)"
             debugmodeStuff.updateDebugLabels()
         End If
 #End Region
 
 #Region "Pull Description theme element from XML."
         ' Only pull the description element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
-            themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
+            themeDescription = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
             debugmodeStuff.updateDebugLabels()
         Else
-            themeSheetDescription = "(No description specified)"
+            themeDescription = "(No description specified)"
             debugmodeStuff.updateDebugLabels()
         End If
 #End Region
