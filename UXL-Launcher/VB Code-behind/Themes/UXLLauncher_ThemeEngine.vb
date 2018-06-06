@@ -832,7 +832,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Theme Settings Invalid Message output code."
-    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(None provided)", Optional fullException As String = "(None provided)")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -971,6 +971,19 @@ Public Class UXLLauncher_ThemeEngine
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
         ' display such as in the Options window.
+        Dim themeTitle As String = "(Not provided)"
+        Dim themeAuthor As String = "(Not provided)"
+        Dim themeDescription As String = "(Not provided)"
+        Dim themeVersion As String = "(Not provided)"
+        Dim themeUseThemeEngineVersion As Decimal = CDec(1.01)
+        Dim themeFileReader As XmlDocument = New XmlDocument()
+        Dim themeDetailsComplete As String = "Please wait..."
+
+        If isCustomTheme = True Then
+            ' Code to run if the selected theme is a custom theme.
+
+        End If
+
     End Function
 #End Region
 
