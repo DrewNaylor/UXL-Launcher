@@ -52,6 +52,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -114,6 +115,7 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.SetColumnSpan(Me.tabcontrolOptionsWindow, 5)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageGeneral)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageAdvanced)
+        Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpagePersonalization)
         Me.tabcontrolOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(8, 8)
         Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(8, 8, 8, 2)
@@ -388,6 +390,16 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
+        'tabpagePersonalization
+        '
+        Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
+        Me.tabpagePersonalization.Name = "tabpagePersonalization"
+        Me.tabpagePersonalization.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpagePersonalization.Size = New System.Drawing.Size(422, 326)
+        Me.tabpagePersonalization.TabIndex = 2
+        Me.tabpagePersonalization.Text = "Personalization"
+        Me.tabpagePersonalization.UseVisualStyleBackColor = True
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -447,4 +459,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
     Friend WithEvents linklabelWindowsEditionLearnMore As LinkLabel
+    Friend WithEvents tabpagePersonalization As TabPage
 End Class
