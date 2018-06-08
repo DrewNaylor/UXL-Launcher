@@ -41,6 +41,7 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
+        Me.linklabelWindowsEditionLearnMore = New System.Windows.Forms.LinkLabel()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
@@ -277,6 +278,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
+        Me.groupboxCPUType.Controls.Add(Me.linklabelWindowsEditionLearnMore)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
@@ -290,6 +292,19 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
+        '
+        'linklabelWindowsEditionLearnMore
+        '
+        Me.linklabelWindowsEditionLearnMore.AutoSize = True
+        Me.linklabelWindowsEditionLearnMore.LinkArea = New System.Windows.Forms.LinkArea(120, 13)
+        Me.linklabelWindowsEditionLearnMore.Location = New System.Drawing.Point(93, 93)
+        Me.linklabelWindowsEditionLearnMore.Name = "linklabelWindowsEditionLearnMore"
+        Me.linklabelWindowsEditionLearnMore.Size = New System.Drawing.Size(190, 55)
+        Me.linklabelWindowsEditionLearnMore.TabIndex = 5
+        Me.linklabelWindowsEditionLearnMore.TabStop = True
+        Me.linklabelWindowsEditionLearnMore.Text = "The ""View system info"" button will" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "be replaced with a label that directly" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "shows" &
+    " your Windows edition" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in version 3.2. Learn more..."
+        Me.linklabelWindowsEditionLearnMore.UseCompatibleTextRendering = True
         '
         'radiobuttonCPUIsQBit
         '
@@ -431,4 +446,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tooltipO365InstallMethod As ToolTip
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
+    Friend WithEvents linklabelWindowsEditionLearnMore As LinkLabel
 End Class

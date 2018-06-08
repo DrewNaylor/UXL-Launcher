@@ -302,4 +302,11 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
+#Region "Windows edition choice linklabel."
+    Private Sub linklabelWindowsEditionLearnMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelWindowsEditionLearnMore.LinkClicked
+        ' Send the user to the information page for this link.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/115#issuecomment-395917017")
+    End Sub
+#End Region
+
 End Class
