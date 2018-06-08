@@ -53,6 +53,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
+        Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -60,6 +61,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.SuspendLayout()
         Me.tabpageAdvanced.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
+        Me.tabpagePersonalization.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -368,6 +370,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpagePersonalization
         '
+        Me.tabpagePersonalization.Controls.Add(Me.groupboxAppearance)
         Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
         Me.tabpagePersonalization.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpagePersonalization.Name = "tabpagePersonalization"
@@ -401,6 +404,15 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
+        'groupboxAppearance
+        '
+        Me.groupboxAppearance.Location = New System.Drawing.Point(6, 4)
+        Me.groupboxAppearance.Name = "groupboxAppearance"
+        Me.groupboxAppearance.Size = New System.Drawing.Size(411, 184)
+        Me.groupboxAppearance.TabIndex = 0
+        Me.groupboxAppearance.TabStop = False
+        Me.groupboxAppearance.Text = "Appearance"
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -427,6 +439,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.ResumeLayout(False)
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
+        Me.tabpagePersonalization.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -461,4 +474,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tooltipSystemInfo As ToolTip
     Friend WithEvents linklabelWindowsEditionLearnMore As LinkLabel
     Friend WithEvents tabpagePersonalization As TabPage
+    Friend WithEvents groupboxAppearance As GroupBox
 End Class
