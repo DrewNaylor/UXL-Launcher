@@ -48,12 +48,13 @@ Partial Class aaformOptionsWindow
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
+        Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
+        Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -62,6 +63,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
         Me.tabpagePersonalization.SuspendLayout()
+        Me.groupboxAppearance.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -380,6 +382,16 @@ Partial Class aaformOptionsWindow
         Me.tabpagePersonalization.Text = "Personalization"
         Me.tabpagePersonalization.UseVisualStyleBackColor = True
         '
+        'groupboxAppearance
+        '
+        Me.groupboxAppearance.Controls.Add(Me.checkboxEnableThemeEngine)
+        Me.groupboxAppearance.Location = New System.Drawing.Point(6, 4)
+        Me.groupboxAppearance.Name = "groupboxAppearance"
+        Me.groupboxAppearance.Size = New System.Drawing.Size(411, 184)
+        Me.groupboxAppearance.TabIndex = 0
+        Me.groupboxAppearance.TabStop = False
+        Me.groupboxAppearance.Text = "Appearance"
+        '
         'buttonTestSettings
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -404,14 +416,15 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
-        'groupboxAppearance
+        'checkboxEnableThemeEngine
         '
-        Me.groupboxAppearance.Location = New System.Drawing.Point(6, 4)
-        Me.groupboxAppearance.Name = "groupboxAppearance"
-        Me.groupboxAppearance.Size = New System.Drawing.Size(411, 184)
-        Me.groupboxAppearance.TabIndex = 0
-        Me.groupboxAppearance.TabStop = False
-        Me.groupboxAppearance.Text = "Appearance"
+        Me.checkboxEnableThemeEngine.AutoSize = True
+        Me.checkboxEnableThemeEngine.Location = New System.Drawing.Point(7, 20)
+        Me.checkboxEnableThemeEngine.Name = "checkboxEnableThemeEngine"
+        Me.checkboxEnableThemeEngine.Size = New System.Drawing.Size(203, 17)
+        Me.checkboxEnableThemeEngine.TabIndex = 0
+        Me.checkboxEnableThemeEngine.Text = "Enable UXL Launcher Theme Engine"
+        Me.checkboxEnableThemeEngine.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -440,6 +453,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
         Me.tabpagePersonalization.ResumeLayout(False)
+        Me.groupboxAppearance.ResumeLayout(False)
+        Me.groupboxAppearance.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -475,4 +490,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents linklabelWindowsEditionLearnMore As LinkLabel
     Friend WithEvents tabpagePersonalization As TabPage
     Friend WithEvents groupboxAppearance As GroupBox
+    Friend WithEvents checkboxEnableThemeEngine As CheckBox
 End Class
