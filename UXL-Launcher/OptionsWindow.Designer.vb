@@ -47,12 +47,12 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
+        Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -366,6 +366,17 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription.TabIndex = 0
         Me.labelCPUTypeDescription.Text = "Choose which edition of Windows you're using:"
         '
+        'tabpagePersonalization
+        '
+        Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
+        Me.tabpagePersonalization.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabpagePersonalization.Name = "tabpagePersonalization"
+        Me.tabpagePersonalization.Padding = New System.Windows.Forms.Padding(2)
+        Me.tabpagePersonalization.Size = New System.Drawing.Size(422, 326)
+        Me.tabpagePersonalization.TabIndex = 2
+        Me.tabpagePersonalization.Text = "Personalization"
+        Me.tabpagePersonalization.UseVisualStyleBackColor = True
+        '
         'buttonTestSettings
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -389,16 +400,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'tabpagePersonalization
-        '
-        Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
-        Me.tabpagePersonalization.Name = "tabpagePersonalization"
-        Me.tabpagePersonalization.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpagePersonalization.Size = New System.Drawing.Size(422, 326)
-        Me.tabpagePersonalization.TabIndex = 2
-        Me.tabpagePersonalization.Text = "Personalization"
-        Me.tabpagePersonalization.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
