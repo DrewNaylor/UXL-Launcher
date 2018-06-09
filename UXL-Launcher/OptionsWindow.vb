@@ -304,9 +304,16 @@ Public Class aaformOptionsWindow
 
 #Region "Windows edition choice linklabel."
     Private Sub linklabelWindowsEditionLearnMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelWindowsEditionLearnMore.LinkClicked
-        ' Send the user to the information page for this link.
+        ' Send the user to the information page for the Windows edition radiobuttons.
         Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/115#issuecomment-395917017")
     End Sub
 #End Region
 
+#Region "Linklabel for the 365/MSI install method checkboxes."
+    Private Sub linklabelCheckboxesToBeCombined_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelCheckboxesToBeCombined.LinkClicked
+        ' Send the user to the information page for the checkboxes
+        ' that will be combined.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/100#issuecomment-395926431")
+    End Sub
+#End Region
 End Class

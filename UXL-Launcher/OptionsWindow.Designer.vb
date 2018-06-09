@@ -61,6 +61,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
+        Me.linklabelCheckboxesToBeCombined = New System.Windows.Forms.LinkLabel()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -149,6 +150,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
+        Me.groupboxOfficeVersion.Controls.Add(Me.linklabelCheckboxesToBeCombined)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeInstallMethodDescription)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxMSIInstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
@@ -498,6 +500,18 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
+        'linklabelCheckboxesToBeCombined
+        '
+        Me.linklabelCheckboxesToBeCombined.AutoSize = True
+        Me.linklabelCheckboxesToBeCombined.LinkArea = New System.Windows.Forms.LinkArea(55, 13)
+        Me.linklabelCheckboxesToBeCombined.Location = New System.Drawing.Point(112, 145)
+        Me.linklabelCheckboxesToBeCombined.Name = "linklabelCheckboxesToBeCombined"
+        Me.linklabelCheckboxesToBeCombined.Size = New System.Drawing.Size(224, 30)
+        Me.linklabelCheckboxesToBeCombined.TabIndex = 6
+        Me.linklabelCheckboxesToBeCombined.TabStop = True
+        Me.linklabelCheckboxesToBeCombined.Text = "These two checkboxes will be combined in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "version 3.2. Learn more..."
+        Me.linklabelCheckboxesToBeCombined.UseCompatibleTextRendering = True
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -569,4 +583,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonCustomThemesBrowse As Button
     Friend WithEvents textboxCustomThemePath As TextBox
     Friend WithEvents labelCustomThemePath As Label
+    Friend WithEvents linklabelCheckboxesToBeCombined As LinkLabel
 End Class
