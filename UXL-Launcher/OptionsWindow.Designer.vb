@@ -49,6 +49,10 @@ Partial Class aaformOptionsWindow
         Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
+        Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
+        Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
+        Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
         Me.labelCustomThemePath = New System.Windows.Forms.Label()
         Me.buttonCustomThemesBrowse = New System.Windows.Forms.Button()
@@ -62,7 +66,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -71,6 +74,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
         Me.tabpagePersonalization.SuspendLayout()
+        Me.groupboxStatusbar.SuspendLayout()
         Me.groupboxAppearance.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -404,6 +408,50 @@ Partial Class aaformOptionsWindow
         Me.tabpagePersonalization.Text = "Personalization"
         Me.tabpagePersonalization.UseVisualStyleBackColor = True
         '
+        'groupboxStatusbar
+        '
+        Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
+        Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
+        Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(6, 189)
+        Me.groupboxStatusbar.Name = "groupboxStatusbar"
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(411, 132)
+        Me.groupboxStatusbar.TabIndex = 1
+        Me.groupboxStatusbar.TabStop = False
+        Me.groupboxStatusbar.Text = "Statusbar"
+        '
+        'radiobuttonCustomStatusbarGreeting
+        '
+        Me.radiobuttonCustomStatusbarGreeting.AutoSize = True
+        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(7, 68)
+        Me.radiobuttonCustomStatusbarGreeting.Name = "radiobuttonCustomStatusbarGreeting"
+        Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(193, 17)
+        Me.radiobuttonCustomStatusbarGreeting.TabIndex = 2
+        Me.radiobuttonCustomStatusbarGreeting.TabStop = True
+        Me.radiobuttonCustomStatusbarGreeting.Text = "Use personalized statusbar greeting"
+        Me.radiobuttonCustomStatusbarGreeting.UseVisualStyleBackColor = True
+        '
+        'radiobuttonDefaultStatusbarGreeting
+        '
+        Me.radiobuttonDefaultStatusbarGreeting.AutoSize = True
+        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(7, 45)
+        Me.radiobuttonDefaultStatusbarGreeting.Name = "radiobuttonDefaultStatusbarGreeting"
+        Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(166, 17)
+        Me.radiobuttonDefaultStatusbarGreeting.TabIndex = 1
+        Me.radiobuttonDefaultStatusbarGreeting.TabStop = True
+        Me.radiobuttonDefaultStatusbarGreeting.Text = "Use default statusbar greeting"
+        Me.radiobuttonDefaultStatusbarGreeting.UseVisualStyleBackColor = True
+        '
+        'labelCustomStatusbarGreeting
+        '
+        Me.labelCustomStatusbarGreeting.AutoSize = True
+        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(4, 16)
+        Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
+        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(320, 26)
+        Me.labelCustomStatusbarGreeting.TabIndex = 0
+        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "firstname or n" &
+    "ickname, or to use the default."
+        '
         'groupboxAppearance
         '
         Me.groupboxAppearance.Controls.Add(Me.labelCustomThemePath)
@@ -514,15 +562,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
-        'groupboxStatusbar
-        '
-        Me.groupboxStatusbar.Location = New System.Drawing.Point(6, 189)
-        Me.groupboxStatusbar.Name = "groupboxStatusbar"
-        Me.groupboxStatusbar.Size = New System.Drawing.Size(411, 132)
-        Me.groupboxStatusbar.TabIndex = 1
-        Me.groupboxStatusbar.TabStop = False
-        Me.groupboxStatusbar.Text = "Statusbar"
-        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -550,6 +589,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
         Me.tabpagePersonalization.ResumeLayout(False)
+        Me.groupboxStatusbar.ResumeLayout(False)
+        Me.groupboxStatusbar.PerformLayout()
         Me.groupboxAppearance.ResumeLayout(False)
         Me.groupboxAppearance.PerformLayout()
         Me.ResumeLayout(False)
@@ -596,4 +637,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelCustomThemePath As Label
     Friend WithEvents linklabelCheckboxesToBeCombined As LinkLabel
     Friend WithEvents groupboxStatusbar As GroupBox
+    Friend WithEvents labelCustomStatusbarGreeting As Label
+    Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton
+    Friend WithEvents radiobuttonDefaultStatusbarGreeting As RadioButton
 End Class
