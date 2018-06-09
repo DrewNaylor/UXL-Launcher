@@ -58,6 +58,8 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.buttonCustomThemesBrowse = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -387,6 +389,8 @@ Partial Class aaformOptionsWindow
         '
         'groupboxAppearance
         '
+        Me.groupboxAppearance.Controls.Add(Me.buttonCustomThemesBrowse)
+        Me.groupboxAppearance.Controls.Add(Me.TextBox1)
         Me.groupboxAppearance.Controls.Add(Me.labelThemeList)
         Me.groupboxAppearance.Controls.Add(Me.comboboxThemeList)
         Me.groupboxAppearance.Controls.Add(Me.textboxThemeInfo)
@@ -400,6 +404,7 @@ Partial Class aaformOptionsWindow
         '
         'labelThemeList
         '
+        Me.labelThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelThemeList.AutoSize = True
         Me.labelThemeList.Location = New System.Drawing.Point(213, 49)
         Me.labelThemeList.Name = "labelThemeList"
@@ -418,8 +423,7 @@ Partial Class aaformOptionsWindow
         '
         'textboxThemeInfo
         '
-        Me.textboxThemeInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.textboxThemeInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 65)
         Me.textboxThemeInfo.Multiline = True
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
@@ -462,6 +466,24 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Location = New System.Drawing.Point(216, 92)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(117, 20)
+        Me.TextBox1.TabIndex = 4
+        '
+        'buttonCustomThemesBrowse
+        '
+        Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(336, 90)
+        Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
+        Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
+        Me.buttonCustomThemesBrowse.TabIndex = 5
+        Me.buttonCustomThemesBrowse.Text = "Browse..."
+        Me.buttonCustomThemesBrowse.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -531,4 +553,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents textboxThemeInfo As TextBox
     Friend WithEvents comboboxThemeList As ComboBox
     Friend WithEvents labelThemeList As Label
+    Friend WithEvents buttonCustomThemesBrowse As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class
