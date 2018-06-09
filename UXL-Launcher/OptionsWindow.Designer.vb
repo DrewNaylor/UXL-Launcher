@@ -29,6 +29,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.linklabelCheckboxesToBeCombined = New System.Windows.Forms.LinkLabel()
         Me.labelOfficeInstallMethodDescription = New System.Windows.Forms.Label()
         Me.checkboxMSIInstallMethod = New System.Windows.Forms.CheckBox()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
@@ -61,7 +62,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.linklabelCheckboxesToBeCombined = New System.Windows.Forms.LinkLabel()
+        Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -164,6 +165,18 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
+        '
+        'linklabelCheckboxesToBeCombined
+        '
+        Me.linklabelCheckboxesToBeCombined.AutoSize = True
+        Me.linklabelCheckboxesToBeCombined.LinkArea = New System.Windows.Forms.LinkArea(55, 13)
+        Me.linklabelCheckboxesToBeCombined.Location = New System.Drawing.Point(112, 145)
+        Me.linklabelCheckboxesToBeCombined.Name = "linklabelCheckboxesToBeCombined"
+        Me.linklabelCheckboxesToBeCombined.Size = New System.Drawing.Size(224, 30)
+        Me.linklabelCheckboxesToBeCombined.TabIndex = 6
+        Me.linklabelCheckboxesToBeCombined.TabStop = True
+        Me.linklabelCheckboxesToBeCombined.Text = "These two checkboxes will be combined in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "version 3.2. Learn more..."
+        Me.linklabelCheckboxesToBeCombined.UseCompatibleTextRendering = True
         '
         'labelOfficeInstallMethodDescription
         '
@@ -380,6 +393,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpagePersonalization
         '
+        Me.tabpagePersonalization.Controls.Add(Me.groupboxStatusbar)
         Me.tabpagePersonalization.Controls.Add(Me.groupboxAppearance)
         Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
         Me.tabpagePersonalization.Margin = New System.Windows.Forms.Padding(2)
@@ -500,17 +514,14 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
-        'linklabelCheckboxesToBeCombined
+        'groupboxStatusbar
         '
-        Me.linklabelCheckboxesToBeCombined.AutoSize = True
-        Me.linklabelCheckboxesToBeCombined.LinkArea = New System.Windows.Forms.LinkArea(55, 13)
-        Me.linklabelCheckboxesToBeCombined.Location = New System.Drawing.Point(112, 145)
-        Me.linklabelCheckboxesToBeCombined.Name = "linklabelCheckboxesToBeCombined"
-        Me.linklabelCheckboxesToBeCombined.Size = New System.Drawing.Size(224, 30)
-        Me.linklabelCheckboxesToBeCombined.TabIndex = 6
-        Me.linklabelCheckboxesToBeCombined.TabStop = True
-        Me.linklabelCheckboxesToBeCombined.Text = "These two checkboxes will be combined in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "version 3.2. Learn more..."
-        Me.linklabelCheckboxesToBeCombined.UseCompatibleTextRendering = True
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(6, 189)
+        Me.groupboxStatusbar.Name = "groupboxStatusbar"
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(411, 132)
+        Me.groupboxStatusbar.TabIndex = 1
+        Me.groupboxStatusbar.TabStop = False
+        Me.groupboxStatusbar.Text = "Statusbar"
         '
         'aaformOptionsWindow
         '
@@ -584,4 +595,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents textboxCustomThemePath As TextBox
     Friend WithEvents labelCustomThemePath As Label
     Friend WithEvents linklabelCheckboxesToBeCombined As LinkLabel
+    Friend WithEvents groupboxStatusbar As GroupBox
 End Class
