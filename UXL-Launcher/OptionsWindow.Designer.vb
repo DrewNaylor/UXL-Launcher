@@ -49,6 +49,9 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
+        Me.labelCustomThemePath = New System.Windows.Forms.Label()
+        Me.buttonCustomThemesBrowse = New System.Windows.Forms.Button()
+        Me.textboxCustomThemePath = New System.Windows.Forms.TextBox()
         Me.labelThemeList = New System.Windows.Forms.Label()
         Me.comboboxThemeList = New System.Windows.Forms.ComboBox()
         Me.textboxThemeInfo = New System.Windows.Forms.TextBox()
@@ -58,8 +61,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.buttonCustomThemesBrowse = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -389,8 +390,9 @@ Partial Class aaformOptionsWindow
         '
         'groupboxAppearance
         '
+        Me.groupboxAppearance.Controls.Add(Me.labelCustomThemePath)
         Me.groupboxAppearance.Controls.Add(Me.buttonCustomThemesBrowse)
-        Me.groupboxAppearance.Controls.Add(Me.TextBox1)
+        Me.groupboxAppearance.Controls.Add(Me.textboxCustomThemePath)
         Me.groupboxAppearance.Controls.Add(Me.labelThemeList)
         Me.groupboxAppearance.Controls.Add(Me.comboboxThemeList)
         Me.groupboxAppearance.Controls.Add(Me.textboxThemeInfo)
@@ -402,15 +404,43 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Appearance"
         '
+        'labelCustomThemePath
+        '
+        Me.labelCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.labelCustomThemePath.AutoSize = True
+        Me.labelCustomThemePath.Location = New System.Drawing.Point(213, 142)
+        Me.labelCustomThemePath.Name = "labelCustomThemePath"
+        Me.labelCustomThemePath.Size = New System.Drawing.Size(98, 13)
+        Me.labelCustomThemePath.TabIndex = 6
+        Me.labelCustomThemePath.Text = "Custom theme path"
+        '
+        'buttonCustomThemesBrowse
+        '
+        Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(336, 155)
+        Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
+        Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
+        Me.buttonCustomThemesBrowse.TabIndex = 5
+        Me.buttonCustomThemesBrowse.Text = "Browse..."
+        Me.buttonCustomThemesBrowse.UseVisualStyleBackColor = True
+        '
+        'textboxCustomThemePath
+        '
+        Me.textboxCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.textboxCustomThemePath.Location = New System.Drawing.Point(216, 158)
+        Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
+        Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
+        Me.textboxCustomThemePath.TabIndex = 4
+        '
         'labelThemeList
         '
         Me.labelThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelThemeList.AutoSize = True
         Me.labelThemeList.Location = New System.Drawing.Point(213, 49)
         Me.labelThemeList.Name = "labelThemeList"
-        Me.labelThemeList.Size = New System.Drawing.Size(121, 13)
+        Me.labelThemeList.Size = New System.Drawing.Size(55, 13)
         Me.labelThemeList.TabIndex = 3
-        Me.labelThemeList.Text = "Please choose a theme:"
+        Me.labelThemeList.Text = "Theme list"
         '
         'comboboxThemeList
         '
@@ -424,12 +454,12 @@ Partial Class aaformOptionsWindow
         'textboxThemeInfo
         '
         Me.textboxThemeInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 65)
+        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 49)
         Me.textboxThemeInfo.Multiline = True
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
         Me.textboxThemeInfo.ReadOnly = True
         Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 113)
+        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 129)
         Me.textboxThemeInfo.TabIndex = 1
         Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
@@ -466,24 +496,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(216, 92)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(117, 20)
-        Me.TextBox1.TabIndex = 4
-        '
-        'buttonCustomThemesBrowse
-        '
-        Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(336, 90)
-        Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
-        Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
-        Me.buttonCustomThemesBrowse.TabIndex = 5
-        Me.buttonCustomThemesBrowse.Text = "Browse..."
-        Me.buttonCustomThemesBrowse.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -554,5 +566,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents comboboxThemeList As ComboBox
     Friend WithEvents labelThemeList As Label
     Friend WithEvents buttonCustomThemesBrowse As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents textboxCustomThemePath As TextBox
+    Friend WithEvents labelCustomThemePath As Label
 End Class
