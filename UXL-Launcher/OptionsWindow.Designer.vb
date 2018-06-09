@@ -401,7 +401,7 @@ Partial Class aaformOptionsWindow
         'labelThemeList
         '
         Me.labelThemeList.AutoSize = True
-        Me.labelThemeList.Location = New System.Drawing.Point(4, 46)
+        Me.labelThemeList.Location = New System.Drawing.Point(213, 49)
         Me.labelThemeList.Name = "labelThemeList"
         Me.labelThemeList.Size = New System.Drawing.Size(121, 13)
         Me.labelThemeList.TabIndex = 3
@@ -411,9 +411,9 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.comboboxThemeList.FormattingEnabled = True
-        Me.comboboxThemeList.Location = New System.Drawing.Point(142, 38)
+        Me.comboboxThemeList.Location = New System.Drawing.Point(216, 65)
         Me.comboboxThemeList.Name = "comboboxThemeList"
-        Me.comboboxThemeList.Size = New System.Drawing.Size(263, 21)
+        Me.comboboxThemeList.Size = New System.Drawing.Size(188, 21)
         Me.comboboxThemeList.TabIndex = 2
         '
         'textboxThemeInfo
@@ -425,7 +425,7 @@ Partial Class aaformOptionsWindow
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
         Me.textboxThemeInfo.ReadOnly = True
         Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textboxThemeInfo.Size = New System.Drawing.Size(398, 113)
+        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 113)
         Me.textboxThemeInfo.TabIndex = 1
         Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
