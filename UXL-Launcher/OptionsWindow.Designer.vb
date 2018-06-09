@@ -49,13 +49,15 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
+        Me.labelThemeList = New System.Windows.Forms.Label()
+        Me.comboboxThemeList = New System.Windows.Forms.ComboBox()
+        Me.textboxThemeInfo = New System.Windows.Forms.TextBox()
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.textboxThemeInfo = New System.Windows.Forms.TextBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -385,6 +387,8 @@ Partial Class aaformOptionsWindow
         '
         'groupboxAppearance
         '
+        Me.groupboxAppearance.Controls.Add(Me.labelThemeList)
+        Me.groupboxAppearance.Controls.Add(Me.comboboxThemeList)
         Me.groupboxAppearance.Controls.Add(Me.textboxThemeInfo)
         Me.groupboxAppearance.Controls.Add(Me.checkboxEnableThemeEngine)
         Me.groupboxAppearance.Location = New System.Drawing.Point(6, 4)
@@ -393,6 +397,37 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Appearance"
+        '
+        'labelThemeList
+        '
+        Me.labelThemeList.AutoSize = True
+        Me.labelThemeList.Location = New System.Drawing.Point(4, 46)
+        Me.labelThemeList.Name = "labelThemeList"
+        Me.labelThemeList.Size = New System.Drawing.Size(121, 13)
+        Me.labelThemeList.TabIndex = 3
+        Me.labelThemeList.Text = "Please choose a theme:"
+        '
+        'comboboxThemeList
+        '
+        Me.comboboxThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.comboboxThemeList.FormattingEnabled = True
+        Me.comboboxThemeList.Location = New System.Drawing.Point(142, 38)
+        Me.comboboxThemeList.Name = "comboboxThemeList"
+        Me.comboboxThemeList.Size = New System.Drawing.Size(263, 21)
+        Me.comboboxThemeList.TabIndex = 2
+        '
+        'textboxThemeInfo
+        '
+        Me.textboxThemeInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 65)
+        Me.textboxThemeInfo.Multiline = True
+        Me.textboxThemeInfo.Name = "textboxThemeInfo"
+        Me.textboxThemeInfo.ReadOnly = True
+        Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.textboxThemeInfo.Size = New System.Drawing.Size(398, 113)
+        Me.textboxThemeInfo.TabIndex = 1
+        Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
         'checkboxEnableThemeEngine
         '
@@ -427,17 +462,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'textboxThemeInfo
-        '
-        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 43)
-        Me.textboxThemeInfo.Multiline = True
-        Me.textboxThemeInfo.Name = "textboxThemeInfo"
-        Me.textboxThemeInfo.ReadOnly = True
-        Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 135)
-        Me.textboxThemeInfo.TabIndex = 1
-        Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
         'aaformOptionsWindow
         '
@@ -505,4 +529,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxAppearance As GroupBox
     Friend WithEvents checkboxEnableThemeEngine As CheckBox
     Friend WithEvents textboxThemeInfo As TextBox
+    Friend WithEvents comboboxThemeList As ComboBox
+    Friend WithEvents labelThemeList As Label
 End Class
