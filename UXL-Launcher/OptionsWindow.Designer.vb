@@ -50,6 +50,8 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
+        Me.labelFirstName = New System.Windows.Forms.Label()
+        Me.textboxFirstname = New System.Windows.Forms.TextBox()
         Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
@@ -66,8 +68,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.labelFirstName = New System.Windows.Forms.Label()
+        Me.buttonClearFirstname = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -412,8 +413,9 @@ Partial Class aaformOptionsWindow
         '
         'groupboxStatusbar
         '
+        Me.groupboxStatusbar.Controls.Add(Me.buttonClearFirstname)
         Me.groupboxStatusbar.Controls.Add(Me.labelFirstName)
-        Me.groupboxStatusbar.Controls.Add(Me.TextBox1)
+        Me.groupboxStatusbar.Controls.Add(Me.textboxFirstname)
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
@@ -423,6 +425,22 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.TabIndex = 1
         Me.groupboxStatusbar.TabStop = False
         Me.groupboxStatusbar.Text = "Statusbar"
+        '
+        'labelFirstName
+        '
+        Me.labelFirstName.AutoSize = True
+        Me.labelFirstName.Location = New System.Drawing.Point(6, 94)
+        Me.labelFirstName.Name = "labelFirstName"
+        Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
+        Me.labelFirstName.TabIndex = 4
+        Me.labelFirstName.Text = "Firstname/nickname:"
+        '
+        'textboxFirstname
+        '
+        Me.textboxFirstname.Location = New System.Drawing.Point(121, 91)
+        Me.textboxFirstname.Name = "textboxFirstname"
+        Me.textboxFirstname.Size = New System.Drawing.Size(193, 20)
+        Me.textboxFirstname.TabIndex = 3
         '
         'radiobuttonCustomStatusbarGreeting
         '
@@ -566,21 +584,14 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'buttonClearFirstname
         '
-        Me.TextBox1.Location = New System.Drawing.Point(121, 91)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(193, 20)
-        Me.TextBox1.TabIndex = 3
-        '
-        'labelFirstName
-        '
-        Me.labelFirstName.AutoSize = True
-        Me.labelFirstName.Location = New System.Drawing.Point(6, 94)
-        Me.labelFirstName.Name = "labelFirstName"
-        Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
-        Me.labelFirstName.TabIndex = 4
-        Me.labelFirstName.Text = "Firstname/nickname:"
+        Me.buttonClearFirstname.Location = New System.Drawing.Point(320, 89)
+        Me.buttonClearFirstname.Name = "buttonClearFirstname"
+        Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
+        Me.buttonClearFirstname.TabIndex = 5
+        Me.buttonClearFirstname.Text = "Clear"
+        Me.buttonClearFirstname.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
@@ -660,6 +671,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelCustomStatusbarGreeting As Label
     Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton
     Friend WithEvents radiobuttonDefaultStatusbarGreeting As RadioButton
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents textboxFirstname As TextBox
     Friend WithEvents labelFirstName As Label
+    Friend WithEvents buttonClearFirstname As Button
 End Class
