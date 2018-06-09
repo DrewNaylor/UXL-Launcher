@@ -445,6 +445,7 @@ Partial Class aaformOptionsWindow
         'comboboxThemeList
         '
         Me.comboboxThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.comboboxThemeList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxThemeList.FormattingEnabled = True
         Me.comboboxThemeList.Location = New System.Drawing.Point(216, 65)
         Me.comboboxThemeList.Name = "comboboxThemeList"
