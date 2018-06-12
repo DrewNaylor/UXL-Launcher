@@ -331,8 +331,23 @@ Public Class aaformOptionsWindow
 
             ' Create a temporary XML document.
             Dim tempXml As XmlDocument = New XmlDocument
+            ' Create a temporary string that adds "Theme_XML" or "_XML" as needed.
+            Dim tempThemeXmlFileType As String = ""
             ' Load into the XML document the correct theme file.
-            tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & "Theme_XML"))
+
+            ' If the theme name doesn't end with "Theme" and "_XML",
+            ' add "Theme_XML".
+            If Not comboboxThemeList.Text.EndsWith("Theme") And Not comboboxThemeList.Text.EndsWith("_XML") Then
+                tempThemeXmlFileType = "Theme_XML"
+                ' Otherwise, if there's no "_XML" at the end, add it.
+            ElseIf comboboxThemeList.Text.EndsWith("Theme") Then
+                tempThemeXmlFileType = "_XML"
+            Else
+                ' Otherwise, just make the string empty.
+                tempThemeXmlFileType = ""
+            End If
+            Debug.WriteLine(tempThemeXmlFileType)
+            tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & tempThemeXmlFileType))
             ' Put the theme info into the theme info textbox.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
         End If
