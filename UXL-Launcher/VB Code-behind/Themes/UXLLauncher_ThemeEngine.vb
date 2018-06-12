@@ -1031,7 +1031,14 @@ Public Class UXLLauncher_ThemeEngine
             End If
         Else
             ' If the selected theme is a built-in theme, just load the file.
-            themeFileReader.LoadXml(themeFile.OuterXml)
+            ' Catch an exception if the root element is missing.
+            ' This can be caused if the user tries to type in a specific name
+            ' into the theme list in the Options window that doesn't match a
+            ' theme file exactly.
+            Try
+                themeFileReader.LoadXml(themeFile.OuterXml)
+            Catch ex As System.Xml.XmlException
+            End Try
         End If
 #End Region
 

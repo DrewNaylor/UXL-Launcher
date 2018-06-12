@@ -346,8 +346,14 @@ Public Class aaformOptionsWindow
                 ' Otherwise, just make the string empty.
                 tempThemeXmlFileType = ""
             End If
-            Debug.WriteLine(tempThemeXmlFileType)
-            tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & tempThemeXmlFileType))
+
+            ' First, catch ArgumentNullException exceptions if, say,
+            ' the text in the theme list combobox isn't exactly correct
+            ' and doesn't match the theme file name.
+            Try
+                tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & tempThemeXmlFileType))
+            Catch ex As System.ArgumentNullException
+            End Try
             ' Put the theme info into the theme info textbox.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
         End If
