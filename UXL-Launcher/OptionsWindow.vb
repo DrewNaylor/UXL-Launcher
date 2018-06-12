@@ -397,12 +397,15 @@ Public Class aaformOptionsWindow
         If comboboxThemeList.Text = "(Custom)" Then
             ' Create a temporary XML document.
             Dim tempXml As XmlDocument = New XmlDocument
-
+            ' Also create a temporary string that removes quotation marks.
+            ' This string takes the current text in the custom theme path
+            ' textbox and creates a new string replacing double-quotes.
+            Dim tempRemoveQuotesInPath As String = textboxCustomThemePath.Text.Replace("""", "")
             ' Load into the XML document the correct theme file
             ' if it exists.
-            If System.IO.File.Exists(textboxCustomThemePath.Text) Then
+            If System.IO.File.Exists(tempRemoveQuotesInPath) Then
                 Try
-                    tempXml.Load(textboxCustomThemePath.Text)
+                    tempXml.Load(tempRemoveQuotesInPath)
                     ' Catch XmlException.
                     ' This can be caused by using the "None" theme that
                     ' has purposefully invalid XML just to make sure there
@@ -412,7 +415,7 @@ Public Class aaformOptionsWindow
                 End Try
             End If
             ' Get the theme's info.
-            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)
+            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, tempRemoveQuotesInPath)
         End If
     End Sub
 

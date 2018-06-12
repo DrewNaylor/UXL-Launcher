@@ -975,17 +975,6 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 
-#Region "Cleanup strings."
-    ' This code is based on the Stack Overflow
-    ' answer here:
-    ' https://stackoverflow.com/a/5398392
-    ' Quotation marks are not allowed in the theme
-    ' engine, so this code can remove them.
-    Public Shared Function RemoveChar(ByVal originalString As String, ByVal charToRemove As String) As String
-        Return originalString.Replace(charToRemove, "")
-    End Function
-#End Region
-
 #Region "Get theme file info."
     ' This code is based on this issue in the
     ' GitHub repository:
