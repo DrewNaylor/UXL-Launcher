@@ -326,7 +326,12 @@ Public Class aaformOptionsWindow
 
         ' First, see if the theme list textbox isn't custom.
         If Not comboboxThemeList.Text = "(Custom)" Then
-            ' If it's not, send the text to the getThemeInfo function.
+            ' First, disable the custom theme path textbox and the "Browse..."
+            ' button if the theme list combobox isn't "(Custom)"
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+
+            ' If it's not "(Custom)", send the text to the getThemeInfo function.
             ' "Theme_XML" may need to be added to the theme text first.
 
             ' Create a temporary XML document.
@@ -357,9 +362,14 @@ Public Class aaformOptionsWindow
             ' Put the theme info into the theme info textbox.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
 
-            ' If the theme list textbox is (Custom), then use the custom theme path.
+            ' If the theme list textbox is "(Custom)", then use the custom theme path.
         ElseIf comboboxThemeList.Text = "(Custom)" Then
-            ' If it is (Custom), send the custom theme path below the theme list
+            ' First, enable the custom theme path textbox and the "Browse..."
+            ' button if the theme list combobox is "(Custom)"
+            textboxCustomThemePath.Enabled = True
+            buttonCustomThemesBrowse.Enabled = True
+
+            ' If it is "(Custom)", send the custom theme path below the theme list
             ' to the getThemeInfo function.
 
             ' This code has been moved to the sub below to be able to call it from
