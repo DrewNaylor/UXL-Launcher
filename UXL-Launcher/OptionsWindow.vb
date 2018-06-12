@@ -365,9 +365,12 @@ Public Class aaformOptionsWindow
             ' If the theme list textbox is "(Custom)", then use the custom theme path.
         ElseIf comboboxThemeList.Text = "(Custom)" Then
             ' First, enable the custom theme path textbox and the "Browse..."
-            ' button if the theme list combobox is "(Custom)"
-            textboxCustomThemePath.Enabled = True
-            buttonCustomThemesBrowse.Enabled = True
+            ' button if the theme list combobox is "(Custom)" as long as custom
+            ' themes are allowed.
+            If My.Settings.allowCustomThemes = True Then
+                textboxCustomThemePath.Enabled = True
+                buttonCustomThemesBrowse.Enabled = True
+            End If
 
             ' If it is "(Custom)", send the custom theme path below the theme list
             ' to the getThemeInfo function.
@@ -375,7 +378,7 @@ Public Class aaformOptionsWindow
             ' This code has been moved to the sub below to be able to call it from
             ' two places when needed.
             customThemePathInfoUpdater()
-        End If
+            End If
     End Sub
 
     Private Sub customThemePathInfoUpdater()
