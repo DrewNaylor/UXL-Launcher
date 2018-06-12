@@ -39,7 +39,7 @@
       <Value Profile="(Default)">C:\Users\Drew\Documents\Visual Studio 2015\Projects\UXL-Launcher\testfolder\testTheme.xml</Value>
     </Setting>
     <Setting Name="allowCustomThemes" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

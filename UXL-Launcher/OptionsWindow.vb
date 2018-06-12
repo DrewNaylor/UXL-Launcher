@@ -358,6 +358,12 @@ Public Class aaformOptionsWindow
             Try
                 tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & tempThemeXmlFileType))
             Catch ex As System.ArgumentNullException
+                ' Also catch XmlException.
+                ' This can be caused by using the "None" theme that
+                ' has purposefully invalid XML just to make sure there
+                ' aren't any problems in the theme engine that might
+                ' slip by when using valid XML.
+            Catch ex As System.Xml.XmlException
             End Try
             ' Put the theme info into the theme info textbox.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
@@ -395,7 +401,15 @@ Public Class aaformOptionsWindow
             ' Load into the XML document the correct theme file
             ' if it exists.
             If System.IO.File.Exists(textboxCustomThemePath.Text) Then
-                tempXml.Load(textboxCustomThemePath.Text)
+                Try
+                    tempXml.Load(textboxCustomThemePath.Text)
+                    ' Catch XmlException.
+                    ' This can be caused by using the "None" theme that
+                    ' has purposefully invalid XML just to make sure there
+                    ' aren't any problems in the theme engine that might
+                    ' slip by when using valid XML.
+                Catch ex As System.Xml.XmlException
+                End Try
             End If
             ' Get the theme's info.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)

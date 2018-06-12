@@ -1008,7 +1008,15 @@ Public Class UXLLauncher_ThemeEngine
             ' to be used.
             If File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
-                themeFileReader.LoadXml(themeFile.OuterXml)
+                Try
+                    themeFileReader.LoadXml(themeFile.OuterXml)
+                Catch ex As Xml.XmlException
+                    ' Catch XmlException.
+                    ' This can be caused by using the "None" theme that
+                    ' has purposefully invalid XML just to make sure there
+                    ' aren't any problems in the theme engine that might
+                    ' slip by when using valid XML.
+                End Try
             ElseIf Not File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
                 ' If the file doesn't exist but custom themes are allowed,
                 ' say that the Default theme will be used temporarily.
