@@ -359,7 +359,13 @@ Public Class aaformOptionsWindow
 
             ' If the theme list textbox is (Custom), then use the custom theme path.
         ElseIf comboboxThemeList.Text = "(Custom)" Then
+            ' If it is (Custom), send the custom theme path below the theme list
+            ' to the getThemeInfo function.
 
+            ' Create a temporary XML document.
+            Dim tempXml As XmlDocument = New XmlDocument
+
+            ' Load into the XML document the correct theme file.
         End If
     End Sub
 #End Region
