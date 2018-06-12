@@ -356,6 +356,10 @@ Public Class aaformOptionsWindow
             End Try
             ' Put the theme info into the theme info textbox.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
+
+            ' If the theme list textbox is (Custom), then use the custom theme path.
+        ElseIf comboboxThemeList.Text = "(Custom)" Then
+
         End If
     End Sub
 #End Region
