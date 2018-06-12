@@ -325,7 +325,7 @@ Public Class aaformOptionsWindow
         ' for the theme that's currently selected in the combobox.
 
         ' First, see if the theme list textbox isn't custom.
-        If comboboxThemeList.Text IsNot "(Custom)" Then
+        If Not comboboxThemeList.Text = "(Custom)" Then
             ' If it's not, send the text to the getThemeInfo function.
             ' "Theme_XML" may need to be added to the theme text first.
 
@@ -365,11 +365,14 @@ Public Class aaformOptionsWindow
             ' Create a temporary XML document.
             Dim tempXml As XmlDocument = New XmlDocument
 
-            ' Load into the XML document the correct theme file.
-
-            ' First, check to see that the file specified in the textbox
-            ' for the custom theme file is valid.
-        End If
+            ' Load into the XML document the correct theme file
+            ' if it exists.
+            If System.IO.File.Exists(textboxCustomThemePath.Text) Then
+                tempXml.Load(textboxCustomThemePath.Text)
+            End If
+            ' Get the theme's info.
+            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)
+            End If
     End Sub
 #End Region
 #End Region
