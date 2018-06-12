@@ -328,8 +328,12 @@ Public Class aaformOptionsWindow
         If comboboxThemeList.Text IsNot "(Custom)" Then
             ' If it's not, send the text to the getThemeInfo function.
             ' "Theme_XML" may need to be added to the theme text first.
+
+            ' Create a temporary XML document.
             Dim tempXml As XmlDocument = New XmlDocument
+            ' Load into the XML document the correct theme file.
             tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & "Theme_XML"))
+            ' Put the theme info into the theme info textbox.
             textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
         End If
     End Sub
