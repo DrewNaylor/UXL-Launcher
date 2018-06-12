@@ -362,18 +362,30 @@ Public Class aaformOptionsWindow
             ' If it is (Custom), send the custom theme path below the theme list
             ' to the getThemeInfo function.
 
-            ' Create a temporary XML document.
-            Dim tempXml As XmlDocument = New XmlDocument
-
-            ' Load into the XML document the correct theme file
-            ' if it exists.
-            If System.IO.File.Exists(textboxCustomThemePath.Text) Then
-                tempXml.Load(textboxCustomThemePath.Text)
-            End If
-            ' Get the theme's info.
-            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)
-            End If
+            ' This code has been moved to the sub below to be able to call it from
+            ' two places when needed.
+            customThemePathInfoUpdater()
+        End If
     End Sub
+
+    Private Sub customThemePathInfoUpdater()
+        ' This code is the ElseIf comboboxThemeList.Text = "(Custom)"
+        ' theme info textbox updater from above, but moved here so that
+        ' it can also be called from the custom theme path textbox
+        ' TextChanged event.
+
+        ' Create a temporary XML document.
+        Dim tempXml As XmlDocument = New XmlDocument
+
+        ' Load into the XML document the correct theme file
+        ' if it exists.
+        If System.IO.File.Exists(textboxCustomThemePath.Text) Then
+            tempXml.Load(textboxCustomThemePath.Text)
+        End If
+        ' Get the theme's info.
+        textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)
+    End Sub
+
 #End Region
 #End Region
 
