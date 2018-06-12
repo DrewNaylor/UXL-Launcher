@@ -769,12 +769,15 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf My.Settings.userChosenTheme = "(Custom)" Then
                 ' Make sure the theme path and file exists and custom themes are allowed
                 ' to be used.
-                If File.Exists(My.Settings.userCustomThemePath) And My.Settings.allowCustomThemes = True Then
-                    userTheme.Load(My.Settings.userCustomThemePath)
+                ' First, remove the double-quotes.
+                Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
+                Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
+                If File.Exists(tempRemoveQuotesInCustomThemePath) And My.Settings.allowCustomThemes = True Then
+                    userTheme.Load(tempRemoveQuotesInCustomThemePath)
                     ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
                     ' Then we output that the custom theme file wasn't found if that's the problem, or if custom
                     ' themes are not allowed to be used.
-                ElseIf Not File.Exists(My.Settings.userCustomThemePath) Then
+                ElseIf Not File.Exists(tempRemoveQuotesInCustomThemePath) Then
                     userTheme.LoadXml(My.Resources.DefaultTheme_XML)
                     ' If the theme engine output debug setting is enabled, output an error
                     ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
