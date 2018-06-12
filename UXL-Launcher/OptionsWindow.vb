@@ -368,7 +368,7 @@ Public Class aaformOptionsWindow
             ' Load into the XML document the correct theme file.
 
             ' First, check to see that the file specified in the textbox
-            ' for the custom theme file is correct.
+            ' for the custom theme file is valid.
         End If
     End Sub
 #End Region
