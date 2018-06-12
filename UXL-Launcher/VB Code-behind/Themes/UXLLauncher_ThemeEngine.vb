@@ -982,7 +982,7 @@ Public Class UXLLauncher_ThemeEngine
     ' Quotation marks are not allowed in the theme
     ' engine, so this code can remove them.
     Public Shared Function RemoveChar(ByVal originalString As String, ByVal charToRemove As String) As String
-
+        Return originalString.Replace(charToRemove, "")
     End Function
 #End Region
 
