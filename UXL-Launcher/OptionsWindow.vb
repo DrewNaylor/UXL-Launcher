@@ -319,7 +319,11 @@ Public Class aaformOptionsWindow
 
 #Region "Personalization tab."
 #Region "Code that runs when theme list text updates."
+    Private Sub comboboxThemeList_TextChanged(sender As Object, e As EventArgs) Handles comboboxThemeList.TextChanged
+        ' When the theme list combobox text changes, get the info
+        ' for the theme that's currently selected in the combobox.
 
+    End Sub
 #End Region
 #End Region
 
