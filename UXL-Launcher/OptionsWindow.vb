@@ -366,6 +366,9 @@ Public Class aaformOptionsWindow
             Dim tempXml As XmlDocument = New XmlDocument
 
             ' Load into the XML document the correct theme file.
+
+            ' First, check to see that the file specified in the textbox
+            ' for the custom theme file is correct.
         End If
     End Sub
 #End Region
