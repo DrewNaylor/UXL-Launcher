@@ -374,16 +374,26 @@ Public Class aaformOptionsWindow
         ' it can also be called from the custom theme path textbox
         ' TextChanged event.
 
-        ' Create a temporary XML document.
-        Dim tempXml As XmlDocument = New XmlDocument
+        ' First, make sure that the theme list is only using custom themes.
+        If comboboxThemeList.Text = "(Custom)" Then
+            ' Create a temporary XML document.
+            Dim tempXml As XmlDocument = New XmlDocument
 
-        ' Load into the XML document the correct theme file
-        ' if it exists.
-        If System.IO.File.Exists(textboxCustomThemePath.Text) Then
-            tempXml.Load(textboxCustomThemePath.Text)
+            ' Load into the XML document the correct theme file
+            ' if it exists.
+            If System.IO.File.Exists(textboxCustomThemePath.Text) Then
+                tempXml.Load(textboxCustomThemePath.Text)
+            End If
+            ' Get the theme's info.
+            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)
         End If
-        ' Get the theme's info.
-        textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, textboxCustomThemePath.Text)
+    End Sub
+
+    Private Sub textboxCustomThemePath_TextChanged(sender As Object, e As EventArgs) Handles textboxCustomThemePath.TextChanged
+        ' When text in the custom theme path textbox is changed,
+        ' update the theme info textbox.
+
+        customThemePathInfoUpdater()
     End Sub
 
 #End Region
