@@ -401,6 +401,9 @@ Public Class aaformOptionsWindow
             ' This string takes the current text in the custom theme path
             ' textbox and creates a new string replacing double-quotes.
             Dim tempRemoveQuotesInPath As String = textboxCustomThemePath.Text.Replace("""", "")
+            ' Also replace text currently in the textbox with a string
+            ' that doesn't have double quotes.
+            textboxCustomThemePath.Text = tempRemoveQuotesInPath
             ' Load into the XML document the correct theme file
             ' if it exists.
             If System.IO.File.Exists(tempRemoveQuotesInPath) Then
