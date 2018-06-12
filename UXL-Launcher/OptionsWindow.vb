@@ -316,4 +316,11 @@ Public Class aaformOptionsWindow
         Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/100#issuecomment-395926431")
     End Sub
 #End Region
+
+#Region "Personalization tab."
+#Region "Code that runs when theme list text updates."
+
+#End Region
+#End Region
+
 End Class
