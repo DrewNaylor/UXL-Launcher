@@ -323,6 +323,12 @@ Public Class aaformOptionsWindow
         ' When the theme list combobox text changes, get the info
         ' for the theme that's currently selected in the combobox.
 
+        ' First, see if the theme list textbox isn't custom.
+        If comboboxThemeList.Text IsNot "(Custom)" Then
+            ' If it's not, send the text to the getThemeInfo function.
+            ' "Theme_XML" may need to be added to the theme text first.
+
+        End If
     End Sub
 #End Region
 #End Region
