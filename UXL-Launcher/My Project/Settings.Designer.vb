@@ -188,7 +188,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""C:\Users\drewn\Documents\0GitHub\UXL-Launcher\testfolder\testTheme.xml""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("""C:\Users\drewn\Documents\0GitHub\UXL-Launcher\testfolder\testTheme.xml""""")>  _
         Public Property userCustomThemePath() As String
             Get
                 Return CType(Me("userCustomThemePath"),String)

@@ -756,6 +756,11 @@ Public Class UXLLauncher_ThemeEngine
         ' This documentation page helped a lot for getting this working:
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
 
+        ' First, remove the double-quotes from the custom theme path.
+        ' This was moved up here so that it can be refered to in other
+        ' parts of this sub.
+        Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
+
         Try ' Make sure the theme engine doesn't break.
 
             ' Then we see if the userChosenTheme setting contains the word "Theme."
@@ -769,8 +774,6 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf My.Settings.userChosenTheme = "(Custom)" Then
                 ' Make sure the theme path and file exists and custom themes are allowed
                 ' to be used.
-                ' First, remove the double-quotes.
-                Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
                 Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
                 If File.Exists(tempRemoveQuotesInCustomThemePath) And My.Settings.allowCustomThemes = True Then
                     userTheme.Load(tempRemoveQuotesInCustomThemePath)
@@ -818,11 +821,11 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("Theme name in config file:")
             Debug.WriteLine(My.Settings.userChosenTheme)
             Debug.WriteLine("")
-            If My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
+            If My.Settings.userChosenTheme = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
                 ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
                 Debug.WriteLine("")
                 Debug.WriteLine("Custom theme path:")
-                Debug.WriteLine(My.Settings.userCustomThemePath.ToString)
+                Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
             End If
             Debug.WriteLine("Theme XML file:")
             Debug.WriteLine(userTheme.OuterXml)
@@ -833,7 +836,7 @@ Public Class UXLLauncher_ThemeEngine
             ' First check that the theme to use is a custom theme.
             ' If it is, specify that it is.
             If My.Settings.userChosenTheme = "(Custom)" Then
-                Debug.WriteLine(getThemeFileInfo(userTheme, True, My.Settings.userCustomThemePath))
+                Debug.WriteLine(getThemeFileInfo(userTheme, True, tempRemoveQuotesInCustomThemePath))
             Else
                 ' Otherwise, just write it out.
                 Debug.WriteLine(getThemeFileInfo(userTheme))
@@ -861,6 +864,11 @@ Public Class UXLLauncher_ThemeEngine
             ' First, identify this block of text as part of the theme engine
             ' and that it's output for invalid theme settings.
 
+            ' Second, remove the double-quotes from the custom theme path.
+            ' This was copied here so that it can be refered to in other
+            ' parts of this sub.
+            Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
+
             Debug.WriteLine("")
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
             Debug.WriteLine("UXL Launcher Theme Engine Version " & My.Resources.themeEngineVersion)
@@ -881,11 +889,11 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the custom theme" & vbCrLf &
                             "file specified for My.Settings.userCustomThemePath wasn't found. Please ensure that" & vbCrLf &
-                            "the filename below exists in the listed path. Quotation marks in the custom theme" & vbCrLf &
-                            "path are not supported.")
+                            "the filename below exists in the listed path. Double quotation marks in the custom theme" & vbCrLf &
+                            "path are not supported and are automatically removed at runtime.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -908,7 +916,7 @@ Public Class UXLLauncher_ThemeEngine
                                 "Afterward, restart UXL Launcher.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -925,7 +933,7 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -943,7 +951,7 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -960,7 +968,7 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
