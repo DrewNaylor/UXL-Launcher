@@ -50,6 +50,7 @@ Partial Class aaformOptionsWindow
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
+        Me.buttonClearFirstname = New System.Windows.Forms.Button()
         Me.labelFirstName = New System.Windows.Forms.Label()
         Me.textboxFirstname = New System.Windows.Forms.TextBox()
         Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
@@ -68,7 +69,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.buttonClearFirstname = New System.Windows.Forms.Button()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -426,6 +426,15 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.TabStop = False
         Me.groupboxStatusbar.Text = "Statusbar"
         '
+        'buttonClearFirstname
+        '
+        Me.buttonClearFirstname.Location = New System.Drawing.Point(320, 89)
+        Me.buttonClearFirstname.Name = "buttonClearFirstname"
+        Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
+        Me.buttonClearFirstname.TabIndex = 5
+        Me.buttonClearFirstname.Text = "Clear"
+        Me.buttonClearFirstname.UseVisualStyleBackColor = True
+        '
         'labelFirstName
         '
         Me.labelFirstName.AutoSize = True
@@ -555,9 +564,9 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine.AutoSize = True
         Me.checkboxEnableThemeEngine.Location = New System.Drawing.Point(7, 20)
         Me.checkboxEnableThemeEngine.Name = "checkboxEnableThemeEngine"
-        Me.checkboxEnableThemeEngine.Size = New System.Drawing.Size(203, 17)
+        Me.checkboxEnableThemeEngine.Size = New System.Drawing.Size(335, 17)
         Me.checkboxEnableThemeEngine.TabIndex = 0
-        Me.checkboxEnableThemeEngine.Text = "Enable UXL Launcher Theme Engine"
+        Me.checkboxEnableThemeEngine.Text = "Enable UXL Launcher Theme Engine (requires application restart)"
         Me.checkboxEnableThemeEngine.UseVisualStyleBackColor = True
         '
         'buttonTestSettings
@@ -583,15 +592,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'buttonClearFirstname
-        '
-        Me.buttonClearFirstname.Location = New System.Drawing.Point(320, 89)
-        Me.buttonClearFirstname.Name = "buttonClearFirstname"
-        Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
-        Me.buttonClearFirstname.TabIndex = 5
-        Me.buttonClearFirstname.Text = "Clear"
-        Me.buttonClearFirstname.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
