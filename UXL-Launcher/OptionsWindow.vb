@@ -67,25 +67,32 @@ Public Class aaformOptionsWindow
             ' If it's not enabled, uncheck the checkbox.
             checkboxEnableThemeEngine.Checked = False
         End If
-        ' Next, enable (or disable, based on user settings) and update the controls.
-        enableOrDisableThemeEngineOptionsWindowControls()
+
         ' The theme info controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
         ' The updating doesn't include the custom theme textbox or the theme list, so do that now.
-        ' I can't seem to make updating the list from a resource in My.Resources work, so for now,
-        ' I'll just hardcode the list.
 
         ' First, define a delimiter to split the theme list string.
         Dim delimiter As Char = ","c
         ' Second, get the theme list as a string without blank lines.
         Dim themeListNotSplit As String = My.Resources.themeList_TXT.Replace(vbCrLf, "")
-        ' Third, split the theme list.
+        ' Third, split the theme list with the delimiter.
         Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
 
+        ' Add the range of the split theme list string
+        ' to the combobox theme list.
         comboboxThemeList.Items.AddRange(themeListSplit)
+        ' Assign the data source of the combobox to the
+        ' split theme list string.
         comboboxThemeList.DataSource = themeListSplit
+        ' Set the text of the theme list combobox to the
+        ' user's chosen theme.
         comboboxThemeList.Text = My.Settings.userChosenTheme
+        ' Set the custom theme path textbox to the user's
+        ' configured custom theme path.
         textboxCustomThemePath.Text = My.Settings.userCustomThemePath
 
+        ' Next, enable (or disable, based on user settings) and update the controls.
+        enableOrDisableThemeEngineOptionsWindowControls()
 
 #End Region
 #End Region
@@ -378,8 +385,8 @@ Public Class aaformOptionsWindow
         ' in the theme list combobox and gets the theme info
         ' for that theme and shows it to the user in the theme
         ' info text box.
-        Debug.WriteLine(comboboxThemeList.Text)
         ' First, see if the theme list textbox isn't custom.
+
         If Not comboboxThemeList.Text = "(Custom)" Then
             ' First, disable the custom theme path textbox and the "Browse..."
             ' button if the theme list combobox isn't "(Custom)"
@@ -433,13 +440,14 @@ Public Class aaformOptionsWindow
                 buttonCustomThemesBrowse.Enabled = True
             End If
 
-            ' If it is "(Custom)", send the custom theme path below the theme list
-            ' to the getThemeInfo function.
+                ' If it is "(Custom)", send the custom theme path below the theme list
+                ' to the getThemeInfo function.
 
-            ' This code has been moved to the sub below to be able to call it from
-            ' two places when needed.
-            customThemePathInfoUpdater()
-        End If
+                ' This code has been moved to the sub below to be able to call it from
+                ' two places when needed.
+                customThemePathInfoUpdater()
+
+            End If
     End Sub
 
     Private Sub customThemePathInfoUpdater()
