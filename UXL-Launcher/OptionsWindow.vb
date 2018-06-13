@@ -76,14 +76,16 @@ Public Class aaformOptionsWindow
 
         ' First, define a delimiter to split the theme list string.
         Dim delimiter As Char = ","c
-        ' Second, get the theme list as a string.
-        Dim themeListNotSplit As String = My.Resources.themeList_TXT
+        ' Second, get the theme list as a string without blank lines.
+        Dim themeListNotSplit As String = My.Resources.themeList_TXT.Replace(vbCrLf, "")
         ' Third, split the theme list.
         Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
 
+        comboboxThemeList.Items.AddRange(themeListSplit)
         comboboxThemeList.DataSource = themeListSplit
         comboboxThemeList.Text = My.Settings.userChosenTheme
         textboxCustomThemePath.Text = My.Settings.userCustomThemePath
+
 
 #End Region
 #End Region
@@ -360,8 +362,9 @@ Public Class aaformOptionsWindow
     End Sub
 
     Private Sub updateThemeInfo()
+        Debug.WriteLine(comboboxThemeList.Text)
         ' First, see if the theme list textbox isn't custom.
-        If Not comboboxThemeList.Text = "(Custom)" Then
+        If Not comboboxThemeList.SelectedText = "(Custom)" Then
             ' First, disable the custom theme path textbox and the "Browse..."
             ' button if the theme list combobox isn't "(Custom)"
             textboxCustomThemePath.Enabled = False
@@ -378,10 +381,10 @@ Public Class aaformOptionsWindow
 
             ' If the theme name doesn't end with "Theme" and "_XML",
             ' add "Theme_XML".
-            If Not comboboxThemeList.Text.EndsWith("Theme") And Not comboboxThemeList.Text.EndsWith("_XML") Then
+            If Not comboboxThemeList.SelectedText.EndsWith("Theme") And Not comboboxThemeList.Text.EndsWith("_XML") Then
                 tempThemeXmlFileType = "Theme_XML"
                 ' Otherwise, if there's no "_XML" at the end, add it.
-            ElseIf comboboxThemeList.Text.EndsWith("Theme") Then
+            ElseIf comboboxThemeList.SelectedText.EndsWith("Theme") Then
                 tempThemeXmlFileType = "_XML"
             Else
                 ' Otherwise, just make the string empty.
@@ -500,7 +503,6 @@ Public Class aaformOptionsWindow
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
         End If
     End Sub
-
 #End Region
 
 #End Region
