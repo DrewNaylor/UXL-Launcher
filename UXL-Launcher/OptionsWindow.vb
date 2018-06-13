@@ -64,10 +64,11 @@ Public Class aaformOptionsWindow
             ' If it is, check the "Enable Theme Engine" checkbox.
             checkboxEnableThemeEngine.Checked = True
         ElseIf My.Settings.enableThemeEngine = False Then
-            ' If it's not enabled, uncheck the checkbox
-            ' and update the textbox.
+            ' If it's not enabled, uncheck the checkbox.
             checkboxEnableThemeEngine.Checked = False
         End If
+        ' Next, enable and update the controls.
+        enableOrDisableThemeEngineOptionsWindowControls()
 
 #End Region
 #End Region
