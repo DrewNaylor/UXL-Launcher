@@ -59,6 +59,16 @@ Public Class aaformOptionsWindow
 #Region "Personalization tab."
         ' Load the settings for the Personalization tab.
 
+        ' First, see if the theme engine is enabled.
+        If My.Settings.enableThemeEngine = True Then
+            ' If it is, check the "Enable Theme Engine" checkbox.
+            checkboxEnableThemeEngine.Checked = True
+        ElseIf My.Settings.enableThemeEngine = False Then
+            ' If it's not enabled, uncheck the checkbox
+            ' and update the textbox.
+            checkboxEnableThemeEngine.Checked = False
+        End If
+
 #End Region
 #End Region
 
@@ -450,6 +460,12 @@ Public Class aaformOptionsWindow
         ' Enable or disable the theme engine-related controls when
         ' the checkbox is checked or unchecked, respectively.
         ' Afterward, update relevant controls.
+
+        ' Code moved to its own sub to make calling easier.
+        enableOrDisableThemeEngineOptionsWindowControls()
+    End Sub
+
+    Private Sub enableOrDisableThemeEngineOptionsWindowControls()
         If checkboxEnableThemeEngine.Checked = True And checkboxEnableThemeEngine.CheckState = CheckState.Checked Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
@@ -465,6 +481,7 @@ Public Class aaformOptionsWindow
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher interface via predefined or custom themes."
         End If
     End Sub
+
 #End Region
 
 #End Region
