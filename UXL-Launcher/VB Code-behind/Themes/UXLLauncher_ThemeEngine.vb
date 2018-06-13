@@ -813,6 +813,7 @@ Public Class UXLLauncher_ThemeEngine
             ' If this exception occurs, it may be because
             ' a file was accessed that's not allowed to be accessed,
             ' such as a file in the Windows directory.
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
@@ -970,6 +971,19 @@ Public Class UXLLauncher_ThemeEngine
                             "in the chosen custom theme file listed below," & vbCrLf &
                             "but this shouldn't cause any problems." & vbCrLf &
                             "Please refer to the exception message above for more details.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "System.UnauthorizedAccessException" Then
+                ' If the exception type is an unauthorized access exception, let the user know.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("Access to the custom theme file was denied.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
