@@ -444,7 +444,7 @@ Public Class aaformOptionsWindow
         customThemePathInfoUpdater()
     End Sub
 #End Region
-#Region "Enable/disable theme engine checkbox."
+#Region "Code that runs when enabling/disabling theme engine checkbox."
     Private Sub checkboxEnableThemeEngine_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxEnableThemeEngine.CheckedChanged
         ' Enable or disable the theme engine-related controls when
         ' the checkbox is checked or unchecked, respectively.
