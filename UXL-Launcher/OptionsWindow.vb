@@ -67,7 +67,7 @@ Public Class aaformOptionsWindow
             ' If it's not enabled, uncheck the checkbox.
             checkboxEnableThemeEngine.Checked = False
         End If
-        ' Next, enable and update the controls.
+        ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
 
 #End Region
@@ -479,7 +479,7 @@ Public Class aaformOptionsWindow
             comboboxThemeList.Enabled = False
             textboxCustomThemePath.Enabled = False
             buttonCustomThemesBrowse.Enabled = False
-            textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher interface via predefined or custom themes."
+            textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
         End If
     End Sub
 
