@@ -69,6 +69,7 @@ Public Class aaformOptionsWindow
         End If
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
+        ' The controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
 
 #End Region
 #End Region
@@ -467,6 +468,9 @@ Public Class aaformOptionsWindow
     End Sub
 
     Private Sub enableOrDisableThemeEngineOptionsWindowControls()
+        ' This sub enables or disables the theme engine-related
+        ' controls in the Options window based on whether the
+        ' checkbox to enable the theme engine is enabled or not.
         If checkboxEnableThemeEngine.Checked = True Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
