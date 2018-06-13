@@ -436,7 +436,19 @@ Public Class aaformOptionsWindow
 #End Region
 #Region "Enable/disable theme engine checkbox."
     Private Sub checkboxEnableThemeEngine_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxEnableThemeEngine.CheckedChanged
-
+        ' Enable or disable the theme engine-related controls when
+        ' the checkbox is checked or unchecked, respectively.
+        If checkboxEnableThemeEngine.Checked = True And checkboxEnableThemeEngine.CheckState = CheckState.Checked Then
+            ' If it's checked, enable the controls.
+            comboboxThemeList.Enabled = True
+            textboxCustomThemePath.Enabled = True
+            buttonCustomThemesBrowse.Enabled = True
+        Else
+            ' Otherwise, disable the controls.
+            comboboxThemeList.Enabled = False
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+        End If
     End Sub
 #End Region
 
