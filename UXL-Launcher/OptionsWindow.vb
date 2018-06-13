@@ -466,7 +466,7 @@ Public Class aaformOptionsWindow
     End Sub
 
     Private Sub enableOrDisableThemeEngineOptionsWindowControls()
-        If checkboxEnableThemeEngine.Checked = True And checkboxEnableThemeEngine.CheckState = CheckState.Checked Then
+        If checkboxEnableThemeEngine.Checked = True Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
             textboxCustomThemePath.Enabled = True
