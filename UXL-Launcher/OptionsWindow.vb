@@ -55,6 +55,11 @@ Public Class aaformOptionsWindow
         ElseIf My.Settings.installedViaMSIPackage = False Then
             checkboxMSIInstallMethod.Checked = False
         End If
+
+#Region "Personalization tab."
+        ' Load the settings for the Personalization tab.
+
+#End Region
 #End Region
 
 
@@ -428,8 +433,13 @@ Public Class aaformOptionsWindow
 
         customThemePathInfoUpdater()
     End Sub
-
 #End Region
+#Region "Enable/disable theme engine checkbox."
+    Private Sub checkboxEnableThemeEngine_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxEnableThemeEngine.CheckedChanged
+
+    End Sub
+#End Region
+
 #End Region
 
 End Class
