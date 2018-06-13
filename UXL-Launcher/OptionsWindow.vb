@@ -360,8 +360,24 @@ Public Class aaformOptionsWindow
         ' Code moved into its own sub to make calling easier.
         updateThemeInfo()
     End Sub
+    Private Sub comboboxThemeList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxThemeList.SelectedIndexChanged
+        ' This code is related to the comboboxThemeList_TextChanged
+        ' event handler above.
+
+        ' When the theme list combobox selected index changes
+        ' by the user doing something such as pressing
+        ' the up and down arrow keys, get the info
+        ' for the theme that's currently selected in the combobox.
+        updateThemeInfo()
+    End Sub
 
     Private Sub updateThemeInfo()
+        ' This code was moved into its own sub to make
+        ' calling it from other places easier.
+        ' Basically, this code takes the text currently
+        ' in the theme list combobox and gets the theme info
+        ' for that theme and shows it to the user in the theme
+        ' info text box.
         Debug.WriteLine(comboboxThemeList.Text)
         ' First, see if the theme list textbox isn't custom.
         If Not comboboxThemeList.Text = "(Custom)" Then
@@ -503,12 +519,6 @@ Public Class aaformOptionsWindow
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
         End If
     End Sub
-
-    Private Sub comboboxThemeList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxThemeList.SelectedIndexChanged
-        updateThemeInfo()
-    End Sub
-
-
 #End Region
 
 #End Region
