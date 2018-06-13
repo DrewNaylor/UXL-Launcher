@@ -329,6 +329,11 @@ Public Class aaformOptionsWindow
         ' When the theme list combobox text changes, get the info
         ' for the theme that's currently selected in the combobox.
 
+        ' Code moved into its own sub to make calling easier.
+        updateThemeInfo()
+    End Sub
+
+    Private Sub updateThemeInfo()
         ' First, see if the theme list textbox isn't custom.
         If Not comboboxThemeList.Text = "(Custom)" Then
             ' First, disable the custom theme path textbox and the "Browse..."
@@ -389,7 +394,7 @@ Public Class aaformOptionsWindow
             ' This code has been moved to the sub below to be able to call it from
             ' two places when needed.
             customThemePathInfoUpdater()
-            End If
+        End If
     End Sub
 
     Private Sub customThemePathInfoUpdater()
@@ -420,6 +425,11 @@ Public Class aaformOptionsWindow
                     ' aren't any problems in the theme engine that might
                     ' slip by when using valid XML.
                 Catch ex As System.Xml.XmlException
+                    ' Also catch UnauthorizedAccessException.
+                    ' If this exception occurs, it may be because
+                    ' a file was accessed that's not allowed to be accessed,
+                    ' such as a file in the Windows directory.
+                Catch ex As System.UnauthorizedAccessException
                 End Try
             End If
             ' Get the theme's info.
@@ -438,16 +448,20 @@ Public Class aaformOptionsWindow
     Private Sub checkboxEnableThemeEngine_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxEnableThemeEngine.CheckedChanged
         ' Enable or disable the theme engine-related controls when
         ' the checkbox is checked or unchecked, respectively.
+        ' Afterward, update relevant controls.
         If checkboxEnableThemeEngine.Checked = True And checkboxEnableThemeEngine.CheckState = CheckState.Checked Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
             textboxCustomThemePath.Enabled = True
             buttonCustomThemesBrowse.Enabled = True
+            ' Now, update theme-related controls.
+            updateThemeInfo()
         Else
             ' Otherwise, disable the controls.
             comboboxThemeList.Enabled = False
             textboxCustomThemePath.Enabled = False
             buttonCustomThemesBrowse.Enabled = False
+            textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher interface via predefined or custom themes."
         End If
     End Sub
 #End Region
