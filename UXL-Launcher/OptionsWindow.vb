@@ -71,8 +71,18 @@ Public Class aaformOptionsWindow
         enableOrDisableThemeEngineOptionsWindowControls()
         ' The theme info controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
         ' The updating doesn't include the custom theme textbox or the theme list, so do that now.
-        ' Set the theme list combobox DataSource.
-        comboboxThemeList.Text = "Test"
+        ' I can't seem to make updating the list from a resource in My.Resources work, so for now,
+        ' I'll just hardcode the list.
+
+        ' First, define a delimiter to split the theme list string.
+        Dim delimiter As Char = ","c
+        ' Second, get the theme list as a string.
+        Dim themeListNotSplit As String = My.Resources.themeList_TXT
+        ' Third, split the theme list.
+        Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
+
+        comboboxThemeList.DataSource = themeListSplit
+        comboboxThemeList.Text = My.Settings.userChosenTheme
         textboxCustomThemePath.Text = My.Settings.userCustomThemePath
 
 #End Region
