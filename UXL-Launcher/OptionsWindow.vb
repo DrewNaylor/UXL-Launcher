@@ -69,7 +69,11 @@ Public Class aaformOptionsWindow
         End If
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
-        ' The controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
+        ' The theme info controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
+        ' The updating doesn't include the custom theme textbox or the theme list, so do that now.
+        ' Set the theme list combobox DataSource.
+        comboboxThemeList.Text = "Test"
+        textboxCustomThemePath.Text = My.Settings.userCustomThemePath
 
 #End Region
 #End Region
