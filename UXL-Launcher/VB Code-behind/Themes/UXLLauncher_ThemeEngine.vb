@@ -774,7 +774,6 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf My.Settings.userChosenTheme = "(Custom)" Then
                 ' Make sure the theme path and file exists and custom themes are allowed
                 ' to be used.
-                Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
                 If File.Exists(tempRemoveQuotesInCustomThemePath) And My.Settings.allowCustomThemes = True Then
                     userTheme.Load(tempRemoveQuotesInCustomThemePath)
                     ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
@@ -809,6 +808,11 @@ Public Class UXLLauncher_ThemeEngine
             ' and use the default theme.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        Catch ex As System.UnauthorizedAccessException
+            ' Also catch UnauthorizedAccessException.
+            ' If this exception occurs, it may be because
+            ' a file was accessed that's not allowed to be accessed,
+            ' such as a file in the Windows directory.
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
