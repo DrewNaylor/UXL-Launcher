@@ -441,6 +441,7 @@ Public Class aaformOptionsWindow
         ' When text in the custom theme path textbox is changed,
         ' update the theme info textbox.
 
+        ' Code is in its own sub to make calling easier.
         customThemePathInfoUpdater()
     End Sub
 #End Region
