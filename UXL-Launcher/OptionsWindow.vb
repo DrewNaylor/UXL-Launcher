@@ -73,9 +73,24 @@ Public Class aaformOptionsWindow
 
         ' First, define a delimiter to split the theme list string.
         Dim delimiter As Char = ","c
-        ' Second, get the theme list as a string without blank lines.
-        Dim themeListNotSplit As String = My.Resources.themeList_TXT.Replace(vbCrLf, "")
-        ' Third, split the theme list with the delimiter.
+        ' Second, if the user's chosen theme isn't in My.Resources.themeList_TXT,
+        ' append the name of their chosen theme to a string that includes the
+        ' actual theme list.
+        Dim themeListAppendUserThemeName As String
+        If Not My.Resources.themeList_TXT.Contains(My.Settings.userChosenTheme) Then
+            ' This will add a comma to the end of the string, a new line, and
+            ' the current name of the user's theme, if necessary.
+            ' Only needed if the user's chosen theme isn't in the theme list.
+            themeListAppendUserThemeName = My.Resources.themeList_TXT & "," & vbCrLf &
+                                           My.Settings.userChosenTheme
+        Else
+            ' If the theme list does contain the chosen theme,
+            ' just use the theme list.
+            themeListAppendUserThemeName = My.Resources.themeList_TXT
+        End If
+        ' Third, get the theme list as a string without blank lines.
+        Dim themeListNotSplit As String = themeListAppendUserThemeName.Replace(vbCrLf, "")
+        ' Fourth, split the theme list with the delimiter.
         Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
 
         ' Add the range of the split theme list string
