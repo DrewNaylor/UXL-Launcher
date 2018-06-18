@@ -104,7 +104,7 @@ Public Class aaformOptionsWindow
         comboboxThemeList.Text = My.Settings.userChosenTheme
         ' Set the custom theme path textbox to the user's
         ' configured custom theme path.
-        textboxCustomThemePath.Text = My.Settings.userCustomThemePath
+        textboxCustomThemePath.Text = My.Settings.userCustomThemePath.Replace("""", "")
 
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
