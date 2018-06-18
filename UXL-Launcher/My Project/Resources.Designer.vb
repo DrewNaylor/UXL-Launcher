@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-18T21:44:24
+        '''  Looks up a localized string similar to 2018-06-18T22:33:09
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -503,6 +503,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property TemporaryIcon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("TemporaryIcon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2018)&lt;/Title&gt;
         '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead if you want similar colors to this theme, or Test (the theme file for Eyesore 2) if you want a test theme.&lt;/Description&gt;
@@ -555,56 +565,6 @@ Namespace My.Resources
         Public ReadOnly Property themeList_TXT() As String
             Get
                 Return ResourceManager.GetString("themeList_TXT", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property uxl_icon_24x24() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("uxl_icon_24x24", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property uxl_icon_24x24_newborder() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("uxl_icon_24x24-newborder", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property UXL_Launcher_Banner() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("UXL_Launcher_Banner", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property UXL_Launcher_Banner_NewBorder() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("UXL-Launcher-Banner-NewBorder", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property UXL_Standalone_Icon() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("UXL_Standalone_Icon", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
