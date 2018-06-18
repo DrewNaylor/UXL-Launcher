@@ -209,6 +209,30 @@ Namespace My
                 Me("allowCustomThemes") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property userUseCustomStatusbarGreeting() As Boolean
+            Get
+                Return CType(Me("userUseCustomStatusbarGreeting"),Boolean)
+            End Get
+            Set
+                Me("userUseCustomStatusbarGreeting") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property userFirstNameForCustomStatusbarGreeting() As String
+            Get
+                Return CType(Me("userFirstNameForCustomStatusbarGreeting"),String)
+            End Get
+            Set
+                Me("userFirstNameForCustomStatusbarGreeting") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

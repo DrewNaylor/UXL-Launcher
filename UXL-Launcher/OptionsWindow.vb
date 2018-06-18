@@ -59,6 +59,7 @@ Public Class aaformOptionsWindow
 #Region "Personalization tab."
         ' Load the settings for the Personalization tab.
 
+#Region "Theme Engine settings."
         ' First, see if the theme engine is enabled.
         If My.Settings.enableThemeEngine = True Then
             ' If it is, check the "Enable Theme Engine" checkbox.
@@ -108,7 +109,10 @@ Public Class aaformOptionsWindow
 
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
+#End Region
+#Region "Custom statusbar greeting."
 
+#End Region
 #End Region
 #End Region
 
