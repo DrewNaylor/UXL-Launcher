@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-17T20:19:37
+        '''  Looks up a localized string similar to 2018-06-18T21:40:39
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -550,7 +550,6 @@ Namespace My.Resources
         '''Maudern,
         '''ReturnOfNight,
         '''RGB,
-        '''Test,
         '''(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String
@@ -565,6 +564,16 @@ Namespace My.Resources
         Public ReadOnly Property uxl_icon_24x24() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("uxl_icon_24x24", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property uxl_icon_24x24_newborder() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("uxl_icon_24x24-newborder", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

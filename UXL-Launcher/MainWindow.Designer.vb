@@ -208,7 +208,7 @@ Partial Class aaformMainWindow
         '
         'menubarOptionsButton
         '
-        Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
+        Me.menubarOptionsButton.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24_newborder
         Me.menubarOptionsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarOptionsButton.Name = "menubarOptionsButton"
         Me.menubarOptionsButton.Size = New System.Drawing.Size(233, 30)
