@@ -257,7 +257,7 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 412)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(255, 434)
         '
         'notifyiconWord
         '
@@ -351,7 +351,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconUXLOptions
         '
-        Me.notifyiconUXLOptions.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24
+        Me.notifyiconUXLOptions.Image = Global.UXL_Launcher.My.Resources.Resources.uxl_icon_24x24_newborder
         Me.notifyiconUXLOptions.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconUXLOptions.Name = "notifyiconUXLOptions"
         Me.notifyiconUXLOptions.Size = New System.Drawing.Size(254, 30)
