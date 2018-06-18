@@ -76,7 +76,7 @@ Public Class aaformOptionsWindow
         ' Second, if the user's chosen theme isn't in My.Resources.themeList_TXT,
         ' append the name of their chosen theme to a string that includes the
         ' actual theme list.
-        Dim themeListAppendUserThemeName As String
+        Dim themeListAppendUserThemeName As String = My.Resources.themeList_TXT
         If Not My.Resources.themeList_TXT.Contains(My.Settings.userChosenTheme) Then
             ' This will add a comma to the end of the string, a new line, and
             ' the current name of the user's theme, if necessary.
