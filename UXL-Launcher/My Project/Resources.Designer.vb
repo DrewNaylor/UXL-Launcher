@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-13T02:59:13
+        '''  Looks up a localized string similar to 2018-06-17T20:19:37
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -164,6 +164,30 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
+        '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Blue&lt;/For [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Eyesore2Theme_XML() As String
+            Get
+                Return ResourceManager.GetString("Eyesore2Theme_XML", resourceCulture)
             End Get
         End Property
         
@@ -497,30 +521,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
-        '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Blue&lt;/For [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property TestTheme_XML() As String
-            Get
-                Return ResourceManager.GetString("TestTheme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
         '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
         '''
@@ -544,12 +544,13 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Default
-        '''Eyesore
-        '''Maudern
-        '''ReturnOfNight
-        '''RGB
-        '''Test
+        '''  Looks up a localized string similar to Default,
+        '''Eyesore,
+        '''Eyesore2,
+        '''Maudern,
+        '''ReturnOfNight,
+        '''RGB,
+        '''Test,
         '''(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String

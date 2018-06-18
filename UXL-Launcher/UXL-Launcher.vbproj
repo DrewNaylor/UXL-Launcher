@@ -202,7 +202,7 @@
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\ReturnOfNightTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\Test2Theme_XML.xml" />
-    <Content Include="VB Code-behind\Themes\TestTheme_XML.xml" />
+    <Content Include="VB Code-behind\Themes\Eyesore2Theme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
     <None Include="Resources\Word.png" />
     <None Include="Resources\Sharepoint Workspace.png" />

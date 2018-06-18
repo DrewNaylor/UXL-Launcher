@@ -1,7 +1,7 @@
 Default,
 Eyesore,
+Eyesore2,
 Maudern,
 ReturnOfNight,
 RGB,
-Test,
 (Custom)
