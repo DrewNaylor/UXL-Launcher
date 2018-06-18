@@ -72,7 +72,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>TemporaryIcon.ico</ApplicationIcon>
+    <ApplicationIcon>UXL_Launcher_Icon_For_Windows.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -196,10 +196,7 @@
     <None Include="Resources\ThemeEngineInfo_TXT.txt" />
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
     <None Include="Resources\themeList_TXT.txt" />
-    <None Include="Resources\uxl_icon_24x24-newborder.png" />
-    <None Include="Resources\UXL-Launcher-Banner-NewBorder.png" />
     <Content Include="TemporaryIcon.ico" />
-    <Content Include="UXL_Launcher_Icon_For_Windows-NewBorders.ico" />
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\MaudernTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
