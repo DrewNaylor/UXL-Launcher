@@ -528,7 +528,17 @@ Public Class aaformOptionsWindow
         End If
     End Sub
 #End Region
-
+#Region "Code that runs when clicking the Browse... button next to the custom theme path."
+    Private Sub buttonCustomThemesBrowse_Click(sender As Object, e As EventArgs) Handles buttonCustomThemesBrowse.Click
+        ' When the user clicks the "Browse..." button, show an open file dialog
+        ' that allows the user to browse to the theme file they want to use as
+        ' a custom theme and update the custom theme path textbox with their new
+        ' theme choice.
+        If openfiledialogBrowseCustomThemeFile.ShowDialog = DialogResult.OK Then
+            textboxCustomThemePath.Text = openfiledialogBrowseCustomThemeFile.FileName
+        End If
+    End Sub
+#End Region
 #End Region
 
 End Class

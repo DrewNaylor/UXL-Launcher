@@ -69,6 +69,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
+        Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -593,6 +594,10 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
+        'openfiledialogBrowseCustomThemeFile
+        '
+        Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -674,4 +679,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents textboxFirstname As TextBox
     Friend WithEvents labelFirstName As Label
     Friend WithEvents buttonClearFirstname As Button
+    Friend WithEvents openfiledialogBrowseCustomThemeFile As OpenFileDialog
 End Class
