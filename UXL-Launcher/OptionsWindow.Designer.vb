@@ -596,6 +596,7 @@ Partial Class aaformOptionsWindow
         '
         'openfiledialogBrowseCustomThemeFile
         '
+        Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
         Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
         '
         'aaformOptionsWindow
