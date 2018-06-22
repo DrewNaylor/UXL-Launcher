@@ -356,7 +356,7 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
-#Region "Workaround Microsoft's weird decision to put Office 2013 C2R in a different folder from MSI."
+#Region "Workaround Microsoft's weird decision to put Office 2013 C2R in a different folder from MSI and change available checkboxes."
     Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
         ' When the user chooses their Office version, if the version is set to Office 2013, 
         ' make the Office 365 install method checkbox get disabled and show the MSI install
