@@ -45,7 +45,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userFirstNameForCustomStatusbarGreeting" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">TestName</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -111,7 +111,17 @@ Public Class aaformOptionsWindow
         enableOrDisableThemeEngineOptionsWindowControls()
 #End Region
 #Region "Custom statusbar greeting."
-
+        If My.Settings.userUseCustomStatusbarGreeting = True Then
+            ' If the settings are configured to use a custom statusbar greeting,
+            ' check the radio button that says to use them.
+            radiobuttonCustomStatusbarGreeting.Checked = True
+        Else
+            ' Otherwise, say that the default greeting is used.
+            radiobuttonDefaultStatusbarGreeting.Checked = True
+        End If
+        ' Now load the user's firstname/nickname for the
+        ' personalized statusbar greeting textbox.
+        textboxFirstname.Text = My.Settings.userFirstNameForCustomStatusbarGreeting
 #End Region
 #End Region
 #End Region
