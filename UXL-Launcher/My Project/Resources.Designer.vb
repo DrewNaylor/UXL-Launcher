@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-05-26T01:16:54
+        '''  Looks up a localized string similar to 2018-06-18T22:43:44
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -133,6 +133,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -148,7 +149,7 @@ Namespace My.Resources
         '''      &lt;/GroupBox&gt;
         '''
         '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
+        '''        &lt;B [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property DefaultTheme_XML() As String
             Get
@@ -168,20 +169,32 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
-        '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme.&lt;/Description&gt;
-        '''  &lt;Author&gt;Original Hotdog Stand theme by Microsoft; implemented as UXL Launcher theme by Drew Naylor&lt;/Author&gt;
+        '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
+        '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;LightGray&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Black&lt;/ForeColor&gt;
+        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
         '''      &lt;/Button&gt;
         '''      
         '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Red&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/Fore [rest of string was truncated]&quot;;.
+        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Blue&lt;/For [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Eyesore2Theme_XML() As String
+            Get
+                Return ResourceManager.GetString("Eyesore2Theme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
+        '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme. The &quot;Eyesore&quot; theme and Drew Naylor are not associated with Microsoft Corporation in any way, shape, or form. Windows 3.1 and all related words are copyright and trademark/registered trademark Microsoft Corporation in the United States and other countries. All rights reserved to Microsoft Corp. for Microsoft Corp.&apos;s copyrights and trademarks/registered trademar [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property EyesoreTheme_XML() As String
             Get
@@ -235,24 +248,15 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Title&gt;Maudern&lt;/Title&gt;
+        '''  &lt;Description&gt;Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
         '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;Window&lt;/BackColor&gt; [rest of string was truncated]&quot;;.
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property MaudernTheme_XML() As String
             Get
@@ -337,6 +341,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
@@ -348,12 +353,33 @@ Namespace My.Resources
         '''      
         '''      &lt;GroupBox&gt;
         '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt; [rest of string was truncated]&quot;;.
+        '''        &lt;ForeColor&gt;White&lt;/Fo [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ReturnOfNightTheme_XML() As String
             Get
                 Return ResourceManager.GetString("ReturnOfNightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Arr G. Bee&lt;/Title&gt;
+        '''  &lt;Description&gt;Arr G. Bee is a theme that&apos;s influenced by the UXL Launcher logo.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;RoyalBlue&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;Lime&lt;/ForeColor&gt;
+        '''        &lt;!-- The FlatStyle determines the &quot;depth&quot; of the buttons. This can be set
+        '''        to either &quot;Flat&quot; or &quot;Standard&quot;. Anything else will be set to &quot;Standard&quot;.
+        '''        Quotat [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property RGBTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("RGBTheme_XML", resourceCulture)
             End Get
         End Property
         
@@ -478,53 +504,19 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Test2&lt;/Title&gt;
-        '''  &lt;Description&gt;An improved test theme for UXL Launcher.&lt;/Description&gt;
+        '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2018)&lt;/Title&gt;
+        '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead if you want similar colors to this theme, or Test (the theme file for Eyesore 2) if you want a test theme.&lt;/Description&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
         '''      &lt;Button&gt;
         '''        &lt;BackColor&gt;MidnightBlue&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Indigo&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;BackColor&gt;DarkViolet&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Whit [rest of string was truncated]&quot;;.
+        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Test2Theme_XML() As String
             Get
                 Return ResourceManager.GetString("Test2Theme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
-        '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Maroon&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Green&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;Blue&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;        ''' [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property TestTheme_XML() As String
-            Get
-                Return ResourceManager.GetString("TestTheme_XML", resourceCulture)
             End Get
         End Property
         
@@ -552,6 +544,21 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Default,
+        '''Eyesore,
+        '''Eyesore2,
+        '''Maudern,
+        '''ReturnOfNight,
+        '''RGB,
+        '''(Custom).
+        '''</summary>
+        Public ReadOnly Property themeList_TXT() As String
+            Get
+                Return ResourceManager.GetString("themeList_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property uxl_icon_24x24() As System.Drawing.Bitmap
@@ -567,16 +574,6 @@ Namespace My.Resources
         Public ReadOnly Property UXL_Launcher_Banner() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("UXL_Launcher_Banner", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property UXL_Standalone_Icon() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("UXL_Standalone_Icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

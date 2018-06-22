@@ -1,6 +1,7 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Eyesore 2</Title>
   <Description>Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.</Description>
+  <Version>v1.0</Version>
   <Author>Drew Naylor</Author>
   
     <Theme_Colors>
@@ -35,17 +36,30 @@
       </TextBox>
 
       <MenuItem>
-        <!--The MenuBar BackColor variable used to be required because of problems
-        with the custom ProfessionalRenderer, but is now set to the same value as
-        MenuItem BackColor as there seems to not be a problem if the MenuBar BackColor
-        cannot be set if MenuItem also cannot be set, which doesn't make much sense.
-        
-        Basically, if MenuItem BackColor has an XML element, MenuBar BackColor is set
-        to the same thing as MenuItem BackColor, otherwise it's set to the value the
-        Default theme uses.-->
-        <BackColor>Purple</BackColor>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>Teal</BackColor>
+        <!-- Text color for menubar dropdown items. -->
         <ForeColor>AntiqueWhite</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>Red</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>Blue</EndColor>
+        </ImageMarginGradient>
       </MenuItem>
+      
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>Purple</BackColor>
+      </MenuBar>
 
       <StatusLabel>
         <BackColor>Maroon</BackColor>

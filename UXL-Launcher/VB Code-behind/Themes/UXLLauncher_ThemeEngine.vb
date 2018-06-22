@@ -102,6 +102,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Menubar entry colors:
         Dim colorMenuItemBackColor As Color
         Dim colorMenuItemForeColor As Color
+        ' Menubar item margin colors:
+        Dim colorMenuItemImageMarginGradientStartColor As Color
+        Dim colorMenuItemImageMarginGradientEndColor As Color
         ' Statusbar label colors:
         Dim colorStatusLabelBackColor As Color
         Dim colorStatusLabelForeColor As Color
@@ -404,7 +407,6 @@ Public Class UXLLauncher_ThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
-                colorMenubarBackColor = colorMenuItemBackColor
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
@@ -413,6 +415,55 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
+        End If
+#End Region
+
+#Region "MenuItem Image margin background gradient"
+#Region "Start color"
+        ' Only pull the MenuItem Image Margin Gradient Start Color element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
+        End If
+#End Region
+#Region "End color"
+        ' Only pull the MenuItem Image Margin Gradient End Color element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
+        End If
+#End Region
+#End Region
+
+#Region "MenuBar BackColor"
+        ' Only pull the MenuBar BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
         End If
 #End Region
 
@@ -644,9 +695,18 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Set colors for menubar entries."
 
         ' Set color for menubar.
-        aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenuItemBackColor
+        aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenubarBackColor
         aaformMainWindow.UXLToolstripRenderer.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.UXLToolstripRenderer.DropdownBackColor = colorMenuItemBackColor
+        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
+        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
         aaformMainWindow.UXLToolstripRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        ' Sometimes the menubar forecolor doesn't update, so I'm forcing the items to update their colors.
+        aaformMainWindow.menubarFileMenu.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.menubarViewMenu.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.menubarToolsMenu.ForeColor = colorMenuItemForeColor
+        aaformMainWindow.menubarHelpMenu.ForeColor = colorMenuItemForeColor
 
 #End Region
 
@@ -696,6 +756,11 @@ Public Class UXLLauncher_ThemeEngine
         ' This documentation page helped a lot for getting this working:
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
 
+        ' First, remove the double-quotes from the custom theme path.
+        ' This was moved up here so that it can be refered to in other
+        ' parts of this sub.
+        Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
+
         Try ' Make sure the theme engine doesn't break.
 
             ' Then we see if the userChosenTheme setting contains the word "Theme."
@@ -706,15 +771,29 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf My.Settings.userChosenTheme.Contains("Theme") Then
                 userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML"))
                 ' If the user has a custom theme enabled, use that instead.
-                ' Make sure the theme path and file exists.
-            ElseIf My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
-                userTheme.Load(My.Settings.userCustomThemePath)
-                ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
-            ElseIf My.Settings.userChosenTheme = "(Custom)" And Not File.Exists(My.Settings.userCustomThemePath) Then
+            ElseIf My.Settings.userChosenTheme = "(Custom)" Then
+                ' Make sure the theme path and file exists and custom themes are allowed
+                ' to be used.
+                If File.Exists(tempRemoveQuotesInCustomThemePath) And My.Settings.allowCustomThemes = True Then
+                    userTheme.Load(tempRemoveQuotesInCustomThemePath)
+                    ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
+                    ' Then we output that the custom theme file wasn't found if that's the problem, or if custom
+                    ' themes are not allowed to be used.
+                ElseIf Not File.Exists(tempRemoveQuotesInCustomThemePath) Then
+                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                    ' If the theme engine output debug setting is enabled, output an error
+                    ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
+                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
+                ElseIf My.Settings.allowCustomThemes = False Then
+                    ' If custom themes are not allowed to be used, use the Default theme and tell the
+                    ' user in the debug output that they're not allowed.
+                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.CustomThemesNotAllowed", "Custom themes are not allowed to be used." & vbCrLf &
+                                                "Please contact your administrator for further assistance.")
+                End If
+            Else
+                ' If none of the above conditions apply, just load the Default theme.
                 userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-                ' If the theme engine output debug setting is enabled, output an error
-                ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
-                themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
             End If
         Catch ex As System.ArgumentNullException
             ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
@@ -729,6 +808,12 @@ Public Class UXLLauncher_ThemeEngine
             ' and use the default theme.
             userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        Catch ex As System.UnauthorizedAccessException
+            ' Also catch UnauthorizedAccessException.
+            ' If this exception occurs, it may be because
+            ' a file was accessed that's not allowed to be accessed,
+            ' such as a file in the Windows directory.
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
         End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
@@ -741,24 +826,38 @@ Public Class UXLLauncher_ThemeEngine
             Debug.WriteLine("Theme name in config file:")
             Debug.WriteLine(My.Settings.userChosenTheme)
             Debug.WriteLine("")
-            If My.Settings.userChosenTheme = "(Custom)" And File.Exists(My.Settings.userCustomThemePath) Then
+            If My.Settings.userChosenTheme = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
                 ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
                 Debug.WriteLine("")
                 Debug.WriteLine("Custom theme path:")
-                Debug.WriteLine(My.Settings.userCustomThemePath.ToString)
+                Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
             End If
             Debug.WriteLine("Theme XML file:")
             Debug.WriteLine(userTheme.OuterXml)
+
+            ' Also output theme info for testing purposes.
+            ' This will be used in the Options window soon.
+            Debug.WriteLine("getThemeFileInfo function.")
+            ' First check that the theme to use is a custom theme.
+            ' If it is, specify that it is.
+            If My.Settings.userChosenTheme = "(Custom)" Then
+                Debug.WriteLine(getThemeFileInfo(userTheme, True, tempRemoveQuotesInCustomThemePath))
+            Else
+                ' Otherwise, just write it out.
+                Debug.WriteLine(getThemeFileInfo(userTheme))
+            End If
+
+
         End If
 
-        ' Apply the theme.
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            ' Apply the theme.
+            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
     End Sub
 #End Region
 #End Region
 
 #Region "Theme Settings Invalid Message output code."
-    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(None provided)", Optional fullException As String = "(None provided)")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -769,6 +868,11 @@ Public Class UXLLauncher_ThemeEngine
         If My.Settings.debugmodeShowThemeEngineOutput = True Then
             ' First, identify this block of text as part of the theme engine
             ' and that it's output for invalid theme settings.
+
+            ' Second, remove the double-quotes from the custom theme path.
+            ' This was copied here so that it can be refered to in other
+            ' parts of this sub.
+            Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
 
             Debug.WriteLine("")
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
@@ -790,11 +894,34 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the custom theme" & vbCrLf &
                             "file specified for My.Settings.userCustomThemePath wasn't found. Please ensure that" & vbCrLf &
-                            "the filename below exists in the listed path. Quotation marks in the custom theme" & vbCrLf &
-                            "path are not supported.")
+                            "the filename below exists in the listed path. Double quotation marks in the custom theme" & vbCrLf &
+                            "path are not supported and are automatically removed at runtime.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "UXLLauncher.ThemeEngine.CustomThemesNotAllowed" Then
+                ' If custom themes are not supported, output it to the Immediate Window.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("Your administrator has disabled custom themes from being used in UXL Launcher." & vbCrLf &
+                                "This may be due to data protection policies put in place by your organization." & vbCrLf &
+                                vbCrLf &
+                                "If you believe you've received this message in error, you can try to modify the" & vbCrLf &
+                                "configuration files for UXL Launcher located in this folder:" & vbCrLf &
+                                My.Application.Info.DirectoryPath & vbCrLf &
+                                "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," & vbCrLf &
+                                "make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." & vbCrLf &
+                                "You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." & vbCrLf &
+                                "Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." & vbCrLf &
+                                "Afterward, restart UXL Launcher.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -811,7 +938,7 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -829,7 +956,7 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -846,7 +973,20 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path:" & vbCrLf & My.Settings.userCustomThemePath)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "System.UnauthorizedAccessException" Then
+                ' If the exception type is an unauthorized access exception, let the user know.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("Access to the custom theme file was denied.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -864,6 +1004,154 @@ Public Class UXLLauncher_ThemeEngine
     End Sub
 #End Region
 
+#Region "Get theme file info."
+    ' This code is based on this issue in the
+    ' GitHub repository:
+    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
+
+    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
+        ' This function takes the themeFile as input along with whether or not the themeFile
+        ' is a custom theme and returns information from the file including the theme's
+        ' title, author, description, and theme file version in one string for easy
+        ' display such as in the Options window.
+#Region "Objects to store theme info."
+        Dim themeFileReader As XmlDocument = New XmlDocument()
+        ' Theme file information properties.
+        Dim themeTitle As String = "(Not provided)"
+        Dim themeAuthor As String = "(Not provided)"
+        Dim themeDescription As String = "(Not provided)"
+        Dim themeVersion As String = "(Not provided)"
+        Dim themeUseThemeEngineVersion As Decimal = CDec(1.01)
+        ' The completed string for use wherever it's needed.
+        Dim themeDetailsComplete As String = "Please wait..."
+        ' Theme namespace manager.
+        Dim themeNamespaceManager As New XmlNamespaceManager(themeFileReader.NameTable)
+        themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
+#End Region
+
+#Region "Loading theme files."
+        If isCustomTheme = True Then
+            ' Code to run if the selected theme is a custom theme.
+            ' First, make sure the theme file exists.
+            ' Make sure the theme path and file exists and custom themes are allowed
+            ' to be used.
+            If File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
+                ' Load the custom theme file into the file reader.
+                Try
+                    themeFileReader.LoadXml(themeFile.OuterXml)
+                Catch ex As Xml.XmlException
+                    ' Catch XmlException.
+                    ' This can be caused by using the "None" theme that
+                    ' has purposefully invalid XML just to make sure there
+                    ' aren't any problems in the theme engine that might
+                    ' slip by when using valid XML.
+                End Try
+            ElseIf Not File.Exists(themeFileLocation) And My.Settings.allowCustomThemes = True Then
+                ' If the file doesn't exist but custom themes are allowed,
+                ' say that the Default theme will be used temporarily.
+                themeDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
+                                        themeFileLocation
+                Return themeDetailsComplete
+            ElseIf My.Settings.allowCustomThemes = False Then
+                ' If custom themes aren't allowed, let the user know.
+                themeDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
+                                       " This may be due to data protection policies put in place by your organization." &
+                                       " If you believe you've received this message in error, you can try to modify the" &
+                                       " configuration files for UXL Launcher located in this folder:" & vbCrLf &
+                                       My.Application.Info.DirectoryPath & vbCrLf & vbCrLf &
+                                       "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," &
+                                       " make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." &
+                                       " You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." &
+                                       " Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." &
+                                       " Afterward, restart UXL Launcher."
+                Return themeDetailsComplete
+            End If
+        Else
+            ' If the selected theme is a built-in theme, just load the file.
+            ' Catch an exception if the root element is missing.
+            ' This can be caused if the user tries to type in a specific name
+            ' into the theme list in the Options window that doesn't match a
+            ' theme file exactly.
+            Try
+                themeFileReader.LoadXml(themeFile.OuterXml)
+            Catch ex As System.Xml.XmlException
+            End Try
+        End If
+#End Region
+
+        ' Now that loading is done, get the theme info.
+        ' This code was copy-pasted from above to make work
+        ' a bit easier.
+#Region "Pull info from file."
+#Region "Pull Title theme element from XML."
+
+        ' Only pull the title element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+            themeTitle = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        Else
+            themeTitle = "(No title specified)"
+        End If
+#End Region
+
+#Region "Pull Description theme element from XML."
+        ' Only pull the description element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
+            themeDescription = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
+        Else
+            themeDescription = "(No description specified)"
+        End If
+#End Region
+
+#Region "Pull Author theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
+            themeAuthor = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
+        Else
+            themeAuthor = "(No author specified)"
+        End If
+#End Region
+
+#Region "Pull Version theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
+            themeVersion = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
+        Else
+            themeVersion = "(No version specified)"
+        End If
+#End Region
+
+#Region "Pull UseThemeEngineVersion element from XML."
+        ' Only pull the UseThemeEngineVersion element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
+            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
+            If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                themeUseThemeEngineVersion = CDec(1.01)
+
+                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                ' set it to whatever the version is specified in the theme file.
+            ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+            End If
+        Else
+            ' If the XML element is missing, manually force the value to be 1.01.
+            themeSheetUseThemeEngineVersion = CDec(1.01)
+        End If
+#End Region
+#End Region
+
+#Region "Put together theme info into one string."
+        ' Put each string together into one string to present to the user.
+        themeDetailsComplete = "Title: " & themeTitle & vbCrLf &
+                               "Description: " & themeDescription & vbCrLf &
+                               "Version: " & themeVersion & vbCrLf &
+                               "Author: " & themeAuthor & vbCrLf &
+                               "Theme Engine version to use: " & themeUseThemeEngineVersion
+#End Region
+        ' Show the user the completed string.
+        Return themeDetailsComplete
+    End Function
+#End Region
+
 End Class
 
 
@@ -876,6 +1164,10 @@ Public Class uxlProToolstripRenderer
     Inherits ToolStripProfessionalRenderer
 
     Private _BackColor As Color
+    ' "_DropdownBackColor" determines the colors in the menubar dropdown.
+    Private _DropdownBackColor As Color
+    Private _ImageMarginGradientStartColor As Color
+    Private _ImageMarginGradientEndColor As Color
     Private _ForeColor As Color
     Private _TextHighlightColor As Color
 
@@ -889,7 +1181,37 @@ Public Class uxlProToolstripRenderer
         End Set
     End Property
 
-    ' Get and set the forecolor for the menubar.
+    ' Get and set the backcolor for menubar dropdown items.
+    Public Property DropdownBackColor As Color
+        Get
+            Return _DropdownBackColor
+        End Get
+        Set(ByVal value As Color)
+            _DropdownBackColor = value
+        End Set
+    End Property
+
+    ' Get and set the start color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientStartColor As Color
+        Get
+            Return _ImageMarginGradientStartColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientStartColor = value
+        End Set
+    End Property
+
+    ' Get and set the end color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientEndColor As Color
+        Get
+            Return _ImageMarginGradientEndColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientEndColor = value
+        End Set
+    End Property
+
+    ' Get and set the text highlight color for the menubar.
     Public Property TextHighlightColor() As Color
         Get
             Return _TextHighlightColor
@@ -899,7 +1221,7 @@ Public Class uxlProToolstripRenderer
         End Set
     End Property
 
-    ' Get and set the text highlight color for the menubar.
+    ' Get and set the forecolor for the menubar.
     Public Property ForeColor() As Color
         Get
             Return _ForeColor
@@ -913,19 +1235,54 @@ Public Class uxlProToolstripRenderer
     Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
         MyBase.OnRenderToolStripBackground(e)
         Dim lightColor As Color = Me.BackColor
-        Using b As New LinearGradientBrush(e.AffectedBounds, lightColor, lightColor, LinearGradientMode.Vertical)
+        Using b As New SolidBrush(lightColor)
             e.Graphics.FillRectangle(b, e.AffectedBounds)
         End Using
     End Sub
 
+    ' Change the color for the menubar dropdowns.
+    ' Based on the code "Step 3" here:
+    ' http://www.vbforums.com/showthread.php?539578-Custom-VisualStudio2008-style-MenuStrip-and-ToolStrip-Renderer&p=3333808&viewfull=1#post3333808
+    Protected Overrides Sub OnRenderImageMargin(e As ToolStripRenderEventArgs)
+        MyBase.OnRenderImageMargin(e)
+        ' Colors and brushes for menuitem background color.
+        Dim DropDownItemBackColor As Color = Me.DropdownBackColor
+        Dim dropdownBrush As New SolidBrush(DropdownBackColor)
+        ' Colors and brushes for image margin gradiant.
+        Dim ImageMarginGradientBrush As New LinearGradientBrush(e.AffectedBounds, Me.ImageMarginGradientStartColor,
+                                                                Me.ImageMarginGradientEndColor, LinearGradientMode.Horizontal)
+        ' Make the menuitem background set to the theme's color.
+        Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
+        ' Fill the background of the menuitem.
+        e.Graphics.FillRectangle(dropdownBrush, itembgcolor)
+        ' Fill the item image margin gradient.
+        e.Graphics.FillRectangle(ImageMarginGradientBrush, e.AffectedBounds)
+    End Sub
+
     ' Change the colors for the menubar text.
-    Protected Overrides Sub OnRenderItemText(e As ToolStripItemTextRenderEventArgs)
-        If e.Item.Selected = True Then
-            e.TextColor = _TextHighlightColor
+    Protected Overrides Sub OnRenderItemText(ByVal e As ToolStripItemTextRenderEventArgs)
+        ' If the menuitem is selected or pressed, use the TextHighlightColor for its text color.
+        If e.Item.Selected = True Or e.Item.Pressed = True Then
+            e.TextColor = Me.TextHighlightColor
         Else
-            e.TextColor = _ForeColor
+            ' Otherwise, just use its regular ForeColor for text color.
+            e.TextColor = Me.ForeColor
         End If
         MyBase.OnRenderItemText(e)
+    End Sub
+
+    ' Make sure the button arrow is visible using the ForeColor property.
+    Protected Overrides Sub OnRenderArrow(e As ToolStripArrowRenderEventArgs)
+        ' If the menuitem is highlighted, make the arrow the same color
+        ' as the menuitem's TextHighlightColor.
+        If e.Item.Selected = True Or e.Item.Pressed = True Then
+            e.ArrowColor = Me.TextHighlightColor
+            ' If the menuitem is not highlighted, make the arrow the same
+            ' color as the menuitem's forecolor.
+        Else
+            e.ArrowColor = Me.ForeColor
+        End If
+        MyBase.OnRenderArrow(e)
     End Sub
 End Class
 #End Region

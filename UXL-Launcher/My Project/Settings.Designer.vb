@@ -140,7 +140,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Maudern")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Default")>  _
         Public Property userChosenTheme() As String
             Get
                 Return CType(Me("userChosenTheme"),String)
@@ -152,7 +152,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property enableThemeEngine() As Boolean
             Get
                 Return CType(Me("enableThemeEngine"),Boolean)
@@ -188,14 +188,49 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Drew\Documents\Visual Studio 2015\Projects\UXL-Launcher\testfolder\testT"& _ 
-            "heme.xml")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("""C:\Users\drewn\Documents\0GitHub\UXL-Launcher\testfolder\testTheme.xml""""")>  _
         Public Property userCustomThemePath() As String
             Get
                 Return CType(Me("userCustomThemePath"),String)
             End Get
             Set
                 Me("userCustomThemePath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property allowCustomThemes() As Boolean
+            Get
+                Return CType(Me("allowCustomThemes"),Boolean)
+            End Get
+            Set
+                Me("allowCustomThemes") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property userUseCustomStatusbarGreeting() As Boolean
+            Get
+                Return CType(Me("userUseCustomStatusbarGreeting"),Boolean)
+            End Get
+            Set
+                Me("userUseCustomStatusbarGreeting") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property userFirstNameForCustomStatusbarGreeting() As String
+            Get
+                Return CType(Me("userFirstNameForCustomStatusbarGreeting"),String)
+            End Get
+            Set
+                Me("userFirstNameForCustomStatusbarGreeting") = value
             End Set
         End Property
     End Class

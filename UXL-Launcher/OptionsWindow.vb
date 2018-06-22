@@ -28,6 +28,7 @@
 
 
 Imports System.ComponentModel
+Imports System.Xml
 
 Public Class aaformOptionsWindow
 
@@ -54,6 +55,65 @@ Public Class aaformOptionsWindow
         ElseIf My.Settings.installedViaMSIPackage = False Then
             checkboxMSIInstallMethod.Checked = False
         End If
+
+#Region "Personalization tab."
+        ' Load the settings for the Personalization tab.
+
+#Region "Theme Engine settings."
+        ' First, see if the theme engine is enabled.
+        If My.Settings.enableThemeEngine = True Then
+            ' If it is, check the "Enable Theme Engine" checkbox.
+            checkboxEnableThemeEngine.Checked = True
+        ElseIf My.Settings.enableThemeEngine = False Then
+            ' If it's not enabled, uncheck the checkbox.
+            checkboxEnableThemeEngine.Checked = False
+        End If
+
+        ' The theme info controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
+        ' The updating doesn't include the custom theme textbox or the theme list, so do that now.
+
+        ' First, define a delimiter to split the theme list string.
+        Dim delimiter As Char = ","c
+        ' Second, if the user's chosen theme isn't in My.Resources.themeList_TXT,
+        ' append the name of their chosen theme to a string that includes the
+        ' actual theme list.
+        Dim themeListAppendUserThemeName As String = My.Resources.themeList_TXT
+        If Not My.Resources.themeList_TXT.Contains(My.Settings.userChosenTheme) Then
+            ' This will add a comma to the end of the string, a new line, and
+            ' the current name of the user's theme, if necessary.
+            ' Only needed if the user's chosen theme isn't in the theme list.
+            themeListAppendUserThemeName = My.Resources.themeList_TXT & "," & vbCrLf &
+                                           My.Settings.userChosenTheme
+        Else
+            ' If the theme list does contain the chosen theme,
+            ' just use the theme list.
+            themeListAppendUserThemeName = My.Resources.themeList_TXT
+        End If
+        ' Third, get the theme list as a string without blank lines.
+        Dim themeListNotSplit As String = themeListAppendUserThemeName.Replace(vbCrLf, "")
+        ' Fourth, split the theme list with the delimiter.
+        Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
+
+        ' Add the range of the split theme list string
+        ' to the combobox theme list.
+        comboboxThemeList.Items.AddRange(themeListSplit)
+        ' Assign the data source of the combobox to the
+        ' split theme list string.
+        comboboxThemeList.DataSource = themeListSplit
+        ' Set the text of the theme list combobox to the
+        ' user's chosen theme.
+        comboboxThemeList.Text = My.Settings.userChosenTheme
+        ' Set the custom theme path textbox to the user's
+        ' configured custom theme path.
+        textboxCustomThemePath.Text = My.Settings.userCustomThemePath.Replace("""", "")
+
+        ' Next, enable (or disable, based on user settings) and update the controls.
+        enableOrDisableThemeEngineOptionsWindowControls()
+#End Region
+#Region "Custom statusbar greeting."
+
+#End Region
+#End Region
 #End Region
 
 
@@ -300,6 +360,204 @@ Public Class aaformOptionsWindow
             checkboxMSIInstallMethod.Enabled = False
         End If
     End Sub
+#End Region
+
+#Region "Windows edition choice linklabel."
+    Private Sub linklabelWindowsEditionLearnMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelWindowsEditionLearnMore.LinkClicked
+        ' Send the user to the information page for the Windows edition radiobuttons.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/115#issuecomment-395917017")
+    End Sub
+#End Region
+
+#Region "Linklabel for the 365/MSI install method checkboxes."
+    Private Sub linklabelCheckboxesToBeCombined_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelCheckboxesToBeCombined.LinkClicked
+        ' Send the user to the information page for the checkboxes
+        ' that will be combined.
+        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/100#issuecomment-395926431")
+    End Sub
+#End Region
+
+#Region "Personalization tab."
+#Region "Code that runs when theme list text updates."
+    Private Sub comboboxThemeList_TextChanged(sender As Object, e As EventArgs) Handles comboboxThemeList.TextChanged
+        ' When the theme list combobox text changes, get the info
+        ' for the theme that's currently selected in the combobox.
+
+        ' Code moved into its own sub to make calling easier.
+        updateThemeInfo()
+    End Sub
+    Private Sub comboboxThemeList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxThemeList.SelectedIndexChanged
+        ' This code is related to the comboboxThemeList_TextChanged
+        ' event handler above.
+
+        ' When the theme list combobox selected index changes
+        ' by the user doing something such as pressing
+        ' the up and down arrow keys, get the info
+        ' for the theme that's currently selected in the combobox.
+        updateThemeInfo()
+    End Sub
+
+    Private Sub updateThemeInfo()
+        ' This code was moved into its own sub to make
+        ' calling it from other places easier.
+        ' Basically, this code takes the text currently
+        ' in the theme list combobox and gets the theme info
+        ' for that theme and shows it to the user in the theme
+        ' info text box.
+        ' First, see if the theme list textbox isn't custom.
+
+        If Not comboboxThemeList.Text = "(Custom)" Then
+            ' First, disable the custom theme path textbox and the "Browse..."
+            ' button if the theme list combobox isn't "(Custom)"
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+
+            ' If it's not "(Custom)", send the text to the getThemeInfo function.
+            ' "Theme_XML" may need to be added to the theme text first.
+
+            ' Create a temporary XML document.
+            Dim tempXml As XmlDocument = New XmlDocument
+            ' Create a temporary string that adds "Theme_XML" or "_XML" as needed.
+            Dim tempThemeXmlFileType As String = ""
+            ' Load into the XML document the correct theme file.
+
+            ' If the theme name doesn't end with "Theme" and "_XML",
+            ' add "Theme_XML".
+            If Not comboboxThemeList.Text.EndsWith("Theme") And Not comboboxThemeList.Text.EndsWith("_XML") Then
+                tempThemeXmlFileType = "Theme_XML"
+                ' Otherwise, if there's no "_XML" at the end, add it.
+            ElseIf comboboxThemeList.Text.EndsWith("Theme") Then
+                tempThemeXmlFileType = "_XML"
+            Else
+                ' Otherwise, just make the string empty.
+                tempThemeXmlFileType = ""
+            End If
+
+            ' First, catch ArgumentNullException exceptions if, say,
+            ' the text in the theme list combobox isn't exactly correct
+            ' and doesn't match the theme file name.
+            Try
+                tempXml.LoadXml(My.Resources.ResourceManager.GetString(comboboxThemeList.Text & tempThemeXmlFileType))
+            Catch ex As System.ArgumentNullException
+                ' Also catch XmlException.
+                ' This can be caused by using the "None" theme that
+                ' has purposefully invalid XML just to make sure there
+                ' aren't any problems in the theme engine that might
+                ' slip by when using valid XML.
+            Catch ex As System.Xml.XmlException
+            End Try
+            ' Put the theme info into the theme info textbox.
+            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, False, "")
+
+            ' If the theme list textbox is "(Custom)", then use the custom theme path.
+        ElseIf comboboxThemeList.Text = "(Custom)" Then
+            ' First, enable the custom theme path textbox and the "Browse..."
+            ' button if the theme list combobox is "(Custom)" as long as custom
+            ' themes are allowed.
+            If My.Settings.allowCustomThemes = True Then
+                textboxCustomThemePath.Enabled = True
+                buttonCustomThemesBrowse.Enabled = True
+            End If
+
+                ' If it is "(Custom)", send the custom theme path below the theme list
+                ' to the getThemeInfo function.
+
+                ' This code has been moved to the sub below to be able to call it from
+                ' two places when needed.
+                customThemePathInfoUpdater()
+
+            End If
+    End Sub
+
+    Private Sub customThemePathInfoUpdater()
+        ' This code is the ElseIf comboboxThemeList.Text = "(Custom)"
+        ' theme info textbox updater from above, but moved here so that
+        ' it can also be called from the custom theme path textbox
+        ' TextChanged event.
+
+        ' First, make sure that the theme list is only using custom themes.
+        If comboboxThemeList.Text = "(Custom)" Then
+            ' Create a temporary XML document.
+            Dim tempXml As XmlDocument = New XmlDocument
+            ' Also create a temporary string that removes quotation marks.
+            ' This string takes the current text in the custom theme path
+            ' textbox and creates a new string replacing double-quotes.
+            Dim tempRemoveQuotesInPath As String = textboxCustomThemePath.Text.Replace("""", "")
+            ' Also replace text currently in the textbox with a string
+            ' that doesn't have double quotes.
+            textboxCustomThemePath.Text = tempRemoveQuotesInPath
+            ' Load into the XML document the correct theme file
+            ' if it exists.
+            If System.IO.File.Exists(tempRemoveQuotesInPath) Then
+                Try
+                    tempXml.Load(tempRemoveQuotesInPath)
+                    ' Catch XmlException.
+                    ' This can be caused by using the "None" theme that
+                    ' has purposefully invalid XML just to make sure there
+                    ' aren't any problems in the theme engine that might
+                    ' slip by when using valid XML.
+                Catch ex As System.Xml.XmlException
+                    ' Also catch UnauthorizedAccessException.
+                    ' If this exception occurs, it may be because
+                    ' a file was accessed that's not allowed to be accessed,
+                    ' such as a file in the Windows directory.
+                Catch ex As System.UnauthorizedAccessException
+                End Try
+            End If
+            ' Get the theme's info.
+            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, tempRemoveQuotesInPath)
+        End If
+    End Sub
+
+    Private Sub textboxCustomThemePath_TextChanged(sender As Object, e As EventArgs) Handles textboxCustomThemePath.TextChanged
+        ' When text in the custom theme path textbox is changed,
+        ' update the theme info textbox.
+
+        ' Code is in its own sub to make calling easier.
+        customThemePathInfoUpdater()
+    End Sub
+#End Region
+#Region "Code that runs when enabling/disabling theme engine checkbox."
+    Private Sub checkboxEnableThemeEngine_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxEnableThemeEngine.CheckedChanged
+        ' Enable or disable the theme engine-related controls when
+        ' the checkbox is checked or unchecked, respectively.
+        ' Afterward, update relevant controls.
+
+        ' Code moved to its own sub to make calling easier.
+        enableOrDisableThemeEngineOptionsWindowControls()
+    End Sub
+
+    Private Sub enableOrDisableThemeEngineOptionsWindowControls()
+        ' This sub enables or disables the theme engine-related
+        ' controls in the Options window based on whether the
+        ' checkbox to enable the theme engine is enabled or not.
+        If checkboxEnableThemeEngine.Checked = True Then
+            ' If it's checked, enable the controls.
+            comboboxThemeList.Enabled = True
+            textboxCustomThemePath.Enabled = True
+            buttonCustomThemesBrowse.Enabled = True
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        Else
+            ' Otherwise, disable the controls.
+            comboboxThemeList.Enabled = False
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+            textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
+        End If
+    End Sub
+#End Region
+#Region "Code that runs when clicking the Browse... button next to the custom theme path."
+    Private Sub buttonCustomThemesBrowse_Click(sender As Object, e As EventArgs) Handles buttonCustomThemesBrowse.Click
+        ' When the user clicks the "Browse..." button, show an open file dialog
+        ' that allows the user to browse to the theme file they want to use as
+        ' a custom theme and update the custom theme path textbox with their new
+        ' theme choice.
+        If openfiledialogBrowseCustomThemeFile.ShowDialog = DialogResult.OK Then
+            textboxCustomThemePath.Text = openfiledialogBrowseCustomThemeFile.FileName
+        End If
+    End Sub
+#End Region
 #End Region
 
 End Class
