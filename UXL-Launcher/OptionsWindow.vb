@@ -568,6 +568,50 @@ Public Class aaformOptionsWindow
         End If
     End Sub
 #End Region
+#Region "Custom statusbar greeting controls."
+#Region "Clicking the radio buttons for use default greeting or use custom greeting."
+    Private Sub radiobuttonCustomStatusbarGreeting_CheckedChanged(sender As Object, e As EventArgs) Handles radiobuttonCustomStatusbarGreeting.CheckedChanged
+        ' When the CheckChanged event fires on this control,
+        ' either enable or disable the firstname/nickname
+        ' textbox and the "Clear" button.
+
+        ' This is the sub for the "Use personalized greeting"
+        ' radio button.
+
+        ' Code moved to its own sub for easier modification.
+        enableOrDisableCustomStatusbarGreetingControls()
+    End Sub
+
+    Private Sub radiobuttonDefaultStatusbarGreeting_CheckedChanged(sender As Object, e As EventArgs) Handles radiobuttonDefaultStatusbarGreeting.CheckedChanged
+        ' When the CheckChanged event fires on this control,
+        ' either enable or disable the firstname/nickname
+        ' textbox and the "Clear" button.
+
+        ' This is the sub for the "Use default greeting"
+        ' radio button.
+
+        ' Code moved to its own sub for easier modification.
+        enableOrDisableCustomStatusbarGreetingControls()
+    End Sub
+
+    Private Sub enableOrDisableCustomStatusbarGreetingControls()
+        ' When the CheckChanged event fires on the related controls,
+        ' either enable or disable the firstname/nickname
+        ' textbox and the "Clear" button.
+        If radiobuttonCustomStatusbarGreeting.Checked = True Then
+            ' If the radio button to use the custom statusbar greeting
+            ' is checked, enable the firstname/nickname textbox and
+            ' the "Clear" button.
+            textboxFirstname.Enabled = True
+            buttonClearFirstname.Enabled = True
+        Else
+            ' Otherwise, disable those controls.
+            textboxFirstname.Enabled = False
+            buttonClearFirstname.Enabled = False
+        End If
+    End Sub
+#End Region
+#End Region
 #End Region
 
 End Class
