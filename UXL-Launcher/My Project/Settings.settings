@@ -21,7 +21,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowLabels" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
       <Value Profile="(Default)">Default</Value>
@@ -30,22 +30,22 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowThemeEngineOutput" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="hideWhenMinimized" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userCustomThemePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">"C:\Users\drewn\Documents\0GitHub\UXL-Launcher\testfolder\testTheme.xml""</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="allowCustomThemes" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userUseCustomStatusbarGreeting" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userFirstNameForCustomStatusbarGreeting" Type="System.String" Scope="User">
-      <Value Profile="(Default)">TestName</Value>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

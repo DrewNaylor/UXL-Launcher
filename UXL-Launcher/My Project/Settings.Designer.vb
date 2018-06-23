@@ -128,7 +128,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property debugmodeShowLabels() As Boolean
             Get
                 Return CType(Me("debugmodeShowLabels"),Boolean)
@@ -164,7 +164,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property debugmodeShowThemeEngineOutput() As Boolean
             Get
                 Return CType(Me("debugmodeShowThemeEngineOutput"),Boolean)
@@ -188,7 +188,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""C:\Users\drewn\Documents\0GitHub\UXL-Launcher\testfolder\testTheme.xml""""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property userCustomThemePath() As String
             Get
                 Return CType(Me("userCustomThemePath"),String)
@@ -212,7 +212,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property userUseCustomStatusbarGreeting() As Boolean
             Get
                 Return CType(Me("userUseCustomStatusbarGreeting"),Boolean)
@@ -224,7 +224,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("TestName")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property userFirstNameForCustomStatusbarGreeting() As String
             Get
                 Return CType(Me("userFirstNameForCustomStatusbarGreeting"),String)
