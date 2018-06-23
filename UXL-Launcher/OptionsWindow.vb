@@ -611,6 +611,14 @@ Public Class aaformOptionsWindow
         End If
     End Sub
 #End Region
+#Region "Clicking the Clear button next to the firstname textbox."
+    Private Sub buttonClearFirstname_Click(sender As Object, e As EventArgs) Handles buttonClearFirstname.Click
+        ' When this button is clicked, the firstname/nickname textbox
+        ' will be cleared and the focus will be set to the textbox.
+        textboxFirstname.Clear()
+        textboxFirstname.Focus()
+    End Sub
+#End Region
 #End Region
 #End Region
 
