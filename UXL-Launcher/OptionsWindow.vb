@@ -226,6 +226,7 @@ Public Class aaformOptionsWindow
 
         MessageBox.Show("Values reset to default. Click the Save button to save changes." & vbCrLf & "Note that Always On Top will" &
                         " not be reset to its default value," & vbCrLf & "along with any other settings modified outside this window." & vbCrLf &
+                        "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Reset UXL Launcher settings",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
     End Sub
@@ -350,6 +351,7 @@ Public Class aaformOptionsWindow
             aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
             ' Tell the user that settings were saved.
             MessageBox.Show("Settings saved." & vbCrLf &
+                        "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
             Me.Close()
         End If
