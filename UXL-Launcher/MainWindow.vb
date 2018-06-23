@@ -73,6 +73,8 @@ Public Class aaformMainWindow
         ' Put text in the titlebar.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
 
+        ' Update main window statusbar label text.
+        updateStatusbarText()
 
 #Region "Debug code for aaformMainWindow."
         ' Figure out whether or not to show the debug labels based on a setting.

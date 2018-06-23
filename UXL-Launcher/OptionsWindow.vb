@@ -349,6 +349,8 @@ Public Class aaformOptionsWindow
             OfficeLocater.combineStrings()
             ' Update the text in the main window's titlebar.
             aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
+            ' Update main window statusbar label text.
+            aaformMainWindow.updateStatusbarText()
             ' Tell the user that settings were saved.
             MessageBox.Show("Settings saved." & vbCrLf &
                         "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
