@@ -195,7 +195,6 @@
     <None Include="Resources\UXLLauncherInfo_TXT.txt" />
     <None Include="Resources\ThemeEngineInfo_TXT.txt" />
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
-    <None Include="Resources\themeList_TXT.txt" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
