@@ -307,6 +307,12 @@ Public Class aaformOptionsWindow
                 My.Settings.enableThemeEngine = False
             End If
 
+            ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
+            My.Settings.userChosenTheme = comboboxThemeList.Text
+
+            ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
+            My.Settings.userCustomThemePath = textboxCustomThemePath.Text
+
 #End Region
 
 #Region "This is where the settings get saved and things update."
