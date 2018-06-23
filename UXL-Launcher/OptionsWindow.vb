@@ -36,7 +36,10 @@ Public Class aaformOptionsWindow
     ' It's used when saving the settings to see if the theme engine should
     ' update the theme if this variable and the related My.Settings
     ' value are equal. If not, it won't update.
-    Dim boolIsThemeEngineEnabled As Boolean = My.Settings.enableThemeEngine
+
+    ' This is set to False by default and set to the related My.Settings
+    ' value on application start.
+    Friend Shared boolIsThemeEngineEnabled As Boolean = False
 
 #Region "Code to run when opening the Options window."
 

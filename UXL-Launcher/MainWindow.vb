@@ -36,6 +36,12 @@ Public Class aaformMainWindow
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ' Set the Options window boolean variable for the theme engine
+        ' to My.Settings.enableThemeEngine.
+        ' This ensures that the theme engine isn't used by accident when
+        ' saving settings in the Options window.
+        aaformOptionsWindow.boolIsThemeEngineEnabled = My.Settings.enableThemeEngine
+
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         OfficeLocater.combineStrings()
 
