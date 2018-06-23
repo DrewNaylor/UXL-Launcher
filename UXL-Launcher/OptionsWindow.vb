@@ -32,10 +32,16 @@ Imports System.Xml
 
 Public Class aaformOptionsWindow
 
+    ' Create a boolean variable that sees if the theme engine is enabled.
+    ' It's used when saving the settings to see if the theme engine should
+    ' update the theme if this variable and the related My.Settings
+    ' value are equal. If not, it won't update.
+    Dim boolIsThemeEngineEnabled As Boolean = My.Settings.enableThemeEngine
 
 #Region "Code to run when opening the Options window."
 
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
 
 
 #Region "Load the settings from My.Settings."
@@ -332,19 +338,21 @@ Public Class aaformOptionsWindow
             ' Save settings.
             My.Settings.Save()
             My.Settings.Reload()
+            ' Update the user's theme if the theme engine is enabled
+            ' and the boolean variable set at the beginning of this
+            ' class is set to True.
+            If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
+                UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            End If
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
             ' Update the text in the main window's titlebar.
             aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
-            ' Update the user's theme if the theme engine is enabled.
-            If My.Settings.enableThemeEngine = True Then
-                UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
-            End If
             ' Tell the user that settings were saved.
             MessageBox.Show("Settings saved.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
-                Me.Close()
-            End If
+            Me.Close()
+        End If
     End Sub
 #End Region
 
@@ -521,14 +529,14 @@ Public Class aaformOptionsWindow
                 buttonCustomThemesBrowse.Enabled = True
             End If
 
-                ' If it is "(Custom)", send the custom theme path below the theme list
-                ' to the getThemeInfo function.
+            ' If it is "(Custom)", send the custom theme path below the theme list
+            ' to the getThemeInfo function.
 
-                ' This code has been moved to the sub below to be able to call it from
-                ' two places when needed.
-                customThemePathInfoUpdater()
+            ' This code has been moved to the sub below to be able to call it from
+            ' two places when needed.
+            customThemePathInfoUpdater()
 
-            End If
+        End If
     End Sub
 
     Private Sub customThemePathInfoUpdater()
