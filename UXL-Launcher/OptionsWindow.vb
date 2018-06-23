@@ -192,6 +192,20 @@ Public Class aaformOptionsWindow
         ' Reset the MSI Install Method to unchecked.
         checkboxMSIInstallMethod.Checked = False
 
+        ' Reset the theme engine enabled status to disabled.
+        ' Note that this doesn't change the text of the theme
+        ' details textbox to say that the theme engine is disabled
+        ' yet.
+        checkboxEnableThemeEngine.Checked = False
+
+        ' Reset the theme to use to Default.
+        comboboxThemeList.Text = "Default"
+
+        ' Reset the custom theme path to empty.
+        textboxCustomThemePath.Clear()
+
+
+
         '
         ' This space reserved for more settings.
         '
