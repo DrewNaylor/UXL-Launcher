@@ -144,9 +144,6 @@
   <data name="Acknowledgements_RTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Acknowledgements-RTF.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="themeList_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\themeList_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="small_Outlook" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -6050,7 +6047,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="uxl_icon_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAOTSURBVEhLtVZZSJRRFNY22p7yoY2Ioo2CnoKiKKwetIIo
+        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAOTSURBVEhLtVZZSJRRFNY22p7yoY2Ioo2CnoKiKKwetIIo
         InqqJChblCitqHAp8KHUpEJtgYoW6k1abaIyyoyWUcdxGrdpxnEbdXR01Fmc0a9z7txp/tGZqYg+GP57
         z12+e84937kTVVBQgNLS0v/y472juKFEV78XVc0OaFscsDm80hoeg95h1FqcqGhyoKVnEMPDcoDAe48i
         qGt3YcvVeizL1CH3lQUuj2JFCLytsWNtdg1WX6jBC22PtPoQkoBx80Mnxh1UY9YJDV5975XW0TB3ubHp
@@ -6069,5 +6066,9 @@ This decimal is to be used for the About window when talking about what version 
         YII=
 </value>
     <comment>Icon used for Options button</comment>
+  </data>
+  <data name="themeList_TXT" xml:space="preserve">
+    <value>Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom)</value>
+    <comment>This is the theme list used in the Options window.</comment>
   </data>
 </root>

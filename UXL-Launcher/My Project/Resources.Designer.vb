@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-18T22:43:44
+        '''  Looks up a localized string similar to 2018-06-23T02:01:46
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -544,13 +544,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Default,
-        '''Eyesore,
-        '''Eyesore2,
-        '''Maudern,
-        '''ReturnOfNight,
-        '''RGB,
-        '''(Custom).
+        '''  Looks up a localized string similar to Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String
             Get
