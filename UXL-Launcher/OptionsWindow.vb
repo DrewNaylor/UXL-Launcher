@@ -201,7 +201,14 @@ Public Class aaformOptionsWindow
         ' Reset the theme engine enabled status to disabled.
         checkboxEnableThemeEngine.Checked = False
 
+        ' Reset the personalized statusbar firstname/nickname
+        ' textbox to empty.
+        textboxFirstname.Clear()
 
+        ' Reset the radio button that's checked for personalized
+        ' or default statusbar greeting to the default greeting
+        ' one.
+        radiobuttonDefaultStatusbarGreeting.Checked = True
 
 
 
