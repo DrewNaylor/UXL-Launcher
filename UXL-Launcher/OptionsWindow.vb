@@ -300,7 +300,7 @@ Public Class aaformOptionsWindow
             End If
 #End Region
 
-#Region "This is where the settings get saved."
+#Region "This is where the settings get saved and things update."
             ' Save settings.
             My.Settings.Save()
             My.Settings.Reload()
