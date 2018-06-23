@@ -313,6 +313,19 @@ Public Class aaformOptionsWindow
             ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
             My.Settings.userCustomThemePath = textboxCustomThemePath.Text
 
+            ' Set My.Settings.userUseCustomStatusbarGreeting to True or False based
+            ' on which radio button is selected.
+            If radiobuttonDefaultStatusbarGreeting.Checked = True Then
+                My.Settings.userUseCustomStatusbarGreeting = False
+            ElseIf radiobuttonCustomStatusbarGreeting.Checked = True Then
+                My.Settings.userUseCustomStatusbarGreeting = True
+            End If
+
+            ' Set the My.Settings value for the user's firstname/nickname
+            ' for personalized statusbar greetings to the textbox
+            ' for the name.
+            My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
+
 #End Region
 
 #Region "This is where the settings get saved and things update."
