@@ -298,6 +298,15 @@ Public Class aaformOptionsWindow
                     My.Settings.cpuIsSixtyFourBit = False
                 End If
             End If
+
+            ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
+            If checkboxEnableThemeEngine.Checked = True Then
+                My.Settings.enableThemeEngine = True
+            ElseIf checkboxEnableThemeEngine.Checked = False Then
+                ' If it's unchecked, set the My.Settings variable to False.
+                My.Settings.enableThemeEngine = False
+            End If
+
 #End Region
 
 #Region "This is where the settings get saved and things update."
