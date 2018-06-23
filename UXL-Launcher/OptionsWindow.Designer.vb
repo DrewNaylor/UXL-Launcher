@@ -479,10 +479,10 @@ Partial Class aaformOptionsWindow
         Me.labelCustomStatusbarGreeting.AutoSize = True
         Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(4, 16)
         Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
-        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(320, 26)
+        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(369, 26)
         Me.labelCustomStatusbarGreeting.TabIndex = 0
-        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "firstname or n" &
-    "ickname, or to use the default."
+        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
+    "ickname, or to use the default. Your name will not be used to identify you."
         '
         'groupboxAppearance
         '
