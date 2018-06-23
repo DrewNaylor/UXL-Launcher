@@ -120,6 +120,21 @@ Public Class aaformMainWindow
 #End Region
         ' End of Form1_Load sub.
     End Sub
+#Region "Update statusbar text."
+    Friend Sub updateStatusbarText()
+        ' This sub updates the statusbar text based on whether the
+        ' user wants to use the default statusbar greeting or
+        ' to use a custom one personalized with their firstname
+        ' or nickname.
+        If My.Settings.userUseCustomStatusbarGreeting = False Then
+            ' If the setting is false, use the default greeting.
+            statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to launch them and explore the UI."
+        ElseIf My.Settings.userUseCustomStatusbarGreeting = True Then
+            ' If the setting is true, use a personalized greeting.
+            statusbarLabelWelcomeText.Text = "Welcome back to UXL Launcher, " & My.Settings.userFirstNameForCustomStatusbarGreeting & "!"
+        End If
+    End Sub
+#End Region
 
 #Region "Hide when minimized code."
     Private Sub aaformMainWindow_Resize(sender As Object, e As EventArgs) Handles Me.Resize
