@@ -116,6 +116,10 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
+- If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
+
+- UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)
+
 <br>
 <br>
 
