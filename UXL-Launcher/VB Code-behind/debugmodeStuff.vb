@@ -43,6 +43,8 @@ Public Class debugmodeStuff
                 aaformMainWindow.debugLabelXmlThemeTitle.Show()
                 aaformMainWindow.debugLabelXmlThemeDescription.Show()
                 aaformMainWindow.debugLabelXmlThemeAuthor.Show()
+                aaformMainWindow.debugLabelXmlThemeFileVersion.Show()
+                aaformMainWindow.debugLabelXmlThemeUseThemeEngineVersion.Show()
                 ' Show theme tester buttons if the theme engine is enabled.
                 aaformMainWindow.debugButtonDefaultThemeSetter.Show()
                 aaformMainWindow.debugButtonTestThemeSetter.Show()
