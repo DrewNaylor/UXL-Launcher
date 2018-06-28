@@ -147,7 +147,7 @@ To run UXL Launcher, your computer requires the following:
 
 - To properly view the License and Acknowledgements in the About window, you'll need Internet Explorer if you're using Version 3.0. Version 3.1 removes this requirement.
 
-- Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems.
+- Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems. There may also be a warning message on first start about Windows Defender SmartScreen saying it "prevented an unrecognized app from starting. Running this app might put your PC at risk." You can click the "More info" link, then the "Run anyway" button if you want to use it, though this may not be allowed on corporate networks.
 
 ## Building UXL Launcher from Source: System Requirements and Guide
 
