@@ -41,14 +41,14 @@ Public Class aaformAboutWindow
         textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
 "Version " & My.Application.Info.Version.ToString & " " & My.Resources.isStable & " - Codename ""Personalizationizer 3000""" & vbCrLf &
 "App compiled at UTC: " & BuildDateString & vbCrLf &
-My.Resources.UXLLauncherInfo_TXT & vbCrLf & vbCrLf & ' UXL Launcher info for the About window such as copyright stuff.
+My.Resources.UXLLauncherInfo_TXT.Replace(vbLf, vbCrLf) & vbCrLf & vbCrLf & ' UXL Launcher info for the About window such as copyright stuff.
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
 "UXL Launcher Theme Engine" & vbCrLf &
 "Version " & My.Resources.themeEngineVersion & vbCrLf & ' Theme engine info.
-My.Resources.ThemeEngineInfo_TXT & vbCrLf & vbCrLf &
+My.Resources.ThemeEngineInfo_TXT.Replace(vbLf, vbCrLf) & vbCrLf & vbCrLf &
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
-My.Resources.ApplauncherIconsInfo_TXT ' Icon set for UXL Launcher info.
-)
+My.Resources.ApplauncherIconsInfo_TXT.Replace(vbLf, vbCrLf) ' Icon set for UXL Launcher info.
+) '  The Replace(vbLf, vbCrLf) function is required for text to have Windows line endings if building from downloading the master branch code from GitHub.
 
 
         ' Load the GPL document in the RTF Textbox control.

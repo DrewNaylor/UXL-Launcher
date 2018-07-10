@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-06-23T17:16:32
+        '''  Looks up a localized string similar to 2018-06-26T02:19:29
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -228,7 +228,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Release Candidate 1.
+        '''  Looks up a localized string similar to Stable.
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
@@ -508,12 +508,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Licensed under Gnu GPLv3+.
         '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
         '''
         '''The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
         '''Please be aware that UXL Launcher and the UXL Launcher Theme Engine are both unofficial and not made by Microsoft.
-        '''Note that the &quot;License&quot; tab contains only t [rest of string was truncated]&quot;;.
+        '''Note that the &quot;License&quot; tab contains only th [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ThemeEngineInfo_TXT() As String
             Get
@@ -560,14 +560,14 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Lincensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Licensed under Gnu GPLv3+.
         '''
         '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
         '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
         '''Note that the &quot;License&quot; tab contains only the license for UXL Launcher. Other licenses are linked to from each component&apos;s information area below, if they are different.
         '''
         '''License notice:
-        '''UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU G [rest of string was truncated]&quot;;.
+        '''UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU Ge [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property UXLLauncherInfo_TXT() As String
             Get

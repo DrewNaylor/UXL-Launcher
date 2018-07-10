@@ -3718,7 +3718,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>About window banner</comment>
   </data>
   <data name="isStable" xml:space="preserve">
-    <value>Release Candidate 1</value>
+    <value>Stable</value>
     <comment>This value is used for the titlebar to tell the user if this app is stable or not. "Git" means that it's in development. "Alpha" means it's an alpha. "Beta" means it's a beta. "Release Candidate" means Release Candidate, plus any numbers. "Stable" means a stable release. There may be other values to represent the current state of development on the project.</comment>
   </data>
   <data name="Word" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -6044,7 +6044,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="uxl_icon_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAOTSURBVEhLtVZZSJRRFNY22p7yoY2Ioo2CnoKiKKwetIIo
+        YQUAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAOTSURBVEhLtVZZSJRRFNY22p7yoY2Ioo2CnoKiKKwetIIo
         InqqJChblCitqHAp8KHUpEJtgYoW6k1abaIyyoyWUcdxGrdpxnEbdXR01Fmc0a9z7txp/tGZqYg+GP57
         z12+e84937kTVVBQgNLS0v/y472juKFEV78XVc0OaFscsDm80hoeg95h1FqcqGhyoKVnEMPDcoDAe48i
         qGt3YcvVeizL1CH3lQUuj2JFCLytsWNtdg1WX6jBC22PtPoQkoBx80Mnxh1UY9YJDV5975XW0TB3ubHp

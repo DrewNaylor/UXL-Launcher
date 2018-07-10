@@ -125,7 +125,11 @@ More information to come in the future! In the meantime, please check the reposi
 
 - If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
 
-- UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)
+- ~~UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)~~ Fixed in the current commit (will be updated when I have a commit number to place here)
+
+- If the main window is minimized, "Hide When Minimized" is enabled, and a program couldn't be found when using the Quickmenu to open a program, the error message won't be on top. [(issue #125)](https://github.com/DrewNaylor/UXL-Launcher/issues/125)
+
+- Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)
 
 <br>
 <br>
@@ -151,8 +155,6 @@ To run UXL Launcher, your computer requires the following:
 
   - 32-bit: 3 GB space free.
   - 64-bit: 3 GB space free.
-
-- To properly view the License and Acknowledgements in the About window, you'll need Internet Explorer if you're using Version 3.0. Version 3.1 removes this requirement.
 
 - Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems. There may also be a warning message on first start about Windows Defender SmartScreen saying it "prevented an unrecognized app from starting. Running this app might put your PC at risk." You can click the "More info" link, then the "Run anyway" button if you want to use it, though this may not be allowed on corporate networks.
 
