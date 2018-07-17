@@ -49,7 +49,9 @@ Public Class aaformMainWindow
         ' and having problems with the theme engine.
         ' Previously, if the theme engine had problems, the titlebar
         ' text wouldn't have been set properly here.
-        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
+
+        ' It was moved into its own sub to make it easier to update.
+        updateTitlebarText()
 
         ' Update main window statusbar label text.
         updateStatusbarText()
@@ -150,6 +152,15 @@ Public Class aaformMainWindow
             ' If the setting is true, use a personalized greeting.
             statusbarLabelWelcomeText.Text = "Welcome back to UXL Launcher, " & My.Settings.userFirstNameForCustomStatusbarGreeting & "!"
         End If
+    End Sub
+#End Region
+
+#Region "Update titlebar text."
+    Friend Sub updateTitlebarText()
+        ' When called, this updates the titlebar text of the main window.
+        ' Moved into its own sub so that it can be updated in one place.
+        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString &
+    " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
     End Sub
 #End Region
 
