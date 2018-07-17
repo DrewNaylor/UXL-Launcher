@@ -110,7 +110,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-07-17T04:36:56
+        '''  Looks up a localized string similar to  - Codename &quot;Bah Humbug&quot;.
+        '''</summary>
+        Public ReadOnly Property appVersionCodename() As String
+            Get
+                Return ResourceManager.GetString("appVersionCodename", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 2018-07-17T23:40:21
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String

@@ -39,7 +39,7 @@ Public Class aaformAboutWindow
 
         ' Put the text in the About box on launch.
         textboxAboutApp.Text = ("UXL Launcher - Unified eXecutable Launcher" & vbCrLf &
-"Version " & My.Application.Info.Version.ToString & " " & My.Resources.isStable & " - Codename ""Personalizationizer 3000""" & vbCrLf &
+"Version " & My.Application.Info.Version.ToString & " " & My.Resources.isStable & My.Resources.appVersionCodename & vbCrLf &
 "App compiled at UTC: " & BuildDateString & vbCrLf &
 My.Resources.UXLLauncherInfo_TXT.Replace(vbLf, vbCrLf) & vbCrLf & vbCrLf & ' UXL Launcher info for the About window such as copyright stuff.
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
