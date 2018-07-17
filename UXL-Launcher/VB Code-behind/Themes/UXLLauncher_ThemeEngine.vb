@@ -117,26 +117,38 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Pull UseThemeEngineVersion element from XML."
 
-        ' Only pull the UseThemeEngineVersion element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
-            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
-            If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
-                themeSheetUseThemeEngineVersion = CDec(1.01)
-                debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+        ' If the value in the theme file isn't a decimal,
+        ' set it to 1.01 in the Catch part of this Try...Catch block.
+        ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/126
+        Try
+            ' Only pull the UseThemeEngineVersion element from XML if it exists.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
+                ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
+                If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                    themeSheetUseThemeEngineVersion = CDec(1.01)
+                    debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
 
-                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
-                ' set it to whatever the version is specified in the theme file.
-            ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
-                themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+                    ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                    ' set it to whatever the version is specified in the theme file.
+                ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                    themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+                End If
+            Else
+                ' If the XML element is missing, manually force the value to be 1.01.
+                themeSheetUseThemeEngineVersion = CDec(1.01)
                 debugmodeStuff.updateDebugLabels()
                 debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
             End If
-        Else
-            ' If the XML element is missing, manually force the value to be 1.01.
+        Catch ex As System.InvalidCastException
+            ' Catch invalid numbers as referenced in this issue:
+            ' https://github.com/DrewNaylor/UXL-Launcher/issues/126
+            ' This will force the themeSheetUseThemeEngineVersion decimal to be
+            ' set to be 1.01 if this exception occurs.
+
             themeSheetUseThemeEngineVersion = CDec(1.01)
-            debugmodeStuff.updateDebugLabels()
-            debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
-        End If
+        End Try
 
 #End Region
 
