@@ -36,14 +36,29 @@ Public Class aaformMainWindow
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ' Run the code in the combineStrings sub in OfficeLocater.vb
+        ' This has to be run before changing the titlebar text because
+        ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
+        ' string.
+        OfficeLocater.combineStrings()
+
+        ' Put text in the titlebar.
+        ' Placing this code here ensures the titlebar isn't as
+        ' likely to get messed up and not have its proper text
+        ' as opposed to running it after running the theme engine
+        ' and having problems with the theme engine.
+        ' Previously, if the theme engine had problems, the titlebar
+        ' text wouldn't have been set properly here.
+        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
+
+        ' Update main window statusbar label text.
+        updateStatusbarText()
+
         ' Set the Options window boolean variable for the theme engine
         ' to My.Settings.enableThemeEngine.
         ' This ensures that the theme engine isn't used by accident when
         ' saving settings in the Options window.
         aaformOptionsWindow.boolIsThemeEngineEnabled = My.Settings.enableThemeEngine
-
-        ' Run the code in the combineStrings sub in OfficeLocater.vb
-        OfficeLocater.combineStrings()
 
 #Region "Start the theme engine."
 
@@ -75,12 +90,6 @@ Public Class aaformMainWindow
 
 
 #End Region
-
-        ' Put text in the titlebar.
-        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
-
-        ' Update main window statusbar label text.
-        updateStatusbarText()
 
 #Region "Debug code for aaformMainWindow."
         ' Figure out whether or not to show the debug labels based on a setting.
