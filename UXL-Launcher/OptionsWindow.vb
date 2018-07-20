@@ -406,19 +406,38 @@ Public Class aaformOptionsWindow
         ' suggested: <http://stackoverflow.com/a/2256926>
 
         Dim msgResult As Integer = MessageBox.Show("Would you like to test your UXL Launcher settings?" &
-                        " This will save your settings and attempt to launch the Office Language Options app." & vbCrLf &
+                        " This will save your settings and attempt to find the Office Language Preferences app" &
+                        " in the location configured based on your settings." & vbCrLf &
                         "" & vbCrLf &
-                        "If you choose to test your settings and no message appears, assume that it worked. " &
+                        "If you choose to test your settings and the file is found, a message saying this will appear and you shouldn't have to change your settings. " &
                         "However, you might need to adjust your settings if you see a message saying that we couldn't find the file." & vbCrLf &
-                        "" & vbCrLf &
-                        "Close the Office Language Preferences window if it appears." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close after your settings are saved.",
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
-            Me.Hide()
-            LaunchApp.LaunchOfficeLangPrefs()
+            Me.Hide() ' This Me.Hide() might not be necessary anymore since the Options window gets closed after saving settings, but I don't know. This line will be removed if it's definately not required.
+            ' Now, try to see if SETLANG.EXE is located in the configured directory.
+            ' If it is found, show the user a few of the file's properties.
+            ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
+            If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
+                ' If the file for Office Language Preferences was found, tell the user.
+                MessageBox.Show(Me, "Office Language Preferences has been found in the configured location." &
+                                " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office.",
+                                "Test settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                ' If it's not found, let the user know and give them the option to open
+                ' the Options window to change their settings if they want to.
+                Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." &
+                                                                                   " Would you like to open the Options window to change your settings?",
+                                                                                   "Test settings", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+                ' If the user clicks "Yes", open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+                If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
+                    Dim forceOptionsWindowTab As New aaformOptionsWindow
+                    forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                    forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                End If
+            End If
         End If
     End Sub
 #End Region

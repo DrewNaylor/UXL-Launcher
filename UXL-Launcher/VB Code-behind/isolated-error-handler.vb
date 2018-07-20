@@ -35,7 +35,7 @@ Public Class isolated_error_handler
         Catch ex As System.ComponentModel.Win32Exception
             ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
             ' go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the location specified in the Options window." &
+            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the configured location." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message, "Couldn't find file",
@@ -43,6 +43,7 @@ Public Class isolated_error_handler
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
+                ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
                 Dim forceOptionsWindowTab As New aaformOptionsWindow
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog(aaformMainWindow)
