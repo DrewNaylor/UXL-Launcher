@@ -416,7 +416,7 @@ Public Class aaformOptionsWindow
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
-            Me.Hide()
+            Me.Hide() ' This Me.Hide() might not be necessary anymore since the Options window gets closed after saving settings, but I don't know. This line will be removed if it's definately not required.
             ' Now, try to see if SETLANG.EXE is located in the configured directory.
             ' If it is found, show the user a few of the file's properties.
             ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
