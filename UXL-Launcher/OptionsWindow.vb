@@ -409,7 +409,7 @@ Public Class aaformOptionsWindow
                         " This will save your settings and attempt to find the Office Language Preferences app" & vbCrLf &
                         "in the location configured based on your settings." & vbCrLf &
                         "" & vbCrLf &
-                        "If you choose to test your settings and the file is found, a description of the file will appear. " &
+                        "If you choose to test your settings and the file is found, a message saying this will appear and you shouldn't have to change your settings. " &
                         "However, you might need to adjust your settings if you see a message saying that we couldn't find the file." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close after your settings are saved.",
@@ -421,9 +421,8 @@ Public Class aaformOptionsWindow
             ' If it is found, show the user a few of the file's properties.
             ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
             If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
-                ' If the file for Office Language Preferences was found, tell the user
-                ' and display some file info about it.
-                MessageBox.Show("Found it!")
+                ' If the file for Office Language Preferences was found, tell the user.
+                MessageBox.Show("Office Language Preferences has been found in the configured location. You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office.")
             Else
                 MessageBox.Show("Didn't find it...")
             End If
