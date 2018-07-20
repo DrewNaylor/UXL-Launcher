@@ -406,19 +406,23 @@ Public Class aaformOptionsWindow
         ' suggested: <http://stackoverflow.com/a/2256926>
 
         Dim msgResult As Integer = MessageBox.Show("Would you like to test your UXL Launcher settings?" &
-                        " This will save your settings and attempt to launch the Office Language Options app." & vbCrLf &
+                        " This will save your settings and attempt to find the Office Language Preferences app" & vbCrLf &
+                        "in the location configured based on your settings." & vbCrLf &
                         "" & vbCrLf &
-                        "If you choose to test your settings and no message appears, assume that it worked. " &
+                        "If you choose to test your settings and the file is found, a description of the file will appear. " &
                         "However, you might need to adjust your settings if you see a message saying that we couldn't find the file." & vbCrLf &
-                        "" & vbCrLf &
-                        "Close the Office Language Preferences window if it appears." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close after your settings are saved.",
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
             Me.Hide()
-            LaunchApp.LaunchOfficeLangPrefs()
+            ' Now, try to see if SETLANG.EXE is located in the configured directory.
+            ' If it is found, show the user a few of the file's properties.
+            ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
+            If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "\SETLANG.EXE") Then
+                MessageBox.Show("Found it!")
+            End If
         End If
     End Sub
 #End Region
