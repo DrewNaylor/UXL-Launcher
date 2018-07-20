@@ -431,7 +431,7 @@ Public Class aaformOptionsWindow
                 Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." &
                                                                                    " Would you like to open the Options window to change your settings?",
                                                                                    "Test settings", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
-                ' If the user clicks "Yes", open the Options window.
+                ' If the user clicks "Yes", open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
                 If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
                     Dim forceOptionsWindowTab As New aaformOptionsWindow
                     forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
