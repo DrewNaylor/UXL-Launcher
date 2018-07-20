@@ -422,7 +422,9 @@ Public Class aaformOptionsWindow
             ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
             If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
                 ' If the file for Office Language Preferences was found, tell the user.
-                MessageBox.Show("Office Language Preferences has been found in the configured location. You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office.")
+                MessageBox.Show("Office Language Preferences has been found in the configured location." &
+                                " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office.",
+                                "Test settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 MessageBox.Show("Didn't find it...")
             End If
