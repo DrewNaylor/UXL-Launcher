@@ -426,6 +426,8 @@ Public Class aaformOptionsWindow
                                 " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office.",
                                 "Test settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
+                ' If it's not found, let the user know and give them the option to open
+                ' the Options window to change their settings if they want to.
                 MessageBox.Show("Didn't find it...")
             End If
         End If
