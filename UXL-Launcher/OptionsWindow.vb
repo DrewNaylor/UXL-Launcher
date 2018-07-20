@@ -406,8 +406,8 @@ Public Class aaformOptionsWindow
         ' suggested: <http://stackoverflow.com/a/2256926>
 
         Dim msgResult As Integer = MessageBox.Show("Would you like to test your UXL Launcher settings?" &
-                        " This will save your settings and attempt to find the Office Language Preferences app" & vbCrLf &
-                        "in the location configured based on your settings." & vbCrLf &
+                        " This will save your settings and attempt to find the Office Language Preferences app" &
+                        " in the location configured based on your settings." & vbCrLf &
                         "" & vbCrLf &
                         "If you choose to test your settings and the file is found, a message saying this will appear and you shouldn't have to change your settings. " &
                         "However, you might need to adjust your settings if you see a message saying that we couldn't find the file." & vbCrLf &
