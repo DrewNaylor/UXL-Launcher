@@ -428,8 +428,8 @@ Public Class aaformOptionsWindow
             Else
                 ' If it's not found, let the user know and give them the option to open
                 ' the Options window to change their settings if they want to.
-                Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." & vbCrLf &
-                                                                                   "Would you like to open the Options window to change your settings?",
+                Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." &
+                                                                                   " Would you like to open the Options window to change your settings?",
                                                                                    "Test settings", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
                 ' If the user clicks "Yes", open the Options window.
                 If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
