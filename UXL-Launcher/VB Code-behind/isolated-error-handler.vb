@@ -43,6 +43,7 @@ Public Class isolated_error_handler
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
+                ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
                 Dim forceOptionsWindowTab As New aaformOptionsWindow
                 forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
                 forceOptionsWindowTab.ShowDialog(aaformMainWindow)
