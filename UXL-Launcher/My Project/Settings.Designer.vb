@@ -116,19 +116,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property installedViaMSIPackage() As Boolean
-            Get
-                Return CType(Me("installedViaMSIPackage"),Boolean)
-            End Get
-            Set
-                Me("installedViaMSIPackage") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property debugmodeShowLabels() As Boolean
             Get
                 Return CType(Me("debugmodeShowLabels"),Boolean)

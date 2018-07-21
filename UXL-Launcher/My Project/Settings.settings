@@ -17,11 +17,8 @@
     <Setting Name="userOfficeVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)">14</Value>
     </Setting>
-    <Setting Name="installedViaMSIPackage" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="debugmodeShowLabels" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="userChosenTheme" Type="System.String" Scope="User">
       <Value Profile="(Default)">Default</Value>
