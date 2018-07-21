@@ -45,7 +45,10 @@ Public Class aaformOptionsWindow
 
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
+        ' Tell the user that the MSI Install Method checkbox will be removed completely
+        ' in a future commit and no longer does anything.
+        checkboxMSIInstallMethod.Text = checkboxMSIInstallMethod.Text & " (no longer used; will be removed soon)"
+        checkboxMSIInstallMethod.Enabled = False
 
 #Region "Load the settings from My.Settings."
         ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
@@ -56,13 +59,6 @@ Public Class aaformOptionsWindow
             checkboxO365InstallMethod.Checked = True
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             checkboxO365InstallMethod.Checked = False
-        End If
-
-        ' Load the user's settings for My.Settings.installedViaMSIPackage.
-        If My.Settings.installedViaMSIPackage = True Then
-            checkboxMSIInstallMethod.Checked = True
-        ElseIf My.Settings.installedViaMSIPackage = False Then
-            checkboxMSIInstallMethod.Checked = False
         End If
 
 #Region "Personalization tab."
@@ -198,9 +194,6 @@ Public Class aaformOptionsWindow
         ' Reset the CPUType radio buttons to 64-bit.
         radiobuttonCPUIs64Bit.Checked = True
 
-        ' Reset the MSI Install Method to unchecked.
-        checkboxMSIInstallMethod.Checked = False
-
         ' Reset the theme to use to Default.
         comboboxThemeList.Text = "Default"
 
@@ -272,14 +265,6 @@ Public Class aaformOptionsWindow
                 My.Settings.userHasOfficeThreeSixFive = True
             ElseIf checkboxO365InstallMethod.Checked = False Then
                 My.Settings.userHasOfficeThreeSixFive = False
-            End If
-
-            ' My.Settings.installedViaMSIPackage will be set based on
-            ' the .Checked state of the checkboxMSIInstallMethod.
-            If checkboxMSIInstallMethod.Checked = True Then
-                My.Settings.installedViaMSIPackage = True
-            ElseIf checkboxMSIInstallMethod.Checked = False Then
-                My.Settings.installedViaMSIPackage = False
             End If
 
             ' Set My.Settings.userOfficeVersion to a string based on whatever
@@ -438,22 +423,6 @@ Public Class aaformOptionsWindow
                     forceOptionsWindowTab.ShowDialog(aaformMainWindow)
                 End If
             End If
-        End If
-    End Sub
-#End Region
-
-#Region "Workaround Microsoft's weird decision to put Office 2013 C2R in a different folder from MSI and change available checkboxes."
-    Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
-        ' When the user chooses their Office version, if the version is set to Office 2013, 
-        ' make the Office 365 install method checkbox get disabled and show the MSI install
-        ' method checkbox. If Office 2013 isn't selected, then hide the MSI install method
-        ' checkbox and enable the Office 365 install method checkbox.
-        If comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-            checkboxO365InstallMethod.Enabled = True
-            checkboxMSIInstallMethod.Enabled = False
-        Else
-            checkboxO365InstallMethod.Enabled = True
-            checkboxMSIInstallMethod.Enabled = False
         End If
     End Sub
 #End Region
