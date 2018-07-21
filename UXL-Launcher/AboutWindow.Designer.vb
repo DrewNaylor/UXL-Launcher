@@ -54,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -234,7 +234,7 @@ Partial Class aaformAboutWindow
         Me.tabpageAcknowledgments.Padding = New System.Windows.Forms.Padding(2)
         Me.tabpageAcknowledgments.Size = New System.Drawing.Size(520, 407)
         Me.tabpageAcknowledgments.TabIndex = 4
-        Me.tabpageAcknowledgments.Text = "Acknowledgments"
+        Me.tabpageAcknowledgments.Text = "Acknowledgements"
         Me.tabpageAcknowledgments.UseVisualStyleBackColor = True
         '
         'rtftextboxAcknowledgements
