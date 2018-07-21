@@ -91,6 +91,8 @@ Public Class OfficeLocater
             & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
+
+            ' Remember to add code for Office 2019.
         End If
 
 
