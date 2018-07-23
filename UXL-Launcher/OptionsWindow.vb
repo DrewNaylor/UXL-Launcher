@@ -403,7 +403,9 @@ Public Class aaformOptionsWindow
             If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
                 ' If the file for Office Language Preferences was found, tell the user.
                 MessageBox.Show(Me, "Office Language Preferences has been found in the configured location." &
-                                " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office.",
+                                " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office." & vbCrLf &
+                                vbCrLf &
+                                "Configured location: " & OfficeLocater.fullLauncherCodeString,
                                 "Test settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 ' If it's not found, let the user know and give them the option to open
