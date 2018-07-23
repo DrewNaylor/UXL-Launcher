@@ -186,9 +186,9 @@ Partial Class aaformOptionsWindow
         Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(115, 108)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(139, 17)
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 17)
         Me.checkboxO365InstallMethod.TabIndex = 3
-        Me.checkboxO365InstallMethod.Text = "I installed via Office 365"
+        Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility"
         Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
         '
