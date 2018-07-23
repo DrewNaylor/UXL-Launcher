@@ -29,9 +29,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
-        Me.linklabelCheckboxesToBeCombined = New System.Windows.Forms.LinkLabel()
         Me.labelOfficeInstallMethodDescription = New System.Windows.Forms.Label()
-        Me.checkboxMSIInstallMethod = New System.Windows.Forms.CheckBox()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
@@ -66,7 +64,6 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
-        Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
@@ -159,9 +156,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
-        Me.groupboxOfficeVersion.Controls.Add(Me.linklabelCheckboxesToBeCombined)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeInstallMethodDescription)
-        Me.groupboxOfficeVersion.Controls.Add(Me.checkboxMSIInstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
@@ -174,18 +169,6 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
         '
-        'linklabelCheckboxesToBeCombined
-        '
-        Me.linklabelCheckboxesToBeCombined.AutoSize = True
-        Me.linklabelCheckboxesToBeCombined.LinkArea = New System.Windows.Forms.LinkArea(55, 13)
-        Me.linklabelCheckboxesToBeCombined.Location = New System.Drawing.Point(112, 145)
-        Me.linklabelCheckboxesToBeCombined.Name = "linklabelCheckboxesToBeCombined"
-        Me.linklabelCheckboxesToBeCombined.Size = New System.Drawing.Size(224, 30)
-        Me.linklabelCheckboxesToBeCombined.TabIndex = 6
-        Me.linklabelCheckboxesToBeCombined.TabStop = True
-        Me.linklabelCheckboxesToBeCombined.Text = "These two checkboxes will be combined in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "version 3.2. Learn more..."
-        Me.linklabelCheckboxesToBeCombined.UseCompatibleTextRendering = True
-        '
         'labelOfficeInstallMethodDescription
         '
         Me.labelOfficeInstallMethodDescription.AutoSize = True
@@ -195,19 +178,6 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(191, 13)
         Me.labelOfficeInstallMethodDescription.TabIndex = 5
         Me.labelOfficeInstallMethodDescription.Text = "My Microsoft Office installation method:"
-        '
-        'checkboxMSIInstallMethod
-        '
-        Me.checkboxMSIInstallMethod.AutoSize = True
-        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(115, 126)
-        Me.checkboxMSIInstallMethod.Margin = New System.Windows.Forms.Padding(2)
-        Me.checkboxMSIInstallMethod.Name = "checkboxMSIInstallMethod"
-        Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(109, 17)
-        Me.checkboxMSIInstallMethod.TabIndex = 4
-        Me.checkboxMSIInstallMethod.Text = "I installed via MSI"
-        Me.tooltipMSIInstallMethodWorkaround.SetToolTip(Me.checkboxMSIInstallMethod, "This option is only used when Office 2013 is chosen above." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Leave this unchecked " &
-        "if you don't know what the MSI install" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "method for Microsoft Office is.")
-        Me.checkboxMSIInstallMethod.UseVisualStyleBackColor = True
         '
         'checkboxO365InstallMethod
         '
@@ -656,9 +626,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
-    Friend WithEvents checkboxMSIInstallMethod As CheckBox
     Friend WithEvents labelOfficeInstallMethodDescription As Label
-    Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
     Friend WithEvents tooltipO365InstallMethod As ToolTip
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
@@ -672,7 +640,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonCustomThemesBrowse As Button
     Friend WithEvents textboxCustomThemePath As TextBox
     Friend WithEvents labelCustomThemePath As Label
-    Friend WithEvents linklabelCheckboxesToBeCombined As LinkLabel
     Friend WithEvents groupboxStatusbar As GroupBox
     Friend WithEvents labelCustomStatusbarGreeting As Label
     Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton

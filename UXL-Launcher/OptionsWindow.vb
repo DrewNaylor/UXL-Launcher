@@ -45,11 +45,6 @@ Public Class aaformOptionsWindow
 
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Tell the user that the MSI Install Method checkbox will be removed completely
-        ' in a future commit and no longer does anything.
-        checkboxMSIInstallMethod.Text = checkboxMSIInstallMethod.Text & " (no longer used; will be removed soon)"
-        checkboxMSIInstallMethod.Enabled = False
-
 #Region "Load the settings from My.Settings."
         ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
@@ -431,14 +426,6 @@ Public Class aaformOptionsWindow
     Private Sub linklabelWindowsEditionLearnMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelWindowsEditionLearnMore.LinkClicked
         ' Send the user to the information page for the Windows edition radiobuttons.
         Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/115#issuecomment-395917017")
-    End Sub
-#End Region
-
-#Region "Linklabel for the 365/MSI install method checkboxes."
-    Private Sub linklabelCheckboxesToBeCombined_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelCheckboxesToBeCombined.LinkClicked
-        ' Send the user to the information page for the checkboxes
-        ' that will be combined.
-        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/100#issuecomment-395926431")
     End Sub
 #End Region
 
