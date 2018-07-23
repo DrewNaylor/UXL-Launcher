@@ -23,6 +23,7 @@ Partial Class aaformOptionsWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformOptionsWindow))
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.buttonCancel = New System.Windows.Forms.Button()
@@ -188,7 +189,7 @@ Partial Class aaformOptionsWindow
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(139, 17)
         Me.checkboxO365InstallMethod.TabIndex = 3
         Me.checkboxO365InstallMethod.Text = "I installed via Office 365"
-        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, "If you're using Office 2016, there's a good chance you installed via Office 365." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If you're using Office 2010, you probably didn't install via Office 365.")
+        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
         '
         'labelUserHasThisOfficeVersion
@@ -563,6 +564,12 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 2
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
+        '
+        'tooltipO365InstallMethod
+        '
+        Me.tooltipO365InstallMethod.AutoPopDelay = 32766
+        Me.tooltipO365InstallMethod.InitialDelay = 500
+        Me.tooltipO365InstallMethod.ReshowDelay = 100
         '
         'openfiledialogBrowseCustomThemeFile
         '

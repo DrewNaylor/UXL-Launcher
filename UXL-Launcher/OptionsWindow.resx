@@ -120,6 +120,20 @@
   <metadata name="tooltipO365InstallMethod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>277, 21</value>
   </metadata>
+  <data name="checkboxO365InstallMethod.ToolTip" xml:space="preserve">
+    <value>Check this box if you use a retail copy of Office or one from Office 365, or are otherwise having trouble
+even with all the other settings configured properly.
+
+Some versions of Office, such as Office 2019, can only be installed for regular users with Click-to-Run,
+so this setting will be automatically enabled if those versions are selected in the dropdown box above.
+
+On some versions of Office such as Office 2016, Microsoft places the EXE files in a slightly different location
+from older versions of Office. This is due to a technology called 'Click-to-Run', or 'C2R' for short.
+This option uses that folder instead of the default.</value>
+  </data>
+  <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>469, 21</value>
+  </metadata>
   <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>469, 21</value>
   </metadata>
