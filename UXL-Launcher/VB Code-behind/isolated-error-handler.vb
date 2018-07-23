@@ -38,7 +38,9 @@ Public Class isolated_error_handler
             Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the configured location." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
-                "Full error message: " & ex.Message, "Couldn't find file",
+                "Full error message: " & ex.Message & vbCrLf &
+                vbCrLf &
+                "Configured location: " & OfficeLocater.fullLauncherCodeString, "Couldn't find " & launcherErrorHandler_ExeFriendlyName,
             MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
