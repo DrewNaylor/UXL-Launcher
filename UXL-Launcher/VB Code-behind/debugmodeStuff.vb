@@ -37,7 +37,7 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForofficeInstallMethodString.Show()
             aaformMainWindow.debugLabelForuserOfficeVersion.Show()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Show()
-            aaformMainWindow.debugLabelForMSIInstall.Show()
+            aaformMainWindow.debugLabelForUserHasOfficeThreeSixFive.Show()
             ' Show theme debug labels if the theme engine is enabled.
             If My.Settings.enableThemeEngine = True Then
                 aaformMainWindow.debugLabelXmlThemeTitle.Show()
@@ -67,7 +67,7 @@ Public Class debugmodeStuff
             aaformMainWindow.debugLabelForofficeInstallMethodString.Hide()
             aaformMainWindow.debugLabelForuserOfficeVersion.Hide()
             aaformMainWindow.debugTextboxForFullLauncherCodeString.Hide()
-            aaformMainWindow.debugLabelForMSIInstall.Hide()
+            aaformMainWindow.debugLabelForUserHasOfficeThreeSixFive.Hide()
             ' Theme tester buttons.
             aaformMainWindow.debugButtonDefaultThemeSetter.Hide()
             aaformMainWindow.debugButtonTestThemeSetter.Hide()
@@ -103,8 +103,8 @@ Public Class debugmodeStuff
 
         ' Debug label for userOfficeVersion.
         aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
-        ' Debug label for MSIInstall.
-        aaformMainWindow.debugLabelForMSIInstall.Text = "userHasOfficeThreeSixFive: " & My.Settings.userHasOfficeThreeSixFive
+        ' Debug label for userHasOfficeThreeSixFive.
+        aaformMainWindow.debugLabelForUserHasOfficeThreeSixFive.Text = "userHasOfficeThreeSixFive: " & My.Settings.userHasOfficeThreeSixFive
         ' Debug textbox for fullLauncherCodeString.
         aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 

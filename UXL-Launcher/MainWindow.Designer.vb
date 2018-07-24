@@ -82,7 +82,7 @@ Partial Class aaformMainWindow
         Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeDescription = New System.Windows.Forms.Label()
-        Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
+        Me.debugLabelForUserHasOfficeThreeSixFive = New System.Windows.Forms.Label()
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
         Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.debugLabelForofficeInstallMethodString = New System.Windows.Forms.Label()
@@ -189,7 +189,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOfficeLangPrefsButton, Me.zseparatorToolsMenu1, Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(47, 19)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOfficeLangPrefsButton
@@ -225,30 +225,30 @@ Partial Class aaformMainWindow
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(210, 22)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(207, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(210, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAuthorsButton.Text = "A&cknowledgements"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(210, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(210, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'contextmenuNotifyicon
@@ -575,7 +575,7 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeTitle)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeDescription)
-        Me.groupboxProApps.Controls.Add(Me.debugLabelForMSIInstall)
+        Me.groupboxProApps.Controls.Add(Me.debugLabelForUserHasOfficeThreeSixFive)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeDriveLocation)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForuserOfficeVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeInstallMethodString)
@@ -643,14 +643,14 @@ Partial Class aaformMainWindow
         Me.debugLabelXmlThemeDescription.TabIndex = 23
         Me.debugLabelXmlThemeDescription.Text = "debugLabelXmlThemeDescription"
         '
-        'debugLabelForMSIInstall
+        'debugLabelForUserHasOfficeThreeSixFive
         '
-        Me.debugLabelForMSIInstall.AutoSize = True
-        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 342)
-        Me.debugLabelForMSIInstall.Name = "debugLabelForMSIInstall"
-        Me.debugLabelForMSIInstall.Size = New System.Drawing.Size(124, 13)
-        Me.debugLabelForMSIInstall.TabIndex = 22
-        Me.debugLabelForMSIInstall.Text = "debugLabelForMSIInstall"
+        Me.debugLabelForUserHasOfficeThreeSixFive.AutoSize = True
+        Me.debugLabelForUserHasOfficeThreeSixFive.Location = New System.Drawing.Point(4, 342)
+        Me.debugLabelForUserHasOfficeThreeSixFive.Name = "debugLabelForUserHasOfficeThreeSixFive"
+        Me.debugLabelForUserHasOfficeThreeSixFive.Size = New System.Drawing.Size(209, 13)
+        Me.debugLabelForUserHasOfficeThreeSixFive.TabIndex = 22
+        Me.debugLabelForUserHasOfficeThreeSixFive.Text = "debugLabelForUserHasOfficeThreeSixFive"
         '
         'debugLabelForofficeDriveLocation
         '
@@ -1008,7 +1008,7 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForuserOfficeVersion As Label
     Friend WithEvents debugLabelForofficeDriveLocation As Label
     Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
-    Friend WithEvents debugLabelForMSIInstall As Label
+    Friend WithEvents debugLabelForUserHasOfficeThreeSixFive As Label
     Friend WithEvents notifyiconTaskbarLaunchers As NotifyIcon
     Friend WithEvents contextmenuNotifyicon As ContextMenuStrip
     Friend WithEvents notifyiconWord As ToolStripMenuItem
