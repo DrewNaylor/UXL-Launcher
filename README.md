@@ -125,11 +125,11 @@ More information to come in the future! In the meantime, please check the reposi
 
 - If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
 
-- ~~UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)~~ Fixed in the current commit (will be updated when I have a commit number to place here)
+- ~~UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)~~ Fixed in [093d972](https://github.com/DrewNaylor/UXL-Launcher/commit/093d9722b3d3cfc4043543994b2d498772508a48)
 
-- If the main window is minimized, "Hide When Minimized" is enabled, and a program couldn't be found when using the Quickmenu to open a program, the error message won't be on top. [(issue #125)](https://github.com/DrewNaylor/UXL-Launcher/issues/125)
+- ~~If the main window is minimized, "Hide When Minimized" is enabled, and a program couldn't be found when using the Quickmenu to open a program, the error message won't be on top. [(issue #125)](https://github.com/DrewNaylor/UXL-Launcher/issues/125)~~ Needs verification; might not be an actual problem
 
-- Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)
+- ~~Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)~~ Fixed in [9dc5474](https://github.com/DrewNaylor/UXL-Launcher/commit/9dc5474e2a4e11e3cbd98ba7e50d9c0550aadd0b)
 
 <br>
 <br>
