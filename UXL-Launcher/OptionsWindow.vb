@@ -45,6 +45,24 @@ Public Class aaformOptionsWindow
 
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+#Region "Recommended Windows edition selection label"
+        ' This updates the text for the label that tells the user
+        ' which Windows edition radio button is the one to select.
+
+        ' First, check to see if the OS is 32-bit or 64-bit.
+        If Environment.Is64BitOperatingSystem = True Then
+            ' If the OS is 64-bit, recommend the user to click
+            ' 64-bit Windows.
+            labelRecommendedWindowsEdition.Text = "64-bit Windows is the recommended option for you, but if" & vbCrLf &
+                "using Office 2013, you may need to select ""32-bit Windows""" & vbCrLf &
+                "due to the 32-bit version installing to ""Program Files""" & vbCrLf &
+                "even on 64-bit Windows."
+        Else
+            ' If the OS isn't 64-bit, recommend the 32-bit option.
+            labelRecommendedWindowsEdition.Text = "32-bit Windows is the recommended option for you."
+        End If
+#End Region
+
 #Region "Load the settings from My.Settings."
         ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
@@ -278,7 +296,7 @@ Public Class aaformOptionsWindow
             ElseIf radiobuttonCPUIs64Bit.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = True
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
-                MessageBox.Show("Why do you have a quantum CPU?", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
+                MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
                 If My.Settings.cpuIsSixtyFourBit = True Then
                     radiobuttonCPUIs64Bit.Checked = True
@@ -359,25 +377,6 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
-#Region "Code that runs when the user clicks the 'View system info' button on the Advanced tab."
-    Private Sub buttonHelpMeCPUType_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
-        ' When the user clicks the "View system info" button, tell them exactly what will happen
-        ' then open the System Info page in the Control Panel. Using
-        ' variables to determine the button the user pressed is what this Stack Overflow answer
-        ' suggested: <http://stackoverflow.com/a/2256926>
-        Dim msgResult As Integer = MessageBox.Show("Would you like to open the System Info page in the Control Panel?" & vbCrLf &
-                        "" & vbCrLf &
-                        "If you see " & """32-bit Operating System""" & " in the System Info page, choose the 32-bit Windows option in the Options window." & vbCrLf &
-                        "" & vbCrLf &
-                        "If you see " & """64-bit Operating System""" & " in the System Info page, choose the 64-bit Windows option in the Options window.",
-                        "View system info", MessageBoxButtons.YesNo)
-        If msgResult = DialogResult.Yes Then
-            ' Open the System Properties Control Panel page if the user clicked Yes.
-            Process.Start("control.exe", "system")
-        End If
-    End Sub
-#End Region
-
 #Region "Code that runs when the user clicks the 'Test Settings' button."
     Private Sub buttonTestSettings_Click(sender As Object, e As EventArgs) Handles buttonTestSettings.Click
         ' When the user clicks the "Test Settings" button, tell them exactly what will happen
@@ -423,13 +422,6 @@ Public Class aaformOptionsWindow
                 End If
             End If
         End If
-    End Sub
-#End Region
-
-#Region "Windows edition choice linklabel."
-    Private Sub linklabelWindowsEditionLearnMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelWindowsEditionLearnMore.LinkClicked
-        ' Send the user to the information page for the Windows edition radiobuttons.
-        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/115#issuecomment-395917017")
     End Sub
 #End Region
 

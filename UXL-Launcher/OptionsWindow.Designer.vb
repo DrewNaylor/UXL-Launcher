@@ -41,11 +41,9 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
-        Me.linklabelWindowsEditionLearnMore = New System.Windows.Forms.LinkLabel()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
-        Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
@@ -68,6 +66,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
+        Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -284,11 +283,10 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
-        Me.groupboxCPUType.Controls.Add(Me.linklabelWindowsEditionLearnMore)
+        Me.groupboxCPUType.Controls.Add(Me.labelRecommendedWindowsEdition)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
-        Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(3, 3)
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
@@ -299,29 +297,17 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
         '
-        'linklabelWindowsEditionLearnMore
-        '
-        Me.linklabelWindowsEditionLearnMore.AutoSize = True
-        Me.linklabelWindowsEditionLearnMore.LinkArea = New System.Windows.Forms.LinkArea(120, 13)
-        Me.linklabelWindowsEditionLearnMore.Location = New System.Drawing.Point(93, 93)
-        Me.linklabelWindowsEditionLearnMore.Name = "linklabelWindowsEditionLearnMore"
-        Me.linklabelWindowsEditionLearnMore.Size = New System.Drawing.Size(190, 55)
-        Me.linklabelWindowsEditionLearnMore.TabIndex = 5
-        Me.linklabelWindowsEditionLearnMore.TabStop = True
-        Me.linklabelWindowsEditionLearnMore.Text = "The ""View system info"" button will" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "be replaced with a label that directly" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "shows" &
-    " your Windows edition" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in version 3.2. Learn more..."
-        Me.linklabelWindowsEditionLearnMore.UseCompatibleTextRendering = True
-        '
         'radiobuttonCPUIsQBit
         '
         Me.radiobuttonCPUIsQBit.AutoSize = True
         Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(450, 160)
         Me.radiobuttonCPUIsQBit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
-        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(207, 17)
+        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(432, 17)
         Me.radiobuttonCPUIsQBit.TabIndex = 4
         Me.radiobuttonCPUIsQBit.TabStop = True
-        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl."
+        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl. (Thank you for finding this hidden radio bu" &
+    "tton!)"
         Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
         '
         'radiobuttonCPUIs64Bit
@@ -347,18 +333,6 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCPUIs32Bit.TabStop = True
         Me.radiobuttonCPUIs32Bit.Text = "32-bit Windows"
         Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
-        '
-        'buttonHelpMeCPUType
-        '
-        Me.buttonHelpMeCPUType.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(306, 125)
-        Me.buttonHelpMeCPUType.Margin = New System.Windows.Forms.Padding(2)
-        Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
-        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(105, 33)
-        Me.buttonHelpMeCPUType.TabIndex = 1
-        Me.buttonHelpMeCPUType.Text = "View system info"
-        Me.tooltipSystemInfo.SetToolTip(Me.buttonHelpMeCPUType, "Open the System Info page in the Control Panel.")
-        Me.buttonHelpMeCPUType.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
         '
@@ -576,6 +550,17 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
         Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
         '
+        'labelRecommendedWindowsEdition
+        '
+        Me.labelRecommendedWindowsEdition.AutoSize = True
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(93, 93)
+        Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 52)
+        Me.labelRecommendedWindowsEdition.TabIndex = 5
+        Me.labelRecommendedWindowsEdition.Text = "16-bit Windows is the recommended option for you, but if" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "using Office 2013, you " &
+    "may need to select ""32-bit Windows""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "due to the 32-bit version installing to ""Pr" &
+    "ogram Files""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "even on 64-bit Windows."
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -628,7 +613,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents checkboxO365InstallMethod As CheckBox
     Friend WithEvents groupboxCPUType As GroupBox
     Friend WithEvents labelCPUTypeDescription As Label
-    Friend WithEvents buttonHelpMeCPUType As Button
     Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
     Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
@@ -637,7 +621,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tooltipO365InstallMethod As ToolTip
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
-    Friend WithEvents linklabelWindowsEditionLearnMore As LinkLabel
     Friend WithEvents tabpagePersonalization As TabPage
     Friend WithEvents groupboxAppearance As GroupBox
     Friend WithEvents checkboxEnableThemeEngine As CheckBox
@@ -655,4 +638,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelFirstName As Label
     Friend WithEvents buttonClearFirstname As Button
     Friend WithEvents openfiledialogBrowseCustomThemeFile As OpenFileDialog
+    Friend WithEvents labelRecommendedWindowsEdition As Label
 End Class
