@@ -109,6 +109,7 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.menubarOpenButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.zToolStripSeparatorFileMenu = New System.Windows.Forms.ToolStripSeparator()
+        Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -923,6 +924,10 @@ Partial Class aaformMainWindow
         Me.zToolStripSeparatorFileMenu.Name = "zToolStripSeparatorFileMenu"
         Me.zToolStripSeparatorFileMenu.Size = New System.Drawing.Size(152, 6)
         '
+        'openfiledialogOpenDocument
+        '
+        Me.openfiledialogOpenDocument.FileName = "OpenFileDialog1"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1052,4 +1057,5 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelXmlThemeFileVersion As Label
     Friend WithEvents menubarOpenButton As ToolStripMenuItem
     Friend WithEvents zToolStripSeparatorFileMenu As ToolStripSeparator
+    Friend WithEvents openfiledialogOpenDocument As OpenFileDialog
 End Class

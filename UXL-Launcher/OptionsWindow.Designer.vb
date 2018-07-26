@@ -41,6 +41,7 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
+        Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
@@ -66,7 +67,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
-        Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -296,6 +296,17 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
+        '
+        'labelRecommendedWindowsEdition
+        '
+        Me.labelRecommendedWindowsEdition.AutoSize = True
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(93, 93)
+        Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 52)
+        Me.labelRecommendedWindowsEdition.TabIndex = 5
+        Me.labelRecommendedWindowsEdition.Text = "16-bit Windows is the recommended option for you, but if" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "using Office 2013, you " &
+    "may need to select ""32-bit Windows""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "due to the 32-bit version installing to ""Pr" &
+    "ogram Files""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "even on 64-bit Windows."
         '
         'radiobuttonCPUIsQBit
         '
@@ -549,17 +560,6 @@ Partial Class aaformOptionsWindow
         '
         Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
         Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
-        '
-        'labelRecommendedWindowsEdition
-        '
-        Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(93, 93)
-        Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
-        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 52)
-        Me.labelRecommendedWindowsEdition.TabIndex = 5
-        Me.labelRecommendedWindowsEdition.Text = "16-bit Windows is the recommended option for you, but if" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "using Office 2013, you " &
-    "may need to select ""32-bit Windows""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "due to the 32-bit version installing to ""Pr" &
-    "ogram Files""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "even on 64-bit Windows."
         '
         'aaformOptionsWindow
         '
