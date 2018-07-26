@@ -926,7 +926,7 @@ Partial Class aaformMainWindow
         '
         'openfiledialogOpenDocument
         '
-        Me.openfiledialogOpenDocument.FileName = "OpenFileDialog1"
+        Me.openfiledialogOpenDocument.Title = "Open"
         '
         'aaformMainWindow
         '
