@@ -227,11 +227,24 @@ Public Class aaformMainWindow
 
 #Region "Menubar code, including menubar buttons."
 
+#Region "File menu"
     Private Sub menubarExitButton_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
         ' End the execution of the app.
         Me.Close()
 
     End Sub
+
+    Private Sub menubarOpenButton_Click(sender As Object, e As EventArgs) Handles menubarOpenButton.Click
+        ' Show the "Open..." dialog and open the file if the user
+        ' wants to. Process.Start opens the file in the default app
+        ' for that file type.
+        If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
+            ' If the user clicks the "OK" button, open the file.
+            ' Note that this can also open EXE files and run them.
+            Process.Start(openfiledialogOpenDocument.FileName)
+        End If
+    End Sub
+#End Region
 
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
