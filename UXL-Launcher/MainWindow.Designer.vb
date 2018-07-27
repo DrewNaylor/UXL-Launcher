@@ -156,7 +156,7 @@ Partial Class aaformMainWindow
         Me.menubarOpenButton.Name = "menubarOpenButton"
         Me.menubarOpenButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.menubarOpenButton.Size = New System.Drawing.Size(155, 22)
-        Me.menubarOpenButton.Text = "Open..."
+        Me.menubarOpenButton.Text = "&Open..."
         '
         'zToolStripSeparatorFileMenu
         '
