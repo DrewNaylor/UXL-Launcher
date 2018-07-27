@@ -237,7 +237,14 @@ Public Class aaformMainWindow
     Private Sub menubarOpenButton_Click(sender As Object, e As EventArgs) Handles menubarOpenButton.Click
         ' Show the "Open..." dialog and open the file if the user
         ' wants to.
-        openfiledialogOpenDocument.ShowDialog()
+        If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
+            ' If the user clicks the "OK" button, try to open the file.
+            Try
+                Process.Start(openfiledialogOpenDocument.FileName)
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 #End Region
 
