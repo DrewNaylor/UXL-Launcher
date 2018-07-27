@@ -236,7 +236,8 @@ Public Class aaformMainWindow
 
     Private Sub menubarOpenButton_Click(sender As Object, e As EventArgs) Handles menubarOpenButton.Click
         ' Show the "Open..." dialog and open the file if the user
-        ' wants to.
+        ' wants to. Process.Start opens the file in the default app
+        ' for that file type.
         If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
             ' If the user clicks the "OK" button, open the file.
             ' Note that this can also open EXE files and run them.
