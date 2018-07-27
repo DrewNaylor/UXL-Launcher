@@ -508,6 +508,10 @@ Public Class aaformMainWindow
             End If
         End If
     End Sub
+
+    Private Sub menubarOpenButton_Click(sender As Object, e As EventArgs) Handles menubarOpenButton.Click
+        openfiledialogOpenDocument.ShowDialog()
+    End Sub
 #End Region
 
 End Class

@@ -174,6 +174,9 @@ Options window, whichever comes first.</value>
   <metadata name="openfiledialogOpenDocument.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>741, 17</value>
   </metadata>
+  <data name="openfiledialogOpenDocument.Filter" xml:space="preserve">
+    <value>Common Microsoft Office Formats (*.doc;*.docx;*.xls;*.xlsx;*.ppt;*.pptx;*.mdb;*accdb;*.pub)|*.doc;*.docx;*.xls;*.xlsx;*.ppt;*.pptx;*.mdb;*accdb;*.pub|Common Microsoft Word Formats (*.doc;*.docx)|*.doc;*.docx|Common Microsoft Excel Formats (*.xls;*.xlsx)|*.xls;*.xlsx|Common Microsoft PowerPoint Formats (*.ppt;*.pptx)|*.ppt;*.pptx|Common Microsoft Access Formats (*.mdb;*.accdb)|*.mdb;*.accdb|Common Microsoft Publisher Formats (*.pub)|*.pub|All File Formats (*.*)|*.*</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAgAEBAQAAEABAAoAQAAhgAAABAQAAABAAgAaAUAAK4BAAAYGAAAAQAIAMgGAAAWBwAAICAQAAEA

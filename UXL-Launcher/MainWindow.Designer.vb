@@ -26,6 +26,8 @@ Partial Class aaformMainWindow
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformMainWindow))
         Me.menubarMainWindow = New System.Windows.Forms.MenuStrip()
         Me.menubarFileMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarOpenButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zToolStripSeparatorFileMenu = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarExitButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarAlwaysOnTopButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -107,8 +109,6 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.menubarOpenButton = New System.Windows.Forms.ToolStripMenuItem()
-        Me.zToolStripSeparatorFileMenu = New System.Windows.Forms.ToolStripSeparator()
         Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
@@ -150,6 +150,18 @@ Partial Class aaformMainWindow
         Me.menubarFileMenu.Name = "menubarFileMenu"
         Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
         Me.menubarFileMenu.Text = "&File"
+        '
+        'menubarOpenButton
+        '
+        Me.menubarOpenButton.Name = "menubarOpenButton"
+        Me.menubarOpenButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.menubarOpenButton.Size = New System.Drawing.Size(155, 22)
+        Me.menubarOpenButton.Text = "Open..."
+        '
+        'zToolStripSeparatorFileMenu
+        '
+        Me.zToolStripSeparatorFileMenu.Name = "zToolStripSeparatorFileMenu"
+        Me.zToolStripSeparatorFileMenu.Size = New System.Drawing.Size(152, 6)
         '
         'menubarExitButton
         '
@@ -912,20 +924,9 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
-        'menubarOpenButton
-        '
-        Me.menubarOpenButton.Name = "menubarOpenButton"
-        Me.menubarOpenButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.menubarOpenButton.Size = New System.Drawing.Size(155, 22)
-        Me.menubarOpenButton.Text = "Open..."
-        '
-        'zToolStripSeparatorFileMenu
-        '
-        Me.zToolStripSeparatorFileMenu.Name = "zToolStripSeparatorFileMenu"
-        Me.zToolStripSeparatorFileMenu.Size = New System.Drawing.Size(152, 6)
-        '
         'openfiledialogOpenDocument
         '
+        Me.openfiledialogOpenDocument.Filter = resources.GetString("openfiledialogOpenDocument.Filter")
         Me.openfiledialogOpenDocument.Title = "Open"
         '
         'aaformMainWindow
