@@ -110,6 +110,15 @@ Partial Class aaformMainWindow
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
+        Me.menubarNewFileSubmenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewWordDoc = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewExcelWorkbook = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewPPTPresentation = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewOutlookEmail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewOutlookContact = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewPublisherPublication = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zSeparatorNewMenuProfessionalApps = New System.Windows.Forms.ToolStripSeparator()
+        Me.zSeparatorOutlookArea = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -146,7 +155,7 @@ Partial Class aaformMainWindow
         '
         'menubarFileMenu
         '
-        Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOpenButton, Me.zToolStripSeparatorFileMenu, Me.menubarExitButton})
+        Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarNewFileSubmenu, Me.menubarOpenButton, Me.zToolStripSeparatorFileMenu, Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
         Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
         Me.menubarFileMenu.Text = "&File"
@@ -930,6 +939,59 @@ Partial Class aaformMainWindow
         Me.openfiledialogOpenDocument.RestoreDirectory = True
         Me.openfiledialogOpenDocument.Title = "Open"
         '
+        'menubarNewFileSubmenu
+        '
+        Me.menubarNewFileSubmenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuitemNewWordDoc, Me.menuitemNewExcelWorkbook, Me.menuitemNewPPTPresentation, Me.zSeparatorOutlookArea, Me.menuitemNewOutlookEmail, Me.menuitemNewOutlookContact, Me.zSeparatorNewMenuProfessionalApps, Me.menuitemNewPublisherPublication})
+        Me.menubarNewFileSubmenu.Name = "menubarNewFileSubmenu"
+        Me.menubarNewFileSubmenu.Size = New System.Drawing.Size(155, 22)
+        Me.menubarNewFileSubmenu.Text = "&New"
+        '
+        'menuitemNewWordDoc
+        '
+        Me.menuitemNewWordDoc.Name = "menuitemNewWordDoc"
+        Me.menuitemNewWordDoc.Size = New System.Drawing.Size(258, 22)
+        Me.menuitemNewWordDoc.Text = "Microsoft &Word document"
+        '
+        'menuitemNewExcelWorkbook
+        '
+        Me.menuitemNewExcelWorkbook.Name = "menuitemNewExcelWorkbook"
+        Me.menuitemNewExcelWorkbook.Size = New System.Drawing.Size(258, 22)
+        Me.menuitemNewExcelWorkbook.Text = "Microsoft &Excel workbook"
+        '
+        'menuitemNewPPTPresentation
+        '
+        Me.menuitemNewPPTPresentation.Name = "menuitemNewPPTPresentation"
+        Me.menuitemNewPPTPresentation.Size = New System.Drawing.Size(258, 22)
+        Me.menuitemNewPPTPresentation.Text = "Microsoft &PowerPoint presentation"
+        '
+        'menuitemNewOutlookEmail
+        '
+        Me.menuitemNewOutlookEmail.Name = "menuitemNewOutlookEmail"
+        Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(258, 22)
+        Me.menuitemNewOutlookEmail.Text = "Microsoft Outlook email"
+        '
+        'menuitemNewOutlookContact
+        '
+        Me.menuitemNewOutlookContact.Name = "menuitemNewOutlookContact"
+        Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(258, 22)
+        Me.menuitemNewOutlookContact.Text = "Microsoft Outlook contact"
+        '
+        'menuitemNewPublisherPublication
+        '
+        Me.menuitemNewPublisherPublication.Name = "menuitemNewPublisherPublication"
+        Me.menuitemNewPublisherPublication.Size = New System.Drawing.Size(258, 22)
+        Me.menuitemNewPublisherPublication.Text = "Microsoft P&ublisher publication"
+        '
+        'zSeparatorNewMenuProfessionalApps
+        '
+        Me.zSeparatorNewMenuProfessionalApps.Name = "zSeparatorNewMenuProfessionalApps"
+        Me.zSeparatorNewMenuProfessionalApps.Size = New System.Drawing.Size(255, 6)
+        '
+        'zSeparatorOutlookArea
+        '
+        Me.zSeparatorOutlookArea.Name = "zSeparatorOutlookArea"
+        Me.zSeparatorOutlookArea.Size = New System.Drawing.Size(255, 6)
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1060,4 +1122,13 @@ Partial Class aaformMainWindow
     Friend WithEvents menubarOpenButton As ToolStripMenuItem
     Friend WithEvents zToolStripSeparatorFileMenu As ToolStripSeparator
     Friend WithEvents openfiledialogOpenDocument As OpenFileDialog
+    Friend WithEvents menubarNewFileSubmenu As ToolStripMenuItem
+    Friend WithEvents menuitemNewWordDoc As ToolStripMenuItem
+    Friend WithEvents menuitemNewExcelWorkbook As ToolStripMenuItem
+    Friend WithEvents menuitemNewPPTPresentation As ToolStripMenuItem
+    Friend WithEvents menuitemNewOutlookEmail As ToolStripMenuItem
+    Friend WithEvents menuitemNewOutlookContact As ToolStripMenuItem
+    Friend WithEvents zSeparatorOutlookArea As ToolStripSeparator
+    Friend WithEvents zSeparatorNewMenuProfessionalApps As ToolStripSeparator
+    Friend WithEvents menuitemNewPublisherPublication As ToolStripMenuItem
 End Class
