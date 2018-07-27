@@ -238,12 +238,9 @@ Public Class aaformMainWindow
         ' Show the "Open..." dialog and open the file if the user
         ' wants to.
         If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
-            ' If the user clicks the "OK" button, try to open the file.
-            Try
-                Process.Start(openfiledialogOpenDocument.FileName)
-            Catch ex As Exception
-
-            End Try
+            ' If the user clicks the "OK" button, open the file.
+            ' Note that this can also open EXE files and run them.
+            Process.Start(openfiledialogOpenDocument.FileName)
         End If
     End Sub
 #End Region

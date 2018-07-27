@@ -927,6 +927,7 @@ Partial Class aaformMainWindow
         'openfiledialogOpenDocument
         '
         Me.openfiledialogOpenDocument.Filter = resources.GetString("openfiledialogOpenDocument.Filter")
+        Me.openfiledialogOpenDocument.RestoreDirectory = True
         Me.openfiledialogOpenDocument.Title = "Open"
         '
         'aaformMainWindow
