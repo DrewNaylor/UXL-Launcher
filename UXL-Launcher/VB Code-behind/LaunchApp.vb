@@ -147,7 +147,7 @@ Public Class LaunchApp
 #End Region
 #Region "Publisher"
     Public Shared Sub NewPublisherPublication()
-        ' Create a new Outlook contact.
+        ' Create a new Publisher publication.
         isolated_error_handler.newFileErrorHandler("MSPUB.EXE", "/b", "Microsoft Publisher")
     End Sub
 #End Region
