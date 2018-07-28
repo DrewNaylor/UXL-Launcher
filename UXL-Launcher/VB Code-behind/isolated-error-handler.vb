@@ -76,7 +76,9 @@ Public Class isolated_error_handler
         Dim procNewFile As ProcessStartInfo
         ' Now, get the file to launch.
         procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
-
+        ' Assign start arguments.
+        procNewFile.Arguments = launchArguments
+        ' 
     End Sub
 #End Region
 End Class
