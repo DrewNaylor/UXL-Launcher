@@ -68,6 +68,8 @@ Public Class isolated_error_handler
 #End Region
 
 #Region "New file error handler code."
-
+    Public Shared Sub newFileErrorHandler(exeToLaunch As String, launchArguments As String, exeFriendlyName As String)
+        Throw New NotImplementedException()
+    End Sub
 #End Region
 End Class
