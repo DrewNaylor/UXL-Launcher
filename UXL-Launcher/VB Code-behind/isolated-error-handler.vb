@@ -29,6 +29,7 @@
 
 
 Public Class isolated_error_handler
+#Region "Regular app launching error handler code."
     Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "ExeToLaunch.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "Application Name Here")
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
@@ -64,4 +65,9 @@ Public Class isolated_error_handler
             End If
         End Try
     End Sub
+#End Region
+
+#Region "New file error handler code."
+
+#End Region
 End Class
