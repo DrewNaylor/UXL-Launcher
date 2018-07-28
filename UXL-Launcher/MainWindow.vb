@@ -244,6 +244,18 @@ Public Class aaformMainWindow
             Process.Start(openfiledialogOpenDocument.FileName)
         End If
     End Sub
+
+#Region "New submenu"
+
+#Region "Microsoft Word document"
+    ' Create new Word document.
+    Private Sub menuitemNewWordDoc_Click(sender As Object, e As EventArgs) Handles menuitemNewWordDoc.Click
+        ' When the user clicks this button, run Word to create a new document.
+        LaunchApp.NewWordDoc
+    End Sub
+#End Region
+
+#End Region
 #End Region
 
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click

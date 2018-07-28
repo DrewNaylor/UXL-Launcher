@@ -113,4 +113,13 @@ Public Class LaunchApp
     End Sub
 #End Region
 #End Region
+
+#Region "New files area"
+#Region "Word"
+    Public Shared Sub NewWordDoc()
+        ' Create a new Word document.
+        isolated_error_handler.launcherErrorHandler("winword.exe /w", "New word doc")
+    End Sub
+#End Region
+#End Region
 End Class
