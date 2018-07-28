@@ -145,5 +145,11 @@ Public Class LaunchApp
         isolated_error_handler.newFileErrorHandler("OUTLOOK.EXE", "/c ipm.contact", "Microsoft Outlook")
     End Sub
 #End Region
+#Region "Publisher"
+    Public Shared Sub NewPublisherPublication()
+        ' Create a new Outlook contact.
+        isolated_error_handler.newFileErrorHandler("MSPUB.EXE", "/b", "Microsoft Publisher")
+    End Sub
+#End Region
 #End Region
 End Class

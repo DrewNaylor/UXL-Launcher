@@ -278,6 +278,12 @@ Public Class aaformMainWindow
         LaunchApp.NewOutlookContact()
     End Sub
 #End Region
+#Region "Microsoft Publisher publication"
+    Private Sub menuitemNewPublisherPublication_Click(sender As Object, e As EventArgs) Handles menuitemNewPublisherPublication.Click
+        ' When the user clicks this button, run Publisher to create a new publication.
+        LaunchApp.NewPublisherPublication()
+    End Sub
+#End Region
 
 #End Region
 #End Region
