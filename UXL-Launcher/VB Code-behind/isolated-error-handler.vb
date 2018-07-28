@@ -68,17 +68,18 @@ Public Class isolated_error_handler
 #End Region
 
 #Region "New file error handler code."
-    Public Shared Sub newFileErrorHandler(Optional exeToLaunch As String = "EXE To Launch", Optional launchArguments As String = "Launch Arguments", Optional exeFriendlyName As String = "EXE Friendly Name")
+    Public Shared Sub newFileErrorHandler(Optional exeToLaunch As String = "exeToLaunch.exe", Optional launchArguments As String = "Launch Arguments", Optional exeFriendlyName As String = "EXE Friendly Name")
         ' First, create a ProcessStartInfo thing.
         ' Based on code from HideSettingsPages.
         ' https://github.com/DrewNaylor/HideSettingsPages
 
-        Dim procNewFile As ProcessStartInfo
+        Dim procNewFile As New ProcessStartInfo
         ' Now, get the file to launch.
         procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
         ' Assign start arguments.
         procNewFile.Arguments = launchArguments
-        ' 
+        ' Try to start the program.
+        Process.Start(procNewFile)
     End Sub
 #End Region
 End Class
