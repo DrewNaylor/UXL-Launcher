@@ -84,7 +84,7 @@ along with UXL Launcher (WPF test).  If not, see <http://www.gnu.org/licenses/>.
                         <TextBlock Text="Microsoft InfoPath" TextWrapping="Wrap" TextAlignment="Center" />
                     </Button>
                     <Image Source="/Images/Sharepoint Workspace.png" Margin="2,16,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" SnapsToDevicePixels="True"/>
-                    <Button Margin="7,16,0,0" Width="105" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0.5" BorderBrush="#FF707070">
+                    <Button Margin="7,16,0,0" Width="105" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0.5" BorderBrush="#FF707070" MaxHeight="55">
                         <TextBlock Text="Microsoft SharePoint Workspace" TextWrapping="Wrap" TextAlignment="Center" />
                     </Button>
                 </WrapPanel>
