@@ -116,18 +116,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property installedViaMSIPackage() As Boolean
-            Get
-                Return CType(Me("installedViaMSIPackage"),Boolean)
-            End Get
-            Set
-                Me("installedViaMSIPackage") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property debugmodeShowLabels() As Boolean
             Get
@@ -164,7 +152,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
         Public Property debugmodeShowThemeEngineOutput() As Boolean
             Get
                 Return CType(Me("debugmodeShowThemeEngineOutput"),Boolean)
@@ -188,7 +176,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""C:\Users\drewn\Documents\0GitHub\UXL-Launcher\testfolder\testTheme.xml""""")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property userCustomThemePath() As String
             Get
                 Return CType(Me("userCustomThemePath"),String)

@@ -113,4 +113,43 @@ Public Class LaunchApp
     End Sub
 #End Region
 #End Region
+
+#Region "New files area"
+#Region "Word"
+    Public Shared Sub NewWordDoc()
+        ' Create a new Word document.
+        isolated_error_handler.newFileErrorHandler("WINWORD.EXE", "/w", "Microsoft Word")
+    End Sub
+#End Region
+#Region "Excel"
+    Public Shared Sub NewExcelWorkbook()
+        ' Create a new Excel workbook.
+        isolated_error_handler.newFileErrorHandler("EXCEL.EXE", "/m", "Microsoft Excel")
+    End Sub
+#End Region
+#Region "PowerPoint"
+    Public Shared Sub NewPPTPresentation()
+        ' Create a new PowerPoint presentation.
+        isolated_error_handler.newFileErrorHandler("POWERPNT.EXE", "/b", "Microsoft PowerPoint")
+    End Sub
+#End Region
+#Region "Outlook - New Email"
+    Public Shared Sub NewOutlookEmail()
+        ' Create a new Outlook email.
+        isolated_error_handler.newFileErrorHandler("OUTLOOK.EXE", "/c ipm.note", "Microsoft Outlook")
+    End Sub
+#End Region
+#Region "Outlook - New Contact"
+    Public Shared Sub NewOutlookContact()
+        ' Create a new Outlook contact.
+        isolated_error_handler.newFileErrorHandler("OUTLOOK.EXE", "/c ipm.contact", "Microsoft Outlook")
+    End Sub
+#End Region
+#Region "Publisher"
+    Public Shared Sub NewPublisherPublication()
+        ' Create a new Publisher publication.
+        isolated_error_handler.newFileErrorHandler("MSPUB.EXE", "/b", "Microsoft Publisher")
+    End Sub
+#End Region
+#End Region
 End Class

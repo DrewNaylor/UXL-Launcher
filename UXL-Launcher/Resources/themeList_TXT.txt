@@ -1,7 +1,0 @@
-Default,
-Eyesore,
-Eyesore2,
-Maudern,
-ReturnOfNight,
-RGB,
-(Custom)

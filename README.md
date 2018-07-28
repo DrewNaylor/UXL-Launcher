@@ -52,7 +52,9 @@ applauncher-icons
 By Drew Naylor. Licensed under CC BY 4.0.
 Version 2.1
 
-The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+The applauncher-icons project provides most of the icons used in UXL Launcher,
+with the exception of some icons. These include, but are not limited to, the
+UXL Launcher logo and the About window banner.
 
 Link to applauncher-icons project repository:
 https://github.com/DrewNaylor/applauncher-icons
@@ -60,13 +62,18 @@ https://github.com/DrewNaylor/applauncher-icons
 Link to applauncher-icons version 2.1 GitHub Releases page:
 https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.1
 
-The version of applauncher-icons used in UXL Launcher has been modified from the original source. Namely, the smaller icons used in the UXL Launcher Quickmenu and some menubar entries were resized from the original files.
+The version of applauncher-icons used in UXL Launcher has been modified from the
+original source. Namely, the smaller icons used in the UXL Launcher Quickmenu and
+some menubar entries were resized from the original files.
 
-No warranty is provided with applauncher-icons. Use at your own risk. Drew Naylor is not responsible for any problems that use of applauncher-icons may cause.
+No warranty is provided with applauncher-icons. Use at your own risk. Drew Naylor
+is not responsible for any problems that use of applauncher-icons may cause.
 
-This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+This work is licensed under the Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
 
-Microsoft is not associated with either the applauncher-icons project or Drew Naylor and does not condone this project.
+Microsoft is not associated with either the applauncher-icons project or Drew Naylor
+and does not condone this project.
 ```
 
 <br>
@@ -116,6 +123,14 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
+- If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
+
+- ~~UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)~~ Fixed in [093d972](https://github.com/DrewNaylor/UXL-Launcher/commit/093d9722b3d3cfc4043543994b2d498772508a48)
+
+- ~~If the main window is minimized, "Hide When Minimized" is enabled, and a program couldn't be found when using the Quickmenu to open a program, the error message won't be on top. [(issue #125)](https://github.com/DrewNaylor/UXL-Launcher/issues/125)~~ Needs verification; might not be an actual problem
+
+- ~~Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)~~ Fixed in [9dc5474](https://github.com/DrewNaylor/UXL-Launcher/commit/9dc5474e2a4e11e3cbd98ba7e50d9c0550aadd0b)
+
 <br>
 <br>
 
@@ -141,9 +156,7 @@ To run UXL Launcher, your computer requires the following:
   - 32-bit: 3 GB space free.
   - 64-bit: 3 GB space free.
 
-- To properly view the License and Acknowledgements in the About window, you'll need Internet Explorer if you're using Version 3.0. Version 3.1 removes this requirement.
-
-- Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems.
+- Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems. There may also be a warning message on first start about Windows Defender SmartScreen saying it "prevented an unrecognized app from starting. Running this app might put your PC at risk." You can click the "More info" link, then the "Run anyway" button if you want to use it, though this may not be allowed on corporate networks.
 
 ## Building UXL Launcher from Source: System Requirements and Guide
 

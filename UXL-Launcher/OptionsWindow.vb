@@ -32,11 +32,36 @@ Imports System.Xml
 
 Public Class aaformOptionsWindow
 
+    ' Create a boolean variable that sees if the theme engine is enabled.
+    ' It's used when saving the settings to see if the theme engine should
+    ' update the theme if this variable and the related My.Settings
+    ' value are equal. If not, it won't update.
+
+    ' This is set to False by default and set to the related My.Settings
+    ' value on application start.
+    Friend Shared boolIsThemeEngineEnabled As Boolean = False
 
 #Region "Code to run when opening the Options window."
 
     Private Sub OptionsWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+#Region "Recommended Windows edition selection label"
+        ' This updates the text for the label that tells the user
+        ' which Windows edition radio button is the one to select.
+
+        ' First, check to see if the OS is 32-bit or 64-bit.
+        If Environment.Is64BitOperatingSystem = True Then
+            ' If the OS is 64-bit, recommend the user to click
+            ' 64-bit Windows.
+            labelRecommendedWindowsEdition.Text = "64-bit Windows is the recommended option for you, but if" & vbCrLf &
+                "using Office 2013, you may need to select ""32-bit Windows""" & vbCrLf &
+                "due to the 32-bit version installing to ""Program Files""" & vbCrLf &
+                "even on 64-bit Windows."
+        Else
+            ' If the OS isn't 64-bit, recommend the 32-bit option.
+            labelRecommendedWindowsEdition.Text = "32-bit Windows is the recommended option for you."
+        End If
+#End Region
 
 #Region "Load the settings from My.Settings."
         ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
@@ -47,13 +72,6 @@ Public Class aaformOptionsWindow
             checkboxO365InstallMethod.Checked = True
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             checkboxO365InstallMethod.Checked = False
-        End If
-
-        ' Load the user's settings for My.Settings.installedViaMSIPackage.
-        If My.Settings.installedViaMSIPackage = True Then
-            checkboxMSIInstallMethod.Checked = True
-        ElseIf My.Settings.installedViaMSIPackage = False Then
-            checkboxMSIInstallMethod.Checked = False
         End If
 
 #Region "Personalization tab."
@@ -111,7 +129,17 @@ Public Class aaformOptionsWindow
         enableOrDisableThemeEngineOptionsWindowControls()
 #End Region
 #Region "Custom statusbar greeting."
-
+        If My.Settings.userUseCustomStatusbarGreeting = True Then
+            ' If the settings are configured to use a custom statusbar greeting,
+            ' check the radio button that says to use them.
+            radiobuttonCustomStatusbarGreeting.Checked = True
+        Else
+            ' Otherwise, say that the default greeting is used.
+            radiobuttonDefaultStatusbarGreeting.Checked = True
+        End If
+        ' Now load the user's firstname/nickname for the
+        ' personalized statusbar greeting textbox.
+        textboxFirstname.Text = My.Settings.userFirstNameForCustomStatusbarGreeting
 #End Region
 #End Region
 #End Region
@@ -179,8 +207,25 @@ Public Class aaformOptionsWindow
         ' Reset the CPUType radio buttons to 64-bit.
         radiobuttonCPUIs64Bit.Checked = True
 
-        ' Reset the MSI Install Method to unchecked.
-        checkboxMSIInstallMethod.Checked = False
+        ' Reset the theme to use to Default.
+        comboboxThemeList.Text = "Default"
+
+        ' Reset the custom theme path to empty.
+        textboxCustomThemePath.Clear()
+
+        ' Reset the theme engine enabled status to disabled.
+        checkboxEnableThemeEngine.Checked = False
+
+        ' Reset the personalized statusbar firstname/nickname
+        ' textbox to empty.
+        textboxFirstname.Clear()
+
+        ' Reset the radio button that's checked for personalized
+        ' or default statusbar greeting to the default greeting
+        ' one.
+        radiobuttonDefaultStatusbarGreeting.Checked = True
+
+
 
         '
         ' This space reserved for more settings.
@@ -189,7 +234,8 @@ Public Class aaformOptionsWindow
 
 
         MessageBox.Show("Values reset to default. Click the Save button to save changes." & vbCrLf & "Note that Always On Top will" &
-                        " not be reset to its default value," & vbCrLf & "along with any other settings modified outside this window.", "Reset UXL Launcher settings",
+                        " not be reset to its default value," & vbCrLf & "along with any other settings modified outside this window." & vbCrLf &
+                        "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Reset UXL Launcher settings",
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
     End Sub
@@ -234,14 +280,6 @@ Public Class aaformOptionsWindow
                 My.Settings.userHasOfficeThreeSixFive = False
             End If
 
-            ' My.Settings.installedViaMSIPackage will be set based on
-            ' the .Checked state of the checkboxMSIInstallMethod.
-            If checkboxMSIInstallMethod.Checked = True Then
-                My.Settings.installedViaMSIPackage = True
-            ElseIf checkboxMSIInstallMethod.Checked = False Then
-                My.Settings.installedViaMSIPackage = False
-            End If
-
             ' Set My.Settings.userOfficeVersion to a string based on whatever
             ' comboboxOfficeVersionSelector.Text is set to.
             If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
@@ -258,7 +296,7 @@ Public Class aaformOptionsWindow
             ElseIf radiobuttonCPUIs64Bit.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = True
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
-                MessageBox.Show("Why do you have a quantum CPU?", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
+                MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
                 If My.Settings.cpuIsSixtyFourBit = True Then
                     radiobuttonCPUIs64Bit.Checked = True
@@ -268,18 +306,55 @@ Public Class aaformOptionsWindow
                     My.Settings.cpuIsSixtyFourBit = False
                 End If
             End If
+
+            ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
+            If checkboxEnableThemeEngine.Checked = True Then
+                My.Settings.enableThemeEngine = True
+            ElseIf checkboxEnableThemeEngine.Checked = False Then
+                ' If it's unchecked, set the My.Settings variable to False.
+                My.Settings.enableThemeEngine = False
+            End If
+
+            ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
+            My.Settings.userChosenTheme = comboboxThemeList.Text
+
+            ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
+            My.Settings.userCustomThemePath = textboxCustomThemePath.Text
+
+            ' Set My.Settings.userUseCustomStatusbarGreeting to True or False based
+            ' on which radio button is selected.
+            If radiobuttonDefaultStatusbarGreeting.Checked = True Then
+                My.Settings.userUseCustomStatusbarGreeting = False
+            ElseIf radiobuttonCustomStatusbarGreeting.Checked = True Then
+                My.Settings.userUseCustomStatusbarGreeting = True
+            End If
+
+            ' Set the My.Settings value for the user's firstname/nickname
+            ' for personalized statusbar greetings to the textbox
+            ' for the name.
+            My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
+
 #End Region
 
-#Region "This is where the settings get saved."
+#Region "This is where the settings get saved and things update."
             ' Save settings.
             My.Settings.Save()
             My.Settings.Reload()
+            ' Update the user's theme if the theme engine is enabled
+            ' and the boolean variable set at the beginning of this
+            ' class is set to True.
+            If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
+                UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            End If
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
             ' Update the text in the main window's titlebar.
-            aaformMainWindow.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
+            aaformMainWindow.updateTitlebarText()
+            ' Update main window statusbar label text.
+            aaformMainWindow.updateStatusbarText()
             ' Tell the user that settings were saved.
-            MessageBox.Show("Settings saved.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            MessageBox.Show("Settings saved." & vbCrLf &
+                        "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
             Me.Close()
         End If
@@ -294,30 +369,11 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
-#Region "Code that runs when the user clicks the Clear Textbox button."
+#Region "Code that runs when the user clicks the Clear Textbox button next to the Office drive location."
     Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearTextbox.Click
         ' Clear the OfficeDrive textbox and set focus to it.
         textboxOfficeDrive.Text = ""
         textboxOfficeDrive.Select()
-    End Sub
-#End Region
-
-#Region "Code that runs when the user clicks the 'View system info' button on the Advanced tab."
-    Private Sub buttonHelpMeCPUType_Click(sender As Object, e As EventArgs) Handles buttonHelpMeCPUType.Click
-        ' When the user clicks the "View system info" button, tell them exactly what will happen
-        ' then open the System Info page in the Control Panel. Using
-        ' variables to determine the button the user pressed is what this Stack Overflow answer
-        ' suggested: <http://stackoverflow.com/a/2256926>
-        Dim msgResult As Integer = MessageBox.Show("Would you like to open the System Info page in the Control Panel?" & vbCrLf &
-                        "" & vbCrLf &
-                        "If you see " & """32-bit Operating System""" & " in the System Info page, choose the 32-bit Windows option in the Options window." & vbCrLf &
-                        "" & vbCrLf &
-                        "If you see " & """64-bit Operating System""" & " in the System Info page, choose the 64-bit Windows option in the Options window.",
-                        "View system info", MessageBoxButtons.YesNo)
-        If msgResult = DialogResult.Yes Then
-            ' Open the System Properties Control Panel page if the user clicked Yes.
-            Process.Start("control.exe", "system")
-        End If
     End Sub
 #End Region
 
@@ -329,51 +385,43 @@ Public Class aaformOptionsWindow
         ' suggested: <http://stackoverflow.com/a/2256926>
 
         Dim msgResult As Integer = MessageBox.Show("Would you like to test your UXL Launcher settings?" &
-                        " This will save your settings and attempt to launch the Office Language Options app." & vbCrLf &
+                        " This will save your settings and attempt to find the Office Language Preferences app" &
+                        " in the location configured based on your settings." & vbCrLf &
                         "" & vbCrLf &
-                        "If you choose to test your settings and no message appears, assume that it worked. " &
+                        "If you choose to test your settings and the file is found, a message saying this will appear and you shouldn't have to change your settings. " &
                         "However, you might need to adjust your settings if you see a message saying that we couldn't find the file." & vbCrLf &
-                        "" & vbCrLf &
-                        "Close the Office Language Preferences window if it appears." & vbCrLf &
                         "" & vbCrLf &
                         "The Options window will close after your settings are saved.",
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             buttonSaveSettings.PerformClick()
-            Me.Hide()
-            LaunchApp.LaunchOfficeLangPrefs()
+            Me.Hide() ' This Me.Hide() might not be necessary anymore since the Options window gets closed after saving settings, but I don't know. This line will be removed if it's definately not required.
+            ' Now, try to see if SETLANG.EXE is located in the configured directory.
+            ' If it is found, show the user a few of the file's properties.
+            ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
+            If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
+                ' If the file for Office Language Preferences was found, tell the user.
+                MessageBox.Show(Me, "Office Language Preferences has been found in the configured location." &
+                                " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office." & vbCrLf &
+                                vbCrLf &
+                                "Configured location: " & OfficeLocater.fullLauncherCodeString,
+                                "Test settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                ' If it's not found, let the user know and give them the option to open
+                ' the Options window to change their settings if they want to.
+                Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." &
+                                                                                   " Would you like to open the Options window to change your settings?" & vbCrLf &
+                                                                                   vbCrLf &
+                                                                                   "Configured location: " & OfficeLocater.fullLauncherCodeString,
+                                                                                   "Test settings", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
+                ' If the user clicks "Yes", open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+                If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
+                    Dim forceOptionsWindowTab As New aaformOptionsWindow
+                    forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                    forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                End If
+            End If
         End If
-    End Sub
-#End Region
-
-#Region "Workaround Microsoft's weird decision to put Office 2013 C2R in a different folder from MSI."
-    Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
-        ' When the user chooses their Office version, if the version is set to Office 2013, 
-        ' make the Office 365 install method checkbox get disabled and show the MSI install
-        ' method checkbox. If Office 2013 isn't selected, then hide the MSI install method
-        ' checkbox and enable the Office 365 install method checkbox.
-        If comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-            checkboxO365InstallMethod.Enabled = False
-            checkboxMSIInstallMethod.Enabled = True
-        Else
-            checkboxO365InstallMethod.Enabled = True
-            checkboxMSIInstallMethod.Enabled = False
-        End If
-    End Sub
-#End Region
-
-#Region "Windows edition choice linklabel."
-    Private Sub linklabelWindowsEditionLearnMore_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelWindowsEditionLearnMore.LinkClicked
-        ' Send the user to the information page for the Windows edition radiobuttons.
-        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/115#issuecomment-395917017")
-    End Sub
-#End Region
-
-#Region "Linklabel for the 365/MSI install method checkboxes."
-    Private Sub linklabelCheckboxesToBeCombined_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelCheckboxesToBeCombined.LinkClicked
-        ' Send the user to the information page for the checkboxes
-        ' that will be combined.
-        Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/100#issuecomment-395926431")
     End Sub
 #End Region
 
@@ -459,14 +507,14 @@ Public Class aaformOptionsWindow
                 buttonCustomThemesBrowse.Enabled = True
             End If
 
-                ' If it is "(Custom)", send the custom theme path below the theme list
-                ' to the getThemeInfo function.
+            ' If it is "(Custom)", send the custom theme path below the theme list
+            ' to the getThemeInfo function.
 
-                ' This code has been moved to the sub below to be able to call it from
-                ' two places when needed.
-                customThemePathInfoUpdater()
+            ' This code has been moved to the sub below to be able to call it from
+            ' two places when needed.
+            customThemePathInfoUpdater()
 
-            End If
+        End If
     End Sub
 
     Private Sub customThemePathInfoUpdater()
@@ -557,6 +605,58 @@ Public Class aaformOptionsWindow
             textboxCustomThemePath.Text = openfiledialogBrowseCustomThemeFile.FileName
         End If
     End Sub
+#End Region
+#Region "Custom statusbar greeting controls."
+#Region "Clicking the radio buttons for use default greeting or use custom greeting."
+    Private Sub radiobuttonCustomStatusbarGreeting_CheckedChanged(sender As Object, e As EventArgs) Handles radiobuttonCustomStatusbarGreeting.CheckedChanged
+        ' When the CheckChanged event fires on this control,
+        ' either enable or disable the firstname/nickname
+        ' textbox and the "Clear" button.
+
+        ' This is the sub for the "Use personalized greeting"
+        ' radio button.
+
+        ' Code moved to its own sub for easier modification.
+        enableOrDisableCustomStatusbarGreetingControls()
+    End Sub
+
+    Private Sub radiobuttonDefaultStatusbarGreeting_CheckedChanged(sender As Object, e As EventArgs) Handles radiobuttonDefaultStatusbarGreeting.CheckedChanged
+        ' When the CheckChanged event fires on this control,
+        ' either enable or disable the firstname/nickname
+        ' textbox and the "Clear" button.
+
+        ' This is the sub for the "Use default greeting"
+        ' radio button.
+
+        ' Code moved to its own sub for easier modification.
+        enableOrDisableCustomStatusbarGreetingControls()
+    End Sub
+
+    Private Sub enableOrDisableCustomStatusbarGreetingControls()
+        ' When the CheckChanged event fires on the related controls,
+        ' either enable or disable the firstname/nickname
+        ' textbox and the "Clear" button.
+        If radiobuttonCustomStatusbarGreeting.Checked = True Then
+            ' If the radio button to use the custom statusbar greeting
+            ' is checked, enable the firstname/nickname textbox and
+            ' the "Clear" button.
+            textboxFirstname.Enabled = True
+            buttonClearFirstname.Enabled = True
+        Else
+            ' Otherwise, disable those controls.
+            textboxFirstname.Enabled = False
+            buttonClearFirstname.Enabled = False
+        End If
+    End Sub
+#End Region
+#Region "Clicking the Clear button next to the firstname textbox."
+    Private Sub buttonClearFirstname_Click(sender As Object, e As EventArgs) Handles buttonClearFirstname.Click
+        ' When this button is clicked, the firstname/nickname textbox
+        ' will be cleared and the focus will be set to the textbox.
+        textboxFirstname.Clear()
+        textboxFirstname.Focus()
+    End Sub
+#End Region
 #End Region
 #End Region
 

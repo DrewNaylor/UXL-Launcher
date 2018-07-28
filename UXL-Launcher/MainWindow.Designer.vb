@@ -26,6 +26,17 @@ Partial Class aaformMainWindow
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformMainWindow))
         Me.menubarMainWindow = New System.Windows.Forms.MenuStrip()
         Me.menubarFileMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarNewFileSubmenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewWordDoc = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewExcelWorkbook = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewPPTPresentation = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zSeparatorOutlookArea = New System.Windows.Forms.ToolStripSeparator()
+        Me.menuitemNewOutlookEmail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuitemNewOutlookContact = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zSeparatorNewMenuProfessionalApps = New System.Windows.Forms.ToolStripSeparator()
+        Me.menuitemNewPublisherPublication = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menubarOpenButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.zToolStripSeparatorFileMenu = New System.Windows.Forms.ToolStripSeparator()
         Me.menubarExitButton = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.menubarAlwaysOnTopButton = New System.Windows.Forms.ToolStripMenuItem()
@@ -82,7 +93,7 @@ Partial Class aaformMainWindow
         Me.debugLabelXmlThemeAuthor = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeTitle = New System.Windows.Forms.Label()
         Me.debugLabelXmlThemeDescription = New System.Windows.Forms.Label()
-        Me.debugLabelForMSIInstall = New System.Windows.Forms.Label()
+        Me.debugLabelForUserHasOfficeThreeSixFive = New System.Windows.Forms.Label()
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
         Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.debugLabelForofficeInstallMethodString = New System.Windows.Forms.Label()
@@ -107,6 +118,7 @@ Partial Class aaformMainWindow
         Me.buttonRunClipOrganizer = New System.Windows.Forms.Button()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -143,16 +155,94 @@ Partial Class aaformMainWindow
         '
         'menubarFileMenu
         '
-        Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarExitButton})
+        Me.menubarFileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarNewFileSubmenu, Me.menubarOpenButton, Me.zToolStripSeparatorFileMenu, Me.menubarExitButton})
         Me.menubarFileMenu.Name = "menubarFileMenu"
         Me.menubarFileMenu.Size = New System.Drawing.Size(37, 19)
         Me.menubarFileMenu.Text = "&File"
+        '
+        'menubarNewFileSubmenu
+        '
+        Me.menubarNewFileSubmenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuitemNewWordDoc, Me.menuitemNewExcelWorkbook, Me.menuitemNewPPTPresentation, Me.zSeparatorOutlookArea, Me.menuitemNewOutlookEmail, Me.menuitemNewOutlookContact, Me.zSeparatorNewMenuProfessionalApps, Me.menuitemNewPublisherPublication})
+        Me.menubarNewFileSubmenu.Name = "menubarNewFileSubmenu"
+        Me.menubarNewFileSubmenu.Size = New System.Drawing.Size(155, 22)
+        Me.menubarNewFileSubmenu.Text = "&New"
+        '
+        'menuitemNewWordDoc
+        '
+        Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
+        Me.menuitemNewWordDoc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menuitemNewWordDoc.Name = "menuitemNewWordDoc"
+        Me.menuitemNewWordDoc.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewWordDoc.Text = "Microsoft &Word document"
+        '
+        'menuitemNewExcelWorkbook
+        '
+        Me.menuitemNewExcelWorkbook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
+        Me.menuitemNewExcelWorkbook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menuitemNewExcelWorkbook.Name = "menuitemNewExcelWorkbook"
+        Me.menuitemNewExcelWorkbook.Size = New System.Drawing.Size(294, 30)
+        Me.menuitemNewExcelWorkbook.Text = "Microsoft &Excel workbook (macro sheet)"
+        Me.menuitemNewExcelWorkbook.ToolTipText = resources.GetString("menuitemNewExcelWorkbook.ToolTipText")
+        '
+        'menuitemNewPPTPresentation
+        '
+        Me.menuitemNewPPTPresentation.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
+        Me.menuitemNewPPTPresentation.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menuitemNewPPTPresentation.Name = "menuitemNewPPTPresentation"
+        Me.menuitemNewPPTPresentation.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewPPTPresentation.Text = "Microsoft &PowerPoint presentation"
+        '
+        'zSeparatorOutlookArea
+        '
+        Me.zSeparatorOutlookArea.Name = "zSeparatorOutlookArea"
+        Me.zSeparatorOutlookArea.Size = New System.Drawing.Size(263, 6)
+        '
+        'menuitemNewOutlookEmail
+        '
+        Me.menuitemNewOutlookEmail.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.menuitemNewOutlookEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menuitemNewOutlookEmail.Name = "menuitemNewOutlookEmail"
+        Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewOutlookEmail.Text = "Microsoft Outlook e&mail"
+        '
+        'menuitemNewOutlookContact
+        '
+        Me.menuitemNewOutlookContact.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.menuitemNewOutlookContact.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menuitemNewOutlookContact.Name = "menuitemNewOutlookContact"
+        Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewOutlookContact.Text = "Microsoft Outlook &contact"
+        '
+        'zSeparatorNewMenuProfessionalApps
+        '
+        Me.zSeparatorNewMenuProfessionalApps.Name = "zSeparatorNewMenuProfessionalApps"
+        Me.zSeparatorNewMenuProfessionalApps.Size = New System.Drawing.Size(263, 6)
+        '
+        'menuitemNewPublisherPublication
+        '
+        Me.menuitemNewPublisherPublication.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
+        Me.menuitemNewPublisherPublication.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.menuitemNewPublisherPublication.Name = "menuitemNewPublisherPublication"
+        Me.menuitemNewPublisherPublication.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewPublisherPublication.Text = "Microsoft P&ublisher publication"
+        '
+        'menubarOpenButton
+        '
+        Me.menubarOpenButton.Name = "menubarOpenButton"
+        Me.menubarOpenButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.menubarOpenButton.Size = New System.Drawing.Size(155, 22)
+        Me.menubarOpenButton.Text = "&Open..."
+        '
+        'zToolStripSeparatorFileMenu
+        '
+        Me.zToolStripSeparatorFileMenu.Name = "zToolStripSeparatorFileMenu"
+        Me.zToolStripSeparatorFileMenu.Size = New System.Drawing.Size(152, 6)
         '
         'menubarExitButton
         '
         Me.menubarExitButton.Name = "menubarExitButton"
         Me.menubarExitButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.menubarExitButton.Size = New System.Drawing.Size(134, 22)
+        Me.menubarExitButton.Size = New System.Drawing.Size(155, 22)
         Me.menubarExitButton.Text = "E&xit"
         '
         'menubarViewMenu
@@ -237,7 +327,7 @@ Partial Class aaformMainWindow
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
         Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
-        Me.menubarAuthorsButton.Text = "A&cknowledgments"
+        Me.menubarAuthorsButton.Text = "A&cknowledgements"
         '
         'menubarLicenseButton
         '
@@ -575,7 +665,7 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeTitle)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeDescription)
-        Me.groupboxProApps.Controls.Add(Me.debugLabelForMSIInstall)
+        Me.groupboxProApps.Controls.Add(Me.debugLabelForUserHasOfficeThreeSixFive)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeDriveLocation)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForuserOfficeVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelForofficeInstallMethodString)
@@ -643,14 +733,14 @@ Partial Class aaformMainWindow
         Me.debugLabelXmlThemeDescription.TabIndex = 23
         Me.debugLabelXmlThemeDescription.Text = "debugLabelXmlThemeDescription"
         '
-        'debugLabelForMSIInstall
+        'debugLabelForUserHasOfficeThreeSixFive
         '
-        Me.debugLabelForMSIInstall.AutoSize = True
-        Me.debugLabelForMSIInstall.Location = New System.Drawing.Point(4, 342)
-        Me.debugLabelForMSIInstall.Name = "debugLabelForMSIInstall"
-        Me.debugLabelForMSIInstall.Size = New System.Drawing.Size(124, 13)
-        Me.debugLabelForMSIInstall.TabIndex = 22
-        Me.debugLabelForMSIInstall.Text = "debugLabelForMSIInstall"
+        Me.debugLabelForUserHasOfficeThreeSixFive.AutoSize = True
+        Me.debugLabelForUserHasOfficeThreeSixFive.Location = New System.Drawing.Point(4, 342)
+        Me.debugLabelForUserHasOfficeThreeSixFive.Name = "debugLabelForUserHasOfficeThreeSixFive"
+        Me.debugLabelForUserHasOfficeThreeSixFive.Size = New System.Drawing.Size(209, 13)
+        Me.debugLabelForUserHasOfficeThreeSixFive.TabIndex = 22
+        Me.debugLabelForUserHasOfficeThreeSixFive.Text = "debugLabelForUserHasOfficeThreeSixFive"
         '
         'debugLabelForofficeDriveLocation
         '
@@ -909,6 +999,12 @@ Partial Class aaformMainWindow
         Me.notifyiconTaskbarLaunchers.Text = "UXL Launcher Quickmenu"
         Me.notifyiconTaskbarLaunchers.Visible = True
         '
+        'openfiledialogOpenDocument
+        '
+        Me.openfiledialogOpenDocument.Filter = resources.GetString("openfiledialogOpenDocument.Filter")
+        Me.openfiledialogOpenDocument.RestoreDirectory = True
+        Me.openfiledialogOpenDocument.Title = "Open"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1008,7 +1104,7 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelForuserOfficeVersion As Label
     Friend WithEvents debugLabelForofficeDriveLocation As Label
     Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
-    Friend WithEvents debugLabelForMSIInstall As Label
+    Friend WithEvents debugLabelForUserHasOfficeThreeSixFive As Label
     Friend WithEvents notifyiconTaskbarLaunchers As NotifyIcon
     Friend WithEvents contextmenuNotifyicon As ContextMenuStrip
     Friend WithEvents notifyiconWord As ToolStripMenuItem
@@ -1036,4 +1132,16 @@ Partial Class aaformMainWindow
     Friend WithEvents debugLabelXmlThemeUseThemeEngineVersion As Label
     Friend WithEvents notifyiconShowApp As ToolStripMenuItem
     Friend WithEvents debugLabelXmlThemeFileVersion As Label
+    Friend WithEvents menubarOpenButton As ToolStripMenuItem
+    Friend WithEvents zToolStripSeparatorFileMenu As ToolStripSeparator
+    Friend WithEvents openfiledialogOpenDocument As OpenFileDialog
+    Friend WithEvents menubarNewFileSubmenu As ToolStripMenuItem
+    Friend WithEvents menuitemNewWordDoc As ToolStripMenuItem
+    Friend WithEvents menuitemNewExcelWorkbook As ToolStripMenuItem
+    Friend WithEvents menuitemNewPPTPresentation As ToolStripMenuItem
+    Friend WithEvents menuitemNewOutlookEmail As ToolStripMenuItem
+    Friend WithEvents menuitemNewOutlookContact As ToolStripMenuItem
+    Friend WithEvents zSeparatorOutlookArea As ToolStripSeparator
+    Friend WithEvents zSeparatorNewMenuProfessionalApps As ToolStripSeparator
+    Friend WithEvents menuitemNewPublisherPublication As ToolStripMenuItem
 End Class

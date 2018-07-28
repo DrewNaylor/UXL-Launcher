@@ -23,15 +23,14 @@ Partial Class aaformOptionsWindow
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformOptionsWindow))
         Me.tableLayoutPanelOptionsWindow = New System.Windows.Forms.TableLayoutPanel()
         Me.buttonSaveSettings = New System.Windows.Forms.Button()
         Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
-        Me.linklabelCheckboxesToBeCombined = New System.Windows.Forms.LinkLabel()
         Me.labelOfficeInstallMethodDescription = New System.Windows.Forms.Label()
-        Me.checkboxMSIInstallMethod = New System.Windows.Forms.CheckBox()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
@@ -42,11 +41,10 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
-        Me.linklabelWindowsEditionLearnMore = New System.Windows.Forms.LinkLabel()
+        Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
-        Me.buttonHelpMeCPUType = New System.Windows.Forms.Button()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
@@ -66,7 +64,6 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
-        Me.tooltipMSIInstallMethodWorkaround = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
@@ -159,9 +156,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
-        Me.groupboxOfficeVersion.Controls.Add(Me.linklabelCheckboxesToBeCombined)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeInstallMethodDescription)
-        Me.groupboxOfficeVersion.Controls.Add(Me.checkboxMSIInstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
@@ -174,18 +169,6 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
         '
-        'linklabelCheckboxesToBeCombined
-        '
-        Me.linklabelCheckboxesToBeCombined.AutoSize = True
-        Me.linklabelCheckboxesToBeCombined.LinkArea = New System.Windows.Forms.LinkArea(55, 13)
-        Me.linklabelCheckboxesToBeCombined.Location = New System.Drawing.Point(112, 145)
-        Me.linklabelCheckboxesToBeCombined.Name = "linklabelCheckboxesToBeCombined"
-        Me.linklabelCheckboxesToBeCombined.Size = New System.Drawing.Size(224, 30)
-        Me.linklabelCheckboxesToBeCombined.TabIndex = 6
-        Me.linklabelCheckboxesToBeCombined.TabStop = True
-        Me.linklabelCheckboxesToBeCombined.Text = "These two checkboxes will be combined in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "version 3.2. Learn more..."
-        Me.linklabelCheckboxesToBeCombined.UseCompatibleTextRendering = True
-        '
         'labelOfficeInstallMethodDescription
         '
         Me.labelOfficeInstallMethodDescription.AutoSize = True
@@ -196,29 +179,16 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstallMethodDescription.TabIndex = 5
         Me.labelOfficeInstallMethodDescription.Text = "My Microsoft Office installation method:"
         '
-        'checkboxMSIInstallMethod
-        '
-        Me.checkboxMSIInstallMethod.AutoSize = True
-        Me.checkboxMSIInstallMethod.Location = New System.Drawing.Point(115, 126)
-        Me.checkboxMSIInstallMethod.Margin = New System.Windows.Forms.Padding(2)
-        Me.checkboxMSIInstallMethod.Name = "checkboxMSIInstallMethod"
-        Me.checkboxMSIInstallMethod.Size = New System.Drawing.Size(109, 17)
-        Me.checkboxMSIInstallMethod.TabIndex = 4
-        Me.checkboxMSIInstallMethod.Text = "I installed via MSI"
-        Me.tooltipMSIInstallMethodWorkaround.SetToolTip(Me.checkboxMSIInstallMethod, "This option is only used when Office 2013 is chosen above." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Leave this unchecked " &
-        "if you don't know what the MSI install" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "method for Microsoft Office is.")
-        Me.checkboxMSIInstallMethod.UseVisualStyleBackColor = True
-        '
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
         Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(115, 108)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(139, 17)
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 17)
         Me.checkboxO365InstallMethod.TabIndex = 3
-        Me.checkboxO365InstallMethod.Text = "I installed via Office 365"
-        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, "If you're using Office 2016, there's a good chance you installed via Office 365." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If you're using Office 2010, you probably didn't install via Office 365.")
+        Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility"
+        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
         '
         'labelUserHasThisOfficeVersion
@@ -313,11 +283,10 @@ Partial Class aaformOptionsWindow
         '
         'groupboxCPUType
         '
-        Me.groupboxCPUType.Controls.Add(Me.linklabelWindowsEditionLearnMore)
+        Me.groupboxCPUType.Controls.Add(Me.labelRecommendedWindowsEdition)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
-        Me.groupboxCPUType.Controls.Add(Me.buttonHelpMeCPUType)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(3, 3)
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
@@ -328,18 +297,16 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "What edition of Windows do you run?"
         '
-        'linklabelWindowsEditionLearnMore
+        'labelRecommendedWindowsEdition
         '
-        Me.linklabelWindowsEditionLearnMore.AutoSize = True
-        Me.linklabelWindowsEditionLearnMore.LinkArea = New System.Windows.Forms.LinkArea(120, 13)
-        Me.linklabelWindowsEditionLearnMore.Location = New System.Drawing.Point(93, 93)
-        Me.linklabelWindowsEditionLearnMore.Name = "linklabelWindowsEditionLearnMore"
-        Me.linklabelWindowsEditionLearnMore.Size = New System.Drawing.Size(190, 55)
-        Me.linklabelWindowsEditionLearnMore.TabIndex = 5
-        Me.linklabelWindowsEditionLearnMore.TabStop = True
-        Me.linklabelWindowsEditionLearnMore.Text = "The ""View system info"" button will" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "be replaced with a label that directly" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "shows" &
-    " your Windows edition" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "in version 3.2. Learn more..."
-        Me.linklabelWindowsEditionLearnMore.UseCompatibleTextRendering = True
+        Me.labelRecommendedWindowsEdition.AutoSize = True
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(93, 93)
+        Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 52)
+        Me.labelRecommendedWindowsEdition.TabIndex = 5
+        Me.labelRecommendedWindowsEdition.Text = "16-bit Windows is the recommended option for you, but if" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "using Office 2013, you " &
+    "may need to select ""32-bit Windows""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "due to the 32-bit version installing to ""Pr" &
+    "ogram Files""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "even on 64-bit Windows."
         '
         'radiobuttonCPUIsQBit
         '
@@ -347,10 +314,11 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(450, 160)
         Me.radiobuttonCPUIsQBit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
-        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(207, 17)
+        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(432, 17)
         Me.radiobuttonCPUIsQBit.TabIndex = 4
         Me.radiobuttonCPUIsQBit.TabStop = True
-        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl."
+        Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl. (Thank you for finding this hidden radio bu" &
+    "tton!)"
         Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
         '
         'radiobuttonCPUIs64Bit
@@ -376,18 +344,6 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCPUIs32Bit.TabStop = True
         Me.radiobuttonCPUIs32Bit.Text = "32-bit Windows"
         Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
-        '
-        'buttonHelpMeCPUType
-        '
-        Me.buttonHelpMeCPUType.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonHelpMeCPUType.Location = New System.Drawing.Point(306, 125)
-        Me.buttonHelpMeCPUType.Margin = New System.Windows.Forms.Padding(2)
-        Me.buttonHelpMeCPUType.Name = "buttonHelpMeCPUType"
-        Me.buttonHelpMeCPUType.Size = New System.Drawing.Size(105, 33)
-        Me.buttonHelpMeCPUType.TabIndex = 1
-        Me.buttonHelpMeCPUType.Text = "View system info"
-        Me.tooltipSystemInfo.SetToolTip(Me.buttonHelpMeCPUType, "Open the System Info page in the Control Panel.")
-        Me.buttonHelpMeCPUType.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
         '
@@ -479,10 +435,10 @@ Partial Class aaformOptionsWindow
         Me.labelCustomStatusbarGreeting.AutoSize = True
         Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(4, 16)
         Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
-        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(320, 26)
+        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(369, 26)
         Me.labelCustomStatusbarGreeting.TabIndex = 0
-        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "firstname or n" &
-    "ickname, or to use the default."
+        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
+    "ickname, or to use the default. Your name will not be used to identify you."
         '
         'groupboxAppearance
         '
@@ -594,6 +550,12 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
+        'tooltipO365InstallMethod
+        '
+        Me.tooltipO365InstallMethod.AutoPopDelay = 32766
+        Me.tooltipO365InstallMethod.InitialDelay = 500
+        Me.tooltipO365InstallMethod.ReshowDelay = 100
+        '
         'openfiledialogBrowseCustomThemeFile
         '
         Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
@@ -651,18 +613,14 @@ Partial Class aaformOptionsWindow
     Friend WithEvents checkboxO365InstallMethod As CheckBox
     Friend WithEvents groupboxCPUType As GroupBox
     Friend WithEvents labelCPUTypeDescription As Label
-    Friend WithEvents buttonHelpMeCPUType As Button
     Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
     Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
-    Friend WithEvents checkboxMSIInstallMethod As CheckBox
     Friend WithEvents labelOfficeInstallMethodDescription As Label
-    Friend WithEvents tooltipMSIInstallMethodWorkaround As ToolTip
     Friend WithEvents tooltipO365InstallMethod As ToolTip
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
-    Friend WithEvents linklabelWindowsEditionLearnMore As LinkLabel
     Friend WithEvents tabpagePersonalization As TabPage
     Friend WithEvents groupboxAppearance As GroupBox
     Friend WithEvents checkboxEnableThemeEngine As CheckBox
@@ -672,7 +630,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonCustomThemesBrowse As Button
     Friend WithEvents textboxCustomThemePath As TextBox
     Friend WithEvents labelCustomThemePath As Label
-    Friend WithEvents linklabelCheckboxesToBeCombined As LinkLabel
     Friend WithEvents groupboxStatusbar As GroupBox
     Friend WithEvents labelCustomStatusbarGreeting As Label
     Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton
@@ -681,4 +638,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelFirstName As Label
     Friend WithEvents buttonClearFirstname As Button
     Friend WithEvents openfiledialogBrowseCustomThemeFile As OpenFileDialog
+    Friend WithEvents labelRecommendedWindowsEdition As Label
 End Class

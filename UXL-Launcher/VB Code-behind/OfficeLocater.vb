@@ -70,7 +70,7 @@ Public Class OfficeLocater
         ' First we need to run the other subs.
         cpuType()
 
-        ' Then we need to combine them. First up is the user installed via Office 365 and not via MSI package.
+        ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run.
         If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "14" _
             Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "16" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" _
@@ -78,20 +78,21 @@ Public Class OfficeLocater
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
 
-            ' If the user installed specifically Office 2013 and they didn't use an MSI package, then we have a special 
+            ' If the user installed specifically Office 2013 and they used Office 365/Click-to-Run, then we have a special 
             ' string for that install method.
-        ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.installedViaMSIPackage = False Then
+        ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.userHasOfficeThreeSixFive = True Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\Root\Office15\"
             fullLauncherCodeString = fullLauncherCodePrivateString
 
-            ' Otherwise, if the user doesn't have Office 365, then create a different string.
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "14" _
-            Or My.Settings.userHasOfficeThreeSixFive = False And My.Settings.userOfficeVersion = "16" _
-            Or My.Settings.installedViaMSIPackage = True And My.Settings.userOfficeVersion = "15" Then
+            ' Otherwise, if the user doesn't have Office 365, then create a different string. This string doesn't
+            ' rely on the version of Office that's used; just if it's not installed via Office 365/C2R.
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" _
             & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
+
+            ' Remember to add code for Office 2019.
         End If
 
 

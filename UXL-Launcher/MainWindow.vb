@@ -37,7 +37,30 @@ Public Class aaformMainWindow
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Run the code in the combineStrings sub in OfficeLocater.vb
+        ' This has to be run before changing the titlebar text because
+        ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
+        ' string.
         OfficeLocater.combineStrings()
+
+        ' Put text in the titlebar.
+        ' Placing this code here ensures the titlebar isn't as
+        ' likely to get messed up and not have its proper text
+        ' as opposed to running it after running the theme engine
+        ' and having problems with the theme engine.
+        ' Previously, if the theme engine had problems, the titlebar
+        ' text wouldn't have been set properly here.
+
+        ' It was moved into its own sub to make it easier to update.
+        updateTitlebarText()
+
+        ' Update main window statusbar label text.
+        updateStatusbarText()
+
+        ' Set the Options window boolean variable for the theme engine
+        ' to My.Settings.enableThemeEngine.
+        ' This ensures that the theme engine isn't used by accident when
+        ' saving settings in the Options window.
+        aaformOptionsWindow.boolIsThemeEngineEnabled = My.Settings.enableThemeEngine
 
 #Region "Start the theme engine."
 
@@ -69,10 +92,6 @@ Public Class aaformMainWindow
 
 
 #End Region
-
-        ' Put text in the titlebar.
-        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.ToString & " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
-
 
 #Region "Debug code for aaformMainWindow."
         ' Figure out whether or not to show the debug labels based on a setting.
@@ -120,6 +139,30 @@ Public Class aaformMainWindow
 #End Region
         ' End of Form1_Load sub.
     End Sub
+#Region "Update statusbar text."
+    Friend Sub updateStatusbarText()
+        ' This sub updates the statusbar text based on whether the
+        ' user wants to use the default statusbar greeting or
+        ' to use a custom one personalized with their firstname
+        ' or nickname.
+        If My.Settings.userUseCustomStatusbarGreeting = False Then
+            ' If the setting is false, use the default greeting.
+            statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to launch them and explore the UI."
+        ElseIf My.Settings.userUseCustomStatusbarGreeting = True Then
+            ' If the setting is true, use a personalized greeting.
+            statusbarLabelWelcomeText.Text = "Welcome back to UXL Launcher, " & My.Settings.userFirstNameForCustomStatusbarGreeting & "!"
+        End If
+    End Sub
+#End Region
+
+#Region "Update titlebar text."
+    Friend Sub updateTitlebarText()
+        ' When called, this updates the titlebar text of the main window.
+        ' Moved into its own sub so that it can be updated in one place.
+        Me.Text = "UXL Launcher Version " & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString &
+    " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
+    End Sub
+#End Region
 
 #Region "Hide when minimized code."
     Private Sub aaformMainWindow_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -184,11 +227,66 @@ Public Class aaformMainWindow
 
 #Region "Menubar code, including menubar buttons."
 
+#Region "File menu"
     Private Sub menubarExitButton_Click(sender As Object, e As EventArgs) Handles menubarExitButton.Click
         ' End the execution of the app.
         Me.Close()
 
     End Sub
+
+    Private Sub menubarOpenButton_Click(sender As Object, e As EventArgs) Handles menubarOpenButton.Click
+        ' Show the "Open..." dialog and open the file if the user
+        ' wants to. Process.Start opens the file in the default app
+        ' for that file type.
+        If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
+            ' If the user clicks the "OK" button, open the file.
+            ' Note that this can also open EXE files and run them.
+            Process.Start(openfiledialogOpenDocument.FileName)
+        End If
+    End Sub
+
+#Region "New submenu"
+
+#Region "Microsoft Word document"
+    ' Create new Word document.
+    Private Sub menuitemNewWordDoc_Click(sender As Object, e As EventArgs) Handles menuitemNewWordDoc.Click
+        ' When the user clicks this button, run Word to create a new document.
+        LaunchApp.NewWordDoc()
+    End Sub
+#End Region
+#Region "Microsoft Excel workbook"
+    Private Sub menuitemNewExcelWorkbook_Click(sender As Object, e As EventArgs) Handles menuitemNewExcelWorkbook.Click
+        ' When the user clicks this button, run Excel to create a new workbook.
+        LaunchApp.NewExcelWorkbook()
+    End Sub
+#End Region
+#Region "Microsoft PowerPoint presentation"
+    Private Sub menuitemNewPPTPresentation_Click(sender As Object, e As EventArgs) Handles menuitemNewPPTPresentation.Click
+        ' When the user clicks this button, run PowerPoint to create a new presentation.
+        LaunchApp.NewPPTPresentation()
+    End Sub
+#End Region
+#Region "Microsoft Outlook email"
+    Private Sub menuitemNewOutlookEmail_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookEmail.Click
+        ' When the user clicks this button, run Outlook to create a new email.
+        LaunchApp.NewOutlookEmail()
+    End Sub
+#End Region
+#Region "Microsoft Outlook contact"
+    Private Sub menuitemNewOutlookContact_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookContact.Click
+        ' When the user clicks this button, run Outlook to create a new contact.
+        LaunchApp.NewOutlookContact()
+    End Sub
+#End Region
+#Region "Microsoft Publisher publication"
+    Private Sub menuitemNewPublisherPublication_Click(sender As Object, e As EventArgs) Handles menuitemNewPublisherPublication.Click
+        ' When the user clicks this button, run Publisher to create a new publication.
+        LaunchApp.NewPublisherPublication()
+    End Sub
+#End Region
+
+#End Region
+#End Region
 
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>

@@ -28,7 +28,7 @@
     <ProductName>UXL Launcher</ProductName>
     <PublisherName>Drew Naylor</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>3.1.0.%2a</ApplicationVersion>
+    <ApplicationVersion>3.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -51,7 +51,7 @@
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>UXL-Launcher.xml</DocumentationFile>
     <NoWarn>
@@ -191,11 +191,9 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NoneTheme_XML.txt" />
     <None Include="Resources\UXLLauncherInfo_TXT.txt" />
     <None Include="Resources\ThemeEngineInfo_TXT.txt" />
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
-    <None Include="Resources\themeList_TXT.txt" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
