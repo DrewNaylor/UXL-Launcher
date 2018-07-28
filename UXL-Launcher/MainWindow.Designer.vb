@@ -202,7 +202,7 @@ Partial Class aaformMainWindow
         Me.menuitemNewOutlookEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookEmail.Name = "menuitemNewOutlookEmail"
         Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(266, 30)
-        Me.menuitemNewOutlookEmail.Text = "Microsoft Outlook email"
+        Me.menuitemNewOutlookEmail.Text = "Microsoft Outlook e&mail"
         '
         'menuitemNewOutlookContact
         '
@@ -210,7 +210,7 @@ Partial Class aaformMainWindow
         Me.menuitemNewOutlookContact.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookContact.Name = "menuitemNewOutlookContact"
         Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(266, 30)
-        Me.menuitemNewOutlookContact.Text = "Microsoft Outlook contact"
+        Me.menuitemNewOutlookContact.Text = "Microsoft Outlook &contact"
         '
         'zSeparatorNewMenuProfessionalApps
         '
