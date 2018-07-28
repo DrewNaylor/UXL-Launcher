@@ -275,7 +275,7 @@ Public Class aaformMainWindow
 #Region "Microsoft Outlook contact"
     Private Sub menuitemNewOutlookContact_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookContact.Click
         ' When the user clicks this button, run Outlook to create a new contact.
-        LaunchApp.NewOutlookContact
+        LaunchApp.NewOutlookContact()
     End Sub
 #End Region
 

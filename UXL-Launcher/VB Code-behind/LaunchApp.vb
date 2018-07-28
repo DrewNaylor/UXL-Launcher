@@ -141,7 +141,7 @@ Public Class LaunchApp
 #End Region
 #Region "Outlook - New Contact"
     Public Shared Sub NewOutlookContact()
-        ' Create a new Outlook email.
+        ' Create a new Outlook contact.
         isolated_error_handler.newFileErrorHandler("OUTLOOK.EXE", "/c ipm.contact", "Microsoft Outlook")
     End Sub
 #End Region
