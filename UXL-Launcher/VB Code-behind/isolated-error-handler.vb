@@ -34,8 +34,8 @@ Public Class isolated_error_handler
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
+            ' If the program the user wants to launch isn't found in the folder the user chose
+            ' in the Options window, ask them if they want to go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the configured location." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
@@ -79,7 +79,10 @@ Public Class isolated_error_handler
         ' Assign start arguments.
         procNewFile.Arguments = launchArguments
         ' Try to start the program.
-        Process.Start(procNewFile)
+        Try
+            Process.Start(procNewFile)
+        Catch ex As System.ComponentModel.Win32Exception
+        End Try
     End Sub
 #End Region
 End Class
