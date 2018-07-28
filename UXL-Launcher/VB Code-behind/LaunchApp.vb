@@ -121,5 +121,17 @@ Public Class LaunchApp
         isolated_error_handler.newFileErrorHandler("WINWORD.EXE", "/w", "Microsoft Word")
     End Sub
 #End Region
+#Region "Excel"
+    Public Shared Sub NewExcelWorkbook()
+        ' Create a new Excel workbook.
+        isolated_error_handler.newFileErrorHandler("EXCEL.EXE", "/m", "Microsoft Excel")
+    End Sub
+#End Region
+#Region "PowerPoint"
+    Public Shared Sub NewPPTPresentation()
+        ' Create a new PowerPoint presentation.
+        isolated_error_handler.newFileErrorHandler("POWERPNT.EXE", "/b", "Microsoft PowerPoint")
+    End Sub
+#End Region
 #End Region
 End Class

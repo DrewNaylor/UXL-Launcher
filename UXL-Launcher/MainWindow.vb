@@ -254,6 +254,18 @@ Public Class aaformMainWindow
         LaunchApp.NewWordDoc
     End Sub
 #End Region
+#Region "Microsoft Excel workbook"
+    Private Sub menuitemNewExcelWorkbook_Click(sender As Object, e As EventArgs) Handles menuitemNewExcelWorkbook.Click
+        ' When the user clicks this button, run Excel to create a new workbook.
+        LaunchApp.NewExcelWorkbook()
+    End Sub
+#End Region
+#Region "Microsoft PowerPoint presentation"
+    Private Sub menuitemNewPPTPresentation_Click(sender As Object, e As EventArgs) Handles menuitemNewPPTPresentation.Click
+        ' When the user clicks this button, run PowerPoint to create a new presentation.
+        LaunchApp.NewPPTPresentation()
+    End Sub
+#End Region
 
 #End Region
 #End Region
