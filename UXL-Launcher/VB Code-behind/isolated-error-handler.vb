@@ -89,9 +89,7 @@ Public Class isolated_error_handler
                 "" & vbCrLf &
                 "Full error message: " & ex.Message & vbCrLf &
                 vbCrLf &
-                "Configured location: " & OfficeLocater.fullLauncherCodeString & vbCrLf &
-                vbCrLf &
-                "Command-line argument(s) used: " & launchArguments, "Couldn't find " & exeFriendlyName, MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+                "Configured location: " & OfficeLocater.fullLauncherCodeString, "Couldn't find " & exeFriendlyName, MessageBoxButtons.YesNo, MessageBoxIcon.Error)
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
