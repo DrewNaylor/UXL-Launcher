@@ -180,8 +180,9 @@ Partial Class aaformMainWindow
         Me.menuitemNewExcelWorkbook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
         Me.menuitemNewExcelWorkbook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewExcelWorkbook.Name = "menuitemNewExcelWorkbook"
-        Me.menuitemNewExcelWorkbook.Size = New System.Drawing.Size(266, 30)
-        Me.menuitemNewExcelWorkbook.Text = "Microsoft &Excel workbook"
+        Me.menuitemNewExcelWorkbook.Size = New System.Drawing.Size(294, 30)
+        Me.menuitemNewExcelWorkbook.Text = "Microsoft &Excel workbook (macro sheet)"
+        Me.menuitemNewExcelWorkbook.ToolTipText = resources.GetString("menuitemNewExcelWorkbook.ToolTipText")
         '
         'menuitemNewPPTPresentation
         '
