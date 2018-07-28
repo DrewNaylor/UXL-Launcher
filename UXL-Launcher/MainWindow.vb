@@ -244,6 +244,48 @@ Public Class aaformMainWindow
             Process.Start(openfiledialogOpenDocument.FileName)
         End If
     End Sub
+
+#Region "New submenu"
+
+#Region "Microsoft Word document"
+    ' Create new Word document.
+    Private Sub menuitemNewWordDoc_Click(sender As Object, e As EventArgs) Handles menuitemNewWordDoc.Click
+        ' When the user clicks this button, run Word to create a new document.
+        LaunchApp.NewWordDoc()
+    End Sub
+#End Region
+#Region "Microsoft Excel workbook"
+    Private Sub menuitemNewExcelWorkbook_Click(sender As Object, e As EventArgs) Handles menuitemNewExcelWorkbook.Click
+        ' When the user clicks this button, run Excel to create a new workbook.
+        LaunchApp.NewExcelWorkbook()
+    End Sub
+#End Region
+#Region "Microsoft PowerPoint presentation"
+    Private Sub menuitemNewPPTPresentation_Click(sender As Object, e As EventArgs) Handles menuitemNewPPTPresentation.Click
+        ' When the user clicks this button, run PowerPoint to create a new presentation.
+        LaunchApp.NewPPTPresentation()
+    End Sub
+#End Region
+#Region "Microsoft Outlook email"
+    Private Sub menuitemNewOutlookEmail_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookEmail.Click
+        ' When the user clicks this button, run Outlook to create a new email.
+        LaunchApp.NewOutlookEmail()
+    End Sub
+#End Region
+#Region "Microsoft Outlook contact"
+    Private Sub menuitemNewOutlookContact_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookContact.Click
+        ' When the user clicks this button, run Outlook to create a new contact.
+        LaunchApp.NewOutlookContact()
+    End Sub
+#End Region
+#Region "Microsoft Publisher publication"
+    Private Sub menuitemNewPublisherPublication_Click(sender As Object, e As EventArgs) Handles menuitemNewPublisherPublication.Click
+        ' When the user clicks this button, run Publisher to create a new publication.
+        LaunchApp.NewPublisherPublication()
+    End Sub
+#End Region
+
+#End Region
 #End Region
 
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click

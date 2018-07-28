@@ -29,12 +29,13 @@
 
 
 Public Class isolated_error_handler
+#Region "Regular app launching error handler code."
     Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "ExeToLaunch.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "Application Name Here")
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
         Catch ex As System.ComponentModel.Win32Exception
-            ' If Microsoft Access isn't found in the folder the user chose in the Options window, ask them if they want to
-            ' go to the Options window to change it.
+            ' If the program the user wants to launch isn't found in the folder the user chose
+            ' in the Options window, ask them if they want to go to the Options window to change it.
             Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the configured location." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
@@ -64,4 +65,52 @@ Public Class isolated_error_handler
             End If
         End Try
     End Sub
+#End Region
+
+#Region "New file error handler code."
+    Public Shared Sub newFileErrorHandler(Optional exeToLaunch As String = "exeToLaunch.exe", Optional launchArguments As String = "Launch Arguments", Optional exeFriendlyName As String = "EXE Friendly Name")
+        ' First, create a ProcessStartInfo thing.
+        ' Based on code from HideSettingsPages.
+        ' https://github.com/DrewNaylor/HideSettingsPages
+
+        Dim procNewFile As New ProcessStartInfo
+        ' Now, get the file to launch.
+        procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
+        ' Assign start arguments.
+        procNewFile.Arguments = launchArguments
+        ' Try to start the program.
+        Try
+            Process.Start(procNewFile)
+        Catch ex As System.ComponentModel.Win32Exception
+            ' If the program the user wants to launch isn't found in the folder the user chose
+            ' in the Options window, ask them if they want to go to the Options window to change it.
+            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & exeFriendlyName & " in the configured location." &
+            " Would you like to open the Options window to change your settings?" & vbCrLf &
+                "" & vbCrLf &
+                "Full error message: " & ex.Message & vbCrLf &
+                vbCrLf &
+                "Configured location: " & OfficeLocater.fullLauncherCodeString, "Couldn't find " & exeFriendlyName, MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            ' If the user chooses to open the Options window, open the Options window to the General tab.
+            If msgResult = DialogResult.Yes Then
+                ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+                Dim forceOptionsWindowTab As New aaformOptionsWindow
+                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+            End If
+        Catch ex As Exception
+            ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
+            ' bug report.
+            Dim msgResult As Integer = MessageBox.Show("An error occurred that we can't handle yet. Would you like to file a bug report online?" & vbCrLf & "Before clicking ""Yes,"" please write down what you were doing" & vbCrLf & "when the error occurred along with the text below" &
+                " and use that to fill out the bug report." & vbCrLf &
+                "" & vbCrLf &
+                "Error message: " & vbCrLf & ex.Message & vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "I just don't know what went wrong!",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            ' If the user chooses to file a bug report online, go to the GitHub Issues "New Issue."
+            If msgResult = DialogResult.Yes Then
+                Process.Start("https://github.com/DrewNaylor/UXL-Launcher/issues/new")
+            End If
+        End Try
+    End Sub
+#End Region
 End Class
