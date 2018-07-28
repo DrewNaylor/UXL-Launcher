@@ -251,7 +251,7 @@ Public Class aaformMainWindow
     ' Create new Word document.
     Private Sub menuitemNewWordDoc_Click(sender As Object, e As EventArgs) Handles menuitemNewWordDoc.Click
         ' When the user clicks this button, run Word to create a new document.
-        LaunchApp.NewWordDoc
+        LaunchApp.NewWordDoc()
     End Sub
 #End Region
 #Region "Microsoft Excel workbook"
@@ -270,6 +270,12 @@ Public Class aaformMainWindow
     Private Sub menuitemNewOutlookEmail_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookEmail.Click
         ' When the user clicks this button, run Outlook to create a new email.
         LaunchApp.NewOutlookEmail()
+    End Sub
+#End Region
+#Region "Microsoft Outlook contact"
+    Private Sub menuitemNewOutlookContact_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookContact.Click
+        ' When the user clicks this button, run Outlook to create a new contact.
+        LaunchApp.NewOutlookContact
     End Sub
 #End Region
 
