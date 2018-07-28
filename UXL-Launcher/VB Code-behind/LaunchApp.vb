@@ -133,5 +133,11 @@ Public Class LaunchApp
         isolated_error_handler.newFileErrorHandler("POWERPNT.EXE", "/b", "Microsoft PowerPoint")
     End Sub
 #End Region
+#Region "Outlook - New Email"
+    Public Shared Sub NewOutlookEmail()
+        ' Create a new Outlook email.
+        isolated_error_handler.newFileErrorHandler("OUTLOOK.EXE", "/c ipm.note", "Microsoft Outlook")
+    End Sub
+#End Region
 #End Region
 End Class

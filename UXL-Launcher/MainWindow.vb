@@ -266,6 +266,12 @@ Public Class aaformMainWindow
         LaunchApp.NewPPTPresentation()
     End Sub
 #End Region
+#Region "Microsoft Outlook email"
+    Private Sub menuitemNewOutlookEmail_Click(sender As Object, e As EventArgs) Handles menuitemNewOutlookEmail.Click
+        ' When the user clicks this button, run Outlook to create a new email.
+        LaunchApp.NewOutlookEmail()
+    End Sub
+#End Region
 
 #End Region
 #End Region
