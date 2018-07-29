@@ -150,7 +150,9 @@ Public Class aaformOptionsWindow
         ' is contained in My.Resources.supportedOfficeVersionList.
         ' If not, add it to a list.
         If My.Resources.supportedOfficeVersionList.Contains(My.Settings.userOfficeVersion) Then
-            ' Create a string with the regular list.
+            ' Create a string with the regular list if the version
+            ' in the config file is contained within the supported
+            ' version list.
             Dim officeVersionsAvailableString As String() =
                         New String() {"Microsoft Office 2010",
                         "Microsoft Office 2013", "Microsoft Office 2016"}
@@ -169,10 +171,6 @@ Public Class aaformOptionsWindow
             "Microsoft Office 2013", "Microsoft Office 2016"}
             comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
         End If
-
-        ' Create the string for the comboboxOfficeVersionSelector and
-        ' set the DataSource of the combobox to that string.
-
 #End Region
 
         ' Load the user's settings for My.Settings.userOfficeVersion when the Options window loads.
