@@ -311,6 +311,11 @@ Public Class aaformOptionsWindow
                 My.Settings.userOfficeVersion = "15"
             ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
                 My.Settings.userOfficeVersion = "16"
+            Else
+                ' If none of the above Office versions are listed in the dropdown
+                ' box, just save the current My.Settings.userOfficeVersion to
+                ' itself.
+                My.Settings.userOfficeVersion = My.Settings.userOfficeVersion
             End If
 
             ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
