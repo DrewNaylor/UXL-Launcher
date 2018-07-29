@@ -146,12 +146,33 @@ Public Class aaformOptionsWindow
 
 
 #Region "Set the DataSource of the comboboxOfficeVersionSelector to a string."
-        ' Create the string for the comboboxOfficeVersionSelector and
-        ' set the DataSource of the combobox to that string.
-        Dim officeVersionsAvailableString As String() =
+        ' First, see if the user's Office version set in the config file
+        ' is contained in My.Resources.supportedOfficeVersionList.
+        ' If not, add it to a list.
+        If My.Resources.supportedOfficeVersionList.Contains(My.Settings.userOfficeVersion) Then
+            ' Create a string with the regular list.
+            Dim officeVersionsAvailableString As String() =
+                        New String() {"Microsoft Office 2010",
+                        "Microsoft Office 2013", "Microsoft Office 2016"}
+            comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+        ElseIf Not My.Resources.supportedOfficeVersionList.Contains(My.Settings.userOfficeVersion) Then
+            ' Otherwise, if the user's configured Office version isn't in the list,
+            ' add an extra item to the list.
+            Dim officeVersionsAvailableString As String() =
+                        New String() {"Microsoft Office 2010",
+                        "Microsoft Office 2013", "Microsoft Office 2016", "Office" & My.Settings.userOfficeVersion}
+            comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+        Else
+            ' If neither If statement works, just use the supported list.
+            Dim officeVersionsAvailableString As String() =
             New String() {"Microsoft Office 2010",
             "Microsoft Office 2013", "Microsoft Office 2016"}
-        comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+            comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+        End If
+
+        ' Create the string for the comboboxOfficeVersionSelector and
+        ' set the DataSource of the combobox to that string.
+
 #End Region
 
         ' Load the user's settings for My.Settings.userOfficeVersion when the Options window loads.
@@ -161,6 +182,10 @@ Public Class aaformOptionsWindow
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2013"
         ElseIf My.Settings.userOfficeVersion = "16" Then
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2016"
+            ' If none of the values match, just use "Office(version number)"
+        Else
+            ' Now, set the dropdown box to the non-supported Office version.
+            comboboxOfficeVersionSelector.Text = "Office" & My.Settings.userOfficeVersion
         End If
 
         ' Load the user's settings for My.Settings.cpuIsSixtyFourBit.

@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-07-17T23:40:21
+        '''  Looks up a localized string similar to 2018-07-29T02:48:57
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -495,6 +495,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("small_Word", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 14,15,16.
+        '''</summary>
+        Public ReadOnly Property supportedOfficeVersionList() As String
+            Get
+                Return ResourceManager.GetString("supportedOfficeVersionList", resourceCulture)
             End Get
         End Property
         

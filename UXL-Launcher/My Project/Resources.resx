@@ -6071,4 +6071,8 @@ This decimal is to be used for the About window when talking about what version 
     <value> - Codename "Bah Humbug"</value>
     <comment>Codename for this version of UXL Launcher. Will be shown in the About window. Make sure to include the " - Codename " for consistency with UXL Launcher releases. If you set the codename string to blank, it won't show up in the About window.</comment>
   </data>
+  <data name="supportedOfficeVersionList" xml:space="preserve">
+    <value>14,15,16</value>
+    <comment>List of UXL Launcher's officially-supported versions of Office. If there's a version set in the config file that's not contained in this list, that version will be listed in the Options window as "Office(version number)".</comment>
+  </data>
 </root>
