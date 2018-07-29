@@ -38,7 +38,7 @@ along with UXL Launcher (WPF test).  If not, see <http://www.gnu.org/licenses/>.
     <Grid>
         <DockPanel VerticalAlignment="Top">
             <Menu>
-                <MenuItem Header="Test"/>
+                <MenuItem Header="Test" Margin="4,0,0,0"/>
             </Menu>
         </DockPanel>
         <Grid Margin="0,12,0,0">
