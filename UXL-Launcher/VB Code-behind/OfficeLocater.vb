@@ -70,9 +70,9 @@ Public Class OfficeLocater
         ' First we need to run the other subs.
         cpuType()
 
-        ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run.
-        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "14" _
-            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "16" Then
+        ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
+        ' and the user doesn't have Office 2013.
+        If My.Settings.userHasOfficeThreeSixFive = True And Not My.Settings.userOfficeVersion = "15" Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" _
                 & My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
@@ -81,7 +81,7 @@ Public Class OfficeLocater
             ' If the user installed specifically Office 2013 and they used Office 365/Click-to-Run, then we have a special 
             ' string for that install method.
         ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.userHasOfficeThreeSixFive = True Then
-            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\Root\Office15\"
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\root\Office15\"
             fullLauncherCodeString = fullLauncherCodePrivateString
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string. This string doesn't
@@ -92,7 +92,7 @@ Public Class OfficeLocater
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
 
-            ' Remember to add code for Office 2019.
+            ' Remember to add code for Office 2019, if its install path differs from the regular Office 2010/2016 with Office 365 path.
         End If
 
 
