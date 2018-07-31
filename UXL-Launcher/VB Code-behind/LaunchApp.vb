@@ -43,7 +43,14 @@ Public Class LaunchApp
 #Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft OneNote Launcher Code."
