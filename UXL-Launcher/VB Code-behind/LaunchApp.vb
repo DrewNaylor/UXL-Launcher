@@ -80,7 +80,13 @@ Public Class LaunchApp
 #Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace")
+        End If
     End Sub
 #End Region
 #Region "Microsoft Publisher Launcher Code."
