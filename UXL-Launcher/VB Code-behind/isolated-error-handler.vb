@@ -30,7 +30,11 @@
 
 Public Class isolated_error_handler
 #Region "Regular app launching error handler code."
-    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "ExeToLaunch.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "Application Name Here")
+    Public Shared Sub launcherErrorHandler(Optional launcherErrorHandler_ExeName As String = "ExeToLaunch.exe", Optional launcherErrorHandler_ExeFriendlyName As String = "Application Name Here", Optional launcherErrorHandler_BypassConfiguredLocation As Boolean = False)
+        ' If launcherErrorHandler_BypassConfiguredLocation is set to True, apps will
+        ' just be launched with their name, like if you typed their filename into the
+        ' Windows Run dialog box.
+        ' See also: https://github.com/DrewNaylor/UXL-Launcher/issues/35
         Try
             Process.Start(OfficeLocater.fullLauncherCodeString & launcherErrorHandler_ExeName)
         Catch ex As System.ComponentModel.Win32Exception
