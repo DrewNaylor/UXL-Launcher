@@ -221,6 +221,18 @@ Namespace My
                 Me("userFirstNameForCustomStatusbarGreeting") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property bypassConfiguredLocationForDeprecatedApps() As Boolean
+            Get
+                Return CType(Me("bypassConfiguredLocationForDeprecatedApps"),Boolean)
+            End Get
+            Set
+                Me("bypassConfiguredLocationForDeprecatedApps") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
