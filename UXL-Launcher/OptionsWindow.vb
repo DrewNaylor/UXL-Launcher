@@ -374,6 +374,14 @@ Public Class aaformOptionsWindow
             ' for the name.
             My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
 
+            ' Save the status of whether to bypass the configured location for
+            ' deprecated or removed apps.
+            If checkboxBypassConfiguredLocationForDeprecatedApps.Checked = True Then
+                My.Settings.bypassConfiguredLocationForDeprecatedApps = True
+            ElseIf checkboxBypassConfiguredLocationForDeprecatedApps.Checked = False Then
+                My.Settings.bypassConfiguredLocationForDeprecatedApps = False
+            End If
+
 #End Region
 
 #Region "This is where the settings get saved and things update."
