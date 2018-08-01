@@ -40,6 +40,9 @@ Partial Class aaformOptionsWindow
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
+        Me.groupboxBypassConfiguredLocation = New System.Windows.Forms.GroupBox()
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps = New System.Windows.Forms.CheckBox()
+        Me.labelBypassConfiguredLocation = New System.Windows.Forms.Label()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
         Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
@@ -67,19 +70,17 @@ Partial Class aaformOptionsWindow
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
-        Me.groupboxBypassConfiguredLocation = New System.Windows.Forms.GroupBox()
-        Me.labelBypassConfiguredLocation = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
         Me.groupboxOfficeVersion.SuspendLayout()
         Me.groupboxOfficeLocation.SuspendLayout()
         Me.tabpageAdvanced.SuspendLayout()
+        Me.groupboxBypassConfiguredLocation.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
         Me.tabpagePersonalization.SuspendLayout()
         Me.groupboxStatusbar.SuspendLayout()
         Me.groupboxAppearance.SuspendLayout()
-        Me.groupboxBypassConfiguredLocation.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -284,6 +285,36 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Advanced"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
+        '
+        'groupboxBypassConfiguredLocation
+        '
+        Me.groupboxBypassConfiguredLocation.Controls.Add(Me.checkboxBypassConfiguredLocationForDeprecatedApps)
+        Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
+        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(6, 171)
+        Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
+        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(411, 150)
+        Me.groupboxBypassConfiguredLocation.TabIndex = 1
+        Me.groupboxBypassConfiguredLocation.TabStop = False
+        Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
+        '
+        'checkboxBypassConfiguredLocationForDeprecatedApps
+        '
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.AutoSize = True
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.Location = New System.Drawing.Point(74, 71)
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.Name = "checkboxBypassConfiguredLocationForDeprecatedApps"
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.Size = New System.Drawing.Size(307, 17)
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.TabIndex = 1
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.Text = "Bypass configured location for deprecated or removed apps"
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.UseVisualStyleBackColor = True
+        '
+        'labelBypassConfiguredLocation
+        '
+        Me.labelBypassConfiguredLocation.AutoSize = True
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(52, 16)
+        Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
+        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(308, 52)
+        Me.labelBypassConfiguredLocation.TabIndex = 0
+        Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
         '
         'groupboxCPUType
         '
@@ -565,25 +596,6 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
         Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
         '
-        'groupboxBypassConfiguredLocation
-        '
-        Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
-        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(6, 171)
-        Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
-        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(411, 150)
-        Me.groupboxBypassConfiguredLocation.TabIndex = 1
-        Me.groupboxBypassConfiguredLocation.TabStop = False
-        Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
-        '
-        'labelBypassConfiguredLocation
-        '
-        Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(52, 16)
-        Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
-        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(308, 52)
-        Me.labelBypassConfiguredLocation.TabIndex = 0
-        Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
-        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -608,6 +620,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.ResumeLayout(False)
         Me.groupboxOfficeLocation.PerformLayout()
         Me.tabpageAdvanced.ResumeLayout(False)
+        Me.groupboxBypassConfiguredLocation.ResumeLayout(False)
+        Me.groupboxBypassConfiguredLocation.PerformLayout()
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
         Me.tabpagePersonalization.ResumeLayout(False)
@@ -615,8 +629,6 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.PerformLayout()
         Me.groupboxAppearance.ResumeLayout(False)
         Me.groupboxAppearance.PerformLayout()
-        Me.groupboxBypassConfiguredLocation.ResumeLayout(False)
-        Me.groupboxBypassConfiguredLocation.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -666,4 +678,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelRecommendedWindowsEdition As Label
     Friend WithEvents groupboxBypassConfiguredLocation As GroupBox
     Friend WithEvents labelBypassConfiguredLocation As Label
+    Friend WithEvents checkboxBypassConfiguredLocationForDeprecatedApps As CheckBox
 End Class

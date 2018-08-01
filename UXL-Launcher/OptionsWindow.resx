@@ -135,7 +135,7 @@ This option uses that folder instead of the default. If unsure of what this mean
     <value>Some apps such as Microsoft InfoPath, SharePoint Workspace,
 Picture Manager, and OneNote for desktop were removed from
 different Office versions, but you might be able to launch them
-if they're still installed.</value>
+by bypassing the configured location if they're still installed.</value>
   </data>
   <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 23</value>
