@@ -78,8 +78,8 @@ Public Class isolated_error_handler
             Catch ex As System.ComponentModel.Win32Exception
                 ' If the program the user wants to launch isn't found in the folder the user chose
                 ' in the Options window, ask them if they want to go to the Options window to change it.
-                Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & ". Maybe it's not installed?" &
-                " Would you like to open the Options window to change your settings?" & vbCrLf &
+                Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & ". Maybe it's not installed?" & vbCrLf &
+                "Would you like to open the Options window to change your settings?" & vbCrLf &
                     "" & vbCrLf &
                     "Full error message: " & ex.Message & vbCrLf &
                     vbCrLf &

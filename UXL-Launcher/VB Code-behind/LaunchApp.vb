@@ -116,7 +116,13 @@ Public Class LaunchApp
 #Region "Microsoft Office Picture Manager Launcher Code."
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager")
+        End If
     End Sub
 #End Region
 #Region "Microsoft OneNote Quick Launch Launcher Code."
