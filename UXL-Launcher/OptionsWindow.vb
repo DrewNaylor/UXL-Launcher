@@ -290,18 +290,6 @@ Public Class aaformOptionsWindow
             ' This space reserved for more settings.
             '
             '
-#Region "Determine whether or not the settings the user chose are potentially incompatible."
-
-            ' If the Office Version Selector combobox is set to Office 2010 and the Office 365 checkbox is checked
-            ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
-            ' then tell the user that the combination isn't tested and might not work.
-
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxO365InstallMethod.Checked = True Then
-                MessageBox.Show("Note that the combination of the Microsoft Office version you chose and installation method are untested and might not work properly." _
-                                , "Potentially incompatible settings detected" _
-                                , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
-#End Region
 
 #Region "Things to save to My.Settings."
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
