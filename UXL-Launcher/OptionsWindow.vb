@@ -256,6 +256,10 @@ Public Class aaformOptionsWindow
         ' one.
         radiobuttonDefaultStatusbarGreeting.Checked = True
 
+        ' Reset the bypass configured location for deprecated or
+        ' removed apps checkbox to be unchecked.
+        checkboxBypassConfiguredLocationForDeprecatedApps.Checked = False
+
 
 
         '
