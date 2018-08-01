@@ -74,6 +74,14 @@ Public Class aaformOptionsWindow
             checkboxO365InstallMethod.Checked = False
         End If
 
+        ' Check the checkbox for bypassing configured location for deprecated apps
+        ' if My.Settings.bypassConfiguredLocationForDeprecatedApps = True.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            checkboxBypassConfiguredLocationForDeprecatedApps.Checked = True
+        ElseIf My.Settings.bypassConfiguredLocationForDeprecatedApps = False Then
+            checkboxBypassConfiguredLocationForDeprecatedApps.Checked = False
+        End If
+
 #Region "Personalization tab."
         ' Load the settings for the Personalization tab.
 
