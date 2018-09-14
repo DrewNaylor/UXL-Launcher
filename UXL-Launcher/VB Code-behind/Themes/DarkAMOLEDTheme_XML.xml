@@ -14,7 +14,7 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>Gray</BackColor>
+        <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
@@ -23,7 +23,7 @@
         <!-- Anything within the "FlatAppearance" element will only be used if
         "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
-          <BorderColor>LightGray</BorderColor>
+          <BorderColor>Gray</BorderColor>
         </FlatAppearance>
       </Button>
       
@@ -33,7 +33,7 @@
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>DimGray</BackColor>
+        <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
       
@@ -47,7 +47,7 @@
       </Label>
 
       <TextBox>
-        <BackColor>Gray</BackColor>
+        <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </TextBox>
 
@@ -65,7 +65,7 @@
 
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>DimGray</StartColor>
+          <StartColor>Black</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
           <EndColor>Black</EndColor>
