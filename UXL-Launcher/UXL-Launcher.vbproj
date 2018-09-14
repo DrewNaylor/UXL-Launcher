@@ -150,9 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsWindow.resx">
       <DependentUpon>OptionsWindow.vb</DependentUpon>
@@ -196,7 +196,7 @@
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
-    <None Include="VB Code-behind\Themes\DarkAMOLEDTheme_XML.xml" />
+    <None Include="VB Code-behind\Themes\TenDarkTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\MaudernTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />

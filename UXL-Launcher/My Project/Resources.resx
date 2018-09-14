@@ -6064,7 +6064,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>Icon used for Options button</comment>
   </data>
   <data name="themeList_TXT" xml:space="preserve">
-    <value>Default,DarkAMOLED,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom)</value>
+    <value>Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,TenDark,(Custom)</value>
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">
@@ -6075,7 +6075,7 @@ This decimal is to be used for the About window when talking about what version 
     <value>14,15,16</value>
     <comment>List of UXL Launcher's officially-supported versions of Office. If there's a version set in the config file that's not contained in this list, that version will be listed in the Options window as "Office(version number)".</comment>
   </data>
-  <data name="DarkAMOLEDTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\vb code-behind\themes\darkamoledtheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="TenDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\vb code-behind\themes\tendarktheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

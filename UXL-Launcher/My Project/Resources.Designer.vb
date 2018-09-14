@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-09-14T01:44:17
+        '''  Looks up a localized string similar to 2018-09-14T01:48:55
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -135,25 +135,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Clip_Organizer", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Dark AMOLED&lt;/Title&gt;
-        '''  &lt;Description&gt;A dark theme that mostly uses the color black to save power on AMOLED displays.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''
-        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
-        '''  UXL Launcher Theme Engine to use in case there are changes in newer
-        '''  versions of the theme engine that designers or developers don&apos;t want
-        '''  to use. Version 1.01 is the oldest version number available and anything
-        ''' [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property DarkAMOLEDTheme_XML() As String
-            Get
-                Return ResourceManager.GetString("DarkAMOLEDTheme_XML", resourceCulture)
             End Get
         End Property
         
@@ -528,6 +509,24 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Ten Dark&lt;/Title&gt;
+        '''  &lt;Description&gt;A dark theme with white text on a black background to save power on AMOLED and OLED displays.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available and [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property TenDarkTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("TenDarkTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2018)&lt;/Title&gt;
         '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead if you want similar colors to this theme, or Test (the theme file for Eyesore 2) if you want a test theme.&lt;/Description&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
@@ -568,7 +567,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Default,DarkAMOLED,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom).
+        '''  Looks up a localized string similar to Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,TenDark,(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String
             Get
