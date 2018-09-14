@@ -6064,7 +6064,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>Icon used for Options button</comment>
   </data>
   <data name="themeList_TXT" xml:space="preserve">
-    <value>Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom)</value>
+    <value>Default,DarkAMOLED,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom)</value>
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">

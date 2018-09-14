@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-09-14T01:38:10
+        '''  Looks up a localized string similar to 2018-09-14T01:44:17
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -141,14 +141,15 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Dark AMOLED&lt;/Title&gt;
-        '''  &lt;Description&gt;Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.&lt;/Description&gt;
+        '''  &lt;Description&gt;A dark theme that mostly uses the color black to save power on AMOLED displays.&lt;/Description&gt;
         '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
         '''  UXL Launcher Theme Engine to use in case there are changes in newer
         '''  versions of the theme engine that designers or developers don&apos;t want
-        '''  to use. Version 1.01 is the oldest version number avail [rest of string was truncated]&quot;;.
+        '''  to use. Version 1.01 is the oldest version number available and anything
+        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property DarkAMOLEDTheme_XML() As String
             Get
@@ -567,7 +568,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom).
+        '''  Looks up a localized string similar to Default,DarkAMOLED,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String
             Get
