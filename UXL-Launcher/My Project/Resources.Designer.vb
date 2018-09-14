@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-07-29T02:48:57
+        '''  Looks up a localized string similar to 2018-09-14T01:38:10
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -135,6 +135,24 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Clip_Organizer", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Dark AMOLED&lt;/Title&gt;
+        '''  &lt;Description&gt;Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number avail [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property DarkAMOLEDTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("DarkAMOLEDTheme_XML", resourceCulture)
             End Get
         End Property
         
