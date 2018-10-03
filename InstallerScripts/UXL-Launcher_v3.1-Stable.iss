@@ -31,6 +31,10 @@ OutputBaseFilename=UXL-Launcher_v3.1-Stable
 SetupIconFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_1-stable-UXL_Launcher\UXL-Launcher.ico
 Compression=lzma
 SolidCompression=yes
+AppCopyright=Copyright 2013-2018 Drew Naylor. Licensed under the Gnu GPL v3+.
+ShowLanguageDialog=no
+UninstallDisplayIcon={uninstallexe}
+MinVersion=0,6.1
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
