@@ -36,6 +36,9 @@ AppCopyright=Copyright 2013-2018 Drew Naylor. Licensed under the Gnu GPL v3+.
 ShowLanguageDialog=no
 UninstallDisplayIcon={uninstallexe}
 MinVersion=0,6.1
+CreateUninstallRegKey=yes
+EnableDirDoesntExistWarning=True
+DirExistsWarning=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -58,3 +61,6 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
+[Messages]
+UninstalledAll=%1 was successfully removed from your computer. Configuration files may still be present in (username)\AppData\Local\UXL_Launcher, where (username) is your user profile usually in C:\Users.
