@@ -6,6 +6,7 @@
 #define MyAppPublisher "Drew Naylor"
 #define MyAppURL "https://github.com/DrewNaylor/UXL-Launcher"
 #define MyAppUpdatesURL "https://github.com/DrewNaylor/UXL-Launcher/releases/latest"
+#define MyAppHelpURL "https://github.com/DrewNaylor/UXL-Launcher/wiki"
 #define MyAppExeName "UXL-Launcher.exe"
 
 [Setup]
@@ -18,7 +19,7 @@ AppVersion={#MyAppVersion}
 AppVerName={#MyAppName} Version {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
-AppSupportURL={#MyAppURL}
+AppSupportURL={#MyAppHelpURL}
 AppUpdatesURL={#MyAppUpdatesURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName=Drew Naylor
