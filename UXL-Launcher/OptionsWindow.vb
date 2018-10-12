@@ -560,7 +560,10 @@ Public Class aaformOptionsWindow
         ' it can also be called from the custom theme path textbox
         ' TextChanged event.
 
-        ' First, make sure that the theme list is only using custom themes.
+        ' First, update the tooltip for this textbox.
+        tooltipCustomThemePath.SetToolTip(textboxCustomThemePath, textboxCustomThemePath.Text)
+
+        ' Next, make sure that the theme list is only using custom themes.
         If comboboxThemeList.Text = "(Custom)" Then
             ' Create a temporary XML document.
             Dim tempXml As XmlDocument = New XmlDocument

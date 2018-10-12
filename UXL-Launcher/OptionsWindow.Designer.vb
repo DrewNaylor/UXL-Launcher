@@ -70,6 +70,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
+        Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -516,6 +517,7 @@ Partial Class aaformOptionsWindow
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
         Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
         Me.textboxCustomThemePath.TabIndex = 4
+        Me.tooltipCustomThemePath.SetToolTip(Me.textboxCustomThemePath, "(Placeholder)")
         '
         'labelThemeList
         '
@@ -593,6 +595,14 @@ Partial Class aaformOptionsWindow
         '
         Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
         Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
+        '
+        'tooltipCustomThemePath
+        '
+        Me.tooltipCustomThemePath.AutoPopDelay = 5000
+        Me.tooltipCustomThemePath.InitialDelay = 500
+        Me.tooltipCustomThemePath.IsBalloon = True
+        Me.tooltipCustomThemePath.ReshowDelay = 100
+        Me.tooltipCustomThemePath.ToolTipTitle = "Custom theme path"
         '
         'aaformOptionsWindow
         '
@@ -677,4 +687,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxBypassConfiguredLocation As GroupBox
     Friend WithEvents labelBypassConfiguredLocation As Label
     Friend WithEvents checkboxBypassConfiguredLocationForDeprecatedApps As CheckBox
+    Friend WithEvents tooltipCustomThemePath As ToolTip
 End Class
