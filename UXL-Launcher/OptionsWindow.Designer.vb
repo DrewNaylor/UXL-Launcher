@@ -243,12 +243,12 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonClearTextbox.AutoSize = True
         Me.buttonClearTextbox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonClearTextbox.Location = New System.Drawing.Point(183, 63)
+        Me.buttonClearTextbox.Location = New System.Drawing.Point(174, 63)
         Me.buttonClearTextbox.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonClearTextbox.Name = "buttonClearTextbox"
-        Me.buttonClearTextbox.Size = New System.Drawing.Size(82, 23)
+        Me.buttonClearTextbox.Size = New System.Drawing.Size(41, 23)
         Me.buttonClearTextbox.TabIndex = 3
-        Me.buttonClearTextbox.Text = "Clear Textbox"
+        Me.buttonClearTextbox.Text = "Clear"
         Me.buttonClearTextbox.UseVisualStyleBackColor = True
         '
         'textboxOfficeDrive
@@ -300,7 +300,7 @@ Partial Class aaformOptionsWindow
         'checkboxBypassConfiguredLocationForDeprecatedApps
         '
         Me.checkboxBypassConfiguredLocationForDeprecatedApps.AutoSize = True
-        Me.checkboxBypassConfiguredLocationForDeprecatedApps.Location = New System.Drawing.Point(74, 71)
+        Me.checkboxBypassConfiguredLocationForDeprecatedApps.Location = New System.Drawing.Point(55, 89)
         Me.checkboxBypassConfiguredLocationForDeprecatedApps.Name = "checkboxBypassConfiguredLocationForDeprecatedApps"
         Me.checkboxBypassConfiguredLocationForDeprecatedApps.Size = New System.Drawing.Size(307, 17)
         Me.checkboxBypassConfiguredLocationForDeprecatedApps.TabIndex = 1
@@ -310,7 +310,7 @@ Partial Class aaformOptionsWindow
         'labelBypassConfiguredLocation
         '
         Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(52, 16)
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(52, 23)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
         Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(308, 52)
         Me.labelBypassConfiguredLocation.TabIndex = 0
@@ -335,13 +335,11 @@ Partial Class aaformOptionsWindow
         'labelRecommendedWindowsEdition
         '
         Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(93, 93)
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(55, 83)
         Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
-        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 52)
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 65)
         Me.labelRecommendedWindowsEdition.TabIndex = 5
-        Me.labelRecommendedWindowsEdition.Text = "16-bit Windows is the recommended option for you, but if" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "using Office 2013, you " &
-    "may need to select ""32-bit Windows""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "due to the 32-bit version installing to ""Pr" &
-    "ogram Files""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "even on 64-bit Windows."
+        Me.labelRecommendedWindowsEdition.Text = resources.GetString("labelRecommendedWindowsEdition.Text")
         '
         'radiobuttonCPUIsQBit
         '
@@ -359,7 +357,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs64Bit
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(96, 74)
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(58, 59)
         Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
         Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(98, 17)
@@ -371,7 +369,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs32Bit
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(96, 56)
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(58, 41)
         Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
         Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(98, 17)
@@ -383,7 +381,7 @@ Partial Class aaformOptionsWindow
         'labelCPUTypeDescription
         '
         Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(93, 41)
+        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(55, 26)
         Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
         Me.labelCPUTypeDescription.Size = New System.Drawing.Size(229, 13)
