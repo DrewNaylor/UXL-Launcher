@@ -56,7 +56,8 @@ Public Class aaformOptionsWindow
             labelRecommendedWindowsEdition.Text = "64-bit Windows is the recommended option for you, but if" & vbCrLf &
                 "using Office 2013, you may need to select ""32-bit Windows""" & vbCrLf &
                 "due to the 32-bit version installing to ""Program Files""" & vbCrLf &
-                "even on 64-bit Windows."
+                "even on 64-bit Windows. 64-bit Office (Office 2019's default)" & vbCrLf &
+                "requires ""32-bit Windows"" to be selected above."
         Else
             ' If the OS isn't 64-bit, recommend the 32-bit option.
             labelRecommendedWindowsEdition.Text = "32-bit Windows is the recommended option for you."
