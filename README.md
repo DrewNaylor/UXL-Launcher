@@ -158,6 +158,8 @@ To run UXL Launcher, your computer requires the following:
 
 - Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems. There may also be a warning message on first start about Windows Defender SmartScreen saying it "prevented an unrecognized app from starting. Running this app might put your PC at risk." You can click the "More info" link, then the "Run anyway" button if you want to use it, though this may not be allowed on corporate networks.
 
+- Disk space, RAM, and CPU frequency requirements are based on the .Net Framework 4.6.1 requirements. UXL Launcher itself is quite small.
+
 ## Building UXL Launcher from Source: System Requirements and Guide
 
 In addition to the requirements for simply running UXL Launcher, your computer requires the following software to build it from source code:
