@@ -600,9 +600,7 @@ Partial Class aaformOptionsWindow
         '
         Me.tooltipCustomThemePath.AutoPopDelay = 5000
         Me.tooltipCustomThemePath.InitialDelay = 500
-        Me.tooltipCustomThemePath.IsBalloon = True
         Me.tooltipCustomThemePath.ReshowDelay = 100
-        Me.tooltipCustomThemePath.ToolTipTitle = "Custom theme path"
         '
         'aaformOptionsWindow
         '
