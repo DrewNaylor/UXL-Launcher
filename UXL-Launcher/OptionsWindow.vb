@@ -218,11 +218,12 @@ Public Class aaformOptionsWindow
 
             'Display a message box when the user presses characters that aren't allowed.
             e.Handled = True
-            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf & "Click the Clear Textbox button to empty the textbox." _
-                            & vbCrLf & "The textbox contents will be reset to drive C.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf &
+                            "You can clear the textbox by using the ""Clear"" button, or by pressing Delete or Backspace on your keyboard.",
+                            "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-            'Change the textbox for choosing the drive Office is installed on back to drive C.
-            textboxOfficeDrive.Text = "C"
+            'Change the textbox for choosing the drive Office is installed on back to the user's current configuration.
+            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
         End If
     End Sub
 #End Region
@@ -286,8 +287,8 @@ Public Class aaformOptionsWindow
         ' user they need to type in one drive letter.
         If textboxOfficeDrive.Text.Length = 0 Then
             MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ' After telling them that, reset the "Office Install Drive" textbox to default.
-            textboxOfficeDrive.Text = "C"
+            ' After telling them that, reset the "Office Install Drive" textbox to their current setting.
+            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
         Else
             '
             ' This space reserved for more settings.
