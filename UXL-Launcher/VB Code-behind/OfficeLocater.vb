@@ -94,7 +94,9 @@ Public Class OfficeLocater
 
             ' Office 2019 installs to the same folder as Office 2016, but doesn't have MSI installer support, so ignore the
             ' setting for My.Settings.userHasOfficeThreeSixFive.
-
+        ElseIf My.Settings.userOfficeVersion = "16nomsi" Then
+            ' If the version of Office in the config file is "16nomsi", Click-to-Run support is enforced, and
+            ' the "Office(number)" path takes the version and replaces "nomsi" with nothing ("")
         End If
 
 
