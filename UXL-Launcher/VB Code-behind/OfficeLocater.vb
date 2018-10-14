@@ -72,7 +72,7 @@ Public Class OfficeLocater
 
         ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
         ' and the user doesn't have Office 2013.
-        If My.Settings.userHasOfficeThreeSixFive = True And Not My.Settings.userOfficeVersion = "15" Then
+        If My.Settings.userHasOfficeThreeSixFive = True And Not My.Settings.userOfficeVersion = "15" And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" &
                 My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
@@ -86,7 +86,8 @@ Public Class OfficeLocater
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string. This string doesn't
             ' rely on the version of Office that's used; just if it's not installed via Office 365/C2R.
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
+            ' Also make sure that "nomsi" isn't in the Office version string.
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
             fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" &
                 My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
