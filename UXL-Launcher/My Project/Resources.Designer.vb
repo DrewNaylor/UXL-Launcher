@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-09-14T01:48:55
+        '''  Looks up a localized string similar to 2018-10-14T03:48:08
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -499,7 +499,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 14,15,16.
+        '''  Looks up a localized string similar to 14,15,16,16nomsi.
         '''</summary>
         Public ReadOnly Property supportedOfficeVersionList() As String
             Get

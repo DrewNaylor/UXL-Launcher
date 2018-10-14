@@ -164,20 +164,20 @@ Public Class aaformOptionsWindow
             ' version list.
             Dim officeVersionsAvailableString As String() =
                         New String() {"Microsoft Office 2010",
-                        "Microsoft Office 2013", "Microsoft Office 2016"}
+                        "Microsoft Office 2013", "Microsoft Office 2016", "Microsoft Office 2019"}
             comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
         ElseIf Not My.Resources.supportedOfficeVersionList.Contains(My.Settings.userOfficeVersion) Then
             ' Otherwise, if the user's configured Office version isn't in the list,
             ' add an extra item to the list.
             Dim officeVersionsAvailableString As String() =
                         New String() {"Microsoft Office 2010",
-                        "Microsoft Office 2013", "Microsoft Office 2016", "Office" & My.Settings.userOfficeVersion}
+                        "Microsoft Office 2013", "Microsoft Office 2016", "Microsoft Office 2019", "Office" & My.Settings.userOfficeVersion}
             comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
         Else
             ' If neither If statement works, just use the supported list.
             Dim officeVersionsAvailableString As String() =
             New String() {"Microsoft Office 2010",
-            "Microsoft Office 2013", "Microsoft Office 2016"}
+            "Microsoft Office 2013", "Microsoft Office 2016", "Microsoft Office 2019"}
             comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
         End If
 #End Region
@@ -189,6 +189,8 @@ Public Class aaformOptionsWindow
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2013"
         ElseIf My.Settings.userOfficeVersion = "16" Then
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2016"
+        ElseIf My.Settings.userOfficeVersion = "16nomsi" Then
+            comboboxOfficeVersionSelector.Text = "Microsoft Office 2019"
             ' If none of the values match, just use "Office(version number)"
         Else
             ' Now, set the dropdown box to the non-supported Office version.
@@ -312,6 +314,8 @@ Public Class aaformOptionsWindow
                 My.Settings.userOfficeVersion = "15"
             ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
                 My.Settings.userOfficeVersion = "16"
+            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2019" Then
+                My.Settings.userOfficeVersion = "16nomsi"
             Else
                 ' If none of the above Office versions are listed in the dropdown
                 ' box, just save the current My.Settings.userOfficeVersion to
