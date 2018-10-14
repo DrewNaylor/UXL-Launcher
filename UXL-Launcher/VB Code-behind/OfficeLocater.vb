@@ -92,7 +92,9 @@ Public Class OfficeLocater
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
 
-            ' Remember to add code for Office 2019, if its install path differs from the regular Office 2010/2016 with Office 365 path.
+            ' Office 2019 installs to the same folder as Office 2016, but doesn't have MSI installer support, so ignore the
+            ' setting for My.Settings.userHasOfficeThreeSixFive.
+
         End If
 
 
