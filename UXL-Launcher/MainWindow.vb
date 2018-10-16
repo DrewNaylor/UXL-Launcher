@@ -241,22 +241,14 @@ Public Class aaformMainWindow
         If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
             ' If the user clicks the "OK" button, open the file.
             ' Make sure that the file isn't executable before running it.
-            ' Get list of unsafe extensions.
-            Dim unsafeExtensions As String = My.Resources.unsafeExtensions_TXT
-            ' Replace Lf with CrLf in unsafe extension list after replacing CrLf with Lf.
-            unsafeExtensions = unsafeExtensions.Replace(vbCrLf, vbLf)
-            unsafeExtensions = unsafeExtensions.Replace(vbLf, vbCrLf)
-            ' Replace CrLf with semicolons.
-            unsafeExtensions = unsafeExtensions.Replace(vbCrLf, ";")
-            If Not openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("EXE") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("BAT") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("CMD") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("MSI") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("SCR") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("VBS") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("JAR") And Not _
-                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("SWF") Then
-                Process.Start(openfiledialogOpenDocument.FileName)
+            ' Assign filename in open file dialog to string.
+            Dim fileName As String = openfiledialogOpenDocument.FileName.ToUpperInvariant
+            ' Now, make sure the list of unsafe extensions does NOT contain
+            ' this file's extension.
+            If Not My.Resources.unsafeExtensions_TXT.Contains(IO.Path.GetExtension(fileName)) Then
+                ' If the file name's extension isn't in the list of blocked extensions,
+                ' then use Process.Start to open the file.
+                Process.Start(fileName)
             End If
         End If
     End Sub
