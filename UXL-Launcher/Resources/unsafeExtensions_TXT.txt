@@ -1,4 +1,4 @@
-Unsafe file extensions blocked in "File>Open..." menu. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
+Unsafe file extensions blocked/user asked before opening in "File>Open..." menu. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
 EXE
 PIF
 APPLICATION
@@ -33,3 +33,9 @@ MSH2
 MSHXML
 MSH1XML
 MSH2XML
+SCF
+LNK
+INF
+REG
+SWF
+SH

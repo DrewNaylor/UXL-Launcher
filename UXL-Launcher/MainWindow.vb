@@ -241,6 +241,11 @@ Public Class aaformMainWindow
         If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
             ' If the user clicks the "OK" button, open the file.
             ' Make sure that the file isn't executable before running it.
+            ' Get list of unsafe extensions.
+            Dim unsafeExtensions As String = My.Resources.unsafeExtensions_TXT
+            ' Replace Lf with CrLf in unsafe extension list.
+            unsafeExtensions = unsafeExtensions.Replace(vbLf, vbCrLf)
+
             If Not openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("EXE") And Not _
                     openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("BAT") And Not _
                     openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("CMD") And Not _
