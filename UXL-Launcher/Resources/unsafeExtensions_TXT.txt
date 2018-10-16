@@ -1,0 +1,1 @@
+Unsafe file extensions blocked in "File>Open..." menu. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/

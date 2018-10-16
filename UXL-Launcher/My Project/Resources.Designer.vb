@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-10-14T03:48:08
+        '''  Looks up a localized string similar to 2018-10-16T21:16:44
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -572,6 +572,15 @@ Namespace My.Resources
         Public ReadOnly Property themeList_TXT() As String
             Get
                 Return ResourceManager.GetString("themeList_TXT", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unsafe file extensions for Windows. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/.
+        '''</summary>
+        Public ReadOnly Property unsafeExtensions_TXT() As String
+            Get
+                Return ResourceManager.GetString("unsafeExtensions_TXT", resourceCulture)
             End Get
         End Property
         

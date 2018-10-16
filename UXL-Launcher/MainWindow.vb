@@ -240,8 +240,17 @@ Public Class aaformMainWindow
         ' for that file type.
         If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
             ' If the user clicks the "OK" button, open the file.
-            ' Note that this can also open EXE files and run them.
-            Process.Start(openfiledialogOpenDocument.FileName)
+            ' Make sure that the file isn't executable before running it.
+            If Not openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("EXE") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("BAT") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("CMD") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("MSI") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("SCR") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("VBS") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("JAR") And Not _
+                    openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("SWF") Then
+                Process.Start(openfiledialogOpenDocument.FileName)
+            End If
         End If
     End Sub
 

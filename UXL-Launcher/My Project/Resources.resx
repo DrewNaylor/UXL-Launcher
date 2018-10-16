@@ -6083,4 +6083,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="TenDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vb code-behind\themes\tendarktheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="unsafeExtensions_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unsafeExtensions_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>
