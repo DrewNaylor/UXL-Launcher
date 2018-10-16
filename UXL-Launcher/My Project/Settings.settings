@@ -47,5 +47,8 @@
     <Setting Name="bypassConfiguredLocationForDeprecatedApps" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="showUnsafeFileExtensionBlockedMessage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -233,6 +233,18 @@ Namespace My
                 Me("bypassConfiguredLocationForDeprecatedApps") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property showUnsafeFileExtensionBlockedMessage() As Boolean
+            Get
+                Return CType(Me("showUnsafeFileExtensionBlockedMessage"),Boolean)
+            End Get
+            Set
+                Me("showUnsafeFileExtensionBlockedMessage") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

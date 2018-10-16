@@ -245,7 +245,13 @@ Public Class aaformMainWindow
             Dim fileName As String = openfiledialogOpenDocument.FileName.ToUpperInvariant
             ' Now, make sure the list of unsafe extensions does NOT contain
             ' this file's extension.
-            If Not My.Resources.unsafeExtensions_TXT.Contains(IO.Path.GetExtension(fileName)) Then
+            ' If it does, don't open it, and tell the user if that setting is
+            ' enabled.
+            If My.Resources.unsafeExtensions_TXT.Contains(IO.Path.GetExtension(fileName)) Then
+                If My.Settings.showUnsafeFileExtensionBlockedMessage = True Then
+                    MessageBox.Show("The file """ & openfiledialogOpenDocument.FileName & """ was blocked from being opened because """ & IO.Path.GetExtension(fileName) & """ is a potentially unsafe extension.", "Open")
+                End If
+            Else
                 ' If the file name's extension isn't in the list of blocked extensions,
                 ' then use Process.Start to open the file.
                 Process.Start(fileName)
