@@ -243,9 +243,11 @@ Public Class aaformMainWindow
             ' Make sure that the file isn't executable before running it.
             ' Get list of unsafe extensions.
             Dim unsafeExtensions As String = My.Resources.unsafeExtensions_TXT
-            ' Replace Lf with CrLf in unsafe extension list.
+            ' Replace Lf with CrLf in unsafe extension list after replacing CrLf with Lf.
+            unsafeExtensions = unsafeExtensions.Replace(vbCrLf, vbLf)
             unsafeExtensions = unsafeExtensions.Replace(vbLf, vbCrLf)
-
+            ' Replace CrLf with semicolons.
+            unsafeExtensions = unsafeExtensions.Replace(vbCrLf, ";")
             If Not openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("EXE") And Not _
                     openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("BAT") And Not _
                     openfiledialogOpenDocument.SafeFileName.ToUpperInvariant.EndsWith("CMD") And Not _
