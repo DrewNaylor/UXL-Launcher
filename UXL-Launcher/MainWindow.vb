@@ -249,7 +249,7 @@ Public Class aaformMainWindow
             ' enabled.
             If My.Resources.unsafeExtensions_TXT.Contains(IO.Path.GetExtension(fileName)) Then
                 If My.Settings.showUnsafeFileExtensionBlockedMessage = True Then
-                    MessageBox.Show(Me, "The file """ & openfiledialogOpenDocument.FileName & """ was blocked from being opened because """ & IO.Path.GetExtension(openfiledialogOpenDocument.FileName) & """ is a potentially unsafe extension.", "Open")
+                    MessageBox.Show(Me, "The file """ & openfiledialogOpenDocument.FileName & """ was blocked from being opened because """ & IO.Path.GetExtension(openfiledialogOpenDocument.FileName) & """ is a potentially unsafe extension.", "Open", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Else
                 ' If the file name's extension isn't in the list of blocked extensions,
@@ -259,7 +259,8 @@ Public Class aaformMainWindow
                 Try
                     Process.Start(fileName)
                 Catch ex As System.ComponentModel.Win32Exception
-                    MessageBox.Show(Me, "The file extension """ & IO.Path.GetExtension(openfiledialogOpenDocument.FileName) & """ doesn't have a program assigned to it.", "Open")
+                    MessageBox.Show(Me, "The file extension """ & IO.Path.GetExtension(openfiledialogOpenDocument.FileName) & """ doesn't have a program assigned to it. You can use the ""Open with..."" menu to select a program to open it with." & vbCrLf & vbCrLf &
+                                    "File name and path: " & openfiledialogOpenDocument.FileName, "Open")
                 End Try
             End If
         End If
