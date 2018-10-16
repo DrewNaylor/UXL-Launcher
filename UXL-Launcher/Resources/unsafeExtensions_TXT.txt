@@ -38,4 +38,3 @@ Unsafe file extensions blocked/user asked before opening in "File>Open..." menu.
 .INF
 .REG
 .SWF
-.SH
