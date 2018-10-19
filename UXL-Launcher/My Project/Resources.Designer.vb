@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-10-16T21:16:44
+        '''  Looks up a localized string similar to 2018-10-19T03:46:19
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -510,36 +510,19 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Ten Dark&lt;/Title&gt;
-        '''  &lt;Description&gt;A dark theme with white text on a black background to save power on AMOLED and OLED displays.&lt;/Description&gt;
+        '''  &lt;Description&gt;A dark theme similar to Windows 10&apos;s &quot;Dark Mode&quot;.&lt;/Description&gt;
         '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
         '''  UXL Launcher Theme Engine to use in case there are changes in newer
         '''  versions of the theme engine that designers or developers don&apos;t want
-        '''  to use. Version 1.01 is the oldest version number available and [rest of string was truncated]&quot;;.
+        '''  to use. Version 1.01 is the oldest version number available and anything
+        '''  smaller than that will automati [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property TenDarkTheme_XML() As String
             Get
                 Return ResourceManager.GetString("TenDarkTheme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Test2 (no longer updated as of 5/26/2018)&lt;/Title&gt;
-        '''  &lt;Description&gt;An improved test theme for UXL Launcher. No longer updated and may be removed at any time without notice. Use ReturnOfNight instead if you want similar colors to this theme, or Test (the theme file for Eyesore 2) if you want a test theme.&lt;/Description&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
-        '''  
-        '''    &lt;Theme_Colors&gt;
-        '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;MidnightBlue&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;White&lt;/ForeColor&gt; [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property Test2Theme_XML() As String
-            Get
-                Return ResourceManager.GetString("Test2Theme_XML", resourceCulture)
             End Get
         End Property
         
@@ -576,7 +559,46 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Unsafe file extensions for Windows. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/.
+        '''  Looks up a localized string similar to Unsafe file extensions blocked from opening in &quot;File&gt;Open...&quot; menu. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
+        '''.EXE
+        '''.PIF
+        '''.APPLICATION
+        '''.GADGET
+        '''.MSI
+        '''.MSP
+        '''.COM
+        '''.SCR
+        '''.HTA
+        '''.CPL
+        '''.MSC
+        '''.JAR
+        '''.BAT
+        '''.CMD
+        '''.VBS
+        '''.VBE
+        '''.JS
+        '''.JSE
+        '''.WS
+        '''.WSF
+        '''.WSC
+        '''.WSH
+        '''.PS1
+        '''.PS1XML
+        '''.PS2
+        '''.PS2XML
+        '''.PSC1
+        '''.PSC2
+        '''.MSH
+        '''.MSH1
+        '''.MSH2
+        '''.MSHXML
+        '''.MSH1XML
+        '''.MSH2XML
+        '''.SCF
+        '''.LNK
+        '''.INF
+        '''.REG
+        '''.SWF.
         '''</summary>
         Public ReadOnly Property unsafeExtensions_TXT() As String
             Get

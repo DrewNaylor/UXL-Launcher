@@ -1637,9 +1637,6 @@ This decimal is to be used for the About window when talking about what version 
   <data name="ApplauncherIconsInfo_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ApplauncherIconsInfo_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Test2Theme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\vb code-behind\themes\test2theme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="small_Word" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
