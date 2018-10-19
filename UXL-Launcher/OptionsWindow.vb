@@ -289,6 +289,13 @@ Public Class aaformOptionsWindow
             MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             ' After telling them that, reset the "Office Install Drive" textbox to their current setting.
             textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+            ' Select the "General" tab.
+            ' This article helped me with selecting the tab:
+            ' https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.tabcontrol.selectedindex?view=netframework-4.6.1
+            tabcontrolOptionsWindow.SelectedIndex = 0
+            ' Set focus to the Office Drive Location textbox, and select all text in it.
+            textboxOfficeDrive.Focus()
+            textboxOfficeDrive.SelectAll()
         Else
             '
             ' This space reserved for more settings.
@@ -330,8 +337,11 @@ Public Class aaformOptionsWindow
             ElseIf radiobuttonCPUIs64Bit.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = True
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
+                ' Focus the "Advanced" tab.
+                tabcontrolOptionsWindow.SelectedIndex = 1
                 MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
+                ' Now set the radio buttons to current user settings.
                 If My.Settings.cpuIsSixtyFourBit = True Then
                     radiobuttonCPUIs64Bit.Checked = True
                     My.Settings.cpuIsSixtyFourBit = True
