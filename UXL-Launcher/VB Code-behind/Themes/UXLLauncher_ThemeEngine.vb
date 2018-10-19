@@ -594,10 +594,8 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Define Short-words."
-        ' Create a short-form word for "Control." This is only used
-        ' when going through the flowlayoutpanels, so the only control needed
-        ' here is "groupbox"
-        Dim groupbox As Control
+        ' Used to be used for "Dim ctrl As Control", but
+        ' was moved to the actual code so that it's better.
 #End Region
 
 #Region "Set colors for controls in groupboxes."
@@ -683,7 +681,7 @@ Public Class UXLLauncher_ThemeEngine
         'Next
 
         ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
-        For Each groupbox In aaformMainWindow.flowLayoutPanel.Controls
+        For Each groupbox As Control In aaformMainWindow.flowLayoutPanel.Controls
             ' Change colors in groupboxes.
             If (groupbox.GetType() Is GetType(GroupBox)) Then
                 For Each groupboxControl In groupbox.Controls
