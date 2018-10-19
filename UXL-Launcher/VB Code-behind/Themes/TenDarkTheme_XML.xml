@@ -41,7 +41,7 @@
       </FlowLayoutPanel>
       
       <StatusBar>
-        <BackColor>#242424</BackColor>
+        <BackColor>#202020</BackColor>
       </StatusBar>
 
       <Label>
@@ -68,7 +68,7 @@
 
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>#242424</StartColor>
+          <StartColor>#202020</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
           <EndColor>Black</EndColor>
@@ -77,7 +77,7 @@
 
       <MenuBar>
         <!-- Background color for the menubar itself. -->
-        <BackColor>#242424</BackColor>
+        <BackColor>#202020</BackColor>
       </MenuBar>
       
       <StatusLabel>
