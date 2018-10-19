@@ -14,6 +14,9 @@
     <Theme_Colors>
       
       <Button>
+        <!-- The button BackColor and BorderColor value was eye-balled from the
+        color used in the Settings app for the Windows Update "Check for Updates"
+        button; it wasn't sampled from a screenshot. -->
         <BackColor>#363636</BackColor>
         <ForeColor>White</ForeColor>
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set
@@ -23,7 +26,7 @@
         <!-- Anything within the "FlatAppearance" element will only be used if
         "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
-          <BorderColor>Transparent</BorderColor>
+          <BorderColor>#363636</BorderColor>
         </FlatAppearance>
       </Button>
       
