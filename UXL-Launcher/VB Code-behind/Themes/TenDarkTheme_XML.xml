@@ -1,6 +1,6 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Ten Dark</Title>
-  <Description>A dark theme with white text on a black background to save power on AMOLED and OLED displays.</Description>
+  <Description>A dark theme similar to Windows 10's "Dark Mode".</Description>
   <Version>v1.0</Version>
   <Author>Drew Naylor</Author>
 
@@ -41,7 +41,7 @@
       </FlowLayoutPanel>
       
       <StatusBar>
-        <BackColor>Black</BackColor>
+        <BackColor>#242424</BackColor>
       </StatusBar>
 
       <Label>
@@ -68,7 +68,7 @@
 
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>Black</StartColor>
+          <StartColor>#242424</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
           <EndColor>Black</EndColor>
@@ -77,7 +77,7 @@
 
       <MenuBar>
         <!-- Background color for the menubar itself. -->
-        <BackColor>Black</BackColor>
+        <BackColor>#242424</BackColor>
       </MenuBar>
       
       <StatusLabel>
