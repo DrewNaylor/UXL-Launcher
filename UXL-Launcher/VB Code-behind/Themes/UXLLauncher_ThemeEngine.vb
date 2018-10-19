@@ -680,10 +680,18 @@ Public Class UXLLauncher_ThemeEngine
         '    End If
         'Next
 
+        '        ' Set color for the Flow Layout Panel.
+        aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
+        aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
+
         ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
         For Each groupbox As Control In aaformMainWindow.flowLayoutPanel.Controls
             ' Change colors in groupboxes.
             If (groupbox.GetType() Is GetType(GroupBox)) Then
+                ' Change groupbox colors.
+                groupbox.BackColor = colorGroupBoxBackColor
+                groupbox.ForeColor = colorGroupBoxForeColor
+
                 For Each groupboxControl In groupbox.Controls
                     ' If the control within the groupbox is a Button,
                     ' change the button's theme colors.
@@ -840,22 +848,22 @@ Public Class UXLLauncher_ThemeEngine
         '        ' Set color for the Flow Layout Panel.
         '        aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
         '        aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-        '        ' Set color for status bar.
-        '        aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
-        '        ' Set color for menubar.
-        '        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
-        '        ' Set the colors for the status bar label.
-        '        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
-        '        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
-        '        ' Set other properties for StatusLabel.
-        '        aaformMainWindow.statusbarLabelWelcomeText.BorderSides = propertyStatusLabelBorderSides
-        '        ' I was having some issues with setting the BorderStyle, so Try...Catch.
-        '        Try
-        '            aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
-        '        Catch ex As System.ComponentModel.InvalidEnumArgumentException
-        '            ' It may be a good idea to output text talking about this exception if people run into it.
-        '            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-        '        End Try
+        ' Set color for status bar.
+        aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
+        ' Set color for menubar.
+        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
+        ' Set the colors for the status bar label.
+        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
+        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
+        ' Set other properties for StatusLabel.
+        aaformMainWindow.statusbarLabelWelcomeText.BorderSides = propertyStatusLabelBorderSides
+        ' I was having some issues with setting the BorderStyle, so Try...Catch.
+        Try
+            aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
+        Catch ex As System.ComponentModel.InvalidEnumArgumentException
+            ' It may be a good idea to output text talking about this exception if people run into it.
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        End Try
 
 
 
