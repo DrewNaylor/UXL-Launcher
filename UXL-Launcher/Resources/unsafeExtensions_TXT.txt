@@ -38,3 +38,4 @@ Unsafe file extensions blocked from opening in "File>Open..." menu. Source: http
 .INF
 .REG
 .SWF
+.AHK
