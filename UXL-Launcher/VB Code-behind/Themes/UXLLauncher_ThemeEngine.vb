@@ -594,8 +594,10 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Define Short-words."
-        ' Create a short-form word for "Control."
-        Dim ctrl As Control
+        ' Create a short-form word for "Control." This is only used
+        ' when going through the flowlayoutpanels, so the only control needed
+        ' here is "groupbox"
+        Dim groupbox As Control
 #End Region
 
 #Region "Set colors for controls in groupboxes."
@@ -681,10 +683,10 @@ Public Class UXLLauncher_ThemeEngine
         'Next
 
         ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
-        For Each ctrl In aaformMainWindow.flowLayoutPanel.Controls
+        For Each groupbox In aaformMainWindow.flowLayoutPanel.Controls
             ' Change colors in groupboxes.
-            If (ctrl.GetType() Is GetType(GroupBox)) Then
-                For Each groupboxControl In ctrl.Controls
+            If (groupbox.GetType() Is GetType(GroupBox)) Then
+                For Each groupboxControl In groupbox.Controls
                     ' If the control within the groupbox is a Button,
                     ' change the button's theme colors.
                     If (groupboxControl.GetType() Is GetType(Button)) Then
@@ -706,6 +708,8 @@ Public Class UXLLauncher_ThemeEngine
                         Catch ex As System.NotSupportedException
                             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                         End Try
+                        ' If the control in the groupbox is a label,
+                        ' change the label's colors.
                     ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
                         Dim label As Label = CType(groupboxControl, Label)
                         ' Set label BackColor (background color).
@@ -719,50 +723,50 @@ Public Class UXLLauncher_ThemeEngine
                         textbox.BackColor = colorTextboxBackColor
                         ' Set textbox ForeColor (text color).
                         textbox.ForeColor = colorTextboxForeColor
-
                     End If
                 Next
             End If
-
-            'If (ctrl.GetType() Is GetType(Button)) Then
-            '    Dim button As Button = CType(ctrl, Button)
-            '    ' Set button BackColor (background color).
-            '    button.BackColor = colorButtonBackColor
-            '    ' Set button ForeColor (text color).
-            '    button.ForeColor = colorButtonForeColor
-            '    ' Set button style, whether that be flat, "Standard", or another
-            '    ' supported style.
-            '    button.FlatStyle = flatstyleButtonFlatStyle
-            '    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
-            '    ' Note that this can be any valid HTML or system color, including "Nothing"
-            '    ' ("Nothing" is the default value based on my testing).
-            '    ' Using "Transparent" causes a System.NotSupportedException
-            '    ' exception, so add a try...catch block and explain in the debug output.
-            '    Try
-            '        button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
-            '    Catch ex As System.NotSupportedException
-            '        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-            '    End Try
-            '    End If
-            '    ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
-            '    If (ctrl.GetType() Is GetType(Label)) Then
-            '        Dim label As Label = CType(ctrl, Label)
-            '        ' Set label BackColor (background color).
-            '        label.BackColor = colorLabelBackColor
-            '        ' Set label ForeColor (text color).
-            '        label.ForeColor = colorLabelForeColor
-            '    End If
-            '    ' Look at all the textboxes in the "Professional Apps" groupbox and change their theme.
-            '    If (ctrl.GetType() Is GetType(TextBox)) Then
-            '        Dim textbox As TextBox = CType(ctrl, TextBox)
-            '        ' Set textbox BackColor (background color).
-            '        textbox.BackColor = colorTextboxBackColor
-            '        ' Set textbox ForeColor (text color).
-            '        textbox.ForeColor = colorTextboxForeColor
-            '    End If
-            'Next
-
+            ' Go to next control, known as "groupbox" here.
         Next
+
+        'If (ctrl.GetType() Is GetType(Button)) Then
+        '    Dim button As Button = CType(ctrl, Button)
+        '    ' Set button BackColor (background color).
+        '    button.BackColor = colorButtonBackColor
+        '    ' Set button ForeColor (text color).
+        '    button.ForeColor = colorButtonForeColor
+        '    ' Set button style, whether that be flat, "Standard", or another
+        '    ' supported style.
+        '    button.FlatStyle = flatstyleButtonFlatStyle
+        '    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+        '    ' Note that this can be any valid HTML or system color, including "Nothing"
+        '    ' ("Nothing" is the default value based on my testing).
+        '    ' Using "Transparent" causes a System.NotSupportedException
+        '    ' exception, so add a try...catch block and explain in the debug output.
+        '    Try
+        '        button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+        '    Catch ex As System.NotSupportedException
+        '        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        '    End Try
+        '    End If
+        '    ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
+        '    If (ctrl.GetType() Is GetType(Label)) Then
+        '        Dim label As Label = CType(ctrl, Label)
+        '        ' Set label BackColor (background color).
+        '        label.BackColor = colorLabelBackColor
+        '        ' Set label ForeColor (text color).
+        '        label.ForeColor = colorLabelForeColor
+        '    End If
+        '    ' Look at all the textboxes in the "Professional Apps" groupbox and change their theme.
+        '    If (ctrl.GetType() Is GetType(TextBox)) Then
+        '        Dim textbox As TextBox = CType(ctrl, TextBox)
+        '        ' Set textbox BackColor (background color).
+        '        textbox.BackColor = colorTextboxBackColor
+        '        ' Set textbox ForeColor (text color).
+        '        textbox.ForeColor = colorTextboxForeColor
+        '    End If
+        'Next
+
 
         '' Look at all the buttons in the "Extra Apps + Tools" groupbox and change their theme.
         'For Each ctrl In aaformMainWindow.groupboxExtraApps.Controls
