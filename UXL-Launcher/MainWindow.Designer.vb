@@ -172,6 +172,7 @@ Partial Class aaformMainWindow
         Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
         Me.menuitemNewWordDoc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewWordDoc.Name = "menuitemNewWordDoc"
+        Me.menuitemNewWordDoc.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
         Me.menuitemNewWordDoc.Size = New System.Drawing.Size(294, 30)
         Me.menuitemNewWordDoc.Text = "Microsoft &Word document"
         '

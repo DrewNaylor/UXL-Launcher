@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-10-19T03:46:19
+        '''  Looks up a localized string similar to 2018-10-19T06:19:58
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -237,7 +237,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Git.
+        '''  Looks up a localized string similar to Release Candidate 1.
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
@@ -559,7 +559,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Unsafe file extensions blocked from opening in &quot;File&gt;Open...&quot; menu. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
+        '''  Looks up a localized string similar to Unsafe file extensions blocked from opening in &quot;File&gt;Open...&quot; menu. Source for some of them: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
         '''.EXE
         '''.PIF
         '''.APPLICATION
@@ -598,7 +598,8 @@ Namespace My.Resources
         '''.LNK
         '''.INF
         '''.REG
-        '''.SWF.
+        '''.SWF
+        '''.AHK.
         '''</summary>
         Public ReadOnly Property unsafeExtensions_TXT() As String
             Get
