@@ -618,8 +618,7 @@ Public Class UXLLauncher_ThemeEngine
                 Try
                     button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
                 Catch ex As System.NotSupportedException
-                    themeSettingsInvalidMessage(ex.ToString, ex.Message, "The color, " &
-                                                ", is not a supported color for the button control's Flat Appearance BorderColor property.")
+                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                 End Try
             End If
             ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
@@ -660,8 +659,7 @@ Public Class UXLLauncher_ThemeEngine
                 Try
                     button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
                 Catch ex As System.NotSupportedException
-                    themeSettingsInvalidMessage(ex.ToString, ex.Message, "The color, " & flatappearanceButtonBorderColor.ToString &
-                                                ", is not a supported color for the button control's Flat Appearance BorderColor property.")
+                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                 End Try
             End If
             ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
