@@ -633,6 +633,12 @@ Public Class UXLLauncher_ThemeEngine
                         Try
                             button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
                         Catch ex As System.NotSupportedException
+                            ' If the useThemeEngineVersion element in the theme is
+                            ' greater than or equal to 1.02, also set bordercolor
+                            ' to "Nothing".
+                            If themeSheetUseThemeEngineVersion >= 1.02 Then
+                                button.FlatAppearance.BorderColor = Nothing
+                            End If
                             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                         End Try
                         ' If the control in the groupbox is a label,
