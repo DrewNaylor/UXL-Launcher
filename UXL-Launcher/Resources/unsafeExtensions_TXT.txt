@@ -1,4 +1,4 @@
-Unsafe file extensions blocked from opening in "File>Open..." menu. Source: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
+Unsafe file extensions blocked from opening in "File>Open..." menu. Source for some of them: https://www.howtogeek.com/137270/50-file-extensions-that-are-potentially-dangerous-on-windows/
 .EXE
 .PIF
 .APPLICATION
