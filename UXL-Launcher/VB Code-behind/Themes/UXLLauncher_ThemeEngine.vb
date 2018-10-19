@@ -613,7 +613,14 @@ Public Class UXLLauncher_ThemeEngine
                 ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
                 ' Note that this can be any valid HTML or system color, including "Nothing"
                 ' ("Nothing" is the default value based on my testing).
-                button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                ' Using "Transparent" causes a System.NotSupportedException
+                ' exception, so add a try...catch block and explain in the debug output.
+                Try
+                    button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                Catch ex As System.NotSupportedException
+                    themeSettingsInvalidMessage(ex.ToString, ex.Message, "The color, " &
+                                                ", is not a supported color for the button control's Flat Appearance BorderColor property.")
+                End Try
             End If
             ' Look at all the labels in the "Standard Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
@@ -648,7 +655,14 @@ Public Class UXLLauncher_ThemeEngine
                 ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
                 ' Note that this can be any valid HTML or system color, including "Nothing"
                 ' ("Nothing" is the default value based on my testing).
-                button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                ' Using "Transparent" causes a System.NotSupportedException
+                ' exception, so add a try...catch block and explain in the debug output.
+                Try
+                    button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                Catch ex As System.NotSupportedException
+                    themeSettingsInvalidMessage(ex.ToString, ex.Message, "The color, " & flatappearanceButtonBorderColor.ToString &
+                                                ", is not a supported color for the button control's Flat Appearance BorderColor property.")
+                End Try
             End If
             ' Look at all the labels in the "Professional Apps" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
@@ -683,7 +697,14 @@ Public Class UXLLauncher_ThemeEngine
                 ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
                 ' Note that this can be any valid HTML or system color, including "Nothing"
                 ' ("Nothing" is the default value based on my testing).
-                button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                ' Using "Transparent" causes a System.NotSupportedException
+                ' exception, so add a try...catch block and explain in the debug output.
+                Try
+                    button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                Catch ex As System.NotSupportedException
+                    themeSettingsInvalidMessage(ex.ToString, ex.Message, "The color, " & flatappearanceButtonBorderColor.ToString &
+                                                ", is not a supported color for the button control's Flat Appearance BorderColor property.")
+                End Try
             End If
             ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
             If (ctrl.GetType() Is GetType(Label)) Then
@@ -996,6 +1017,23 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
                 Debug.WriteLine("Access to the custom theme file was denied.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "System.NotSupportedException" Then
+                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+                ' a theme file in My.Resources, give a message for this problem.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
+                            "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
+                            "match any theme files in My.Resources." & vbCrLf &
+                            "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
