@@ -62,7 +62,8 @@ Public Class UXLLauncher_ThemeEngine
             End If
         Catch ex As XmlException
             themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-            Debug.WriteLine(ex.Message)
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString & vbCrLf & "(Also, this code is near the top" &
+                                        "of the ApplyTheme code and it doesn't usually get hit.)")
             ' Complain to the user if the chosen theme doesn't have a root element.
             MessageBox.Show("There was a problem trying to load the " &
                             My.Settings.userChosenTheme & " theme." & vbCrLf &
@@ -873,7 +874,10 @@ Public Class UXLLauncher_ThemeEngine
                                 "Afterward, restart UXL Launcher.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -920,13 +924,13 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
 
             ElseIf exceptionType.ToString = "System.ComponentModel.InvalidEnumArgumentException" Then
-                ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
-                ' say that the chosen theme has no root element.
+                ' If the theme's StatusLabel BorderStyle property can't be found, there's a weird
+                ' exception for it, so that's what this is for.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
                 Debug.WriteLine("The StatusLabel BorderStyle property could not be found" & vbCrLf &
-                            "in the chosen custom theme file listed below," & vbCrLf &
+                            "in the chosen theme file/custom theme listed below," & vbCrLf &
                             "but this shouldn't cause any problems." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
