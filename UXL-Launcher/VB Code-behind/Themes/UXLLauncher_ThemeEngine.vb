@@ -702,8 +702,7 @@ Public Class UXLLauncher_ThemeEngine
                 Try
                     button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
                 Catch ex As System.NotSupportedException
-                    themeSettingsInvalidMessage(ex.ToString, ex.Message, "The color, " & flatappearanceButtonBorderColor.ToString &
-                                                ", is not a supported color for the button control's Flat Appearance BorderColor property.")
+                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                 End Try
             End If
             ' Look at all the labels in the "Extra Apps + Tools" groupbox and change their theme.
@@ -971,7 +970,10 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -989,7 +991,10 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -1006,7 +1011,10 @@ Public Class UXLLauncher_ThemeEngine
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -1019,7 +1027,10 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Access to the custom theme file was denied.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
@@ -1030,13 +1041,13 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
-                Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
-                            "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
-                            "match any theme files in My.Resources." & vbCrLf &
-                            "Please refer to the exception message above for more details.")
+                Debug.WriteLine("The Button FlatAppearance BorderColor property doesn't support the specified color.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
