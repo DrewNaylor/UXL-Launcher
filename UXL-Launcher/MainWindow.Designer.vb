@@ -172,7 +172,7 @@ Partial Class aaformMainWindow
         Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
         Me.menuitemNewWordDoc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewWordDoc.Name = "menuitemNewWordDoc"
-        Me.menuitemNewWordDoc.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewWordDoc.Size = New System.Drawing.Size(294, 30)
         Me.menuitemNewWordDoc.Text = "Microsoft &Word document"
         '
         'menuitemNewExcelWorkbook
@@ -189,20 +189,20 @@ Partial Class aaformMainWindow
         Me.menuitemNewPPTPresentation.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
         Me.menuitemNewPPTPresentation.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewPPTPresentation.Name = "menuitemNewPPTPresentation"
-        Me.menuitemNewPPTPresentation.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewPPTPresentation.Size = New System.Drawing.Size(294, 30)
         Me.menuitemNewPPTPresentation.Text = "Microsoft &PowerPoint presentation"
         '
         'zSeparatorOutlookArea
         '
         Me.zSeparatorOutlookArea.Name = "zSeparatorOutlookArea"
-        Me.zSeparatorOutlookArea.Size = New System.Drawing.Size(263, 6)
+        Me.zSeparatorOutlookArea.Size = New System.Drawing.Size(291, 6)
         '
         'menuitemNewOutlookEmail
         '
         Me.menuitemNewOutlookEmail.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
         Me.menuitemNewOutlookEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookEmail.Name = "menuitemNewOutlookEmail"
-        Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(294, 30)
         Me.menuitemNewOutlookEmail.Text = "Microsoft Outlook e&mail"
         '
         'menuitemNewOutlookContact
@@ -210,20 +210,20 @@ Partial Class aaformMainWindow
         Me.menuitemNewOutlookContact.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
         Me.menuitemNewOutlookContact.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookContact.Name = "menuitemNewOutlookContact"
-        Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(294, 30)
         Me.menuitemNewOutlookContact.Text = "Microsoft Outlook &contact"
         '
         'zSeparatorNewMenuProfessionalApps
         '
         Me.zSeparatorNewMenuProfessionalApps.Name = "zSeparatorNewMenuProfessionalApps"
-        Me.zSeparatorNewMenuProfessionalApps.Size = New System.Drawing.Size(263, 6)
+        Me.zSeparatorNewMenuProfessionalApps.Size = New System.Drawing.Size(291, 6)
         '
         'menuitemNewPublisherPublication
         '
         Me.menuitemNewPublisherPublication.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
         Me.menuitemNewPublisherPublication.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewPublisherPublication.Name = "menuitemNewPublisherPublication"
-        Me.menuitemNewPublisherPublication.Size = New System.Drawing.Size(266, 30)
+        Me.menuitemNewPublisherPublication.Size = New System.Drawing.Size(294, 30)
         Me.menuitemNewPublisherPublication.Text = "Microsoft P&ublisher publication"
         '
         'menubarOpenButton
@@ -256,30 +256,30 @@ Partial Class aaformMainWindow
         '
         Me.menubarAlwaysOnTopButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarAlwaysOnTopButton.Name = "menubarAlwaysOnTopButton"
-        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarAlwaysOnTopButton.Size = New System.Drawing.Size(232, 22)
         Me.menubarAlwaysOnTopButton.Text = "&Always On Top"
         '
         'menubarHideWhenMinimizedButton
         '
         Me.menubarHideWhenMinimizedButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarHideWhenMinimizedButton.Name = "menubarHideWhenMinimizedButton"
-        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(242, 22)
+        Me.menubarHideWhenMinimizedButton.Size = New System.Drawing.Size(232, 22)
         Me.menubarHideWhenMinimizedButton.Text = "&Hide When Minimized"
         '
         'menubarRevertThemeButton
         '
         Me.menubarRevertThemeButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menubarRevertThemeButton.Name = "menubarRevertThemeButton"
-        Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D0), System.Windows.Forms.Keys)
-        Me.menubarRevertThemeButton.Size = New System.Drawing.Size(242, 22)
-        Me.menubarRevertThemeButton.Text = "&Revert to Default Theme"
+        Me.menubarRevertThemeButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.menubarRevertThemeButton.Size = New System.Drawing.Size(232, 22)
+        Me.menubarRevertThemeButton.Text = "&Reload Default Theme"
         Me.menubarRevertThemeButton.ToolTipText = resources.GetString("menubarRevertThemeButton.ToolTipText")
         '
         'menubarToolsMenu
         '
         Me.menubarToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menubarOfficeLangPrefsButton, Me.zseparatorToolsMenu1, Me.menubarOptionsButton})
         Me.menubarToolsMenu.Name = "menubarToolsMenu"
-        Me.menubarToolsMenu.Size = New System.Drawing.Size(48, 19)
+        Me.menubarToolsMenu.Size = New System.Drawing.Size(47, 19)
         Me.menubarToolsMenu.Text = "&Tools"
         '
         'menubarOfficeLangPrefsButton
@@ -315,30 +315,30 @@ Partial Class aaformMainWindow
         '
         Me.menubarHelpTopicsButton.Name = "menubarHelpTopicsButton"
         Me.menubarHelpTopicsButton.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F1), System.Windows.Forms.Keys)
-        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarHelpTopicsButton.Size = New System.Drawing.Size(210, 22)
         Me.menubarHelpTopicsButton.Text = "&View Help Topics"
         '
         'zseparatorHelpMenu
         '
         Me.zseparatorHelpMenu.Name = "zseparatorHelpMenu"
-        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(208, 6)
+        Me.zseparatorHelpMenu.Size = New System.Drawing.Size(207, 6)
         '
         'menubarAuthorsButton
         '
         Me.menubarAuthorsButton.Name = "menubarAuthorsButton"
-        Me.menubarAuthorsButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAuthorsButton.Size = New System.Drawing.Size(210, 22)
         Me.menubarAuthorsButton.Text = "A&cknowledgements"
         '
         'menubarLicenseButton
         '
         Me.menubarLicenseButton.Name = "menubarLicenseButton"
-        Me.menubarLicenseButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarLicenseButton.Size = New System.Drawing.Size(210, 22)
         Me.menubarLicenseButton.Text = "&License"
         '
         'menubarAboutButton
         '
         Me.menubarAboutButton.Name = "menubarAboutButton"
-        Me.menubarAboutButton.Size = New System.Drawing.Size(211, 22)
+        Me.menubarAboutButton.Size = New System.Drawing.Size(210, 22)
         Me.menubarAboutButton.Text = "&About"
         '
         'contextmenuNotifyicon
