@@ -15,7 +15,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userOfficeVersion" Type="System.String" Scope="User">
-      <Value Profile="(Default)">16nomsi</Value>
+      <Value Profile="(Default)">14</Value>
     </Setting>
     <Setting Name="debugmodeShowLabels" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -27,7 +27,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowThemeEngineOutput" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="hideWhenMinimized" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
