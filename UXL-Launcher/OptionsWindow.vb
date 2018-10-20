@@ -69,11 +69,8 @@ Public Class aaformOptionsWindow
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
         ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
-        If My.Settings.userHasOfficeThreeSixFive = True Then
-            checkboxO365InstallMethod.Checked = True
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            checkboxO365InstallMethod.Checked = False
-        End If
+        ' Simplified from original "If" statement.
+        checkboxO365InstallMethod.Checked = My.Settings.userHasOfficeThreeSixFive
 
         ' Check the checkbox for bypassing configured location for deprecated apps
         ' if My.Settings.bypassConfiguredLocationForDeprecatedApps = True.
@@ -311,11 +308,8 @@ Public Class aaformOptionsWindow
 
             ' My.Settings.userHasOfficeThreeSixFive will be set based on 
             ' the .Checked state of the checkboxO365InstallMethod.
-            If checkboxO365InstallMethod.Checked = True Then
-                My.Settings.userHasOfficeThreeSixFive = True
-            ElseIf checkboxO365InstallMethod.Checked = False Then
-                My.Settings.userHasOfficeThreeSixFive = False
-            End If
+            ' Simplified from original "If" statement.
+            My.Settings.userHasOfficeThreeSixFive = checkboxO365InstallMethod.Checked
 
             ' Set My.Settings.userOfficeVersion to a string based on whatever
             ' comboboxOfficeVersionSelector.Text is set to.
