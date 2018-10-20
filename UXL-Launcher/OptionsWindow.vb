@@ -74,11 +74,8 @@ Public Class aaformOptionsWindow
 
         ' Check the checkbox for bypassing configured location for deprecated apps
         ' if My.Settings.bypassConfiguredLocationForDeprecatedApps = True.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
-            checkboxBypassConfiguredLocationForDeprecatedApps.Checked = True
-        ElseIf My.Settings.bypassConfiguredLocationForDeprecatedApps = False Then
-            checkboxBypassConfiguredLocationForDeprecatedApps.Checked = False
-        End If
+        ' Simplified from original "If" statement.
+        checkboxBypassConfiguredLocationForDeprecatedApps.Checked = My.Settings.bypassConfiguredLocationForDeprecatedApps
 
 #Region "Personalization tab."
         ' Load the settings for the Personalization tab.
@@ -377,11 +374,8 @@ Public Class aaformOptionsWindow
 
             ' Save the status of whether to bypass the configured location for
             ' deprecated or removed apps.
-            If checkboxBypassConfiguredLocationForDeprecatedApps.Checked = True Then
-                My.Settings.bypassConfiguredLocationForDeprecatedApps = True
-            ElseIf checkboxBypassConfiguredLocationForDeprecatedApps.Checked = False Then
-                My.Settings.bypassConfiguredLocationForDeprecatedApps = False
-            End If
+            ' Simplified from original "If" statement.
+            My.Settings.bypassConfiguredLocationForDeprecatedApps = checkboxBypassConfiguredLocationForDeprecatedApps.Checked
 
 #End Region
 
