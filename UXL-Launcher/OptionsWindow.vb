@@ -216,14 +216,17 @@ Public Class aaformOptionsWindow
         ' 
         If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
 
-            'Display a message box when the user presses characters that aren't allowed.
+            ' Display a message box when the user presses characters that aren't allowed.
             e.Handled = True
             MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf &
                             "You can clear the textbox by using the ""Clear"" button, or by pressing Delete or Backspace on your keyboard.",
                             "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-            'Change the textbox for choosing the drive Office is installed on back to the user's current configuration.
+            ' Change the textbox for choosing the drive Office is installed on back to the user's current configuration.
             textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+            ' Focus and select the textbox.
+            textboxOfficeDrive.Focus()
+            textboxOfficeDrive.SelectAll()
         End If
     End Sub
 #End Region
