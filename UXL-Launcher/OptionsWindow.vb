@@ -81,14 +81,9 @@ Public Class aaformOptionsWindow
         ' Load the settings for the Personalization tab.
 
 #Region "Theme Engine settings."
-        ' First, see if the theme engine is enabled.
-        If My.Settings.enableThemeEngine = True Then
-            ' If it is, check the "Enable Theme Engine" checkbox.
-            checkboxEnableThemeEngine.Checked = True
-        ElseIf My.Settings.enableThemeEngine = False Then
-            ' If it's not enabled, uncheck the checkbox.
-            checkboxEnableThemeEngine.Checked = False
-        End If
+        ' First, see if the theme engine is enabled, and check or uncheck the checkbox.
+        ' Simplified from the original "If" statement.
+        checkboxEnableThemeEngine.Checked = My.Settings.enableThemeEngine
 
         ' The theme info controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
         ' The updating doesn't include the custom theme textbox or the theme list, so do that now.
@@ -346,12 +341,8 @@ Public Class aaformOptionsWindow
             End If
 
             ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
-            If checkboxEnableThemeEngine.Checked = True Then
-                My.Settings.enableThemeEngine = True
-            ElseIf checkboxEnableThemeEngine.Checked = False Then
-                ' If it's unchecked, set the My.Settings variable to False.
-                My.Settings.enableThemeEngine = False
-            End If
+            ' Simplified from original "If" statement.
+            My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
 
             ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
             My.Settings.userChosenTheme = comboboxThemeList.Text
