@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to  - Codename &quot;Bah Humbug&quot;.
+        '''  Looks up a localized string similar to  - Codename &quot;Fashionably Late&quot;.
         '''</summary>
         Public ReadOnly Property appVersionCodename() As String
             Get
@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-10-19T06:19:58
+        '''  Looks up a localized string similar to 2018-10-20T02:33:38
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
