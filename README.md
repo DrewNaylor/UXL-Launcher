@@ -121,7 +121,7 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
 
-- UXL Launcher might not work with Office 2010 Home and Student and Home and Business. [(issue #70)](https://github.com/DrewNaylor/UXL-Launcher/issues/70)
+- **UXL Launcher might not work with Office 2010 Home and Student and Home and Business.** [(issue #70)](https://github.com/DrewNaylor/UXL-Launcher/issues/70)
 
 - Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
