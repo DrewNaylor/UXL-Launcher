@@ -18,7 +18,7 @@ The readme continues after this notice.
 
 ```
 UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-Copyright (C) 2013-2018 Drew Naylor
+Copyright (C) 2013-2019 Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation. More details in the About window.
 Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -120,6 +120,8 @@ More information to come in the future! In the meantime, please check the reposi
 - ~~If the main window is set to Always On Top and the user opens the Options window from the Quickmenu and clicks on a window behind the UXL Launcher window, the Options window will not be able to be interacted with until the user right-clicks on the Quickmenu icon again. [(issue #53)](https://github.com/DrewNaylor/UXL-Launcher/issues/53)~~ Fixed in [94edb9d](https://github.com/DrewNaylor/UXL-Launcher/commit/94edb9d042fb9e06c9244cda54ff83ae7bd6ab03) and [7875980](https://github.com/DrewNaylor/UXL-Launcher/commit/7875980c2c8c8c272d544146788e96f0fa9aad35)
 
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
+
+- UXL Launcher might not work with Office 2010 Home and Student and Home and Business. [(issue #70)](https://github.com/DrewNaylor/UXL-Launcher/issues/70)
 
 - Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
