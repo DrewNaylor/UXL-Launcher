@@ -966,8 +966,8 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
 
             ElseIf exceptionType.ToString = "System.NotSupportedException" Then
-                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
-                ' a theme file in My.Resources, give a message for this problem.
+                ' If the theme's property for Button FlatAppearance Border Color isn't supported by
+                ' the Windows Forms Button control, then give a message for this problem.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
