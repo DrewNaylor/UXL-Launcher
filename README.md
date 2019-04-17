@@ -133,6 +133,10 @@ More information to come in the future! In the meantime, please check the reposi
 
 - ~~Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)~~ Fixed in [9dc5474](https://github.com/DrewNaylor/UXL-Launcher/commit/9dc5474e2a4e11e3cbd98ba7e50d9c0550aadd0b)
 
+- "TenDark" theme button highlight colors are a bit hard to see. [(issue #140)]( https://github.com/DrewNaylor/UXL-Launcher/issues/140 )
+
+- If the Drive Location textbox length requirement isn't met when using "Test settings", you can't type anything into the textbox after closing the warning messagebox and before the settings are tested. [(issue #142)](https://github.com/DrewNaylor/UXL-Launcher/issues/142 )
+
 <br>
 <br>
 
