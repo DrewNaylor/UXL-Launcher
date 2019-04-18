@@ -706,9 +706,8 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "About window theming for themes compatible with TE 1.03 or greater."
-        ' Also set button colors for About window if theme works with 1.03 or greater.
         If themeSheetUseThemeEngineVersion >= 1.03 Then
-            ' BackColor and ForeColor
+            ' BackColor and ForeColor for buttons.
             aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = colorButtonBackColor
             aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = colorButtonForeColor
             ' FlatStyle. BorderColor is in the Try...Catch block.
@@ -726,6 +725,11 @@ Public Class UXLLauncher_ThemeEngine
                 ' Show an error about the NotSupportedException.
                 themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
             End Try
+
+            ' BackColor for FlowLayoutPanels.
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.BackColor = colorFlowLayoutPanelBackColor
+            ' And FlowLayoutPanel ForeColors.
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.ForeColor = colorFlowLayoutPanelForeColor
         End If
 #End Region
 
