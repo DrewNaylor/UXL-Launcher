@@ -429,11 +429,11 @@ Public Class UXLLauncher_ThemeEngine
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
-                colorTabPageBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
         End If
 #End Region
 
@@ -810,6 +810,17 @@ Public Class UXLLauncher_ThemeEngine
             ' Only apply the colors to the tableLayoutPanel control.
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
+
+            ' TabPage fore/backcolors.
+            ' About tab.
+            aaformMainWindow.forceAboutWindowTab.tabpageAbout.ForeColor = colorTabPageForeColor
+            aaformMainWindow.forceAboutWindowTab.tabpageAbout.BackColor = colorTabPageBackColor
+            ' License tab.
+            aaformMainWindow.forceAboutWindowTab.tabpageLicense.ForeColor = colorTabPageForeColor
+            aaformMainWindow.forceAboutWindowTab.tabpageLicense.BackColor = colorTabPageBackColor
+            ' Acknowledgements tab.
+            aaformMainWindow.forceAboutWindowTab.tabpageAcknowledgments.ForeColor = colorTabPageForeColor
+            aaformMainWindow.forceAboutWindowTab.tabpageAcknowledgments.BackColor = colorTabPageBackColor
         End If
 #End Region
 
