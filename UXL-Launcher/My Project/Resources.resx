@@ -3715,7 +3715,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>About window banner</comment>
   </data>
   <data name="isStable" xml:space="preserve">
-    <value>Release Candidate 1</value>
+    <value>Git</value>
     <comment>This value is used for the titlebar to tell the user if this app is stable or not. "Git" means that it's in development. "Alpha" means it's an alpha. "Beta" means it's a beta. "Release Candidate" means Release Candidate, plus any numbers. "Stable" means a stable release. There may be other values to represent the current state of development on the project.</comment>
   </data>
   <data name="Word" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -6065,7 +6065,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">
-    <value> - Codename "Fashionably Late"</value>
+    <value> - Codename "(unknown for now)"</value>
     <comment>Codename for this version of UXL Launcher. Will be shown in the About window. Make sure to include the " - Codename " for consistency with UXL Launcher releases. If you set the codename string to blank, it won't show up in the About window.</comment>
   </data>
   <data name="supportedOfficeVersionList" xml:space="preserve">

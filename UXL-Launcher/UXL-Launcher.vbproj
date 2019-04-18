@@ -28,7 +28,7 @@
     <ProductName>UXL Launcher</ProductName>
     <PublisherName>Drew Naylor</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>3.2.0.%2a</ApplicationVersion>
+    <ApplicationVersion>3.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
