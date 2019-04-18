@@ -44,6 +44,11 @@
         <BackColor>#202020</BackColor>
         <ForeColor>White</ForeColor>
       </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
       
       <StatusBar>
         <BackColor>#202020</BackColor>

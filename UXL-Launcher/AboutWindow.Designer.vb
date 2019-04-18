@@ -54,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -87,6 +87,7 @@ Partial Class aaformAboutWindow
         Me.tabcontrolAboutWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolAboutWindow.Location = New System.Drawing.Point(3, 3)
         Me.tabcontrolAboutWindow.Name = "tabcontrolAboutWindow"
+        Me.tabcontrolAboutWindow.Padding = New System.Drawing.Point(0, 0)
         Me.tabcontrolAboutWindow.SelectedIndex = 0
         Me.tabcontrolAboutWindow.Size = New System.Drawing.Size(528, 433)
         Me.tabcontrolAboutWindow.TabIndex = 2
