@@ -97,6 +97,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Label colors:
         Dim colorLabelBackColor As Color
         Dim colorLabelForeColor As Color
+        ' TableLayoutPanel colors:
+        Dim colorTableLayoutPanelBackColor As Color
+        Dim colorTableLayoutPanelForeColor As Color
         ' Textbox colors:
         Dim colorTextboxBackColor As Color
         Dim colorTextboxForeColor As Color
@@ -380,6 +383,38 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
+#Region "TableLayoutPanel BackColor"
+        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorTableLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
+#End Region
+
+#Region "TableLayoutPanel ForeColor"
+        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorTableLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
@@ -734,6 +769,12 @@ Public Class UXLLauncher_ThemeEngine
             ' Textbox fore/backcolors.
             aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = colorTextboxBackColor
             aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = colorTextboxForeColor
+
+            ' TableLayoutPanel fore/backcolors.
+            ' Note: DO NOT apply the colors to the tableLayoutPanelAboutApp control as this one uses the TabControl color.
+            ' Only apply the colors to the tableLayoutPanel control.
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
         End If
 #End Region
 

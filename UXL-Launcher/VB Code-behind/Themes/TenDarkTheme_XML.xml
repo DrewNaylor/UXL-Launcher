@@ -39,6 +39,11 @@
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <BackColor>ytyt</BackColor>
+        <ForeColor>White</ForeColor>
+      </TableLayoutPanel>
       
       <StatusBar>
         <BackColor>#202020</BackColor>
