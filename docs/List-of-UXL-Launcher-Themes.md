@@ -1,0 +1,18 @@
+This is a list of built-in themes available in UXL Launcher.
+The theme list and theme details may vary by version of UXL Launcher and the information provided here is taken from the [most recent official stable release](https://github.com/DrewNaylor/UXL-Launcher/releases/latest).
+
+If custom themes become popular, they can be added to a list of custom themes separate from the table below, perhaps in a table on this page. Likewise, if a custom theme becomes popular with users, it may be added as a built-in theme, with the theme author's permission, of course.
+
+The version of the theme engine each theme file works with is presented in the "Version" column as follows: 
+`v1.0 (TE 1.01)`. The first number is the file's version number and the `TE` number that follows it is the version of the theme engine that it works with. Themes missing a number are automatically assumed to be compatible with version 1.01.
+
+In addition to the themes listed here, custom themes are supported. Simply choose the `(Custom)` entry in the `Theme list` dropdown box under `Tools>Options...>Personalization tab`, then either use the `Browse...` button to select a custom theme file or paste the exact file location of the custom theme file into the available textbox, then hit `Save`. There's a wiki page on [how to make your own custom theme](https://github.com/DrewNaylor/UXL-Launcher/wiki/How-to-Make-a-Custom-Theme-for-UXL-Launcher), if you like.
+
+| Theme name | Description | Version | Author | Link |
+|------------|-------------|---------|--------|------|
+| Default Theme | Default is the theme UXL Launcher ships with. | v1.0 (TE 1.01) | Drew Naylor | [DefaultTheme_XML.xml](https://github.com/DrewNaylor/UXL-Launcher/blob/master/UXL-Launcher/VB%20Code-behind/Themes/DefaultTheme_XML.xml) |
+| Eyesore | Eyesore is a theme that's meant to be a tribute to Windows 3.1's Hot Dog Stand theme. The "Eyesore" theme and Drew Naylor are not associated with Microsoft Corporation in any way, shape, or form. Windows 3.1 and all related words are copyright and trademark/registered trademark Microsoft Corporation in the United States and other countries. All rights reserved to Microsoft Corp. for Microsoft Corp.'s copyrights and trademarks/registered trademarks. | v1.0 (TE 1.01) | Original Hotdog Stand theme by Microsoft Corporation; implemented as a UXL Launcher theme by Drew Naylor | [EyesoreTheme_XML.xml](https://github.com/DrewNaylor/UXL-Launcher/blob/master/UXL-Launcher/VB%20Code-behind/Themes/EyesoreTheme_XML.xml) |
+| Eyesore 2 | Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse. | v1.0 (TE 1.01) | Drew Naylor | [Eyesore2Theme_XML.xml](https://github.com/DrewNaylor/UXL-Launcher/blob/master/UXL-Launcher/VB%20Code-behind/Themes/Eyesore2Theme_XML.xml) |
+| Maudern | Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration. | v1.0 (TE 1.01) | Drew Naylor | [MaudernTheme_XML.xml](https://github.com/DrewNaylor/UXL-Launcher/blob/master/UXL-Launcher/VB%20Code-behind/Themes/MaudernTheme_XML.xml) |
+| Return of the Night | Based on the Test2 theme, "Return of the Night" is a purple theme best suited for those who like proper day/night cycles. | v1.0 (TE 1.01) | Drew Naylor | [ReturnOfNightTheme_XML.xml](https://github.com/DrewNaylor/UXL-Launcher/blob/master/UXL-Launcher/VB%20Code-behind/Themes/ReturnOfNightTheme_XML.xml) |
+| Arr G. Bee | Arr G. Bee is a theme that's influenced by the UXL Launcher logo. | v1.0 (TE 1.01) | Drew Naylor | [RGBTheme_XML.xml](https://github.com/DrewNaylor/UXL-Launcher/blob/master/UXL-Launcher/VB%20Code-behind/Themes/RGBTheme_XML.xml) |

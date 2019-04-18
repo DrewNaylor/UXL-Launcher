@@ -1,0 +1,1 @@
+If you want to use the Microsoft Office Picture Manager along side Office 2013 or 2016, you can install it from either the Office 2003, 2007, or 2010 install disks or the SharePoint Designer 2010 install file. You can read this article for more information on this: http://www.howtogeek.com/281913/how-to-bring-back-the-microsoft-office-picture-manager-in-office-2013-or-2016/
