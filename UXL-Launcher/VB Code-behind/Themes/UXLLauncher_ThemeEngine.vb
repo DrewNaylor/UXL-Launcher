@@ -705,6 +705,18 @@ Public Class UXLLauncher_ThemeEngine
 
 #End Region
 
+#Region "About window theming for themes compatible with TE 1.03 or greater."
+        ' Also set button colors for About window if theme works with 1.03 or greater.
+        If themeSheetUseThemeEngineVersion >= 1.03 Then
+            ' BackColor and ForeColor
+            aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = colorButtonBackColor
+            aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = colorButtonForeColor
+            ' FlatStyle. BorderColor is in the Try...Catch block.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatStyle = flatstyleButtonFlatStyle
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+        End If
+#End Region
+
     End Sub
 #End Region
 #End Region

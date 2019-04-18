@@ -56,6 +56,18 @@ My.Resources.ApplauncherIconsInfo_TXT.Replace(vbLf, vbCrLf) ' Icon set for UXL L
         ' Load the Acknowledgements document in the RTF Textbox control.
         rtftextboxAcknowledgements.Rtf = My.Resources.Acknowledgements_RTF
 
+#Region "Start the theme engine."
+
+        ' If the user wants to use the theme engine, then use it.
+        If My.Settings.enableThemeEngine = True Then
+
+            ' Choose the user's theme and apply it.
+            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+        End If
+
+
+#End Region
+
     End Sub
 #End Region
 #Region "Code to run when clicking the link to go to the GitHub repository."
