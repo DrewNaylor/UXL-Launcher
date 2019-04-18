@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2019-04-18T03:56:29
+        '''  Looks up a localized string similar to 2019-04-18T06:46:58
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -134,6 +134,16 @@ Namespace My.Resources
         Public ReadOnly Property Clip_Organizer() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Clip_Organizer", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Public ReadOnly Property DARK_UXL_Launcher_Banner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("DARK_UXL_Launcher_Banner", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
