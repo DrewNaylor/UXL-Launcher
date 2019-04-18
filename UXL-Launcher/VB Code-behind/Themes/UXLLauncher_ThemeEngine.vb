@@ -210,7 +210,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Only look at the banner style if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager) IsNot Nothing Then
             ' If the theme says to use the "Dark" banner, use it.
-            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager).ToString = "Dark" Then
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager).InnerText = "Dark" Then
                 bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
                 debugmodeStuff.updateDebugLabels()
             Else

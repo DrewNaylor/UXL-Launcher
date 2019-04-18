@@ -12,6 +12,13 @@
   <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
   
     <Theme_Colors>
+
+      <AboutWindow>
+        <!-- This controls how the About window's banner appears.
+        Available BannerStyle options are "Light" and "Dark".
+        Anything else will be set to "Light". -->
+        <BannerStyle>Dark</BannerStyle>
+      </AboutWindow>
       
       <Button>
         <!-- The button BackColor and BorderColor value was eye-balled from the
