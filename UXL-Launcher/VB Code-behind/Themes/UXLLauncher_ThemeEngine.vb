@@ -730,6 +730,10 @@ Public Class UXLLauncher_ThemeEngine
             aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.BackColor = colorFlowLayoutPanelBackColor
             ' And FlowLayoutPanel ForeColors.
             aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.ForeColor = colorFlowLayoutPanelForeColor
+
+            ' Textbox fore/backcolors.
+            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = colorTextboxBackColor
+            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = colorTextboxForeColor
         End If
 #End Region
 
