@@ -79,6 +79,8 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Define strings for controls and things in the XML document."
 
+        ' Banner style (Dark or Light):
+        Dim bannerStyle As Image
         ' Button colors:
         Dim colorButtonBackColor As Color
         Dim colorButtonForeColor As Color
@@ -201,6 +203,23 @@ Public Class UXLLauncher_ThemeEngine
         Else
             themeSheetFileVersion = "(No version specified)"
             debugmodeStuff.updateDebugLabels()
+        End If
+#End Region
+
+#Region "Banner Style"
+        ' Only look at the banner style if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager) IsNot Nothing Then
+            ' If the theme says to use the "Dark" banner, use it.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager).ToString = "Dark" Then
+                bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
+                debugmodeStuff.updateDebugLabels()
+            Else
+                ' If the element is something else, use the regular banner.
+                bannerStyle = My.Resources.UXL_Launcher_Banner
+            End If
+        Else
+            ' Otherwise, make sure it's set if it's not in the theme.
+            bannerStyle = My.Resources.UXL_Launcher_Banner
         End If
 #End Region
 
@@ -821,6 +840,9 @@ Public Class UXLLauncher_ThemeEngine
             ' Acknowledgements tab.
             aaformMainWindow.forceAboutWindowTab.tabpageAcknowledgments.ForeColor = colorTabPageForeColor
             aaformMainWindow.forceAboutWindowTab.tabpageAcknowledgments.BackColor = colorTabPageBackColor
+
+            ' About tab banner style (dark or light).
+            aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = bannerStyle
         End If
 #End Region
 
