@@ -100,6 +100,9 @@ Public Class UXLLauncher_ThemeEngine
         ' TableLayoutPanel colors:
         Dim colorTableLayoutPanelBackColor As Color
         Dim colorTableLayoutPanelForeColor As Color
+        ' TabPage colors:
+        Dim colorTabPageBackColor As Color
+        Dim colorTabPageForeColor As Color
         ' Textbox colors:
         Dim colorTextboxBackColor As Color
         Dim colorTextboxForeColor As Color
@@ -415,6 +418,38 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
+#Region "TabPage BackColor"
+        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorTabPageBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorTabPageBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Transparent)
+        End If
+#End Region
+
+#Region "TabPage ForeColor"
+        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorTabPageForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
