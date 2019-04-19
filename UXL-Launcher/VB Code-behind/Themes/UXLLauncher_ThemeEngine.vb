@@ -900,27 +900,24 @@ Public Class UXLLauncher_ThemeEngine
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
 
             ' TabPage fore/backcolors.
-            ' About tab.
-            aaformMainWindow.forceAboutWindowTab.tabpageAbout.ForeColor = colorTabPageForeColor
-            aaformMainWindow.forceAboutWindowTab.tabpageAbout.BackColor = colorTabPageBackColor
-            ' License tab.
-            aaformMainWindow.forceAboutWindowTab.tabpageLicense.ForeColor = colorTabPageForeColor
-            aaformMainWindow.forceAboutWindowTab.tabpageLicense.BackColor = colorTabPageBackColor
-            ' Acknowledgements tab.
-            aaformMainWindow.forceAboutWindowTab.tabpageAcknowledgments.ForeColor = colorTabPageForeColor
-            aaformMainWindow.forceAboutWindowTab.tabpageAcknowledgments.BackColor = colorTabPageBackColor
+            ' Can be done at once like the control loop for the main window above.
+            For Each tab As TabPage In aaformMainWindow.forceAboutWindowTab.tabcontrolAboutWindow.Controls
+                ' If the control is a TabPage, theme it appropriately.
+                tab.BackColor = colorTabPageBackColor
+                tab.ForeColor = colorTabPageForeColor
+            Next ' Go to the next TabPage.
 
             ' About tab banner style (dark or light).
             aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = bannerStyle
 
             ' LinkLabel colors.
             ' Can be done at once like the control loop for the main window above.
-            For Each control As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.Controls
+            For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.Controls
                 ' If the control is a LinkLabel, theme it appropriately.
-                control.BackColor = colorLinkLabelBackColor
-                control.ForeColor = colorLinkLabelForeColor
-                control.LinkColor = colorLinkLabelLinkColor
-                control.ActiveLinkColor = colorLinkLabelActiveLinkColor
+                link.BackColor = colorLinkLabelBackColor
+                link.ForeColor = colorLinkLabelForeColor
+                link.LinkColor = colorLinkLabelLinkColor
+                link.ActiveLinkColor = colorLinkLabelActiveLinkColor
             Next ' Go to the next LinkLabel.
         End If
 #End Region
