@@ -79,7 +79,7 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Define strings for controls and things in the XML document."
 
-        ' Banner style (Dark or Light):
+        ' About window Banner style (Dark or Light):
         Dim bannerStyle As Image
         ' Button colors:
         Dim colorButtonBackColor As Color
@@ -99,6 +99,10 @@ Public Class UXLLauncher_ThemeEngine
         ' Label colors:
         Dim colorLabelBackColor As Color
         Dim colorLabelForeColor As Color
+        ' LinkLabel colors:
+        Dim colorLinkLabelForeColor As Color ' used for non-link text.
+        Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
+        Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
         ' TableLayoutPanel colors:
         Dim colorTableLayoutPanelBackColor As Color
         Dim colorTableLayoutPanelForeColor As Color
