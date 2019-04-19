@@ -69,6 +69,13 @@
         <ForeColor>White</ForeColor>
       </Label>
 
+      <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>Black</ForeColor>
+        <ActiveLinkColor>Red</ActiveLinkColor>
+        <LinkColor>DodgerBlue</LinkColor>
+      </LinkLabel>
+
       <TextBox>
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
