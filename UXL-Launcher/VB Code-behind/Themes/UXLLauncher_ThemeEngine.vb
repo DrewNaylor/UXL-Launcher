@@ -420,11 +420,11 @@ Public Class UXLLauncher_ThemeEngine
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
-                colorLinkLabelActiveLinkColor = Color.FromArgb(0, 0, 255)
+                colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorLinkLabelActiveLinkColor = Color.FromArgb(0, 0, 255)
+            colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
         End If
 #End Region
 
