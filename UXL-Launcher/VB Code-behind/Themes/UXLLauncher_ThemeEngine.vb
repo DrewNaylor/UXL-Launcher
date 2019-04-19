@@ -412,6 +412,22 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "LinkLabel ForeColor"
+        ' Only pull the LinkLabel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorLinkLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
 #Region "TableLayoutPanel BackColor"
         ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
@@ -847,6 +863,20 @@ Public Class UXLLauncher_ThemeEngine
 
             ' About tab banner style (dark or light).
             aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = bannerStyle
+
+            ' LinkLabel colors.
+            ' Can be done at once like the control loop for the main window above.
+            For Each control As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.Controls
+                ' If the control is a LinkLabel, theme it appropriately.
+                If (control.GetType() Is GetType(LinkLabel)) Then
+                    control.ForeColor = colorLinkLabelForeColor
+                    control.LinkColor = colorLinkLabelLinkColor
+                    control.ActiveLinkColor = colorLinkLabelActiveLinkColor
+
+                End If
+
+            Next
+
         End If
 #End Region
 
