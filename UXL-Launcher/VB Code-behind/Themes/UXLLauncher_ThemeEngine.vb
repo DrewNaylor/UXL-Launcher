@@ -100,6 +100,7 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorLabelBackColor As Color
         Dim colorLabelForeColor As Color
         ' LinkLabel colors:
+        Dim colorLinkLabelBackColor As Color ' used for link's background color.
         Dim colorLinkLabelForeColor As Color ' used for non-link text.
         Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
         Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
@@ -441,6 +442,22 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
+        End If
+#End Region
+
+#Region "LinkLabel BackColor"
+        ' Only pull the LinkLabel BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorLinkLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
         End If
 #End Region
 
@@ -900,12 +917,11 @@ Public Class UXLLauncher_ThemeEngine
             ' Can be done at once like the control loop for the main window above.
             For Each control As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.Controls
                 ' If the control is a LinkLabel, theme it appropriately.
+                control.BackColor = colorLinkLabelBackColor
                 control.ForeColor = colorLinkLabelForeColor
-                    control.LinkColor = colorLinkLabelLinkColor
-                    control.ActiveLinkColor = colorLinkLabelActiveLinkColor
-
-            Next
-
+                control.LinkColor = colorLinkLabelLinkColor
+                control.ActiveLinkColor = colorLinkLabelActiveLinkColor
+            Next ' Go to the next LinkLabel.
         End If
 #End Region
 
