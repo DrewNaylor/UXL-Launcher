@@ -71,7 +71,7 @@
 
       <LinkLabel>
         <BackColor>Transparent</BackColor>
-        <ForeColor>Black</ForeColor>
+        <ForeColor>White</ForeColor>
         <ActiveLinkColor>Red</ActiveLinkColor>
         <LinkColor>DodgerBlue</LinkColor>
       </LinkLabel>
