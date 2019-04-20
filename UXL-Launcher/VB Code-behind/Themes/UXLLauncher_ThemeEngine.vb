@@ -930,16 +930,13 @@ Public Class UXLLauncher_ThemeEngine
             ' Theme the buttons at the bottom of the Options window.
             For Each tablelayoutpanelControl As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
                 If (tablelayoutpanelControl.GetType() Is GetType(Button)) Then
+                    Dim reallyIsButtonControl As Button = CType(tablelayoutpanelControl, Button)
                     ' Button backcolors and forecolors.
-                    tablelayoutpanelControl.BackColor = colorButtonBackColor
-                    tablelayoutpanelControl.ForeColor = colorButtonForeColor
+                    reallyIsButtonControl.BackColor = colorButtonBackColor
+                    reallyIsButtonControl.ForeColor = colorButtonForeColor
                     ' FlatStyle. BorderColor is in the Try...Catch block.
-                    ' This requires directly accessing the buttons.
-                    ' No shortcuts can work here as tab controls don't like being called "Buttons".
-                    aaformMainWindow.forceOptionsWindowTab.buttonCancel.FlatStyle = flatstyleButtonFlatStyle
-                    aaformMainWindow.forceOptionsWindowTab.buttonDefaultSettings.FlatStyle = flatstyleButtonFlatStyle
-                    aaformMainWindow.forceOptionsWindowTab.buttonSaveSettings.FlatStyle = flatstyleButtonFlatStyle
-                    aaformMainWindow.forceOptionsWindowTab.buttonTestSettings.FlatStyle = flatstyleButtonFlatStyle
+                    ' This requires casting a control as a button.
+                    reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
 
                     ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
                     ' Note that this can be any valid HTML or system color, including "Nothing"
@@ -947,17 +944,11 @@ Public Class UXLLauncher_ThemeEngine
                     ' Using "Transparent" causes a System.NotSupportedException
                     ' exception, so add a try...catch block and explain in the debug output.
                     Try
-                        aaformMainWindow.forceOptionsWindowTab.buttonCancel.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
-                        aaformMainWindow.forceOptionsWindowTab.buttonDefaultSettings.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
-                        aaformMainWindow.forceOptionsWindowTab.buttonSaveSettings.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
-                        aaformMainWindow.forceOptionsWindowTab.buttonTestSettings.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                        reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
 
                     Catch ex As System.NotSupportedException
                         ' Also set bordercolor to "Nothing".
-                        aaformMainWindow.forceOptionsWindowTab.buttonCancel.FlatAppearance.BorderColor = Nothing
-                        aaformMainWindow.forceOptionsWindowTab.buttonDefaultSettings.FlatAppearance.BorderColor = Nothing
-                        aaformMainWindow.forceOptionsWindowTab.buttonSaveSettings.FlatAppearance.BorderColor = Nothing
-                        aaformMainWindow.forceOptionsWindowTab.buttonTestSettings.FlatAppearance.BorderColor = Nothing
+                        reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
 
                         ' Show an error about the NotSupportedException.
                         themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
@@ -976,7 +967,9 @@ Public Class UXLLauncher_ThemeEngine
                             tabpageControl.BackColor = colorGroupBoxBackColor
                             tabpageControl.ForeColor = colorGroupBoxForeColor
                         End If
+                        ' Next, theme inside the groupboxes.
                         For Each groupboxControl As Control In tabpageControl.Controls
+                            ' Theme the buttons. Button FlatStyle needs casting, though.
                             If (groupboxControl.GetType() Is GetType(Button)) Then
                                 groupboxControl.BackColor = colorButtonBackColor
                                 groupboxControl.ForeColor = colorButtonForeColor
