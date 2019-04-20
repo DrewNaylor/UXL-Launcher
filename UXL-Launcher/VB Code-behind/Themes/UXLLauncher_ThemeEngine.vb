@@ -963,6 +963,14 @@ Public Class UXLLauncher_ThemeEngine
                         themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                     End Try
                 End If
+                ' Start working our way into the Options window, layer by layer.
+                ' First, theme the tab pages.
+                For Each tabpageControl As Control In aaformMainWindow.forceOptionsWindowTab.tabcontrolOptionsWindow.Controls
+                    If (tabpageControl.GetType() Is GetType(TabPage)) Then
+                        tabpageControl.BackColor = colorTabPageBackColor
+                        tabpageControl.ForeColor = colorTabPageForeColor
+                    End If
+                Next
             Next
 #End Region
 
