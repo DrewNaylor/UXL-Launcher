@@ -885,9 +885,9 @@ Public Class UXLLauncher_ThemeEngine
             End Try
 
             ' BackColor for FlowLayoutPanels.
-            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.BackColor = colorFlowLayoutPanelBackColor
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = colorFlowLayoutPanelBackColor
             ' And FlowLayoutPanel ForeColors.
-            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.ForeColor = colorFlowLayoutPanelForeColor
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.ForeColor = colorFlowLayoutPanelForeColor
 
             ' Textbox fore/backcolors.
             aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = colorTextboxBackColor
@@ -912,13 +912,62 @@ Public Class UXLLauncher_ThemeEngine
 
             ' LinkLabel colors.
             ' Can be done at once like the control loop for the main window above.
-            For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelButtons.Controls
+            For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.Controls
                 ' If the control is a LinkLabel, theme it appropriately.
                 link.BackColor = colorLinkLabelBackColor
                 link.ForeColor = colorLinkLabelForeColor
                 link.LinkColor = colorLinkLabelLinkColor
                 link.ActiveLinkColor = colorLinkLabelActiveLinkColor
             Next ' Go to the next LinkLabel.
+
+#Region "About window and theme doesn't support TE 1.03"
+        Else
+            ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
+            ' BackColor and ForeColor for buttons.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
+            aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            ' FlatStyle.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatStyle = FlatStyle.Standard
+            ' Also set Button FlatStyle bordercolor to "Nothing".
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = Nothing
+
+
+            ' BackColor for FlowLayoutPanels.
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = Color.Transparent
+            ' And FlowLayoutPanel ForeColors.
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Textbox fore/backcolors.
+            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = colorTextboxBackColor
+            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = colorTextboxForeColor
+
+            ' TableLayoutPanel fore/backcolors.
+            ' Note: DO NOT apply the colors to the tableLayoutPanelAboutApp control as this one uses the TabControl color.
+            ' Only apply the colors to the tableLayoutPanel control.
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
+
+            ' TabPage fore/backcolors.
+            ' Can be done at once like the control loop for the main window above.
+            For Each tab As TabPage In aaformMainWindow.forceAboutWindowTab.tabcontrolAboutWindow.Controls
+                ' If the control is a TabPage, theme it appropriately.
+                tab.BackColor = colorTabPageBackColor
+                tab.ForeColor = colorTabPageForeColor
+            Next ' Go to the next TabPage.
+
+            ' About tab banner style (dark or light).
+            aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = bannerStyle
+
+            ' LinkLabel colors.
+            ' Can be done at once like the control loop for the main window above.
+            For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.Controls
+                ' If the control is a LinkLabel, theme it appropriately.
+                link.BackColor = colorLinkLabelBackColor
+                link.ForeColor = colorLinkLabelForeColor
+                link.LinkColor = colorLinkLabelLinkColor
+                link.ActiveLinkColor = colorLinkLabelActiveLinkColor
+            Next ' Go to the next LinkLabel.
+#End Region
         End If
 #End Region
 
