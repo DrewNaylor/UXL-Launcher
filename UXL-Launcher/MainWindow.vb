@@ -309,11 +309,27 @@ Public Class aaformMainWindow
 #End Region
 #End Region
 
+    ' Have only one Options window. In Version 3.3, this is also required for 
+    ' theming the Options window, but in this version, it only prevents opening
+    ' multiple Options windows from the Quickmenu or from the main window by
+    ' clicking the "Show UXL Launcher" button in the Quickmenu, pressing Alt,
+    ' then navigating to the Tools>Options... button. That bug should be worked on
+    ' and described in a bug report, but it's not easy to hit.
+    Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
+
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceOptionsWindowTab As New aaformOptionsWindow
-        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog(Me)
+        showOptionsWindow() ' This code was moved to its own sub.
+    End Sub
+
+    Private Sub showOptionsWindow()
+        Try ' We need to make sure the Options window isn't open yet.
+            forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+            forceOptionsWindowTab.ShowDialog(Me)
+        Catch ex As InvalidOperationException
+            ' If it is open, focus it.
+            forceOptionsWindowTab.Focus()
+        End Try
     End Sub
 
 #Region "Help menubar buttons."
@@ -547,9 +563,7 @@ Public Class aaformMainWindow
 
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceOptionsWindowTab As New aaformOptionsWindow
-        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog(Me)
+        showOptionsWindow() ' This code was moved to its own sub.
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
