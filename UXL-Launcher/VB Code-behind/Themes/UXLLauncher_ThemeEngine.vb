@@ -924,14 +924,18 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Options window theming for theme files supporting 1.03"
             ' Theme the buttons at the bottom of the Options window.
-            'For Each button As Button In aaformMainWindow.for
+            For Each control As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+                If (control.GetType() Is GetType(Button)) Then
+                    control.BackColor = colorButtonBackColor
+                End If
+            Next
 #End Region
 
 #Region "About window and theme doesn't support TE 1.03"
         Else
-            ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
-            ' BackColor and ForeColor for buttons.
-            aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
+                ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
+                ' BackColor and ForeColor for buttons.
+                aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
             aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
             ' FlatStyle.
             aaformMainWindow.forceAboutWindowTab.buttonClose.FlatStyle = FlatStyle.Standard

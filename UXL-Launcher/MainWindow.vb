@@ -311,10 +311,10 @@ Public Class aaformMainWindow
 
     ' Allow the About window to be accessed from the theme engine.
     Friend Shared forceAboutWindowTab As New aaformAboutWindow
-
+    Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceOptionsWindowTab As New aaformOptionsWindow
+
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
         forceOptionsWindowTab.ShowDialog(Me)
     End Sub

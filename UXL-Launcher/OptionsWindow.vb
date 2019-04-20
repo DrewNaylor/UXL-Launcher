@@ -110,6 +110,13 @@ Public Class aaformOptionsWindow
         ' Fourth, split the theme list with the delimiter.
         Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
 
+        ' Set the theme list datasource to nothing so that
+        ' the Options window can be opened more than once per session.
+        ' If this isn't done, the app crashes because the datasource is
+        ' being modified after it's already set. This allows the Options
+        ' window to be themed.
+        comboboxThemeList.DataSource = Nothing
+
         ' Add the range of the split theme list string
         ' to the combobox theme list.
         comboboxThemeList.Items.AddRange(themeListSplit)
