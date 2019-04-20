@@ -977,7 +977,10 @@ Public Class UXLLauncher_ThemeEngine
                             tabpageControl.ForeColor = colorGroupBoxForeColor
                         End If
                         For Each groupboxControl As Control In tabpageControl.Controls
-
+                            If (groupboxControl.GetType() Is GetType(Button)) Then
+                                groupboxControl.BackColor = colorButtonBackColor
+                                groupboxControl.ForeColor = colorButtonForeColor
+                            End If
                         Next
                     Next
                 Next
