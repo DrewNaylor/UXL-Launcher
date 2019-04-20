@@ -970,6 +970,13 @@ Public Class UXLLauncher_ThemeEngine
                         tabpageControl.BackColor = colorTabPageBackColor
                         tabpageControl.ForeColor = colorTabPageForeColor
                     End If
+                    ' Next, theme the groupboxes.
+                    For Each groupboxControl As Control In tabpageControl.Controls
+                        If (groupboxControl.GetType() Is GetType(GroupBox)) Then
+                            groupboxControl.BackColor = colorGroupBoxBackColor
+                            groupboxControl.ForeColor = colorGroupBoxForeColor
+                        End If
+                    Next
                 Next
             Next
 #End Region
