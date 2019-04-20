@@ -928,11 +928,11 @@ Public Class UXLLauncher_ThemeEngine
             aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
 
             ' Theme the buttons at the bottom of the Options window.
-            For Each button As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
-                If (button.GetType() Is GetType(Button)) Then
+            For Each control As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+                If (control.GetType() Is GetType(Button)) Then
                     ' Button backcolors and forecolors.
-                    button.BackColor = colorButtonBackColor
-                    button.ForeColor = colorButtonForeColor
+                    control.BackColor = colorButtonBackColor
+                    control.ForeColor = colorButtonForeColor
                     ' FlatStyle. BorderColor is in the Try...Catch block.
                     ' This requires directly accessing the buttons.
                     ' No shortcuts can work here as tab controls don't like being called "Buttons".
