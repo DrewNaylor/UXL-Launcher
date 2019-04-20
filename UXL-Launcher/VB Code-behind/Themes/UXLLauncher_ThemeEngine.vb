@@ -997,6 +997,11 @@ Public Class UXLLauncher_ThemeEngine
                             ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
                                 groupboxControl.BackColor = colorLabelBackColor
                                 groupboxControl.ForeColor = colorLabelForeColor
+
+                                ' Theme the textboxes.
+                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+                                groupboxControl.BackColor = colorTextboxBackColor
+                                groupboxControl.ForeColor = colorTextboxForeColor
                             End If
                         Next
                     Next
