@@ -923,6 +923,10 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Options window theming for theme files supporting 1.03"
+            ' Theme the Options window's table layout panel.
+            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = colorTableLayoutPanelBackColor
+            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
+
             ' Theme the buttons at the bottom of the Options window.
             For Each button As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
                 If (button.GetType() Is GetType(Button)) Then
