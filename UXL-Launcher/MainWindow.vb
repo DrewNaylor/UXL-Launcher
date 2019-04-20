@@ -311,10 +311,10 @@ Public Class aaformMainWindow
 
     ' Allow the About window to be accessed from the theme engine.
     Friend Shared forceAboutWindowTab As New aaformAboutWindow
+    ' Allow the Options window to be accessed from the theme engine.
     Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-
         forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
         forceOptionsWindowTab.ShowDialog(Me)
     End Sub
@@ -547,9 +547,13 @@ Public Class aaformMainWindow
 
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceOptionsWindowTab As New aaformOptionsWindow
-        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog(Me)
+        Try ' We need to make sure the Options window isn't open yet.
+            forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+            forceOptionsWindowTab.ShowDialog(Me)
+        Catch ex As InvalidOperationException
+            ' If it is open, focus it.
+            forceOptionsWindowTab.Focus()
+        End Try
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
