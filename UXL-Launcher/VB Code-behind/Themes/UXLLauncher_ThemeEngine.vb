@@ -863,8 +863,8 @@ Public Class UXLLauncher_ThemeEngine
 
 #End Region
 
-#Region "About window theming for themes compatible with TE 1.03 or greater."
-#Region "Theme file supports TE 1.03"
+#Region "Theming for theme files compatible with TE 1.03 or greater."
+#Region "About window and Theme file supports TE 1.03"
         If themeSheetUseThemeEngineVersion >= 1.03 Then
             ' BackColor and ForeColor for buttons.
             aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = colorButtonBackColor
@@ -922,6 +922,10 @@ Public Class UXLLauncher_ThemeEngine
             Next ' Go to the next LinkLabel.
 #End Region
 
+#Region "Options window theming for theme files supporting 1.03"
+
+#End Region
+
 #Region "About window and theme doesn't support TE 1.03"
         Else
             ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
@@ -970,6 +974,8 @@ Public Class UXLLauncher_ThemeEngine
                 link.ActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
             Next ' Go to the next LinkLabel.
 #End Region
+
+
         End If
 #End Region
 
