@@ -198,6 +198,9 @@
     <None Include="Resources\uxl_icon_24x24.png" />
     <None Include="VB Code-behind\Themes\TenDarkTheme_XML.xml" />
     <None Include="Resources\unsafeExtensions_TXT.txt" />
+    <None Include="VB Code-behind\Themes\MittyTheme_XML.xml">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\MaudernTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />

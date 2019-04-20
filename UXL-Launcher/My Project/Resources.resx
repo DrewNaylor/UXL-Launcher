@@ -6061,7 +6061,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>Icon used for Options button</comment>
   </data>
   <data name="themeList_TXT" xml:space="preserve">
-    <value>Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,TenDark,(Custom)</value>
+    <value>Default,Eyesore,Eyesore2,Maudern,Mitty,ReturnOfNight,RGB,TenDark,(Custom)</value>
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">
@@ -6082,5 +6082,8 @@ This decimal is to be used for the About window when talking about what version 
   </data>
   <data name="unsafeExtensions_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unsafeExtensions_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MittyTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\vb code-behind\themes\mittytheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -128,7 +128,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Default")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Mitty")>  _
         Public Property userChosenTheme() As String
             Get
                 Return CType(Me("userChosenTheme"),String)
@@ -140,7 +140,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property enableThemeEngine() As Boolean
             Get
                 Return CType(Me("enableThemeEngine"),Boolean)

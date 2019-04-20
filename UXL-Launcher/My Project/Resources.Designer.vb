@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2019-04-20T08:09:59
+        '''  Looks up a localized string similar to 2019-04-20T23:25:07
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -280,6 +280,34 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Microsoft_Query", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;Theme_Colors&gt;
+        '''      
+        '''      &lt;Button&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/Button&gt;
+        '''      
+        '''      &lt;GroupBox&gt;
+        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
+        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
+        '''      &lt;/GroupBox&gt;
+        '''
+        '''      &lt;FlowLayoutPanel&gt;
+        '''        &lt;B [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property MittyTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("MittyTheme_XML", resourceCulture)
             End Get
         End Property
         
@@ -550,7 +578,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Default,Eyesore,Eyesore2,Maudern,ReturnOfNight,RGB,TenDark,(Custom).
+        '''  Looks up a localized string similar to Default,Eyesore,Eyesore2,Maudern,Mitty,ReturnOfNight,RGB,TenDark,(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String
             Get
