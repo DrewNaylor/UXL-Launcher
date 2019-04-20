@@ -928,11 +928,11 @@ Public Class UXLLauncher_ThemeEngine
             aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
 
             ' Theme the buttons at the bottom of the Options window.
-            For Each control As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
-                If (control.GetType() Is GetType(Button)) Then
+            For Each tablelayoutpanelControl As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+                If (tablelayoutpanelControl.GetType() Is GetType(Button)) Then
                     ' Button backcolors and forecolors.
-                    control.BackColor = colorButtonBackColor
-                    control.ForeColor = colorButtonForeColor
+                    tablelayoutpanelControl.BackColor = colorButtonBackColor
+                    tablelayoutpanelControl.ForeColor = colorButtonForeColor
                     ' FlatStyle. BorderColor is in the Try...Catch block.
                     ' This requires directly accessing the buttons.
                     ' No shortcuts can work here as tab controls don't like being called "Buttons".
@@ -965,17 +965,20 @@ Public Class UXLLauncher_ThemeEngine
                 End If
                 ' Start working our way into the Options window, layer by layer.
                 ' First, theme the tab pages.
-                For Each tabpageControl As Control In aaformMainWindow.forceOptionsWindowTab.tabcontrolOptionsWindow.Controls
-                    If (tabpageControl.GetType() Is GetType(TabPage)) Then
-                        tabpageControl.BackColor = colorTabPageBackColor
-                        tabpageControl.ForeColor = colorTabPageForeColor
+                For Each tabControl As Control In tablelayoutpanelControl.Controls
+                    If (tabControl.GetType() Is GetType(TabPage)) Then
+                        tabControl.BackColor = colorTabPageBackColor
+                        tabControl.ForeColor = colorTabPageForeColor
                     End If
                     ' Next, theme the groupboxes.
-                    For Each groupboxControl As Control In tabpageControl.Controls
-                        If (groupboxControl.GetType() Is GetType(GroupBox)) Then
-                            groupboxControl.BackColor = colorGroupBoxBackColor
-                            groupboxControl.ForeColor = colorGroupBoxForeColor
+                    For Each tabpageControl As Control In tabControl.Controls
+                        If (tabpageControl.GetType() Is GetType(GroupBox)) Then
+                            tabpageControl.BackColor = colorGroupBoxBackColor
+                            tabpageControl.ForeColor = colorGroupBoxForeColor
                         End If
+                        For Each groupboxControl As Control In tabpageControl.Controls
+
+                        Next
                     Next
                 Next
             Next
