@@ -411,7 +411,7 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Code that runs when the user clicks the Clear Textbox button next to the Office drive location."
-    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearTextbox.Click
+    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearDriveLetter.Click
         ' Clear the OfficeDrive textbox and set focus to it.
         textboxOfficeDrive.Text = ""
         textboxOfficeDrive.Select()

@@ -943,10 +943,18 @@ Public Class UXLLauncher_ThemeEngine
                     ' Using "Transparent" causes a System.NotSupportedException
                     ' exception, so add a try...catch block and explain in the debug output.
                     Try
-                        aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                        aaformMainWindow.forceOptionsWindowTab.buttonCancel.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                        aaformMainWindow.forceOptionsWindowTab.buttonDefaultSettings.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                        aaformMainWindow.forceOptionsWindowTab.buttonSaveSettings.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                        aaformMainWindow.forceOptionsWindowTab.buttonTestSettings.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+
                     Catch ex As System.NotSupportedException
                         ' Also set bordercolor to "Nothing".
-                        aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = Nothing
+                        aaformMainWindow.forceOptionsWindowTab.buttonCancel.FlatAppearance.BorderColor = Nothing
+                        aaformMainWindow.forceOptionsWindowTab.buttonDefaultSettings.FlatAppearance.BorderColor = Nothing
+                        aaformMainWindow.forceOptionsWindowTab.buttonSaveSettings.FlatAppearance.BorderColor = Nothing
+                        aaformMainWindow.forceOptionsWindowTab.buttonTestSettings.FlatAppearance.BorderColor = Nothing
+
                         ' Show an error about the NotSupportedException.
                         themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                     End Try
