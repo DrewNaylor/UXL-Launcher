@@ -980,6 +980,9 @@ Public Class UXLLauncher_ThemeEngine
                             If (groupboxControl.GetType() Is GetType(Button)) Then
                                 groupboxControl.BackColor = colorButtonBackColor
                                 groupboxControl.ForeColor = colorButtonForeColor
+                            ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+                                groupboxControl.BackColor = colorLabelBackColor
+                                groupboxControl.ForeColor = colorLabelForeColor
                             End If
                         Next
                     Next
