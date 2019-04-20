@@ -923,7 +923,8 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Options window theming for theme files supporting 1.03"
-
+            ' Theme the buttons at the bottom of the Options window.
+            'For Each button As Button In aaformMainWindow.for
 #End Region
 
 #Region "About window and theme doesn't support TE 1.03"

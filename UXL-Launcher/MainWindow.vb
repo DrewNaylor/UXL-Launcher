@@ -309,8 +309,7 @@ Public Class aaformMainWindow
 #End Region
 #End Region
 
-    ' Allow the About window to be accessed from elsewhere in the
-    ' code for theming.
+    ' Allow the About window to be accessed from the theme engine.
     Friend Shared forceAboutWindowTab As New aaformAboutWindow
 
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
