@@ -953,21 +953,21 @@ Public Class UXLLauncher_ThemeEngine
             ' Can be done at once like the control loop for the main window above.
             For Each tab As TabPage In aaformMainWindow.forceAboutWindowTab.tabcontrolAboutWindow.Controls
                 ' If the control is a TabPage, theme it appropriately.
-                tab.BackColor = colorTabPageBackColor
-                tab.ForeColor = colorTabPageForeColor
+                tab.BackColor = Color.FromKnownColor(KnownColor.Window)
+                tab.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
             Next ' Go to the next TabPage.
 
             ' About tab banner style (dark or light).
-            aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = bannerStyle
+            aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = My.Resources.UXL_Launcher_Banner
 
             ' LinkLabel colors.
             ' Can be done at once like the control loop for the main window above.
             For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.Controls
                 ' If the control is a LinkLabel, theme it appropriately.
-                link.BackColor = colorLinkLabelBackColor
-                link.ForeColor = colorLinkLabelForeColor
-                link.LinkColor = colorLinkLabelLinkColor
-                link.ActiveLinkColor = colorLinkLabelActiveLinkColor
+                link.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+                link.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                link.LinkColor = Color.FromArgb(0, 0, 255)
+                link.ActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
             Next ' Go to the next LinkLabel.
 #End Region
         End If
