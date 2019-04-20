@@ -924,10 +924,32 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Options window theming for theme files supporting 1.03"
             ' Theme the buttons at the bottom of the Options window.
-            For Each control As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
-                If (control.GetType() Is GetType(Button)) Then
-                    control.BackColor = colorButtonBackColor
-                    control.ForeColor = colorButtonForeColor
+            For Each button As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+                If (button.GetType() Is GetType(Button)) Then
+                    ' Button backcolors and forecolors.
+                    button.BackColor = colorButtonBackColor
+                    button.ForeColor = colorButtonForeColor
+                    ' FlatStyle. BorderColor is in the Try...Catch block.
+                    ' This requires directly accessing the buttons.
+                    ' No shortcuts can work here as tab controls don't like being called "Buttons".
+                    aaformMainWindow.forceOptionsWindowTab.buttonCancel.FlatStyle = flatstyleButtonFlatStyle
+                    aaformMainWindow.forceOptionsWindowTab.buttonDefaultSettings.FlatStyle = flatstyleButtonFlatStyle
+                    aaformMainWindow.forceOptionsWindowTab.buttonSaveSettings.FlatStyle = flatstyleButtonFlatStyle
+                    aaformMainWindow.forceOptionsWindowTab.buttonTestSettings.FlatStyle = flatstyleButtonFlatStyle
+
+                    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+                    ' Note that this can be any valid HTML or system color, including "Nothing"
+                    ' ("Nothing" is the default value based on my testing).
+                    ' Using "Transparent" causes a System.NotSupportedException
+                    ' exception, so add a try...catch block and explain in the debug output.
+                    Try
+                        aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                    Catch ex As System.NotSupportedException
+                        ' Also set bordercolor to "Nothing".
+                        aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = Nothing
+                        ' Show an error about the NotSupportedException.
+                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                    End Try
                 End If
             Next
 #End Region
