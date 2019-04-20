@@ -864,6 +864,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "About window theming for themes compatible with TE 1.03 or greater."
+#Region "Theme file supports TE 1.03"
         If themeSheetUseThemeEngineVersion >= 1.03 Then
             ' BackColor and ForeColor for buttons.
             aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = colorButtonBackColor
@@ -919,6 +920,7 @@ Public Class UXLLauncher_ThemeEngine
                 link.LinkColor = colorLinkLabelLinkColor
                 link.ActiveLinkColor = colorLinkLabelActiveLinkColor
             Next ' Go to the next LinkLabel.
+#End Region
 
 #Region "About window and theme doesn't support TE 1.03"
         Else
@@ -933,19 +935,19 @@ Public Class UXLLauncher_ThemeEngine
 
 
             ' BackColor for FlowLayoutPanels.
-            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = Color.Transparent
+            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = Color.FromKnownColor(KnownColor.Window)
             ' And FlowLayoutPanel ForeColors.
             aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
             ' Textbox fore/backcolors.
-            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = colorTextboxBackColor
-            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = colorTextboxForeColor
+            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = Color.FromKnownColor(KnownColor.Window)
+            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = Color.FromKnownColor(KnownColor.WindowText)
 
             ' TableLayoutPanel fore/backcolors.
             ' Note: DO NOT apply the colors to the tableLayoutPanelAboutApp control as this one uses the TabControl color.
             ' Only apply the colors to the tableLayoutPanel control.
-            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
-            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = Color.FromKnownColor(KnownColor.Control)
 
             ' TabPage fore/backcolors.
             ' Can be done at once like the control loop for the main window above.
