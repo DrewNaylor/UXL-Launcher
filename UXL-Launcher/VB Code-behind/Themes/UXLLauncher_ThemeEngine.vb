@@ -927,6 +927,7 @@ Public Class UXLLauncher_ThemeEngine
             For Each control As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
                 If (control.GetType() Is GetType(Button)) Then
                     control.BackColor = colorButtonBackColor
+                    control.ForeColor = colorButtonForeColor
                 End If
             Next
 #End Region
