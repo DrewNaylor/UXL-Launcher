@@ -110,7 +110,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to  - Codename &quot;Fashionably Late&quot;.
+        '''  Looks up a localized string similar to  - Codename &quot;Fabulous Calico&quot;.
         '''</summary>
         Public ReadOnly Property appVersionCodename() As String
             Get
@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2018-10-20T02:33:38
+        '''  Looks up a localized string similar to 2019-04-20T08:09:59
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -527,7 +527,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Licensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2019 Drew Naylor. Licensed under Gnu GPLv3+.
         '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
         '''
         '''The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
@@ -628,7 +628,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2018 Drew Naylor. Licensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2019 Drew Naylor. Licensed under Gnu GPLv3+.
         '''
         '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
         '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
