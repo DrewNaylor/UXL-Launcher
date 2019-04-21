@@ -350,11 +350,18 @@ Public Class UXLLauncher_ThemeEngine
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
-                colorDropdownBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
             End Try
+
+            ' Now, make sure the background isn't transparent.
+            ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+            If colorDropdownBackColor = Color.Transparent Then
+                ' If it is, set it to Window.
+                colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
+            End If
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
         End If
 #End Region
 
@@ -1122,8 +1129,8 @@ Public Class UXLLauncher_ThemeEngine
 
                                 ' Theme the dropdown boxes.
                             ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
-                                groupboxControl.BackColor = colorTextboxBackColor
-                                groupboxControl.ForeColor = colorTextboxForeColor
+                                groupboxControl.BackColor = colorDropdownBackColor
+                                groupboxControl.ForeColor = colorDropdownForeColor
                                 ' TODO
 
                             End If
