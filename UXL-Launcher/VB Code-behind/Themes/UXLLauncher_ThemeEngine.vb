@@ -1189,16 +1189,16 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Options window and theme doesn't support TE 1.03"
             ' Theme the Options window's table layout panel.
-            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = colorTableLayoutPanelBackColor
-            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
+            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = Color.FromKnownColor(KnownColor.Control)
+            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
             ' Theme the buttons at the bottom of the Options window.
             For Each tablelayoutpanelControl As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
                 If (tablelayoutpanelControl.GetType() Is GetType(Button)) Then
                     Dim reallyIsButtonControl As Button = CType(tablelayoutpanelControl, Button)
                     ' Button backcolors and forecolors.
-                    reallyIsButtonControl.BackColor = colorButtonBackColor
-                    reallyIsButtonControl.ForeColor = colorButtonForeColor
+                    reallyIsButtonControl.BackColor = Color.Transparent
+                    reallyIsButtonControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
                     ' FlatStyle. BorderColor is in the Try...Catch block.
                     ' This requires casting a control as a button.
                     reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
