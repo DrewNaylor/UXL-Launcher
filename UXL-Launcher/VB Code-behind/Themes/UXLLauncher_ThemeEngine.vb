@@ -529,19 +529,19 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
-#Region "CheckBox ForeColor"
+#Region "Radio Button ForeColor"
         ' Only pull the Label ForeColor element from XML if it exists.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
-                colorCheckBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager).InnerText)
+                colorRadioButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager).InnerText)
                 debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
-                colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
