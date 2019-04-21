@@ -17,6 +17,18 @@
         <BackColor>Maroon</BackColor>
         <ForeColor>White</ForeColor>
       </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>Sienna</BackColor>
+        <ForeColor>Lime</ForeColor>
+      </Dropdown>
       
       <GroupBox>
         <BackColor>Green</BackColor>
