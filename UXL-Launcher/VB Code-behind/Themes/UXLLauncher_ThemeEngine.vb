@@ -352,13 +352,6 @@ Public Class UXLLauncher_ThemeEngine
             Catch ex As Exception
                 colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
             End Try
-
-            ' Now, make sure the background isn't transparent.
-            ' Dropdown boxes/comboboxes don't support transparent backgrounds.
-            If colorDropdownBackColor = Color.Transparent Then
-                ' If it is, set it to Window.
-                colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
-            End If
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
@@ -1129,7 +1122,15 @@ Public Class UXLLauncher_ThemeEngine
 
                                 ' Theme the dropdown boxes.
                             ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
-                                groupboxControl.BackColor = colorDropdownBackColor
+
+                                Try ' Try to apply the dropdown backcolor.
+                                    groupboxControl.BackColor = colorDropdownBackColor
+                                Catch ex As ArgumentException
+                                    ' Now, make sure the background isn't transparent.
+                                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+                                    groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                                End Try
+                                ' Now do the forecolor.
                                 groupboxControl.ForeColor = colorDropdownForeColor
                                 ' TODO
 
