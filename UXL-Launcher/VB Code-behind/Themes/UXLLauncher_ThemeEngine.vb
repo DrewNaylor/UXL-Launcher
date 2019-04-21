@@ -1009,6 +1009,12 @@ Public Class UXLLauncher_ThemeEngine
                                 groupboxControl.ForeColor = colorTextboxForeColor
                                 ' TODO
 
+                                ' Theme the checkboxes.
+                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+                                groupboxControl.BackColor = colorTextboxBackColor
+                                groupboxControl.ForeColor = colorTextboxForeColor
+                                ' TODO
+
                                 ' Theme the dropdown boxes.
                             ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
                                 groupboxControl.BackColor = colorTextboxBackColor
