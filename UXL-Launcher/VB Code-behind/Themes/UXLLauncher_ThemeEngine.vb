@@ -107,6 +107,9 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorLinkLabelForeColor As Color ' used for non-link text.
         Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
         Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
+        ' Radio Button colors:
+        Dim colorRadioButtonBackColor As Color
+        Dim colorRadioButtonForeColor As Color
         ' TableLayoutPanel colors:
         Dim colorTableLayoutPanelBackColor As Color
         Dim colorTableLayoutPanelForeColor As Color
@@ -530,7 +533,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Radio Button ForeColor"
-        ' Only pull the Label ForeColor element from XML if it exists.
+        ' Only pull the Radio Button ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorRadioButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager).InnerText)
