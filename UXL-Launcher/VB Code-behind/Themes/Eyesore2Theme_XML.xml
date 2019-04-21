@@ -19,8 +19,8 @@
       </Button>
 
       <CheckBox>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>Bisque</ForeColor>
       </CheckBox>
 
       <Dropdown>
