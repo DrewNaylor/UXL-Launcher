@@ -27,6 +27,20 @@
         <BackColor>Yellow</BackColor>
         <ForeColor>Purple</ForeColor>
       </FlowLayoutPanel>
+      
+      <Label>
+        <BackColor>Maroon</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <RadioButton>
+        <BackColor>LightBlue</BackColor>
+        <ForeColor>Magenta</ForeColor>
+      </RadioButton>
+
+      <StatusBar>
+        <BackColor>CadetBlue</BackColor>
+      </StatusBar>
 
       <TableLayoutPanel>
         <!--As of 1.03 only applies to the area outside the tab control
@@ -40,15 +54,6 @@
         <BackColor>Blue</BackColor>
         <ForeColor>Green</ForeColor>
       </TabPage>
-
-      <StatusBar>
-        <BackColor>CadetBlue</BackColor>
-      </StatusBar>
-
-      <Label>
-        <BackColor>Maroon</BackColor>
-        <ForeColor>White</ForeColor>
-      </Label>
 
       <TextBox>
         <BackColor>Beige</BackColor>
