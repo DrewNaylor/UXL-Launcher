@@ -38,6 +38,8 @@
       </Button>
 
       <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
         <BackColor>#363636</BackColor>
         <ForeColor>White</ForeColor>
       </Dropdown>
