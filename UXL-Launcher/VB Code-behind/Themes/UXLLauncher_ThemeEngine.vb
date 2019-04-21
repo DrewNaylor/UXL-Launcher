@@ -89,6 +89,9 @@ Public Class UXLLauncher_ThemeEngine
         ' Checkbox colors:
         Dim colorCheckBoxBackColor As Color
         Dim colorCheckBoxForeColor As Color
+        ' Checkbox colors:
+        Dim colorDropdownBackColor As Color
+        Dim colorDropdownForeColor As Color
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color
         Dim colorGroupBoxForeColor As Color
@@ -339,6 +342,37 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "Dropdown BackColor"
+        ' Only pull the Dropdown BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorDropdownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorDropdownBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Transparent)
+        End If
+#End Region
+
+#Region "Dropdown ForeColor"
+        ' Only pull the Dropdown ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorDropdownForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
 
 #Region "GroupBox BackColor"
         ' Only pull the GroupBox BackColor element from XML if it exists.
@@ -1075,19 +1109,19 @@ Public Class UXLLauncher_ThemeEngine
                                 groupboxControl.ForeColor = colorTextboxForeColor
 
                                 ' Theme the radio buttons.
-                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+                            ElseIf (groupboxControl.GetType() Is GetType(RadioButton)) Then
                                 groupboxControl.BackColor = colorTextboxBackColor
                                 groupboxControl.ForeColor = colorTextboxForeColor
                                 ' TODO
 
                                 ' Theme the checkboxes.
-                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+                            ElseIf (groupboxControl.GetType() Is GetType(CheckBox)) Then
                                 groupboxControl.BackColor = colorTextboxBackColor
                                 groupboxControl.ForeColor = colorTextboxForeColor
                                 ' TODO
 
                                 ' Theme the dropdown boxes.
-                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+                            ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
                                 groupboxControl.BackColor = colorTextboxBackColor
                                 groupboxControl.ForeColor = colorTextboxForeColor
                                 ' TODO
