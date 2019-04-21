@@ -1130,7 +1130,6 @@ Public Class UXLLauncher_ThemeEngine
                                 End Try
                                 ' Now do the forecolor.
                                 groupboxControl.ForeColor = colorDropdownForeColor
-
                             End If
 
                         Next
