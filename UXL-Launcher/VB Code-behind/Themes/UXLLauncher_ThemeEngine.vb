@@ -1132,10 +1132,10 @@ Public Class UXLLauncher_ThemeEngine
                                 groupboxControl.ForeColor = colorDropdownForeColor
                             End If
 
-                        Next
-                    Next
-                Next
-            Next
+                        Next ' Next control inside groupboxes.
+                    Next ' Next groupbox.
+                Next ' Next tabpage.
+            Next ' Next button at the bottom of the Options window.
 #End Region
 
 #Region "About window and theme doesn't support TE 1.03"
@@ -1185,6 +1185,117 @@ Public Class UXLLauncher_ThemeEngine
                 link.LinkColor = Color.FromArgb(0, 0, 255)
                 link.ActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
             Next ' Go to the next LinkLabel.
+#End Region
+
+#Region "Options window and theme doesn't support TE 1.03"
+            ' Theme the Options window's table layout panel.
+            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = colorTableLayoutPanelBackColor
+            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
+
+            ' Theme the buttons at the bottom of the Options window.
+            For Each tablelayoutpanelControl As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+                If (tablelayoutpanelControl.GetType() Is GetType(Button)) Then
+                    Dim reallyIsButtonControl As Button = CType(tablelayoutpanelControl, Button)
+                    ' Button backcolors and forecolors.
+                    reallyIsButtonControl.BackColor = colorButtonBackColor
+                    reallyIsButtonControl.ForeColor = colorButtonForeColor
+                    ' FlatStyle. BorderColor is in the Try...Catch block.
+                    ' This requires casting a control as a button.
+                    reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
+
+                    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+                    ' Note that this can be any valid HTML or system color, including "Nothing"
+                    ' ("Nothing" is the default value based on my testing).
+                    ' Using "Transparent" causes a System.NotSupportedException
+                    ' exception, so add a try...catch block and explain in the debug output.
+                    Try
+                        reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+
+                    Catch ex As System.NotSupportedException
+                        ' Also set bordercolor to "Nothing".
+                        reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+
+                        ' Show an error about the NotSupportedException.
+                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                    End Try
+                End If
+                ' Start working our way into the Options window, layer by layer.
+                ' First, theme the tab pages.
+                For Each tabControl As Control In tablelayoutpanelControl.Controls
+                    If (tabControl.GetType() Is GetType(TabPage)) Then
+                        tabControl.BackColor = colorTabPageBackColor
+                        tabControl.ForeColor = colorTabPageForeColor
+                    End If
+                    ' Next, theme the groupboxes.
+                    For Each tabpageControl As Control In tabControl.Controls
+                        If (tabpageControl.GetType() Is GetType(GroupBox)) Then
+                            tabpageControl.BackColor = colorGroupBoxBackColor
+                            tabpageControl.ForeColor = colorGroupBoxForeColor
+                        End If
+
+                        ' Next, theme inside the groupboxes.
+                        For Each groupboxControl As Control In tabpageControl.Controls
+                            ' Theme the buttons. Button FlatStyle needs casting, though.
+                            If (groupboxControl.GetType() Is GetType(Button)) Then
+                                Dim reallyIsButtonControl As Button = CType(groupboxControl, Button)
+                                reallyIsButtonControl.BackColor = colorButtonBackColor
+                                reallyIsButtonControl.ForeColor = colorButtonForeColor
+                                reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
+
+                                ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+                                ' Note that this can be any valid HTML or system color, including "Nothing"
+                                ' ("Nothing" is the default value based on my testing).
+                                ' Using "Transparent" causes a System.NotSupportedException
+                                ' exception, so add a try...catch block and explain in the debug output.
+                                Try
+                                    reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+
+                                Catch ex As System.NotSupportedException
+                                    ' Also set bordercolor to "Nothing".
+                                    reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+
+                                    ' Show an error about the NotSupportedException.
+                                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                                End Try
+
+                                ' Theme the labels.
+                            ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+                                groupboxControl.BackColor = colorLabelBackColor
+                                groupboxControl.ForeColor = colorLabelForeColor
+
+                                ' Theme the textboxes.
+                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+                                groupboxControl.BackColor = colorTextboxBackColor
+                                groupboxControl.ForeColor = colorTextboxForeColor
+
+                                ' Theme the radio buttons.
+                            ElseIf (groupboxControl.GetType() Is GetType(RadioButton)) Then
+                                groupboxControl.BackColor = colorRadioButtonBackColor
+                                groupboxControl.ForeColor = colorRadioButtonForeColor
+
+                                ' Theme the checkboxes.
+                            ElseIf (groupboxControl.GetType() Is GetType(CheckBox)) Then
+                                groupboxControl.BackColor = colorCheckBoxBackColor
+                                groupboxControl.ForeColor = colorCheckBoxForeColor
+
+                                ' Theme the dropdown boxes.
+                            ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
+
+                                Try ' Try to apply the dropdown backcolor.
+                                    groupboxControl.BackColor = colorDropdownBackColor
+                                Catch ex As ArgumentException
+                                    ' Now, make sure the background isn't transparent.
+                                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+                                    groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                                End Try
+                                ' Now do the forecolor.
+                                groupboxControl.ForeColor = colorDropdownForeColor
+                            End If
+
+                        Next ' Next control inside groupboxes.
+                    Next ' Next groupbox.
+                Next ' Next tabpage.
+            Next ' Next button at the bottom of the Options window.
 #End Region
 
 
