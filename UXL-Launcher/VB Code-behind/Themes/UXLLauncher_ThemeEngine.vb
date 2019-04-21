@@ -86,6 +86,9 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorButtonForeColor As Color
         Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is "= Flat", the flatstyle is Flat. Standard is "FlatStyle = FlatStyle.Standard".
         Dim flatappearanceButtonBorderColor As Color ' The border of the buttons if "FlatStyle = FlatStyle.Flat".
+        ' Checkbox colors:
+        Dim colorCheckBoxBackColor As Color
+        Dim colorCheckBoxForeColor As Color
         ' Groupbox colors:
         Dim colorGroupBoxBackColor As Color
         Dim colorGroupBoxForeColor As Color
@@ -301,6 +304,39 @@ Public Class UXLLauncher_ThemeEngine
 
 #End Region
 
+#Region "CheckBox BackColor"
+        ' Only pull the Checkbox BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorCheckBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorCheckboxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+        End If
+#End Region
+
+#Region "CheckBox ForeColor"
+        ' Only pull the CheckBox ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorCheckBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
+
 #Region "GroupBox BackColor"
         ' Only pull the GroupBox BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
@@ -474,6 +510,38 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
+#Region "Radio Button BackColor"
+        ' Only pull the Radio Button BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorRadioButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+        End If
+#End Region
+
+#Region "CheckBox ForeColor"
+        ' Only pull the Label ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorCheckBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
