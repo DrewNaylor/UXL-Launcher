@@ -1110,14 +1110,14 @@ Public Class UXLLauncher_ThemeEngine
 
                                 ' Theme the radio buttons.
                             ElseIf (groupboxControl.GetType() Is GetType(RadioButton)) Then
-                                groupboxControl.BackColor = colorTextboxBackColor
-                                groupboxControl.ForeColor = colorTextboxForeColor
+                                groupboxControl.BackColor = colorRadioButtonBackColor
+                                groupboxControl.ForeColor = colorRadioButtonForeColor
                                 ' TODO
 
                                 ' Theme the checkboxes.
                             ElseIf (groupboxControl.GetType() Is GetType(CheckBox)) Then
-                                groupboxControl.BackColor = colorTextboxBackColor
-                                groupboxControl.ForeColor = colorTextboxForeColor
+                                groupboxControl.BackColor = colorCheckBoxBackColor
+                                groupboxControl.ForeColor = colorCheckBoxForeColor
                                 ' TODO
 
                                 ' Theme the dropdown boxes.
