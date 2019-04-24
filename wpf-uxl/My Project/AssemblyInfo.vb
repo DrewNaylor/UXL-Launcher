@@ -15,7 +15,7 @@ Imports System.Windows
 <Assembly: AssemblyDescription("UXL Launcher (WPF test)")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("wpf_uxl")>
-<Assembly: AssemblyCopyright("Copyright © 2017-2018 Drew Naylor. Licensed under Gnu GPL v3+.")>
+<Assembly: AssemblyCopyright("Copyright © 2017-2019 Drew Naylor. Licensed under Gnu GPL v3+.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(false)>
 

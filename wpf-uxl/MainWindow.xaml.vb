@@ -1,5 +1,5 @@
 ﻿' UXL Launcher (WPF test) - A test to see if UXL Launcher can be ported to WPF.
-' Copyright (C) 2017-2018 Drew Naylor
+' Copyright (C) 2017-2019 Drew Naylor
 ' Microsoft Office and all related words are copyright
 ' and trademark Microsoft Corporation.
 ' Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
