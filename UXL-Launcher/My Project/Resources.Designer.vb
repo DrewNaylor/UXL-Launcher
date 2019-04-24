@@ -119,7 +119,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2019-04-20T23:25:07
+        '''  Looks up a localized string similar to 2019-04-24T03:23:07
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -237,7 +237,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Release Candidate 1.
+        '''  Looks up a localized string similar to Stable.
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
@@ -285,25 +285,15 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
-        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Title&gt;Mitty Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Most of the work for version 3.2 was done while my calico cat, Mitty, was still around, so it felt like a good idea to make this theme for her. I miss her.
+        '''    &quot;...if you meant something to someone, if you helped someone, or loved someone, if even a single person remembers you, then maybe you never really die...&quot; - The Machine&lt;/Description&gt;
         '''  &lt;Version&gt;v1.0&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;Theme_Colors&gt;
         '''      
-        '''      &lt;Button&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/Button&gt;
-        '''      
-        '''      &lt;GroupBox&gt;
-        '''        &lt;BackColor&gt;Transparent&lt;/BackColor&gt;
-        '''        &lt;ForeColor&gt;ControlText&lt;/ForeColor&gt;
-        '''      &lt;/GroupBox&gt;
-        '''
-        '''      &lt;FlowLayoutPanel&gt;
-        '''        &lt;B [rest of string was truncated]&quot;;.
+        '''      &lt;Bu [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property MittyTheme_XML() As String
             Get
