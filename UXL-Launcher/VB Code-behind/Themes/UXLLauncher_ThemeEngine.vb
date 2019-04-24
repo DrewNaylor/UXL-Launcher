@@ -1235,15 +1235,15 @@ Public Class UXLLauncher_ThemeEngine
                                 reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
 
 
-                                    ' Theme the labels.
-                                    ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
-                                groupboxControl.BackColor = colorLabelBackColor
-                                groupboxControl.ForeColor = colorLabelForeColor
+                                ' Theme the labels.
+                            ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                                 ' Theme the textboxes.
                             ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
-                                groupboxControl.BackColor = colorTextboxBackColor
-                                groupboxControl.ForeColor = colorTextboxForeColor
+                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.WindowText)
 
                                 ' Theme the radio buttons.
                             ElseIf (groupboxControl.GetType() Is GetType(RadioButton)) Then
