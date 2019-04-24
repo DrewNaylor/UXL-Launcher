@@ -32,5 +32,7 @@
 
 
 Class MainWindow
-
+    Private Sub ExitApp(sender As Object, e As RoutedEventArgs)
+        Me.Close()
+    End Sub
 End Class
