@@ -1263,7 +1263,7 @@ Public Class UXLLauncher_ThemeEngine
                                 groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
 
                                 ' Now do the forecolor.
-                                groupboxControl.ForeColor = colorDropdownForeColor
+                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
                             End If
                         Next ' Next control inside groupboxes.
                     Next ' Next groupbox.
