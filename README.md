@@ -1,6 +1,6 @@
 # What is UXL Launcher?
 
-| Overall project build status | Master branch build status |
+| Overall project status | Master branch status |
 |------------------------------------------------------------------------|----------------------------|
 | [![Project Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher) | [![Master branch Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master) |
 
