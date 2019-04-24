@@ -135,6 +135,8 @@ More information to come in the future! In the meantime, please check the reposi
 
 - If the Drive Location textbox length requirement isn't met when using "Test settings", you can't type anything into the textbox after closing the warning messagebox and before the settings are tested. [(issue #142)](https://github.com/DrewNaylor/UXL-Launcher/issues/142 )
 
+- If the Options window or the About window are open, focus can be sent to the main window by using "Show UXL Launcher" in the Quickmenu and more About windows can be opened by navigating with the keyboard. [(issue #144)](https://github.com/DrewNaylor/UXL-Launcher/issues/144)
+
 <br>
 <br>
 
