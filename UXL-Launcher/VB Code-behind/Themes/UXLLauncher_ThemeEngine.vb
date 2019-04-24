@@ -1140,9 +1140,9 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "About window and theme doesn't support TE 1.03"
         Else
-                ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
-                ' BackColor and ForeColor for buttons.
-                aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
+            ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
+            ' BackColor and ForeColor for buttons.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
             aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
             ' FlatStyle.
             aaformMainWindow.forceAboutWindowTab.buttonClose.FlatStyle = FlatStyle.Standard
@@ -1226,6 +1226,7 @@ Public Class UXLLauncher_ThemeEngine
                         For Each groupboxControl As Control In tabpageControl.Controls
                             ' Theme the buttons. Button FlatStyle needs casting, though.
                             If (groupboxControl.GetType() Is GetType(Button)) Then
+
                                 Dim reallyIsButtonControl As Button = CType(groupboxControl, Button)
                                 reallyIsButtonControl.BackColor = Color.Transparent
                                 reallyIsButtonControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -1258,17 +1259,12 @@ Public Class UXLLauncher_ThemeEngine
                                 ' Theme the dropdown boxes.
                             ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
 
-                                Try ' Try to apply the dropdown backcolor.
-                                    groupboxControl.BackColor = colorDropdownBackColor
-                                Catch ex As ArgumentException
-                                    ' Now, make sure the background isn't transparent.
-                                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
-                                    groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
-                                End Try
+                                'Reset the dropdown backcolor.
+                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+
                                 ' Now do the forecolor.
                                 groupboxControl.ForeColor = colorDropdownForeColor
                             End If
-
                         Next ' Next control inside groupboxes.
                     Next ' Next groupbox.
                 Next ' Next tabpage.
