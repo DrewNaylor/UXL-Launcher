@@ -1,8 +1,8 @@
 # What is UXL Launcher?
 
-Project build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher)
-
-Master branch build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master)
+| Overall project build status | Master branch build status |
+|------------------------------------------------------------------------|----------------------------|
+| [![Project Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher) | [![Master branch Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master) |
 
 UXL Launcher (Unified eXecutable Launcher) allows you to launch most desktop Microsoft Office apps (Office 2010, 2013, 2016, and 2019 are supported [with the exception of Office 2010 Home and Student and Home and Business for now](https://github.com/DrewNaylor/UXL-Launcher/issues/70)) from one place instead of just using a folder with shortcuts to the apps, having a messy desktop with shortcuts, or trying to search through the Start menu for the app you want. Some apps, such as Skype, Skype for Business, Teams, Sway, and a few others aren't supported yet.
 
