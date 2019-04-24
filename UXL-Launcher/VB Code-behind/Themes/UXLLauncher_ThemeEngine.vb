@@ -1201,30 +1201,19 @@ Public Class UXLLauncher_ThemeEngine
                     reallyIsButtonControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
                     ' FlatStyle. BorderColor is in the Try...Catch block.
                     ' This requires casting a control as a button.
-                    reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
+                    reallyIsButtonControl.FlatStyle = FlatStyle.Standard
 
-                    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
-                    ' Note that this can be any valid HTML or system color, including "Nothing"
-                    ' ("Nothing" is the default value based on my testing).
-                    ' Using "Transparent" causes a System.NotSupportedException
-                    ' exception, so add a try...catch block and explain in the debug output.
-                    Try
-                        reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                    ' Set button flat appearance border color to "Nothing".
 
-                    Catch ex As System.NotSupportedException
-                        ' Also set bordercolor to "Nothing".
-                        reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+                    reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
 
-                        ' Show an error about the NotSupportedException.
-                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                    End Try
                 End If
                 ' Start working our way into the Options window, layer by layer.
                 ' First, theme the tab pages.
                 For Each tabControl As Control In tablelayoutpanelControl.Controls
                     If (tabControl.GetType() Is GetType(TabPage)) Then
-                        tabControl.BackColor = colorTabPageBackColor
-                        tabControl.ForeColor = colorTabPageForeColor
+                        tabControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                        tabControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
                     End If
                     ' Next, theme the groupboxes.
                     For Each tabpageControl As Control In tabControl.Controls
