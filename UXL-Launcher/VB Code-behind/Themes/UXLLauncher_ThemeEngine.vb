@@ -1218,8 +1218,8 @@ Public Class UXLLauncher_ThemeEngine
                     ' Next, theme the groupboxes.
                     For Each tabpageControl As Control In tabControl.Controls
                         If (tabpageControl.GetType() Is GetType(GroupBox)) Then
-                            tabpageControl.BackColor = colorGroupBoxBackColor
-                            tabpageControl.ForeColor = colorGroupBoxForeColor
+                            tabpageControl.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+                            tabpageControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
                         End If
 
                         ' Next, theme inside the groupboxes.
@@ -1227,28 +1227,16 @@ Public Class UXLLauncher_ThemeEngine
                             ' Theme the buttons. Button FlatStyle needs casting, though.
                             If (groupboxControl.GetType() Is GetType(Button)) Then
                                 Dim reallyIsButtonControl As Button = CType(groupboxControl, Button)
-                                reallyIsButtonControl.BackColor = colorButtonBackColor
-                                reallyIsButtonControl.ForeColor = colorButtonForeColor
-                                reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
+                                reallyIsButtonControl.BackColor = Color.Transparent
+                                reallyIsButtonControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                                reallyIsButtonControl.FlatStyle = FlatStyle.Standard
 
-                                ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
-                                ' Note that this can be any valid HTML or system color, including "Nothing"
-                                ' ("Nothing" is the default value based on my testing).
-                                ' Using "Transparent" causes a System.NotSupportedException
-                                ' exception, so add a try...catch block and explain in the debug output.
-                                Try
-                                    reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                                ' Set button flat appearance border color to "Nothing".
+                                reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
 
-                                Catch ex As System.NotSupportedException
-                                    ' Also set bordercolor to "Nothing".
-                                    reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
 
-                                    ' Show an error about the NotSupportedException.
-                                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                                End Try
-
-                                ' Theme the labels.
-                            ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+                                    ' Theme the labels.
+                                    ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
                                 groupboxControl.BackColor = colorLabelBackColor
                                 groupboxControl.ForeColor = colorLabelForeColor
 
