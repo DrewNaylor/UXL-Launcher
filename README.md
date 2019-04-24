@@ -4,13 +4,11 @@ Project build status: [![Build status](https://ci.appveyor.com/api/projects/stat
 
 Master branch build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master)
 
-
-
-UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
+UXL Launcher (Unified eXecutable Launcher) allows you to launch most desktop Microsoft Office apps (Office 2010, 2013, 2016, and 2019 are supported [with the exception of Office 2010 Home and Student and Home and Business for now](https://github.com/DrewNaylor/UXL-Launcher/issues/70)) from one place instead of just using a folder with shortcuts to the apps, having a messy desktop with shortcuts, or trying to search through the Start menu for the app you want. Some apps, such as Skype, Skype for Business, Teams, Sway, and a few others aren't supported yet.
 
 ![](/UXL-Launcher/Resources/UXL-Standalone-Icon.png?raw=true)
 
-UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
+UXL Launcher is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
 
 Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
