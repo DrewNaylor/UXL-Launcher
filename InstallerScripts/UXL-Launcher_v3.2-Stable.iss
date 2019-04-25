@@ -23,7 +23,6 @@ AppSupportURL={#MyAppHelpURL}
 AppUpdatesURL={#MyAppUpdatesURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName=Drew Naylor
-AllowNoIcons=yes
 LicenseFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_2-stable-UXL_Launcher\LICENSE.txt
 InfoBeforeFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_2-stable-UXL_Launcher\README for UXL Launcher.txt
 InfoAfterFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_2-stable-UXL_Launcher\v3.2-stable_changelog-from-v3.1.txt
@@ -40,6 +39,11 @@ CreateUninstallRegKey=yes
 EnableDirDoesntExistWarning=True
 DirExistsWarning=no
 VersionInfoVersion=3.2.0.0
+AlwaysShowGroupOnReadyPage=True
+AlwaysShowDirOnReadyPage=True
+DisableStartupPrompt=False
+DisableDirPage=auto
+DisableProgramGroupPage=auto
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
