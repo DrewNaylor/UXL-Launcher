@@ -1,16 +1,14 @@
 # What is UXL Launcher?
 
-Project build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher)
+| Overall project status | Master branch status |
+|------------------------------------------------------------------------|----------------------------|
+| [![Project Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher) | [![Master branch Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master) |
 
-Master branch build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master)
-
-
-
-UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
+UXL Launcher (Unified eXecutable Launcher) allows you to launch most desktop Microsoft Office apps (Office 2010, 2013, 2016, and 2019 are supported [with the exception of Office 2010 Home and Student and Home and Business for now](https://github.com/DrewNaylor/UXL-Launcher/issues/70)) from one place instead of just using a folder with shortcuts to the apps, having a messy desktop with shortcuts, or trying to search through the Start menu for the app you want. Some apps, such as Skype, Skype for Business, Teams, Sway, and a few others aren't supported yet.
 
 ![](/UXL-Launcher/Resources/UXL-Standalone-Icon.png?raw=true)
 
-UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
+UXL Launcher is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
 
 Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
@@ -136,6 +134,8 @@ More information to come in the future! In the meantime, please check the reposi
 - "TenDark" theme button highlight colors are a bit hard to see. [(issue #140)]( https://github.com/DrewNaylor/UXL-Launcher/issues/140 )
 
 - If the Drive Location textbox length requirement isn't met when using "Test settings", you can't type anything into the textbox after closing the warning messagebox and before the settings are tested. [(issue #142)](https://github.com/DrewNaylor/UXL-Launcher/issues/142 )
+
+- If the Options window or the About window are open, focus can be sent to the main window by using "Show UXL Launcher" in the Quickmenu and more About windows can be opened by navigating with the keyboard. [(issue #144)](https://github.com/DrewNaylor/UXL-Launcher/issues/144)
 
 <br>
 <br>

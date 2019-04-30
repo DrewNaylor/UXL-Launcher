@@ -1,4 +1,4 @@
-﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
+'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 'Copyright (C) 2013-2019 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
@@ -311,12 +311,28 @@ Public Class aaformMainWindow
 
     ' Allow the About window to be accessed from the theme engine.
     Friend Shared forceAboutWindowTab As New aaformAboutWindow
+
     ' Allow the Options window to be accessed from the theme engine.
+    ' In Version 3.3, this also prevents opening
+    ' multiple Options windows from the Quickmenu or from the main window by
+    ' clicking the "Show UXL Launcher" button in the Quickmenu, pressing Alt,
+' then navigating to the Tools>Options... button. That navigation bug should be worked on
+    ' and described in a bug report, but it's not easy to hit.
     Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
+
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog(Me)
+        showOptionsWindow() ' This code was moved to its own sub.
+    End Sub
+
+    Private Sub showOptionsWindow()
+        Try ' We need to make sure the Options window isn't open yet.
+            forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+            forceOptionsWindowTab.ShowDialog(Me)
+        Catch ex As InvalidOperationException
+            ' If it is open, focus it.
+            forceOptionsWindowTab.Focus()
+        End Try
     End Sub
 
 #Region "Help menubar buttons."
@@ -547,13 +563,7 @@ Public Class aaformMainWindow
 
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Try ' We need to make sure the Options window isn't open yet.
-            forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-            forceOptionsWindowTab.ShowDialog(Me)
-        Catch ex As InvalidOperationException
-            ' If it is open, focus it.
-            forceOptionsWindowTab.Focus()
-        End Try
+        showOptionsWindow() ' This code was moved to its own sub.
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
