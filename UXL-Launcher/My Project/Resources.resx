@@ -6328,7 +6328,8 @@ This decimal is to be used for the About window when talking about what version 
         UIDOoQCdQwE6hwJ0DgXoHArQORSgcyhA51CAzqEAnUMBOocCdA4F6BwK0DkUoHMoQOdQgM6hAJ1DATqH
         AnQOBegcCtA5FKBzKEDnUIDOoQCdQwE6hwJ0DgXoHArQORSgcyhA51CAzqEAnUMBOufts0fm30iXPDr7
         0Pwb6ZIPz87fJv3y9vn/B5zqHCjTyl1+AAAAAElFTkSuQmCC
-</value>
+    </value>
+  </data>
   <data name="MittyTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vb code-behind\themes\mittytheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
