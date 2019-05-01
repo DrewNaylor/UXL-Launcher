@@ -1,4 +1,4 @@
-﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
+'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
 'Copyright (C) 2013-2019 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
@@ -309,11 +309,14 @@ Public Class aaformMainWindow
 #End Region
 #End Region
 
-    ' Have only one Options window. In Version 3.3, this is also required for 
-    ' theming the Options window, but in this version, it only prevents opening
+    ' Allow the About window to be accessed from the theme engine.
+    Friend Shared forceAboutWindowTab As New aaformAboutWindow
+
+    ' Allow the Options window to be accessed from the theme engine.
+    ' In Version 3.3, this also prevents opening
     ' multiple Options windows from the Quickmenu or from the main window by
     ' clicking the "Show UXL Launcher" button in the Quickmenu, pressing Alt,
-    ' then navigating to the Tools>Options... button. That bug should be worked on
+' then navigating to the Tools>Options... button. That navigation bug should be worked on
     ' and described in a bug report, but it's not easy to hit.
     Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
 
@@ -335,21 +338,18 @@ Public Class aaformMainWindow
 #Region "Help menubar buttons."
     Private Sub menubarAboutButton_Click(sender As Object, e As EventArgs) Handles menubarAboutButton.Click
         ' Open the About window to About tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(0)
         forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarLicenseButton_Click(sender As Object, e As EventArgs) Handles menubarLicenseButton.Click
         ' Open the About window to License tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(1)
         forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarAuthorsButton_Click(sender As Object, e As EventArgs) Handles menubarAuthorsButton.Click
         ' Open the About window to Acknowledgements tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(2)
         forceAboutWindowTab.ShowDialog(Me)
     End Sub

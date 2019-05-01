@@ -110,13 +110,11 @@ Public Class aaformOptionsWindow
         ' Fourth, split the theme list with the delimiter.
         Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
 
-        ' Empty out the theme list datasource.
-        ' This is required when opening more than
-        ' one Options window per session, otherwise
-        ' the app will crash. In Version 3.3, this is
-        ' more required because there can only be one
-        ' Options window referred to, but here it's only
-        ' for making sure the one Options window is focused.
+        ' Set the theme list datasource to nothing so that
+        ' the Options window can be opened more than once per session.
+        ' If this isn't done, the app crashes because the datasource is
+        ' being modified after it's already set. This allows the Options
+        ' window to be themed.
         comboboxThemeList.DataSource = Nothing
 
         ' Add the range of the split theme list string
@@ -413,7 +411,7 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Code that runs when the user clicks the Clear Textbox button next to the Office drive location."
-    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearTextbox.Click
+    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearDriveLetter.Click
         ' Clear the OfficeDrive textbox and set focus to it.
         textboxOfficeDrive.Text = ""
         textboxOfficeDrive.Select()

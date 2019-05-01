@@ -36,7 +36,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
         Me.labelDriveTextboxLabel = New System.Windows.Forms.Label()
-        Me.buttonClearTextbox = New System.Windows.Forms.Button()
+        Me.buttonClearDriveLetter = New System.Windows.Forms.Button()
         Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
@@ -219,7 +219,7 @@ Partial Class aaformOptionsWindow
         'groupboxOfficeLocation
         '
         Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
-        Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearTextbox)
+        Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearDriveLetter)
         Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
         Me.groupboxOfficeLocation.Location = New System.Drawing.Point(3, 3)
@@ -240,17 +240,17 @@ Partial Class aaformOptionsWindow
         Me.labelDriveTextboxLabel.TabIndex = 4
         Me.labelDriveTextboxLabel.Text = "Drive"
         '
-        'buttonClearTextbox
+        'buttonClearDriveLetter
         '
-        Me.buttonClearTextbox.AutoSize = True
-        Me.buttonClearTextbox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonClearTextbox.Location = New System.Drawing.Point(174, 63)
-        Me.buttonClearTextbox.Margin = New System.Windows.Forms.Padding(2)
-        Me.buttonClearTextbox.Name = "buttonClearTextbox"
-        Me.buttonClearTextbox.Size = New System.Drawing.Size(41, 23)
-        Me.buttonClearTextbox.TabIndex = 3
-        Me.buttonClearTextbox.Text = "Clear"
-        Me.buttonClearTextbox.UseVisualStyleBackColor = True
+        Me.buttonClearDriveLetter.AutoSize = True
+        Me.buttonClearDriveLetter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.buttonClearDriveLetter.Location = New System.Drawing.Point(174, 63)
+        Me.buttonClearDriveLetter.Margin = New System.Windows.Forms.Padding(2)
+        Me.buttonClearDriveLetter.Name = "buttonClearDriveLetter"
+        Me.buttonClearDriveLetter.Size = New System.Drawing.Size(41, 23)
+        Me.buttonClearDriveLetter.TabIndex = 3
+        Me.buttonClearDriveLetter.Text = "Clear"
+        Me.buttonClearDriveLetter.UseVisualStyleBackColor = True
         '
         'textboxOfficeDrive
         '
@@ -649,7 +649,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxOfficeLocation As GroupBox
     Friend WithEvents labelOfficeInstalledToDrive As Label
     Friend WithEvents textboxOfficeDrive As TextBox
-    Friend WithEvents buttonClearTextbox As Button
+    Friend WithEvents buttonClearDriveLetter As Button
     Friend WithEvents groupboxOfficeVersion As GroupBox
     Friend WithEvents comboboxOfficeVersionSelector As ComboBox
     Friend WithEvents labelUserHasThisOfficeVersion As Label

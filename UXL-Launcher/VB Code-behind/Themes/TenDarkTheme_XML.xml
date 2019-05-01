@@ -1,7 +1,7 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Ten Dark</Title>
   <Description>A dark theme similar to Windows 10's "Dark Mode".</Description>
-  <Version>v1.0</Version>
+  <Version>v1.1</Version>
   <Author>Drew Naylor</Author>
 
   <!-- "UseThemeEngineVersion" is used to specify the version of the
@@ -9,9 +9,16 @@
   versions of the theme engine that designers or developers don't want
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
-  <UseThemeEngineVersion>1.02</UseThemeEngineVersion>
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
   
     <Theme_Colors>
+
+      <AboutWindow>
+        <!-- This controls how the About window's banner appears.
+        Available BannerStyle options are "Light" and "Dark".
+        Anything else will be set to "Light". -->
+        <BannerStyle>Dark</BannerStyle>
+      </AboutWindow>
       
       <Button>
         <!-- The button BackColor and BorderColor value was eye-balled from the
@@ -29,6 +36,18 @@
           <BorderColor>#363636</BorderColor>
         </FlatAppearance>
       </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>#363636</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
       
       <GroupBox>
         <BackColor>Transparent</BackColor>
@@ -39,6 +58,19 @@
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <!--As of 1.03 only applies to the area outside the tab control
+        in the About window. Might also apply in the same way in
+        the Options window, but that's not done yet (as of April 18, 2019).-->
+        <BackColor>#202020</BackColor>
+        <ForeColor>White</ForeColor>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
       
       <StatusBar>
         <BackColor>#202020</BackColor>
@@ -49,6 +81,18 @@
         <ForeColor>White</ForeColor>
       </Label>
 
+      <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Red</ActiveLinkColor>
+        <LinkColor>DodgerBlue</LinkColor>
+      </LinkLabel>
+
+      <RadioButton>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </RadioButton>
+      
       <TextBox>
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
