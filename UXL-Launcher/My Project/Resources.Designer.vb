@@ -108,22 +108,18 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ApplauncherIconsInfo_TXT", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
-
         '''  Looks up a localized string similar to  - Codename &quot;(unknown for now)&quot;.
-
         '''</summary>
         Public ReadOnly Property appVersionCodename() As String
             Get
                 Return ResourceManager.GetString("appVersionCodename", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
-
         '''  Looks up a localized string similar to 2019-04-24T03:23:07
-
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -249,11 +245,9 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
-        
+
         '''<summary>
-
         '''  Looks up a localized string similar to Git.
-
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
