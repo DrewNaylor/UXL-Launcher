@@ -1,4 +1,6 @@
-# What is UXL Launcher?
+# UXL Launcher
+
+An app launcher meant to launch Microsoft Office 2010, 2013, 2016, 2019 desktop software/apps, including ones from Office 365. Not associated with Microsoft.
 
 | Overall project status | Master branch status |
 |------------------------------------------------------------------------|----------------------------|
