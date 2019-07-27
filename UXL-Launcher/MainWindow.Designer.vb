@@ -73,7 +73,6 @@ Partial Class aaformMainWindow
         Me.zotherstuffFileToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.statusbarMainWindow = New System.Windows.Forms.StatusStrip()
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
         Me.debugButtonDefaultThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOneNote = New System.Windows.Forms.Button()
@@ -119,10 +118,10 @@ Partial Class aaformMainWindow
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
+        Me.tableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
-        Me.flowLayoutPanel.SuspendLayout()
         Me.groupboxStandardApps.SuspendLayout()
         CType(Me.pictureOneNoteIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureOutlookIcon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,6 +138,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tableLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'menubarMainWindow
@@ -498,19 +498,6 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText.Text = "Welcome to UXL Launcher, the Unified eXecutable Launcher! Click the app names to " &
     "launch them and explore the UI."
         '
-        'flowLayoutPanel
-        '
-        Me.flowLayoutPanel.BackColor = System.Drawing.SystemColors.Window
-        Me.flowLayoutPanel.Controls.Add(Me.groupboxStandardApps)
-        Me.flowLayoutPanel.Controls.Add(Me.groupboxProApps)
-        Me.flowLayoutPanel.Controls.Add(Me.groupboxExtraApps)
-        Me.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flowLayoutPanel.Location = New System.Drawing.Point(0, 23)
-        Me.flowLayoutPanel.Margin = New System.Windows.Forms.Padding(2)
-        Me.flowLayoutPanel.Name = "flowLayoutPanel"
-        Me.flowLayoutPanel.Size = New System.Drawing.Size(640, 504)
-        Me.flowLayoutPanel.TabIndex = 2
-        '
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
@@ -526,11 +513,12 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.Controls.Add(Me.picturePowerpointIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureExcelIcon)
         Me.groupboxStandardApps.Controls.Add(Me.pictureWordIcon)
+        Me.groupboxStandardApps.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupboxStandardApps.Location = New System.Drawing.Point(16, 2)
         Me.groupboxStandardApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxStandardApps.Name = "groupboxStandardApps"
         Me.groupboxStandardApps.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxStandardApps.Size = New System.Drawing.Size(190, 478)
+        Me.groupboxStandardApps.Size = New System.Drawing.Size(192, 478)
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
@@ -679,11 +667,12 @@ Partial Class aaformMainWindow
         Me.groupboxProApps.Controls.Add(Me.picturePublisherIcon)
         Me.groupboxProApps.Controls.Add(Me.pictureInfoPathIcon)
         Me.groupboxProApps.Controls.Add(Me.pictureSharepointIcon)
-        Me.groupboxProApps.Location = New System.Drawing.Point(224, 2)
+        Me.groupboxProApps.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.groupboxProApps.Location = New System.Drawing.Point(226, 2)
         Me.groupboxProApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxProApps.Name = "groupboxProApps"
         Me.groupboxProApps.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxProApps.Size = New System.Drawing.Size(190, 478)
+        Me.groupboxProApps.Size = New System.Drawing.Size(192, 478)
         Me.groupboxProApps.TabIndex = 1
         Me.groupboxProApps.TabStop = False
         Me.groupboxProApps.Text = "Professional Apps"
@@ -868,7 +857,6 @@ Partial Class aaformMainWindow
         '
         'groupboxExtraApps
         '
-        Me.groupboxExtraApps.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.groupboxExtraApps.BackColor = System.Drawing.Color.Transparent
         Me.groupboxExtraApps.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunOneNoteQuickLaunch)
@@ -880,11 +868,12 @@ Partial Class aaformMainWindow
         Me.groupboxExtraApps.Controls.Add(Me.pictureClipOrganizerIcon)
         Me.groupboxExtraApps.Controls.Add(Me.buttonRunClipOrganizer)
         Me.groupboxExtraApps.Controls.Add(Me.debugLabelForAlwaysOnTop)
-        Me.groupboxExtraApps.Location = New System.Drawing.Point(432, 2)
+        Me.groupboxExtraApps.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.groupboxExtraApps.Location = New System.Drawing.Point(436, 2)
         Me.groupboxExtraApps.Margin = New System.Windows.Forms.Padding(16, 2, 2, 2)
         Me.groupboxExtraApps.Name = "groupboxExtraApps"
         Me.groupboxExtraApps.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxExtraApps.Size = New System.Drawing.Size(190, 478)
+        Me.groupboxExtraApps.Size = New System.Drawing.Size(192, 478)
         Me.groupboxExtraApps.TabIndex = 2
         Me.groupboxExtraApps.TabStop = False
         Me.groupboxExtraApps.Text = "Extra Apps + Tools"
@@ -1006,15 +995,34 @@ Partial Class aaformMainWindow
         Me.openfiledialogOpenDocument.RestoreDirectory = True
         Me.openfiledialogOpenDocument.Title = "Open"
         '
+        'tableLayoutPanel
+        '
+        Me.tableLayoutPanel.BackColor = System.Drawing.SystemColors.Window
+        Me.tableLayoutPanel.ColumnCount = 4
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tableLayoutPanel.Controls.Add(Me.groupboxExtraApps, 2, 0)
+        Me.tableLayoutPanel.Controls.Add(Me.groupboxProApps, 1, 0)
+        Me.tableLayoutPanel.Controls.Add(Me.groupboxStandardApps, 0, 0)
+        Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tableLayoutPanel.Location = New System.Drawing.Point(0, 23)
+        Me.tableLayoutPanel.Name = "tableLayoutPanel"
+        Me.tableLayoutPanel.RowCount = 1
+        Me.tableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tableLayoutPanel.Size = New System.Drawing.Size(640, 482)
+        Me.tableLayoutPanel.TabIndex = 3
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(640, 527)
+        Me.Controls.Add(Me.tableLayoutPanel)
         Me.Controls.Add(Me.statusbarMainWindow)
-        Me.Controls.Add(Me.flowLayoutPanel)
         Me.Controls.Add(Me.menubarMainWindow)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.menubarMainWindow
         Me.MaximizeBox = False
@@ -1026,7 +1034,6 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.ResumeLayout(False)
         Me.statusbarMainWindow.ResumeLayout(False)
         Me.statusbarMainWindow.PerformLayout()
-        Me.flowLayoutPanel.ResumeLayout(False)
         Me.groupboxStandardApps.ResumeLayout(False)
         CType(Me.pictureOneNoteIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureOutlookIcon, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1045,6 +1052,7 @@ Partial Class aaformMainWindow
         CType(Me.pictureOneNoteQuickLaunchIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picturePictureManagerIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureClipOrganizerIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tableLayoutPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1065,7 +1073,6 @@ Partial Class aaformMainWindow
     Friend WithEvents zseparatorHelpMenu As ToolStripSeparator
     Friend WithEvents statusbarMainWindow As StatusStrip
     Friend WithEvents statusbarLabelWelcomeText As ToolStripStatusLabel
-    Friend WithEvents flowLayoutPanel As FlowLayoutPanel
     Friend WithEvents groupboxStandardApps As GroupBox
     Friend WithEvents groupboxProApps As GroupBox
     Friend WithEvents groupboxExtraApps As GroupBox
@@ -1145,4 +1152,5 @@ Partial Class aaformMainWindow
     Friend WithEvents zSeparatorOutlookArea As ToolStripSeparator
     Friend WithEvents zSeparatorNewMenuProfessionalApps As ToolStripSeparator
     Friend WithEvents menuitemNewPublisherPublication As ToolStripMenuItem
+    Friend WithEvents tableLayoutPanel As TableLayoutPanel
 End Class

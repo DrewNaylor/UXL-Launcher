@@ -116,6 +116,9 @@ Public Class UXLLauncher_ThemeEngine
         ' TableLayoutPanel colors:
         Dim colorTableLayoutPanelBackColor As Color
         Dim colorTableLayoutPanelForeColor As Color
+        ' Main Window TableLayoutPanel colors:
+        Dim colorMainWindowTableLayoutPanelBackColor As Color
+        Dim colorMainWindowTableLayoutPanelForeColor As Color
         ' TabPage colors:
         Dim colorTabPageBackColor As Color
         Dim colorTabPageForeColor As Color
@@ -614,6 +617,38 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "Main Window TableLayoutPanel BackColor"
+        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MainWindowTableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMainWindowTableLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MainWindowTableLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMainWindowTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMainWindowTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
+#End Region
+
+#Region "Main Window TableLayoutPanel ForeColor"
+        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MainWindowTableLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorMainWindowTableLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MainWindowTableLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorMainWindowTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorMainWindowTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
 #Region "TabPage BackColor"
         ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
@@ -864,12 +899,24 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Set colors for controls in groupboxes."
 
-        '        ' Set color for the Flow Layout Panel.
-        aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
-        aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
+        '        ' Set color for the Table Layout Panel.
+        ' Use the setting for the old flow layout panel if
+        ' the theme is set to use a version of the ThemeEngine
+        ' before TE 2.01.
+        If themeSheetUseThemeEngineVersion < 2.01 Then
+            aaformMainWindow.tableLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
+            aaformMainWindow.tableLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
+        Else
+            ' Otherwise, use the value specified for the Table Layout Panel
+            ' on the main window. This is separate from the regular TableLayoutPanel
+            ' color because it can be used on the Options window.
+            aaformMainWindow.tableLayoutPanel.BackColor = colorMainWindowTableLayoutPanelBackColor
+            aaformMainWindow.tableLayoutPanel.ForeColor = colorMainWindowTableLayoutPanelForeColor
+        End If
 
-        ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
-        For Each groupbox As Control In aaformMainWindow.flowLayoutPanel.Controls
+
+        ' Look at all the controls in the main window TableLayoutPanel and change their theme.
+        For Each groupbox As Control In aaformMainWindow.tableLayoutPanel.Controls
             ' Change colors in groupboxes.
             If (groupbox.GetType() Is GetType(GroupBox)) Then
                 ' Change groupbox colors.
@@ -968,9 +1015,9 @@ Public Class UXLLauncher_ThemeEngine
 
 #End Region
 
-#Region "Theming for theme files compatible with TE 1.03 or greater."
-#Region "About window and Theme file supports TE 1.03"
-        If themeSheetUseThemeEngineVersion >= 1.03 Then
+#Region "Theming for theme files compatible with TE 2.01 or greater."
+#Region "About window and Theme file supports TE 2.01"
+        If themeSheetUseThemeEngineVersion >= 2.01 Then
             ' BackColor and ForeColor for buttons.
             aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = colorButtonBackColor
             aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = colorButtonForeColor
@@ -1027,7 +1074,7 @@ Public Class UXLLauncher_ThemeEngine
             Next ' Go to the next LinkLabel.
 #End Region
 
-#Region "Options window theming for theme files supporting 1.03"
+#Region "Options window theming for theme files supporting 2.01"
             ' Theme the Options window's table layout panel.
             aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = colorTableLayoutPanelBackColor
             aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
@@ -1138,9 +1185,9 @@ Public Class UXLLauncher_ThemeEngine
             Next ' Next button at the bottom of the Options window.
 #End Region
 
-#Region "About window and theme doesn't support TE 1.03"
+#Region "About window and theme doesn't support TE 2.01"
         Else
-            ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
+            ' If the theme doesn't support TE 2.01, set all control stuff to defaults.
             ' BackColor and ForeColor for buttons.
             aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
             aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -1187,7 +1234,7 @@ Public Class UXLLauncher_ThemeEngine
             Next ' Go to the next LinkLabel.
 #End Region
 
-#Region "Options window and theme doesn't support TE 1.03"
+#Region "Options window and theme doesn't support TE 2.01"
             ' Theme the Options window's table layout panel.
             aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = Color.FromKnownColor(KnownColor.Control)
             aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
