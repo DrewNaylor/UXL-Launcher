@@ -938,6 +938,7 @@ Public Class UXLLauncher_ThemeEngine
                         ' Set button style, whether that be flat, "Standard", or another
                         ' supported style.
                         button.FlatStyle = flatstyleButtonFlatStyle
+
                         ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
                         ' Note that this can be any valid HTML or system color, including "Nothing"
                         ' ("Nothing" is the default value based on my testing).
@@ -949,11 +950,16 @@ Public Class UXLLauncher_ThemeEngine
                             ' If the useThemeEngineVersion element in the theme is
                             ' greater than or equal to 1.02, also set bordercolor
                             ' to "Nothing".
+
+                            ' This is being done in an exception, so it should
+                            ' work just fine in regular usage when things work.
                             If themeSheetUseThemeEngineVersion >= 1.02 Then
                                 button.FlatAppearance.BorderColor = Nothing
                             End If
                             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                         End Try
+
+                        button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
                         ' If the control in the groupbox is a label,
                         ' change the label's colors.
                     ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
