@@ -1122,7 +1122,6 @@ Public Class UXLLauncher_ThemeEngine
                         themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                     End Try
 
-
                     ' Now change the color for when the mouse clicks down
                     ' on a button and the flat appearance is set to flat.
                     reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
@@ -1170,6 +1169,16 @@ Public Class UXLLauncher_ThemeEngine
                                     ' Show an error about the NotSupportedException.
                                     themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                                 End Try
+
+
+                                ' Now change the color for when the mouse clicks down
+                                ' on a button and the flat appearance is set to flat.
+                                reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                                ' Change the color for when the mouse goes over
+                                ' a button and the flat appearance is set to flat.
+                                reallyIsButtonControl.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
 
                                 ' Theme the labels.
                             ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
