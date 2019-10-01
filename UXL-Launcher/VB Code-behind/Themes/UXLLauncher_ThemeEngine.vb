@@ -1053,6 +1053,14 @@ Public Class UXLLauncher_ThemeEngine
                 themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
             End Try
 
+            ' Now change the color for when the mouse clicks down
+            ' on a button and the flat appearance is set to flat.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+            ' Change the color for when the mouse goes over
+            ' a button and the flat appearance is set to flat.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
             ' BackColor for FlowLayoutPanels.
             aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = colorFlowLayoutPanelBackColor
             ' And FlowLayoutPanel ForeColors.
