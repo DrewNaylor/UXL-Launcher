@@ -34,8 +34,8 @@
         "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
           <BorderColor>#363636</BorderColor>
-          <MouseDownBackColor>Blue</MouseDownBackColor>
-          <MouseOverBackColor>Red</MouseOverBackColor>
+          <MouseDownBackColor>Silver</MouseDownBackColor>
+          <MouseOverBackColor>Gray</MouseOverBackColor>
         </FlatAppearance>
       </Button>
 
