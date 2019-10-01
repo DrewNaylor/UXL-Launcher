@@ -86,6 +86,8 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorButtonForeColor As Color
         Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is "= Flat", the flatstyle is Flat. Standard is "FlatStyle = FlatStyle.Standard".
         Dim flatappearanceButtonBorderColor As Color ' The border of the buttons if "FlatStyle = FlatStyle.Flat".
+        Dim flatappearanceButtonMouseOverBackColor As Color ' The color of the buttons on mouseover if "FlatStyle = FlatStyle.Flat".
+        Dim flatappearanceButtonMouseDownBackColor As Color ' The color of the buttons on mousedown if "FlatStyle = FlatStyle.Flat".
         ' Checkbox colors:
         Dim colorCheckBoxBackColor As Color
         Dim colorCheckBoxForeColor As Color
@@ -305,6 +307,30 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             flatappearanceButtonBorderColor = Nothing
+        End If
+#End Region
+
+#Region "Button flat appearance mouseover color"
+        ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
+        If themeSheetUseThemeEngineVersion >= 1.03 Then
+
+            ' Only pull the Button FlatAppearance BorderColor element from XML if it exists.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager) IsNot Nothing Then
+                Try
+                    flatappearanceButtonMouseOverBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    ' If the element isn't a valid HTML color, just replace it with the default.
+                Catch ex As Exception
+                    flatappearanceButtonMouseOverBackColor = Nothing
+                End Try
+            Else
+                ' If the element doesn't exist, overwrite it with the Default theme's value.
+                flatappearanceButtonMouseOverBackColor = Nothing
+            End If
+        Else
+            ' If the theme file is set to use something lower than 1.03,
+            ' use the default value.
+            flatappearanceButtonMouseOverBackColor = Nothing
         End If
 #End Region
 
