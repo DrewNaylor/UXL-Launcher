@@ -1121,6 +1121,16 @@ Public Class UXLLauncher_ThemeEngine
                         ' Show an error about the NotSupportedException.
                         themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                     End Try
+
+
+                    ' Now change the color for when the mouse clicks down
+                    ' on a button and the flat appearance is set to flat.
+                    reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                    ' Change the color for when the mouse goes over
+                    ' a button and the flat appearance is set to flat.
+                    reallyIsButtonControl.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
                 End If
                 ' Start working our way into the Options window, layer by layer.
                 ' First, theme the tab pages.
