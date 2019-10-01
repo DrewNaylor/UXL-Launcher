@@ -959,7 +959,14 @@ Public Class UXLLauncher_ThemeEngine
                             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                         End Try
 
+                        ' Now change the color for when the mouse clicks down
+                        ' on a button and the flat appearance is set to flat.
                         button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                        ' Change the color for when the mouse goes over
+                        ' a button and the flat appearance is set to flat.
+                        button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
                         ' If the control in the groupbox is a label,
                         ' change the label's colors.
                     ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
