@@ -310,11 +310,35 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
-#Region "Button flat appearance mouseover color"
+#Region "Button flat appearance mousedown color (TE 1.03 or greater)"
         ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
         If themeSheetUseThemeEngineVersion >= 1.03 Then
 
-            ' Only pull the Button FlatAppearance BorderColor element from XML if it exists.
+            ' Only pull the Button FlatAppearance MouseDownBackColor element from XML if it exists.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager) IsNot Nothing Then
+                Try
+                    flatappearanceButtonMouseDownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    ' If the element isn't a valid HTML color, just replace it with the default.
+                Catch ex As Exception
+                    flatappearanceButtonMouseDownBackColor = Nothing
+                End Try
+            Else
+                ' If the element doesn't exist, overwrite it with the Default theme's value.
+                flatappearanceButtonMouseDownBackColor = Nothing
+            End If
+        Else
+            ' If the theme file is set to use something lower than 1.03,
+            ' use the default value.
+            flatappearanceButtonMouseDownBackColor = Nothing
+        End If
+#End Region
+
+#Region "Button flat appearance mouseover color (TE 1.03 or greater)"
+        ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
+        If themeSheetUseThemeEngineVersion >= 1.03 Then
+
+            ' Only pull the Button FlatAppearance MouseOverBackColor element from XML if it exists.
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager) IsNot Nothing Then
                 Try
                     flatappearanceButtonMouseOverBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager).InnerText)
