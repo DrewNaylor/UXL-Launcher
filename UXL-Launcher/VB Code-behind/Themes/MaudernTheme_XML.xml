@@ -46,9 +46,8 @@
 
       <TableLayoutPanel>
         <!--As of 1.03 only applies to the area outside the tab control
-        in the About window. Might also apply in the same way in
-        the Options window, but that's not done yet (as of April 18, 2019).-->
-        <BackColor>Black</BackColor>
+        in the About window and in the same way in the Options window.-->
+        <BackColor>#363636</BackColor>
         <ForeColor>White</ForeColor>
       </TableLayoutPanel>
 
