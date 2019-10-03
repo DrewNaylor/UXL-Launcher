@@ -30,7 +30,7 @@
         <!-- Anything within the "FlatAppearance" element will only be used if
         "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
-          <BorderColor>LightGray</BorderColor>
+          <BorderColor>Silver</BorderColor>
         </FlatAppearance>
       </Button>
       
@@ -52,7 +52,7 @@
       </TableLayoutPanel>
 
       <TabPage>
-        <BackColor>#505050</BackColor>
+        <BackColor>#363636</BackColor>
         <ForeColor>White</ForeColor>
       </TabPage>
 
