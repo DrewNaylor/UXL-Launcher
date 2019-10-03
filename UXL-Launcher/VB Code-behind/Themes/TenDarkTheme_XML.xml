@@ -21,7 +21,7 @@
       </AboutWindow>
       
       <Button>
-        <!-- The button BackColor and BorderColor value was eye-balled from the
+        <!-- The button BackColor and BorderColor values were eye-balled from the
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
         <BackColor>#363636</BackColor>
