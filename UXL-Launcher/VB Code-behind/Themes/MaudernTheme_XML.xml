@@ -21,7 +21,7 @@
       </AboutWindow>
       
       <Button>
-        <BackColor>DimGray</BackColor>
+        <BackColor>#505050</BackColor>
         <ForeColor>White</ForeColor>
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
@@ -66,7 +66,7 @@
       </Label>
 
       <TextBox>
-        <BackColor>DimGray</BackColor>
+        <BackColor>#505050</BackColor>
         <ForeColor>White</ForeColor>
       </TextBox>
 
