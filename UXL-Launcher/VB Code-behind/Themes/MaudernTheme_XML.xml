@@ -33,6 +33,18 @@
           <BorderColor>Silver</BorderColor>
         </FlatAppearance>
       </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>#505050</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
       
       <GroupBox>
         <BackColor>Transparent</BackColor>
