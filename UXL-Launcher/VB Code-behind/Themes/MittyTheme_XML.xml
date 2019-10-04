@@ -18,15 +18,22 @@
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </Button>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
       
       <GroupBox>
         <BackColor>DarkOrange</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>Window</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
       
       <StatusBar>
@@ -35,12 +42,12 @@
 
       <Label>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
       </Label>
 
       <TextBox>
-        <BackColor>Window</BackColor>
-        <ForeColor>WindowText</ForeColor>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
       </TextBox>
 
       <MenuItem>
@@ -71,7 +78,7 @@
       
       <StatusLabel>
         <BackColor>Transparent</BackColor>
-        <ForeColor>ControlText</ForeColor>
+        <ForeColor>Black</ForeColor>
         
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>None</BorderSides>
