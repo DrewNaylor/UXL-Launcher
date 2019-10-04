@@ -75,7 +75,6 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.debugButtonDefaultThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOneNote = New System.Windows.Forms.Button()
         Me.debugButtonTestThemeSetter = New System.Windows.Forms.Button()
@@ -515,7 +514,6 @@ Partial Class aaformMainWindow
         'groupboxStandardApps
         '
         Me.groupboxStandardApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxStandardApps.Controls.Add(Me.Button1)
         Me.groupboxStandardApps.Controls.Add(Me.debugButtonDefaultThemeSetter)
         Me.groupboxStandardApps.Controls.Add(Me.buttonRunOneNote)
         Me.groupboxStandardApps.Controls.Add(Me.debugButtonTestThemeSetter)
@@ -536,15 +534,6 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(63, 427)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'debugButtonDefaultThemeSetter
         '
@@ -1156,5 +1145,4 @@ Partial Class aaformMainWindow
     Friend WithEvents zSeparatorOutlookArea As ToolStripSeparator
     Friend WithEvents zSeparatorNewMenuProfessionalApps As ToolStripSeparator
     Friend WithEvents menuitemNewPublisherPublication As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
 End Class
