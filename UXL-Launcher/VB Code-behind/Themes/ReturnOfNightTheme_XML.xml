@@ -17,6 +17,18 @@
         <BackColor>MidnightBlue</BackColor>
         <ForeColor>White</ForeColor>
       </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>Purple</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
       
       <GroupBox>
         <BackColor>Indigo</BackColor>
@@ -33,9 +45,14 @@
       </StatusBar>
 
       <Label>
-        <BackColor>Purple</BackColor>
+        <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
+
+      <RadioButton>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </RadioButton>
 
       <TextBox>
         <BackColor>Beige</BackColor>
