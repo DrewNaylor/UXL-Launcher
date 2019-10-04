@@ -598,6 +598,18 @@ Public Class aaformMainWindow
             End If
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Based off code from here:
+        ' https://docs.microsoft.com/en-us/dotnet/framework/winforms/advanced/how-to-draw-a-filled-rectangle-on-a-windows-form
+        Dim myBrush As New System.Drawing.SolidBrush(System.Drawing.Color.DimGray)
+        Dim formGraphics As System.Drawing.Graphics
+        formGraphics = statusbarMainWindow.CreateGraphics()
+        formGraphics.FillRectangle(myBrush, New Rectangle(0, 0, statusbarMainWindow.Width, 1))
+        myBrush.Dispose()
+        formGraphics.Dispose()
+        'Graphics.FillRectangle(New SolidBrush(statusbarMainWindow.BackColor), New Rectangle(0, 0, statusbarMainWindow.Width, 2))
+    End Sub
 #End Region
 
 End Class
