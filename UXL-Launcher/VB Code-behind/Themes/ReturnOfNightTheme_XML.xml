@@ -45,6 +45,7 @@
         in the About window and in the same way in the Options window.-->
         <BackColor>DarkViolet</BackColor>
         <ForeColor>White</ForeColor>
+        <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
       </TableLayoutPanel>
 
       <TabPage>

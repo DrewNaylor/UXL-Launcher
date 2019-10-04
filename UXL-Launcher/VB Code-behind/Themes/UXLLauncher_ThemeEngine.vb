@@ -639,7 +639,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "TableLayoutPanel BackColor"
-        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        ' Only pull the TableLayoutPanel ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTableLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
@@ -654,8 +654,24 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "TableLayoutPanel ApplyToAboutWindowAboutTabTLP"
+        ' Only pull the TableLayoutPanel ApplyToAboutWindowAboutTabTLP element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                useTableLayoutPanelColorInsideAboutAppTab = CBool(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager).InnerText.ToString)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                useTableLayoutPanelColorInsideAboutAppTab = False
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            useTableLayoutPanelColorInsideAboutAppTab = False
+        End If
+#End Region
+
 #Region "TableLayoutPanel ForeColor"
-        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        ' Only pull the TableLayoutPanel ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTableLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
@@ -1081,8 +1097,10 @@ Public Class UXLLauncher_ThemeEngine
             ' Only apply the colors to the tableLayoutPanel control.
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
-            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTableLayoutPanelForeColor
-            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTableLayoutPanelBackColor
+            If useTableLayoutPanelColorInsideAboutAppTab = True Then
+                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTableLayoutPanelForeColor
+                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTableLayoutPanelBackColor
+            End If
 
             ' TabPage fore/backcolors.
             ' Can be done at once like the control loop for the main window above.
