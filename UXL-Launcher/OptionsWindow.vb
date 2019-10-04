@@ -250,6 +250,9 @@ Public Class aaformOptionsWindow
         ' Reset the theme engine enabled status to disabled.
         checkboxEnableThemeEngine.Checked = False
 
+        ' Reset the match Windows 10 theme settings checkbox to unchecked.
+        checkboxMatchWindows10ThemeSettings.Checked = False
+
         ' Reset the personalized statusbar firstname/nickname
         ' textbox to empty.
         textboxFirstname.Clear()
@@ -350,6 +353,9 @@ Public Class aaformOptionsWindow
             ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
             ' Simplified from original "If" statement.
             My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
+
+            ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
+            My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
 
             ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
             My.Settings.userChosenTheme = comboboxThemeList.Text
@@ -651,7 +657,9 @@ Public Class aaformOptionsWindow
             comboboxThemeList.Enabled = False
             textboxCustomThemePath.Enabled = False
             buttonCustomThemesBrowse.Enabled = False
-        ElseIf checkboxMatchWindows10ThemeSettings.Checked = False Then
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        ElseIf checkboxMatchWindows10ThemeSettings.Checked = True And checkboxEnableThemeEngine.Checked = True Then
             comboboxThemeList.Enabled = True
             textboxCustomThemePath.Enabled = True
             buttonCustomThemesBrowse.Enabled = True
