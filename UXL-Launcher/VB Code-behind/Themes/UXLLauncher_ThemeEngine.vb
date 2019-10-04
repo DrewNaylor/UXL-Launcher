@@ -501,7 +501,7 @@ Public Class UXLLauncher_ThemeEngine
             ' color for the statusbar back color to "Nothing".
             ' This makes it so that the statusbar appears like it would if the theme engine were turned off.
             ' Only used if the theme is compatible with TE1.03 or greater.
-            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
+            If themeSheetUseThemeEngineVersion >= 1.03 AndAlso themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
                 colorStatusBarBackColor = Nothing
 
             ElseIf Not themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
