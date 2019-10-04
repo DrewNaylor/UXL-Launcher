@@ -38,10 +38,12 @@
       </FlowLayoutPanel>
 
       <TableLayoutPanel>
-        <!--As of 1.03 only applies to the area outside the tab control
-        in the About window and in the same way in the Options window.-->
         <BackColor>White</BackColor>
         <ForeColor>Black</ForeColor>
+        <!--If you want this to apply to the table layout panel inside the
+        About window About tab, set ApplyToAboutWindowAboutTabTLP to True
+        as shown below. Otherwise, the tab page control's colors will
+        be used instead-->
         <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
       </TableLayoutPanel>
 

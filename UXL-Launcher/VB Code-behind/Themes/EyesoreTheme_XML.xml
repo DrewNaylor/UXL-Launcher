@@ -46,8 +46,6 @@
       </Label>
 
       <TableLayoutPanel>
-        <!--As of 1.03 only applies to the area outside the tab control
-        in the About window and in the same way in the Options window.-->
         <BackColor>Yellow</BackColor>
         <ForeColor>Black</ForeColor>
       </TableLayoutPanel>
