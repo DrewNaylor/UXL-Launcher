@@ -497,16 +497,25 @@ Public Class UXLLauncher_ThemeEngine
 #Region "StatusBar BackColor."
         ' Only pull the StatusBar BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-            Try
-                colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
-                debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just replace it with the default.
-            Catch ex As Exception
+            ' If the node exists and if it has "LiteralNothing" in the inner text, then we literally set the
+            ' color for the statusbar back color to "Nothing".
+            ' This makes it so that the statusbar appears like it would if the theme engine were turned off.
+            ' Only used if the theme is compatible with TE1.03 or greater.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
+                colorStatusBarBackColor = Nothing
+
+            ElseIf Not themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
+                Try
+                    colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    ' If the element isn't a valid HTML color, just replace it with the default.
+                Catch ex As Exception
+                    colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
+                End Try
+            Else
+                ' If the element doesn't exist, overwrite it with the Default theme's value.
                 colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
-            End Try
-        Else
-            ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
+            End If
         End If
 #End Region
 
@@ -927,11 +936,6 @@ Public Class UXLLauncher_ThemeEngine
                 propertyStatusLabelBorderStyle = Border3DStyle.Flat
             End Try
         End If
-#End Region
-
-#Region "Define Short-words."
-        ' Used to be used for "Dim ctrl As Control", but
-        ' was moved to the actual code so that it's better.
 #End Region
 
 #Region "Set colors for controls in groupboxes."

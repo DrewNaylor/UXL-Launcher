@@ -22,7 +22,7 @@
       </FlowLayoutPanel>
       
       <StatusBar>
-        <BackColor>Control</BackColor>
+        <BackColor>LiteralNothing</BackColor>
       </StatusBar>
 
       <Label>

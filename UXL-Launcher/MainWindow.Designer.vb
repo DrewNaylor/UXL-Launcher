@@ -75,6 +75,7 @@ Partial Class aaformMainWindow
         Me.statusbarLabelWelcomeText = New System.Windows.Forms.ToolStripStatusLabel()
         Me.flowLayoutPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.groupboxStandardApps = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.debugButtonDefaultThemeSetter = New System.Windows.Forms.Button()
         Me.buttonRunOneNote = New System.Windows.Forms.Button()
         Me.debugButtonTestThemeSetter = New System.Windows.Forms.Button()
@@ -119,7 +120,6 @@ Partial Class aaformMainWindow
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -536,6 +536,15 @@ Partial Class aaformMainWindow
         Me.groupboxStandardApps.TabIndex = 0
         Me.groupboxStandardApps.TabStop = False
         Me.groupboxStandardApps.Text = "Standard Apps"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(63, 427)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'debugButtonDefaultThemeSetter
         '
@@ -1007,15 +1016,6 @@ Partial Class aaformMainWindow
         Me.openfiledialogOpenDocument.Filter = resources.GetString("openfiledialogOpenDocument.Filter")
         Me.openfiledialogOpenDocument.RestoreDirectory = True
         Me.openfiledialogOpenDocument.Title = "Open"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(63, 427)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'aaformMainWindow
         '
