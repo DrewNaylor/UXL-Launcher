@@ -58,6 +58,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
+        Me.checkboxMatchWindows10ThemeSettings = New System.Windows.Forms.CheckBox()
         Me.labelCustomThemePath = New System.Windows.Forms.Label()
         Me.buttonCustomThemesBrowse = New System.Windows.Forms.Button()
         Me.textboxCustomThemePath = New System.Windows.Forms.TextBox()
@@ -71,6 +72,7 @@ Partial Class aaformOptionsWindow
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -476,6 +478,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxAppearance
         '
+        Me.groupboxAppearance.Controls.Add(Me.checkboxMatchWindows10ThemeSettings)
         Me.groupboxAppearance.Controls.Add(Me.labelCustomThemePath)
         Me.groupboxAppearance.Controls.Add(Me.buttonCustomThemesBrowse)
         Me.groupboxAppearance.Controls.Add(Me.textboxCustomThemePath)
@@ -489,6 +492,19 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Appearance"
+        '
+        'checkboxMatchWindows10ThemeSettings
+        '
+        Me.checkboxMatchWindows10ThemeSettings.AutoSize = True
+        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(216, 93)
+        Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
+        Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
+        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 7
+        Me.checkboxMatchWindows10ThemeSettings.Text = "Match Windows 10 theme settings"
+        Me.tooltipMatchWindows10ThemeSettings.SetToolTip(Me.checkboxMatchWindows10ThemeSettings, "If the system theme is set to Light, then the Default theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will be applied on a" &
+        "pp startup." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If the system theme is set to Dark, then the TenDark theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will " &
+        "be applied on app startup.")
+        Me.checkboxMatchWindows10ThemeSettings.UseVisualStyleBackColor = True
         '
         'labelCustomThemePath
         '
@@ -602,6 +618,12 @@ Partial Class aaformOptionsWindow
         Me.tooltipCustomThemePath.InitialDelay = 500
         Me.tooltipCustomThemePath.ReshowDelay = 100
         '
+        'tooltipMatchWindows10ThemeSettings
+        '
+        Me.tooltipMatchWindows10ThemeSettings.AutoPopDelay = 10000
+        Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
+        Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -686,4 +708,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelBypassConfiguredLocation As Label
     Friend WithEvents checkboxBypassConfiguredLocationForDeprecatedApps As CheckBox
     Friend WithEvents tooltipCustomThemePath As ToolTip
+    Friend WithEvents checkboxMatchWindows10ThemeSettings As CheckBox
+    Friend WithEvents tooltipMatchWindows10ThemeSettings As ToolTip
 End Class
