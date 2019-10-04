@@ -17,6 +17,18 @@
         <BackColor>LightGray</BackColor>
         <ForeColor>Black</ForeColor>
       </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
       
       <GroupBox>
         <BackColor>Red</BackColor>
@@ -46,6 +58,11 @@
         <BackColor>Red</BackColor>
         <ForeColor>White</ForeColor>
       </TabPage>
+
+      <RadioButton>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </RadioButton>
       
       <TextBox>
         <BackColor>Red</BackColor>
