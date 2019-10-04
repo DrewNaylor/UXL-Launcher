@@ -61,6 +61,13 @@
         <ForeColor>White</ForeColor>
       </Label>
 
+      <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Gold</ActiveLinkColor>
+        <LinkColor>Aqua</LinkColor>
+      </LinkLabel>
+
       <RadioButton>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
