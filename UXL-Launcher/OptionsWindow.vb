@@ -640,7 +640,26 @@ Public Class aaformOptionsWindow
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
         End If
     End Sub
+
 #End Region
+
+    Private Sub checkboxMatchWindows10ThemeSettings_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxMatchWindows10ThemeSettings.CheckedChanged
+        ' When checking this box, the theme list dropdown will be disabled
+        ' since the theme will be changed at startup based on the Windows 10
+        ' settings.
+        If checkboxMatchWindows10ThemeSettings.Checked = True Then
+            comboboxThemeList.Enabled = False
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+        ElseIf checkboxMatchWindows10ThemeSettings.Checked = False Then
+            comboboxThemeList.Enabled = True
+            textboxCustomThemePath.Enabled = True
+            buttonCustomThemesBrowse.Enabled = True
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        End If
+    End Sub
+
 #Region "Code that runs when clicking the Browse... button next to the custom theme path."
     Private Sub buttonCustomThemesBrowse_Click(sender As Object, e As EventArgs) Handles buttonCustomThemesBrowse.Click
         ' When the user clicks the "Browse..." button, show an open file dialog
