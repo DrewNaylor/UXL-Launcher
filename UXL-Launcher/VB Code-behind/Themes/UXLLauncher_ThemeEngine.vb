@@ -1419,9 +1419,13 @@ Public Class UXLLauncher_ThemeEngine
 
         Try ' Make sure the theme engine doesn't break.
 
+            ' If the user wants to have the theme match the Windows 10 theme settings,
+            ' then do that.
+            If 
+
             ' Then we see if the userChosenTheme setting contains the word "Theme."
-            ' If it does not, we just add "Theme_XML" to the end of the string.
-            If Not My.Settings.userChosenTheme.Contains("Theme") And Not My.Settings.userChosenTheme = ("(Custom)") Then
+                ' If it does not, we just add "Theme_XML" to the end of the string.
+                If Not My.Settings.userChosenTheme.Contains("Theme") And Not My.Settings.userChosenTheme = ("(Custom)") Then
                 userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML"))
                 ' However, if it does, then we only add "_XML" to the string.
             ElseIf My.Settings.userChosenTheme.Contains("Theme") Then

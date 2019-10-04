@@ -143,6 +143,7 @@
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
     <Compile Include="VB Code-behind\Themes\UXLLauncher_ThemeEngine.vb" />
+    <Compile Include="VB Code-behind\Themes\WindowsThemeSettings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
