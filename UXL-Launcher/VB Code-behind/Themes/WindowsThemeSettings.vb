@@ -40,18 +40,18 @@ Public Class WindowsThemeSettings
 
         ' If the value has a 1 in it, then that means the
         ' light theme should be used.
-        If CInt(tempThemeSettingsValue.ToString) = 1 Then
+        If tempThemeSettingsValue.ToString = "1" Then
             Return "Light"
 
             ' If the value has a 0 in it, then the dark theme
             ' should be used.
-        ElseIf CInt(tempThemeSettingsValue.ToString) = 0 Then
+        ElseIf tempThemeSettingsValue.ToString = "0" Then
             Return "Dark"
 
             ' If some other value is there or the value doesn't exist,
             ' use the light theme.
-        Else
-            Return "Light"
+            'Else
+            '    Return "Light"
         End If
     End Function
 
