@@ -394,7 +394,25 @@ Public Class aaformOptionsWindow
             ' and the boolean variable set at the beginning of this
             ' class is set to True.
             If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
-                UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+
+                ' If the user wants to have the theme match the Windows 10 theme settings,
+                ' then do that.
+                If My.Settings.matchWindows10ThemeSettings = True Then
+                    ' If the Windows 10 theme is Light, use Default.
+                    If WindowsThemeSettings.getWindowsThemeSettings = "Light" Then
+                        UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+
+                        ' Otherwise, load TenDark.
+                    ElseIf WindowsThemeSettings.getWindowsThemeSettings = "Dark" Then
+                        UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
+                        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+                    End If
+                Else
+
+                    ' Otherwise, just choose the user's theme automatically.
+                    UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+                End If
             End If
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
