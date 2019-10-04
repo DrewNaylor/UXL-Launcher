@@ -50,9 +50,34 @@ Public Class WindowsThemeSettings
 
             ' If some other value is there or the value doesn't exist,
             ' use the light theme.
-            'Else
-            '    Return "Light"
+        Else
+            Return "Light"
         End If
     End Function
+
+    Friend Shared Sub checkIfUserWantsToMatchTheme()
+        ' If the user wants to have the theme match the Windows 10 theme settings,
+        ' then do that.
+        If My.Settings.matchWindows10ThemeSettings = True Then
+            ' If the Windows 10 theme is Light, use Default.
+            If getWindowsThemeSettings() = "Light" Then
+                UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+
+                ' Otherwise, load TenDark.
+            ElseIf getWindowsThemeSettings = "Dark" Then
+                UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
+                UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            End If
+        Else
+
+            ' If the user doesn't want to match the Windows 10 theme,
+            ' just move on.
+
+            ' Choose the user's theme and apply it if the Windows
+            ' settings won't be used.
+            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+        End If
+    End Sub
 
 End Class
