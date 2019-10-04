@@ -626,6 +626,7 @@ Public Class aaformOptionsWindow
         If checkboxEnableThemeEngine.Checked = True Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
+            checkboxMatchWindows10ThemeSettings.Enabled = True
             textboxCustomThemePath.Enabled = True
             buttonCustomThemesBrowse.Enabled = True
             ' Now, update theme-related controls.
@@ -633,6 +634,7 @@ Public Class aaformOptionsWindow
         Else
             ' Otherwise, disable the controls.
             comboboxThemeList.Enabled = False
+            checkboxMatchWindows10ThemeSettings.Enabled = False
             textboxCustomThemePath.Enabled = False
             buttonCustomThemesBrowse.Enabled = False
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
