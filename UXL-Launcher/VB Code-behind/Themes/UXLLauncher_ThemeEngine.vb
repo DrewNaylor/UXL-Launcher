@@ -118,6 +118,12 @@ Public Class UXLLauncher_ThemeEngine
         ' TableLayoutPanel colors:
         Dim colorTableLayoutPanelBackColor As Color
         Dim colorTableLayoutPanelForeColor As Color
+        ' If the theme says to use this in the About window's
+        ' About tab for the tableLayoutPanelAboutAppTab control,
+        ' apply colorTableLayoutPanelBackColor to it.
+        ' Otherwise, just use the colorTabPageBackColor
+        ' and have the table layout panel inherit it.
+        Dim useTableLayoutPanelColorInsideAboutAppTab As Boolean = False
         ' TabPage colors:
         Dim colorTabPageBackColor As Color
         Dim colorTabPageForeColor As Color
@@ -1075,6 +1081,8 @@ Public Class UXLLauncher_ThemeEngine
             ' Only apply the colors to the tableLayoutPanel control.
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTableLayoutPanelForeColor
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTableLayoutPanelBackColor
 
             ' TabPage fore/backcolors.
             ' Can be done at once like the control loop for the main window above.
@@ -1254,6 +1262,8 @@ Public Class UXLLauncher_ThemeEngine
             ' Only apply the colors to the tableLayoutPanel control.
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = Color.FromKnownColor(KnownColor.Control)
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = Color.FromKnownColor(KnownColor.Control)
 
             ' TabPage fore/backcolors.
             ' Can be done at once like the control loop for the main window above.
