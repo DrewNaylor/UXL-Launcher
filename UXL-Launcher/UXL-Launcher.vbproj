@@ -196,12 +196,13 @@
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
-    <None Include="VB Code-behind\Themes\TenDarkTheme_XML.xml" />
+    <Content Include="VB Code-behind\Themes\TenDarkTheme_XML.xml" />
     <None Include="Resources\unsafeExtensions_TXT.txt" />
     <None Include="Resources\DARK_UXL-Launcher-Banner.png" />
-    <None Include="VB Code-behind\Themes\MittyTheme_XML.xml">
+    <Content Include="VB Code-behind\Themes\MittyTheme_XML.xml">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
+    <Content Include="VB Code-behind\Themes\MaudernClassicTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\MaudernTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
