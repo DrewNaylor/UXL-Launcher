@@ -28,7 +28,7 @@
       </Button>
       
       <GroupBox>
-        <BackColor>Transparent</BackColor>
+        <BackColor>White</BackColor>
         <ForeColor>Blue</ForeColor>
       </GroupBox>
 
@@ -36,6 +36,19 @@
         <BackColor>White</BackColor>
         <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <!--As of 1.03 only applies to the area outside the tab control
+        in the About window and in the same way in the Options window.-->
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+        <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>RoyalBlue</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
       
       <StatusBar>
         <BackColor>RoyalBlue</BackColor>
