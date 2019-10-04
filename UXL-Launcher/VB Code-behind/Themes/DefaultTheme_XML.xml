@@ -29,6 +29,9 @@
       </FlowLayoutPanel>
       
       <StatusBar>
+        <!--Specifying "LiteralNothing" allows the statusbar to appear
+        like it does without the theme engine enabled and the statusbar
+        back color will be set to "Nothing".-->
         <BackColor>LiteralNothing</BackColor>
       </StatusBar>
 
