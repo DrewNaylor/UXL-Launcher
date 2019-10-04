@@ -40,6 +40,18 @@
         <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
 
+      <TableLayoutPanel>
+        <!--As of 1.03 only applies to the area outside the tab control
+        in the About window and in the same way in the Options window.-->
+        <BackColor>DarkViolet</BackColor>
+        <ForeColor>White</ForeColor>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
+
       <StatusBar>
         <BackColor>MediumBlue</BackColor>
       </StatusBar>
