@@ -1421,9 +1421,14 @@ Public Class UXLLauncher_ThemeEngine
 
             ' If the user wants to have the theme match the Windows 10 theme settings,
             ' then do that.
-            If 
+            If My.Settings.matchWindows10ThemeSettings = True Then
+                ' If the Windows 10 theme is Light, use Default.
+                If WindowsThemeSettings.getWindowsThemeSettings = "Light" Then
+                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+                End If
+            End If
 
-            ' Then we see if the userChosenTheme setting contains the word "Theme."
+                ' Then we see if the userChosenTheme setting contains the word "Theme."
                 ' If it does not, we just add "Theme_XML" to the end of the string.
                 If Not My.Settings.userChosenTheme.Contains("Theme") And Not My.Settings.userChosenTheme = ("(Custom)") Then
                 userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML"))

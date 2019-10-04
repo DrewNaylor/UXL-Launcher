@@ -32,11 +32,27 @@ Public Class WindowsThemeSettings
     ' This class is used for getting the Windows 10 system theme settings.
     ' It returns Dark for the dark theme and Light for the light theme.
 
-    Private Shared Function getWindowsThemeSettings() As String
+    Friend Shared Function getWindowsThemeSettings() As String
         ' We need to read Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\AppsUseLightTheme
         ' for this.
 
+        Dim tempThemeSettingsValue As Object = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", Nothing)
 
+        ' If the value has a 1 in it, then that means the
+        ' light theme should be used.
+        If CInt(tempThemeSettingsValue.ToString) = 1 Then
+            Return "Light"
+
+            ' If the value has a 0 in it, then the dark theme
+            ' should be used.
+        ElseIf CInt(tempThemeSettingsValue.ToString) = 0 Then
+            Return "Dark"
+
+            ' If some other value is there or the value doesn't exist,
+            ' use the light theme.
+        Else
+            Return "Light"
+        End If
     End Function
 
 End Class
