@@ -504,6 +504,8 @@ Public Class UXLLauncher_ThemeEngine
             If themeSheetUseThemeEngineVersion >= 1.03 AndAlso themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
                 colorStatusBarBackColor = Nothing
 
+                ' If the theme doesn't want to use "Nothing" as a color, then 
+                ' use the color it says to use.
             ElseIf Not themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
                 Try
                     colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
