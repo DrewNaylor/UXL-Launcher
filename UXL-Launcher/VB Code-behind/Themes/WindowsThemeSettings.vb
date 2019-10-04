@@ -33,6 +33,9 @@ Public Class WindowsThemeSettings
     ' It returns Dark for the dark theme and Light for the light theme.
 
     Private Shared Function getWindowsThemeSettings() As String
+        ' We need to read Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\AppsUseLightTheme
+        ' for this.
+
 
     End Function
 
