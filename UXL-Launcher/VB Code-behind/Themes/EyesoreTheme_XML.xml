@@ -40,16 +40,14 @@
         <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
       
-      <StatusBar>
-        <BackColor>LightGray</BackColor>
-      </StatusBar>
-
       <Label>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
 
       <TableLayoutPanel>
+        <!--As of 1.03 only applies to the area outside the tab control
+        in the About window and in the same way in the Options window.-->
         <BackColor>Yellow</BackColor>
         <ForeColor>Black</ForeColor>
       </TableLayoutPanel>
@@ -58,7 +56,11 @@
         <BackColor>Red</BackColor>
         <ForeColor>White</ForeColor>
       </TabPage>
-
+      
+      <StatusBar>
+        <BackColor>LightGray</BackColor>
+      </StatusBar>
+      
       <RadioButton>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
