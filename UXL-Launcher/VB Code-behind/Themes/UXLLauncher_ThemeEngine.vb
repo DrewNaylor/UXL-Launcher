@@ -964,7 +964,7 @@ Public Class UXLLauncher_ThemeEngine
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
             If TypeOf ctrl Is GroupBox Then
-                ' Change groupbox colors.
+                ' If the control is a groupbox, theme it as a groupbox.
                 ctrl.BackColor = colorGroupBoxBackColor
                 ctrl.ForeColor = colorGroupBoxForeColor
             ElseIf TypeOf ctrl Is Button Then
