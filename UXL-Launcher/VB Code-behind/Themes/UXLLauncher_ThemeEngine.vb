@@ -1010,6 +1010,13 @@ Public Class UXLLauncher_ThemeEngine
                 ' a button and the flat appearance is set to flat.
                 button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
 
+            ElseIf TypeOf ctrl Is CheckBox Then
+                ' If the control is a checkbox, theme it as such.
+                ' CheckBox BackColor.
+                ctrl.BackColor = colorCheckBoxBackColor
+                ' CheckBox ForeColor.
+                ctrl.ForeColor = colorCheckBoxForeColor
+
             ElseIf TypeOf ctrl Is Label Then
                 ' If the control is a label, theme it as a label.
                 ' Set label BackColor (background color).
