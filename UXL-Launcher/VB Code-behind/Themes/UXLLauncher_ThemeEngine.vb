@@ -1011,6 +1011,11 @@ Public Class UXLLauncher_ThemeEngine
                 ' Set label ForeColor (text color).
                 ctrl.ForeColor = colorLabelForeColor
 
+            ElseIf TypeOf ctrl Is TextBox Then
+                ' Set textbox BackColor (background color).
+                ctrl.BackColor = colorTextboxBackColor
+                ' Set textbox ForeColor (text color).
+                ctrl.ForeColor = colorTextboxForeColor
 
             End If
 
