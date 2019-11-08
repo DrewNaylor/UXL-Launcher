@@ -45,11 +45,16 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="UXL-Launcher">
+      <HintPath>..\UXL-Launcher\bin\Debug\UXL-Launcher.exe</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -79,6 +84,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Themes\UXLLauncher_ThemeEngine.vb" />
+    <Compile Include="Themes\WindowsThemeSettings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -98,6 +105,19 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Themes\DefaultTheme_XML.xml" />
+    <Content Include="Themes\Eyesore2Theme_XML.xml" />
+    <Content Include="Themes\EyesoreTheme_XML.xml" />
+    <Content Include="Themes\MaudernClassicTheme_XML.xml" />
+    <Content Include="Themes\MaudernTheme_XML.xml" />
+    <Content Include="Themes\MittyTheme_XML.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Themes\ReturnOfNightTheme_XML.xml" />
+    <Content Include="Themes\RGBTheme_XML.xml" />
+    <Content Include="Themes\TenDarkTheme_XML.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,6 +11,7 @@
 Option Strict On
 Option Explicit On
 
+Imports System
 
 Namespace My.Resources
     
@@ -21,20 +22,20 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"), _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(), _
-     Global.Microsoft.VisualBasic.HideModuleNameAttribute()> _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+     Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
     Friend Module Resources
-
+        
         Private resourceMan As Global.System.Resources.ResourceManager
-
+        
         Private resourceCulture As Global.System.Globalization.CultureInfo
-
+        
         '''<summary>
         '''  Returns the cached ResourceManager instance used by this class.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
@@ -44,19 +45,174 @@ Namespace My.Resources
                 Return resourceMan
             End Get
         End Property
-
+        
         '''<summary>
         '''  Overrides the current thread's CurrentUICulture property for all
         '''  resource lookups using this strongly typed resource class.
         '''</summary>
-        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+        <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend Property Culture() As Global.System.Globalization.CultureInfo
             Get
                 Return resourceCulture
             End Get
-            Set(ByVal value As Global.System.Globalization.CultureInfo)
+            Set
                 resourceCulture = value
             End Set
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available and anything
+        '''  smaller than that will automat [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property DefaultTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("DefaultTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
+        '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Eyesore2Theme_XML() As String
+            Get
+                Return ResourceManager.GetString("Eyesore2Theme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Eyesore&lt;/Title&gt;
+        '''  &lt;Description&gt;Eyesore is a theme that&apos;s meant to be a tribute to Windows 3.1&apos;s Hot Dog Stand theme. The &quot;Eyesore&quot; theme and Drew Naylor are not associated with Microsoft Corporation in any way, shape, or form. Windows 3.1 and all related words are copyright and trademark/registered trademark Microsoft Corporation in the United States and other countries. All rights reserved to Microsoft Corp. for Microsoft Corp.&apos;s copyrights and trademarks/registered trademar [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property EyesoreTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("EyesoreTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Maudern Classic&lt;/Title&gt;
+        '''  &lt;Description&gt;Maudern Classic is basically Maudern v1.0 plus a few extra things supported in TE1.03, in case anyone preferred that version&apos;s general appearance over Maudern v1.1.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property MaudernClassicTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("MaudernClassicTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Maudern&lt;/Title&gt;
+        '''  &lt;Description&gt;Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property MaudernTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("MaudernTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Mitty Theme&lt;/Title&gt;
+        '''  &lt;Description&gt;Most of the work for version 3.2 was done while my calico cat, Mitty, was still around, so it felt like a good idea to make this theme for her. I miss her.
+        '''    &quot;...if you meant something to someone, if you helped someone, or loved someone, if even a single person remembers you, then maybe you never really die...&quot; - The Machine&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''  
+        '''    &lt;!-- &quot;UseThemeEngineVersion&quot; is u [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property MittyTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("MittyTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
+        '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ReturnOfNightTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("ReturnOfNightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Arr G. Bee&lt;/Title&gt;
+        '''  &lt;Description&gt;Arr G. Bee is a theme that&apos;s influenced by the UXL Launcher logo.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available and anything
+        '''  smaller than  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property RGBTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("RGBTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Ten Dark&lt;/Title&gt;
+        '''  &lt;Description&gt;A dark theme similar to Windows 10&apos;s &quot;Dark Mode&quot;.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available and anything
+        '''  smaller than that will automati [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property TenDarkTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("TenDarkTheme_XML", resourceCulture)
+            End Get
         End Property
     End Module
 End Namespace

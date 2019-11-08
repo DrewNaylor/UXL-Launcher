@@ -1,34 +1,39 @@
-﻿'PortableThemeEngine - Theme engine based off the UXL Launcher Theme Engine.
-'Can be used with standard Windows Forms applications with a few small changes.
-'Copyright (C) 2019 Drew Naylor
-'Any companies mentioned own their respective copyrights/trademarks.
+﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
+'Copyright (C) 2013-2019 Drew Naylor
+'Microsoft Office and all related words are copyright
+'and trademark Microsoft Corporation. More details in the About window.
+'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
+'and does not endorse this software.
+'Any other companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
-'This file is part of PortableThemeEngine.
+'This file is part of UXL Launcher
+'(Program is also known as "Unified eXecutable Launcher." Not to be confused with
+'other software titled "[Kindle] Unified Application Launcher",
+'"UX Launcher" [an Android launcher], or "Ulauncher" [a Linux app launcher].)
 '
-'PortableThemeEngine is free software: you can redistribute it and/or modify
+'UXL Launcher is free software: you can redistribute it and/or modify
 'it under the terms of the GNU General Public License as published by
 'the Free Software Foundation, either version 3 of the License, or
 '(at your option) any later version.
 '
-'PortableThemeEngine is distributed in the hope that it will be useful,
+'UXL Launcher is distributed in the hope that it will be useful,
 'but WITHOUT ANY WARRANTY; without even the implied warranty of
 'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 'GNU General Public License for more details.
 '
 'You should have received a copy of the GNU General Public License
-'along with PortableThemeEngine.  If not, see <http://www.gnu.org/licenses/>.
+'along with UXL Launcher.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
 Imports System.Drawing.Drawing2D
 Imports System.IO
 Imports System.Xml
-Imports System.Windows.Forms
-Imports System.Net.Mime.MediaTypeNames
-Imports System.Drawing
 
-Public Class PortableThemeEngine
+
+
+Public Class UXLLauncher_ThemeEngine
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Theme via UXL Launcher Theme Engine."
@@ -44,10 +49,8 @@ Public Class PortableThemeEngine
     Public Shared themeSheetFileVersion As String
     ' Create string for version of Theme Engine the theme is compatible with.
     Friend Shared themeSheetUseThemeEngineVersion As Decimal
-    ' Specify whether to output debug info.
-    Friend Shared enableDebugOutput As Boolean = True
 
-    Public Shared Sub themeEngine_ApplyTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
+    Public Shared Sub themeEngine_ApplyTheme(formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
@@ -65,9 +68,9 @@ Public Class PortableThemeEngine
                                         "of the ApplyTheme code and it doesn't usually get hit.)")
             ' Complain to the user if the chosen theme doesn't have a root element.
             MessageBox.Show("There was a problem trying to load the " &
-                            themeName & " theme." & vbCrLf &
+                            My.Settings.userChosenTheme & " theme." & vbCrLf &
                             "Please notify the theme's author of the message below." & vbCrLf & vbCrLf & vbCrLf &
-                            "Theme file chosen:" & vbCrLf & themeName & vbCrLf & vbCrLf &
+                            "Theme file chosen:" & vbCrLf & My.Settings.userChosenTheme & vbCrLf & vbCrLf &
                             "Error message: " & vbCrLf & ex.Message & vbCrLf &
                             vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "UXL Launcher Theme Engine",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -156,20 +159,20 @@ Public Class PortableThemeEngine
                 ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
                 If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
                     themeSheetUseThemeEngineVersion = CDec(1.01)
-                    outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+                    debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
 
                     ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
                     ' set it to whatever the version is specified in the theme file.
                 ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
                     themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
-
-                    outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+                    debugmodeStuff.updateDebugLabels()
+                    debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
                 End If
             Else
                 ' If the XML element is missing, manually force the value to be 1.01.
                 themeSheetUseThemeEngineVersion = CDec(1.01)
-
-                outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
+                debugmodeStuff.updateDebugLabels()
+                debugmodeStuff.outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
             End If
         Catch ex As System.InvalidCastException
             ' Catch invalid numbers as referenced in this issue:
@@ -233,7 +236,7 @@ Public Class PortableThemeEngine
             ' If the theme says to use the "Dark" banner, use it.
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager).InnerText = "Dark" Then
                 bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
-
+                debugmodeStuff.updateDebugLabels()
             Else
                 ' If the element is something else, use the regular banner.
                 bannerStyle = My.Resources.UXL_Launcher_Banner
@@ -304,7 +307,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 flatappearanceButtonBorderColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 flatappearanceButtonBorderColor = Nothing
@@ -323,7 +326,7 @@ Public Class PortableThemeEngine
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager) IsNot Nothing Then
                 Try
                     flatappearanceButtonMouseDownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager).InnerText)
-
+                    debugmodeStuff.updateDebugLabels()
                     ' If the element isn't a valid HTML color, just replace it with the default.
                 Catch ex As Exception
                     flatappearanceButtonMouseDownBackColor = Nothing
@@ -347,7 +350,7 @@ Public Class PortableThemeEngine
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager) IsNot Nothing Then
                 Try
                     flatappearanceButtonMouseOverBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager).InnerText)
-
+                    debugmodeStuff.updateDebugLabels()
                     ' If the element isn't a valid HTML color, just replace it with the default.
                 Catch ex As Exception
                     flatappearanceButtonMouseOverBackColor = Nothing
@@ -370,7 +373,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorCheckBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -386,7 +389,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorCheckBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -402,7 +405,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorDropdownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
@@ -418,7 +421,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorDropdownForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -434,7 +437,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorGroupBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -450,7 +453,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorGroupBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -466,7 +469,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
@@ -482,7 +485,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorFlowLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -508,7 +511,7 @@ Public Class PortableThemeEngine
             ElseIf Not themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
                 Try
                     colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
-
+                    debugmodeStuff.updateDebugLabels()
                     ' If the element isn't a valid HTML color, just replace it with the default.
                 Catch ex As Exception
                     colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
@@ -525,7 +528,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -541,7 +544,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -557,7 +560,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ActiveLinkColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorLinkLabelActiveLinkColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ActiveLinkColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
@@ -573,7 +576,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/LinkColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorLinkLabelLinkColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/LinkColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
@@ -589,7 +592,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorLinkLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -605,7 +608,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorLinkLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -621,7 +624,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorRadioButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -637,7 +640,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorRadioButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -653,7 +656,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTableLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
@@ -669,7 +672,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 useTableLayoutPanelColorInsideAboutAppTab = CBool(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager).InnerText.ToString)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 useTableLayoutPanelColorInsideAboutAppTab = False
@@ -685,7 +688,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTableLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -701,7 +704,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTabPageBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
@@ -717,7 +720,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTabPageForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -733,7 +736,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTextboxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
@@ -749,7 +752,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTextboxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
@@ -765,7 +768,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
@@ -782,7 +785,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
@@ -797,7 +800,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
@@ -814,7 +817,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
@@ -830,7 +833,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorMenuItemForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorMenuItemForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -846,7 +849,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorStatusLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -862,7 +865,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -894,7 +897,7 @@ Public Class PortableThemeEngine
                 Else
                     propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
                 End If
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't valid, just replace it with the default.
             Catch ex As Exception
                 propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
@@ -931,7 +934,7 @@ Public Class PortableThemeEngine
                 Else
                     propertyStatusLabelBorderStyle = Border3DStyle.Flat
                 End If
-
+                debugmodeStuff.updateDebugLabels()
                 ' If the element isn't valid, just replace it with the default.
             Catch ex As Exception
                 propertyStatusLabelBorderStyle = Border3DStyle.Flat
@@ -1099,6 +1102,80 @@ Public Class PortableThemeEngine
             ctrl = formToApplyTo.GetNextControl(ctrl, True)
         Loop
 
+        'For Each form As Form In My.Application.OpenForms
+        '    If form.Name = mainFormName Then
+        '        For Each groupbox As Control In form.flowLayoutPanel.Controls
+        '            ' Change colors in groupboxes.
+        '            If (groupbox.GetType() Is GetType(GroupBox)) Then
+        '                ' Change groupbox colors.
+        '                groupbox.BackColor = colorGroupBoxBackColor
+        '                groupbox.ForeColor = colorGroupBoxForeColor
+
+        '                For Each groupboxControl In groupbox.Controls
+        '                    ' If the control within the groupbox is a Button,
+        '                    ' change the button's theme colors.
+        '                    If (groupboxControl.GetType() Is GetType(Button)) Then
+        '                        Dim button As Button = CType(groupboxControl, Button)
+        '                        ' Set button BackColor (background color).
+        '                        button.BackColor = colorButtonBackColor
+        '                        ' Set button ForeColor (text color).
+        '                        button.ForeColor = colorButtonForeColor
+        '                        ' Set button style, whether that be flat, "Standard", or another
+        '                        ' supported style.
+        '                        button.FlatStyle = flatstyleButtonFlatStyle
+
+        '                        ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+        '                        ' Note that this can be any valid HTML or system color, including "Nothing"
+        '                        ' ("Nothing" is the default value based on my testing).
+        '                        ' Using "Transparent" causes a System.NotSupportedException
+        '                        ' exception, so add a try...catch block and explain in the debug output.
+        '                        Try
+        '                            button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+        '                        Catch ex As System.NotSupportedException
+        '                            ' If the useThemeEngineVersion element in the theme is
+        '                            ' greater than or equal to 1.02, also set bordercolor
+        '                            ' to "Nothing".
+
+        '                            ' This is being done in an exception, so it should
+        '                            ' work just fine in regular usage when things work.
+        '                            If themeSheetUseThemeEngineVersion >= 1.02 Then
+        '                                button.FlatAppearance.BorderColor = Nothing
+        '                            End If
+        '                            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        '                        End Try
+
+        '                        ' Now change the color for when the mouse clicks down
+        '                        ' on a button and the flat appearance is set to flat.
+        '                        button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+        '                        ' Change the color for when the mouse goes over
+        '                        ' a button and the flat appearance is set to flat.
+        '                        button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
+        '                        ' If the control in the groupbox is a label,
+        '                        ' change the label's colors.
+        '                    ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+        '                        Dim label As Label = CType(groupboxControl, Label)
+        '                        ' Set label BackColor (background color).
+        '                        label.BackColor = colorLabelBackColor
+        '                        ' Set label ForeColor (text color).
+        '                        label.ForeColor = colorLabelForeColor
+        '                        ' Look at all the textboxes in all the groupboxes and change their theme.
+        '                    ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+        '                        Dim textbox As TextBox = CType(groupboxControl, TextBox)
+        '                        ' Set textbox BackColor (background color).
+        '                        textbox.BackColor = colorTextboxBackColor
+        '                        ' Set textbox ForeColor (text color).
+        '                        textbox.ForeColor = colorTextboxForeColor
+        '                    End If
+        '                Next
+        '            End If
+        '            ' Go to next control, known as "groupbox" here.
+        '        Next
+        '    End If
+        'Next
+
+
 #End Region
 
 #Region "Set colors for menubar entries."
@@ -1141,12 +1218,355 @@ Public Class PortableThemeEngine
 
 #End Region
 
+#Region "Theming for theme files compatible with TE 1.03 or greater."
+        '#Region "About window and Theme file supports TE 1.03"
+        '        If themeSheetUseThemeEngineVersion >= 1.03 Then
+        '            ' BackColor and ForeColor for buttons.
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = colorButtonBackColor
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = colorButtonForeColor
+        '            ' FlatStyle. BorderColor is in the Try...Catch block.
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatStyle = flatstyleButtonFlatStyle
+        '            ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+        '            ' Note that this can be any valid HTML or system color, including "Nothing"
+        '            ' ("Nothing" is the default value based on my testing).
+        '            ' Using "Transparent" causes a System.NotSupportedException
+        '            ' exception, so add a try...catch block and explain in the debug output.
+        '            Try
+        '                aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+        '            Catch ex As System.NotSupportedException
+        '                ' Also set bordercolor to "Nothing".
+        '                aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = Nothing
+        '                ' Show an error about the NotSupportedException.
+        '                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        '            End Try
+
+        '            ' Now change the color for when the mouse clicks down
+        '            ' on a button and the flat appearance is set to flat.
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+        '            ' Change the color for when the mouse goes over
+        '            ' a button and the flat appearance is set to flat.
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
+        '            ' BackColor for FlowLayoutPanels.
+        '            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = colorFlowLayoutPanelBackColor
+        '            ' And FlowLayoutPanel ForeColors.
+        '            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.ForeColor = colorFlowLayoutPanelForeColor
+
+        '            ' Textbox fore/backcolors.
+        '            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = colorTextboxBackColor
+        '            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = colorTextboxForeColor
+
+        '            ' TableLayoutPanel fore/backcolors.
+        '            ' Note: DO NOT apply the colors to the tableLayoutPanelAboutApp control as this one uses the TabControl color.
+        '            ' Only apply the colors to the tableLayoutPanel control.
+        '            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
+        '            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
+        '            If useTableLayoutPanelColorInsideAboutAppTab = True Then
+        '                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTableLayoutPanelForeColor
+        '                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTableLayoutPanelBackColor
+        '            Else
+        '                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTabPageForeColor
+        '                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTabPageBackColor
+        '            End If
+
+        '            ' TabPage fore/backcolors.
+        '            ' Can be done at once like the control loop for the main window above.
+        '            For Each tab As TabPage In aaformMainWindow.forceAboutWindowTab.tabcontrolAboutWindow.Controls
+        '                ' If the control is a TabPage, theme it appropriately.
+        '                tab.BackColor = colorTabPageBackColor
+        '                tab.ForeColor = colorTabPageForeColor
+        '            Next ' Go to the next TabPage.
+
+        '            ' About tab banner style (dark or light).
+        '            aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = bannerStyle
+
+        '            ' LinkLabel colors.
+        '            ' Can be done at once like the control loop for the main window above.
+        '            For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.Controls
+        '                ' If the control is a LinkLabel, theme it appropriately.
+        '                link.BackColor = colorLinkLabelBackColor
+        '                link.ForeColor = colorLinkLabelForeColor
+        '                link.LinkColor = colorLinkLabelLinkColor
+        '                link.ActiveLinkColor = colorLinkLabelActiveLinkColor
+        '            Next ' Go to the next LinkLabel.
+        '#End Region
+
+        '#Region "Options window theming for theme files supporting 1.03"
+        '            ' Theme the Options window's table layout panel.
+        '            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = colorTableLayoutPanelBackColor
+        '            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = colorTableLayoutPanelForeColor
+
+        '            ' Theme the buttons at the bottom of the Options window.
+        '            For Each tablelayoutpanelControl As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+        '                If (tablelayoutpanelControl.GetType() Is GetType(Button)) Then
+        '                    Dim reallyIsButtonControl As Button = CType(tablelayoutpanelControl, Button)
+        '                    ' Button backcolors and forecolors.
+        '                    reallyIsButtonControl.BackColor = colorButtonBackColor
+        '                    reallyIsButtonControl.ForeColor = colorButtonForeColor
+        '                    ' FlatStyle. BorderColor is in the Try...Catch block.
+        '                    ' This requires casting a control as a button.
+        '                    reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
+
+        '                    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+        '                    ' Note that this can be any valid HTML or system color, including "Nothing"
+        '                    ' ("Nothing" is the default value based on my testing).
+        '                    ' Using "Transparent" causes a System.NotSupportedException
+        '                    ' exception, so add a try...catch block and explain in the debug output.
+        '                    Try
+        '                        reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+
+        '                    Catch ex As System.NotSupportedException
+        '                        ' Also set bordercolor to "Nothing".
+        '                        reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+
+        '                        ' Show an error about the NotSupportedException.
+        '                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        '                    End Try
+
+        '                    ' Now change the color for when the mouse clicks down
+        '                    ' on a button and the flat appearance is set to flat.
+        '                    reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+        '                    ' Change the color for when the mouse goes over
+        '                    ' a button and the flat appearance is set to flat.
+        '                    reallyIsButtonControl.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
+        '                End If
+        '                ' Start working our way into the Options window, layer by layer.
+        '                ' First, theme the tab pages.
+        '                For Each tabControl As Control In tablelayoutpanelControl.Controls
+        '                    If (tabControl.GetType() Is GetType(TabPage)) Then
+        '                        tabControl.BackColor = colorTabPageBackColor
+        '                        tabControl.ForeColor = colorTabPageForeColor
+        '                    End If
+        '                    ' Next, theme the groupboxes.
+        '                    For Each tabpageControl As Control In tabControl.Controls
+        '                        If (tabpageControl.GetType() Is GetType(GroupBox)) Then
+        '                            tabpageControl.BackColor = colorGroupBoxBackColor
+        '                            tabpageControl.ForeColor = colorGroupBoxForeColor
+        '                        End If
+
+        '                        ' Next, theme inside the groupboxes.
+        '                        For Each groupboxControl As Control In tabpageControl.Controls
+        '                            ' Theme the buttons. Button FlatStyle needs casting, though.
+        '                            If (groupboxControl.GetType() Is GetType(Button)) Then
+        '                                Dim reallyIsButtonControl As Button = CType(groupboxControl, Button)
+        '                                reallyIsButtonControl.BackColor = colorButtonBackColor
+        '                                reallyIsButtonControl.ForeColor = colorButtonForeColor
+        '                                reallyIsButtonControl.FlatStyle = flatstyleButtonFlatStyle
+
+        '                                ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+        '                                ' Note that this can be any valid HTML or system color, including "Nothing"
+        '                                ' ("Nothing" is the default value based on my testing).
+        '                                ' Using "Transparent" causes a System.NotSupportedException
+        '                                ' exception, so add a try...catch block and explain in the debug output.
+        '                                Try
+        '                                    reallyIsButtonControl.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+
+        '                                Catch ex As System.NotSupportedException
+        '                                    ' Also set bordercolor to "Nothing".
+        '                                    reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+
+        '                                    ' Show an error about the NotSupportedException.
+        '                                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        '                                End Try
+
+
+        '                                ' Now change the color for when the mouse clicks down
+        '                                ' on a button and the flat appearance is set to flat.
+        '                                reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+        '                                ' Change the color for when the mouse goes over
+        '                                ' a button and the flat appearance is set to flat.
+        '                                reallyIsButtonControl.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
+
+        '                                ' Theme the labels.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+        '                                groupboxControl.BackColor = colorLabelBackColor
+        '                                groupboxControl.ForeColor = colorLabelForeColor
+
+        '                                ' Theme the textboxes.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+        '                                groupboxControl.BackColor = colorTextboxBackColor
+        '                                groupboxControl.ForeColor = colorTextboxForeColor
+
+        '                                ' Theme the radio buttons.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(RadioButton)) Then
+        '                                groupboxControl.BackColor = colorRadioButtonBackColor
+        '                                groupboxControl.ForeColor = colorRadioButtonForeColor
+
+        '                                ' Theme the checkboxes.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(CheckBox)) Then
+        '                                groupboxControl.BackColor = colorCheckBoxBackColor
+        '                                groupboxControl.ForeColor = colorCheckBoxForeColor
+
+        '                                ' Theme the dropdown boxes.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
+
+        '                                Try ' Try to apply the dropdown backcolor.
+        '                                    groupboxControl.BackColor = colorDropdownBackColor
+        '                                Catch ex As ArgumentException
+        '                                    ' Now, make sure the background isn't transparent.
+        '                                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+        '                                    groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+        '                                End Try
+        '                                ' Now do the forecolor.
+        '                                groupboxControl.ForeColor = colorDropdownForeColor
+        '                            End If
+
+        '                        Next ' Next control inside groupboxes.
+        '                    Next ' Next groupbox.
+        '                Next ' Next tabpage.
+        '            Next ' Next button at the bottom of the Options window.
+        '#End Region
+
+        '#Region "About window and theme doesn't support TE 1.03"
+        '        Else
+        '            ' If the theme doesn't support TE 1.03, set all control stuff to defaults.
+        '            ' BackColor and ForeColor for buttons.
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.BackColor = Color.Transparent
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '            ' FlatStyle.
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatStyle = FlatStyle.Standard
+        '            ' Also set Button FlatStyle bordercolor to "Nothing".
+        '            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.BorderColor = Nothing
+
+
+        '            ' BackColor for FlowLayoutPanels.
+        '            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = Color.FromKnownColor(KnownColor.Window)
+        '            ' And FlowLayoutPanel ForeColors.
+        '            aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        '            ' Textbox fore/backcolors.
+        '            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.BackColor = Color.FromKnownColor(KnownColor.Window)
+        '            aaformMainWindow.forceAboutWindowTab.textboxAboutApp.ForeColor = Color.FromKnownColor(KnownColor.WindowText)
+
+        '            ' TableLayoutPanel fore/backcolors.
+        '            ' Note: DO NOT apply the colors to the tableLayoutPanelAboutApp control as this one uses the TabControl color.
+        '            ' Only apply the colors to the tableLayoutPanel control.
+        '            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '            aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = Color.FromKnownColor(KnownColor.Control)
+        '            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = Color.FromKnownColor(KnownColor.Window)
+
+        '            ' TabPage fore/backcolors.
+        '            ' Can be done at once like the control loop for the main window above.
+        '            For Each tab As TabPage In aaformMainWindow.forceAboutWindowTab.tabcontrolAboutWindow.Controls
+        '                ' If the control is a TabPage, theme it appropriately.
+        '                tab.BackColor = Color.FromKnownColor(KnownColor.Window)
+        '                tab.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '            Next ' Go to the next TabPage.
+
+        '            ' About tab banner style (dark or light).
+        '            aaformMainWindow.forceAboutWindowTab.pictureboxUXLBanner.Image = My.Resources.UXL_Launcher_Banner
+
+        '            ' LinkLabel colors.
+        '            ' Can be done at once like the control loop for the main window above.
+        '            For Each link As LinkLabel In aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.Controls
+        '                ' If the control is a LinkLabel, theme it appropriately.
+        '                link.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+        '                link.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '                link.LinkColor = Color.FromArgb(0, 0, 255)
+        '                link.ActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+        '            Next ' Go to the next LinkLabel.
+        '#End Region
+
+        '#Region "Options window and theme doesn't support TE 1.03"
+        '            ' Theme the Options window's table layout panel.
+        '            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.BackColor = Color.FromKnownColor(KnownColor.Control)
+        '            aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        '            ' Theme the buttons at the bottom of the Options window.
+        '            For Each tablelayoutpanelControl As Control In aaformMainWindow.forceOptionsWindowTab.tableLayoutPanelOptionsWindow.Controls
+        '                If (tablelayoutpanelControl.GetType() Is GetType(Button)) Then
+        '                    Dim reallyIsButtonControl As Button = CType(tablelayoutpanelControl, Button)
+        '                    ' Button backcolors and forecolors.
+        '                    reallyIsButtonControl.BackColor = Color.Transparent
+        '                    reallyIsButtonControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '                    ' FlatStyle. BorderColor is in the Try...Catch block.
+        '                    ' This requires casting a control as a button.
+        '                    reallyIsButtonControl.FlatStyle = FlatStyle.Standard
+
+        '                    ' Set button flat appearance border color to "Nothing".
+
+        '                    reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+
+        '                End If
+        '                ' Start working our way into the Options window, layer by layer.
+        '                ' First, theme the tab pages.
+        '                For Each tabControl As Control In tablelayoutpanelControl.Controls
+        '                    If (tabControl.GetType() Is GetType(TabPage)) Then
+        '                        tabControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+        '                        tabControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '                    End If
+        '                    ' Next, theme the groupboxes.
+        '                    For Each tabpageControl As Control In tabControl.Controls
+        '                        If (tabpageControl.GetType() Is GetType(GroupBox)) Then
+        '                            tabpageControl.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+        '                            tabpageControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '                        End If
+
+        '                        ' Next, theme inside the groupboxes.
+        '                        For Each groupboxControl As Control In tabpageControl.Controls
+        '                            ' Theme the buttons. Button FlatStyle needs casting, though.
+        '                            If (groupboxControl.GetType() Is GetType(Button)) Then
+
+        '                                Dim reallyIsButtonControl As Button = CType(groupboxControl, Button)
+        '                                reallyIsButtonControl.BackColor = Color.Transparent
+        '                                reallyIsButtonControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '                                reallyIsButtonControl.FlatStyle = FlatStyle.Standard
+
+        '                                ' Set button flat appearance border color to "Nothing".
+        '                                reallyIsButtonControl.FlatAppearance.BorderColor = Nothing
+
+
+        '                                ' Theme the labels.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+        '                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+        '                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        '                                ' Theme the textboxes.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+        '                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+        '                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.WindowText)
+
+        '                                ' Theme the radio buttons.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(RadioButton)) Then
+        '                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+        '                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        '                                ' Theme the checkboxes.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(CheckBox)) Then
+        '                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Transparent)
+        '                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        '                                ' Theme the dropdown boxes.
+        '                            ElseIf (groupboxControl.GetType() Is GetType(ComboBox)) Then
+
+        '                                'Reset the dropdown backcolor.
+        '                                groupboxControl.BackColor = Color.FromKnownColor(KnownColor.Window)
+
+        '                                ' Now do the forecolor.
+        '                                groupboxControl.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        '                            End If
+        '                        Next ' Next control inside groupboxes.
+        '                    Next ' Next groupbox.
+        '                Next ' Next tabpage.
+        '            Next ' Next button at the bottom of the Options window.
+        '#End Region
+
+
+        '        End If
+#End Region
+
     End Sub
 #End Region
 #End Region
 
 #Region "Start the theme engine and apply the user's theme."
-    Public Shared Sub themeEngine_ChooseUserTheme(themeName As String, customThemePath As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
+    Public Shared Sub themeEngine_ChooseUserTheme(formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
 
         ' This documentation page helped a lot for getting this working:
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
@@ -1154,20 +1574,20 @@ Public Class PortableThemeEngine
         ' First, remove the double-quotes from the custom theme path.
         ' This was moved up here so that it can be refered to in other
         ' parts of this sub.
-        Dim tempRemoveQuotesInCustomThemePath As String = customThemePath.Replace("""", "")
+        Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
 
         Try ' Make sure the theme engine doesn't break.
 
 
             ' Then we see if the userChosenTheme setting contains the word "Theme."
             ' If it does not, we just add "Theme_XML" to the end of the string.
-            If Not themeName.Contains("Theme") And Not themeName = ("(Custom)") Then
-                userTheme.LoadXml(My.Resources.ResourceManager.GetString(themeName & "Theme_XML"))
+            If Not My.Settings.userChosenTheme.Contains("Theme") And Not My.Settings.userChosenTheme = ("(Custom)") Then
+                userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "Theme_XML"))
                 ' However, if it does, then we only add "_XML" to the string.
-            ElseIf themeName.Contains("Theme") Then
-                userTheme.LoadXml(My.Resources.ResourceManager.GetString(themeName & "_XML"))
+            ElseIf My.Settings.userChosenTheme.Contains("Theme") Then
+                userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.userChosenTheme & "_XML"))
                 ' If the user has a custom theme enabled, use that instead.
-            ElseIf themeName = "(Custom)" Then
+            ElseIf My.Settings.userChosenTheme = "(Custom)" Then
                 ' Make sure the theme path and file exists and custom themes are allowed
                 ' to be used.
                 If File.Exists(tempRemoveQuotesInCustomThemePath) And My.Settings.allowCustomThemes = True Then
@@ -1215,14 +1635,14 @@ Public Class PortableThemeEngine
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
         ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
         ' this happens BEFORE any theme colors are applied.
-        If enableDebugOutput = True Then
+        If My.Settings.debugmodeShowThemeEngineOutput = True Then
             Debug.WriteLine("")
             Debug.WriteLine("")
             Debug.WriteLine("")
             Debug.WriteLine("Theme name in config file:")
-            Debug.WriteLine(themeName)
+            Debug.WriteLine(My.Settings.userChosenTheme)
             Debug.WriteLine("")
-            If themeName = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
+            If My.Settings.userChosenTheme = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
                 ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
                 Debug.WriteLine("")
                 Debug.WriteLine("Custom theme path:")
@@ -1236,7 +1656,7 @@ Public Class PortableThemeEngine
             Debug.WriteLine("getThemeFileInfo function.")
             ' First check that the theme to use is a custom theme.
             ' If it is, specify that it is.
-            If themeName = "(Custom)" Then
+            If My.Settings.userChosenTheme = "(Custom)" Then
                 Debug.WriteLine(getThemeFileInfo(userTheme, True, tempRemoveQuotesInCustomThemePath))
             Else
                 ' Otherwise, just write it out.
@@ -1253,7 +1673,7 @@ Public Class PortableThemeEngine
 #End Region
 
 #Region "Theme Settings Invalid Message output code."
-    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)", Optional themeName As String = "(Not provided)")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -1293,9 +1713,9 @@ Public Class PortableThemeEngine
                             "the filename below exists in the listed path. Double quotation marks in the custom theme" & vbCrLf &
                             "path are not supported and are automatically removed at runtime.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1319,9 +1739,9 @@ Public Class PortableThemeEngine
                                 "Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." & vbCrLf &
                                 "Afterward, restart UXL Launcher.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1335,13 +1755,13 @@ Public Class PortableThemeEngine
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because the" & vbCrLf &
-                            "theme name specified for themeName doesn't" & vbCrLf &
+                            "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
                             "match any theme files in My.Resources." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1355,14 +1775,14 @@ Public Class PortableThemeEngine
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
-                            "chosen theme that themeName is set to or the" & vbCrLf &
+                            "chosen theme that My.Settings.userChosenTheme is set to or the" & vbCrLf &
                             "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
                             "doesn't have a root element or otherwise has malformed XML." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1380,9 +1800,9 @@ Public Class PortableThemeEngine
                             "but this shouldn't cause any problems." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1396,9 +1816,9 @@ Public Class PortableThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("Access to the custom theme file was denied.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1413,9 +1833,9 @@ Public Class PortableThemeEngine
                 Debug.WriteLine("")
                 Debug.WriteLine("The Button FlatAppearance BorderColor property doesn't support the specified color.")
                 Debug.WriteLine("")
-                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
-                If themeName = "(Custom)" Then
+                If My.Settings.userChosenTheme = "(Custom)" Then
                     Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
                 End If
                 Debug.WriteLine("")
@@ -1434,16 +1854,6 @@ Public Class PortableThemeEngine
         End If
     End Sub
 #End Region
-
-    Private Shared Sub outputThemeEngineVersionToUse(themeEngineVersionToUse As Decimal)
-        ' Show theme engine version that the theme wants to use in the Immediate Window
-        ' if the proper setting is enabled.
-        If enableDebugOutput = True Then
-            Debug.WriteLine("")
-            Debug.WriteLine("UseThemeEngineVersion string:")
-            Debug.WriteLine(themeEngineVersionToUse)
-        End If
-    End Sub
 
 #Region "Get theme file info."
     ' This code is based on this issue in the
