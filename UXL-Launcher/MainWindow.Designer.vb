@@ -119,7 +119,6 @@ Partial Class aaformMainWindow
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.notifyiconTaskbarLaunchers = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.openfiledialogOpenDocument = New System.Windows.Forms.OpenFileDialog()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.menubarMainWindow.SuspendLayout()
         Me.contextmenuNotifyicon.SuspendLayout()
         Me.statusbarMainWindow.SuspendLayout()
@@ -662,7 +661,6 @@ Partial Class aaformMainWindow
         'groupboxProApps
         '
         Me.groupboxProApps.BackColor = System.Drawing.Color.Transparent
-        Me.groupboxProApps.Controls.Add(Me.LinkLabel1)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeFileVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeUseThemeEngineVersion)
         Me.groupboxProApps.Controls.Add(Me.debugLabelXmlThemeAuthor)
@@ -1008,16 +1006,6 @@ Partial Class aaformMainWindow
         Me.openfiledialogOpenDocument.RestoreDirectory = True
         Me.openfiledialogOpenDocument.Title = "Open"
         '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(7, 446)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
-        Me.LinkLabel1.TabIndex = 28
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "LinkLabel1"
-        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -1157,5 +1145,4 @@ Partial Class aaformMainWindow
     Friend WithEvents zSeparatorOutlookArea As ToolStripSeparator
     Friend WithEvents zSeparatorNewMenuProfessionalApps As ToolStripSeparator
     Friend WithEvents menuitemNewPublisherPublication As ToolStripMenuItem
-    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
