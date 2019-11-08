@@ -27,6 +27,7 @@ Imports System.Xml
 Imports System.Windows.Forms
 Imports System.Net.Mime.MediaTypeNames
 Imports System.Drawing
+Imports UXL_Launcher
 
 Public Class PortableThemeEngine
 
@@ -232,15 +233,15 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager) IsNot Nothing Then
             ' If the theme says to use the "Dark" banner, use it.
             If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager).InnerText = "Dark" Then
-                bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
+                bannerStyle = UXL_Launcher.My.Resources.DARK_UXL_Launcher_Banner
 
             Else
                 ' If the element is something else, use the regular banner.
-                bannerStyle = My.Resources.UXL_Launcher_Banner
+                bannerStyle = UXL_Launcher.My.Resources.UXL_Launcher_Banner
             End If
         Else
             ' Otherwise, make sure it's set if it's not in the theme.
-            bannerStyle = My.Resources.UXL_Launcher_Banner
+            bannerStyle = UXL_Launcher.My.Resources.UXL_Launcher_Banner
         End If
 #End Region
 
