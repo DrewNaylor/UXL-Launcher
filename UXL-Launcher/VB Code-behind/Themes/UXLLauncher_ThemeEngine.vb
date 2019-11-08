@@ -1066,11 +1066,19 @@ Public Class UXLLauncher_ThemeEngine
                 ' TableLayoutPanel ForeColor.
                 ctrl.ForeColor = colorTableLayoutPanelForeColor
 
+                ' If the theme doesn't want to apply to the table layout panel
+                ' in the About window About tab, apply the tab page back color
+                ' and forecolor instead.
+                If ctrl.Name = "tableLayoutPanelAboutAppTab" AndAlso useTableLayoutPanelColorInsideAboutAppTab = False Then
+                    ctrl.BackColor = colorTabPageBackColor
+                    ctrl.ForeColor = colorTabPageForeColor
+                End If
+
 
             End If
 
 
-            ctrl = form.GetNextControl(ctrl, True)
+                ctrl = form.GetNextControl(ctrl, True)
         Loop
 
         'For Each form As Form In My.Application.OpenForms
