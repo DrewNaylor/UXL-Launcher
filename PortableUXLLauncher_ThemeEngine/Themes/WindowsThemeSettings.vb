@@ -32,52 +32,52 @@ Public Class WindowsThemeSettings
     ' This class is used for getting the Windows 10 system theme settings.
     ' It returns Dark for the dark theme and Light for the light theme.
 
-    Friend Shared Function getWindowsThemeSettings() As String
-        ' We need to read Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\AppsUseLightTheme
-        ' for this.
+    'Friend Shared Function getWindowsThemeSettings() As String
+    '    ' We need to read Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\AppsUseLightTheme
+    '    ' for this.
 
-        Dim tempThemeSettingsValue As Object = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", Nothing)
+    '    Dim tempThemeSettingsValue As Object = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", Nothing)
 
-        ' If the value has a 1 in it, then that means the
-        ' light theme should be used.
-        If tempThemeSettingsValue.ToString = "1" Then
-            Return "Light"
+    '    '    ' If the value has a 1 in it, then that means the
+    '    '    ' light theme should be used.
+    '    '    If tempThemeSettingsValue.ToString = "1" Then
+    '    '        Return "Light"
 
-            ' If the value has a 0 in it, then the dark theme
-            ' should be used.
-        ElseIf tempThemeSettingsValue.ToString = "0" Then
-            Return "Dark"
+    '    '        ' If the value has a 0 in it, then the dark theme
+    '    '        ' should be used.
+    '    '    ElseIf tempThemeSettingsValue.ToString = "0" Then
+    '    '        Return "Dark"
 
-            ' If some other value is there or the value doesn't exist,
-            ' use the light theme.
-        Else
-            Return "Light"
-        End If
-    End Function
+    '    '        ' If some other value is there or the value doesn't exist,
+    '    '        ' use the light theme.
+    '    '    Else
+    '    '        Return "Light"
+    '    '    End If
+    '    'End Function
 
-    Friend Shared Sub checkIfUserWantsToMatchTheme()
-        ' If the user wants to have the theme match the Windows 10 theme settings,
-        ' then do that.
-        If My.Settings.matchWindows10ThemeSettings = True Then
-            ' If the Windows 10 theme is Light, use Default.
-            If getWindowsThemeSettings() = "Light" Then
-                UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-                aaformMainWindow.themeApplier()
+    '    'Friend Shared Sub checkIfUserWantsToMatchTheme()
+    '    '    ' If the user wants to have the theme match the Windows 10 theme settings,
+    '    '    ' then do that.
+    '    '    If My.Settings.matchWindows10ThemeSettings = True Then
+    '    '        ' If the Windows 10 theme is Light, use Default.
+    '    '        If getWindowsThemeSettings() = "Light" Then
+    '    '            PortableThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
+    '    '            aaformMainWindow.themeApplier()
 
-                ' Otherwise, load TenDark.
-            ElseIf getWindowsThemeSettings = "Dark" Then
-                UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
-                aaformMainWindow.themeApplier()
-            End If
-        Else
+    '    '            ' Otherwise, load TenDark.
+    '    '        ElseIf getWindowsThemeSettings() = "Dark" Then
+    '    '            PortableThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
+    '    '            aaformMainWindow.themeApplier()
+    '    '        End If
+    '    '    Else
 
-            ' If the user doesn't want to match the Windows 10 theme,
-            ' just move on.
+    '    '        ' If the user doesn't want to match the Windows 10 theme,
+    '    '        ' just move on.
 
-            ' Choose the user's theme and apply it if the Windows
-            ' settings won't be used.
-            aaformMainWindow.themeChooser()
-        End If
-    End Sub
+    '    '        ' Choose the user's theme and apply it if the Windows
+    '    '        ' settings won't be used.
+    '    '        aaformMainWindow.themeChooser()
+    '    '    End If
+    '    End Sub
 
 End Class

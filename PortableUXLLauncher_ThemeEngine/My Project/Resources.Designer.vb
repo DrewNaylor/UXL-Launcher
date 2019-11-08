@@ -61,6 +61,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property DARK_UXL_Launcher_Banner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("DARK_UXL_Launcher_Banner", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
@@ -212,6 +222,16 @@ Namespace My.Resources
         Friend ReadOnly Property TenDarkTheme_XML() As String
             Get
                 Return ResourceManager.GetString("TenDarkTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property UXL_Launcher_Banner() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("UXL_Launcher_Banner", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module
