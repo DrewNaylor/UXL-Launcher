@@ -31,7 +31,7 @@ Imports System.Drawing
 Public Class PortableThemeEngine
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
-#Region "Set Theme via UXL Launcher Theme Engine."
+#Region "Set Theme via PortableThemeEngine."
 
     ' Make a variable that differs based on what theme is chosen.
     Public Shared userTheme As XmlDocument = New XmlDocument()
@@ -69,7 +69,7 @@ Public Class PortableThemeEngine
                             "Please notify the theme's author of the message below." & vbCrLf & vbCrLf & vbCrLf &
                             "Theme file chosen:" & vbCrLf & themeName & vbCrLf & vbCrLf &
                             "Error message: " & vbCrLf & ex.Message & vbCrLf &
-                            vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "UXL Launcher Theme Engine",
+                            vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "PortableThemeEngine",
                             MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
@@ -1261,7 +1261,7 @@ Public Class PortableThemeEngine
         ' This sub accepts parameters for choosing which exceptionType message to show.
 
 
-        If My.Settings.debugmodeShowThemeEngineOutput = True Then
+        If enableDebugOutput = True Then
             ' First, identify this block of text as part of the theme engine
             ' and that it's output for invalid theme settings.
 
@@ -1272,7 +1272,7 @@ Public Class PortableThemeEngine
 
             Debug.WriteLine("")
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
-            Debug.WriteLine("UXL Launcher Theme Engine Version " & My.Resources.themeEngineVersion)
+            Debug.WriteLine("PortableThemeEngine Version " & My.Application.Info.Version.ToString)
             Debug.WriteLine("Invalid Theme Settings Message Handler")
             Debug.WriteLine("--------------------------------------")
             Debug.WriteLine("Begin theme engine output:")
