@@ -50,7 +50,7 @@ Public Class UXLLauncher_ThemeEngine
     ' Create string for version of Theme Engine the theme is compatible with.
     Friend Shared themeSheetUseThemeEngineVersion As Decimal
 
-    Public Shared Sub themeEngine_ApplyTheme()
+    Public Shared Sub themeEngine_ApplyTheme(formToApplyTo As Form)
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
@@ -954,8 +954,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        Dim form As Form = aaformMainWindow.forceAboutWindowTab
-        Dim ctrl As Control = form.GetNextControl(form, True)
+        Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
 
@@ -1097,7 +1096,7 @@ Public Class UXLLauncher_ThemeEngine
             End If
 
 
-                ctrl = form.GetNextControl(ctrl, True)
+            ctrl = formToApplyTo.GetNextControl(ctrl, True)
         Loop
 
         'For Each form As Form In My.Application.OpenForms
@@ -1564,7 +1563,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Start the theme engine and apply the user's theme."
-    Public Shared Sub themeEngine_ChooseUserTheme()
+    Public Shared Sub themeEngine_ChooseUserTheme(formToApplyTo As Form)
 
         ' This documentation page helped a lot for getting this working:
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
@@ -1665,7 +1664,7 @@ Public Class UXLLauncher_ThemeEngine
         End If
 
         ' Apply the theme.
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(formToApplyTo)
     End Sub
 #End Region
 #End Region
