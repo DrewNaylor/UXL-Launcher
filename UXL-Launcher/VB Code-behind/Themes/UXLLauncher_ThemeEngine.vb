@@ -380,7 +380,7 @@ Public Class UXLLauncher_ThemeEngine
             End Try
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorCheckboxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
         End If
 #End Region
 
@@ -963,6 +963,7 @@ Public Class UXLLauncher_ThemeEngine
         Dim ctrl As Control = aaformMainWindow.forceOptionsWindowTab.GetNextControl(aaformMainWindow.forceOptionsWindowTab, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
+
             If TypeOf ctrl Is GroupBox Then
                 ' If the control is a groupbox, theme it as a groupbox.
                 ctrl.BackColor = colorGroupBoxBackColor
@@ -1036,6 +1037,13 @@ Public Class UXLLauncher_ThemeEngine
                 ctrl.BackColor = colorTabPageBackColor
                 ' TabPage ForeColor.
                 ctrl.ForeColor = colorTabPageForeColor
+
+            ElseIf TypeOf ctrl Is TableLayoutPanel Then
+                ' If the control is a tablelayoutpanel, theme it as such.
+                ' TableLayoutPanel BackColor.
+                ctrl.BackColor = colorTableLayoutPanelBackColor
+                ' TableLayoutPanel ForeColor.
+                ctrl.ForeColor = colorTableLayoutPanelForeColor
 
 
             End If
