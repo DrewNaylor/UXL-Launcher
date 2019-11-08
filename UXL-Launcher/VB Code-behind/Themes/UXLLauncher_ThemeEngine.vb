@@ -1074,6 +1074,14 @@ Public Class UXLLauncher_ThemeEngine
                     ctrl.ForeColor = colorTabPageForeColor
                 End If
 
+            ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
+                ' Apply dark/light banners in the About window if the theme
+                ' wants to.
+                ' Create a local PictureBox control since "Image" isn't a thing in
+                ' "Control" by default.
+                Dim picturebox As PictureBox = CType(ctrl, PictureBox)
+                picturebox.Image = bannerStyle
+
 
             End If
 
