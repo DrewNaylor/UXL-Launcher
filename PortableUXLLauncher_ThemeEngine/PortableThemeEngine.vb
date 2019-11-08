@@ -79,7 +79,7 @@ Public Class PortableThemeEngine
 #Region "Define strings for controls and things in the XML document."
 
         ' About window Banner style (Dark or Light):
-        Dim bannerStyle As Image
+        Dim bannerStyle As Drawing.Image
         ' Button colors:
         Dim colorButtonBackColor As Color
         Dim colorButtonForeColor As Color
@@ -187,10 +187,10 @@ Public Class PortableThemeEngine
         ' Only pull the title element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
+
         Else
             themeSheetTitle = "(No title specified)"
-            debugmodeStuff.updateDebugLabels()
+
         End If
 #End Region
 
@@ -198,10 +198,10 @@ Public Class PortableThemeEngine
         ' Only pull the description element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
+
         Else
             themeSheetDescription = "(No description specified)"
-            debugmodeStuff.updateDebugLabels()
+
         End If
 #End Region
 
@@ -209,10 +209,10 @@ Public Class PortableThemeEngine
         ' Only pull the Author element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
+
         Else
             themeSheetAuthor = "(No author specified)"
-            debugmodeStuff.updateDebugLabels()
+
         End If
 #End Region
 
@@ -220,10 +220,10 @@ Public Class PortableThemeEngine
         ' Only pull the Author element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
             themeSheetFileVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
-            debugmodeStuff.updateDebugLabels()
+
         Else
             themeSheetFileVersion = "(No version specified)"
-            debugmodeStuff.updateDebugLabels()
+
         End If
 #End Region
 
@@ -251,7 +251,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
-                debugmodeStuff.updateDebugLabels()
+
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorButtonBackColor = Color.Transparent
@@ -267,7 +267,7 @@ Public Class PortableThemeEngine
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
-                debugmodeStuff.updateDebugLabels()
+
                 ' If the element isn't a valid HTML color, just replace it with the default.
             Catch ex As Exception
                 colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
@@ -288,7 +288,7 @@ Public Class PortableThemeEngine
                 Else
                     flatstyleButtonFlatStyle = FlatStyle.Standard
                 End If
-                debugmodeStuff.updateDebugLabels()
+
                 ' If the element isn't valid, just replace it with the default.
             Catch ex As Exception
                 flatstyleButtonFlatStyle = FlatStyle.Standard
@@ -1253,7 +1253,7 @@ Public Class PortableThemeEngine
 #End Region
 
 #Region "Theme Settings Invalid Message output code."
-    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)", Optional themeName As String = "(Not provided)")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)", Optional themeName As String = "(Not provided)", Optional customThemePath As String = "Not provided")
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -1268,7 +1268,7 @@ Public Class PortableThemeEngine
             ' Second, remove the double-quotes from the custom theme path.
             ' This was copied here so that it can be refered to in other
             ' parts of this sub.
-            Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
+            Dim tempRemoveQuotesInCustomThemePath As String = customThemePath.Replace("""", "")
 
             Debug.WriteLine("")
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
