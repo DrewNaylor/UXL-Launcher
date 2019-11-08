@@ -1027,8 +1027,15 @@ Public Class UXLLauncher_ThemeEngine
                 ' If the control is a radiobutton, theme it as such.
                 ' RadioButton BackColor.
                 ctrl.BackColor = colorRadioButtonBackColor
-                'RadioButton ForeColor.
+                ' RadioButton ForeColor.
                 ctrl.ForeColor = colorRadioButtonForeColor
+
+            ElseIf TypeOf ctrl Is TabPage Then
+                ' If the control is a tabpage, theme it as such.
+                ' TabPage BackColor.
+                ctrl.BackColor = colorTabPageBackColor
+                ' TabPage ForeColor.
+                ctrl.ForeColor = colorTabPageForeColor
 
 
             End If
