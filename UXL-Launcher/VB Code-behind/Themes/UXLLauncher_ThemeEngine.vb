@@ -1031,10 +1031,13 @@ Public Class UXLLauncher_ThemeEngine
                 ctrl.ForeColor = colorFlowLayoutPanelForeColor
 
             ElseIf TypeOf ctrl Is LinkLabel Then
-                MessageBox.Show(ctrl.Name.ToString)
                 ' If the control is a LinkLabel, theme it appropriately.
                 ' Define a linklabel locally since there are things it has
                 ' that Control doesn't have by default.
+
+                ' This needs to be above the "Label" entry as otherwise
+                ' the colors won't apply to linklabels for the linkcolor
+                ' and activelinkcolor properties.
                 Dim linklabel As LinkLabel = CType(ctrl, LinkLabel)
                 linklabel.BackColor = colorLinkLabelBackColor
                 linklabel.ForeColor = colorLinkLabelForeColor
