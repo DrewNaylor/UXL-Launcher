@@ -47,7 +47,8 @@ Public Class PortableThemeEngine
     ' Specify whether to output debug info.
     Friend Shared enableDebugOutput As Boolean = True
 
-    Public Shared Sub themeEngine_ApplyTheme(themeName As String, formToApplyTo As Form)
+
+    Public Shared Sub themeEngine_ApplyTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
@@ -1104,12 +1105,12 @@ Public Class PortableThemeEngine
 #Region "Set colors for menubar entries."
 
         '        ' Set color for menubar.
-        '        toolstripProRenderer.BackColor = colorMenubarBackColor
-        '        toolstripProRenderer.ForeColor = colorMenuItemForeColor
-        '        toolstripProRenderer.DropdownBackColor = colorMenuItemBackColor
-        '        toolstripProRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
-        '        toolstripProRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
-        '        toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+        toolstripProRenderer.BackColor = colorMenubarBackColor
+        toolstripProRenderer.ForeColor = colorMenuItemForeColor
+        toolstripProRenderer.DropdownBackColor = colorMenuItemBackColor
+        toolstripProRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
+        toolstripProRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
+        toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
         '        ' Sometimes the menubar forecolor doesn't update, so I'm forcing the items to update their colors.
         '        aaformMainWindow.menubarFileMenu.ForeColor = colorMenuItemForeColor
@@ -1146,7 +1147,7 @@ Public Class PortableThemeEngine
 #End Region
 
 #Region "Start the theme engine and apply the user's theme."
-    Public Shared Sub themeEngine_ChooseUserTheme(themeName As String, customThemePath As String, formToApplyTo As Form, Optional allowCustomThemes As Boolean = True)
+    Public Shared Sub themeEngine_ChooseUserTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer, Optional customThemePath As String = "", Optional allowCustomThemes As Boolean = True)
 
         ' This documentation page helped a lot for getting this working:
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
@@ -1247,7 +1248,7 @@ Public Class PortableThemeEngine
         End If
 
         ' Apply the theme.
-        PortableThemeEngine.themeEngine_ApplyTheme(themeName, formToApplyTo)
+        PortableThemeEngine.themeEngine_ApplyTheme(themeName, formToApplyTo, toolstripProRenderer)
     End Sub
 #End Region
 #End Region
@@ -1601,129 +1602,129 @@ End Class
 ' code below goes to this VBForums post: 
 ' http://www.vbforums.com/showthread.php?581374-menustrip-amp-toolstrip-color&p=3590240&viewfull=1#post3590240
 
-'Public Class uxlProToolstripRenderer
-'    Inherits ToolStripProfessionalRenderer
+Public Class uxlProToolstripRenderer
+    Inherits ToolStripProfessionalRenderer
 
-'    Private _BackColor As Color
-'    ' "_DropdownBackColor" determines the colors in the menubar dropdown.
-'    Private _DropdownBackColor As Color
-'    Private _ImageMarginGradientStartColor As Color
-'    Private _ImageMarginGradientEndColor As Color
-'    Private _ForeColor As Color
-'    Private _TextHighlightColor As Color
+    Private _BackColor As Color
+    ' "_DropdownBackColor" determines the colors in the menubar dropdown.
+    Private _DropdownBackColor As Color
+    Private _ImageMarginGradientStartColor As Color
+    Private _ImageMarginGradientEndColor As Color
+    Private _ForeColor As Color
+    Private _TextHighlightColor As Color
 
-'    ' Get and set the backcolor for the menubar.
-'    Public Property BackColor() As Color
-'        Get
-'            Return _BackColor
-'        End Get
-'        Set(ByVal value As Color)
-'            _BackColor = value
-'        End Set
-'    End Property
+    ' Get and set the backcolor for the menubar.
+    Public Property BackColor() As Color
+        Get
+            Return _BackColor
+        End Get
+        Set(ByVal value As Color)
+            _BackColor = value
+        End Set
+    End Property
 
-'    ' Get and set the backcolor for menubar dropdown items.
-'    Public Property DropdownBackColor As Color
-'        Get
-'            Return _DropdownBackColor
-'        End Get
-'        Set(ByVal value As Color)
-'            _DropdownBackColor = value
-'        End Set
-'    End Property
+    ' Get and set the backcolor for menubar dropdown items.
+    Public Property DropdownBackColor As Color
+        Get
+            Return _DropdownBackColor
+        End Get
+        Set(ByVal value As Color)
+            _DropdownBackColor = value
+        End Set
+    End Property
 
-'    ' Get and set the start color for the gradients in menuitem image margins.
-'    Public Property ImageMarginGradientStartColor As Color
-'        Get
-'            Return _ImageMarginGradientStartColor
-'        End Get
-'        Set(ByVal value As Color)
-'            _ImageMarginGradientStartColor = value
-'        End Set
-'    End Property
+    ' Get and set the start color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientStartColor As Color
+        Get
+            Return _ImageMarginGradientStartColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientStartColor = value
+        End Set
+    End Property
 
-'    ' Get and set the end color for the gradients in menuitem image margins.
-'    Public Property ImageMarginGradientEndColor As Color
-'        Get
-'            Return _ImageMarginGradientEndColor
-'        End Get
-'        Set(ByVal value As Color)
-'            _ImageMarginGradientEndColor = value
-'        End Set
-'    End Property
+    ' Get and set the end color for the gradients in menuitem image margins.
+    Public Property ImageMarginGradientEndColor As Color
+        Get
+            Return _ImageMarginGradientEndColor
+        End Get
+        Set(ByVal value As Color)
+            _ImageMarginGradientEndColor = value
+        End Set
+    End Property
 
-'    ' Get and set the text highlight color for the menubar.
-'    Public Property TextHighlightColor() As Color
-'        Get
-'            Return _TextHighlightColor
-'        End Get
-'        Set(ByVal value As Color)
-'            _TextHighlightColor = value
-'        End Set
-'    End Property
+    ' Get and set the text highlight color for the menubar.
+    Public Property TextHighlightColor() As Color
+        Get
+            Return _TextHighlightColor
+        End Get
+        Set(ByVal value As Color)
+            _TextHighlightColor = value
+        End Set
+    End Property
 
-'    ' Get and set the forecolor for the menubar.
-'    Public Property ForeColor() As Color
-'        Get
-'            Return _ForeColor
-'        End Get
-'        Set(ByVal value As Color)
-'            _ForeColor = value
-'        End Set
-'    End Property
+    ' Get and set the forecolor for the menubar.
+    Public Property ForeColor() As Color
+        Get
+            Return _ForeColor
+        End Get
+        Set(ByVal value As Color)
+            _ForeColor = value
+        End Set
+    End Property
 
-'    ' Change the colors for the menubar background.
-'    Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
-'        MyBase.OnRenderToolStripBackground(e)
-'        Dim lightColor As Color = Me.BackColor
-'        Using b As New SolidBrush(lightColor)
-'            e.Graphics.FillRectangle(b, e.AffectedBounds)
-'        End Using
-'    End Sub
+    ' Change the colors for the menubar background.
+    Protected Overrides Sub OnRenderToolStripBackground(ByVal e As ToolStripRenderEventArgs)
+        MyBase.OnRenderToolStripBackground(e)
+        Dim lightColor As Color = Me.BackColor
+        Using b As New SolidBrush(lightColor)
+            e.Graphics.FillRectangle(b, e.AffectedBounds)
+        End Using
+    End Sub
 
-'    ' Change the color for the menubar dropdowns.
-'    ' Based on the code "Step 3" here:
-'    ' http://www.vbforums.com/showthread.php?539578-Custom-VisualStudio2008-style-MenuStrip-and-ToolStrip-Renderer&p=3333808&viewfull=1#post3333808
-'    Protected Overrides Sub OnRenderImageMargin(e As ToolStripRenderEventArgs)
-'        MyBase.OnRenderImageMargin(e)
-'        ' Colors and brushes for menuitem background color.
-'        Dim DropDownItemBackColor As Color = Me.DropdownBackColor
-'        Dim dropdownBrush As New SolidBrush(DropdownBackColor)
-'        ' Colors and brushes for image margin gradiant.
-'        Dim ImageMarginGradientBrush As New LinearGradientBrush(e.AffectedBounds, Me.ImageMarginGradientStartColor,
-'                                                                Me.ImageMarginGradientEndColor, LinearGradientMode.Horizontal)
-'        ' Make the menuitem background set to the theme's color.
-'        Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
-'        ' Fill the background of the menuitem.
-'        e.Graphics.FillRectangle(dropdownBrush, itembgcolor)
-'        ' Fill the item image margin gradient.
-'        e.Graphics.FillRectangle(ImageMarginGradientBrush, e.AffectedBounds)
-'    End Sub
+    ' Change the color for the menubar dropdowns.
+    ' Based on the code "Step 3" here:
+    ' http://www.vbforums.com/showthread.php?539578-Custom-VisualStudio2008-style-MenuStrip-and-ToolStrip-Renderer&p=3333808&viewfull=1#post3333808
+    Protected Overrides Sub OnRenderImageMargin(e As ToolStripRenderEventArgs)
+        MyBase.OnRenderImageMargin(e)
+        ' Colors and brushes for menuitem background color.
+        Dim DropDownItemBackColor As Color = Me.DropdownBackColor
+        Dim dropdownBrush As New SolidBrush(DropdownBackColor)
+        ' Colors and brushes for image margin gradiant.
+        Dim ImageMarginGradientBrush As New LinearGradientBrush(e.AffectedBounds, Me.ImageMarginGradientStartColor,
+                                                                Me.ImageMarginGradientEndColor, LinearGradientMode.Horizontal)
+        ' Make the menuitem background set to the theme's color.
+        Dim itembgcolor As New Rectangle(0, 0, e.ToolStrip.Width, e.ToolStrip.Height)
+        ' Fill the background of the menuitem.
+        e.Graphics.FillRectangle(dropdownBrush, itembgcolor)
+        ' Fill the item image margin gradient.
+        e.Graphics.FillRectangle(ImageMarginGradientBrush, e.AffectedBounds)
+    End Sub
 
-'    ' Change the colors for the menubar text.
-'    Protected Overrides Sub OnRenderItemText(ByVal e As ToolStripItemTextRenderEventArgs)
-'        ' If the menuitem is selected or pressed, use the TextHighlightColor for its text color.
-'        If e.Item.Selected = True Or e.Item.Pressed = True Then
-'            e.TextColor = Me.TextHighlightColor
-'        Else
-'            ' Otherwise, just use its regular ForeColor for text color.
-'            e.TextColor = Me.ForeColor
-'        End If
-'        MyBase.OnRenderItemText(e)
-'    End Sub
+    ' Change the colors for the menubar text.
+    Protected Overrides Sub OnRenderItemText(ByVal e As ToolStripItemTextRenderEventArgs)
+        ' If the menuitem is selected or pressed, use the TextHighlightColor for its text color.
+        If e.Item.Selected = True Or e.Item.Pressed = True Then
+            e.TextColor = Me.TextHighlightColor
+        Else
+            ' Otherwise, just use its regular ForeColor for text color.
+            e.TextColor = Me.ForeColor
+        End If
+        MyBase.OnRenderItemText(e)
+    End Sub
 
-'    ' Make sure the button arrow is visible using the ForeColor property.
-'    Protected Overrides Sub OnRenderArrow(e As ToolStripArrowRenderEventArgs)
-'        ' If the menuitem is highlighted, make the arrow the same color
-'        ' as the menuitem's TextHighlightColor.
-'        If e.Item.Selected = True Or e.Item.Pressed = True Then
-'            e.ArrowColor = Me.TextHighlightColor
-'            ' If the menuitem is not highlighted, make the arrow the same
-'            ' color as the menuitem's forecolor.
-'        Else
-'            e.ArrowColor = Me.ForeColor
-'        End If
-'        MyBase.OnRenderArrow(e)
-'    End Sub
-'End Class
+    ' Make sure the button arrow is visible using the ForeColor property.
+    Protected Overrides Sub OnRenderArrow(e As ToolStripArrowRenderEventArgs)
+        ' If the menuitem is highlighted, make the arrow the same color
+        ' as the menuitem's TextHighlightColor.
+        If e.Item.Selected = True Or e.Item.Pressed = True Then
+            e.ArrowColor = Me.TextHighlightColor
+            ' If the menuitem is not highlighted, make the arrow the same
+            ' color as the menuitem's forecolor.
+        Else
+            e.ArrowColor = Me.ForeColor
+        End If
+        MyBase.OnRenderArrow(e)
+    End Sub
+End Class
 #End Region
