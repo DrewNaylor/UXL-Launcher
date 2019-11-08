@@ -1010,6 +1010,18 @@ Public Class UXLLauncher_ThemeEngine
                 ' a button and the flat appearance is set to flat.
                 button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
 
+            ElseIf TypeOf ctrl Is ComboBox Then
+
+                Try ' Try to apply the dropdown backcolor.
+                    ctrl.BackColor = colorDropdownBackColor
+                Catch ex As ArgumentException
+                    ' Now, make sure the background isn't transparent.
+                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+                    ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                End Try
+                ' Now do the forecolor.
+                ctrl.ForeColor = colorDropdownForeColor
+
             ElseIf TypeOf ctrl Is CheckBox Then
                 ' If the control is a checkbox, theme it as such.
                 ' CheckBox BackColor.
