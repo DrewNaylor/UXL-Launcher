@@ -954,7 +954,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        Dim form As Form = aaformMainWindow
+        Dim form As Form = aaformMainWindow.forceAboutWindowTab
         Dim ctrl As Control = form.GetNextControl(form, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
@@ -1031,13 +1031,6 @@ Public Class UXLLauncher_ThemeEngine
                 ' FlowLayoutPanel ForeColor.
                 ctrl.ForeColor = colorFlowLayoutPanelForeColor
 
-            ElseIf TypeOf ctrl Is Label Then
-                ' If the control is a label, theme it as a label.
-                ' Set label BackColor (background color).
-                ctrl.BackColor = colorLabelBackColor
-                ' Set label ForeColor (text color).
-                ctrl.ForeColor = colorLabelForeColor
-
             ElseIf TypeOf ctrl Is LinkLabel Then
                 MessageBox.Show(ctrl.Name.ToString)
                 ' If the control is a LinkLabel, theme it appropriately.
@@ -1048,6 +1041,13 @@ Public Class UXLLauncher_ThemeEngine
                 linklabel.ForeColor = colorLinkLabelForeColor
                 linklabel.LinkColor = colorLinkLabelLinkColor
                 linklabel.ActiveLinkColor = colorLinkLabelActiveLinkColor
+
+            ElseIf TypeOf ctrl Is Label Then
+                ' If the control is a label, theme it as a label.
+                ' Set label BackColor (background color).
+                ctrl.BackColor = colorLabelBackColor
+                ' Set label ForeColor (text color).
+                ctrl.ForeColor = colorLabelForeColor
 
             ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
