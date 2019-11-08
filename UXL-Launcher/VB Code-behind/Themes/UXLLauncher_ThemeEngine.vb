@@ -963,8 +963,12 @@ Public Class UXLLauncher_ThemeEngine
         Dim ctrl As Control = aaformMainWindow.GetNextControl(aaformMainWindow, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
-            If TypeOf ctrl Is Button Then
-                ' If the control is a button, theme the button.
+            If TypeOf ctrl Is GroupBox Then
+                ' Change groupbox colors.
+                ctrl.BackColor = colorGroupBoxBackColor
+                ctrl.ForeColor = colorGroupBoxForeColor
+            ElseIf TypeOf ctrl Is Button Then
+                ' If the control is a button, theme it as a button.
                 ' We have to define a button locally since "FlatStyle"
                 ' isn't something that Control types have by default.
                 Dim button As Button = CType(ctrl, Button)
@@ -1005,13 +1009,14 @@ Public Class UXLLauncher_ThemeEngine
                 button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
 
             ElseIf TypeOf ctrl Is Label Then
-                ' If the control is a label, theme the label.
+                ' If the control is a label, theme it as a label.
                 ' Set label BackColor (background color).
                 ctrl.BackColor = colorLabelBackColor
                 ' Set label ForeColor (text color).
                 ctrl.ForeColor = colorLabelForeColor
 
             ElseIf TypeOf ctrl Is TextBox Then
+                ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
                 ctrl.BackColor = colorTextboxBackColor
                 ' Set textbox ForeColor (text color).
