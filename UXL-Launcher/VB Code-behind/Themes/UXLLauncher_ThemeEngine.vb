@@ -50,7 +50,7 @@ Public Class UXLLauncher_ThemeEngine
     ' Create string for version of Theme Engine the theme is compatible with.
     Friend Shared themeSheetUseThemeEngineVersion As Decimal
 
-    Public Shared Sub themeEngine_ApplyTheme(formToApplyTo As Form)
+    Public Shared Sub themeEngine_ApplyTheme(formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
@@ -1181,12 +1181,12 @@ Public Class UXLLauncher_ThemeEngine
 #Region "Set colors for menubar entries."
 
         ' Set color for menubar.
-        aaformMainWindow.UXLToolstripRenderer.BackColor = colorMenubarBackColor
-        aaformMainWindow.UXLToolstripRenderer.ForeColor = colorMenuItemForeColor
-        aaformMainWindow.UXLToolstripRenderer.DropdownBackColor = colorMenuItemBackColor
-        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
-        aaformMainWindow.UXLToolstripRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
-        aaformMainWindow.UXLToolstripRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+        toolstripProRenderer.BackColor = colorMenubarBackColor
+        toolstripProRenderer.ForeColor = colorMenuItemForeColor
+        toolstripProRenderer.DropdownBackColor = colorMenuItemBackColor
+        toolstripProRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
+        toolstripProRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
+        toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
         ' Sometimes the menubar forecolor doesn't update, so I'm forcing the items to update their colors.
         aaformMainWindow.menubarFileMenu.ForeColor = colorMenuItemForeColor
@@ -1566,7 +1566,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "Start the theme engine and apply the user's theme."
-    Public Shared Sub themeEngine_ChooseUserTheme(formToApplyTo As Form)
+    Public Shared Sub themeEngine_ChooseUserTheme(formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
 
         ' This documentation page helped a lot for getting this working:
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
@@ -1667,7 +1667,7 @@ Public Class UXLLauncher_ThemeEngine
         End If
 
         ' Apply the theme.
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(formToApplyTo)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(formToApplyTo, toolstripProRenderer)
     End Sub
 #End Region
 #End Region

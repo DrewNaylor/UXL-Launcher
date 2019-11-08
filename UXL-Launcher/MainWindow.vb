@@ -367,7 +367,7 @@ Public Class aaformMainWindow
         ' Attempt to revert to the default theme.
         If My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(Me)
+            themeApplier()
         End If
     End Sub
 #End Region
@@ -586,17 +586,17 @@ Public Class aaformMainWindow
     Public Shared Sub themeChooser()
         ' This is the list of forms that the theme engine applies stuff to
         ' when choosing the theme on its own.
-        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformMainWindow)
-        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceAboutWindowTab)
-        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceOptionsWindowTab)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceAboutWindowTab, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceOptionsWindowTab, UXLToolstripRenderer)
     End Sub
 
     Public Shared Sub themeApplier()
         ' This is the list of forms that the theme engine applies stuff to
         ' when the theme is pre-specified.
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformMainWindow)
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceAboutWindowTab)
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceOptionsWindowTab)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceAboutWindowTab, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceOptionsWindowTab, UXLToolstripRenderer)
     End Sub
 
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
