@@ -30,7 +30,6 @@
 Imports System.Drawing.Drawing2D
 Imports System.IO
 Imports System.Xml
-Imports System.Linq
 
 
 
@@ -965,11 +964,57 @@ Public Class UXLLauncher_ThemeEngine
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
             If TypeOf ctrl Is Button Then
+                ' If the control is a button, theme the button.
+                ' We have to define a button locally since "FlatStyle"
+                ' isn't something that Control types have by default.
                 Dim button As Button = CType(ctrl, Button)
+                ' Set button BackColor (background color).
                 button.BackColor = colorButtonBackColor
+                ' Set button ForeColor (text color).
                 button.ForeColor = colorButtonForeColor
+                ' Set button style, whether that be flat, "Standard", or another
+                ' supported style.
                 button.FlatStyle = flatstyleButtonFlatStyle
+
+                ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+                ' Note that this can be any valid HTML or system color, including "Nothing"
+                ' ("Nothing" is the default value based on my testing).
+                ' Using "Transparent" causes a System.NotSupportedException
+                ' exception, so add a try...catch block and explain in the debug output.
+                Try
+                    button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                Catch ex As System.NotSupportedException
+                    ' If the useThemeEngineVersion element in the theme is
+                    ' greater than or equal to 1.02, also set bordercolor
+                    ' to "Nothing".
+
+                    ' This is being done in an exception, so it should
+                    ' work just fine in regular usage when things work.
+                    If themeSheetUseThemeEngineVersion >= 1.02 Then
+                        button.FlatAppearance.BorderColor = Nothing
+                    End If
+                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                End Try
+
+                ' Now change the color for when the mouse clicks down
+                ' on a button and the flat appearance is set to flat.
+                button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                ' Change the color for when the mouse goes over
+                ' a button and the flat appearance is set to flat.
+                button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
+            ElseIf TypeOf ctrl Is Label Then
+                ' If the control is a label, theme the label.
+                ' Set label BackColor (background color).
+                ctrl.BackColor = colorLabelBackColor
+                ' Set label ForeColor (text color).
+                ctrl.ForeColor = colorLabelForeColor
+
+
             End If
+
+
             ctrl = aaformMainWindow.GetNextControl(ctrl, True)
         Loop
 
