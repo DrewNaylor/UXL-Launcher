@@ -961,6 +961,19 @@ Public Class PortableThemeEngine
                 ctrl.BackColor = colorGroupBoxBackColor
                 ctrl.ForeColor = colorGroupBoxForeColor
 
+                'ElseIf TypeOf ctrl Is SplitContainer Then
+                ' ' Split containers aren't yet fully supported and this is just a placeholder.
+                '    ctrl.BackColor = colorFlowLayoutPanelBackColor
+                '    ctrl.ForeColor = colorFlowLayoutPanelForeColor
+                '    ' For split containers, we have to go through the controls inside
+                '    ' them to change their colors.
+                '    ctrl = ctrl.GetNextControl(ctrl, True)
+
+                'ElseIf TypeOf ctrl Is Panel Then
+                ' ' Panels aren't yet fully supported and this is just a placeholder.
+                '    ctrl.BackColor = colorTableLayoutPanelBackColor
+                '    ctrl.ForeColor = colorTableLayoutPanelForeColor
+
             ElseIf TypeOf ctrl Is Button Then
                 ' If the control is a button, theme it as a button.
                 ' We have to define a button locally since "FlatStyle"
