@@ -960,7 +960,8 @@ Public Class UXLLauncher_ThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        Dim ctrl As Control = aaformMainWindow.forceOptionsWindowTab.GetNextControl(aaformMainWindow.forceOptionsWindowTab, True)
+        Dim form As Form = aaformMainWindow
+        Dim ctrl As Control = form.GetNextControl(form, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
 
@@ -1068,7 +1069,7 @@ Public Class UXLLauncher_ThemeEngine
             End If
 
 
-            ctrl = aaformMainWindow.forceOptionsWindowTab.GetNextControl(ctrl, True)
+            ctrl = form.GetNextControl(ctrl, True)
         Loop
 
         'For Each form As Form In My.Application.OpenForms
