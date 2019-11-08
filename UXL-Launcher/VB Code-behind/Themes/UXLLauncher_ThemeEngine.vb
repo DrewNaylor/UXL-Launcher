@@ -949,18 +949,12 @@ Public Class UXLLauncher_ThemeEngine
         'Dim flow As String = "flowLayoutPanel"
         'Dim flowlayoutpanelthing As Object = mainFormControl.Controls(flow)
 
-        '        ' Set color for the Flow Layout Panel.
-        aaformMainWindow.flowLayoutPanel.BackColor = colorFlowLayoutPanelBackColor
-        aaformMainWindow.flowLayoutPanel.ForeColor = colorFlowLayoutPanelForeColor
-
-
-
 
         ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        Dim form As Form = aaformMainWindow
+        Dim form As Form = aaformMainWindow.forceAboutWindowTab
         Dim ctrl As Control = form.GetNextControl(form, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
@@ -1029,6 +1023,13 @@ Public Class UXLLauncher_ThemeEngine
                 ctrl.BackColor = colorCheckBoxBackColor
                 ' CheckBox ForeColor.
                 ctrl.ForeColor = colorCheckBoxForeColor
+
+            ElseIf TypeOf ctrl Is FlowLayoutPanel Then
+                ' If the control is a flowlayoutpanel, theme it as such.
+                ' FlowLayoutPanel BackColor.
+                ctrl.BackColor = colorFlowLayoutPanelBackColor
+                ' FlowLayoutPanel ForeColor.
+                ctrl.ForeColor = colorFlowLayoutPanelForeColor
 
             ElseIf TypeOf ctrl Is Label Then
                 ' If the control is a label, theme it as a label.
