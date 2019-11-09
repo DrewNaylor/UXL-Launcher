@@ -952,6 +952,14 @@ Public Class PortableThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
+        '        ' Set color for menubar.
+        toolstripProRenderer.BackColor = colorMenubarBackColor
+        toolstripProRenderer.ForeColor = colorMenuItemForeColor
+        toolstripProRenderer.DropdownBackColor = colorMenuItemBackColor
+        toolstripProRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
+        toolstripProRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
+        toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
         Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
@@ -1072,6 +1080,7 @@ Public Class PortableThemeEngine
                 For Each menuitem As ToolStripMenuItem In menustrip.Items
                     MessageBox.Show(menuitem.Name.ToString)
                     menuitem.ForeColor = colorMenuItemForeColor
+                    menuitem.BackColor = colorMenuItemBackColor
                 Next
 
             ElseIf TypeOf ctrl Is TextBox Then
@@ -1148,13 +1157,7 @@ Public Class PortableThemeEngine
 
 #Region "Set colors for menubar entries."
 
-        '        ' Set color for menubar.
-        toolstripProRenderer.BackColor = colorMenubarBackColor
-        toolstripProRenderer.ForeColor = colorMenuItemForeColor
-        toolstripProRenderer.DropdownBackColor = colorMenuItemBackColor
-        toolstripProRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
-        toolstripProRenderer.ImageMarginGradientEndColor = colorMenuItemImageMarginGradientEndColor
-        toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
 
         '        ' Sometimes the menubar forecolor doesn't update, so I'm forcing the items to update their colors.
         'formToApplyTo.menubarFileMenu.ForeColor = colorMenuItemForeColor
