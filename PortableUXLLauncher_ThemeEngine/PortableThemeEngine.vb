@@ -43,7 +43,7 @@ Public Class PortableThemeEngine
     ' be confused with the decimal below known as themeSheetUseThemeEngineVersion.
     Public Shared themeSheetFileVersion As String
     ' Create string for version of Theme Engine the theme is compatible with.
-    Friend Shared themeSheetUseThemeEngineVersion As Decimal
+    Public Shared themeSheetUseThemeEngineVersion As Decimal
     ' Specify whether to output debug info.
     Friend Shared enableDebugOutput As Boolean = True
 
@@ -962,7 +962,7 @@ Public Class PortableThemeEngine
                 ctrl.ForeColor = colorGroupBoxForeColor
 
                 'ElseIf TypeOf ctrl Is SplitContainer Then
-                ' ' Split containers aren't yet fully supported and this is just a placeholder.
+                '    ' Split containers aren't yet fully supported and this is just a placeholder.
                 '    ctrl.BackColor = colorFlowLayoutPanelBackColor
                 '    ctrl.ForeColor = colorFlowLayoutPanelForeColor
                 '    ' For split containers, we have to go through the controls inside
@@ -970,7 +970,7 @@ Public Class PortableThemeEngine
                 '    ctrl = ctrl.GetNextControl(ctrl, True)
 
                 'ElseIf TypeOf ctrl Is Panel Then
-                ' ' Panels aren't yet fully supported and this is just a placeholder.
+                '    ' Panels aren't yet fully supported and this is just a placeholder.
                 '    ctrl.BackColor = colorTableLayoutPanelBackColor
                 '    ctrl.ForeColor = colorTableLayoutPanelForeColor
 
@@ -1062,6 +1062,18 @@ Public Class PortableThemeEngine
                 ' Set label ForeColor (text color).
                 ctrl.ForeColor = colorLabelForeColor
 
+            ElseIf TypeOf ctrl Is MenuStrip Then
+                ctrl.BackColor = colorMenubarBackColor
+                MessageBox.Show(ctrl.Name.ToString)
+
+                Dim menustrip As MenuStrip = ctrl
+                Dim menuitemList As New List(Of ToolStripMenuItem)
+
+                For Each menuitem As ToolStripMenuItem In menustrip.Items
+                    MessageBox.Show(menuitem.Name.ToString)
+                    menuitem.ForeColor = colorMenuItemForeColor
+                Next
+
             ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
@@ -1110,8 +1122,27 @@ Public Class PortableThemeEngine
             End If
 
 
+
             ctrl = formToApplyTo.GetNextControl(ctrl, True)
         Loop
+
+
+
+        'For Each menustrip As MenuStrip In formToApplyTo.Controls
+
+        '    MessageBox.Show(menustrip.Name.ToString)
+        '    menustrip.BackColor = colorMenubarBackColor
+
+        '    For Each menuitem As ToolStripMenuItem In menustrip.Controls
+        '        If TypeOf menuitem Is ToolStripMenuItem Then
+        '            MessageBox.Show(menuitem.Name.ToString)
+        '            menuitem.ForeColor = colorMenuItemForeColor
+        '        End If
+        '    Next
+
+
+        'Next
+
 
 #End Region
 
@@ -1126,10 +1157,10 @@ Public Class PortableThemeEngine
         toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
         '        ' Sometimes the menubar forecolor doesn't update, so I'm forcing the items to update their colors.
-        '        aaformMainWindow.menubarFileMenu.ForeColor = colorMenuItemForeColor
-        '        aaformMainWindow.menubarViewMenu.ForeColor = colorMenuItemForeColor
-        '        aaformMainWindow.menubarToolsMenu.ForeColor = colorMenuItemForeColor
-        '        aaformMainWindow.menubarHelpMenu.ForeColor = colorMenuItemForeColor
+        'formToApplyTo.menubarFileMenu.ForeColor = colorMenuItemForeColor
+        'aaformMainWindow.menubarViewMenu.ForeColor = colorMenuItemForeColor
+        'aaformMainWindow.menubarToolsMenu.ForeColor = colorMenuItemForeColor
+        'aaformMainWindow.menubarHelpMenu.ForeColor = colorMenuItemForeColor
 
         '#End Region
 
