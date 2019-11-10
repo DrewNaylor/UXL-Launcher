@@ -1068,7 +1068,7 @@ Public Class PortableThemeEngine
                 ' If the control is a menustrip (menu bar), theme it as such.
 
                 ' Create a local variable to refer to the menustrip.
-                Dim menustrip As MenuStrip = ctrl
+                Dim menustrip As MenuStrip = CType(ctrl, MenuStrip)
 
                 'MessageBox.Show(menustrip.Name.ToString)
 
@@ -1118,20 +1118,23 @@ Public Class PortableThemeEngine
                 ctrl.ForeColor = colorRadioButtonForeColor
 
             ElseIf TypeOf ctrl Is StatusStrip Then
-                Dim statusstrip As StatusStrip = ctrl
+                Dim statusstrip As StatusStrip = CType(ctrl, StatusStrip)
                 statusstrip.BackColor = colorStatusBarBackColor
 
-                For Each statuslabel As ToolStripStatusLabel In statusstrip.Controls
-                    statuslabel.BackColor = colorStatusLabelBackColor
-                    statuslabel.ForeColor = colorStatusLabelForeColor
-                    statuslabel.BorderSides = propertyStatusLabelBorderSides
-                    ' I was having some issues with setting the BorderStyle, so Try...Catch.
-                    Try
-                        statuslabel.BorderStyle = propertyStatusLabelBorderStyle
-                    Catch ex As System.ComponentModel.InvalidEnumArgumentException
-                        ' It may be a good idea to output text talking about this exception if people run into it.
-                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                    End Try
+
+                For Each statusstripcontrol In statusstrip.Items
+                    If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
+                        statusstripcontrol.BackColor = colorStatusLabelBackColor
+                        statusstripcontrol.ForeColor = colorStatusLabelForeColor
+                        statusstripcontrol.BorderSides = propertyStatusLabelBorderSides
+                        ' I was having some issues with setting the BorderStyle, so Try...Catch.
+                        Try
+                            statusstripcontrol.BorderStyle = propertyStatusLabelBorderStyle
+                        Catch ex As System.ComponentModel.InvalidEnumArgumentException
+                            ' It may be a good idea to output text talking about this exception if people run into it.
+                            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                        End Try
+                    End If
                 Next
 
 
