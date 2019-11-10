@@ -1118,27 +1118,40 @@ Public Class PortableThemeEngine
                 ctrl.ForeColor = colorRadioButtonForeColor
 
             ElseIf TypeOf ctrl Is StatusStrip Then
+                ' Create a local variable and cast "ctrl" as a StatusStrip.
                 Dim statusstrip As StatusStrip = CType(ctrl, StatusStrip)
+                ' Apply the BackColor to the statusstrip variable created earlier.
                 statusstrip.BackColor = colorStatusBarBackColor
 
+                ' Look inside the controls that are in the statusstrip's items collection.
                 For Each statusstripcontrol As ToolStripItem In statusstrip.Items
-                        If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
-                            Dim statuslabel As ToolStripStatusLabel = CType(statusstripcontrol, ToolStripStatusLabel)
-                            statuslabel.BackColor = colorStatusLabelBackColor
-                            statuslabel.ForeColor = colorStatusLabelForeColor
-                            statuslabel.BorderSides = propertyStatusLabelBorderSides
-                            ' I was having some issues with setting the BorderStyle, so Try...Catch.
-                            Try
-                                statuslabel.BorderStyle = propertyStatusLabelBorderStyle
-                            Catch ex As System.ComponentModel.InvalidEnumArgumentException
-                                ' It may be a good idea to output text talking about this exception if people run into it.
-                                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                            End Try
-                        End If
+                    ' If an item is a toolstripstatuslabel, then theme it like one.
+                    If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
+                        ' We have to create a local variable to refer to
+                        ' the statuslabels, since otherwise we'd run into
+                        ' an invalid cast exception.
+                        Dim statuslabel As ToolStripStatusLabel = CType(statusstripcontrol, ToolStripStatusLabel)
+                        ' Apply statuslabel BackColor.
+                        statuslabel.BackColor = colorStatusLabelBackColor
+                        ' Apply statuslabel ForeColor.
+                        statuslabel.ForeColor = colorStatusLabelForeColor
+                        ' Apply statuslabel BorderSides property.
+                        statuslabel.BorderSides = propertyStatusLabelBorderSides
+                        ' I was having some issues with setting the BorderStyle, so Try...Catch.
+                        ' Ideally this wouldn't rely on a Try...Catch block, but I didn't
+                        ' know of a better solution back then. Maybe there would be a better
+                        ' solution for this.
+                        Try
+                            statuslabel.BorderStyle = propertyStatusLabelBorderStyle
+                        Catch ex As System.ComponentModel.InvalidEnumArgumentException
+                            ' It may be a good idea to output text talking about this exception if people run into it.
+                            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                        End Try
+                    End If
+                    ' Move on to next control in the statusstrip.
+                Next
 
-                    Next
-
-                    ElseIf TypeOf ctrl Is TabPage Then
+            ElseIf TypeOf ctrl Is TabPage Then
                 ' If the control is a tabpage, theme it as such.
                 ' TabPage BackColor.
                 ctrl.BackColor = colorTabPageBackColor
