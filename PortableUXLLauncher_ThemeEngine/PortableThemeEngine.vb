@@ -1117,6 +1117,24 @@ Public Class PortableThemeEngine
                 ' RadioButton ForeColor.
                 ctrl.ForeColor = colorRadioButtonForeColor
 
+            ElseIf TypeOf ctrl Is StatusStrip Then
+                Dim statusstrip As StatusStrip = ctrl
+                statusstrip.BackColor = colorStatusBarBackColor
+
+                For Each statuslabel As ToolStripStatusLabel In statusstrip.Controls
+                    statuslabel.BackColor = colorStatusLabelBackColor
+                    statuslabel.ForeColor = colorStatusLabelForeColor
+                    statuslabel.BorderSides = propertyStatusLabelBorderSides
+                    ' I was having some issues with setting the BorderStyle, so Try...Catch.
+                    Try
+                        statuslabel.BorderStyle = propertyStatusLabelBorderStyle
+                    Catch ex As System.ComponentModel.InvalidEnumArgumentException
+                        ' It may be a good idea to output text talking about this exception if people run into it.
+                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                    End Try
+                Next
+
+
             ElseIf TypeOf ctrl Is TabPage Then
                 ' If the control is a tabpage, theme it as such.
                 ' TabPage BackColor.
@@ -1162,9 +1180,7 @@ Public Class PortableThemeEngine
         '#Region "Set colors for statusbar label and menubar."
 
         '        ' Set color for status bar.
-        '        aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
-        '        ' Set color for menubar.
-        '        aaformMainWindow.menubarMainWindow.BackColor = colorMenubarBackColor
+        'aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
         '        ' Set the colors for the status bar label.
         '        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
         '        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
