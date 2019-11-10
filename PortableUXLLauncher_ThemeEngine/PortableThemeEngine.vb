@@ -1121,24 +1121,24 @@ Public Class PortableThemeEngine
                 Dim statusstrip As StatusStrip = CType(ctrl, StatusStrip)
                 statusstrip.BackColor = colorStatusBarBackColor
 
+                For Each statusstripcontrol As ToolStripItem In statusstrip.Items
+                        If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
+                            Dim statuslabel As ToolStripStatusLabel = CType(statusstripcontrol, ToolStripStatusLabel)
+                            statuslabel.BackColor = colorStatusLabelBackColor
+                            statuslabel.ForeColor = colorStatusLabelForeColor
+                            statuslabel.BorderSides = propertyStatusLabelBorderSides
+                            ' I was having some issues with setting the BorderStyle, so Try...Catch.
+                            Try
+                                statuslabel.BorderStyle = propertyStatusLabelBorderStyle
+                            Catch ex As System.ComponentModel.InvalidEnumArgumentException
+                                ' It may be a good idea to output text talking about this exception if people run into it.
+                                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                            End Try
+                        End If
 
-                For Each statusstripcontrol In statusstrip.Items
-                    If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
-                        statusstripcontrol.BackColor = colorStatusLabelBackColor
-                        statusstripcontrol.ForeColor = colorStatusLabelForeColor
-                        statusstripcontrol.BorderSides = propertyStatusLabelBorderSides
-                        ' I was having some issues with setting the BorderStyle, so Try...Catch.
-                        Try
-                            statusstripcontrol.BorderStyle = propertyStatusLabelBorderStyle
-                        Catch ex As System.ComponentModel.InvalidEnumArgumentException
-                            ' It may be a good idea to output text talking about this exception if people run into it.
-                            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                        End Try
-                    End If
-                Next
+                    Next
 
-
-            ElseIf TypeOf ctrl Is TabPage Then
+                    ElseIf TypeOf ctrl Is TabPage Then
                 ' If the control is a tabpage, theme it as such.
                 ' TabPage BackColor.
                 ctrl.BackColor = colorTabPageBackColor
