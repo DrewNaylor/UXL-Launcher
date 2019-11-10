@@ -52,7 +52,7 @@ Public Class PortableThemeEngine
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
-
+        themeSettingsInvalidMessage("PortableThemeEngine.TestException")
         ' Load the user's theme. If it's not able to be used, just load the default theme.
         Try
             If userTheme IsNot Nothing Then
@@ -1363,6 +1363,23 @@ Public Class PortableThemeEngine
                                 "You should find an XML element that has a name likely similar to ""allowCustomThemes"" within the ""userSettings"" element." & vbCrLf &
                                 "Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." & vbCrLf &
                                 "Afterward, restart " & appName & ".")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If themeName = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "PortableThemeEngine.TestException" Then
+                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+                ' a theme file in My.Resources, give a message for this problem.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("""And then I said, 'Oatmeal, are you crazy?'""")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & themeName)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
