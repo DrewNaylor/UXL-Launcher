@@ -942,17 +942,10 @@ Public Class PortableThemeEngine
 
 #Region "Set colors for controls in groupboxes."
 
-        Dim mainFormName As String = "aaformMainWindow"
-        'Dim mainFormControl As Object = My.Application.OpenForms
-        'Dim flow As String = "flowLayoutPanel"
-        'Dim flowlayoutpanelthing As Object = mainFormControl.Controls(flow)
-
-
-        ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
+        ' Look at all the controls in the form passed to the theme engine
+        ' and change their theme.
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
-
-
 
         Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
         Do Until ctrl Is Nothing
@@ -1191,27 +1184,6 @@ Public Class PortableThemeEngine
 
 #End Region
 
-#Region "Set colors for menubar entries."
-
-        '#Region "Set colors for statusbar label and menubar."
-
-        '        ' Set color for status bar.
-        'aaformMainWindow.statusbarMainWindow.BackColor = colorStatusBarBackColor
-        '        ' Set the colors for the status bar label.
-        '        aaformMainWindow.statusbarLabelWelcomeText.BackColor = colorStatusLabelBackColor
-        '        aaformMainWindow.statusbarLabelWelcomeText.ForeColor = colorStatusLabelForeColor
-        '        ' Set other properties for StatusLabel.
-        '        aaformMainWindow.statusbarLabelWelcomeText.BorderSides = propertyStatusLabelBorderSides
-        '        ' I was having some issues with setting the BorderStyle, so Try...Catch.
-        '        Try
-        '            aaformMainWindow.statusbarLabelWelcomeText.BorderStyle = propertyStatusLabelBorderStyle
-        '        Catch ex As System.ComponentModel.InvalidEnumArgumentException
-        '            ' It may be a good idea to output text talking about this exception if people run into it.
-        '            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-        '        End Try
-
-#End Region
-
     End Sub
 #End Region
 #End Region
@@ -1343,7 +1315,7 @@ Public Class PortableThemeEngine
 
             Debug.WriteLine("")
             Debug.WriteLine("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////")
-            Debug.WriteLine("PortableThemeEngine Version " & My.Application.Info.Version.ToString)
+            Debug.WriteLine("PortableThemeEngine Version " & System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString)
             Debug.WriteLine("Invalid Theme Settings Message Handler")
             Debug.WriteLine("--------------------------------------")
             Debug.WriteLine("Begin theme engine output:")
