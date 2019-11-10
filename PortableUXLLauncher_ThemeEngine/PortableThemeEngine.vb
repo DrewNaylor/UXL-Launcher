@@ -1347,20 +1347,22 @@ Public Class PortableThemeEngine
 
             ElseIf exceptionType.ToString = "UXLLauncher.ThemeEngine.CustomThemesNotAllowed" Then
                 ' If custom themes are not supported, output it to the Immediate Window.
+                Dim appName As String = My.Application.Info.ProductName.ToString
+                Dim appFileName As String = My.Application.Info.AssemblyName.ToString
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
-                Debug.WriteLine("Your administrator has disabled custom themes from being used in UXL Launcher." & vbCrLf &
+                Debug.WriteLine("Your administrator has disabled custom themes from being used in " & appName & "." & vbCrLf &
                                 "This may be due to data protection policies put in place by your organization." & vbCrLf &
                                 vbCrLf &
                                 "If you believe you've received this message in error, you can try to modify the" & vbCrLf &
-                                "configuration files for UXL Launcher located in this folder:" & vbCrLf &
+                                "configuration files for " & appName & " located in this folder:" & vbCrLf &
                                 My.Application.Info.DirectoryPath & vbCrLf &
-                                "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," & vbCrLf &
+                                "In this folder, you'll find a file named """ & appFileName & ".exe.config"". First," & vbCrLf &
                                 "make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." & vbCrLf &
-                                "You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." & vbCrLf &
+                                "You should find an XML element that has a name likely similar to ""allowCustomThemes"" within the ""userSettings"" element." & vbCrLf &
                                 "Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." & vbCrLf &
-                                "Afterward, restart UXL Launcher.")
+                                "Afterward, restart " & appName & ".")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & themeName)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
