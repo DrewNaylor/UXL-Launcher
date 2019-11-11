@@ -947,6 +947,9 @@ Public Class PortableThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
+        formToApplyTo.BackColor = colorFlowLayoutPanelBackColor
+        formToApplyTo.ForeColor = colorFlowLayoutPanelForeColor
+
         Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
@@ -964,10 +967,10 @@ Public Class PortableThemeEngine
                 '    ' them to change their colors.
                 '    ctrl = ctrl.GetNextControl(ctrl, True)
 
-                'ElseIf TypeOf ctrl Is Panel Then
-                '    ' Panels aren't yet fully supported and this is just a placeholder.
-                '    ctrl.BackColor = colorTableLayoutPanelBackColor
-                '    ctrl.ForeColor = colorTableLayoutPanelForeColor
+            ElseIf TypeOf ctrl Is Panel Then
+                ' Panels aren't yet fully supported and this is just a placeholder.
+                ctrl.BackColor = colorTableLayoutPanelBackColor
+                ctrl.ForeColor = colorTableLayoutPanelForeColor
 
             ElseIf TypeOf ctrl Is Button Then
                 ' If the control is a button, theme it as a button.
