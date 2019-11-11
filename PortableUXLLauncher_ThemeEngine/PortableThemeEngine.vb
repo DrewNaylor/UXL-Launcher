@@ -45,7 +45,7 @@ Public Class PortableThemeEngine
     ' Create string for version of Theme Engine the theme is compatible with.
     Public Shared themeSheetUseThemeEngineVersion As Decimal
     ' Specify whether to output debug info.
-    Friend Shared enableDebugOutput As Boolean = True
+    Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
     Public Shared Sub themeEngine_ApplyTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
