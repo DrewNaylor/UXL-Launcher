@@ -52,7 +52,7 @@ Public Class PortableThemeEngine
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
-        themeSettingsInvalidMessage("PortableThemeEngine.TestException")
+
         ' Load the user's theme. If it's not able to be used, just load the default theme.
         Try
             If userTheme IsNot Nothing Then
