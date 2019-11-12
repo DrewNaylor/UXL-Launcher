@@ -959,16 +959,74 @@ Public Class themeenginemain
         End If
 #End Region
 
-#Region "Set colors for controls in groupboxes."
+#Region "Set colors for controls."
 
         ' Look at all the controls in the form passed to the theme engine
         ' and change their theme.
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        formToApplyTo.BackColor = colorFlowLayoutPanelBackColor
-        formToApplyTo.ForeColor = colorFlowLayoutPanelForeColor
+        'formToApplyTo.BackColor = colorFlowLayoutPanelBackColor
+        'formToApplyTo.ForeColor = colorFlowLayoutPanelForeColor
 
+#Region "Apply default colors to forms not supported by TE1.02 or lower."
+        ' Apply default colors to forms that aren't supported by TE1.02 or lower.
+        If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
+            ' If the theme doesn't support TE1.03, apply defaults.
+            ' Default button colors.
+            colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            flatstyleButtonFlatStyle = FlatStyle.Standard
+            flatappearanceButtonBorderColor = Nothing
+
+            ' Default TableLayoutPanel colors.
+            colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default TabPage colors.
+            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default GroupBox colors.
+            colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default Label colors.
+            colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default Textbox colors.
+            colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
+
+            ' Default RadioButton colors.
+            colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default Checkbox colors.
+            colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default Dropdown box/ComboBox colors.
+            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default LinkLabel colors.
+            colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
+            colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+
+            ' Default About window banner.
+            bannerStyle = My.Resources.UXL_Launcher_Banner
+
+            'Default FlowLayoutPanel colors.
+            colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
+#Region "Now apply colors to controls in each form passed to the theme engine."
         Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
@@ -1199,16 +1257,14 @@ Public Class themeenginemain
                 picturebox.Image = bannerStyle
 
 
-            End If
+            End If ' End of If statement for checking to see what each control's type is.
 
-
-
+            ' Get the next control in the tab order.
             ctrl = formToApplyTo.GetNextControl(ctrl, True)
         Loop
-
 #End Region
-
-    End Sub
+#End Region
+    End Sub ' End of ApplyTheme Sub.
 #End Region
 #End Region
 

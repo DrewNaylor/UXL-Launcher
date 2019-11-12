@@ -951,7 +951,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-#Region "Default colors to forms that aren't supported by TE1.02 or lower."
+#Region "Apply default colors to forms not supported by TE1.02 or lower."
         ' Apply default colors to forms that aren't supported by TE1.02 or lower.
         If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
             ' If the theme doesn't support TE1.03, apply defaults.
@@ -1151,7 +1151,7 @@ Public Class UXLLauncher_ThemeEngine
                 picturebox.Image = bannerStyle
 
 
-            End If 'End of If statement for checking to see what each control's type is.
+            End If ' End of If statement for checking to see what each control's type is.
 
             ' Get the next control in the tab order.
             ctrl = formToApplyTo.GetNextControl(ctrl, True)
