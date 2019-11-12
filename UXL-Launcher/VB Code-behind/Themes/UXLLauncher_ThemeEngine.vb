@@ -975,6 +975,18 @@ Public Class UXLLauncher_ThemeEngine
             colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
             colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
+            ' Default Textbox colors.
+            colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
+
+            ' Default RadioButton colors.
+            colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default Checkbox colors.
+            colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
         Else
 
 
