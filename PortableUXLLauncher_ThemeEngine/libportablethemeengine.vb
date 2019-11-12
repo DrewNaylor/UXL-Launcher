@@ -59,6 +59,8 @@ Public Class themeenginemain
 
         If isFilename = True AndAlso File.Exists(themesDir & themeInput) Then
             userTheme.Load(themesDir & themeInput)
+        ElseIf isFilename = True AndAlso Not File.Exists(themesDir & themeInput) Then
+            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
         ElseIf isFilename = False Then
             userTheme.LoadXml(themeInput)
         End If
@@ -67,29 +69,29 @@ Public Class themeenginemain
 
     Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form)
 #Region "Read XML Theme Document."
-        ' Parse the test theme XML document and apply stuff that's in it.
-        Dim themeSheet As XmlDocument = New XmlDocument()
+        '' Parse the test theme XML document and apply stuff that's in it.
+        Dim themeSheet As XmlDocument = userTheme
 
-        ' Load the user's theme. If it's not able to be used, just load the default theme.
-        Try
-            If userTheme IsNot Nothing Then
-                themeSheet = (userTheme)
-            Else
-                themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-            End If
-        Catch ex As XmlException
-            themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString & vbCrLf & "(Also, this code is near the top" &
-                                        "of the ApplyTheme code and it doesn't usually get hit.)")
-            ' Complain to the user if the chosen theme doesn't have a root element.
-            MessageBox.Show("There was a problem trying to load the " &
-                            themeName & " theme." & vbCrLf &
-                            "Please notify the theme's author of the message below." & vbCrLf & vbCrLf & vbCrLf &
-                            "Theme file chosen:" & vbCrLf & themeName & vbCrLf & vbCrLf &
-                            "Error message: " & vbCrLf & ex.Message & vbCrLf &
-                            vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "PortableThemeEngine",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        '' Load the user's theme. If it's not able to be used, just load the default theme.
+        'Try
+        '    If userTheme IsNot Nothing Then
+        '        themeSheet = (userTheme)
+        '    Else
+        '        themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+        '    End If
+        'Catch ex As XmlException
+        '    themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+        '    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString & vbCrLf & "(Also, this code is near the top" &
+        '                                "of the ApplyTheme code and it doesn't usually get hit.)")
+        '    ' Complain to the user if the chosen theme doesn't have a root element.
+        '    MessageBox.Show("There was a problem trying to load the " &
+        '                    themeName & " theme." & vbCrLf &
+        '                    "Please notify the theme's author of the message below." & vbCrLf & vbCrLf & vbCrLf &
+        '                    "Theme file chosen:" & vbCrLf & themeName & vbCrLf & vbCrLf &
+        '                    "Error message: " & vbCrLf & ex.Message & vbCrLf &
+        '                    vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "PortableThemeEngine",
+        '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
 
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
