@@ -967,6 +967,14 @@ Public Class UXLLauncher_ThemeEngine
             colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
             colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
+            ' Default GroupBox colors.
+            colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default Label colors.
+            colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
         Else
 
 
