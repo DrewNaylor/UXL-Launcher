@@ -991,6 +991,12 @@ Public Class UXLLauncher_ThemeEngine
             colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
             colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
+            ' Default LinkLabel colors.
+            colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
+            colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+
         End If
 
 
