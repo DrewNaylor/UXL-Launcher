@@ -963,6 +963,10 @@ Public Class UXLLauncher_ThemeEngine
             colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
             colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
+            ' Default TabPage colors.
+            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
         Else
 
 
