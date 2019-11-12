@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("PortableUXLLauncher_ThemeEngine")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("PortableUXLLauncher_ThemeEngine")> 
-<Assembly: AssemblyCopyright("Copyright ©  2019")> 
+<Assembly: AssemblyTitle("libportablethemeengine")>
+<Assembly: AssemblyDescription("Portable theme engine based on UXL Launcher Theme Engine for Windows Forms applications.")>
+<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyProduct("libportablethemeengine")>
+<Assembly: AssemblyCopyright("Copyright © 2019 Drew Naylor. Licensed under Gnu GPLv3+.")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

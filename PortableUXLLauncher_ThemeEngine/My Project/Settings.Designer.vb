@@ -65,6 +65,18 @@ Namespace My
                 Me("enableDebugOutput") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property enableCustomThemes() As Boolean
+            Get
+                Return CType(Me("enableCustomThemes"),Boolean)
+            End Get
+            Set
+                Me("enableCustomThemes") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
@@ -76,9 +88,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.PortableUXLLauncher_ThemeEngine.My.MySettings
+        Friend ReadOnly Property Settings() As Global.libportablethemeengine.My.MySettings
             Get
-                Return Global.PortableUXLLauncher_ThemeEngine.My.MySettings.Default
+                Return Global.libportablethemeengine.My.MySettings.Default
             End Get
         End Property
     End Module

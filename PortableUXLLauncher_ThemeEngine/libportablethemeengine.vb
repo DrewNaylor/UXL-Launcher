@@ -1,6 +1,6 @@
 ﻿'PortableThemeEngine - Theme engine based off the UXL Launcher Theme Engine.
 'Can be used with standard Windows Forms applications with a few small changes.
-'Copyright (C) 2019 Drew Naylor
+'Copyright (C) 2019 Drew Naylor. Licensed under Gnu GPLv3+.
 'Any companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
@@ -28,7 +28,7 @@ Imports System.Windows.Forms
 Imports System.Net.Mime.MediaTypeNames
 Imports System.Drawing
 
-Public Class PortableThemeEngine
+Public Class themeenginemain
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Theme via PortableThemeEngine."
@@ -1295,7 +1295,7 @@ Public Class PortableThemeEngine
         End If
 
         ' Apply the theme.
-        PortableThemeEngine.themeEngine_ApplyTheme(themeName, formToApplyTo, toolstripProRenderer)
+        themeenginemain.themeEngine_ApplyTheme(themeName, formToApplyTo, toolstripProRenderer)
     End Sub
 #End Region
 #End Region

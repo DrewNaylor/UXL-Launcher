@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CA4A9AE5-D870-4067-B6B5-15955BF01E9D}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PortableUXLLauncher_ThemeEngine</RootNamespace>
-    <AssemblyName>PortableUXLLauncher_ThemeEngine</AssemblyName>
+    <RootNamespace>libportablethemeengine</RootNamespace>
+    <AssemblyName>libportablethemeengine</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -18,7 +18,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>PortableUXLLauncher_ThemeEngine.xml</DocumentationFile>
+    <DocumentationFile>libportablethemeengine.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -29,7 +29,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>PortableUXLLauncher_ThemeEngine.xml</DocumentationFile>
+    <DocumentationFile>libportablethemeengine.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
@@ -69,7 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PortableThemeEngine.vb" />
+    <Compile Include="libportablethemeengine.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
