@@ -997,6 +997,9 @@ Public Class UXLLauncher_ThemeEngine
             colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
             colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
 
+            ' Default About window banner.
+            bannerStyle = My.Resources.UXL_Launcher_Banner
+
         End If
 
 
