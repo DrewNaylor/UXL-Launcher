@@ -6061,7 +6061,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>Icon used for Options button</comment>
   </data>
   <data name="themeList_TXT" xml:space="preserve">
-    <value>Default,Eyesore,Eyesore2,Maudern,Mitty,ReturnOfNight,RGB,TenDark,(Custom)</value>
+    <value>Default,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ReturnOfNight,RGB,TenDark,(Custom)</value>
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">
@@ -6328,9 +6328,12 @@ This decimal is to be used for the About window when talking about what version 
         UIDOoQCdQwE6hwJ0DgXoHArQORSgcyhA51CAzqEAnUMBOocCdA4F6BwK0DkUoHMoQOdQgM6hAJ1DATqH
         AnQOBegcCtA5FKBzKEDnUIDOoQCdQwE6hwJ0DgXoHArQORSgcyhA51CAzqEAnUMBOufts0fm30iXPDr7
         0Pwb6ZIPz87fJv3y9vn/B5zqHCjTyl1+AAAAAElFTkSuQmCC
-    </value>
+</value>
   </data>
   <data name="MittyTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vb code-behind\themes\mittytheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MaudernClassicTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\vb code-behind\themes\maudernclassictheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

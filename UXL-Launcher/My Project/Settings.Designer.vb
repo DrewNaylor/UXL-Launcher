@@ -245,6 +245,18 @@ Namespace My
                 Me("showUnsafeFileExtensionBlockedMessage") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property matchWindows10ThemeSettings() As Boolean
+            Get
+                Return CType(Me("matchWindows10ThemeSettings"),Boolean)
+            End Get
+            Set
+                Me("matchWindows10ThemeSettings") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

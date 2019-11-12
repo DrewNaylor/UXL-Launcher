@@ -1,8 +1,15 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Arr G. Bee</Title>
   <Description>Arr G. Bee is a theme that's influenced by the UXL Launcher logo.</Description>
-  <Version>v1.0</Version>
+  <Version>v1.1</Version>
   <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
   
     <Theme_Colors>
       
@@ -21,7 +28,7 @@
       </Button>
       
       <GroupBox>
-        <BackColor>Transparent</BackColor>
+        <BackColor>White</BackColor>
         <ForeColor>Blue</ForeColor>
       </GroupBox>
 
@@ -29,6 +36,21 @@
         <BackColor>White</BackColor>
         <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+        <!--If you want this to apply to the table layout panel inside the
+        About window About tab, set ApplyToAboutWindowAboutTabTLP to True
+        as shown below. Otherwise, the tab page control's colors will
+        be used instead-->
+        <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>RoyalBlue</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
       
       <StatusBar>
         <BackColor>RoyalBlue</BackColor>

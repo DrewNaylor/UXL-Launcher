@@ -144,6 +144,9 @@ due to the 32-bit version installing to "Program Files"
 even on 64-bit Windows. Something is broken if 16-bit
 Windows is recommended to you; please report.</value>
   </data>
+  <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>820, 23</value>
+  </metadata>
   <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>629, 23</value>
   </metadata>

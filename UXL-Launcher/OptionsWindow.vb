@@ -130,6 +130,9 @@ Public Class aaformOptionsWindow
         ' configured custom theme path.
         textboxCustomThemePath.Text = My.Settings.userCustomThemePath.Replace("""", "")
 
+        ' Check or uncheck the checkbox to use Windows 10 theme settings as needed.
+        checkboxMatchWindows10ThemeSettings.Checked = My.Settings.matchWindows10ThemeSettings
+
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
 #End Region
@@ -250,6 +253,9 @@ Public Class aaformOptionsWindow
         ' Reset the theme engine enabled status to disabled.
         checkboxEnableThemeEngine.Checked = False
 
+        ' Reset the match Windows 10 theme settings checkbox to unchecked.
+        checkboxMatchWindows10ThemeSettings.Checked = False
+
         ' Reset the personalized statusbar firstname/nickname
         ' textbox to empty.
         textboxFirstname.Clear()
@@ -351,6 +357,9 @@ Public Class aaformOptionsWindow
             ' Simplified from original "If" statement.
             My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
 
+            ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
+            My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
+
             ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
             My.Settings.userChosenTheme = comboboxThemeList.Text
 
@@ -385,7 +394,12 @@ Public Class aaformOptionsWindow
             ' and the boolean variable set at the beginning of this
             ' class is set to True.
             If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
-                UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+
+                ' If the user wants to match the Windows 10 theme, then do so,
+                ' but if not, then the user's chosen theme will be used instead.
+                ' Code moved to its own sub to make editing easier.
+                WindowsThemeSettings.checkIfUserWantsToMatchTheme()
+
             End If
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
@@ -626,6 +640,7 @@ Public Class aaformOptionsWindow
         If checkboxEnableThemeEngine.Checked = True Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
+            checkboxMatchWindows10ThemeSettings.Enabled = True
             textboxCustomThemePath.Enabled = True
             buttonCustomThemesBrowse.Enabled = True
             ' Now, update theme-related controls.
@@ -633,12 +648,41 @@ Public Class aaformOptionsWindow
         Else
             ' Otherwise, disable the controls.
             comboboxThemeList.Enabled = False
+            checkboxMatchWindows10ThemeSettings.Enabled = False
             textboxCustomThemePath.Enabled = False
             buttonCustomThemesBrowse.Enabled = False
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
         End If
+
+        ' When checking this box, the theme list dropdown will be disabled
+        ' since the theme will be changed at startup based on the Windows 10
+        ' settings.
+        If checkboxMatchWindows10ThemeSettings.Checked = True Then
+            comboboxThemeList.Enabled = False
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        ElseIf checkboxMatchWindows10ThemeSettings.Checked = True And checkboxEnableThemeEngine.Checked = True Then
+            comboboxThemeList.Enabled = True
+            textboxCustomThemePath.Enabled = True
+            buttonCustomThemesBrowse.Enabled = True
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        End If
     End Sub
+
 #End Region
+
+    Private Sub checkboxMatchWindows10ThemeSettings_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxMatchWindows10ThemeSettings.CheckedChanged
+        ' When checking this box, the theme list dropdown will be disabled
+        ' since the theme will be changed at startup based on the Windows 10
+        ' settings.
+
+        ' Code moved to its own sub to make calling easier.
+        enableOrDisableThemeEngineOptionsWindowControls()
+    End Sub
+
 #Region "Code that runs when clicking the Browse... button next to the custom theme path."
     Private Sub buttonCustomThemesBrowse_Click(sender As Object, e As EventArgs) Handles buttonCustomThemesBrowse.Click
         ' When the user clicks the "Browse..." button, show an open file dialog

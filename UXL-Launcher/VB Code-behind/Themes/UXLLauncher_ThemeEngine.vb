@@ -86,6 +86,8 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorButtonForeColor As Color
         Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is "= Flat", the flatstyle is Flat. Standard is "FlatStyle = FlatStyle.Standard".
         Dim flatappearanceButtonBorderColor As Color ' The border of the buttons if "FlatStyle = FlatStyle.Flat".
+        Dim flatappearanceButtonMouseOverBackColor As Color ' The color of the buttons on mouseover if "FlatStyle = FlatStyle.Flat".
+        Dim flatappearanceButtonMouseDownBackColor As Color ' The color of the buttons on mousedown if "FlatStyle = FlatStyle.Flat".
         ' Checkbox colors:
         Dim colorCheckBoxBackColor As Color
         Dim colorCheckBoxForeColor As Color
@@ -116,6 +118,12 @@ Public Class UXLLauncher_ThemeEngine
         ' TableLayoutPanel colors:
         Dim colorTableLayoutPanelBackColor As Color
         Dim colorTableLayoutPanelForeColor As Color
+        ' If the theme says to use this in the About window's
+        ' About tab for the tableLayoutPanelAboutAppTab control,
+        ' apply colorTableLayoutPanelBackColor to it.
+        ' Otherwise, just use the colorTabPageBackColor
+        ' and have the table layout panel inherit it.
+        Dim useTableLayoutPanelColorInsideAboutAppTab As Boolean = False
         ' TabPage colors:
         Dim colorTabPageBackColor As Color
         Dim colorTabPageForeColor As Color
@@ -308,6 +316,54 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "Button flat appearance mousedown color (TE 1.03 or greater)"
+        ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
+        If themeSheetUseThemeEngineVersion >= 1.03 Then
+
+            ' Only pull the Button FlatAppearance MouseDownBackColor element from XML if it exists.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager) IsNot Nothing Then
+                Try
+                    flatappearanceButtonMouseDownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    ' If the element isn't a valid HTML color, just replace it with the default.
+                Catch ex As Exception
+                    flatappearanceButtonMouseDownBackColor = Nothing
+                End Try
+            Else
+                ' If the element doesn't exist, overwrite it with the Default theme's value.
+                flatappearanceButtonMouseDownBackColor = Nothing
+            End If
+        Else
+            ' If the theme file is set to use something lower than 1.03,
+            ' use the default value.
+            flatappearanceButtonMouseDownBackColor = Nothing
+        End If
+#End Region
+
+#Region "Button flat appearance mouseover color (TE 1.03 or greater)"
+        ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
+        If themeSheetUseThemeEngineVersion >= 1.03 Then
+
+            ' Only pull the Button FlatAppearance MouseOverBackColor element from XML if it exists.
+            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager) IsNot Nothing Then
+                Try
+                    flatappearanceButtonMouseOverBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    ' If the element isn't a valid HTML color, just replace it with the default.
+                Catch ex As Exception
+                    flatappearanceButtonMouseOverBackColor = Nothing
+                End Try
+            Else
+                ' If the element doesn't exist, overwrite it with the Default theme's value.
+                flatappearanceButtonMouseOverBackColor = Nothing
+            End If
+        Else
+            ' If the theme file is set to use something lower than 1.03,
+            ' use the default value.
+            flatappearanceButtonMouseOverBackColor = Nothing
+        End If
+#End Region
+
 #End Region
 
 #Region "CheckBox BackColor"
@@ -441,16 +497,27 @@ Public Class UXLLauncher_ThemeEngine
 #Region "StatusBar BackColor."
         ' Only pull the StatusBar BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-            Try
-                colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
-                debugmodeStuff.updateDebugLabels()
-                ' If the element isn't a valid HTML color, just replace it with the default.
-            Catch ex As Exception
+            ' If the node exists and if it has "LiteralNothing" in the inner text, then we literally set the
+            ' color for the statusbar back color to "Nothing".
+            ' This makes it so that the statusbar appears like it would if the theme engine were turned off.
+            ' Only used if the theme is compatible with TE1.03 or greater.
+            If themeSheetUseThemeEngineVersion >= 1.03 AndAlso themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
+                colorStatusBarBackColor = Nothing
+
+                ' If the theme doesn't want to use "Nothing" as a color, then 
+                ' use the color it says to use.
+            ElseIf Not themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
+                Try
+                    colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
+                    debugmodeStuff.updateDebugLabels()
+                    ' If the element isn't a valid HTML color, just replace it with the default.
+                Catch ex As Exception
+                    colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
+                End Try
+            Else
+                ' If the element doesn't exist, overwrite it with the Default theme's value.
                 colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
-            End Try
-        Else
-            ' If the element doesn't exist, overwrite it with the Default theme's value.
-            colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
+            End If
         End If
 #End Region
 
@@ -583,7 +650,7 @@ Public Class UXLLauncher_ThemeEngine
 #End Region
 
 #Region "TableLayoutPanel BackColor"
-        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        ' Only pull the TableLayoutPanel ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTableLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
@@ -598,8 +665,24 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "TableLayoutPanel ApplyToAboutWindowAboutTabTLP"
+        ' Only pull the TableLayoutPanel ApplyToAboutWindowAboutTabTLP element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                useTableLayoutPanelColorInsideAboutAppTab = CBool(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager).InnerText.ToString)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                useTableLayoutPanelColorInsideAboutAppTab = False
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            useTableLayoutPanelColorInsideAboutAppTab = False
+        End If
+#End Region
+
 #Region "TableLayoutPanel ForeColor"
-        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
+        ' Only pull the TableLayoutPanel ForeColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
             Try
                 colorTableLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
@@ -857,11 +940,6 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
-#Region "Define Short-words."
-        ' Used to be used for "Dim ctrl As Control", but
-        ' was moved to the actual code so that it's better.
-#End Region
-
 #Region "Set colors for controls in groupboxes."
 
         '        ' Set color for the Flow Layout Panel.
@@ -888,6 +966,7 @@ Public Class UXLLauncher_ThemeEngine
                         ' Set button style, whether that be flat, "Standard", or another
                         ' supported style.
                         button.FlatStyle = flatstyleButtonFlatStyle
+
                         ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
                         ' Note that this can be any valid HTML or system color, including "Nothing"
                         ' ("Nothing" is the default value based on my testing).
@@ -899,11 +978,23 @@ Public Class UXLLauncher_ThemeEngine
                             ' If the useThemeEngineVersion element in the theme is
                             ' greater than or equal to 1.02, also set bordercolor
                             ' to "Nothing".
+
+                            ' This is being done in an exception, so it should
+                            ' work just fine in regular usage when things work.
                             If themeSheetUseThemeEngineVersion >= 1.02 Then
                                 button.FlatAppearance.BorderColor = Nothing
                             End If
                             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                         End Try
+
+                        ' Now change the color for when the mouse clicks down
+                        ' on a button and the flat appearance is set to flat.
+                        button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                        ' Change the color for when the mouse goes over
+                        ' a button and the flat appearance is set to flat.
+                        button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
                         ' If the control in the groupbox is a label,
                         ' change the label's colors.
                     ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
@@ -990,6 +1081,14 @@ Public Class UXLLauncher_ThemeEngine
                 themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
             End Try
 
+            ' Now change the color for when the mouse clicks down
+            ' on a button and the flat appearance is set to flat.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+            ' Change the color for when the mouse goes over
+            ' a button and the flat appearance is set to flat.
+            aaformMainWindow.forceAboutWindowTab.buttonClose.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
             ' BackColor for FlowLayoutPanels.
             aaformMainWindow.forceAboutWindowTab.flowLayoutPanelLinkLabels.BackColor = colorFlowLayoutPanelBackColor
             ' And FlowLayoutPanel ForeColors.
@@ -1004,6 +1103,13 @@ Public Class UXLLauncher_ThemeEngine
             ' Only apply the colors to the tableLayoutPanel control.
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = colorTableLayoutPanelForeColor
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = colorTableLayoutPanelBackColor
+            If useTableLayoutPanelColorInsideAboutAppTab = True Then
+                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTableLayoutPanelForeColor
+                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTableLayoutPanelBackColor
+            Else
+                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = colorTabPageForeColor
+                aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = colorTabPageBackColor
+            End If
 
             ' TabPage fore/backcolors.
             ' Can be done at once like the control loop for the main window above.
@@ -1058,6 +1164,15 @@ Public Class UXLLauncher_ThemeEngine
                         ' Show an error about the NotSupportedException.
                         themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                     End Try
+
+                    ' Now change the color for when the mouse clicks down
+                    ' on a button and the flat appearance is set to flat.
+                    reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                    ' Change the color for when the mouse goes over
+                    ' a button and the flat appearance is set to flat.
+                    reallyIsButtonControl.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
                 End If
                 ' Start working our way into the Options window, layer by layer.
                 ' First, theme the tab pages.
@@ -1097,6 +1212,16 @@ Public Class UXLLauncher_ThemeEngine
                                     ' Show an error about the NotSupportedException.
                                     themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                                 End Try
+
+
+                                ' Now change the color for when the mouse clicks down
+                                ' on a button and the flat appearance is set to flat.
+                                reallyIsButtonControl.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+
+                                ' Change the color for when the mouse goes over
+                                ' a button and the flat appearance is set to flat.
+                                reallyIsButtonControl.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+
 
                                 ' Theme the labels.
                             ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
@@ -1164,6 +1289,8 @@ Public Class UXLLauncher_ThemeEngine
             ' Only apply the colors to the tableLayoutPanel control.
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
             aaformMainWindow.forceAboutWindowTab.tableLayoutPanel.BackColor = Color.FromKnownColor(KnownColor.Control)
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.ForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            aaformMainWindow.forceAboutWindowTab.tableLayoutPanelAboutAppTab.BackColor = Color.FromKnownColor(KnownColor.Window)
 
             ' TabPage fore/backcolors.
             ' Can be done at once like the control loop for the main window above.
@@ -1291,6 +1418,7 @@ Public Class UXLLauncher_ThemeEngine
         Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
 
         Try ' Make sure the theme engine doesn't break.
+
 
             ' Then we see if the userChosenTheme setting contains the word "Theme."
             ' If it does not, we just add "Theme_XML" to the end of the string.
@@ -1427,7 +1555,10 @@ Public Class UXLLauncher_ThemeEngine
                             "path are not supported and are automatically removed at runtime.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
-                Debug.WriteLine("Custom theme path: (ignore if theme name is not ""(Custom)"")" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
                 Debug.WriteLine("")
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")

@@ -73,8 +73,10 @@ Public Class aaformMainWindow
             menubarRevertThemeButton.Visible = True
             menubarRevertThemeButton.Enabled = True
 
-            ' Next, choose the user's theme and apply it.
-            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            ' If the user wants to match the Windows 10 theme, then do so,
+            ' but if not, then the user's chosen theme will be used instead.
+            ' Code moved to its own sub to make editing easier.
+            WindowsThemeSettings.checkIfUserWantsToMatchTheme()
 
             ' Then, give the menubar a renderer.
             menubarMainWindow.Renderer = UXLToolstripRenderer
