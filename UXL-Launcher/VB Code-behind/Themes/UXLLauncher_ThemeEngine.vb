@@ -951,13 +951,18 @@ Public Class UXLLauncher_ThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        If formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
+        If Not formToApplyTo.Name = "aaformMainWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
             ' If the theme doesn't support TE1.03, apply defaults.
-            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeEngine_ApplyTheme(aaformOptionsWindow, toolstripProRenderer)
-        ElseIf formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
-            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeEngine_ApplyTheme(aaformAboutWindow, toolstripProRenderer)
+            ' Default button colors.
+            colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            flatstyleButtonFlatStyle = FlatStyle.Standard
+            flatappearanceButtonBorderColor = Nothing
+
+            ' Default TableLayoutPanel colors.
+            colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
         Else
 
 
@@ -1226,6 +1231,7 @@ Public Class UXLLauncher_ThemeEngine
             End Try
 
 #End Region
+
         End If
 
 #Region "Theming for theme files compatible with TE 1.03 or greater."
