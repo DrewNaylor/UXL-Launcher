@@ -54,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -74,7 +74,7 @@ Partial Class aaformAboutWindow
         Me.buttonClose.Location = New System.Drawing.Point(454, 442)
         Me.buttonClose.Name = "buttonClose"
         Me.buttonClose.Size = New System.Drawing.Size(77, 26)
-        Me.buttonClose.TabIndex = 0
+        Me.buttonClose.TabIndex = 4
         Me.buttonClose.Text = "Close"
         Me.buttonClose.UseVisualStyleBackColor = True
         '
@@ -169,7 +169,7 @@ Partial Class aaformAboutWindow
         Me.linkUpdateCheck.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.linkUpdateCheck.Name = "linkUpdateCheck"
         Me.linkUpdateCheck.Size = New System.Drawing.Size(94, 13)
-        Me.linkUpdateCheck.TabIndex = 0
+        Me.linkUpdateCheck.TabIndex = 2
         Me.linkUpdateCheck.TabStop = True
         Me.linkUpdateCheck.Text = "Check for updates"
         '
@@ -181,7 +181,7 @@ Partial Class aaformAboutWindow
         Me.linkMyWebsite.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.linkMyWebsite.Name = "linkMyWebsite"
         Me.linkMyWebsite.Size = New System.Drawing.Size(100, 13)
-        Me.linkMyWebsite.TabIndex = 2
+        Me.linkMyWebsite.TabIndex = 3
         Me.linkMyWebsite.TabStop = True
         Me.linkMyWebsite.Text = "Visit Drew's website"
         '
@@ -198,7 +198,6 @@ Partial Class aaformAboutWindow
         Me.textboxAboutApp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.textboxAboutApp.Size = New System.Drawing.Size(339, 341)
         Me.textboxAboutApp.TabIndex = 0
-        Me.textboxAboutApp.TabStop = False
         Me.textboxAboutApp.Text = resources.GetString("textboxAboutApp.Text")
         '
         'tabpageLicense

@@ -1,0 +1,112 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Eyesore</Title>
+  <Description>Eyesore is a theme that's meant to be a tribute to Windows 3.1's Hot Dog Stand theme. The "Eyesore" theme and Drew Naylor are not associated with Microsoft Corporation in any way, shape, or form. Windows 3.1 and all related words are copyright and trademark/registered trademark Microsoft Corporation in the United States and other countries. All rights reserved to Microsoft Corp. for Microsoft Corp.'s copyrights and trademarks/registered trademarks.</Description>
+  <Version>v1.1</Version>
+  <Author>Original Hotdog Stand theme by Microsoft Corporation; implemented as a UXL Launcher theme by Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>LightGray</BackColor>
+        <ForeColor>Black</ForeColor>
+      </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
+      
+      <GroupBox>
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Yellow</BackColor>
+        <ForeColor>Black</ForeColor>
+      </FlowLayoutPanel>
+      
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <TableLayoutPanel>
+        <BackColor>Yellow</BackColor>
+        <ForeColor>Black</ForeColor>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
+      
+      <StatusBar>
+        <BackColor>LightGray</BackColor>
+      </StatusBar>
+      
+      <RadioButton>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </RadioButton>
+      
+      <TextBox>
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>White</BackColor>
+        <!-- Text color for menubar dropdown items. -->
+        <ForeColor>Black</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>White</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>White</EndColor>
+        </ImageMarginGradient>
+      </MenuItem>
+
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>White</BackColor>
+      </MenuBar>
+
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>Black</ForeColor>
+
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        <BorderSides>All</BorderSides>
+
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        <BorderStyle>SunkenInner</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>

@@ -1,0 +1,88 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Default Theme</Title>
+  <Description>Default is the theme UXL Launcher ships with.</Description>
+  <Version>v1.1</Version>
+  <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Window</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </FlowLayoutPanel>
+      
+      <StatusBar>
+        <!--Specifying "LiteralNothing" allows the statusbar to appear
+        like it does without the theme engine enabled and the statusbar
+        back color will be set to "Nothing".-->
+        <BackColor>LiteralNothing</BackColor>
+      </StatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+      </Label>
+
+      <TextBox>
+        <BackColor>Window</BackColor>
+        <ForeColor>WindowText</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>Window</BackColor>
+        <!-- Text color for menubar dropdown items. -->
+        <ForeColor>ControlText</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+          
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>0xFCFCFC</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>0xF1F1F1</EndColor>
+        </ImageMarginGradient>
+      </MenuItem>
+
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>Control</BackColor>
+      </MenuBar>
+      
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>ControlText</ForeColor>
+        
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        <BorderSides>None</BorderSides>
+
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        <BorderStyle>Flat</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>
