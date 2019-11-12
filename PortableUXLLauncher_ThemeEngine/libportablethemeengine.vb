@@ -44,11 +44,27 @@ Public Class themeenginemain
     Public Shared themeSheetFileVersion As String
     ' Create string for version of Theme Engine the theme is compatible with.
     Public Shared themeSheetUseThemeEngineVersion As Decimal
+
+    ' Create a variable for the toolstrip pro renderer.
+    Public Shared toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
+    ' Create a string to store the theme name.
+    Public Shared themeName As String = ""
+
     ' Specify whether to output debug info.
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
-    Public Shared Sub themeEngine_ApplyTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer)
+    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True)
+        If isFilename = True Then
+            userTheme.Load(Directory.GetCurrentDirectory & "\Themes\" & themeInput)
+        ElseIf isFilename = False Then
+            userTheme.LoadXml(themeInput)
+        End If
+
+        ApplyTheme(themeName, formToApplyTo)
+    End Sub
+
+    Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form)
 #Region "Read XML Theme Document."
         ' Parse the test theme XML document and apply stuff that's in it.
         Dim themeSheet As XmlDocument = New XmlDocument()
@@ -1295,7 +1311,7 @@ Public Class themeenginemain
         End If
 
         ' Apply the theme.
-        themeenginemain.themeEngine_ApplyTheme(themeName, formToApplyTo, toolstripProRenderer)
+        themeenginemain.ApplyTheme(themeName, formToApplyTo)
     End Sub
 #End Region
 #End Region
