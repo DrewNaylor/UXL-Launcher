@@ -146,7 +146,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Name = "tabcontrolOptionsWindow"
         Me.tabcontrolOptionsWindow.SelectedIndex = 0
         Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(430, 352)
-        Me.tabcontrolOptionsWindow.TabIndex = 1
+        Me.tabcontrolOptionsWindow.TabIndex = 0
         '
         'tabpageGeneral
         '
