@@ -1208,7 +1208,7 @@ Public Class UXLLauncher_ThemeEngine
         ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
 
         ' First, remove the double-quotes from the custom theme path.
-        ' This was moved up here so that it can be refered to in other
+        ' This was moved up here so that it can be referred to in other
         ' parts of this sub.
         Dim tempRemoveQuotesInCustomThemePath As String = My.Settings.userCustomThemePath.Replace("""", "")
 
