@@ -967,10 +967,7 @@ Public Class PortableThemeEngine
                 '    ' them to change their colors.
                 '    ctrl = ctrl.GetNextControl(ctrl, True)
 
-            ElseIf TypeOf ctrl Is Panel Then
-                ' Panels aren't yet fully supported and this is just a placeholder.
-                ctrl.BackColor = colorTableLayoutPanelBackColor
-                ctrl.ForeColor = colorTableLayoutPanelForeColor
+
 
             ElseIf TypeOf ctrl Is Button Then
                 ' If the control is a button, theme it as a button.
@@ -1168,6 +1165,11 @@ Public Class PortableThemeEngine
                     ctrl.BackColor = colorTabPageBackColor
                     ctrl.ForeColor = colorTabPageForeColor
                 End If
+
+                'ElseIf TypeOf ctrl Is Panel Then
+                '    ' Panels aren't yet fully supported and this is just a placeholder.
+                '    ctrl.BackColor = colorTableLayoutPanelBackColor
+                '    ctrl.ForeColor = colorTableLayoutPanelForeColor
 
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
                 ' Apply dark/light banners in the About window if the theme
