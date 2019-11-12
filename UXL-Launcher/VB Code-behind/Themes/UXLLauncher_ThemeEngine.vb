@@ -951,7 +951,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
-        If Not formToApplyTo.Name = "aaformMainWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
+        If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
             ' If the theme doesn't support TE1.03, apply defaults.
             ' Default button colors.
             colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
