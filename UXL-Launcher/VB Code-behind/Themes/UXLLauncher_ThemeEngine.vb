@@ -987,6 +987,10 @@ Public Class UXLLauncher_ThemeEngine
             colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
             colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
+            ' Default Dropdown box/ComboBox colors.
+            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
         Else
 
 
