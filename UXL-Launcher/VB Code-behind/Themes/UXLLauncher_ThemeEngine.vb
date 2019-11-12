@@ -1000,6 +1000,10 @@ Public Class UXLLauncher_ThemeEngine
             ' Default About window banner.
             bannerStyle = My.Resources.UXL_Launcher_Banner
 
+            'Default FlowLayoutPanel colors.
+            colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
+            colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
         End If
 
 
@@ -1123,26 +1127,26 @@ Public Class UXLLauncher_ThemeEngine
                     ctrl.ForeColor = colorTabPageForeColor
 
                 ElseIf TypeOf ctrl Is TableLayoutPanel Then
-                    ' If the control is a tablelayoutpanel, theme it as such.
-                    ' TableLayoutPanel BackColor.
-                    ctrl.BackColor = colorTableLayoutPanelBackColor
-                    ' TableLayoutPanel ForeColor.
-                    ctrl.ForeColor = colorTableLayoutPanelForeColor
+                ' If the control is a tablelayoutpanel, theme it as such.
+                ' TableLayoutPanel BackColor.
+                ctrl.BackColor = colorTableLayoutPanelBackColor
+                ' TableLayoutPanel ForeColor.
+                ctrl.ForeColor = colorTableLayoutPanelForeColor
 
-                    ' If the theme doesn't want to apply to the table layout panel
-                    ' in the About window About tab, apply the tab page back color
-                    ' and forecolor instead.
-                    If ctrl.Name = "tableLayoutPanelAboutAppTab" AndAlso useTableLayoutPanelColorInsideAboutAppTab = False Then
-                        ctrl.BackColor = colorTabPageBackColor
-                        ctrl.ForeColor = colorTabPageForeColor
-                    End If
+                ' If the theme doesn't want to apply to the table layout panel
+                ' in the About window About tab, apply the tab page back color
+                ' and forecolor instead.
+                If ctrl.Name = "tableLayoutPanelAboutAppTab" AndAlso useTableLayoutPanelColorInsideAboutAppTab = False Then
+                    ctrl.BackColor = colorTabPageBackColor
+                    ctrl.ForeColor = colorTabPageForeColor
+                End If
 
-                ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
-                    ' Apply dark/light banners in the About window if the theme
-                    ' wants to.
-                    ' Create a local PictureBox control since "Image" isn't a thing in
-                    ' "Control" by default.
-                    Dim picturebox As PictureBox = CType(ctrl, PictureBox)
+            ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
+                ' Apply dark/light banners in the About window if the theme
+                ' wants to.
+                ' Create a local PictureBox control since "Image" isn't a thing in
+                ' "Control" by default.
+                Dim picturebox As PictureBox = CType(ctrl, PictureBox)
                     picturebox.Image = bannerStyle
 
 
