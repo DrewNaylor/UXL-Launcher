@@ -55,12 +55,13 @@ Public Class themeenginemain
 
 
     Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True)
-        If isFilename = True Then
-            userTheme.Load(Directory.GetCurrentDirectory & "\Themes\" & themeInput)
+        Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
+
+        If isFilename = True AndAlso File.Exists(themesDir & themeInput) Then
+            userTheme.Load(themesDir & themeInput)
         ElseIf isFilename = False Then
             userTheme.LoadXml(themeInput)
         End If
-
         ApplyTheme(themeName, formToApplyTo)
     End Sub
 
