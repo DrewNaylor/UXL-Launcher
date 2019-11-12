@@ -117,7 +117,7 @@ Partial Class aaformOptionsWindow
         Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(2, 2, 8, 2)
         Me.buttonSaveSettings.Name = "buttonSaveSettings"
         Me.buttonSaveSettings.Size = New System.Drawing.Size(70, 28)
-        Me.buttonSaveSettings.TabIndex = 0
+        Me.buttonSaveSettings.TabIndex = 9
         Me.buttonSaveSettings.Text = "Save"
         Me.buttonSaveSettings.UseVisualStyleBackColor = True
         '
@@ -130,7 +130,7 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonCancel.Name = "buttonCancel"
         Me.buttonCancel.Size = New System.Drawing.Size(72, 28)
-        Me.buttonCancel.TabIndex = 1
+        Me.buttonCancel.TabIndex = 8
         Me.buttonCancel.Text = "Cancel"
         Me.buttonCancel.UseVisualStyleBackColor = True
         '
@@ -146,7 +146,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Name = "tabcontrolOptionsWindow"
         Me.tabcontrolOptionsWindow.SelectedIndex = 0
         Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(430, 352)
-        Me.tabcontrolOptionsWindow.TabIndex = 3
+        Me.tabcontrolOptionsWindow.TabIndex = 1
         '
         'tabpageGeneral
         '
@@ -193,7 +193,7 @@ Partial Class aaformOptionsWindow
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 17)
-        Me.checkboxO365InstallMethod.TabIndex = 3
+        Me.checkboxO365InstallMethod.TabIndex = 5
         Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility"
         Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
@@ -216,7 +216,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
-        Me.comboboxOfficeVersionSelector.TabIndex = 1
+        Me.comboboxOfficeVersionSelector.TabIndex = 4
         '
         'groupboxOfficeLocation
         '
@@ -499,7 +499,7 @@ Partial Class aaformOptionsWindow
         Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(216, 93)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
         Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
-        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 7
+        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 3
         Me.checkboxMatchWindows10ThemeSettings.Text = "Match Windows 10 theme settings"
         Me.tooltipMatchWindows10ThemeSettings.SetToolTip(Me.checkboxMatchWindows10ThemeSettings, "If the system theme is set to Light, then the Default theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will be applied on a" &
         "pp startup." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If the system theme is set to Dark, then the TenDark theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will " &
@@ -585,7 +585,7 @@ Partial Class aaformOptionsWindow
         Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonTestSettings.Name = "buttonTestSettings"
         Me.buttonTestSettings.Size = New System.Drawing.Size(77, 28)
-        Me.buttonTestSettings.TabIndex = 4
+        Me.buttonTestSettings.TabIndex = 7
         Me.buttonTestSettings.Text = "Test settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
         '
@@ -597,7 +597,7 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
         Me.buttonDefaultSettings.Size = New System.Drawing.Size(59, 28)
-        Me.buttonDefaultSettings.TabIndex = 2
+        Me.buttonDefaultSettings.TabIndex = 6
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
