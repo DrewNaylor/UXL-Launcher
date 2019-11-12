@@ -991,11 +991,11 @@ Public Class UXLLauncher_ThemeEngine
             colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
             colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
-        Else
+        End If
 
 
 
-            Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
+        Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
             Do Until ctrl Is Nothing
                 'MessageBox.Show(ctrl.Name.ToString)
 
@@ -1259,8 +1259,6 @@ Public Class UXLLauncher_ThemeEngine
             End Try
 
 #End Region
-
-        End If
 
 #Region "Theming for theme files compatible with TE 1.03 or greater."
         '#Region "About window and Theme file supports TE 1.03"
