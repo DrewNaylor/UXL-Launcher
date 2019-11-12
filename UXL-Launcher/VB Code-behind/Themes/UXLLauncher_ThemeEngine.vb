@@ -945,12 +945,14 @@ Public Class UXLLauncher_ThemeEngine
 
 
 
-#Region "Set colors for controls in groupboxes."
+#Region "Set colors for controls."
 
-        ' Look at all the controls in the main window FlowLayoutPanel and change their theme.
+        ' Look at all the controls in the forms passed to the theme engine and change their theme.
         ' Code based on this VBForums post:
         ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
+#Region "Default colors to forms that aren't supported by TE1.02 or lower."
+        ' Apply default colors to forms that aren't supported by TE1.02 or lower.
         If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
             ' If the theme doesn't support TE1.03, apply defaults.
             ' Default button colors.
@@ -1005,128 +1007,128 @@ Public Class UXLLauncher_ThemeEngine
             colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
         End If
+#End Region
 
-
-
+#Region "Now apply colors to controls in each form passed to the theme engine."
         Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
-            Do Until ctrl Is Nothing
-                'MessageBox.Show(ctrl.Name.ToString)
+        Do Until ctrl Is Nothing
+            'MessageBox.Show(ctrl.Name.ToString)
 
-                If TypeOf ctrl Is GroupBox Then
-                    ' If the control is a groupbox, theme it as a groupbox.
-                    ctrl.BackColor = colorGroupBoxBackColor
-                    ctrl.ForeColor = colorGroupBoxForeColor
+            If TypeOf ctrl Is GroupBox Then
+                ' If the control is a groupbox, theme it as a groupbox.
+                ctrl.BackColor = colorGroupBoxBackColor
+                ctrl.ForeColor = colorGroupBoxForeColor
 
-                ElseIf TypeOf ctrl Is Button Then
-                    ' If the control is a button, theme it as a button.
-                    ' We have to define a button locally since "FlatStyle"
-                    ' isn't something that Control types have by default.
-                    Dim button As Button = CType(ctrl, Button)
-                    ' Set button BackColor (background color).
-                    button.BackColor = colorButtonBackColor
-                    ' Set button ForeColor (text color).
-                    button.ForeColor = colorButtonForeColor
-                    ' Set button style, whether that be flat, "Standard", or another
-                    ' supported style.
-                    button.FlatStyle = flatstyleButtonFlatStyle
+            ElseIf TypeOf ctrl Is Button Then
+                ' If the control is a button, theme it as a button.
+                ' We have to define a button locally since "FlatStyle"
+                ' isn't something that Control types have by default.
+                Dim button As Button = CType(ctrl, Button)
+                ' Set button BackColor (background color).
+                button.BackColor = colorButtonBackColor
+                ' Set button ForeColor (text color).
+                button.ForeColor = colorButtonForeColor
+                ' Set button style, whether that be flat, "Standard", or another
+                ' supported style.
+                button.FlatStyle = flatstyleButtonFlatStyle
 
-                    ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
-                    ' Note that this can be any valid HTML or system color, including "Nothing"
-                    ' ("Nothing" is the default value based on my testing).
-                    ' Using "Transparent" causes a System.NotSupportedException
-                    ' exception, so add a try...catch block and explain in the debug output.
-                    Try
-                        button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
-                    Catch ex As System.NotSupportedException
-                        ' If the useThemeEngineVersion element in the theme is
-                        ' greater than or equal to 1.02, also set bordercolor
-                        ' to "Nothing".
+                ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+                ' Note that this can be any valid HTML or system color, including "Nothing"
+                ' ("Nothing" is the default value based on my testing).
+                ' Using "Transparent" causes a System.NotSupportedException
+                ' exception, so add a try...catch block and explain in the debug output.
+                Try
+                    button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+                Catch ex As System.NotSupportedException
+                    ' If the useThemeEngineVersion element in the theme is
+                    ' greater than or equal to 1.02, also set bordercolor
+                    ' to "Nothing".
 
-                        ' This is being done in an exception, so it should
-                        ' work just fine in regular usage when things work.
-                        If themeSheetUseThemeEngineVersion >= 1.02 Then
-                            button.FlatAppearance.BorderColor = Nothing
-                        End If
-                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                    End Try
+                    ' This is being done in an exception, so it should
+                    ' work just fine in regular usage when things work.
+                    If themeSheetUseThemeEngineVersion >= 1.02 Then
+                        button.FlatAppearance.BorderColor = Nothing
+                    End If
+                    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                End Try
 
-                    ' Now change the color for when the mouse clicks down
-                    ' on a button and the flat appearance is set to flat.
-                    button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
+                ' Now change the color for when the mouse clicks down
+                ' on a button and the flat appearance is set to flat.
+                button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
 
-                    ' Change the color for when the mouse goes over
-                    ' a button and the flat appearance is set to flat.
-                    button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
+                ' Change the color for when the mouse goes over
+                ' a button and the flat appearance is set to flat.
+                button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
 
-                ElseIf TypeOf ctrl Is ComboBox Then
+            ElseIf TypeOf ctrl Is ComboBox Then
 
-                    Try ' Try to apply the dropdown backcolor.
-                        ctrl.BackColor = colorDropdownBackColor
-                    Catch ex As ArgumentException
-                        ' Now, make sure the background isn't transparent.
-                        ' Dropdown boxes/comboboxes don't support transparent backgrounds.
-                        ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
-                    End Try
-                    ' Now do the forecolor.
-                    ctrl.ForeColor = colorDropdownForeColor
+                Try ' Try to apply the dropdown backcolor.
+                    ctrl.BackColor = colorDropdownBackColor
+                Catch ex As ArgumentException
+                    ' Now, make sure the background isn't transparent.
+                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+                    ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                End Try
+                ' Now do the forecolor.
+                ctrl.ForeColor = colorDropdownForeColor
 
-                ElseIf TypeOf ctrl Is CheckBox Then
-                    ' If the control is a checkbox, theme it as such.
-                    ' CheckBox BackColor.
-                    ctrl.BackColor = colorCheckBoxBackColor
-                    ' CheckBox ForeColor.
-                    ctrl.ForeColor = colorCheckBoxForeColor
+            ElseIf TypeOf ctrl Is CheckBox Then
+                ' If the control is a checkbox, theme it as such.
+                ' CheckBox BackColor.
+                ctrl.BackColor = colorCheckBoxBackColor
+                ' CheckBox ForeColor.
+                ctrl.ForeColor = colorCheckBoxForeColor
 
-                ElseIf TypeOf ctrl Is FlowLayoutPanel Then
-                    ' If the control is a flowlayoutpanel, theme it as such.
-                    ' FlowLayoutPanel BackColor.
-                    ctrl.BackColor = colorFlowLayoutPanelBackColor
-                    ' FlowLayoutPanel ForeColor.
-                    ctrl.ForeColor = colorFlowLayoutPanelForeColor
+            ElseIf TypeOf ctrl Is FlowLayoutPanel Then
+                ' If the control is a flowlayoutpanel, theme it as such.
+                ' FlowLayoutPanel BackColor.
+                ctrl.BackColor = colorFlowLayoutPanelBackColor
+                ' FlowLayoutPanel ForeColor.
+                ctrl.ForeColor = colorFlowLayoutPanelForeColor
 
-                ElseIf TypeOf ctrl Is LinkLabel Then
-                    ' If the control is a LinkLabel, theme it appropriately.
-                    ' Define a linklabel locally since there are things it has
-                    ' that Control doesn't have by default.
+            ElseIf TypeOf ctrl Is LinkLabel Then
+                ' If the control is a LinkLabel, theme it appropriately.
+                ' Define a linklabel locally since there are things it has
+                ' that Control doesn't have by default.
 
-                    ' This needs to be above the "Label" entry as otherwise
-                    ' the colors won't apply to linklabels for the linkcolor
-                    ' and activelinkcolor properties.
-                    Dim linklabel As LinkLabel = CType(ctrl, LinkLabel)
-                    linklabel.BackColor = colorLinkLabelBackColor
-                    linklabel.ForeColor = colorLinkLabelForeColor
-                    linklabel.LinkColor = colorLinkLabelLinkColor
-                    linklabel.ActiveLinkColor = colorLinkLabelActiveLinkColor
+                ' This needs to be above the "Label" entry as otherwise
+                ' the colors won't apply to linklabels for the linkcolor
+                ' and activelinkcolor properties.
+                Dim linklabel As LinkLabel = CType(ctrl, LinkLabel)
+                linklabel.BackColor = colorLinkLabelBackColor
+                linklabel.ForeColor = colorLinkLabelForeColor
+                linklabel.LinkColor = colorLinkLabelLinkColor
+                linklabel.ActiveLinkColor = colorLinkLabelActiveLinkColor
 
-                ElseIf TypeOf ctrl Is Label Then
-                    ' If the control is a label, theme it as a label.
-                    ' Set label BackColor (background color).
-                    ctrl.BackColor = colorLabelBackColor
-                    ' Set label ForeColor (text color).
-                    ctrl.ForeColor = colorLabelForeColor
+            ElseIf TypeOf ctrl Is Label Then
+                ' If the control is a label, theme it as a label.
+                ' Set label BackColor (background color).
+                ctrl.BackColor = colorLabelBackColor
+                ' Set label ForeColor (text color).
+                ctrl.ForeColor = colorLabelForeColor
 
-                ElseIf TypeOf ctrl Is TextBox Then
-                    ' If the control is a textbox, theme it as a textbox.
-                    ' Set textbox BackColor (background color).
-                    ctrl.BackColor = colorTextboxBackColor
-                    ' Set textbox ForeColor (text color).
-                    ctrl.ForeColor = colorTextboxForeColor
+            ElseIf TypeOf ctrl Is TextBox Then
+                ' If the control is a textbox, theme it as a textbox.
+                ' Set textbox BackColor (background color).
+                ctrl.BackColor = colorTextboxBackColor
+                ' Set textbox ForeColor (text color).
+                ctrl.ForeColor = colorTextboxForeColor
 
-                ElseIf TypeOf ctrl Is RadioButton Then
-                    ' If the control is a radiobutton, theme it as such.
-                    ' RadioButton BackColor.
-                    ctrl.BackColor = colorRadioButtonBackColor
-                    ' RadioButton ForeColor.
-                    ctrl.ForeColor = colorRadioButtonForeColor
+            ElseIf TypeOf ctrl Is RadioButton Then
+                ' If the control is a radiobutton, theme it as such.
+                ' RadioButton BackColor.
+                ctrl.BackColor = colorRadioButtonBackColor
+                ' RadioButton ForeColor.
+                ctrl.ForeColor = colorRadioButtonForeColor
 
-                ElseIf TypeOf ctrl Is TabPage Then
-                    ' If the control is a tabpage, theme it as such.
-                    ' TabPage BackColor.
-                    ctrl.BackColor = colorTabPageBackColor
-                    ' TabPage ForeColor.
-                    ctrl.ForeColor = colorTabPageForeColor
+            ElseIf TypeOf ctrl Is TabPage Then
+                ' If the control is a tabpage, theme it as such.
+                ' TabPage BackColor.
+                ctrl.BackColor = colorTabPageBackColor
+                ' TabPage ForeColor.
+                ctrl.ForeColor = colorTabPageForeColor
 
-                ElseIf TypeOf ctrl Is TableLayoutPanel Then
+            ElseIf TypeOf ctrl Is TableLayoutPanel Then
                 ' If the control is a tablelayoutpanel, theme it as such.
                 ' TableLayoutPanel BackColor.
                 ctrl.BackColor = colorTableLayoutPanelBackColor
@@ -1147,96 +1149,97 @@ Public Class UXLLauncher_ThemeEngine
                 ' Create a local PictureBox control since "Image" isn't a thing in
                 ' "Control" by default.
                 Dim picturebox As PictureBox = CType(ctrl, PictureBox)
-                    picturebox.Image = bannerStyle
+                picturebox.Image = bannerStyle
 
 
-                End If
+            End If
+
+            ' Get the next control in the tab order.
+            ctrl = formToApplyTo.GetNextControl(ctrl, True)
+        Loop
+#End Region
 
 
-                ctrl = formToApplyTo.GetNextControl(ctrl, True)
-            Loop
+        'For Each form As Form In My.Application.OpenForms
+        '    If form.Name = mainFormName Then
+        '        For Each groupbox As Control In form.flowLayoutPanel.Controls
+        '            ' Change colors in groupboxes.
+        '            If (groupbox.GetType() Is GetType(GroupBox)) Then
+        '                ' Change groupbox colors.
+        '                groupbox.BackColor = colorGroupBoxBackColor
+        '                groupbox.ForeColor = colorGroupBoxForeColor
 
+        '                For Each groupboxControl In groupbox.Controls
+        '                    ' If the control within the groupbox is a Button,
+        '                    ' change the button's theme colors.
+        '                    If (groupboxControl.GetType() Is GetType(Button)) Then
+        '                        Dim button As Button = CType(groupboxControl, Button)
+        '                        ' Set button BackColor (background color).
+        '                        button.BackColor = colorButtonBackColor
+        '                        ' Set button ForeColor (text color).
+        '                        button.ForeColor = colorButtonForeColor
+        '                        ' Set button style, whether that be flat, "Standard", or another
+        '                        ' supported style.
+        '                        button.FlatStyle = flatstyleButtonFlatStyle
 
-            'For Each form As Form In My.Application.OpenForms
-            '    If form.Name = mainFormName Then
-            '        For Each groupbox As Control In form.flowLayoutPanel.Controls
-            '            ' Change colors in groupboxes.
-            '            If (groupbox.GetType() Is GetType(GroupBox)) Then
-            '                ' Change groupbox colors.
-            '                groupbox.BackColor = colorGroupBoxBackColor
-            '                groupbox.ForeColor = colorGroupBoxForeColor
+        '                        ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
+        '                        ' Note that this can be any valid HTML or system color, including "Nothing"
+        '                        ' ("Nothing" is the default value based on my testing).
+        '                        ' Using "Transparent" causes a System.NotSupportedException
+        '                        ' exception, so add a try...catch block and explain in the debug output.
+        '                        Try
+        '                            button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
+        '                        Catch ex As System.NotSupportedException
+        '                            ' If the useThemeEngineVersion element in the theme is
+        '                            ' greater than or equal to 1.02, also set bordercolor
+        '                            ' to "Nothing".
 
-            '                For Each groupboxControl In groupbox.Controls
-            '                    ' If the control within the groupbox is a Button,
-            '                    ' change the button's theme colors.
-            '                    If (groupboxControl.GetType() Is GetType(Button)) Then
-            '                        Dim button As Button = CType(groupboxControl, Button)
-            '                        ' Set button BackColor (background color).
-            '                        button.BackColor = colorButtonBackColor
-            '                        ' Set button ForeColor (text color).
-            '                        button.ForeColor = colorButtonForeColor
-            '                        ' Set button style, whether that be flat, "Standard", or another
-            '                        ' supported style.
-            '                        button.FlatStyle = flatstyleButtonFlatStyle
+        '                            ' This is being done in an exception, so it should
+        '                            ' work just fine in regular usage when things work.
+        '                            If themeSheetUseThemeEngineVersion >= 1.02 Then
+        '                                button.FlatAppearance.BorderColor = Nothing
+        '                            End If
+        '                            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        '                        End Try
 
-            '                        ' Set button flat appearance border color if flatstyleButtonFlatStyle = Flat.
-            '                        ' Note that this can be any valid HTML or system color, including "Nothing"
-            '                        ' ("Nothing" is the default value based on my testing).
-            '                        ' Using "Transparent" causes a System.NotSupportedException
-            '                        ' exception, so add a try...catch block and explain in the debug output.
-            '                        Try
-            '                            button.FlatAppearance.BorderColor = flatappearanceButtonBorderColor
-            '                        Catch ex As System.NotSupportedException
-            '                            ' If the useThemeEngineVersion element in the theme is
-            '                            ' greater than or equal to 1.02, also set bordercolor
-            '                            ' to "Nothing".
+        '                        ' Now change the color for when the mouse clicks down
+        '                        ' on a button and the flat appearance is set to flat.
+        '                        button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
 
-            '                            ' This is being done in an exception, so it should
-            '                            ' work just fine in regular usage when things work.
-            '                            If themeSheetUseThemeEngineVersion >= 1.02 Then
-            '                                button.FlatAppearance.BorderColor = Nothing
-            '                            End If
-            '                            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-            '                        End Try
+        '                        ' Change the color for when the mouse goes over
+        '                        ' a button and the flat appearance is set to flat.
+        '                        button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
 
-            '                        ' Now change the color for when the mouse clicks down
-            '                        ' on a button and the flat appearance is set to flat.
-            '                        button.FlatAppearance.MouseDownBackColor = flatappearanceButtonMouseDownBackColor
-
-            '                        ' Change the color for when the mouse goes over
-            '                        ' a button and the flat appearance is set to flat.
-            '                        button.FlatAppearance.MouseOverBackColor = flatappearanceButtonMouseOverBackColor
-
-            '                        ' If the control in the groupbox is a label,
-            '                        ' change the label's colors.
-            '                    ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
-            '                        Dim label As Label = CType(groupboxControl, Label)
-            '                        ' Set label BackColor (background color).
-            '                        label.BackColor = colorLabelBackColor
-            '                        ' Set label ForeColor (text color).
-            '                        label.ForeColor = colorLabelForeColor
-            '                        ' Look at all the textboxes in all the groupboxes and change their theme.
-            '                    ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
-            '                        Dim textbox As TextBox = CType(groupboxControl, TextBox)
-            '                        ' Set textbox BackColor (background color).
-            '                        textbox.BackColor = colorTextboxBackColor
-            '                        ' Set textbox ForeColor (text color).
-            '                        textbox.ForeColor = colorTextboxForeColor
-            '                    End If
-            '                Next
-            '            End If
-            '            ' Go to next control, known as "groupbox" here.
-            '        Next
-            '    End If
-            'Next
+        '                        ' If the control in the groupbox is a label,
+        '                        ' change the label's colors.
+        '                    ElseIf (groupboxControl.GetType() Is GetType(Label)) Then
+        '                        Dim label As Label = CType(groupboxControl, Label)
+        '                        ' Set label BackColor (background color).
+        '                        label.BackColor = colorLabelBackColor
+        '                        ' Set label ForeColor (text color).
+        '                        label.ForeColor = colorLabelForeColor
+        '                        ' Look at all the textboxes in all the groupboxes and change their theme.
+        '                    ElseIf (groupboxControl.GetType() Is GetType(TextBox)) Then
+        '                        Dim textbox As TextBox = CType(groupboxControl, TextBox)
+        '                        ' Set textbox BackColor (background color).
+        '                        textbox.BackColor = colorTextboxBackColor
+        '                        ' Set textbox ForeColor (text color).
+        '                        textbox.ForeColor = colorTextboxForeColor
+        '                    End If
+        '                Next
+        '            End If
+        '            ' Go to next control, known as "groupbox" here.
+        '        Next
+        '    End If
+        'Next
 
 
 #End Region
 
 #Region "Set colors for menubar entries."
 
-            ' Set color for menubar.
-            toolstripProRenderer.BackColor = colorMenubarBackColor
+        ' Set color for menubar.
+        toolstripProRenderer.BackColor = colorMenubarBackColor
             toolstripProRenderer.ForeColor = colorMenuItemForeColor
             toolstripProRenderer.DropdownBackColor = colorMenuItemBackColor
             toolstripProRenderer.ImageMarginGradientStartColor = colorMenuItemImageMarginGradientStartColor
