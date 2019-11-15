@@ -1,16 +1,16 @@
-# What is UXL Launcher?
+# UXL Launcher
 
-Project build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher)
+An app launcher meant to launch Microsoft Office 2010, 2013, 2016, 2019 desktop software/apps, including ones from Office 365. Not associated with Microsoft.
 
-Master branch build status: [![Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master)
+| Overall project status | Master branch status |
+|------------------------------------------------------------------------|----------------------------|
+| [![Project Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher) | [![Master branch Build status](https://ci.appveyor.com/api/projects/status/kfmjn85sp78xb398/branch/master?svg=true)](https://ci.appveyor.com/project/DrewNaylor/uxl-launcher/branch/master) |
 
-
-
-UXL Launcher (Unified eXecutable Launcher) is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
+UXL Launcher (Unified eXecutable Launcher) allows you to launch most desktop Microsoft Office apps (Office 2010, 2013, 2016, and 2019 are supported [with the exception of Office 2010 Home and Student and Home and Business for now](https://github.com/DrewNaylor/UXL-Launcher/issues/70)) from one place instead of just using a folder with shortcuts to the apps, having a messy desktop with shortcuts, or trying to search through the Start menu for the app you want. Some apps, such as Skype, Skype for Business, Teams, Sway, and a few others aren't supported yet.
 
 ![](/UXL-Launcher/Resources/UXL-Standalone-Icon.png?raw=true)
 
-UXL Launcher allows the user to launch Microsoft Office apps from one place instead of just using a folder with shortcuts to the apps.
+UXL Launcher is the successor to "Drew's App Launcher," and the first stable release was version 3.0 to show the relationship between Drew's App Launcher (last official release is 2.8.x) and UXL Launcher (first official release was 3.0.)
 
 Please be aware that UXL Launcher is unofficial and not made by Microsoft.
 
@@ -18,7 +18,7 @@ The readme continues after this notice.
 
 ```
 UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-Copyright (C) 2013-2018 Drew Naylor
+Copyright (C) 2013-2019 Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation. More details in the About window.
 Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -121,6 +121,8 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
 
+- **UXL Launcher might not work with Office 2010 Home and Student and Home and Business.** [(issue #70)](https://github.com/DrewNaylor/UXL-Launcher/issues/70)
+
 - Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
 - If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
@@ -130,6 +132,12 @@ More information to come in the future! In the meantime, please check the reposi
 - ~~If the main window is minimized, "Hide When Minimized" is enabled, and a program couldn't be found when using the Quickmenu to open a program, the error message won't be on top. [(issue #125)](https://github.com/DrewNaylor/UXL-Launcher/issues/125)~~ Needs verification; might not be an actual problem
 
 - ~~Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)~~ Fixed in [9dc5474](https://github.com/DrewNaylor/UXL-Launcher/commit/9dc5474e2a4e11e3cbd98ba7e50d9c0550aadd0b)
+
+- "TenDark" theme button highlight colors are a bit hard to see. [(issue #140)]( https://github.com/DrewNaylor/UXL-Launcher/issues/140 )
+
+- If the Drive Location textbox length requirement isn't met when using "Test settings", you can't type anything into the textbox after closing the warning messagebox and before the settings are tested. [(issue #142)](https://github.com/DrewNaylor/UXL-Launcher/issues/142 )
+
+- If the Options window or the About window are open, focus can be sent to the main window by using "Show UXL Launcher" in the Quickmenu and more About windows can be opened by navigating with the keyboard. [(issue #144)](https://github.com/DrewNaylor/UXL-Launcher/issues/144)
 
 <br>
 <br>
@@ -157,6 +165,8 @@ To run UXL Launcher, your computer requires the following:
   - 64-bit: 3 GB space free.
 
 - Note that you might have problems with running this on corporate computers. The ClickOnce security settings are disabled in UXL Launcher due to Visual Studio building problems. There may also be a warning message on first start about Windows Defender SmartScreen saying it "prevented an unrecognized app from starting. Running this app might put your PC at risk." You can click the "More info" link, then the "Run anyway" button if you want to use it, though this may not be allowed on corporate networks.
+
+- Disk space, RAM, and CPU frequency requirements are based on the .Net Framework 4.6.1 requirements. UXL Launcher itself is quite small.
 
 ## Building UXL Launcher from Source: System Requirements and Guide
 

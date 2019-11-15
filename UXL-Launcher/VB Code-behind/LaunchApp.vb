@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2018 Drew Naylor
+'Copyright (C) 2013-2019 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -43,13 +43,26 @@ Public Class LaunchApp
 #Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft OneNote Launcher Code."
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote")
+        End If
     End Sub
 #End Region
 #Region "Microsoft Outlook Launcher Code."
@@ -67,7 +80,13 @@ Public Class LaunchApp
 #Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace")
+        End If
     End Sub
 #End Region
 #Region "Microsoft Publisher Launcher Code."
@@ -97,7 +116,13 @@ Public Class LaunchApp
 #Region "Microsoft Office Picture Manager Launcher Code."
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+            isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager")
+        End If
     End Sub
 #End Region
 #Region "Microsoft OneNote Quick Launch Launcher Code."

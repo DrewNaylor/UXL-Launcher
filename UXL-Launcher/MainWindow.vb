@@ -1,5 +1,5 @@
-﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2018 Drew Naylor
+'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
+'Copyright (C) 2013-2019 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -73,8 +73,10 @@ Public Class aaformMainWindow
             menubarRevertThemeButton.Visible = True
             menubarRevertThemeButton.Enabled = True
 
-            ' Next, choose the user's theme and apply it.
-            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            ' If the user wants to match the Windows 10 theme, then do so,
+            ' but if not, then the user's chosen theme will be used instead.
+            ' Code moved to its own sub to make editing easier.
+            WindowsThemeSettings.checkIfUserWantsToMatchTheme()
 
             ' Then, give the menubar a renderer.
             menubarMainWindow.Renderer = UXLToolstripRenderer
@@ -240,8 +242,29 @@ Public Class aaformMainWindow
         ' for that file type.
         If openfiledialogOpenDocument.ShowDialog = DialogResult.OK Then
             ' If the user clicks the "OK" button, open the file.
-            ' Note that this can also open EXE files and run them.
-            Process.Start(openfiledialogOpenDocument.FileName)
+            ' Make sure that the file isn't executable before running it.
+            ' Assign filename in open file dialog to string.
+            Dim fileName As String = openfiledialogOpenDocument.FileName.ToUpperInvariant
+            ' Now, make sure the list of unsafe extensions does NOT contain
+            ' this file's extension.
+            ' If it does, don't open it, and tell the user if that setting is
+            ' enabled.
+            If My.Resources.unsafeExtensions_TXT.Contains(IO.Path.GetExtension(fileName)) Then
+                If My.Settings.showUnsafeFileExtensionBlockedMessage = True Then
+                    MessageBox.Show(Me, "The file """ & openfiledialogOpenDocument.FileName & """ was blocked from being opened because """ & IO.Path.GetExtension(openfiledialogOpenDocument.FileName) & """ is a potentially unsafe extension.", "Open", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Else
+                ' If the file name's extension isn't in the list of blocked extensions,
+                ' then use Process.Start to open the file.
+                ' Catch System.ComponentModel.Win32Exception exceptions, common if
+                ' a file extension doesn't have a program assigned to it.
+                Try
+                    Process.Start(fileName)
+                Catch ex As System.ComponentModel.Win32Exception
+                    MessageBox.Show(Me, "The file extension """ & IO.Path.GetExtension(openfiledialogOpenDocument.FileName) & """ doesn't have a program assigned to it. You can use the ""Open with..."" menu to select a program to open it with." & vbCrLf & vbCrLf &
+                                    "File name and path: " & openfiledialogOpenDocument.FileName, "Open")
+                End Try
+            End If
         End If
     End Sub
 
@@ -288,31 +311,47 @@ Public Class aaformMainWindow
 #End Region
 #End Region
 
+    ' Allow the About window to be accessed from the theme engine.
+    Friend Shared forceAboutWindowTab As New aaformAboutWindow
+
+    ' Allow the Options window to be accessed from the theme engine.
+    ' In Version 3.3, this also prevents opening
+    ' multiple Options windows from the Quickmenu or from the main window by
+    ' clicking the "Show UXL Launcher" button in the Quickmenu, pressing Alt,
+' then navigating to the Tools>Options... button. That navigation bug should be worked on
+    ' and described in a bug report, but it's not easy to hit.
+    Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
+
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceOptionsWindowTab As New aaformOptionsWindow
-        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog(Me)
+        showOptionsWindow() ' This code was moved to its own sub.
+    End Sub
+
+    Private Sub showOptionsWindow()
+        Try ' We need to make sure the Options window isn't open yet.
+            forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+            forceOptionsWindowTab.ShowDialog(Me)
+        Catch ex As InvalidOperationException
+            ' If it is open, focus it.
+            forceOptionsWindowTab.Focus()
+        End Try
     End Sub
 
 #Region "Help menubar buttons."
     Private Sub menubarAboutButton_Click(sender As Object, e As EventArgs) Handles menubarAboutButton.Click
         ' Open the About window to About tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(0)
         forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarLicenseButton_Click(sender As Object, e As EventArgs) Handles menubarLicenseButton.Click
         ' Open the About window to License tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(1)
         forceAboutWindowTab.ShowDialog(Me)
     End Sub
 
     Private Sub menubarAuthorsButton_Click(sender As Object, e As EventArgs) Handles menubarAuthorsButton.Click
         ' Open the About window to Acknowledgements tab. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceAboutWindowTab As New aaformAboutWindow
         forceAboutWindowTab.tabcontrolAboutWindow.SelectTab(2)
         forceAboutWindowTab.ShowDialog(Me)
     End Sub
@@ -328,7 +367,7 @@ Public Class aaformMainWindow
         ' Attempt to revert to the default theme.
         If My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            themeApplier()
         End If
     End Sub
 #End Region
@@ -526,9 +565,7 @@ Public Class aaformMainWindow
 
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        Dim forceOptionsWindowTab As New aaformOptionsWindow
-        forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-        forceOptionsWindowTab.ShowDialog(Me)
+        showOptionsWindow() ' This code was moved to its own sub.
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click
@@ -542,15 +579,31 @@ Public Class aaformMainWindow
     Private Sub debugButtonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonTestThemeSetter.Click
         ' Attempt to apply the theme the user chose.
         If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            themeChooser()
         End If
+    End Sub
+
+    Public Shared Sub themeChooser()
+        ' This is the list of forms that the theme engine applies stuff to
+        ' when choosing the theme on its own.
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceAboutWindowTab, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceOptionsWindowTab, UXLToolstripRenderer)
+    End Sub
+
+    Public Shared Sub themeApplier()
+        ' This is the list of forms that the theme engine applies stuff to
+        ' when the theme is pre-specified.
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceAboutWindowTab, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceOptionsWindowTab, UXLToolstripRenderer)
     End Sub
 
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
         ' Attempt to apply the default theme.
         If My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+            themeApplier()
             ' First make sure theme engine output is enabled.
             If My.Settings.debugmodeShowThemeEngineOutput = True Then
                 Debug.WriteLine("userTheme:")

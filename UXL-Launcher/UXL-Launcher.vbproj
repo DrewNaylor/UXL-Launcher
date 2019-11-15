@@ -28,7 +28,7 @@
     <ProductName>UXL Launcher</ProductName>
     <PublisherName>Drew Naylor</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>3.2.0.%2a</ApplicationVersion>
+    <ApplicationVersion>3.3.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -143,6 +143,7 @@
     <Compile Include="VB Code-behind\LaunchApp.vb" />
     <Compile Include="VB Code-behind\OfficeLocater.vb" />
     <Compile Include="VB Code-behind\Themes\UXLLauncher_ThemeEngine.vb" />
+    <Compile Include="VB Code-behind\Themes\WindowsThemeSettings.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainWindow.resx">
@@ -150,9 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionsWindow.resx">
       <DependentUpon>OptionsWindow.vb</DependentUpon>
@@ -196,12 +197,18 @@
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
     <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
+    <Content Include="VB Code-behind\Themes\TenDarkTheme_XML.xml" />
+    <None Include="Resources\unsafeExtensions_TXT.txt" />
+    <None Include="Resources\DARK_UXL-Launcher-Banner.png" />
+    <Content Include="VB Code-behind\Themes\MittyTheme_XML.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="VB Code-behind\Themes\MaudernClassicTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\RGBTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\MaudernTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\EyesoreTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\DefaultTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\ReturnOfNightTheme_XML.xml" />
-    <Content Include="VB Code-behind\Themes\Test2Theme_XML.xml" />
     <Content Include="VB Code-behind\Themes\Eyesore2Theme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
     <None Include="Resources\Word.png" />

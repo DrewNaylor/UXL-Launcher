@@ -27,9 +27,9 @@ Partial Class aaformAboutWindow
         Me.buttonClose = New System.Windows.Forms.Button()
         Me.tabcontrolAboutWindow = New System.Windows.Forms.TabControl()
         Me.tabpageAbout = New System.Windows.Forms.TabPage()
-        Me.tableLayoutPanelAboutApp = New System.Windows.Forms.TableLayoutPanel()
+        Me.tableLayoutPanelAboutAppTab = New System.Windows.Forms.TableLayoutPanel()
         Me.pictureboxUXLBanner = New System.Windows.Forms.PictureBox()
-        Me.flowLayoutPanelButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.flowLayoutPanelLinkLabels = New System.Windows.Forms.FlowLayoutPanel()
         Me.linkRepository = New System.Windows.Forms.LinkLabel()
         Me.linkUpdateCheck = New System.Windows.Forms.LinkLabel()
         Me.linkMyWebsite = New System.Windows.Forms.LinkLabel()
@@ -41,9 +41,9 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.SuspendLayout()
         Me.tabcontrolAboutWindow.SuspendLayout()
         Me.tabpageAbout.SuspendLayout()
-        Me.tableLayoutPanelAboutApp.SuspendLayout()
+        Me.tableLayoutPanelAboutAppTab.SuspendLayout()
         CType(Me.pictureboxUXLBanner, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.flowLayoutPanelButtons.SuspendLayout()
+        Me.flowLayoutPanelLinkLabels.SuspendLayout()
         Me.tabpageLicense.SuspendLayout()
         Me.tabpageAcknowledgments.SuspendLayout()
         Me.SuspendLayout()
@@ -54,7 +54,7 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.96255!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.37086!))
         Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60706!))
-        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148.0!))
+        Me.tableLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158.0!))
         Me.tableLayoutPanel.Controls.Add(Me.buttonClose, 3, 1)
         Me.tableLayoutPanel.Controls.Add(Me.tabcontrolAboutWindow, 0, 0)
         Me.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -74,7 +74,7 @@ Partial Class aaformAboutWindow
         Me.buttonClose.Location = New System.Drawing.Point(454, 442)
         Me.buttonClose.Name = "buttonClose"
         Me.buttonClose.Size = New System.Drawing.Size(77, 26)
-        Me.buttonClose.TabIndex = 0
+        Me.buttonClose.TabIndex = 4
         Me.buttonClose.Text = "Close"
         Me.buttonClose.UseVisualStyleBackColor = True
         '
@@ -87,13 +87,14 @@ Partial Class aaformAboutWindow
         Me.tabcontrolAboutWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolAboutWindow.Location = New System.Drawing.Point(3, 3)
         Me.tabcontrolAboutWindow.Name = "tabcontrolAboutWindow"
+        Me.tabcontrolAboutWindow.Padding = New System.Drawing.Point(0, 0)
         Me.tabcontrolAboutWindow.SelectedIndex = 0
         Me.tabcontrolAboutWindow.Size = New System.Drawing.Size(528, 433)
         Me.tabcontrolAboutWindow.TabIndex = 2
         '
         'tabpageAbout
         '
-        Me.tabpageAbout.Controls.Add(Me.tableLayoutPanelAboutApp)
+        Me.tabpageAbout.Controls.Add(Me.tableLayoutPanelAboutAppTab)
         Me.tabpageAbout.Location = New System.Drawing.Point(4, 22)
         Me.tabpageAbout.Name = "tabpageAbout"
         Me.tabpageAbout.Padding = New System.Windows.Forms.Padding(3)
@@ -102,27 +103,27 @@ Partial Class aaformAboutWindow
         Me.tabpageAbout.Text = "About"
         Me.tabpageAbout.UseVisualStyleBackColor = True
         '
-        'tableLayoutPanelAboutApp
+        'tableLayoutPanelAboutAppTab
         '
-        Me.tableLayoutPanelAboutApp.ColumnCount = 3
-        Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.49027!))
-        Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.72374!))
-        Me.tableLayoutPanelAboutApp.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.98055!))
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.pictureboxUXLBanner, 0, 0)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.flowLayoutPanelButtons, 1, 5)
-        Me.tableLayoutPanelAboutApp.Controls.Add(Me.textboxAboutApp, 1, 0)
-        Me.tableLayoutPanelAboutApp.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tableLayoutPanelAboutApp.Location = New System.Drawing.Point(3, 3)
-        Me.tableLayoutPanelAboutApp.Name = "tableLayoutPanelAboutApp"
-        Me.tableLayoutPanelAboutApp.RowCount = 6
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.12469!))
-        Me.tableLayoutPanelAboutApp.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.96758!))
-        Me.tableLayoutPanelAboutApp.Size = New System.Drawing.Size(514, 401)
-        Me.tableLayoutPanelAboutApp.TabIndex = 1
+        Me.tableLayoutPanelAboutAppTab.ColumnCount = 3
+        Me.tableLayoutPanelAboutAppTab.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.49027!))
+        Me.tableLayoutPanelAboutAppTab.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.72374!))
+        Me.tableLayoutPanelAboutAppTab.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.98055!))
+        Me.tableLayoutPanelAboutAppTab.Controls.Add(Me.pictureboxUXLBanner, 0, 0)
+        Me.tableLayoutPanelAboutAppTab.Controls.Add(Me.flowLayoutPanelLinkLabels, 1, 5)
+        Me.tableLayoutPanelAboutAppTab.Controls.Add(Me.textboxAboutApp, 1, 0)
+        Me.tableLayoutPanelAboutAppTab.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tableLayoutPanelAboutAppTab.Location = New System.Drawing.Point(3, 3)
+        Me.tableLayoutPanelAboutAppTab.Name = "tableLayoutPanelAboutAppTab"
+        Me.tableLayoutPanelAboutAppTab.RowCount = 6
+        Me.tableLayoutPanelAboutAppTab.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
+        Me.tableLayoutPanelAboutAppTab.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
+        Me.tableLayoutPanelAboutAppTab.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
+        Me.tableLayoutPanelAboutAppTab.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.374999!))
+        Me.tableLayoutPanelAboutAppTab.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.12469!))
+        Me.tableLayoutPanelAboutAppTab.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.96758!))
+        Me.tableLayoutPanelAboutAppTab.Size = New System.Drawing.Size(514, 401)
+        Me.tableLayoutPanelAboutAppTab.TabIndex = 1
         '
         'pictureboxUXLBanner
         '
@@ -130,23 +131,23 @@ Partial Class aaformAboutWindow
         Me.pictureboxUXLBanner.Image = Global.UXL_Launcher.My.Resources.Resources.UXL_Launcher_Banner
         Me.pictureboxUXLBanner.Location = New System.Drawing.Point(3, 3)
         Me.pictureboxUXLBanner.Name = "pictureboxUXLBanner"
-        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.pictureboxUXLBanner, 5)
+        Me.tableLayoutPanelAboutAppTab.SetRowSpan(Me.pictureboxUXLBanner, 5)
         Me.pictureboxUXLBanner.Size = New System.Drawing.Size(160, 341)
         Me.pictureboxUXLBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pictureboxUXLBanner.TabIndex = 0
         Me.pictureboxUXLBanner.TabStop = False
         '
-        'flowLayoutPanelButtons
+        'flowLayoutPanelLinkLabels
         '
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.flowLayoutPanelButtons, 2)
-        Me.flowLayoutPanelButtons.Controls.Add(Me.linkRepository)
-        Me.flowLayoutPanelButtons.Controls.Add(Me.linkUpdateCheck)
-        Me.flowLayoutPanelButtons.Controls.Add(Me.linkMyWebsite)
-        Me.flowLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.flowLayoutPanelButtons.Location = New System.Drawing.Point(169, 350)
-        Me.flowLayoutPanelButtons.Name = "flowLayoutPanelButtons"
-        Me.flowLayoutPanelButtons.Size = New System.Drawing.Size(342, 48)
-        Me.flowLayoutPanelButtons.TabIndex = 5
+        Me.tableLayoutPanelAboutAppTab.SetColumnSpan(Me.flowLayoutPanelLinkLabels, 2)
+        Me.flowLayoutPanelLinkLabels.Controls.Add(Me.linkRepository)
+        Me.flowLayoutPanelLinkLabels.Controls.Add(Me.linkUpdateCheck)
+        Me.flowLayoutPanelLinkLabels.Controls.Add(Me.linkMyWebsite)
+        Me.flowLayoutPanelLinkLabels.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flowLayoutPanelLinkLabels.Location = New System.Drawing.Point(169, 350)
+        Me.flowLayoutPanelLinkLabels.Name = "flowLayoutPanelLinkLabels"
+        Me.flowLayoutPanelLinkLabels.Size = New System.Drawing.Size(342, 48)
+        Me.flowLayoutPanelLinkLabels.TabIndex = 5
         '
         'linkRepository
         '
@@ -168,7 +169,7 @@ Partial Class aaformAboutWindow
         Me.linkUpdateCheck.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.linkUpdateCheck.Name = "linkUpdateCheck"
         Me.linkUpdateCheck.Size = New System.Drawing.Size(94, 13)
-        Me.linkUpdateCheck.TabIndex = 0
+        Me.linkUpdateCheck.TabIndex = 2
         Me.linkUpdateCheck.TabStop = True
         Me.linkUpdateCheck.Text = "Check for updates"
         '
@@ -180,24 +181,23 @@ Partial Class aaformAboutWindow
         Me.linkMyWebsite.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.linkMyWebsite.Name = "linkMyWebsite"
         Me.linkMyWebsite.Size = New System.Drawing.Size(100, 13)
-        Me.linkMyWebsite.TabIndex = 2
+        Me.linkMyWebsite.TabIndex = 3
         Me.linkMyWebsite.TabStop = True
         Me.linkMyWebsite.Text = "Visit Drew's website"
         '
         'textboxAboutApp
         '
         Me.textboxAboutApp.BackColor = System.Drawing.SystemColors.Window
-        Me.tableLayoutPanelAboutApp.SetColumnSpan(Me.textboxAboutApp, 2)
+        Me.tableLayoutPanelAboutAppTab.SetColumnSpan(Me.textboxAboutApp, 2)
         Me.textboxAboutApp.Location = New System.Drawing.Point(172, 3)
         Me.textboxAboutApp.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.textboxAboutApp.Multiline = True
         Me.textboxAboutApp.Name = "textboxAboutApp"
         Me.textboxAboutApp.ReadOnly = True
-        Me.tableLayoutPanelAboutApp.SetRowSpan(Me.textboxAboutApp, 5)
+        Me.tableLayoutPanelAboutAppTab.SetRowSpan(Me.textboxAboutApp, 5)
         Me.textboxAboutApp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.textboxAboutApp.Size = New System.Drawing.Size(339, 341)
         Me.textboxAboutApp.TabIndex = 0
-        Me.textboxAboutApp.TabStop = False
         Me.textboxAboutApp.Text = resources.GetString("textboxAboutApp.Text")
         '
         'tabpageLicense
@@ -269,11 +269,11 @@ Partial Class aaformAboutWindow
         Me.tableLayoutPanel.PerformLayout()
         Me.tabcontrolAboutWindow.ResumeLayout(False)
         Me.tabpageAbout.ResumeLayout(False)
-        Me.tableLayoutPanelAboutApp.ResumeLayout(False)
-        Me.tableLayoutPanelAboutApp.PerformLayout()
+        Me.tableLayoutPanelAboutAppTab.ResumeLayout(False)
+        Me.tableLayoutPanelAboutAppTab.PerformLayout()
         CType(Me.pictureboxUXLBanner, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.flowLayoutPanelButtons.ResumeLayout(False)
-        Me.flowLayoutPanelButtons.PerformLayout()
+        Me.flowLayoutPanelLinkLabels.ResumeLayout(False)
+        Me.flowLayoutPanelLinkLabels.PerformLayout()
         Me.tabpageLicense.ResumeLayout(False)
         Me.tabpageAcknowledgments.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -285,9 +285,9 @@ Partial Class aaformAboutWindow
     Friend WithEvents tabcontrolAboutWindow As TabControl
     Friend WithEvents tabpageAbout As TabPage
     Friend WithEvents pictureboxUXLBanner As PictureBox
-    Friend WithEvents tableLayoutPanelAboutApp As TableLayoutPanel
+    Friend WithEvents tableLayoutPanelAboutAppTab As TableLayoutPanel
     Friend WithEvents textboxAboutApp As TextBox
-    Friend WithEvents flowLayoutPanelButtons As FlowLayoutPanel
+    Friend WithEvents flowLayoutPanelLinkLabels As FlowLayoutPanel
     Friend WithEvents linkUpdateCheck As LinkLabel
     Friend WithEvents linkRepository As LinkLabel
     Friend WithEvents linkMyWebsite As LinkLabel

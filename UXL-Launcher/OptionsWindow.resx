@@ -122,15 +122,34 @@
   </metadata>
   <data name="checkboxO365InstallMethod.ToolTip" xml:space="preserve">
     <value>Check this box if you use a retail copy of Office or one from Office 365, or are otherwise having trouble
-even with all the other settings configured properly.
+even with all the other settings configured properly. Office 2010 may need this to be unchecked.
 
 Some versions of Office, such as Office 2019, can only be installed for regular users with Click-to-Run,
-so this setting will be automatically enabled if those versions are selected in the dropdown box above.
+so this setting will be ignored if those versions are selected in the dropdown box above.
 
 On some versions of Office such as Office 2016, Microsoft places the EXE files in a slightly different location
 from older versions of Office. This is due to a technology called 'Click-to-Run', or 'C2R' for short.
 This option uses that folder instead of the default. If unsure of what this means, check this box.</value>
   </data>
+  <data name="labelBypassConfiguredLocation.Text" xml:space="preserve">
+    <value>Some apps such as Microsoft InfoPath, SharePoint Workspace,
+Picture Manager, and OneNote for desktop were removed from
+different Office versions, but you might be able to launch them
+by bypassing the configured location if they're still installed.</value>
+  </data>
+  <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
+    <value>16-bit Windows is the recommended option for you, but if
+using Office 2013, you may need to select "32-bit Windows"
+due to the 32-bit version installing to "Program Files"
+even on 64-bit Windows. Something is broken if 16-bit
+Windows is recommended to you; please report.</value>
+  </data>
+  <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>820, 23</value>
+  </metadata>
+  <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 23</value>
+  </metadata>
   <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 23</value>
   </metadata>

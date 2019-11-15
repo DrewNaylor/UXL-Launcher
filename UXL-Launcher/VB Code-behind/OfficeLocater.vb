@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2018 Drew Naylor
+'Copyright (C) 2013-2019 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -70,29 +70,40 @@ Public Class OfficeLocater
         ' First we need to run the other subs.
         cpuType()
 
-        ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run.
-        If My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "14" _
-            Or My.Settings.userHasOfficeThreeSixFive = True And My.Settings.userOfficeVersion = "16" Then
-            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" _
-                & My.Settings.userOfficeVersion & "\"
+        ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
+        ' and the user doesn't have Office 2013.
+        If My.Settings.userHasOfficeThreeSixFive = True And Not My.Settings.userOfficeVersion = "15" And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" &
+                My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
 
             ' If the user installed specifically Office 2013 and they used Office 365/Click-to-Run, then we have a special 
             ' string for that install method.
         ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.userHasOfficeThreeSixFive = True Then
-            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\Root\Office15\"
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\root\Office15\"
             fullLauncherCodeString = fullLauncherCodePrivateString
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string. This string doesn't
             ' rely on the version of Office that's used; just if it's not installed via Office 365/C2R.
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" _
-            & My.Settings.userOfficeVersion & "\"
+            ' Also make sure that "nomsi" isn't in the Office version string.
+        ElseIf My.Settings.userHasOfficeThreeSixFive = False And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" &
+                My.Settings.userOfficeVersion & "\"
             ' Make the public string equal to the private string.
             fullLauncherCodeString = fullLauncherCodePrivateString
 
-            ' Remember to add code for Office 2019.
+            ' Office 2019 installs to the same folder as Office 2016, but doesn't have MSI installer support, so ignore the
+            ' setting for My.Settings.userHasOfficeThreeSixFive.
+        ElseIf My.Settings.userOfficeVersion.Contains("nomsi") Then
+            ' If the version of Office in the config file contains "nomsi", Click-to-Run support is enforced, and
+            ' the "Office(number)" path takes the version and replaces "nomsi" with nothing ("")
+            ' This is mostly for Office 2019, but will help for future Office versions that have a different version
+            ' folder, such as "Office17".
+            fullLauncherCodePrivateString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" &
+                My.Settings.userOfficeVersion.Replace("nomsi", "") & "\"
+            ' Set the public string to the private string.
+            fullLauncherCodeString = fullLauncherCodePrivateString
         End If
 
 

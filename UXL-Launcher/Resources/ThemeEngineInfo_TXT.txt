@@ -1,4 +1,4 @@
-Copyright (C) 2013-2018 Drew Naylor. Licensed under Gnu GPLv3+.
+Copyright (C) 2013-2019 Drew Naylor. Licensed under Gnu GPLv3+.
 The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
 
 The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
@@ -16,6 +16,6 @@ You should have received a copy of the GNU General Public License along with UXL
 
 Drew is not intending on infringing on Microsoft's copyrights, so UXL Launcher is only a shortcut application.
 
-Copyright notice: Windows, Microsoft Windows, Office, Microsoft Office, Word, Excel, PowerPoint, and all related words and trademarks/registered trademarks owned by Microsoft in the United States and/or other countries are Copyright 2018 Microsoft Corporation. All Rights Reserved to Microsoft for Microsoft's copyrights, trademarks, and registered trademarks.
+Copyright notice: Windows, Microsoft Windows, Office, Microsoft Office, Word, Excel, PowerPoint, and all related words and trademarks/registered trademarks owned by Microsoft in the United States and/or other countries are Copyright 2019 Microsoft Corporation. All Rights Reserved to Microsoft for Microsoft's copyrights, trademarks, and registered trademarks.
 Any other companies mentioned own their respective copyrights/trademarks.
 Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor and does not endorse this software.

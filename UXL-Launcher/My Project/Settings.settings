@@ -27,7 +27,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="debugmodeShowThemeEngineOutput" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="hideWhenMinimized" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -43,6 +43,15 @@
     </Setting>
     <Setting Name="userFirstNameForCustomStatusbarGreeting" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="bypassConfiguredLocationForDeprecatedApps" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="showUnsafeFileExtensionBlockedMessage" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="matchWindows10ThemeSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

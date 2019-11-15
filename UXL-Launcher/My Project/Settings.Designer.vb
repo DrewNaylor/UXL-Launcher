@@ -152,7 +152,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property debugmodeShowThemeEngineOutput() As Boolean
             Get
                 Return CType(Me("debugmodeShowThemeEngineOutput"),Boolean)
@@ -219,6 +219,42 @@ Namespace My
             End Get
             Set
                 Me("userFirstNameForCustomStatusbarGreeting") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property bypassConfiguredLocationForDeprecatedApps() As Boolean
+            Get
+                Return CType(Me("bypassConfiguredLocationForDeprecatedApps"),Boolean)
+            End Get
+            Set
+                Me("bypassConfiguredLocationForDeprecatedApps") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property showUnsafeFileExtensionBlockedMessage() As Boolean
+            Get
+                Return CType(Me("showUnsafeFileExtensionBlockedMessage"),Boolean)
+            End Get
+            Set
+                Me("showUnsafeFileExtensionBlockedMessage") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property matchWindows10ThemeSettings() As Boolean
+            Get
+                Return CType(Me("matchWindows10ThemeSettings"),Boolean)
+            End Get
+            Set
+                Me("matchWindows10ThemeSettings") = value
             End Set
         End Property
     End Class

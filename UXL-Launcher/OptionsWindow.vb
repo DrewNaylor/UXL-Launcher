@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2018 Drew Naylor
+'Copyright (C) 2013-2019 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -56,7 +56,8 @@ Public Class aaformOptionsWindow
             labelRecommendedWindowsEdition.Text = "64-bit Windows is the recommended option for you, but if" & vbCrLf &
                 "using Office 2013, you may need to select ""32-bit Windows""" & vbCrLf &
                 "due to the 32-bit version installing to ""Program Files""" & vbCrLf &
-                "even on 64-bit Windows."
+                "even on 64-bit Windows. 64-bit Office (Office 2019's default)" & vbCrLf &
+                "requires ""32-bit Windows"" to be selected above."
         Else
             ' If the OS isn't 64-bit, recommend the 32-bit option.
             labelRecommendedWindowsEdition.Text = "32-bit Windows is the recommended option for you."
@@ -68,24 +69,21 @@ Public Class aaformOptionsWindow
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
 
         ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
-        If My.Settings.userHasOfficeThreeSixFive = True Then
-            checkboxO365InstallMethod.Checked = True
-        ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            checkboxO365InstallMethod.Checked = False
-        End If
+        ' Simplified from original "If" statement.
+        checkboxO365InstallMethod.Checked = My.Settings.userHasOfficeThreeSixFive
+
+        ' Check the checkbox for bypassing configured location for deprecated apps
+        ' if My.Settings.bypassConfiguredLocationForDeprecatedApps = True.
+        ' Simplified from original "If" statement.
+        checkboxBypassConfiguredLocationForDeprecatedApps.Checked = My.Settings.bypassConfiguredLocationForDeprecatedApps
 
 #Region "Personalization tab."
         ' Load the settings for the Personalization tab.
 
 #Region "Theme Engine settings."
-        ' First, see if the theme engine is enabled.
-        If My.Settings.enableThemeEngine = True Then
-            ' If it is, check the "Enable Theme Engine" checkbox.
-            checkboxEnableThemeEngine.Checked = True
-        ElseIf My.Settings.enableThemeEngine = False Then
-            ' If it's not enabled, uncheck the checkbox.
-            checkboxEnableThemeEngine.Checked = False
-        End If
+        ' First, see if the theme engine is enabled, and check or uncheck the checkbox.
+        ' Simplified from the original "If" statement.
+        checkboxEnableThemeEngine.Checked = My.Settings.enableThemeEngine
 
         ' The theme info controls are updated in the enableOrDisableThemeEngineOptionsWindowControls() sub.
         ' The updating doesn't include the custom theme textbox or the theme list, so do that now.
@@ -112,6 +110,13 @@ Public Class aaformOptionsWindow
         ' Fourth, split the theme list with the delimiter.
         Dim themeListSplit() As String = themeListNotSplit.Split(delimiter)
 
+        ' Set the theme list datasource to nothing so that
+        ' the Options window can be opened more than once per session.
+        ' If this isn't done, the app crashes because the datasource is
+        ' being modified after it's already set. This allows the Options
+        ' window to be themed.
+        comboboxThemeList.DataSource = Nothing
+
         ' Add the range of the split theme list string
         ' to the combobox theme list.
         comboboxThemeList.Items.AddRange(themeListSplit)
@@ -124,6 +129,9 @@ Public Class aaformOptionsWindow
         ' Set the custom theme path textbox to the user's
         ' configured custom theme path.
         textboxCustomThemePath.Text = My.Settings.userCustomThemePath.Replace("""", "")
+
+        ' Check or uncheck the checkbox to use Windows 10 theme settings as needed.
+        checkboxMatchWindows10ThemeSettings.Checked = My.Settings.matchWindows10ThemeSettings
 
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
@@ -146,12 +154,31 @@ Public Class aaformOptionsWindow
 
 
 #Region "Set the DataSource of the comboboxOfficeVersionSelector to a string."
-        ' Create the string for the comboboxOfficeVersionSelector and
-        ' set the DataSource of the combobox to that string.
-        Dim officeVersionsAvailableString As String() =
+        ' First, see if the user's Office version set in the config file
+        ' is contained in My.Resources.supportedOfficeVersionList.
+        ' If not, add it to a list.
+        If My.Resources.supportedOfficeVersionList.Contains(My.Settings.userOfficeVersion) Then
+            ' Create a string with the regular list if the version
+            ' in the config file is contained within the supported
+            ' version list.
+            Dim officeVersionsAvailableString As String() =
+                        New String() {"Microsoft Office 2010",
+                        "Microsoft Office 2013", "Microsoft Office 2016", "Microsoft Office 2019"}
+            comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+        ElseIf Not My.Resources.supportedOfficeVersionList.Contains(My.Settings.userOfficeVersion) Then
+            ' Otherwise, if the user's configured Office version isn't in the list,
+            ' add an extra item to the list.
+            Dim officeVersionsAvailableString As String() =
+                        New String() {"Microsoft Office 2010",
+                        "Microsoft Office 2013", "Microsoft Office 2016", "Microsoft Office 2019", "Office" & My.Settings.userOfficeVersion}
+            comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+        Else
+            ' If neither If statement works, just use the supported list.
+            Dim officeVersionsAvailableString As String() =
             New String() {"Microsoft Office 2010",
-            "Microsoft Office 2013", "Microsoft Office 2016"}
-        comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+            "Microsoft Office 2013", "Microsoft Office 2016", "Microsoft Office 2019"}
+            comboboxOfficeVersionSelector.DataSource = officeVersionsAvailableString
+        End If
 #End Region
 
         ' Load the user's settings for My.Settings.userOfficeVersion when the Options window loads.
@@ -161,6 +188,12 @@ Public Class aaformOptionsWindow
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2013"
         ElseIf My.Settings.userOfficeVersion = "16" Then
             comboboxOfficeVersionSelector.Text = "Microsoft Office 2016"
+        ElseIf My.Settings.userOfficeVersion = "16nomsi" Then
+            comboboxOfficeVersionSelector.Text = "Microsoft Office 2019"
+            ' If none of the values match, just use "Office(version number)"
+        Else
+            ' Now, set the dropdown box to the non-supported Office version.
+            comboboxOfficeVersionSelector.Text = "Office" & My.Settings.userOfficeVersion
         End If
 
         ' Load the user's settings for My.Settings.cpuIsSixtyFourBit.
@@ -182,13 +215,17 @@ Public Class aaformOptionsWindow
         ' 
         If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
 
-            'Display a message box when the user presses characters that aren't allowed.
+            ' Display a message box when the user presses characters that aren't allowed.
             e.Handled = True
-            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf & "Click the Clear Textbox button to empty the textbox." _
-                            & vbCrLf & "The textbox contents will be reset to drive C.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf &
+                            "You can clear the textbox by using the ""Clear"" button, or by pressing Delete or Backspace on your keyboard.",
+                            "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-            'Change the textbox for choosing the drive Office is installed on back to drive C.
-            textboxOfficeDrive.Text = "C"
+            ' Change the textbox for choosing the drive Office is installed on back to the user's current configuration.
+            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+            ' Focus and select the textbox.
+            textboxOfficeDrive.Focus()
+            textboxOfficeDrive.SelectAll()
         End If
     End Sub
 #End Region
@@ -216,6 +253,9 @@ Public Class aaformOptionsWindow
         ' Reset the theme engine enabled status to disabled.
         checkboxEnableThemeEngine.Checked = False
 
+        ' Reset the match Windows 10 theme settings checkbox to unchecked.
+        checkboxMatchWindows10ThemeSettings.Checked = False
+
         ' Reset the personalized statusbar firstname/nickname
         ' textbox to empty.
         textboxFirstname.Clear()
@@ -224,6 +264,10 @@ Public Class aaformOptionsWindow
         ' or default statusbar greeting to the default greeting
         ' one.
         radiobuttonDefaultStatusbarGreeting.Checked = True
+
+        ' Reset the bypass configured location for deprecated or
+        ' removed apps checkbox to be unchecked.
+        checkboxBypassConfiguredLocationForDeprecatedApps.Checked = False
 
 
 
@@ -248,25 +292,20 @@ Public Class aaformOptionsWindow
         ' user they need to type in one drive letter.
         If textboxOfficeDrive.Text.Length = 0 Then
             MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ' After telling them that, reset the "Office Install Drive" textbox to default.
-            textboxOfficeDrive.Text = "C"
+            ' After telling them that, reset the "Office Install Drive" textbox to their current setting.
+            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+            ' Select the "General" tab.
+            ' This article helped me with selecting the tab:
+            ' https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.tabcontrol.selectedindex?view=netframework-4.6.1
+            tabcontrolOptionsWindow.SelectedIndex = 0
+            ' Set focus to the Office Drive Location textbox, and select all text in it.
+            textboxOfficeDrive.Focus()
+            textboxOfficeDrive.SelectAll()
         Else
             '
             ' This space reserved for more settings.
             '
             '
-#Region "Determine whether or not the settings the user chose are potentially incompatible."
-
-            ' If the Office Version Selector combobox is set to Office 2010 and the Office 365 checkbox is checked
-            ' or the Office Version Selector combobox is set to Office 2016 and the Office 365 checkbox is UNchecked,
-            ' then tell the user that the combination isn't tested and might not work.
-
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" And checkboxO365InstallMethod.Checked = True Then
-                MessageBox.Show("Note that the combination of the Microsoft Office version you chose and installation method are untested and might not work properly." _
-                                , "Potentially incompatible settings detected" _
-                                , MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            End If
-#End Region
 
 #Region "Things to save to My.Settings."
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
@@ -274,11 +313,8 @@ Public Class aaformOptionsWindow
 
             ' My.Settings.userHasOfficeThreeSixFive will be set based on 
             ' the .Checked state of the checkboxO365InstallMethod.
-            If checkboxO365InstallMethod.Checked = True Then
-                My.Settings.userHasOfficeThreeSixFive = True
-            ElseIf checkboxO365InstallMethod.Checked = False Then
-                My.Settings.userHasOfficeThreeSixFive = False
-            End If
+            ' Simplified from original "If" statement.
+            My.Settings.userHasOfficeThreeSixFive = checkboxO365InstallMethod.Checked
 
             ' Set My.Settings.userOfficeVersion to a string based on whatever
             ' comboboxOfficeVersionSelector.Text is set to.
@@ -288,6 +324,13 @@ Public Class aaformOptionsWindow
                 My.Settings.userOfficeVersion = "15"
             ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
                 My.Settings.userOfficeVersion = "16"
+            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2019" Then
+                My.Settings.userOfficeVersion = "16nomsi"
+            Else
+                ' If none of the above Office versions are listed in the dropdown
+                ' box, just save the current My.Settings.userOfficeVersion to
+                ' itself.
+                My.Settings.userOfficeVersion = My.Settings.userOfficeVersion
             End If
 
             ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
@@ -296,8 +339,11 @@ Public Class aaformOptionsWindow
             ElseIf radiobuttonCPUIs64Bit.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = True
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
+                ' Focus the "Advanced" tab.
+                tabcontrolOptionsWindow.SelectedIndex = 1
                 MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
+                ' Now set the radio buttons to current user settings.
                 If My.Settings.cpuIsSixtyFourBit = True Then
                     radiobuttonCPUIs64Bit.Checked = True
                     My.Settings.cpuIsSixtyFourBit = True
@@ -308,12 +354,11 @@ Public Class aaformOptionsWindow
             End If
 
             ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
-            If checkboxEnableThemeEngine.Checked = True Then
-                My.Settings.enableThemeEngine = True
-            ElseIf checkboxEnableThemeEngine.Checked = False Then
-                ' If it's unchecked, set the My.Settings variable to False.
-                My.Settings.enableThemeEngine = False
-            End If
+            ' Simplified from original "If" statement.
+            My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
+
+            ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
+            My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
 
             ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
             My.Settings.userChosenTheme = comboboxThemeList.Text
@@ -334,6 +379,11 @@ Public Class aaformOptionsWindow
             ' for the name.
             My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
 
+            ' Save the status of whether to bypass the configured location for
+            ' deprecated or removed apps.
+            ' Simplified from original "If" statement.
+            My.Settings.bypassConfiguredLocationForDeprecatedApps = checkboxBypassConfiguredLocationForDeprecatedApps.Checked
+
 #End Region
 
 #Region "This is where the settings get saved and things update."
@@ -344,7 +394,12 @@ Public Class aaformOptionsWindow
             ' and the boolean variable set at the beginning of this
             ' class is set to True.
             If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
-                UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+
+                ' If the user wants to match the Windows 10 theme, then do so,
+                ' but if not, then the user's chosen theme will be used instead.
+                ' Code moved to its own sub to make editing easier.
+                WindowsThemeSettings.checkIfUserWantsToMatchTheme()
+
             End If
             ' Update the fullLauncherCodeString.
             OfficeLocater.combineStrings()
@@ -370,7 +425,7 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Code that runs when the user clicks the Clear Textbox button next to the Office drive location."
-    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearTextbox.Click
+    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearDriveLetter.Click
         ' Clear the OfficeDrive textbox and set focus to it.
         textboxOfficeDrive.Text = ""
         textboxOfficeDrive.Select()
@@ -523,7 +578,10 @@ Public Class aaformOptionsWindow
         ' it can also be called from the custom theme path textbox
         ' TextChanged event.
 
-        ' First, make sure that the theme list is only using custom themes.
+        ' First, update the tooltip for this textbox.
+        tooltipCustomThemePath.SetToolTip(textboxCustomThemePath, textboxCustomThemePath.Text)
+
+        ' Next, make sure that the theme list is only using custom themes.
         If comboboxThemeList.Text = "(Custom)" Then
             ' Create a temporary XML document.
             Dim tempXml As XmlDocument = New XmlDocument
@@ -582,6 +640,7 @@ Public Class aaformOptionsWindow
         If checkboxEnableThemeEngine.Checked = True Then
             ' If it's checked, enable the controls.
             comboboxThemeList.Enabled = True
+            checkboxMatchWindows10ThemeSettings.Enabled = True
             textboxCustomThemePath.Enabled = True
             buttonCustomThemesBrowse.Enabled = True
             ' Now, update theme-related controls.
@@ -589,12 +648,41 @@ Public Class aaformOptionsWindow
         Else
             ' Otherwise, disable the controls.
             comboboxThemeList.Enabled = False
+            checkboxMatchWindows10ThemeSettings.Enabled = False
             textboxCustomThemePath.Enabled = False
             buttonCustomThemesBrowse.Enabled = False
             textboxThemeInfo.Text = "The UXL Launcher Theme Engine is disabled. When enabled, it allows you to change the colors of the UXL Launcher main window and Quickmenu (the system tray icon context menu) via predefined or custom themes."
         End If
+
+        ' When checking this box, the theme list dropdown will be disabled
+        ' since the theme will be changed at startup based on the Windows 10
+        ' settings.
+        If checkboxMatchWindows10ThemeSettings.Checked = True Then
+            comboboxThemeList.Enabled = False
+            textboxCustomThemePath.Enabled = False
+            buttonCustomThemesBrowse.Enabled = False
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        ElseIf checkboxMatchWindows10ThemeSettings.Checked = True And checkboxEnableThemeEngine.Checked = True Then
+            comboboxThemeList.Enabled = True
+            textboxCustomThemePath.Enabled = True
+            buttonCustomThemesBrowse.Enabled = True
+            ' Now, update theme-related controls.
+            updateThemeInfo()
+        End If
     End Sub
+
 #End Region
+
+    Private Sub checkboxMatchWindows10ThemeSettings_CheckedChanged(sender As Object, e As EventArgs) Handles checkboxMatchWindows10ThemeSettings.CheckedChanged
+        ' When checking this box, the theme list dropdown will be disabled
+        ' since the theme will be changed at startup based on the Windows 10
+        ' settings.
+
+        ' Code moved to its own sub to make calling easier.
+        enableOrDisableThemeEngineOptionsWindowControls()
+    End Sub
+
 #Region "Code that runs when clicking the Browse... button next to the custom theme path."
     Private Sub buttonCustomThemesBrowse_Click(sender As Object, e As EventArgs) Handles buttonCustomThemesBrowse.Click
         ' When the user clicks the "Browse..." button, show an open file dialog
