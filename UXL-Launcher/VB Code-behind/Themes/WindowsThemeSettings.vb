@@ -62,12 +62,12 @@ Public Class WindowsThemeSettings
             ' If the Windows 10 theme is Light, use Default.
             If getWindowsThemeSettings() = "Light" Then
                 UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-                UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+                aaformMainWindow.themeApplier()
 
                 ' Otherwise, load TenDark.
             ElseIf getWindowsThemeSettings = "Dark" Then
                 UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
-                UXLLauncher_ThemeEngine.themeEngine_ApplyTheme()
+                aaformMainWindow.themeApplier()
             End If
         Else
 
@@ -76,7 +76,7 @@ Public Class WindowsThemeSettings
 
             ' Choose the user's theme and apply it if the Windows
             ' settings won't be used.
-            UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme()
+            aaformMainWindow.themeChooser()
         End If
     End Sub
 

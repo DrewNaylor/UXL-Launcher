@@ -1,0 +1,109 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Arr G. Bee</Title>
+  <Description>Arr G. Bee is a theme that's influenced by the UXL Launcher logo.</Description>
+  <Version>v1.1</Version>
+  <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>RoyalBlue</BackColor>
+        <ForeColor>Lime</ForeColor>
+        <!-- The FlatStyle determines the "depth" of the buttons. This can be set
+        to either "Flat" or "Standard". Anything else will be set to "Standard".
+        Quotation marks are not supported. -->
+        <FlatStyle>Flat</FlatStyle>
+        <!-- Anything within the "FlatAppearance" element will only be used if
+        "FlatStyle" is set to "Flat". -->
+        <FlatAppearance>
+          <BorderColor>Red</BorderColor>
+        </FlatAppearance>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>White</BackColor>
+        <ForeColor>Blue</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+      </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+        <!--If you want this to apply to the table layout panel inside the
+        About window About tab, set ApplyToAboutWindowAboutTabTLP to True
+        as shown below. Otherwise, the tab page control's colors will
+        be used instead-->
+        <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>RoyalBlue</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
+      
+      <StatusBar>
+        <BackColor>RoyalBlue</BackColor>
+      </StatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>Black</ForeColor>
+      </Label>
+
+      <TextBox>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>RoyalBlue</BackColor>
+        <!-- Text color for menubar dropdown items. -->
+        <ForeColor>White</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+          
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>Red</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>Lime</EndColor>
+        </ImageMarginGradient>
+      </MenuItem>
+
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>RoyalBlue</BackColor>
+      </MenuBar>
+      
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        <BorderSides>None</BorderSides>
+
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        <BorderStyle>Flat</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>

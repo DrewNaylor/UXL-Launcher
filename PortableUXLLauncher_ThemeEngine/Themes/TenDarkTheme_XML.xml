@@ -1,0 +1,140 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Ten Dark</Title>
+  <Description>A dark theme similar to Windows 10's "Dark Mode".</Description>
+  <Version>v1.1</Version>
+  <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  
+    <Theme_Colors>
+
+      <AboutWindow>
+        <!-- This controls how the About window's banner appears.
+        Available BannerStyle options are "Light" and "Dark".
+        Anything else will be set to "Light". -->
+        <BannerStyle>Dark</BannerStyle>
+      </AboutWindow>
+      
+      <Button>
+        <!-- The button BackColor and BorderColor values were eye-balled from the
+        color used in the Settings app for the Windows Update "Check for Updates"
+        button; it wasn't sampled from a screenshot. -->
+        <BackColor>#363636</BackColor>
+        <ForeColor>White</ForeColor>
+        <!-- The FlatStyle determines the "depth" of the buttons. This can be set
+        to either "Flat" or "Standard". Anything else will be set to "Standard".
+        Quotation marks are not supported. -->
+        <FlatStyle>Flat</FlatStyle>
+        <!-- Anything within the "FlatAppearance" element will only be used if
+        "FlatStyle" is set to "Flat". -->
+        <FlatAppearance>
+          <BorderColor>#363636</BorderColor>
+          <MouseDownBackColor>Silver</MouseDownBackColor>
+          <MouseOverBackColor>Gray</MouseOverBackColor>
+        </FlatAppearance>
+      </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>#363636</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
+      
+      <GroupBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <BackColor>#202020</BackColor>
+        <ForeColor>White</ForeColor>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
+      
+      <StatusBar>
+        <BackColor>#202020</BackColor>
+      </StatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Red</ActiveLinkColor>
+        <LinkColor>DodgerBlue</LinkColor>
+      </LinkLabel>
+
+      <RadioButton>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </RadioButton>
+      
+      <TextBox>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>Black</BackColor>
+        <!-- Text color for menubar dropdown items. -->
+        <ForeColor>White</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>#202020</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>Black</EndColor>
+        </ImageMarginGradient>
+      </MenuItem>
+
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>#202020</BackColor>
+      </MenuBar>
+      
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        <BorderSides>None</BorderSides>
+
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        <BorderStyle>Flat</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>

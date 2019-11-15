@@ -1,0 +1,124 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Return of the Night</Title>
+  <Description>Based on the Test2 theme, "Return of the Night" is a purple theme best suited for those who like proper day/night cycles.</Description>
+  <Version>v1.1</Version>
+  <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>MidnightBlue</BackColor>
+        <ForeColor>White</ForeColor>
+      </Button>
+
+      <CheckBox>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </CheckBox>
+
+      <Dropdown>
+        <!-- This is for the ComboBox controls, but "Dropdown" is probably
+        a more common name for people to call them. -->
+        <BackColor>Purple</BackColor>
+        <ForeColor>White</ForeColor>
+      </Dropdown>
+      
+      <GroupBox>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>White</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>DarkViolet</BackColor>
+        <ForeColor>White</ForeColor>
+      </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <BackColor>DarkViolet</BackColor>
+        <ForeColor>White</ForeColor>
+        <!--If you want this to apply to the table layout panel inside the
+        About window About tab, set ApplyToAboutWindowAboutTabTLP to True
+        as shown below. Otherwise, the tab page control's colors will
+        be used instead-->
+        <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
+
+      <StatusBar>
+        <BackColor>MediumBlue</BackColor>
+      </StatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </Label>
+
+      <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Gold</ActiveLinkColor>
+        <LinkColor>Aqua</LinkColor>
+      </LinkLabel>
+
+      <RadioButton>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+      </RadioButton>
+
+      <TextBox>
+        <BackColor>Beige</BackColor>
+        <ForeColor>DarkViolet</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>MediumBlue</BackColor>
+        <!-- Text color for menubar dropdown items. -->
+        <ForeColor>White</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>LightBlue</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>MediumBlue</EndColor>
+        </ImageMarginGradient>
+      </MenuItem>
+
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>MediumBlue</BackColor>
+      </MenuBar>
+
+      <StatusLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        <BorderSides>None</BorderSides>
+
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        <BorderStyle>SunkenInner</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>
