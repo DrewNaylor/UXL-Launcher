@@ -39,4 +39,8 @@ Class MainWindow
     Private Sub OpenFile(sender As Object, e As RoutedEventArgs)
         MessageBox.Show("test")
     End Sub
+
+    Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
+        Process.Start("winword.exe")
+    End Sub
 End Class
