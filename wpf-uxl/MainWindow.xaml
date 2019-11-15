@@ -53,7 +53,7 @@ along with UXL Launcher (WPF test).  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <GroupBox Header="Standard Apps" Margin="14.5,6,4,4">
+            <GroupBox Header="Standard Apps" Margin="14.5,8,4,4">
                 <Grid>
                     <WrapPanel>
                         <Image Source="/Images/Word.png" Margin="2,5,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" SnapsToDevicePixels="True"/>
@@ -80,7 +80,7 @@ along with UXL Launcher (WPF test).  If not, see <http://www.gnu.org/licenses/>.
                 </Grid>
             </GroupBox>
 
-            <GroupBox Header="Professional Apps" Margin="14.5,6,4,4" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Column="1">
+            <GroupBox Header="Professional Apps" Margin="14.5,8,4,4" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Column="1">
                 <Grid>
                     <WrapPanel>
                         <Image Source="/Images/Access.png" Margin="2,5,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" SnapsToDevicePixels="True"/>
@@ -103,7 +103,7 @@ along with UXL Launcher (WPF test).  If not, see <http://www.gnu.org/licenses/>.
                 </Grid>
             </GroupBox>
 
-            <GroupBox Header="Extra Apps + Tools" Margin="14.5,6,14.5,4" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Column="2">
+            <GroupBox Header="Extra Apps + Tools" Margin="14.5,8,14.5,4" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.Column="2">
                 <Grid>
                     <WrapPanel>
                         <Image Source="/Images/Microsoft Query.png" Margin="2,5,0,0" Stretch="Fill" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" SnapsToDevicePixels="True"/>
