@@ -40,6 +40,10 @@ along with UXL Launcher (WPF test).  If not, see <http://www.gnu.org/licenses/>.
             <Menu>
                 <MenuItem Header="_File" Margin="4,2,0,2">
                     <MenuItem Header="E_xit" Click="ExitApp"/>
+                    <MenuItem Header="_Open" Click="OpenFile"/>
+                </MenuItem>
+                <MenuItem Header="_View" Margin="4,2,0,2">
+                    <MenuItem Header="No statusbar" Click="ExitApp"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
