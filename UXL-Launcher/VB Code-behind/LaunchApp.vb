@@ -71,7 +71,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Or My.Settings.bypassConfiguredLocationForAllApps = True Then
             isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote", True)
             ' Otherwise, don't.
         Else
