@@ -77,12 +77,20 @@ Public Class LaunchApp
         Else
             isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote")
         End If
+
     End Sub
 #End Region
 #Region "Microsoft Outlook Launcher Code."
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft PowerPoint Launcher Code."
