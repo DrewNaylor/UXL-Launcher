@@ -134,7 +134,14 @@ Public Class LaunchApp
 #Region "Microsoft Word Launcher Code."
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft Query Launcher Code."
