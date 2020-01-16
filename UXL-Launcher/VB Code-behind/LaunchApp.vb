@@ -96,7 +96,14 @@ Public Class LaunchApp
 #Region "Microsoft PowerPoint Launcher Code."
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft SharePoint Workspace Launcher Code."
