@@ -31,7 +31,14 @@ Public Class LaunchApp
 #Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft Excel Launcher Code."
@@ -44,7 +51,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Or My.Settings.bypassConfiguredLocationForAllApps = True Then
             isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath", True)
             ' Otherwise, don't.
         Else
