@@ -121,7 +121,14 @@ Public Class LaunchApp
 #Region "Microsoft Publisher Launcher Code."
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft Word Launcher Code."
