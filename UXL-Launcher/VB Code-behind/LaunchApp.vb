@@ -44,7 +44,14 @@ Public Class LaunchApp
 #Region "Microsoft Excel Launcher Code."
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft InfoPath Launcher Code."
