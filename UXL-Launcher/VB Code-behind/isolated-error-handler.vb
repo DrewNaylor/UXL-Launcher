@@ -118,7 +118,12 @@ Public Class isolated_error_handler
 
         Dim procNewFile As New ProcessStartInfo
         ' Now, get the file to launch.
-        procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            procNewFile.FileName = exeToLaunch
+        Else
+            procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
+        End If
         ' Assign start arguments.
         procNewFile.Arguments = launchArguments
         ' Try to start the program.
@@ -127,12 +132,27 @@ Public Class isolated_error_handler
         Catch ex As System.ComponentModel.Win32Exception
             ' If the program the user wants to launch isn't found in the folder the user chose
             ' in the Options window, ask them if they want to go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & exeFriendlyName & " in the configured location." &
+
+            Dim msgResult As Integer
+            ' If bypassing the configured location is enabled, use the appropriate message.
+            If My.Settings.bypassConfiguredLocationForAllApps = True Then
+                msgResult = MessageBox.Show("We couldn't find " & exeFriendlyName & ". Maybe it's not installed?" & vbCrLf &
+                "Would you like to open the Options window to change your settings?" & vbCrLf &
+                    "" & vbCrLf &
+                    "Full error message: " & ex.Message & vbCrLf &
+                    vbCrLf &
+                    "Bypassing the configured location was enabled for this app.", "Couldn't find " & exeFriendlyName,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            Else
+                ' Otherwise, use the regular message.
+                msgResult = MessageBox.Show("We couldn't find " & exeFriendlyName & " in the configured location." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message & vbCrLf &
                 vbCrLf &
                 "Configured location: " & OfficeLocater.fullLauncherCodeString, "Couldn't find " & exeFriendlyName, MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            End If
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
