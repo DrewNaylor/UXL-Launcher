@@ -18,7 +18,7 @@ The readme continues after this notice.
 
 ```
 UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-Copyright (C) 2013-2019 Drew Naylor
+Copyright (C) 2013-2020 Drew Naylor
 Microsoft Office and all related words are copyright
 and trademark Microsoft Corporation. More details in the About window.
 Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor

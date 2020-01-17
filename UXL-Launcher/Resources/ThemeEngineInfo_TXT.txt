@@ -1,4 +1,4 @@
-Copyright (C) 2013-2019 Drew Naylor. Licensed under Gnu GPLv3+.
+Copyright (C) 2013-2020 Drew Naylor. Licensed under Gnu GPLv3+.
 The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
 
 The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
