@@ -592,6 +592,7 @@ Public Class aaformMainWindow
         ' This is the list of forms that the theme engine applies stuff to
         ' when choosing the theme on its own.
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformDebugLabels, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceAboutWindowTab, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceOptionsWindowTab, UXLToolstripRenderer)
     End Sub
@@ -600,6 +601,7 @@ Public Class aaformMainWindow
         ' This is the list of forms that the theme engine applies stuff to
         ' when the theme is pre-specified.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformDebugLabels, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceAboutWindowTab, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceOptionsWindowTab, UXLToolstripRenderer)
     End Sub
