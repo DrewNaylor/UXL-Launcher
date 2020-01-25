@@ -31,52 +31,56 @@ Public Class debugmodeStuff
     ' This document is used to contain all the debug labels and textboxes.
     Public Shared Sub showDebugLabels()
         If My.Settings.debugmodeShowLabels = True Then
-            aaformMainWindow.debugLabelForAlwaysOnTop.Show()
-            aaformMainWindow.debugLabelForofficeDriveLocation.Show()
-            aaformMainWindow.debugLabelForcpuTypeString.Show()
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Show()
-            aaformMainWindow.debugLabelForuserOfficeVersion.Show()
-            aaformMainWindow.debugTextboxForFullLauncherCodeString.Show()
-            aaformMainWindow.debugLabelForUserHasOfficeThreeSixFive.Show()
+            aaformMainWindow.menubarDebugMenu.Visible = True
+
+            aaformDebugLabels.debugLabelForAlwaysOnTop.Show()
+            aaformDebugLabels.debugLabelForofficeDriveLocation.Show()
+            aaformDebugLabels.debugLabelForcpuTypeString.Show()
+            aaformDebugLabels.debugLabelForofficeInstallMethodString.Show()
+            aaformDebugLabels.debugLabelForuserOfficeVersion.Show()
+            aaformDebugLabels.debugTextboxForFullLauncherCodeString.Show()
+            aaformDebugLabels.debugLabelForUserHasOfficeThreeSixFive.Show()
             ' Show theme debug labels if the theme engine is enabled.
             If My.Settings.enableThemeEngine = True Then
-                aaformMainWindow.debugLabelXmlThemeTitle.Show()
-                aaformMainWindow.debugLabelXmlThemeDescription.Show()
-                aaformMainWindow.debugLabelXmlThemeAuthor.Show()
-                aaformMainWindow.debugLabelXmlThemeFileVersion.Show()
-                aaformMainWindow.debugLabelXmlThemeUseThemeEngineVersion.Show()
+                aaformDebugLabels.debugLabelXmlThemeTitle.Show()
+                aaformDebugLabels.debugLabelXmlThemeDescription.Show()
+                aaformDebugLabels.debugLabelXmlThemeAuthor.Show()
+                aaformDebugLabels.debugLabelXmlThemeFileVersion.Show()
+                aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Show()
                 ' Show theme tester buttons if the theme engine is enabled.
-                aaformMainWindow.debugButtonDefaultThemeSetter.Show()
-                aaformMainWindow.debugButtonTestThemeSetter.Show()
+                aaformDebugLabels.debugButtonDefaultThemeSetter.Show()
+                aaformDebugLabels.debugButtonTestThemeSetter.Show()
             ElseIf My.Settings.enableThemeEngine = False Then
                 ' Otherwise, hide the theme debug labels and tester buttons.
-                aaformMainWindow.debugButtonDefaultThemeSetter.Hide()
-                aaformMainWindow.debugButtonTestThemeSetter.Hide()
+                aaformDebugLabels.debugButtonDefaultThemeSetter.Hide()
+                aaformDebugLabels.debugButtonTestThemeSetter.Hide()
                 ' Theme debug labels hiding.
-                aaformMainWindow.debugLabelXmlThemeTitle.Hide()
-                aaformMainWindow.debugLabelXmlThemeDescription.Hide()
-                aaformMainWindow.debugLabelXmlThemeAuthor.Hide()
-                aaformMainWindow.debugLabelXmlThemeFileVersion.Hide()
-                aaformMainWindow.debugLabelXmlThemeUseThemeEngineVersion.Hide()
+                aaformDebugLabels.debugLabelXmlThemeTitle.Hide()
+                aaformDebugLabels.debugLabelXmlThemeDescription.Hide()
+                aaformDebugLabels.debugLabelXmlThemeAuthor.Hide()
+                aaformDebugLabels.debugLabelXmlThemeFileVersion.Hide()
+                aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Hide()
             End If
 
         ElseIf My.Settings.debugmodeShowLabels = False Then
-            aaformMainWindow.debugLabelForAlwaysOnTop.Hide()
-            aaformMainWindow.debugLabelForofficeDriveLocation.Hide()
-            aaformMainWindow.debugLabelForcpuTypeString.Hide()
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Hide()
-            aaformMainWindow.debugLabelForuserOfficeVersion.Hide()
-            aaformMainWindow.debugTextboxForFullLauncherCodeString.Hide()
-            aaformMainWindow.debugLabelForUserHasOfficeThreeSixFive.Hide()
+            aaformMainWindow.menubarDebugMenu.Visible = False
+
+            aaformDebugLabels.debugLabelForAlwaysOnTop.Hide()
+            aaformDebugLabels.debugLabelForofficeDriveLocation.Hide()
+            aaformDebugLabels.debugLabelForcpuTypeString.Hide()
+            aaformDebugLabels.debugLabelForofficeInstallMethodString.Hide()
+            aaformDebugLabels.debugLabelForuserOfficeVersion.Hide()
+            aaformDebugLabels.debugTextboxForFullLauncherCodeString.Hide()
+            aaformDebugLabels.debugLabelForUserHasOfficeThreeSixFive.Hide()
             ' Theme tester buttons.
-            aaformMainWindow.debugButtonDefaultThemeSetter.Hide()
-            aaformMainWindow.debugButtonTestThemeSetter.Hide()
+            aaformDebugLabels.debugButtonDefaultThemeSetter.Hide()
+            aaformDebugLabels.debugButtonTestThemeSetter.Hide()
             ' Theme debug labels hiding.
-            aaformMainWindow.debugLabelXmlThemeTitle.Hide()
-            aaformMainWindow.debugLabelXmlThemeDescription.Hide()
-            aaformMainWindow.debugLabelXmlThemeAuthor.Hide()
-            aaformMainWindow.debugLabelXmlThemeFileVersion.Hide()
-            aaformMainWindow.debugLabelXmlThemeUseThemeEngineVersion.Hide()
+            aaformDebugLabels.debugLabelXmlThemeTitle.Hide()
+            aaformDebugLabels.debugLabelXmlThemeDescription.Hide()
+            aaformDebugLabels.debugLabelXmlThemeAuthor.Hide()
+            aaformDebugLabels.debugLabelXmlThemeFileVersion.Hide()
+            aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Hide()
         End If
     End Sub
 #Region "Update the debug labels on the main form."
@@ -84,36 +88,36 @@ Public Class debugmodeStuff
         ' Update the debug labels on the main window.
 
         ' Debug label for officeDriveLocation.
-        aaformMainWindow.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
+        aaformDebugLabels.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
         ' Debug label for cpuTypeString.
-        aaformMainWindow.debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
+        aaformDebugLabels.debugLabelForcpuTypeString.Text = "cpuTypeString: " & OfficeLocater.cpuTypeString
 
         ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
         If My.Settings.userHasOfficeThreeSixFive = True Then
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & "\root"
+            aaformDebugLabels.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & "\root"
         ElseIf My.Settings.userHasOfficeThreeSixFive = False Then
-            aaformMainWindow.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
+            aaformDebugLabels.debugLabelForofficeInstallMethodString.Text = "officeInstallMethodString: " & ""
         End If
 
         ' Debug label for the Always On Top feature.
-        aaformMainWindow.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
+        aaformDebugLabels.debugLabelForAlwaysOnTop.Text = "menubar button checkstate: " & aaformMainWindow.menubarAlwaysOnTopButton.CheckState & vbNewLine &
         "alwaysOnTop setting: " & My.Settings.alwaysOnTop & vbNewLine &
         "main window TopMost: " & aaformMainWindow.TopMost
 
 
         ' Debug label for userOfficeVersion.
-        aaformMainWindow.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
+        aaformDebugLabels.debugLabelForuserOfficeVersion.Text = "userOfficeVersion: " & My.Settings.userOfficeVersion
         ' Debug label for userHasOfficeThreeSixFive.
-        aaformMainWindow.debugLabelForUserHasOfficeThreeSixFive.Text = "userHasOfficeThreeSixFive: " & My.Settings.userHasOfficeThreeSixFive
+        aaformDebugLabels.debugLabelForUserHasOfficeThreeSixFive.Text = "userHasOfficeThreeSixFive: " & My.Settings.userHasOfficeThreeSixFive
         ' Debug textbox for fullLauncherCodeString.
-        aaformMainWindow.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
+        aaformDebugLabels.debugTextboxForFullLauncherCodeString.Text = OfficeLocater.fullLauncherCodeString
 
         ' Debug labels for theme titles and descriptions.
-        aaformMainWindow.debugLabelXmlThemeTitle.Text = "Title string: " & UXLLauncher_ThemeEngine.themeSheetTitle
-        aaformMainWindow.debugLabelXmlThemeDescription.Text = "Description string: " & UXLLauncher_ThemeEngine.themeSheetDescription
-        aaformMainWindow.debugLabelXmlThemeAuthor.Text = "Author string: " & UXLLauncher_ThemeEngine.themeSheetAuthor
-        aaformMainWindow.debugLabelXmlThemeFileVersion.Text = "File version string: " & UXLLauncher_ThemeEngine.themeSheetFileVersion
-        aaformMainWindow.debugLabelXmlThemeUseThemeEngineVersion.Text = "UseThemeEngineVersion string: " &
+        aaformDebugLabels.debugLabelXmlThemeTitle.Text = "Title string: " & UXLLauncher_ThemeEngine.themeSheetTitle
+        aaformDebugLabels.debugLabelXmlThemeDescription.Text = "Description string: " & UXLLauncher_ThemeEngine.themeSheetDescription
+        aaformDebugLabels.debugLabelXmlThemeAuthor.Text = "Author string: " & UXLLauncher_ThemeEngine.themeSheetAuthor
+        aaformDebugLabels.debugLabelXmlThemeFileVersion.Text = "File version string: " & UXLLauncher_ThemeEngine.themeSheetFileVersion
+        aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Text = "UseThemeEngineVersion string: " &
             CType(UXLLauncher_ThemeEngine.themeSheetUseThemeEngineVersion, String)
 
     End Sub
