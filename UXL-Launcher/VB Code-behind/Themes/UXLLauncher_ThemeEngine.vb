@@ -988,7 +988,7 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Apply default colors to forms not supported by TE1.02 or lower."
         ' Apply default colors to forms that aren't supported by TE1.02 or lower.
-        If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
+        If formToApplyTo.Name IsNot "aaformMainWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
             ' If the theme doesn't support TE1.03, apply defaults.
             ' Default button colors.
             colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -1033,6 +1033,10 @@ Public Class UXLLauncher_ThemeEngine
             colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
             colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
             colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+
+            ' Default Panel colors.
+            colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
             ' Default About window banner.
             bannerStyle = My.Resources.UXL_Launcher_Banner
@@ -1176,6 +1180,13 @@ Public Class UXLLauncher_ThemeEngine
                     ctrl.BackColor = colorTabPageBackColor
                     ctrl.ForeColor = colorTabPageForeColor
                 End If
+
+            ElseIf TypeOf ctrl Is Panel Then
+                ' If the control is a panel, theme it as such.
+                ' Panel BackColor.
+                ctrl.BackColor = colorPanelBackColor
+                ' Panel ForeColor.
+                ctrl.ForeColor = colorPanelForeColor
 
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
                 ' Apply dark/light banners in the About window if the theme
