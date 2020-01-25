@@ -43,7 +43,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeFileVersion
         '
         Me.debugLabelXmlThemeFileVersion.AutoSize = True
-        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(12, 175)
+        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(12, 236)
         Me.debugLabelXmlThemeFileVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.debugLabelXmlThemeFileVersion.Name = "debugLabelXmlThemeFileVersion"
         Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(220, 17)
@@ -53,7 +53,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(12, 191)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(12, 252)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
         Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(311, 17)
@@ -63,7 +63,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(12, 158)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(12, 219)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
         Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(192, 17)
@@ -73,7 +73,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeTitle
         '
         Me.debugLabelXmlThemeTitle.AutoSize = True
-        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(12, 126)
+        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(12, 187)
         Me.debugLabelXmlThemeTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.debugLabelXmlThemeTitle.Name = "debugLabelXmlThemeTitle"
         Me.debugLabelXmlThemeTitle.Size = New System.Drawing.Size(177, 17)
@@ -83,7 +83,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeDescription
         '
         Me.debugLabelXmlThemeDescription.AutoSize = True
-        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(12, 142)
+        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(12, 203)
         Me.debugLabelXmlThemeDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.debugLabelXmlThemeDescription.Name = "debugLabelXmlThemeDescription"
         Me.debugLabelXmlThemeDescription.Size = New System.Drawing.Size(221, 17)
@@ -142,7 +142,7 @@ Partial Class aaformDebugLabels
         '
         'debugTextboxForFullLauncherCodeString
         '
-        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(12, 219)
+        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(15, 119)
         Me.debugTextboxForFullLauncherCodeString.Margin = New System.Windows.Forms.Padding(2)
         Me.debugTextboxForFullLauncherCodeString.Multiline = True
         Me.debugTextboxForFullLauncherCodeString.Name = "debugTextboxForFullLauncherCodeString"
@@ -153,7 +153,7 @@ Partial Class aaformDebugLabels
         'debugLabelForAlwaysOnTop
         '
         Me.debugLabelForAlwaysOnTop.AutoSize = True
-        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(20, 295)
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(12, 305)
         Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
         Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(222, 34)

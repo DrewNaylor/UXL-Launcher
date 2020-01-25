@@ -114,6 +114,9 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorLinkLabelForeColor As Color ' used for non-link text.
         Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
         Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
+        ' FlowLayoutPanel colors:
+        Dim colorPanelBackColor As Color
+        Dim colorPanelForeColor As Color
         ' Radio Button colors:
         Dim colorRadioButtonBackColor As Color
         Dim colorRadioButtonForeColor As Color
@@ -617,6 +620,38 @@ Public Class UXLLauncher_ThemeEngine
         Else
             ' If the element doesn't exist, overwrite it with the Default theme's value.
             colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
+#Region "Panel BackColor."
+        ' Only pull the Panel BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
+#End Region
+
+#Region "Panel ForeColor"
+        ' Only pull the Panel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
         End If
 #End Region
 
