@@ -204,8 +204,8 @@ Partial Class aaformDebugLabels
         '
         'aaformDebugLabels
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(477, 360)
         Me.Controls.Add(Me.panelLabelsTab)
         Me.Name = "aaformDebugLabels"
