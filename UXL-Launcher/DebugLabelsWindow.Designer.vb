@@ -38,11 +38,11 @@ Partial Class aaformDebugLabels
         Me.debugButtonTestThemeSetter = New System.Windows.Forms.Button()
         Me.groupboxOfficeDetails = New System.Windows.Forms.GroupBox()
         Me.groupboxThemeInfo = New System.Windows.Forms.GroupBox()
-        Me.groupboxOther = New System.Windows.Forms.GroupBox()
+        Me.groupboxAlwaysOnTop = New System.Windows.Forms.GroupBox()
         Me.panelLabelsTab = New System.Windows.Forms.Panel()
         Me.groupboxOfficeDetails.SuspendLayout()
         Me.groupboxThemeInfo.SuspendLayout()
-        Me.groupboxOther.SuspendLayout()
+        Me.groupboxAlwaysOnTop.SuspendLayout()
         Me.panelLabelsTab.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -216,27 +216,27 @@ Partial Class aaformDebugLabels
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeFileVersion)
         Me.groupboxThemeInfo.Location = New System.Drawing.Point(3, 202)
         Me.groupboxThemeInfo.Name = "groupboxThemeInfo"
-        Me.groupboxThemeInfo.Size = New System.Drawing.Size(427, 182)
+        Me.groupboxThemeInfo.Size = New System.Drawing.Size(427, 189)
         Me.groupboxThemeInfo.TabIndex = 43
         Me.groupboxThemeInfo.TabStop = False
         Me.groupboxThemeInfo.Text = "Theme Details"
         '
-        'groupboxOther
+        'groupboxAlwaysOnTop
         '
-        Me.groupboxOther.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.groupboxAlwaysOnTop.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.groupboxOther.Controls.Add(Me.debugLabelForAlwaysOnTop)
-        Me.groupboxOther.Location = New System.Drawing.Point(3, 390)
-        Me.groupboxOther.Name = "groupboxOther"
-        Me.groupboxOther.Size = New System.Drawing.Size(427, 156)
-        Me.groupboxOther.TabIndex = 44
-        Me.groupboxOther.TabStop = False
-        Me.groupboxOther.Text = "Other Details"
+        Me.groupboxAlwaysOnTop.Controls.Add(Me.debugLabelForAlwaysOnTop)
+        Me.groupboxAlwaysOnTop.Location = New System.Drawing.Point(3, 397)
+        Me.groupboxAlwaysOnTop.Name = "groupboxAlwaysOnTop"
+        Me.groupboxAlwaysOnTop.Size = New System.Drawing.Size(427, 149)
+        Me.groupboxAlwaysOnTop.TabIndex = 44
+        Me.groupboxAlwaysOnTop.TabStop = False
+        Me.groupboxAlwaysOnTop.Text = "Always On Top Details"
         '
         'panelLabelsTab
         '
-        Me.panelLabelsTab.Controls.Add(Me.groupboxOther)
+        Me.panelLabelsTab.Controls.Add(Me.groupboxAlwaysOnTop)
         Me.panelLabelsTab.Controls.Add(Me.groupboxThemeInfo)
         Me.panelLabelsTab.Controls.Add(Me.groupboxOfficeDetails)
         Me.panelLabelsTab.Dock = System.Windows.Forms.DockStyle.Fill
@@ -257,8 +257,8 @@ Partial Class aaformDebugLabels
         Me.groupboxOfficeDetails.PerformLayout()
         Me.groupboxThemeInfo.ResumeLayout(False)
         Me.groupboxThemeInfo.PerformLayout()
-        Me.groupboxOther.ResumeLayout(False)
-        Me.groupboxOther.PerformLayout()
+        Me.groupboxAlwaysOnTop.ResumeLayout(False)
+        Me.groupboxAlwaysOnTop.PerformLayout()
         Me.panelLabelsTab.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -280,6 +280,6 @@ Partial Class aaformDebugLabels
     Friend WithEvents debugButtonTestThemeSetter As Button
     Friend WithEvents groupboxThemeInfo As GroupBox
     Friend WithEvents groupboxOfficeDetails As GroupBox
-    Friend WithEvents groupboxOther As GroupBox
+    Friend WithEvents groupboxAlwaysOnTop As GroupBox
     Friend WithEvents panelLabelsTab As Panel
 End Class
