@@ -36,8 +36,8 @@ Partial Class aaformDebugLabels
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.debugButtonDefaultThemeSetter = New System.Windows.Forms.Button()
         Me.debugButtonTestThemeSetter = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
+        Me.panelLabelsTab = New System.Windows.Forms.Panel()
+        Me.panelLabelsTab.SuspendLayout()
         Me.SuspendLayout()
         '
         'debugLabelXmlThemeFileVersion
@@ -180,38 +180,38 @@ Partial Class aaformDebugLabels
         Me.debugButtonTestThemeSetter.Text = "Apply Chosen Theme"
         Me.debugButtonTestThemeSetter.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'panelLabelsTab
         '
-        Me.Panel1.Controls.Add(Me.debugLabelForofficeDriveLocation)
-        Me.Panel1.Controls.Add(Me.debugButtonDefaultThemeSetter)
-        Me.Panel1.Controls.Add(Me.debugLabelForcpuTypeString)
-        Me.Panel1.Controls.Add(Me.debugButtonTestThemeSetter)
-        Me.Panel1.Controls.Add(Me.debugLabelForofficeInstallMethodString)
-        Me.Panel1.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
-        Me.Panel1.Controls.Add(Me.debugLabelForuserOfficeVersion)
-        Me.Panel1.Controls.Add(Me.debugLabelForAlwaysOnTop)
-        Me.Panel1.Controls.Add(Me.debugLabelForUserHasOfficeThreeSixFive)
-        Me.Panel1.Controls.Add(Me.debugLabelXmlThemeFileVersion)
-        Me.Panel1.Controls.Add(Me.debugLabelXmlThemeDescription)
-        Me.Panel1.Controls.Add(Me.debugLabelXmlThemeUseThemeEngineVersion)
-        Me.Panel1.Controls.Add(Me.debugLabelXmlThemeTitle)
-        Me.Panel1.Controls.Add(Me.debugLabelXmlThemeAuthor)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(477, 360)
-        Me.Panel1.TabIndex = 42
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelForofficeDriveLocation)
+        Me.panelLabelsTab.Controls.Add(Me.debugButtonDefaultThemeSetter)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelForcpuTypeString)
+        Me.panelLabelsTab.Controls.Add(Me.debugButtonTestThemeSetter)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelForofficeInstallMethodString)
+        Me.panelLabelsTab.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelForuserOfficeVersion)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelForAlwaysOnTop)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelForUserHasOfficeThreeSixFive)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelXmlThemeFileVersion)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelXmlThemeDescription)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelXmlThemeUseThemeEngineVersion)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelXmlThemeTitle)
+        Me.panelLabelsTab.Controls.Add(Me.debugLabelXmlThemeAuthor)
+        Me.panelLabelsTab.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelLabelsTab.Location = New System.Drawing.Point(0, 0)
+        Me.panelLabelsTab.Name = "panelLabelsTab"
+        Me.panelLabelsTab.Size = New System.Drawing.Size(477, 360)
+        Me.panelLabelsTab.TabIndex = 42
         '
         'aaformDebugLabels
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(477, 360)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelLabelsTab)
         Me.Name = "aaformDebugLabels"
         Me.Text = "aaformDebugLabels"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.panelLabelsTab.ResumeLayout(False)
+        Me.panelLabelsTab.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -230,5 +230,5 @@ Partial Class aaformDebugLabels
     Friend WithEvents debugLabelForAlwaysOnTop As Label
     Friend WithEvents debugButtonDefaultThemeSetter As Button
     Friend WithEvents debugButtonTestThemeSetter As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelLabelsTab As Panel
 End Class
