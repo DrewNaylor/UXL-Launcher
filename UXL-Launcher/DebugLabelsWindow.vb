@@ -30,7 +30,9 @@
 Public Class aaformDebugLabels
     Private Sub aaformDebugLabels_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         debugmodeStuff.updateDebugLabels()
-        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(Me, aaformMainWindow.UXLToolstripRenderer)
+        If My.Settings.enableThemeEngine = True Then
+            UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(Me, aaformMainWindow.UXLToolstripRenderer)
+        End If
     End Sub
 
     Private Sub debugButtonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonTestThemeSetter.Click
