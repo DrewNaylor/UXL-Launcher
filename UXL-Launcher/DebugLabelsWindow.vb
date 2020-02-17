@@ -29,7 +29,12 @@
 
 Public Class aaformDebugLabels
     Private Sub aaformDebugLabels_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Make sure the debug labels are up to date and don't have the
+        ' default text after closing and re-opening the window.
         debugmodeStuff.updateDebugLabels()
+        ' If the theme engine is enabled, re-apply the current theme to the debug
+        ' window so it's more consistent and doesn't use the Default theme after
+        ' closing and re-opening it.
         If My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(Me, aaformMainWindow.UXLToolstripRenderer)
         End If
