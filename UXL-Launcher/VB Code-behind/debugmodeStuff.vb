@@ -44,17 +44,17 @@ Public Class debugmodeStuff
                 ' theme debug labels and tester buttons.
                 aaformDebugLabels.groupboxThemeInfo.Hide()
 
-
             End If
 
         ElseIf My.Settings.debugmodeShowLabels = False Then
+            ' If debug labels aren't supposed to be shown, hide the debug menu.
             aaformMainWindow.menubarDebugMenu.Visible = False
 
         End If
     End Sub
-#Region "Update the debug labels on the main form."
+#Region "Update the debug window labels."
     Public Shared Sub updateDebugLabels()
-        ' Update the debug labels on the main window.
+        ' Update the debug window labels.
 
         ' Debug label for officeDriveLocation.
         aaformDebugLabels.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
