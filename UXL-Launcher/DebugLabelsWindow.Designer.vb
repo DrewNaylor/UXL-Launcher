@@ -49,7 +49,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeFileVersion
         '
         Me.debugLabelXmlThemeFileVersion.AutoSize = True
-        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(5, 67)
+        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(5, 68)
         Me.debugLabelXmlThemeFileVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.debugLabelXmlThemeFileVersion.Name = "debugLabelXmlThemeFileVersion"
         Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(220, 17)
@@ -59,7 +59,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(5, 83)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(5, 85)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
         Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(311, 17)
@@ -69,7 +69,7 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(5, 50)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(5, 51)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
         Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(192, 17)
@@ -168,7 +168,7 @@ Partial Class aaformDebugLabels
         '
         'debugButtonDefaultThemeSetter
         '
-        Me.debugButtonDefaultThemeSetter.Location = New System.Drawing.Point(111, 105)
+        Me.debugButtonDefaultThemeSetter.Location = New System.Drawing.Point(112, 116)
         Me.debugButtonDefaultThemeSetter.Margin = New System.Windows.Forms.Padding(4)
         Me.debugButtonDefaultThemeSetter.Name = "debugButtonDefaultThemeSetter"
         Me.debugButtonDefaultThemeSetter.Size = New System.Drawing.Size(94, 72)
@@ -178,7 +178,7 @@ Partial Class aaformDebugLabels
         '
         'debugButtonTestThemeSetter
         '
-        Me.debugButtonTestThemeSetter.Location = New System.Drawing.Point(10, 105)
+        Me.debugButtonTestThemeSetter.Location = New System.Drawing.Point(10, 116)
         Me.debugButtonTestThemeSetter.Margin = New System.Windows.Forms.Padding(4)
         Me.debugButtonTestThemeSetter.Name = "debugButtonTestThemeSetter"
         Me.debugButtonTestThemeSetter.Size = New System.Drawing.Size(94, 72)
@@ -205,7 +205,8 @@ Partial Class aaformDebugLabels
         '
         'groupboxThemeInfo
         '
-        Me.groupboxThemeInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.groupboxThemeInfo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeTitle)
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeAuthor)
@@ -214,22 +215,21 @@ Partial Class aaformDebugLabels
         Me.groupboxThemeInfo.Controls.Add(Me.debugButtonTestThemeSetter)
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeDescription)
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeFileVersion)
-        Me.groupboxThemeInfo.Location = New System.Drawing.Point(3, 202)
+        Me.groupboxThemeInfo.Location = New System.Drawing.Point(3, 348)
         Me.groupboxThemeInfo.Name = "groupboxThemeInfo"
-        Me.groupboxThemeInfo.Size = New System.Drawing.Size(427, 189)
+        Me.groupboxThemeInfo.Size = New System.Drawing.Size(427, 198)
         Me.groupboxThemeInfo.TabIndex = 43
         Me.groupboxThemeInfo.TabStop = False
         Me.groupboxThemeInfo.Text = "Theme Details"
         '
         'groupboxAlwaysOnTop
         '
-        Me.groupboxAlwaysOnTop.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.groupboxAlwaysOnTop.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupboxAlwaysOnTop.Controls.Add(Me.debugLabelForAlwaysOnTop)
-        Me.groupboxAlwaysOnTop.Location = New System.Drawing.Point(3, 397)
+        Me.groupboxAlwaysOnTop.Location = New System.Drawing.Point(3, 202)
         Me.groupboxAlwaysOnTop.Name = "groupboxAlwaysOnTop"
-        Me.groupboxAlwaysOnTop.Size = New System.Drawing.Size(427, 149)
+        Me.groupboxAlwaysOnTop.Size = New System.Drawing.Size(427, 140)
         Me.groupboxAlwaysOnTop.TabIndex = 44
         Me.groupboxAlwaysOnTop.TabStop = False
         Me.groupboxAlwaysOnTop.Text = "Always On Top Details"

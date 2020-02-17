@@ -31,56 +31,22 @@ Public Class debugmodeStuff
     ' This document is used to contain all the debug labels and textboxes.
     Public Shared Sub showDebugLabels()
         If My.Settings.debugmodeShowLabels = True Then
+            ' Show the debug menu item if showing debug labels is enabled.
             aaformMainWindow.menubarDebugMenu.Visible = True
 
-            aaformDebugLabels.debugLabelForAlwaysOnTop.Show()
-            aaformDebugLabels.debugLabelForofficeDriveLocation.Show()
-            aaformDebugLabels.debugLabelForcpuTypeString.Show()
-            aaformDebugLabels.debugLabelForofficeInstallMethodString.Show()
-            aaformDebugLabels.debugLabelForuserOfficeVersion.Show()
-            aaformDebugLabels.debugTextboxForFullLauncherCodeString.Show()
-            aaformDebugLabels.debugLabelForUserHasOfficeThreeSixFive.Show()
             ' Show theme debug labels if the theme engine is enabled.
             If My.Settings.enableThemeEngine = True Then
-                aaformDebugLabels.debugLabelXmlThemeTitle.Show()
-                aaformDebugLabels.debugLabelXmlThemeDescription.Show()
-                aaformDebugLabels.debugLabelXmlThemeAuthor.Show()
-                aaformDebugLabels.debugLabelXmlThemeFileVersion.Show()
-                aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Show()
-                ' Show theme tester buttons if the theme engine is enabled.
-                aaformDebugLabels.debugButtonDefaultThemeSetter.Show()
-                aaformDebugLabels.debugButtonTestThemeSetter.Show()
+                aaformDebugLabels.groupboxThemeInfo.Show()
+
             ElseIf My.Settings.enableThemeEngine = False Then
                 ' Otherwise, hide the theme debug labels and tester buttons.
-                aaformDebugLabels.debugButtonDefaultThemeSetter.Hide()
-                aaformDebugLabels.debugButtonTestThemeSetter.Hide()
-                ' Theme debug labels hiding.
-                aaformDebugLabels.debugLabelXmlThemeTitle.Hide()
-                aaformDebugLabels.debugLabelXmlThemeDescription.Hide()
-                aaformDebugLabels.debugLabelXmlThemeAuthor.Hide()
-                aaformDebugLabels.debugLabelXmlThemeFileVersion.Hide()
-                aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Hide()
+                aaformDebugLabels.groupboxThemeInfo.Hide()
+
             End If
 
         ElseIf My.Settings.debugmodeShowLabels = False Then
             aaformMainWindow.menubarDebugMenu.Visible = False
 
-            aaformDebugLabels.debugLabelForAlwaysOnTop.Hide()
-            aaformDebugLabels.debugLabelForofficeDriveLocation.Hide()
-            aaformDebugLabels.debugLabelForcpuTypeString.Hide()
-            aaformDebugLabels.debugLabelForofficeInstallMethodString.Hide()
-            aaformDebugLabels.debugLabelForuserOfficeVersion.Hide()
-            aaformDebugLabels.debugTextboxForFullLauncherCodeString.Hide()
-            aaformDebugLabels.debugLabelForUserHasOfficeThreeSixFive.Hide()
-            ' Theme tester buttons.
-            aaformDebugLabels.debugButtonDefaultThemeSetter.Hide()
-            aaformDebugLabels.debugButtonTestThemeSetter.Hide()
-            ' Theme debug labels hiding.
-            aaformDebugLabels.debugLabelXmlThemeTitle.Hide()
-            aaformDebugLabels.debugLabelXmlThemeDescription.Hide()
-            aaformDebugLabels.debugLabelXmlThemeAuthor.Hide()
-            aaformDebugLabels.debugLabelXmlThemeFileVersion.Hide()
-            aaformDebugLabels.debugLabelXmlThemeUseThemeEngineVersion.Hide()
         End If
     End Sub
 #Region "Update the debug labels on the main form."
