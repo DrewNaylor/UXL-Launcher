@@ -29,7 +29,7 @@
 
 Public Class aaformDebugLabels
     Private Sub aaformDebugLabels_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        debugmodeStuff.updateDebugLabels()
     End Sub
 
     Private Sub debugButtonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonTestThemeSetter.Click

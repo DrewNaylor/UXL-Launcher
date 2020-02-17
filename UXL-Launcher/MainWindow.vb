@@ -318,7 +318,7 @@ Public Class aaformMainWindow
     ' In Version 3.3, this also prevents opening
     ' multiple Options windows from the Quickmenu or from the main window by
     ' clicking the "Show UXL Launcher" button in the Quickmenu, pressing Alt,
-' then navigating to the Tools>Options... button. That navigation bug should be worked on
+    ' then navigating to the Tools>Options... button. That navigation bug should be worked on
     ' and described in a bug report, but it's not easy to hit.
     Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
 
