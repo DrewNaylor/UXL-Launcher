@@ -341,8 +341,8 @@ Partial Class aaformMainWindow
         'menuitemShowDebugWindow
         '
         Me.menuitemShowDebugWindow.Name = "menuitemShowDebugWindow"
-        Me.menuitemShowDebugWindow.Size = New System.Drawing.Size(223, 26)
-        Me.menuitemShowDebugWindow.Text = "Show debug &window"
+        Me.menuitemShowDebugWindow.Size = New System.Drawing.Size(224, 26)
+        Me.menuitemShowDebugWindow.Text = "Debug info &window..."
         '
         'contextmenuNotifyicon
         '

@@ -252,7 +252,7 @@ Partial Class aaformDebugLabels
         Me.ClientSize = New System.Drawing.Size(433, 549)
         Me.Controls.Add(Me.panelLabelsTab)
         Me.Name = "aaformDebugLabels"
-        Me.Text = "aaformDebugLabels"
+        Me.Text = "Debug Info"
         Me.groupboxOfficeDetails.ResumeLayout(False)
         Me.groupboxOfficeDetails.PerformLayout()
         Me.groupboxThemeInfo.ResumeLayout(False)
