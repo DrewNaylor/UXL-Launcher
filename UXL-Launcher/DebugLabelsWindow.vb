@@ -32,24 +32,30 @@ Public Class aaformDebugLabels
         ' Make sure the debug labels are up to date and don't have the
         ' default text after closing and re-opening the window.
         debugmodeStuff.updateDebugLabels()
+        ' Show/hide areas as needed.
+        debugmodeStuff.showDebugLabels()
         ' If the theme engine is enabled, re-apply the current theme to the debug
         ' window so it's more consistent and doesn't use the Default theme after
         ' closing and re-opening it.
-        If My.Settings.enableThemeEngine = True Then
+        If aaformOptionsWindow.boolIsThemeEngineEnabled = True Then
             UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(Me, aaformMainWindow.UXLToolstripRenderer)
         End If
     End Sub
 
     Private Sub debugButtonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonTestThemeSetter.Click
-        ' Attempt to apply the theme the user chose.
-        If My.Settings.enableThemeEngine = True Then
+        ' Attempt to apply the theme the user chose if the theme engine is enabled.
+        ' Make sure the theme engine was enabled at application start
+        ' so that the theme will be applied properly.
+        If aaformOptionsWindow.boolIsThemeEngineEnabled = True AndAlso My.Settings.enableThemeEngine = True Then
             aaformMainWindow.themeChooser()
         End If
     End Sub
 
     Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
-        ' Attempt to apply the default theme.
-        If My.Settings.enableThemeEngine = True Then
+        ' Attempt to apply the default theme if the theme engine is enabled.
+        ' Make sure the theme engine was enabled at application start
+        ' so that the theme will be applied properly.
+        If aaformOptionsWindow.boolIsThemeEngineEnabled = True AndAlso My.Settings.enableThemeEngine = True Then
             UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
             aaformMainWindow.themeApplier()
             ' First make sure theme engine output is enabled.

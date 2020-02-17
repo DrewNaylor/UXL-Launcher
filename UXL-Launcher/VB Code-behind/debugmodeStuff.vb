@@ -34,13 +34,16 @@ Public Class debugmodeStuff
             ' Show the debug menu item if showing debug labels is enabled.
             aaformMainWindow.menubarDebugMenu.Visible = True
 
-            ' Show theme debug labels if the theme engine is enabled.
-            If My.Settings.enableThemeEngine = True Then
+            ' Show theme debug labels if the theme engine was enabled
+            ' on application startup.
+            If My.Settings.enableThemeEngine = True AndAlso aaformOptionsWindow.boolIsThemeEngineEnabled = True Then
                 aaformDebugLabels.groupboxThemeInfo.Show()
 
-            ElseIf My.Settings.enableThemeEngine = False Then
-                ' Otherwise, hide the theme debug labels and tester buttons.
+            ElseIf My.Settings.enableThemeEngine = False Or aaformOptionsWindow.boolIsThemeEngineEnabled = False Then
+                ' If it's disabled at the moment, hide the
+                ' theme debug labels and tester buttons.
                 aaformDebugLabels.groupboxThemeInfo.Hide()
+
 
             End If
 
