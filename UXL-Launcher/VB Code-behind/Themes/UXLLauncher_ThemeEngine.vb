@@ -114,7 +114,7 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorLinkLabelForeColor As Color ' used for non-link text.
         Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
         Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
-        ' FlowLayoutPanel colors:
+        ' Panel colors:
         Dim colorPanelBackColor As Color
         Dim colorPanelForeColor As Color
         ' Radio Button colors:
