@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Portable theme engine based on UXL Launcher Theme Engine for Windows Forms applications.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("libportablethemeengine")>
-<Assembly: AssemblyCopyright("Copyright © 2019 Drew Naylor. Licensed under Gnu GPLv3+.")>
+<Assembly: AssemblyCopyright("Copyright (C) 2019-2020 Drew Naylor. Licensed under Apache License 2.0.")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
