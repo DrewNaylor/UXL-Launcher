@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2019 Drew Naylor
+'Copyright (C) 2013-2020 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -42,7 +42,7 @@ Public Class isolated_error_handler
             Catch ex As System.ComponentModel.Win32Exception
                 ' If the program the user wants to launch isn't found in the folder the user chose
                 ' in the Options window, ask them if they want to go to the Options window to change it.
-                Dim msgResult As Integer = MessageBox.Show("We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the configured location." &
+                Dim msgResult As Integer = MessageBox.Show(aaformMainWindow, "We couldn't find " & launcherErrorHandler_ExeFriendlyName & " in the configured location." &
                 " Would you like to open the Options window to change your settings?" & vbCrLf &
                     "" & vbCrLf &
                     "Full error message: " & ex.Message & vbCrLf &
@@ -53,9 +53,8 @@ Public Class isolated_error_handler
                 ' If the user chooses to open the Options window, open the Options window to the General tab.
                 If msgResult = DialogResult.Yes Then
                     ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-                    Dim forceOptionsWindowTab As New aaformOptionsWindow
-                    forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                    forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                    aaformMainWindow.forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                    aaformMainWindow.forceOptionsWindowTab.ShowDialog(aaformMainWindow)
                 End If
             Catch ex As Exception
                 ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
@@ -89,9 +88,8 @@ Public Class isolated_error_handler
                 ' If the user chooses to open the Options window, open the Options window to the General tab.
                 If msgResult = DialogResult.Yes Then
                     ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-                    Dim forceOptionsWindowTab As New aaformOptionsWindow
-                    forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                    forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                    aaformMainWindow.forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                    aaformMainWindow.forceOptionsWindowTab.ShowDialog(aaformMainWindow)
                 End If
             Catch ex As Exception
                 ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
@@ -118,7 +116,12 @@ Public Class isolated_error_handler
 
         Dim procNewFile As New ProcessStartInfo
         ' Now, get the file to launch.
-        procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            procNewFile.FileName = exeToLaunch
+        Else
+            procNewFile.FileName = OfficeLocater.fullLauncherCodeString & exeToLaunch
+        End If
         ' Assign start arguments.
         procNewFile.Arguments = launchArguments
         ' Try to start the program.
@@ -127,19 +130,33 @@ Public Class isolated_error_handler
         Catch ex As System.ComponentModel.Win32Exception
             ' If the program the user wants to launch isn't found in the folder the user chose
             ' in the Options window, ask them if they want to go to the Options window to change it.
-            Dim msgResult As Integer = MessageBox.Show("We couldn't find " & exeFriendlyName & " in the configured location." &
+
+            Dim msgResult As Integer
+            ' If bypassing the configured location is enabled, use the appropriate message.
+            If My.Settings.bypassConfiguredLocationForAllApps = True Then
+                msgResult = MessageBox.Show("We couldn't find " & exeFriendlyName & ". Maybe it's not installed?" & vbCrLf &
+                "Would you like to open the Options window to change your settings?" & vbCrLf &
+                    "" & vbCrLf &
+                    "Full error message: " & ex.Message & vbCrLf &
+                    vbCrLf &
+                    "Bypassing the configured location was enabled for this app.", "Couldn't find " & exeFriendlyName,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+
+            Else
+                ' Otherwise, use the regular message.
+                msgResult = MessageBox.Show("We couldn't find " & exeFriendlyName & " in the configured location." &
             " Would you like to open the Options window to change your settings?" & vbCrLf &
                 "" & vbCrLf &
                 "Full error message: " & ex.Message & vbCrLf &
                 vbCrLf &
                 "Configured location: " & OfficeLocater.fullLauncherCodeString, "Couldn't find " & exeFriendlyName, MessageBoxButtons.YesNo, MessageBoxIcon.Error)
+            End If
 
             ' If the user chooses to open the Options window, open the Options window to the General tab.
             If msgResult = DialogResult.Yes Then
                 ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-                Dim forceOptionsWindowTab As New aaformOptionsWindow
-                forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                aaformMainWindow.forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+                aaformMainWindow.forceOptionsWindowTab.ShowDialog(aaformMainWindow)
             End If
         Catch ex As Exception
             ' If another error shows up, then we can't handle it yet and ask the user if they want to file a

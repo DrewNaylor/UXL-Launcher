@@ -1,5 +1,5 @@
 'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2019 Drew Naylor
+'Copyright (C) 2013-2020 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -60,6 +60,9 @@ Public Class aaformMainWindow
         ' to My.Settings.enableThemeEngine.
         ' This ensures that the theme engine isn't used by accident when
         ' saving settings in the Options window.
+        ' This can also be used to check if the theme engine was enabled
+        ' when the application started to prevent accidental starting with
+        ' the Debug window buttons.
         aaformOptionsWindow.boolIsThemeEngineEnabled = My.Settings.enableThemeEngine
 
 #Region "Start the theme engine."
@@ -318,7 +321,7 @@ Public Class aaformMainWindow
     ' In Version 3.3, this also prevents opening
     ' multiple Options windows from the Quickmenu or from the main window by
     ' clicking the "Show UXL Launcher" button in the Quickmenu, pressing Alt,
-' then navigating to the Tools>Options... button. That navigation bug should be worked on
+    ' then navigating to the Tools>Options... button. That navigation bug should be worked on
     ' and described in a bug report, but it's not easy to hit.
     Friend Shared forceOptionsWindowTab As New aaformOptionsWindow
 
@@ -437,6 +440,11 @@ Public Class aaformMainWindow
         End If
     End Sub
 #End Region
+
+    Private Sub ShowDebugwindowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuitemShowDebugWindow.Click
+        ' Show the window with the debug labels.
+        aaformDebugLabels.Show()
+    End Sub
 #End Region
 
 #Region "App Launcher Code."
@@ -576,17 +584,13 @@ Public Class aaformMainWindow
 #End Region
 
 #Region "Theme Tester Buttons."
-    Private Sub debugButtonTestThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonTestThemeSetter.Click
-        ' Attempt to apply the theme the user chose.
-        If My.Settings.enableThemeEngine = True Then
-            themeChooser()
-        End If
-    End Sub
+    ' Theme tester buttons have been moved to the debug window.
 
     Public Shared Sub themeChooser()
         ' This is the list of forms that the theme engine applies stuff to
         ' when choosing the theme on its own.
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(aaformDebugLabels, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceAboutWindowTab, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ChooseUserTheme(forceOptionsWindowTab, UXLToolstripRenderer)
     End Sub
@@ -595,26 +599,9 @@ Public Class aaformMainWindow
         ' This is the list of forms that the theme engine applies stuff to
         ' when the theme is pre-specified.
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformMainWindow, UXLToolstripRenderer)
+        UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(aaformDebugLabels, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceAboutWindowTab, UXLToolstripRenderer)
         UXLLauncher_ThemeEngine.themeEngine_ApplyTheme(forceOptionsWindowTab, UXLToolstripRenderer)
-    End Sub
-
-    Private Sub debugButtonDefaultThemeSetter_Click(sender As Object, e As EventArgs) Handles debugButtonDefaultThemeSetter.Click
-        ' Attempt to apply the default theme.
-        If My.Settings.enableThemeEngine = True Then
-            UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-            themeApplier()
-            ' First make sure theme engine output is enabled.
-            If My.Settings.debugmodeShowThemeEngineOutput = True Then
-                Debug.WriteLine("userTheme:")
-                ' Due to changes to the theme engine, I had to change
-                ' how the theme engine outputs the user's theme file
-                ' and it doesn't look as good as it used to, but this
-                ' should be fine. "OuterXml" property from here:
-                ' https://msdn.microsoft.com/en-us/library/system.xml.xmlnode.outerxml.aspx
-                Debug.Print(UXLLauncher_ThemeEngine.userTheme.OuterXml)
-            End If
-        End If
     End Sub
 #End Region
 

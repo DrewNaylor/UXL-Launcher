@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2019 Drew Naylor
+'Copyright (C) 2013-2020 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -31,20 +31,34 @@ Public Class LaunchApp
 #Region "Microsoft Access Launcher Code."
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft Excel Launcher Code."
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft InfoPath Launcher Code."
     Public Shared Sub LaunchInfopath()
         ' Launch Microsoft Infopath. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Or My.Settings.bypassConfiguredLocationForAllApps = True Then
             isolated_error_handler.launcherErrorHandler("INFOPATH.EXE", "Microsoft InfoPath", True)
             ' Otherwise, don't.
         Else
@@ -57,31 +71,46 @@ Public Class LaunchApp
     Public Shared Sub LaunchOnenote()
         ' Launch Microsoft Onenote. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Or My.Settings.bypassConfiguredLocationForAllApps = True Then
             isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote", True)
             ' Otherwise, don't.
         Else
             isolated_error_handler.launcherErrorHandler("ONENOTE.EXE", "Microsoft OneNote")
         End If
+
     End Sub
 #End Region
 #Region "Microsoft Outlook Launcher Code."
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft PowerPoint Launcher Code."
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft SharePoint Workspace Launcher Code."
     Public Shared Sub LaunchSharepointWorkspace()
         ' Launch Microsoft Sharepoint Workspace. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Or My.Settings.bypassConfiguredLocationForAllApps = True Then
             isolated_error_handler.launcherErrorHandler("GROOVE.EXE", "Microsoft SharePoint Workspace", True)
             ' Otherwise, don't.
         Else
@@ -92,13 +121,27 @@ Public Class LaunchApp
 #Region "Microsoft Publisher Launcher Code."
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft Word Launcher Code."
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
-        isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word")
+        ' If the user wants to bypass the configured location, do so.
+        If My.Settings.bypassConfiguredLocationForAllApps = True Then
+            isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word", True)
+            ' Otherwise, don't.
+        Else
+            isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word")
+        End If
+
     End Sub
 #End Region
 #Region "Microsoft Query Launcher Code."
@@ -117,7 +160,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchPictureManager()
         ' Launch Microsoft Office Picture Manager. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
+        If My.Settings.bypassConfiguredLocationForDeprecatedApps = True Or My.Settings.bypassConfiguredLocationForAllApps = True Then
             isolated_error_handler.launcherErrorHandler("OIS.EXE", "Microsoft Office Picture Manager", True)
             ' Otherwise, don't.
         Else

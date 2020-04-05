@@ -45,6 +45,11 @@
         <ForeColor>White</ForeColor>
       </Label>
 
+      <Panel>
+        <BackColor>Orchid</BackColor>
+        <ForeColor>Purple</ForeColor>
+      </Panel>
+
       <RadioButton>
         <BackColor>LightBlue</BackColor>
         <ForeColor>Magenta</ForeColor>

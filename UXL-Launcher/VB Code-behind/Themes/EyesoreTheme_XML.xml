@@ -44,6 +44,11 @@
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
+      
+      <Panel>
+        <BackColor>Red</BackColor>
+        <ForeColor>White</ForeColor>
+      </Panel>
 
       <TableLayoutPanel>
         <BackColor>Yellow</BackColor>

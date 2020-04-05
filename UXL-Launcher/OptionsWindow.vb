@@ -1,5 +1,5 @@
 ﻿'UXL Launcher - UXL Launcher provides launchers for most Microsoft Office apps in one place.
-'Copyright (C) 2013-2019 Drew Naylor
+'Copyright (C) 2013-2020 Drew Naylor
 'Microsoft Office and all related words are copyright
 'and trademark Microsoft Corporation. More details in the About window.
 'Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor
@@ -287,7 +287,14 @@ Public Class aaformOptionsWindow
 
 #Region "Code that runs when the user clicks the Save button."
     Private Sub buttonSaveSettings_Click(sender As Object, e As EventArgs) Handles buttonSaveSettings.Click
+        ' Moved saving code to its own sub so that closing the Options
+        ' window isn't required when saving.
+        saveStuff()
+        Me.Close()
 
+    End Sub
+
+    Private Sub saveStuff()
         ' Look at the length of the text in the "Office Install Drive" textbox and if there is no text in it then kindly tell the
         ' user they need to type in one drive letter.
         If textboxOfficeDrive.Text.Length = 0 Then
@@ -411,7 +418,7 @@ Public Class aaformOptionsWindow
             MessageBox.Show("Settings saved." & vbCrLf &
                         "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
-            Me.Close()
+
         End If
     End Sub
 #End Region
@@ -449,8 +456,10 @@ Public Class aaformOptionsWindow
                         "The Options window will close after your settings are saved.",
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
-            buttonSaveSettings.PerformClick()
-            Me.Hide() ' This Me.Hide() might not be necessary anymore since the Options window gets closed after saving settings, but I don't know. This line will be removed if it's definately not required.
+            ' Save the user's settings first before testing.
+            saveStuff()
+            ' Hide the Options window so it doesn't get in the way.
+            Me.Hide()
             ' Now, try to see if SETLANG.EXE is located in the configured directory.
             ' If it is found, show the user a few of the file's properties.
             ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
@@ -469,11 +478,15 @@ Public Class aaformOptionsWindow
                                                                                    vbCrLf &
                                                                                    "Configured location: " & OfficeLocater.fullLauncherCodeString,
                                                                                    "Test settings", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
-                ' If the user clicks "Yes", open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+
+                ' If the user clicks "Yes", show the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
                 If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
-                    Dim forceOptionsWindowTab As New aaformOptionsWindow
-                    forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                    forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                    Me.Show()
+
+                Else
+                    ' If the user doesn't want to open the Options window, make
+                    ' sure that it's closed.
+                    Me.Close()
                 End If
             End If
         End If

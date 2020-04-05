@@ -86,6 +86,11 @@
         <ActiveLinkColor>Red</ActiveLinkColor>
         <LinkColor>DodgerBlue</LinkColor>
       </LinkLabel>
+      
+      <Panel>
+        <BackColor>Black</BackColor>
+        <ForeColor>White</ForeColor>
+      </Panel>
 
       <RadioButton>
         <BackColor>Transparent</BackColor>
