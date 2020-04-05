@@ -61,6 +61,11 @@
         <ForeColor>Black</ForeColor>
       </Label>
 
+      <Panel>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+      </Panel>
+
       <TextBox>
         <BackColor>White</BackColor>
         <ForeColor>Black</ForeColor>

@@ -114,6 +114,9 @@ Public Class UXLLauncher_ThemeEngine
         Dim colorLinkLabelForeColor As Color ' used for non-link text.
         Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
         Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
+        ' Panel colors:
+        Dim colorPanelBackColor As Color
+        Dim colorPanelForeColor As Color
         ' Radio Button colors:
         Dim colorRadioButtonBackColor As Color
         Dim colorRadioButtonForeColor As Color
@@ -620,6 +623,38 @@ Public Class UXLLauncher_ThemeEngine
         End If
 #End Region
 
+#Region "Panel BackColor."
+        ' Only pull the Panel BackColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/BackColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+        End If
+#End Region
+
+#Region "Panel ForeColor"
+        ' Only pull the Panel ForeColor element from XML if it exists.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
+            Try
+                colorPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Panel/ForeColor[1]", themeNamespaceManager).InnerText)
+                debugmodeStuff.updateDebugLabels()
+                ' If the element isn't a valid HTML color, just replace it with the default.
+            Catch ex As Exception
+                colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            End Try
+        Else
+            ' If the element doesn't exist, overwrite it with the Default theme's value.
+            colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+        End If
+#End Region
+
 #Region "Radio Button BackColor"
         ' Only pull the Radio Button BackColor element from XML if it exists.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
@@ -953,7 +988,7 @@ Public Class UXLLauncher_ThemeEngine
 
 #Region "Apply default colors to forms not supported by TE1.02 or lower."
         ' Apply default colors to forms that aren't supported by TE1.02 or lower.
-        If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
+        If formToApplyTo.Name IsNot "aaformMainWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
             ' If the theme doesn't support TE1.03, apply defaults.
             ' Default button colors.
             colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
@@ -998,6 +1033,10 @@ Public Class UXLLauncher_ThemeEngine
             colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
             colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
             colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+
+            ' Default Panel colors.
+            colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+            colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
             ' Default About window banner.
             bannerStyle = My.Resources.UXL_Launcher_Banner
@@ -1141,6 +1180,13 @@ Public Class UXLLauncher_ThemeEngine
                     ctrl.BackColor = colorTabPageBackColor
                     ctrl.ForeColor = colorTabPageForeColor
                 End If
+
+            ElseIf TypeOf ctrl Is Panel Then
+                ' If the control is a panel, theme it as such.
+                ' Panel BackColor.
+                ctrl.BackColor = colorPanelBackColor
+                ' Panel ForeColor.
+                ctrl.ForeColor = colorPanelForeColor
 
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
                 ' Apply dark/light banners in the About window if the theme
