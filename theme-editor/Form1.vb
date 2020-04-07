@@ -1,11 +1,22 @@
 ﻿Public Class Form1
     Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
-
+        If ComboBox1.Text = "Button" Then
+            TextBox1.Text = buttonBackColor
+            TextBox2.Text = buttonForeColor
+        ElseIf ComboBox1.Text = "Label" Then
+            TextBox1.Text = labelBackColor
+            TextBox2.Text = labelForeColor
+        End If
     End Sub
-End Class
 
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        If ComboBox1.Text = "Button" Then
+            buttonBackColor = TextBox1.Text
+        ElseIf ComboBox1.Text = "Label" Then
+            labelBackColor = TextBox1.Text
+        End If
+    End Sub
 
-Public Class ControlProperties
     Private _buttonBackColor As String = "Transparent"
     Private _buttonForeColor As String = "ControlText"
     Private _labelBackColor As String = "Transparent"
@@ -37,6 +48,20 @@ Public Class ControlProperties
             _labelBackColor = value
         End Set
     End Property
+
+    Public Property labelForeColor() As String
+        Get
+            Return _labelForeColor
+        End Get
+        Set(value As String)
+            _labelForeColor = value
+        End Set
+    End Property
+End Class
+
+
+Public Class ControlProperties
+
 
 
 End Class
