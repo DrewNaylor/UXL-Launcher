@@ -131,12 +131,6 @@ On some versions of Office such as Office 2016, Microsoft places the EXE files i
 from older versions of Office. This is due to a technology called 'Click-to-Run', or 'C2R' for short.
 This option uses that folder instead of the default. If unsure of what this means, check this box.</value>
   </data>
-  <data name="labelBypassConfiguredLocation.Text" xml:space="preserve">
-    <value>Some apps such as Microsoft InfoPath, SharePoint Workspace,
-Picture Manager, and OneNote for desktop were removed from
-different Office versions, but you might be able to launch them
-by bypassing the configured location if they're still installed.</value>
-  </data>
   <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
     <value>16-bit Windows is the recommended option for you, but if
 using Office 2013, you may need to select "32-bit Windows"
@@ -155,5 +149,11 @@ Windows is recommended to you; please report.</value>
   </metadata>
   <metadata name="openfiledialogBrowseCustomThemeFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>362, 23</value>
+  </metadata>
+  <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 23</value>
+  </metadata>
+  <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>820, 23</value>
   </metadata>
 </root>
