@@ -41,6 +41,9 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxBypassConfiguredLocation = New System.Windows.Forms.GroupBox()
+        Me.radiobuttonBypassConfiguredLocationAllApps = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonDontBypassConfiguredLocation = New System.Windows.Forms.RadioButton()
         Me.labelBypassConfiguredLocation = New System.Windows.Forms.Label()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
         Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
@@ -72,9 +75,6 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
-        Me.radiobuttonDontBypassConfiguredLocation = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonBypassConfiguredLocationAllApps = New System.Windows.Forms.RadioButton()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -303,6 +303,39 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.TabIndex = 1
         Me.groupboxBypassConfiguredLocation.TabStop = False
         Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
+        '
+        'radiobuttonBypassConfiguredLocationAllApps
+        '
+        Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
+        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(55, 124)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
+        Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
+        Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
+        Me.radiobuttonBypassConfiguredLocationAllApps.TabStop = True
+        Me.radiobuttonBypassConfiguredLocationAllApps.Text = "Bypass configured location for all compatible apps"
+        Me.radiobuttonBypassConfiguredLocationAllApps.UseVisualStyleBackColor = True
+        '
+        'radiobuttonBypassConfiguredLocationDeprecatedApps
+        '
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(55, 101)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabStop = True
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Text = "Bypass configured location for deprecated/removed apps"
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.UseVisualStyleBackColor = True
+        '
+        'radiobuttonDontBypassConfiguredLocation
+        '
+        Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
+        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(55, 78)
+        Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
+        Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
+        Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
+        Me.radiobuttonDontBypassConfiguredLocation.TabStop = True
+        Me.radiobuttonDontBypassConfiguredLocation.Text = "Don't bypass configured location"
+        Me.radiobuttonDontBypassConfiguredLocation.UseVisualStyleBackColor = True
         '
         'labelBypassConfiguredLocation
         '
@@ -619,39 +652,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.AutoPopDelay = 10000
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
-        '
-        'radiobuttonDontBypassConfiguredLocation
-        '
-        Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
-        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(55, 78)
-        Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
-        Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
-        Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
-        Me.radiobuttonDontBypassConfiguredLocation.TabStop = True
-        Me.radiobuttonDontBypassConfiguredLocation.Text = "Don't bypass configured location"
-        Me.radiobuttonDontBypassConfiguredLocation.UseVisualStyleBackColor = True
-        '
-        'radiobuttonBypassConfiguredLocationDeprecatedApps
-        '
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(55, 101)
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(306, 17)
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabStop = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Text = "Bypass configured location for deprecated or removed apps"
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.UseVisualStyleBackColor = True
-        '
-        'radiobuttonBypassConfiguredLocationAllApps
-        '
-        Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(55, 124)
-        Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
-        Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
-        Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
-        Me.radiobuttonBypassConfiguredLocationAllApps.TabStop = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Text = "Bypass configured location for all compatible apps"
-        Me.radiobuttonBypassConfiguredLocationAllApps.UseVisualStyleBackColor = True
         '
         'aaformOptionsWindow
         '
