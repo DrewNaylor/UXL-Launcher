@@ -132,10 +132,9 @@ from older versions of Office. This is due to a technology called 'Click-to-Run'
 This option uses that folder instead of the default. If unsure of what this means, check this box.</value>
   </data>
   <data name="labelBypassConfiguredLocation.Text" xml:space="preserve">
-    <value>Some apps such as Microsoft InfoPath, SharePoint Workspace,
-Picture Manager, and OneNote for desktop were removed from
-different Office versions, but you might be able to launch them
-by bypassing the configured location if they're still installed.</value>
+    <value>If you'd like, you can bypass the configured location when launching
+some apps, such as ones that have been deprecated or removed from
+later Office versions, or all compatible apps (ones that open from Run).</value>
   </data>
   <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
     <value>16-bit Windows is the recommended option for you, but if
