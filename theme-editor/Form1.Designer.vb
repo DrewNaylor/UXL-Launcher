@@ -36,6 +36,7 @@ Partial Class Form1
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Button", "Label"})
         Me.ComboBox1.Location = New System.Drawing.Point(15, 39)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(238, 21)
@@ -78,9 +79,9 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(12, 23)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.Size = New System.Drawing.Size(87, 13)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Label4"
+        Me.Label4.Text = "Control to theme:"
         '
         'PropertyGrid1
         '
