@@ -58,10 +58,3 @@
         End Set
     End Property
 End Class
-
-
-Public Class ControlProperties
-
-
-
-End Class
