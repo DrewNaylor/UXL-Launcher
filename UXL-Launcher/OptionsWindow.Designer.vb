@@ -342,11 +342,9 @@ Partial Class aaformOptionsWindow
         Me.labelBypassConfiguredLocation.AutoSize = True
         Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(52, 23)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
-        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(338, 39)
+        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(345, 39)
         Me.labelBypassConfiguredLocation.TabIndex = 0
-        Me.labelBypassConfiguredLocation.Text = "If you'd like, you can bypass the configured location when launching" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "some apps, " &
-    "such as ones that have been deprecated or removed from" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "later Office versions, o" &
-    "r all compatible apps."
+        Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
         '
         'groupboxCPUType
         '
