@@ -342,7 +342,7 @@ Partial Class aaformOptionsWindow
         Me.labelBypassConfiguredLocation.AutoSize = True
         Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(52, 23)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
-        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(345, 39)
+        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(338, 39)
         Me.labelBypassConfiguredLocation.TabIndex = 0
         Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
         '
