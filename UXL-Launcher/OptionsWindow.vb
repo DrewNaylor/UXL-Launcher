@@ -71,9 +71,10 @@ Public Class aaformOptionsWindow
         ' Simplified from original "If" statement.
         checkboxO365InstallMethod.Checked = My.Settings.userHasOfficeThreeSixFive
 
-        ' Check the checkbox for bypassing configured location for deprecated apps
-        ' if My.Settings.bypassConfiguredLocationForDeprecatedApps = True.
-        ' Simplified from original "If" statement.
+        ' Determine which radio button to check for bypassing configured location.
+        ' Check the one for all compatible apps if My.Settings.bypassConfiguredLocationForAllApps = True,
+        ' check the deprecated/removed apps one if My.Settings.bypassConfiguredLocationForDeprecatedApps = True,
+        ' or else check the one to not bypass configured location.
         If My.Settings.bypassConfiguredLocationForAllApps = True Then
             radiobuttonBypassConfiguredLocationAllApps.Checked = True
         ElseIf My.Settings.bypassConfiguredLocationForDeprecatedApps = True Then
@@ -271,7 +272,8 @@ Public Class aaformOptionsWindow
         radiobuttonDefaultStatusbarGreeting.Checked = True
 
         ' Reset the bypass configured location for deprecated or
-        ' removed apps checkbox to be unchecked.
+        ' removed apps radio buttons to have the "Don't bypass"
+        ' one checked.
         radiobuttonDontBypassConfiguredLocation.Checked = True
 
 
@@ -391,8 +393,7 @@ Public Class aaformOptionsWindow
             My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
 
             ' Save the status of whether to bypass the configured location for
-            ' deprecated or removed apps.
-            ' Simplified from original "If" statement.
+            ' deprecated or removed apps, or all compatible apps.
             My.Settings.bypassConfiguredLocationForDeprecatedApps = radiobuttonBypassConfiguredLocationDeprecatedApps.Checked
             My.Settings.bypassConfiguredLocationForAllApps = radiobuttonBypassConfiguredLocationAllApps.Checked
 
