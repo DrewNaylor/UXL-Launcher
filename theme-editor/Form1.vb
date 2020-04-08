@@ -139,6 +139,8 @@ Public Class aaformMainWindow
             hideImageMarginControls(True)
 
 
+
+
             ' Update textboxes with menuitem stuff.
             uiBackColorTextbox.Text = menuitemBackColor
             uiForeColorTextbox.Text = menuitemForeColor
@@ -167,6 +169,28 @@ Public Class aaformMainWindow
             uiMenuItemImageMarginEndLabel.Show()
             ' Show textbox for image margin end.
             uiMenuItemImageMarginEndTextbox.Show()
+        End If
+    End Sub
+
+    Private Sub hideStatusLabelControls(hideControls As Boolean)
+        If hideControls = True Then
+            ' Hide label for statuslabel bordersides.
+            uiStatusLabelBorderSidesLabel.Hide()
+            ' Hide dropdown for statuslabel bordersides.
+            uiStatusLabelBorderSidesDropdown.Hide()
+            ' Hide label for statuslabel borderstyle.
+            uiStatusLabelBorderStyleLabel.Hide()
+            ' Hide dropdown for statuslabel borderstyle.
+            uiStatusLabelBorderStyleDropdown.Hide()
+        ElseIf hideControls = False Then
+            ' Show label for statuslabel bordersides.
+            uiStatusLabelBorderSidesLabel.Show()
+            ' Show dropdown for statuslabel bordersides.
+            uiStatusLabelBorderSidesDropdown.Show()
+            ' Show label for statuslabel borderstyle.
+            uiStatusLabelBorderStyleLabel.Show()
+            ' Show dropdown for statuslabel borderstyle.
+            uiStatusLabelBorderStyleDropdown.Show()
         End If
     End Sub
 

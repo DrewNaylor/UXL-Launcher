@@ -35,6 +35,10 @@ Partial Class aaformMainWindow
         Me.uiMenuItemImageMarginStartTextbox = New System.Windows.Forms.TextBox()
         Me.uiMenuItemImageMarginEndLabel = New System.Windows.Forms.Label()
         Me.uiMenuItemImageMarginEndTextbox = New System.Windows.Forms.TextBox()
+        Me.uiStatusLabelBorderSidesLabel = New System.Windows.Forms.Label()
+        Me.uiStatusLabelBorderSidesDropdown = New System.Windows.Forms.ComboBox()
+        Me.uiStatusLabelBorderStyleLabel = New System.Windows.Forms.Label()
+        Me.uiStatusLabelBorderStyleDropdown = New System.Windows.Forms.ComboBox()
         Me.menustripMenubar = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,10 +54,6 @@ Partial Class aaformMainWindow
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.uiStatusLabelBorderSidesLabel = New System.Windows.Forms.Label()
-        Me.uiStatusLabelBorderStyleLabel = New System.Windows.Forms.Label()
-        Me.uiBorderSidesDropdown = New System.Windows.Forms.ComboBox()
-        Me.uiBorderStyleDropdown = New System.Windows.Forms.ComboBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -135,9 +135,9 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBorderSidesDropdown)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesDropdown)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBorderStyleDropdown)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleDropdown)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -175,6 +175,44 @@ Partial Class aaformMainWindow
         Me.uiMenuItemImageMarginEndTextbox.Name = "uiMenuItemImageMarginEndTextbox"
         Me.uiMenuItemImageMarginEndTextbox.Size = New System.Drawing.Size(313, 22)
         Me.uiMenuItemImageMarginEndTextbox.TabIndex = 9
+        '
+        'uiStatusLabelBorderSidesLabel
+        '
+        Me.uiStatusLabelBorderSidesLabel.AutoSize = True
+        Me.uiStatusLabelBorderSidesLabel.Location = New System.Drawing.Point(3, 184)
+        Me.uiStatusLabelBorderSidesLabel.Name = "uiStatusLabelBorderSidesLabel"
+        Me.uiStatusLabelBorderSidesLabel.Size = New System.Drawing.Size(90, 17)
+        Me.uiStatusLabelBorderSidesLabel.TabIndex = 10
+        Me.uiStatusLabelBorderSidesLabel.Text = "BorderSides:"
+        '
+        'uiStatusLabelBorderSidesDropdown
+        '
+        Me.uiStatusLabelBorderSidesDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.uiStatusLabelBorderSidesDropdown.FormattingEnabled = True
+        Me.uiStatusLabelBorderSidesDropdown.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
+        Me.uiStatusLabelBorderSidesDropdown.Location = New System.Drawing.Point(3, 204)
+        Me.uiStatusLabelBorderSidesDropdown.Name = "uiStatusLabelBorderSidesDropdown"
+        Me.uiStatusLabelBorderSidesDropdown.Size = New System.Drawing.Size(313, 24)
+        Me.uiStatusLabelBorderSidesDropdown.TabIndex = 14
+        '
+        'uiStatusLabelBorderStyleLabel
+        '
+        Me.uiStatusLabelBorderStyleLabel.AutoSize = True
+        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 231)
+        Me.uiStatusLabelBorderStyleLabel.Name = "uiStatusLabelBorderStyleLabel"
+        Me.uiStatusLabelBorderStyleLabel.Size = New System.Drawing.Size(86, 17)
+        Me.uiStatusLabelBorderStyleLabel.TabIndex = 12
+        Me.uiStatusLabelBorderStyleLabel.Text = "BorderStyle:"
+        '
+        'uiStatusLabelBorderStyleDropdown
+        '
+        Me.uiStatusLabelBorderStyleDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.uiStatusLabelBorderStyleDropdown.FormattingEnabled = True
+        Me.uiStatusLabelBorderStyleDropdown.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
+        Me.uiStatusLabelBorderStyleDropdown.Location = New System.Drawing.Point(3, 251)
+        Me.uiStatusLabelBorderStyleDropdown.Name = "uiStatusLabelBorderStyleDropdown"
+        Me.uiStatusLabelBorderStyleDropdown.Size = New System.Drawing.Size(313, 24)
+        Me.uiStatusLabelBorderStyleDropdown.TabIndex = 15
         '
         'menustripMenubar
         '
@@ -291,44 +329,6 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
         '
-        'uiStatusLabelBorderSidesLabel
-        '
-        Me.uiStatusLabelBorderSidesLabel.AutoSize = True
-        Me.uiStatusLabelBorderSidesLabel.Location = New System.Drawing.Point(3, 184)
-        Me.uiStatusLabelBorderSidesLabel.Name = "uiStatusLabelBorderSidesLabel"
-        Me.uiStatusLabelBorderSidesLabel.Size = New System.Drawing.Size(90, 17)
-        Me.uiStatusLabelBorderSidesLabel.TabIndex = 10
-        Me.uiStatusLabelBorderSidesLabel.Text = "BorderSides:"
-        '
-        'uiStatusLabelBorderStyleLabel
-        '
-        Me.uiStatusLabelBorderStyleLabel.AutoSize = True
-        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 232)
-        Me.uiStatusLabelBorderStyleLabel.Name = "uiStatusLabelBorderStyleLabel"
-        Me.uiStatusLabelBorderStyleLabel.Size = New System.Drawing.Size(86, 17)
-        Me.uiStatusLabelBorderStyleLabel.TabIndex = 12
-        Me.uiStatusLabelBorderStyleLabel.Text = "BorderStyle:"
-        '
-        'uiBorderSidesDropdown
-        '
-        Me.uiBorderSidesDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.uiBorderSidesDropdown.FormattingEnabled = True
-        Me.uiBorderSidesDropdown.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
-        Me.uiBorderSidesDropdown.Location = New System.Drawing.Point(3, 204)
-        Me.uiBorderSidesDropdown.Name = "uiBorderSidesDropdown"
-        Me.uiBorderSidesDropdown.Size = New System.Drawing.Size(313, 24)
-        Me.uiBorderSidesDropdown.TabIndex = 14
-        '
-        'uiBorderStyleDropdown
-        '
-        Me.uiBorderStyleDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.uiBorderStyleDropdown.FormattingEnabled = True
-        Me.uiBorderStyleDropdown.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
-        Me.uiBorderStyleDropdown.Location = New System.Drawing.Point(3, 252)
-        Me.uiBorderStyleDropdown.Name = "uiBorderStyleDropdown"
-        Me.uiBorderStyleDropdown.Size = New System.Drawing.Size(313, 24)
-        Me.uiBorderStyleDropdown.TabIndex = 15
-        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -384,6 +384,6 @@ Partial Class aaformMainWindow
     Friend WithEvents uiMenuItemImageMarginEndTextbox As TextBox
     Friend WithEvents uiStatusLabelBorderSidesLabel As Label
     Friend WithEvents uiStatusLabelBorderStyleLabel As Label
-    Friend WithEvents uiBorderSidesDropdown As ComboBox
-    Friend WithEvents uiBorderStyleDropdown As ComboBox
+    Friend WithEvents uiStatusLabelBorderSidesDropdown As ComboBox
+    Friend WithEvents uiStatusLabelBorderStyleDropdown As ComboBox
 End Class
