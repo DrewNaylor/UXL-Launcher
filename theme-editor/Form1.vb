@@ -3,6 +3,9 @@
         If comboboxControlSelector.Text = "Button" Then
             uiBackColorTextbox.Text = buttonBackColor
             uiForeColorTextbox.Text = buttonForeColor
+        ElseIf comboboxControlSelector.Text = "GroupBox" Then
+            uiBackColorTextbox.Text = groupboxBackColor
+            uiForeColorTextbox.Text = groupboxForeColor
         ElseIf comboboxControlSelector.Text = "Label" Then
             uiBackColorTextbox.Text = labelBackColor
             uiForeColorTextbox.Text = labelForeColor
@@ -12,6 +15,8 @@
     Private Sub uiBackColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiBackColorTextbox.TextChanged
         If comboboxControlSelector.Text = "Button" Then
             buttonBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "GroupBox" Then
+            groupboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelBackColor = uiBackColorTextbox.Text
         End If
@@ -63,6 +68,24 @@
         End Get
         Set(value As String)
             _buttonForeColor = value
+        End Set
+    End Property
+
+    Public Property groupboxBackColor() As String
+        Get
+            Return _groupboxBackColor
+        End Get
+        Set(value As String)
+            _groupboxBackColor = value
+        End Set
+    End Property
+
+    Public Property groupboxForeColor() As String
+        Get
+            Return _groupboxForeColor
+        End Get
+        Set(value As String)
+            _groupboxForeColor = value
         End Set
     End Property
 
