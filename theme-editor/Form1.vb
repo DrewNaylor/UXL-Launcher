@@ -40,6 +40,13 @@
     Private _menuitemForeColor As String = "ControlText"
     Private _menuitemImageMarginGradientStartColor As String = "0xFCFCFC"
     Private _menuitemImageMarginGradientEndColor As String = "0xF1F1F1"
+    Private _menubarBackColor As String = "Control"
+    Private _statuslabelBackColor As String = "Transparent"
+    Private _statuslabelForeColor As String = "ControlText"
+    Private _statuslabelBorderSides As String = "None"
+    Private _statuslabelBorderStyle As String = "Flat"
+
+
 
     Public Property buttonBackColor() As String
         Get
