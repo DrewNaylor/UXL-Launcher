@@ -265,14 +265,20 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub uiMenuItemImageMarginStartTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginStartTextbox.TextChanged
+        ' Update image margin gradient start color property
+        ' when the textbox is updated.
         menuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
     End Sub
 
     Private Sub uiStatusLabelBorderStyleDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderStyleDropdown.SelectedIndexChanged
+        ' Update statuslabel border style property
+        ' when the user chooses something from the list.
         statuslabelBorderStyle = uiStatusLabelBorderStyleDropdown.Text
     End Sub
 
     Private Sub uiStatusLabelBorderSidesDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderSidesDropdown.SelectedIndexChanged
+        ' Update statuslabel border sides property
+        ' when the user chooses something from the list.
         statuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
     End Sub
 
