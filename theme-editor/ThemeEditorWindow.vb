@@ -381,6 +381,14 @@ Public Class aaformMainWindow
     Private Sub dropdownButtonFlatStyle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropdownButtonFlatStyle.SelectedIndexChanged
         ' Save the button flat style value to its property.
         themecontrolButtonFlatStyle = dropdownButtonFlatStyle.Text
+
+        ' Enable or disable button flatstyle border color textbox based on 
+        ' what's in the flatstyle property.
+        If themecontrolButtonFlatStyle = "Flat" Then
+            textboxButtonFlatStyleBorderColor.Enabled = True
+        Else
+            textboxButtonFlatStyleBorderColor.Enabled = False
+        End If
     End Sub
 
     Private Sub textboxButtonFlatStyleBorderColor_TextChanged(sender As Object, e As EventArgs) Handles textboxButtonFlatStyleBorderColor.TextChanged
