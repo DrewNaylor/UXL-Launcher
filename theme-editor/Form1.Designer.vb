@@ -46,6 +46,10 @@ Partial Class aaformMainWindow
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.uiMenuItemImageMarginStartLabel = New System.Windows.Forms.Label()
+        Me.uiMenuItemImageMarginStartTextbox = New System.Windows.Forms.TextBox()
+        Me.uiMenuItemImageMarginEndLabel = New System.Windows.Forms.Label()
+        Me.uiMenuItemImageMarginEndTextbox = New System.Windows.Forms.TextBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -121,6 +125,10 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiForeColorLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiForeColorTextbox)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginStartLabel)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginStartTextbox)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndLabel)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndTextbox)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -242,6 +250,38 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
         '
+        'uiMenuItemImageMarginStartLabel
+        '
+        Me.uiMenuItemImageMarginStartLabel.AutoSize = True
+        Me.uiMenuItemImageMarginStartLabel.Location = New System.Drawing.Point(3, 94)
+        Me.uiMenuItemImageMarginStartLabel.Name = "uiMenuItemImageMarginStartLabel"
+        Me.uiMenuItemImageMarginStartLabel.Size = New System.Drawing.Size(215, 17)
+        Me.uiMenuItemImageMarginStartLabel.TabIndex = 6
+        Me.uiMenuItemImageMarginStartLabel.Text = "ImageMarginGradient StartColor:"
+        '
+        'uiMenuItemImageMarginStartTextbox
+        '
+        Me.uiMenuItemImageMarginStartTextbox.Location = New System.Drawing.Point(3, 114)
+        Me.uiMenuItemImageMarginStartTextbox.Name = "uiMenuItemImageMarginStartTextbox"
+        Me.uiMenuItemImageMarginStartTextbox.Size = New System.Drawing.Size(313, 22)
+        Me.uiMenuItemImageMarginStartTextbox.TabIndex = 7
+        '
+        'uiMenuItemImageMarginEndLabel
+        '
+        Me.uiMenuItemImageMarginEndLabel.AutoSize = True
+        Me.uiMenuItemImageMarginEndLabel.Location = New System.Drawing.Point(3, 139)
+        Me.uiMenuItemImageMarginEndLabel.Name = "uiMenuItemImageMarginEndLabel"
+        Me.uiMenuItemImageMarginEndLabel.Size = New System.Drawing.Size(210, 17)
+        Me.uiMenuItemImageMarginEndLabel.TabIndex = 8
+        Me.uiMenuItemImageMarginEndLabel.Text = "ImageMarginGradient EndColor:"
+        '
+        'uiMenuItemImageMarginEndTextbox
+        '
+        Me.uiMenuItemImageMarginEndTextbox.Location = New System.Drawing.Point(3, 159)
+        Me.uiMenuItemImageMarginEndTextbox.Name = "uiMenuItemImageMarginEndTextbox"
+        Me.uiMenuItemImageMarginEndTextbox.Size = New System.Drawing.Size(313, 22)
+        Me.uiMenuItemImageMarginEndTextbox.TabIndex = 9
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -291,4 +331,8 @@ Partial Class aaformMainWindow
     Friend WithEvents NewToolStripButton As ToolStripButton
     Friend WithEvents OpenToolStripButton As ToolStripButton
     Friend WithEvents SaveToolStripButton As ToolStripButton
+    Friend WithEvents uiMenuItemImageMarginStartLabel As Label
+    Friend WithEvents uiMenuItemImageMarginStartTextbox As TextBox
+    Friend WithEvents uiMenuItemImageMarginEndLabel As Label
+    Friend WithEvents uiMenuItemImageMarginEndTextbox As TextBox
 End Class
