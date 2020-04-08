@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("theme-editor")>
+<Assembly: AssemblyTitle("PortableThemeEngine Theme Editor")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("theme-editor")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyProduct("PortableThemeEngine Theme Editor")>
+<Assembly: AssemblyCopyright("Copyright (C) 2020 Drew Naylor. Licensed under Gnu GPLv3+.")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("0.1.0.0")>
+<Assembly: AssemblyFileVersion("0.1.0.0")>
