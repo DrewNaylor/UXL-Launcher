@@ -300,8 +300,13 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub textboxThemeTitle_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeTitle.TextChanged
-        ' Save theme title into theme title property.
+        ' Save theme title into its property.
         themeinfoTitle = textboxThemeTitle.Text
+    End Sub
+
+    Private Sub textboxThemeDescription_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeDescription.TextChanged
+        'Save theme description into its property.
+        themeinfoDescription = textboxThemeDescription.Text
     End Sub
 
     ' Theme properties.
