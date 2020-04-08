@@ -6,6 +6,9 @@
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
             uiBackColorTextbox.Text = groupboxBackColor
             uiForeColorTextbox.Text = groupboxForeColor
+        ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
+            uiBackColorTextbox.Text = flowlayoutpanelBackColor
+            uiForeColorTextbox.Text = flowlayoutpanelForeColor
         ElseIf comboboxControlSelector.Text = "Label" Then
             uiBackColorTextbox.Text = labelBackColor
             uiForeColorTextbox.Text = labelForeColor
@@ -17,6 +20,8 @@
             buttonBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
             groupboxBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
+            flowlayoutpanelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelBackColor = uiBackColorTextbox.Text
         End If
@@ -25,6 +30,10 @@
     Private Sub uiForeColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiForeColorTextbox.TextChanged
         If comboboxControlSelector.Text = "Button" Then
             buttonForeColor = uiForeColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "GroupBox" Then
+            groupboxForeColor = uiForeColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
+            flowlayoutpanelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelForeColor = uiForeColorTextbox.Text
         End If
@@ -86,6 +95,24 @@
         End Get
         Set(value As String)
             _groupboxForeColor = value
+        End Set
+    End Property
+
+    Public Property flowlayoutpanelBackColor() As String
+        Get
+            Return _flowlayoutpanelBackColor
+        End Get
+        Set(value As String)
+            _flowlayoutpanelBackColor = value
+        End Set
+    End Property
+
+    Public Property flowlayoutpanelForeColor() As String
+        Get
+            Return _flowlayoutpanelForeColor
+        End Get
+        Set(value As String)
+            _flowlayoutpanelForeColor = value
         End Set
     End Property
 
