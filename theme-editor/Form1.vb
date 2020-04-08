@@ -130,6 +130,27 @@ Public Class aaformMainWindow
             uiMenuItemImageMarginEndTextbox.Hide()
             uiBackColorTextbox.Text = textboxBackColor
             uiForeColorTextbox.Text = textboxForeColor
+
+        ElseIf comboboxControlSelector.Text = "MenuItem" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
+            ' Show label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Show()
+            ' Show textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Show()
+            ' Show label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Show()
+            ' Show textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Show()
+
+            ' Update textboxes with menuitem stuff.
+            uiBackColorTextbox.Text = menuitemBackColor
+            uiForeColorTextbox.Text = menuitemForeColor
+
+            uiMenuItemImageMarginEndTextbox.Text = menuitemImageMarginGradientEndColor
+            uiMenuItemImageMarginStartTextbox.Text = menuitemImageMarginGradientStartColor
         End If
     End Sub
 
