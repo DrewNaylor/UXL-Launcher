@@ -309,6 +309,11 @@ Public Class aaformMainWindow
         themeinfoDescription = textboxThemeDescription.Text
     End Sub
 
+    Private Sub textboxThemeVersion_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeVersion.TextChanged
+        ' Save theme version into its property.
+        themeinfoVersion = textboxThemeVersion.Text
+    End Sub
+
     ' Theme properties.
     Private _themeinfoTitle As String = "Untitled"
     Private _themeinfoDescription As String = "Theme description goes here."
