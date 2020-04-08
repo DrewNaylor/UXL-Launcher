@@ -24,11 +24,11 @@ Partial Class aaformMainWindow
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformMainWindow))
         Me.comboboxControlSelector = New System.Windows.Forms.ComboBox()
-        Me.labelBackColor = New System.Windows.Forms.Label()
-        Me.labelForeColor = New System.Windows.Forms.Label()
+        Me.uiBackColorLabel = New System.Windows.Forms.Label()
+        Me.uiForeColorLabel = New System.Windows.Forms.Label()
         Me.textboxBackColor = New System.Windows.Forms.TextBox()
         Me.textboxForeColor = New System.Windows.Forms.TextBox()
-        Me.labelControlToTheme = New System.Windows.Forms.Label()
+        Me.uiControlToThemeLabel = New System.Windows.Forms.Label()
         Me.propertygridAdvanced = New System.Windows.Forms.PropertyGrid()
         Me.flowlayoutpanelPropertyList = New System.Windows.Forms.FlowLayoutPanel()
         Me.menustripMenubar = New System.Windows.Forms.MenuStrip()
@@ -61,25 +61,25 @@ Partial Class aaformMainWindow
         Me.comboboxControlSelector.Size = New System.Drawing.Size(316, 24)
         Me.comboboxControlSelector.TabIndex = 0
         '
-        'labelBackColor
+        'uiBackColorLabel
         '
-        Me.labelBackColor.AutoSize = True
-        Me.labelBackColor.Location = New System.Drawing.Point(4, 0)
-        Me.labelBackColor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labelBackColor.Name = "labelBackColor"
-        Me.labelBackColor.Size = New System.Drawing.Size(76, 17)
-        Me.labelBackColor.TabIndex = 1
-        Me.labelBackColor.Text = "BackColor:"
+        Me.uiBackColorLabel.AutoSize = True
+        Me.uiBackColorLabel.Location = New System.Drawing.Point(4, 0)
+        Me.uiBackColorLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.uiBackColorLabel.Name = "uiBackColorLabel"
+        Me.uiBackColorLabel.Size = New System.Drawing.Size(76, 17)
+        Me.uiBackColorLabel.TabIndex = 1
+        Me.uiBackColorLabel.Text = "BackColor:"
         '
-        'labelForeColor
+        'uiForeColorLabel
         '
-        Me.labelForeColor.AutoSize = True
-        Me.labelForeColor.Location = New System.Drawing.Point(4, 47)
-        Me.labelForeColor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labelForeColor.Name = "labelForeColor"
-        Me.labelForeColor.Size = New System.Drawing.Size(74, 17)
-        Me.labelForeColor.TabIndex = 2
-        Me.labelForeColor.Text = "ForeColor:"
+        Me.uiForeColorLabel.AutoSize = True
+        Me.uiForeColorLabel.Location = New System.Drawing.Point(4, 47)
+        Me.uiForeColorLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.uiForeColorLabel.Name = "uiForeColorLabel"
+        Me.uiForeColorLabel.Size = New System.Drawing.Size(74, 17)
+        Me.uiForeColorLabel.TabIndex = 2
+        Me.uiForeColorLabel.Text = "ForeColor:"
         '
         'textboxBackColor
         '
@@ -97,15 +97,15 @@ Partial Class aaformMainWindow
         Me.textboxForeColor.Size = New System.Drawing.Size(312, 22)
         Me.textboxForeColor.TabIndex = 5
         '
-        'labelControlToTheme
+        'uiControlToThemeLabel
         '
-        Me.labelControlToTheme.AutoSize = True
-        Me.labelControlToTheme.Location = New System.Drawing.Point(16, 71)
-        Me.labelControlToTheme.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.labelControlToTheme.Name = "labelControlToTheme"
-        Me.labelControlToTheme.Size = New System.Drawing.Size(116, 17)
-        Me.labelControlToTheme.TabIndex = 7
-        Me.labelControlToTheme.Text = "Control to theme:"
+        Me.uiControlToThemeLabel.AutoSize = True
+        Me.uiControlToThemeLabel.Location = New System.Drawing.Point(16, 71)
+        Me.uiControlToThemeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.uiControlToThemeLabel.Name = "uiControlToThemeLabel"
+        Me.uiControlToThemeLabel.Size = New System.Drawing.Size(116, 17)
+        Me.uiControlToThemeLabel.TabIndex = 7
+        Me.uiControlToThemeLabel.Text = "Control to theme:"
         '
         'propertygridAdvanced
         '
@@ -117,9 +117,9 @@ Partial Class aaformMainWindow
         '
         'flowlayoutpanelPropertyList
         '
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelBackColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxBackColor)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelForeColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiForeColorLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxForeColor)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
@@ -250,7 +250,7 @@ Partial Class aaformMainWindow
         Me.Controls.Add(Me.toolstripToolbar)
         Me.Controls.Add(Me.flowlayoutpanelPropertyList)
         Me.Controls.Add(Me.propertygridAdvanced)
-        Me.Controls.Add(Me.labelControlToTheme)
+        Me.Controls.Add(Me.uiControlToThemeLabel)
         Me.Controls.Add(Me.comboboxControlSelector)
         Me.Controls.Add(Me.menustripMenubar)
         Me.MainMenuStrip = Me.menustripMenubar
@@ -269,11 +269,11 @@ Partial Class aaformMainWindow
     End Sub
 
     Friend WithEvents comboboxControlSelector As ComboBox
-    Friend WithEvents labelBackColor As Label
-    Friend WithEvents labelForeColor As Label
+    Friend WithEvents uiBackColorLabel As Label
+    Friend WithEvents uiForeColorLabel As Label
     Friend WithEvents textboxBackColor As TextBox
     Friend WithEvents textboxForeColor As TextBox
-    Friend WithEvents labelControlToTheme As Label
+    Friend WithEvents uiControlToThemeLabel As Label
     Friend WithEvents propertygridAdvanced As PropertyGrid
     Friend WithEvents flowlayoutpanelPropertyList As FlowLayoutPanel
     Friend WithEvents menustripMenubar As MenuStrip
