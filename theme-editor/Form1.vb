@@ -275,4 +275,40 @@ Public Class aaformMainWindow
             _menubarBackColor = value
         End Set
     End Property
+
+    Public Property statuslabelBackColor() As String
+        Get
+            Return _statuslabelBackColor
+        End Get
+        Set(value As String)
+            _statuslabelBackColor = value
+        End Set
+    End Property
+
+    Public Property statuslabelForeColor() As String
+        Get
+            Return _statuslabelForeColor
+        End Get
+        Set(value As String)
+            _statuslabelForeColor = value
+        End Set
+    End Property
+
+    Public Property statuslabelBorderSides() As String
+        Get
+            Return _statuslabelBorderSides
+        End Get
+        Set(value As String)
+            _statuslabelBorderSides = value
+        End Set
+    End Property
+
+    Public Property statuslabelBorderStyle() As String
+        Get
+            Return _statuslabelBorderStyle
+        End Get
+        Set(value As String)
+            _statuslabelBorderStyle = value
+        End Set
+    End Property
 End Class
