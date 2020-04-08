@@ -266,4 +266,13 @@ Public Class aaformMainWindow
             _menuitemImageMarginGradientEndColor = value
         End Set
     End Property
+
+    Public Property menubarBackColor() As String
+        Get
+            Return _menubarBackColor
+        End Get
+        Set(value As String)
+            _menubarBackColor = value
+        End Set
+    End Property
 End Class
