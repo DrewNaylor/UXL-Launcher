@@ -67,8 +67,10 @@ Partial Class aaformMainWindow
         Me.labelThemeDescription = New System.Windows.Forms.Label()
         Me.textboxThemeTitle = New System.Windows.Forms.TextBox()
         Me.labelThemeTitle = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.labelButtonFlatStyle = New System.Windows.Forms.Label()
+        Me.dropdownButtonFlatStyle = New System.Windows.Forms.ComboBox()
+        Me.labelButtonFlatStyleBorderColor = New System.Windows.Forms.Label()
+        Me.textboxButtonFlatStyleBorderColor = New System.Windows.Forms.TextBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -114,7 +116,7 @@ Partial Class aaformMainWindow
         Me.uiBackColorTextbox.Location = New System.Drawing.Point(4, 21)
         Me.uiBackColorTextbox.Margin = New System.Windows.Forms.Padding(4)
         Me.uiBackColorTextbox.Name = "uiBackColorTextbox"
-        Me.uiBackColorTextbox.Size = New System.Drawing.Size(312, 22)
+        Me.uiBackColorTextbox.Size = New System.Drawing.Size(330, 22)
         Me.uiBackColorTextbox.TabIndex = 4
         '
         'uiForeColorTextbox
@@ -122,7 +124,7 @@ Partial Class aaformMainWindow
         Me.uiForeColorTextbox.Location = New System.Drawing.Point(4, 68)
         Me.uiForeColorTextbox.Margin = New System.Windows.Forms.Padding(4)
         Me.uiForeColorTextbox.Name = "uiForeColorTextbox"
-        Me.uiForeColorTextbox.Size = New System.Drawing.Size(312, 22)
+        Me.uiForeColorTextbox.Size = New System.Drawing.Size(330, 22)
         Me.uiForeColorTextbox.TabIndex = 5
         '
         'uiControlToThemeLabel
@@ -138,10 +140,10 @@ Partial Class aaformMainWindow
         'propertygridAdvanced
         '
         Me.propertygridAdvanced.BackColor = System.Drawing.SystemColors.Window
-        Me.propertygridAdvanced.Location = New System.Drawing.Point(352, 23)
+        Me.propertygridAdvanced.Location = New System.Drawing.Point(389, 24)
         Me.propertygridAdvanced.Margin = New System.Windows.Forms.Padding(4)
         Me.propertygridAdvanced.Name = "propertygridAdvanced"
-        Me.propertygridAdvanced.Size = New System.Drawing.Size(348, 383)
+        Me.propertygridAdvanced.Size = New System.Drawing.Size(322, 383)
         Me.propertygridAdvanced.TabIndex = 9999
         '
         'flowlayoutpanelPropertyList
@@ -159,12 +161,14 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesDropdown)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleDropdown)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.Label1)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.ComboBox1)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelButtonFlatStyle)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.dropdownButtonFlatStyle)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelButtonFlatStyleBorderColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxButtonFlatStyleBorderColor)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(13, 56)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
-        Me.flowlayoutpanelPropertyList.Size = New System.Drawing.Size(331, 350)
+        Me.flowlayoutpanelPropertyList.Size = New System.Drawing.Size(368, 350)
         Me.flowlayoutpanelPropertyList.TabIndex = 9
         '
         'uiMenuItemImageMarginStartLabel
@@ -180,7 +184,7 @@ Partial Class aaformMainWindow
         '
         Me.uiMenuItemImageMarginStartTextbox.Location = New System.Drawing.Point(3, 114)
         Me.uiMenuItemImageMarginStartTextbox.Name = "uiMenuItemImageMarginStartTextbox"
-        Me.uiMenuItemImageMarginStartTextbox.Size = New System.Drawing.Size(313, 22)
+        Me.uiMenuItemImageMarginStartTextbox.Size = New System.Drawing.Size(331, 22)
         Me.uiMenuItemImageMarginStartTextbox.TabIndex = 7
         '
         'uiMenuItemImageMarginEndLabel
@@ -196,7 +200,7 @@ Partial Class aaformMainWindow
         '
         Me.uiMenuItemImageMarginEndTextbox.Location = New System.Drawing.Point(3, 159)
         Me.uiMenuItemImageMarginEndTextbox.Name = "uiMenuItemImageMarginEndTextbox"
-        Me.uiMenuItemImageMarginEndTextbox.Size = New System.Drawing.Size(313, 22)
+        Me.uiMenuItemImageMarginEndTextbox.Size = New System.Drawing.Size(331, 22)
         Me.uiMenuItemImageMarginEndTextbox.TabIndex = 9
         '
         'uiStatusLabelBorderSidesLabel
@@ -215,7 +219,7 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderSidesDropdown.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
         Me.uiStatusLabelBorderSidesDropdown.Location = New System.Drawing.Point(3, 204)
         Me.uiStatusLabelBorderSidesDropdown.Name = "uiStatusLabelBorderSidesDropdown"
-        Me.uiStatusLabelBorderSidesDropdown.Size = New System.Drawing.Size(313, 24)
+        Me.uiStatusLabelBorderSidesDropdown.Size = New System.Drawing.Size(331, 24)
         Me.uiStatusLabelBorderSidesDropdown.TabIndex = 14
         '
         'uiStatusLabelBorderStyleLabel
@@ -234,7 +238,7 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderStyleDropdown.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
         Me.uiStatusLabelBorderStyleDropdown.Location = New System.Drawing.Point(3, 251)
         Me.uiStatusLabelBorderStyleDropdown.Name = "uiStatusLabelBorderStyleDropdown"
-        Me.uiStatusLabelBorderStyleDropdown.Size = New System.Drawing.Size(313, 24)
+        Me.uiStatusLabelBorderStyleDropdown.Size = New System.Drawing.Size(331, 24)
         Me.uiStatusLabelBorderStyleDropdown.TabIndex = 15
         '
         'menustripMenubar
@@ -482,24 +486,40 @@ Partial Class aaformMainWindow
         Me.labelThemeTitle.TabIndex = 11
         Me.labelThemeTitle.Text = "Theme title:"
         '
-        'Label1
+        'labelButtonFlatStyle
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 278)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 17)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "Button FlatStyle:"
+        Me.labelButtonFlatStyle.AutoSize = True
+        Me.labelButtonFlatStyle.Location = New System.Drawing.Point(3, 278)
+        Me.labelButtonFlatStyle.Name = "labelButtonFlatStyle"
+        Me.labelButtonFlatStyle.Size = New System.Drawing.Size(111, 17)
+        Me.labelButtonFlatStyle.TabIndex = 16
+        Me.labelButtonFlatStyle.Text = "Button FlatStyle:"
         '
-        'ComboBox1
+        'dropdownButtonFlatStyle
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Standard", "Flat"})
-        Me.ComboBox1.Location = New System.Drawing.Point(3, 298)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(313, 24)
-        Me.ComboBox1.TabIndex = 17
+        Me.dropdownButtonFlatStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.dropdownButtonFlatStyle.FormattingEnabled = True
+        Me.dropdownButtonFlatStyle.Items.AddRange(New Object() {"Standard", "Flat"})
+        Me.dropdownButtonFlatStyle.Location = New System.Drawing.Point(3, 298)
+        Me.dropdownButtonFlatStyle.Name = "dropdownButtonFlatStyle"
+        Me.dropdownButtonFlatStyle.Size = New System.Drawing.Size(331, 24)
+        Me.dropdownButtonFlatStyle.TabIndex = 17
+        '
+        'labelButtonFlatStyleBorderColor
+        '
+        Me.labelButtonFlatStyleBorderColor.AutoSize = True
+        Me.labelButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 326)
+        Me.labelButtonFlatStyleBorderColor.Name = "labelButtonFlatStyleBorderColor"
+        Me.labelButtonFlatStyleBorderColor.Size = New System.Drawing.Size(191, 17)
+        Me.labelButtonFlatStyleBorderColor.TabIndex = 18
+        Me.labelButtonFlatStyleBorderColor.Text = "Button FlatStyle BorderColor:"
+        '
+        'textboxButtonFlatStyleBorderColor
+        '
+        Me.textboxButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 346)
+        Me.textboxButtonFlatStyleBorderColor.Name = "textboxButtonFlatStyleBorderColor"
+        Me.textboxButtonFlatStyleBorderColor.Size = New System.Drawing.Size(331, 22)
+        Me.textboxButtonFlatStyleBorderColor.TabIndex = 19
         '
         'aaformMainWindow
         '
@@ -573,6 +593,8 @@ Partial Class aaformMainWindow
     Friend WithEvents labelThemeDescription As Label
     Friend WithEvents textboxThemeTitle As TextBox
     Friend WithEvents labelThemeTitle As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents labelButtonFlatStyle As Label
+    Friend WithEvents dropdownButtonFlatStyle As ComboBox
+    Friend WithEvents labelButtonFlatStyleBorderColor As Label
+    Friend WithEvents textboxButtonFlatStyleBorderColor As TextBox
 End Class
