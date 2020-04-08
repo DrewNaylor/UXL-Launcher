@@ -168,8 +168,8 @@ Public Class aaformMainWindow
 
 
             ' Update textboxes with statuslabel stuff.
-            uiBackColorTextbox.Text = themecontrolMenuitemBackColor
-            uiForeColorTextbox.Text = themecontrolMenuitemForeColor
+            uiBackColorTextbox.Text = themecontrolStatuslabelBackColor
+            uiForeColorTextbox.Text = themecontrolStatuslabelForeColor
 
             uiStatusLabelBorderSidesDropdown.Text = themecontrolStatuslabelBorderSides
             uiStatusLabelBorderStyleDropdown.Text = themecontrolStatuslabelBorderStyle
