@@ -173,6 +173,51 @@ Public Class aaformMainWindow
 
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = menubarBackColor
+
+        ElseIf comboboxControlSelector.Text = "StatusLabel" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
+
+
+
+            ' Update textboxes with menuitem stuff.
+            uiBackColorTextbox.Text = menuitemBackColor
+            uiForeColorTextbox.Text = menuitemForeColor
+
+            uiMenuItemImageMarginEndTextbox.Text = menuitemImageMarginGradientEndColor
+            uiMenuItemImageMarginStartTextbox.Text = menuitemImageMarginGradientStartColor
+        End If
+    End Sub
+
+    Private Sub hideshowMenuitemStuff(hideControls As Boolean)
+        If hideControls = True Then
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
+        ElseIf hideControls = False Then
+            ' Show label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Show()
+            ' Show textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Show()
+            ' Show label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Show()
+            ' Show textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Show()
         End If
     End Sub
 
