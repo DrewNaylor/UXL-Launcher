@@ -56,9 +56,25 @@ Partial Class aaformMainWindow
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'comboboxControlSelector
@@ -66,7 +82,7 @@ Partial Class aaformMainWindow
         Me.comboboxControlSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxControlSelector.FormattingEnabled = True
         Me.comboboxControlSelector.Items.AddRange(New Object() {"Button", "GroupBox", "FlowLayoutPanel", "StatusBar", "Label", "TextBox", "MenuItem", "MenuBar", "StatusLabel"})
-        Me.comboboxControlSelector.Location = New System.Drawing.Point(20, 91)
+        Me.comboboxControlSelector.Location = New System.Drawing.Point(13, 23)
         Me.comboboxControlSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxControlSelector.Name = "comboboxControlSelector"
         Me.comboboxControlSelector.Size = New System.Drawing.Size(316, 24)
@@ -111,7 +127,7 @@ Partial Class aaformMainWindow
         'uiControlToThemeLabel
         '
         Me.uiControlToThemeLabel.AutoSize = True
-        Me.uiControlToThemeLabel.Location = New System.Drawing.Point(16, 71)
+        Me.uiControlToThemeLabel.Location = New System.Drawing.Point(9, 3)
         Me.uiControlToThemeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.uiControlToThemeLabel.Name = "uiControlToThemeLabel"
         Me.uiControlToThemeLabel.Size = New System.Drawing.Size(116, 17)
@@ -120,7 +136,7 @@ Partial Class aaformMainWindow
         '
         'propertygridAdvanced
         '
-        Me.propertygridAdvanced.Location = New System.Drawing.Point(359, 91)
+        Me.propertygridAdvanced.Location = New System.Drawing.Point(352, 23)
         Me.propertygridAdvanced.Margin = New System.Windows.Forms.Padding(4)
         Me.propertygridAdvanced.Name = "propertygridAdvanced"
         Me.propertygridAdvanced.Size = New System.Drawing.Size(348, 383)
@@ -140,7 +156,7 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesDropdown)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleDropdown)
-        Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
+        Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(13, 56)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
         Me.flowlayoutpanelPropertyList.Size = New System.Drawing.Size(331, 350)
@@ -344,16 +360,142 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 55)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(723, 440)
+        Me.TabControl1.TabIndex = 10000
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.uiControlToThemeLabel)
+        Me.TabPage1.Controls.Add(Me.comboboxControlSelector)
+        Me.TabPage1.Controls.Add(Me.flowlayoutpanelPropertyList)
+        Me.TabPage1.Controls.Add(Me.propertygridAdvanced)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(715, 411)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.ComboBox1)
+        Me.TabPage2.Controls.Add(Me.Label5)
+        Me.TabPage2.Controls.Add(Me.TextBox4)
+        Me.TabPage2.Controls.Add(Me.Label4)
+        Me.TabPage2.Controls.Add(Me.TextBox3)
+        Me.TabPage2.Controls.Add(Me.Label3)
+        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Controls.Add(Me.Label2)
+        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.Label1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(715, 411)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"1.01", "1.02", "1.03", "2.0"})
+        Me.ComboBox1.Location = New System.Drawing.Point(14, 317)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBox1.TabIndex = 20
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(11, 296)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(51, 17)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Label5"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(11, 267)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(295, 22)
+        Me.TextBox4.TabIndex = 18
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(8, 247)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "Label4"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(11, 217)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(295, 22)
+        Me.TextBox3.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 197)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(51, 17)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Label3"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(11, 74)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox2.Size = New System.Drawing.Size(552, 116)
+        Me.TextBox2.TabIndex = 14
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(8, 54)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Label2"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(11, 24)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(552, 22)
+        Me.TextBox1.TabIndex = 12
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(8, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Label1"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(723, 495)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.toolstripToolbar)
-        Me.Controls.Add(Me.flowlayoutpanelPropertyList)
-        Me.Controls.Add(Me.propertygridAdvanced)
-        Me.Controls.Add(Me.uiControlToThemeLabel)
-        Me.Controls.Add(Me.comboboxControlSelector)
         Me.Controls.Add(Me.menustripMenubar)
         Me.MainMenuStrip = Me.menustripMenubar
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -365,6 +507,11 @@ Partial Class aaformMainWindow
         Me.menustripMenubar.PerformLayout()
         Me.toolstripToolbar.ResumeLayout(False)
         Me.toolstripToolbar.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -403,4 +550,17 @@ Partial Class aaformMainWindow
     Friend WithEvents uiStatusLabelBorderStyleDropdown As ComboBox
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ThemePropertiesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label1 As Label
 End Class
