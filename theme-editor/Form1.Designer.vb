@@ -52,8 +52,8 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.uiStatusLabelBorderSidesLabel = New System.Windows.Forms.Label()
         Me.uiStatusLabelBorderStyleLabel = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.uiBorderSidesDropdown = New System.Windows.Forms.ComboBox()
+        Me.uiBorderStyleDropdown = New System.Windows.Forms.ComboBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -134,9 +134,9 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.ComboBox1)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBorderSidesDropdown)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.ComboBox2)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBorderStyleDropdown)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -308,25 +308,25 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderStyleLabel.TabIndex = 12
         Me.uiStatusLabelBorderStyleLabel.Text = "BorderStyle:"
         '
-        'ComboBox1
+        'uiBorderSidesDropdown
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
-        Me.ComboBox1.Location = New System.Drawing.Point(3, 204)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(313, 24)
-        Me.ComboBox1.TabIndex = 14
+        Me.uiBorderSidesDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.uiBorderSidesDropdown.FormattingEnabled = True
+        Me.uiBorderSidesDropdown.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
+        Me.uiBorderSidesDropdown.Location = New System.Drawing.Point(3, 204)
+        Me.uiBorderSidesDropdown.Name = "uiBorderSidesDropdown"
+        Me.uiBorderSidesDropdown.Size = New System.Drawing.Size(313, 24)
+        Me.uiBorderSidesDropdown.TabIndex = 14
         '
-        'ComboBox2
+        'uiBorderStyleDropdown
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
-        Me.ComboBox2.Location = New System.Drawing.Point(3, 252)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(313, 24)
-        Me.ComboBox2.TabIndex = 15
+        Me.uiBorderStyleDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.uiBorderStyleDropdown.FormattingEnabled = True
+        Me.uiBorderStyleDropdown.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
+        Me.uiBorderStyleDropdown.Location = New System.Drawing.Point(3, 252)
+        Me.uiBorderStyleDropdown.Name = "uiBorderStyleDropdown"
+        Me.uiBorderStyleDropdown.Size = New System.Drawing.Size(313, 24)
+        Me.uiBorderStyleDropdown.TabIndex = 15
         '
         'aaformMainWindow
         '
@@ -383,6 +383,6 @@ Partial Class aaformMainWindow
     Friend WithEvents uiMenuItemImageMarginEndTextbox As TextBox
     Friend WithEvents uiStatusLabelBorderSidesLabel As Label
     Friend WithEvents uiStatusLabelBorderStyleLabel As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents uiBorderSidesDropdown As ComboBox
+    Friend WithEvents uiBorderStyleDropdown As ComboBox
 End Class
