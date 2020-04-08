@@ -113,7 +113,7 @@ Partial Class aaformMainWindow
         Me.propertygridAdvanced.Margin = New System.Windows.Forms.Padding(4)
         Me.propertygridAdvanced.Name = "propertygridAdvanced"
         Me.propertygridAdvanced.Size = New System.Drawing.Size(348, 383)
-        Me.propertygridAdvanced.TabIndex = 8
+        Me.propertygridAdvanced.TabIndex = 9999
         '
         'flowlayoutpanelPropertyList
         '
