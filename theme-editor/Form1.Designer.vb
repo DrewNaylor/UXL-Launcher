@@ -302,7 +302,7 @@ Partial Class aaformMainWindow
         'uiStatusLabelBorderStyleLabel
         '
         Me.uiStatusLabelBorderStyleLabel.AutoSize = True
-        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 231)
+        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 232)
         Me.uiStatusLabelBorderStyleLabel.Name = "uiStatusLabelBorderStyleLabel"
         Me.uiStatusLabelBorderStyleLabel.Size = New System.Drawing.Size(86, 17)
         Me.uiStatusLabelBorderStyleLabel.TabIndex = 12
@@ -310,6 +310,7 @@ Partial Class aaformMainWindow
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
         Me.ComboBox1.Location = New System.Drawing.Point(3, 204)
@@ -319,9 +320,10 @@ Partial Class aaformMainWindow
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
-        Me.ComboBox2.Location = New System.Drawing.Point(3, 251)
+        Me.ComboBox2.Location = New System.Drawing.Point(3, 252)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(313, 24)
         Me.ComboBox2.TabIndex = 15
