@@ -171,8 +171,8 @@ Public Class aaformMainWindow
             uiBackColorTextbox.Text = menuitemBackColor
             uiForeColorTextbox.Text = menuitemForeColor
 
-            uiMenuItemImageMarginEndTextbox.Text = menuitemImageMarginGradientEndColor
-            uiMenuItemImageMarginStartTextbox.Text = menuitemImageMarginGradientStartColor
+            uiStatusLabelBorderSidesDropdown.Text = statuslabelBorderSides
+            uiStatusLabelBorderStyleDropdown.Text = statuslabelBorderStyle
         End If
     End Sub
 
