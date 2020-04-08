@@ -299,212 +299,212 @@ Public Class aaformMainWindow
     End Sub
 
     ' Theme properties.
-    Private _themeTitle As String = "Untitled"
-    Private _themeDescription As String = "Theme description goes here."
-    Private _themeAuthor As String = "Author"
-    Private _themeVersion As String = "1.0"
-    Private _themeUseThemeEngineVersion As String = "1.01"
+    Private _themeinfoTitle As String = "Untitled"
+    Private _themeinfoDescription As String = "Theme description goes here."
+    Private _themeinfoAuthor As String = "Author"
+    Private _themeinfoVersion As String = "1.0"
+    Private _themeinfoUseThemeEngineVersion As String = "1.01"
     ' Control properties.
-    Private _buttonBackColor As String = "Transparent"
-    Private _buttonForeColor As String = "ControlText"
-    Private _groupboxBackColor As String = "Transparent"
-    Private _groupboxForeColor As String = "ControlText"
-    Private _flowlayoutpanelBackColor As String = "Transparent"
-    Private _flowlayoutpanelForeColor As String = "ControlText"
-    Private _statusbarBackColor As String = "LiteralNothing"
-    Private _labelBackColor As String = "Transparent"
-    Private _labelForeColor As String = "ControlText"
-    Private _textboxBackColor As String = "Window"
-    Private _textboxForeColor As String = "WindowText"
-    Private _menuitemBackColor As String = "Window"
-    Private _menuitemForeColor As String = "ControlText"
-    Private _menuitemImageMarginGradientStartColor As String = "0xFCFCFC"
-    Private _menuitemImageMarginGradientEndColor As String = "0xF1F1F1"
-    Private _menubarBackColor As String = "Control"
-    Private _statuslabelBackColor As String = "Transparent"
-    Private _statuslabelForeColor As String = "ControlText"
-    Private _statuslabelBorderSides As String = "None"
-    Private _statuslabelBorderStyle As String = "Flat"
+    Private _themecontrolButtonBackColor As String = "Transparent"
+    Private _themecontrolButtonForeColor As String = "ControlText"
+    Private _themecontrolGroupboxBackColor As String = "Transparent"
+    Private _themecontrolGroupboxForeColor As String = "ControlText"
+    Private _themecontrolFlowlayoutpanelBackColor As String = "Transparent"
+    Private _themecontrolFlowlayoutpanelForeColor As String = "ControlText"
+    Private _themecontrolStatusbarBackColor As String = "LiteralNothing"
+    Private _themecontrolLabelBackColor As String = "Transparent"
+    Private _themecontrolLabelForeColor As String = "ControlText"
+    Private _themecontrolTextboxBackColor As String = "Window"
+    Private _themecontrolTextboxForeColor As String = "WindowText"
+    Private _themecontrolMenuitemBackColor As String = "Window"
+    Private _themecontrolMenuitemForeColor As String = "ControlText"
+    Private _themecontrolMenuitemImageMarginGradientStartColor As String = "0xFCFCFC"
+    Private _themecontrolMenuitemImageMarginGradientEndColor As String = "0xF1F1F1"
+    Private _themecontrolMenubarBackColor As String = "Control"
+    Private _themecontrolStatuslabelBackColor As String = "Transparent"
+    Private _themecontrolStatuslabelForeColor As String = "ControlText"
+    Private _themecontrolStatuslabelBorderSides As String = "None"
+    Private _themecontrolStatuslabelBorderStyle As String = "Flat"
 
 
 
     Public Property buttonBackColor() As String
         Get
-            Return _buttonBackColor
+            Return _themecontrolButtonBackColor
         End Get
         Set(value As String)
-            _buttonBackColor = value
+            _themecontrolButtonBackColor = value
         End Set
     End Property
 
     Public Property buttonForeColor() As String
         Get
-            Return _buttonForeColor
+            Return _themecontrolButtonForeColor
         End Get
         Set(value As String)
-            _buttonForeColor = value
+            _themecontrolButtonForeColor = value
         End Set
     End Property
 
     Public Property groupboxBackColor() As String
         Get
-            Return _groupboxBackColor
+            Return _themecontrolGroupboxBackColor
         End Get
         Set(value As String)
-            _groupboxBackColor = value
+            _themecontrolGroupboxBackColor = value
         End Set
     End Property
 
     Public Property groupboxForeColor() As String
         Get
-            Return _groupboxForeColor
+            Return _themecontrolGroupboxForeColor
         End Get
         Set(value As String)
-            _groupboxForeColor = value
+            _themecontrolGroupboxForeColor = value
         End Set
     End Property
 
     Public Property flowlayoutpanelBackColor() As String
         Get
-            Return _flowlayoutpanelBackColor
+            Return _themecontrolFlowlayoutpanelBackColor
         End Get
         Set(value As String)
-            _flowlayoutpanelBackColor = value
+            _themecontrolFlowlayoutpanelBackColor = value
         End Set
     End Property
 
     Public Property flowlayoutpanelForeColor() As String
         Get
-            Return _flowlayoutpanelForeColor
+            Return _themecontrolFlowlayoutpanelForeColor
         End Get
         Set(value As String)
-            _flowlayoutpanelForeColor = value
+            _themecontrolFlowlayoutpanelForeColor = value
         End Set
     End Property
 
     Public Property statusbarBackColor() As String
         Get
-            Return _statusbarBackColor
+            Return _themecontrolStatusbarBackColor
         End Get
         Set(value As String)
-            _statusbarBackColor = value
+            _themecontrolStatusbarBackColor = value
         End Set
     End Property
 
     Public Property labelBackColor() As String
         Get
-            Return _labelBackColor
+            Return _themecontrolLabelBackColor
         End Get
         Set(value As String)
-            _labelBackColor = value
+            _themecontrolLabelBackColor = value
         End Set
     End Property
 
     Public Property labelForeColor() As String
         Get
-            Return _labelForeColor
+            Return _themecontrolLabelForeColor
         End Get
         Set(value As String)
-            _labelForeColor = value
+            _themecontrolLabelForeColor = value
         End Set
     End Property
 
     Public Property textboxForeColor() As String
         Get
-            Return _textboxForeColor
+            Return _themecontrolTextboxForeColor
         End Get
         Set(value As String)
-            _textboxForeColor = value
+            _themecontrolTextboxForeColor = value
         End Set
     End Property
 
     Public Property textboxBackColor() As String
         Get
-            Return _textboxBackColor
+            Return _themecontrolTextboxBackColor
         End Get
         Set(value As String)
-            _textboxBackColor = value
+            _themecontrolTextboxBackColor = value
         End Set
     End Property
 
     Public Property menuitemBackColor() As String
         Get
-            Return _menuitemBackColor
+            Return _themecontrolMenuitemBackColor
         End Get
         Set(value As String)
-            _menuitemBackColor = value
+            _themecontrolMenuitemBackColor = value
         End Set
     End Property
 
     Public Property menuitemForeColor() As String
         Get
-            Return _menuitemForeColor
+            Return _themecontrolMenuitemForeColor
         End Get
         Set(value As String)
-            _menuitemForeColor = value
+            _themecontrolMenuitemForeColor = value
         End Set
     End Property
 
     Public Property menuitemImageMarginGradientStartColor() As String
         Get
-            Return _menuitemImageMarginGradientStartColor
+            Return _themecontrolMenuitemImageMarginGradientStartColor
         End Get
         Set(value As String)
-            _menuitemImageMarginGradientStartColor = value
+            _themecontrolMenuitemImageMarginGradientStartColor = value
         End Set
     End Property
 
     Public Property menuitemImageMarginGradientEndColor() As String
         Get
-            Return _menuitemImageMarginGradientEndColor
+            Return _themecontrolMenuitemImageMarginGradientEndColor
         End Get
         Set(value As String)
-            _menuitemImageMarginGradientEndColor = value
+            _themecontrolMenuitemImageMarginGradientEndColor = value
         End Set
     End Property
 
     Public Property menubarBackColor() As String
         Get
-            Return _menubarBackColor
+            Return _themecontrolMenubarBackColor
         End Get
         Set(value As String)
-            _menubarBackColor = value
+            _themecontrolMenubarBackColor = value
         End Set
     End Property
 
     Public Property statuslabelBackColor() As String
         Get
-            Return _statuslabelBackColor
+            Return _themecontrolStatuslabelBackColor
         End Get
         Set(value As String)
-            _statuslabelBackColor = value
+            _themecontrolStatuslabelBackColor = value
         End Set
     End Property
 
     Public Property statuslabelForeColor() As String
         Get
-            Return _statuslabelForeColor
+            Return _themecontrolStatuslabelForeColor
         End Get
         Set(value As String)
-            _statuslabelForeColor = value
+            _themecontrolStatuslabelForeColor = value
         End Set
     End Property
 
     Public Property statuslabelBorderSides() As String
         Get
-            Return _statuslabelBorderSides
+            Return _themecontrolStatuslabelBorderSides
         End Get
         Set(value As String)
-            _statuslabelBorderSides = value
+            _themecontrolStatuslabelBorderSides = value
         End Set
     End Property
 
     Public Property statuslabelBorderStyle() As String
         Get
-            Return _statuslabelBorderStyle
+            Return _themecontrolStatuslabelBorderStyle
         End Get
         Set(value As String)
-            _statuslabelBorderStyle = value
+            _themecontrolStatuslabelBorderStyle = value
         End Set
     End Property
 End Class
