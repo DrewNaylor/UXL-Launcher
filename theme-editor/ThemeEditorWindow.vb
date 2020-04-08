@@ -37,6 +37,9 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
+            ' Show button controls.
+            hideButtonControls(False)
+
             ' Update backcolor and forecolor textboxes with
             ' the button's properties.
             uiBackColorTextbox.Text = themecontrolButtonBackColor
@@ -53,6 +56,9 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
+            ' Hide button controls.
+            hideButtonControls(True)
+
             uiBackColorTextbox.Text = themecontrolGroupboxBackColor
             uiForeColorTextbox.Text = themecontrolGroupboxForeColor
 
@@ -66,6 +72,9 @@ Public Class aaformMainWindow
 
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
+
+            ' Hide button controls.
+            hideButtonControls(True)
 
             uiBackColorTextbox.Text = themecontrolFlowayoutpanelBackColor
             uiForeColorTextbox.Text = themecontrolFlowayoutpanelForeColor
@@ -86,6 +95,9 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
+            ' Hide button controls.
+            hideButtonControls(True)
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = themecontrolStatusbarBackColor
 
@@ -99,6 +111,9 @@ Public Class aaformMainWindow
 
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
+
+            ' Hide button controls.
+            hideButtonControls(True)
 
             uiBackColorTextbox.Text = themecontrolLabelBackColor
             uiForeColorTextbox.Text = themecontrolLabelForeColor
@@ -114,6 +129,9 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
+            ' Hide button controls.
+            hideButtonControls(True)
+
             uiBackColorTextbox.Text = themecontrolTextboxBackColor
             uiForeColorTextbox.Text = themecontrolTextboxForeColor
 
@@ -127,6 +145,9 @@ Public Class aaformMainWindow
 
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
+
+            ' Hide button controls.
+            hideButtonControls(True)
 
             ' Update textboxes with menuitem stuff.
             uiBackColorTextbox.Text = themecontrolMenuitemBackColor
@@ -151,6 +172,9 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
+            ' Hide button controls.
+            hideButtonControls(True)
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = themecontrolMenubarBackColor
 
@@ -164,6 +188,9 @@ Public Class aaformMainWindow
 
             ' Show statuslabel controls.
             hideStatusLabelControls(False)
+
+            ' Hide button controls.
+            hideButtonControls(True)
 
 
 
