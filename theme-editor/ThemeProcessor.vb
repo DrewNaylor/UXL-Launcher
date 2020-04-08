@@ -31,7 +31,7 @@ Public Class ThemeProcessor
         ' Try to load the theme. We'll assume it's a file first before
         ' loading it as an XmlDocument.
         If isFilename = True AndAlso System.IO.File.Exists(themeInput) Then
-            themeSheet.LoadXml(themeInput)
+            themeSheet.Load(themeInput)
         End If
 
         ' Most of this is based on the PortableThemeEngine theme loading code.
@@ -39,6 +39,10 @@ Public Class ThemeProcessor
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
+        ' Get the theme title from the XML file.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+            ThemeProperties.themeinfoTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        End If
     End Sub
 
 End Class
