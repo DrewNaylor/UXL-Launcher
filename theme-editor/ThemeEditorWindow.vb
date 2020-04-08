@@ -420,6 +420,24 @@ Public Class aaformMainWindow
         End Set
     End Property
 
+    Public Property themecontrolButtonFlatStyle() As String
+        Get
+            Return _themecontrolButtonFlatStyle
+        End Get
+        Set(value As String)
+            _themecontrolButtonFlatStyle = value
+        End Set
+    End Property
+
+    Public Property themecontrolButtonFlatStyleBorderColor() As String
+        Get
+            Return _themecontrolButtonFlatStyleBorderColor
+        End Get
+        Set(value As String)
+            _themecontrolButtonFlatStyleBorderColor = value
+        End Set
+    End Property
+
     Public Property themecontrolGroupboxBackColor() As String
         Get
             Return _themecontrolGroupboxBackColor
