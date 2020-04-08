@@ -326,8 +326,53 @@ Public Class aaformMainWindow
     Private _themecontrolStatuslabelBorderSides As String = "None"
     Private _themecontrolStatuslabelBorderStyle As String = "Flat"
 
+    ' Theme properties.
+    Public Property themeinfoTitle() As String
+        Get
+            Return _themeinfoTitle
+        End Get
+        Set(value As String)
+            _themeinfoTitle = value
+        End Set
+    End Property
 
+    Public Property themeinfoDescription() As String
+        Get
+            Return _themeinfoDescription
+        End Get
+        Set(value As String)
+            _themeinfoDescription = value
+        End Set
+    End Property
 
+    Public Property themeinfoAuthor() As String
+        Get
+            Return _themeinfoAuthor
+        End Get
+        Set(value As String)
+            _themeinfoAuthor = value
+        End Set
+    End Property
+
+    Public Property themeinfoVersion() As String
+        Get
+            Return _themeinfoVersion
+        End Get
+        Set(value As String)
+            _themeinfoVersion = value
+        End Set
+    End Property
+
+    Public Property themeinfoUseThemeEngineVersion() As String
+        Get
+            Return _themeinfoUseThemeEngineVersion
+        End Get
+        Set(value As String)
+            _themeinfoUseThemeEngineVersion = value
+        End Set
+    End Property
+
+    ' Control properties.
     Public Property themecontrolButtonBackColor() As String
         Get
             Return _themecontrolButtonBackColor
