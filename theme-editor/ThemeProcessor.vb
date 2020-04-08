@@ -42,7 +42,17 @@ Public Class ThemeProcessor
         ' Get the theme title from the XML file.
         If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
             ThemeProperties.themeinfoTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        Else
+            ThemeProperties.themeinfoTitle = "(No title specified)"
         End If
+
+        ' Get theme description from XML file.
+        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
+            ThemeProperties.themeinfoDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        Else
+            ThemeProperties.themeinfoDescription = "(No description specified)"
+        End If
+
     End Sub
 
 End Class
