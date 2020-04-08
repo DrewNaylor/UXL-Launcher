@@ -23,10 +23,16 @@
 Public Class aaformMainWindow
     Private Sub comboboxControlSelector_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
         If comboboxControlSelector.Text = "Button" Then
+            ' Show textbox for backcolor.
             uiBackColorTextbox.Show()
+            ' Show textbox for forecolor.
             uiForeColorTextbox.Show()
+            ' Show label for backcolor.
             uiBackColorLabel.Show()
+            ' Show label for forecolor.
             uiForeColorLabel.Show()
+            ' Update backcolor and forecolor textboxes with
+            ' the button's properties.
             uiBackColorTextbox.Text = buttonBackColor
             uiForeColorTextbox.Text = buttonForeColor
 
