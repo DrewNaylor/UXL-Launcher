@@ -21,7 +21,7 @@
 
 
 Public Class aaformMainWindow
-    Private Sub comboboxControlSelector_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
+    Private Sub comboboxControlSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.SelectedIndexChanged
         If comboboxControlSelector.Text = "Button" Then
             ' Show textbox for backcolor.
             uiBackColorTextbox.Show()
