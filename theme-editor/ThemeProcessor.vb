@@ -55,4 +55,12 @@ Public Class ThemeProcessor
 
     End Sub
 
+    Private Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager, Optional itemType As String = "item") As String
+        If inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager) IsNot Nothing Then
+            Return inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager).InnerText
+        Else
+            Return "(No " & itemType & "specified)"
+        End If
+    End Function
+
 End Class
