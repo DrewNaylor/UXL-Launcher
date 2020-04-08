@@ -69,12 +69,17 @@ Public Class ThemeProcessor
             ThemeProperties.themeinfoUseThemeEngineVersion = "1.01"
         End If
 
+        ' Get button backcolor.
+        ThemeProperties.themecontrolButtonBackColor = NodeReader("Theme_Colors/Button/BackColor", themeSheet, themeNamespaceManager)
+
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)
         MessageBox.Show(ThemeProperties.themeinfoDescription)
         MessageBox.Show(ThemeProperties.themeinfoVersion)
         MessageBox.Show(ThemeProperties.themeinfoAuthor)
         MessageBox.Show(ThemeProperties.themeinfoUseThemeEngineVersion)
+
+        MessageBox.Show(ThemeProperties.themecontrolButtonBackColor)
 
     End Sub
 
@@ -83,7 +88,7 @@ Public Class ThemeProcessor
         If inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager) IsNot Nothing Then
             Return inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager).InnerText
         Else
-            Return "(No " & inputNode.ToLowerInvariant & "specified)"
+            Return "(No " & inputNode.ToLowerInvariant & " specified)"
         End If
     End Function
 
