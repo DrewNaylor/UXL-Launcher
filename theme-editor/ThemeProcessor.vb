@@ -40,29 +40,29 @@ Public Class ThemeProcessor
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
         ' Get the theme title from the XML file.
-        ThemeProperties.themeinfoTitle = NodeReader("Title", themeSheet, themeNamespaceManager)
+        ThemeProperties.themeinfoTitle = NodeReader("Title", themeSheet, themeNamespaceManager, "(No Title specified)")
 
         ' Get theme description from XML file.
-        ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager)
+        ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager, "(No Description specified)")
 
         ' Get theme version from XML file.
-        ThemeProperties.themeinfoVersion = NodeReader("Version", themeSheet, themeNamespaceManager)
+        ThemeProperties.themeinfoVersion = NodeReader("Version", themeSheet, themeNamespaceManager, "(No Version specified)")
 
         ' Get theme author.
-        ThemeProperties.themeinfoAuthor = NodeReader("Author", themeSheet, themeNamespaceManager)
+        ThemeProperties.themeinfoAuthor = NodeReader("Author", themeSheet, themeNamespaceManager, "(No Author specified)")
 
         ' Get theme engine version to use.
         ' The theme engine can benefit from this code, so it'll
         ' be put into there eventually.
         ' First check to see if it's a decimal and if it can be parsed.
-        If Decimal.TryParse(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager), CDec(1.01)) = True Then
+        If Decimal.TryParse(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager, "(No UseThemeEngineVersion specified)"), CDec(1.01)) = True Then
             ' If it is a decimal, then cast it as one and check if it's less than 1.01.
-            If CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)) < 1.01 Then
+            If CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager, "(No UseThemeEngineVersion specified)")) < 1.01 Then
                 ' If it is, then set the theme engine runtime version to 1.01.
                 ThemeProperties.themeinfoUseThemeEngineVersion = "1.01"
-            ElseIf CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)) >= 1.01 Then
+            ElseIf CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager, "(No UseThemeEngineVersion specified)")) >= 1.01 Then
                 ' Otherwise, it's equal to or larger than 1.01, so just load whatever it is.
-                ThemeProperties.themeinfoUseThemeEngineVersion = NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)
+                ThemeProperties.themeinfoUseThemeEngineVersion = NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager, "(No UseThemeEngineVersion specified)")
             End If
         Else
             ' If it can't be parsed as a decimal, then set the theme engine runtime version to 1.01.
@@ -70,7 +70,7 @@ Public Class ThemeProcessor
         End If
 
         ' Get button backcolor.
-        ThemeProperties.themecontrolButtonBackColor = NodeReader("Theme_Colors/Button/BackColor", themeSheet, themeNamespaceManager)
+        ThemeProperties.themecontrolButtonBackColor = NodeReader("Theme_Colors/Button/BackColor", themeSheet, themeNamespaceManager, "Transparent")
 
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)
@@ -83,12 +83,12 @@ Public Class ThemeProcessor
 
     End Sub
 
-    Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager) As String
+    Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager, defaultValue As String) As String
         ' Get theme info and return it to the calling code.
         If inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager) IsNot Nothing Then
             Return inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager).InnerText
         Else
-            Return "(No " & inputNode.ToLowerInvariant & " specified)"
+            Return defaultValue
         End If
     End Function
 
