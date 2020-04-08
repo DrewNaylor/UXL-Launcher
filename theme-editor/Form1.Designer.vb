@@ -311,6 +311,7 @@ Partial Class aaformMainWindow
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"None", "Top", "Bottom", "Left", "Right", "All"})
         Me.ComboBox1.Location = New System.Drawing.Point(3, 204)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(313, 24)
@@ -319,6 +320,7 @@ Partial Class aaformMainWindow
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Adjust", "Bump", "Etched", "Flat", "Raised", "RaisedInner", "RaisedOuter", "Sunken", "SunkenInner", "SunkenOuter"})
         Me.ComboBox2.Location = New System.Drawing.Point(3, 251)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(313, 24)
