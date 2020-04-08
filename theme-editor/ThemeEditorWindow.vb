@@ -87,7 +87,7 @@ Public Class aaformMainWindow
             hideStatusLabelControls(True)
 
             ' Update backcolor textbox with statusbar's backcolor.
-            uiBackColorTextbox.Text = statusbarBackColor
+            uiBackColorTextbox.Text = themecontrolStatusbarBackColor
 
         ElseIf comboboxControlSelector.Text = "Label" Then
             uiBackColorTextbox.Show()
@@ -100,8 +100,8 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
-            uiBackColorTextbox.Text = labelBackColor
-            uiForeColorTextbox.Text = labelForeColor
+            uiBackColorTextbox.Text = themecontrolLabelBackColor
+            uiForeColorTextbox.Text = themecontrolLabelForeColor
 
         ElseIf comboboxControlSelector.Text = "TextBox" Then
             uiBackColorTextbox.Show()
@@ -228,9 +228,9 @@ Public Class aaformMainWindow
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
             themecontrolFlowayoutpanelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusBar" Then
-            statusbarBackColor = uiBackColorTextbox.Text
+            themecontrolStatusbarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
-            labelBackColor = uiBackColorTextbox.Text
+            themecontrolLabelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
             textboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
@@ -250,7 +250,7 @@ Public Class aaformMainWindow
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
             themecontrolFlowayoutpanelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
-            labelForeColor = uiForeColorTextbox.Text
+            themecontrolLabelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
             textboxForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
@@ -382,7 +382,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property statusbarBackColor() As String
+    Public Property themecontrolStatusbarBackColor() As String
         Get
             Return _themecontrolStatusbarBackColor
         End Get
@@ -391,7 +391,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property labelBackColor() As String
+    Public Property themecontrolLabelBackColor() As String
         Get
             Return _themecontrolLabelBackColor
         End Get
@@ -400,7 +400,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property labelForeColor() As String
+    Public Property themecontrolLabelForeColor() As String
         Get
             Return _themecontrolLabelForeColor
         End Get
