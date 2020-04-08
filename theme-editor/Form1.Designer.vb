@@ -31,6 +31,10 @@ Partial Class aaformMainWindow
         Me.uiControlToThemeLabel = New System.Windows.Forms.Label()
         Me.propertygridAdvanced = New System.Windows.Forms.PropertyGrid()
         Me.flowlayoutpanelPropertyList = New System.Windows.Forms.FlowLayoutPanel()
+        Me.uiMenuItemImageMarginStartLabel = New System.Windows.Forms.Label()
+        Me.uiMenuItemImageMarginStartTextbox = New System.Windows.Forms.TextBox()
+        Me.uiMenuItemImageMarginEndLabel = New System.Windows.Forms.Label()
+        Me.uiMenuItemImageMarginEndTextbox = New System.Windows.Forms.TextBox()
         Me.menustripMenubar = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,10 +50,10 @@ Partial Class aaformMainWindow
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.uiMenuItemImageMarginStartLabel = New System.Windows.Forms.Label()
-        Me.uiMenuItemImageMarginStartTextbox = New System.Windows.Forms.TextBox()
-        Me.uiMenuItemImageMarginEndLabel = New System.Windows.Forms.Label()
-        Me.uiMenuItemImageMarginEndTextbox = New System.Windows.Forms.TextBox()
+        Me.uiStatusLabelBorderSidesLabel = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.uiStatusLabelBorderStyleLabel = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -129,11 +133,47 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginStartTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndTextbox)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesLabel)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.TextBox1)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.TextBox2)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
         Me.flowlayoutpanelPropertyList.Size = New System.Drawing.Size(331, 350)
         Me.flowlayoutpanelPropertyList.TabIndex = 9
+        '
+        'uiMenuItemImageMarginStartLabel
+        '
+        Me.uiMenuItemImageMarginStartLabel.AutoSize = True
+        Me.uiMenuItemImageMarginStartLabel.Location = New System.Drawing.Point(3, 94)
+        Me.uiMenuItemImageMarginStartLabel.Name = "uiMenuItemImageMarginStartLabel"
+        Me.uiMenuItemImageMarginStartLabel.Size = New System.Drawing.Size(215, 17)
+        Me.uiMenuItemImageMarginStartLabel.TabIndex = 6
+        Me.uiMenuItemImageMarginStartLabel.Text = "ImageMarginGradient StartColor:"
+        '
+        'uiMenuItemImageMarginStartTextbox
+        '
+        Me.uiMenuItemImageMarginStartTextbox.Location = New System.Drawing.Point(3, 114)
+        Me.uiMenuItemImageMarginStartTextbox.Name = "uiMenuItemImageMarginStartTextbox"
+        Me.uiMenuItemImageMarginStartTextbox.Size = New System.Drawing.Size(313, 22)
+        Me.uiMenuItemImageMarginStartTextbox.TabIndex = 7
+        '
+        'uiMenuItemImageMarginEndLabel
+        '
+        Me.uiMenuItemImageMarginEndLabel.AutoSize = True
+        Me.uiMenuItemImageMarginEndLabel.Location = New System.Drawing.Point(3, 139)
+        Me.uiMenuItemImageMarginEndLabel.Name = "uiMenuItemImageMarginEndLabel"
+        Me.uiMenuItemImageMarginEndLabel.Size = New System.Drawing.Size(210, 17)
+        Me.uiMenuItemImageMarginEndLabel.TabIndex = 8
+        Me.uiMenuItemImageMarginEndLabel.Text = "ImageMarginGradient EndColor:"
+        '
+        'uiMenuItemImageMarginEndTextbox
+        '
+        Me.uiMenuItemImageMarginEndTextbox.Location = New System.Drawing.Point(3, 159)
+        Me.uiMenuItemImageMarginEndTextbox.Name = "uiMenuItemImageMarginEndTextbox"
+        Me.uiMenuItemImageMarginEndTextbox.Size = New System.Drawing.Size(313, 22)
+        Me.uiMenuItemImageMarginEndTextbox.TabIndex = 9
         '
         'menustripMenubar
         '
@@ -250,37 +290,37 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
         '
-        'uiMenuItemImageMarginStartLabel
+        'uiStatusLabelBorderSidesLabel
         '
-        Me.uiMenuItemImageMarginStartLabel.AutoSize = True
-        Me.uiMenuItemImageMarginStartLabel.Location = New System.Drawing.Point(3, 94)
-        Me.uiMenuItemImageMarginStartLabel.Name = "uiMenuItemImageMarginStartLabel"
-        Me.uiMenuItemImageMarginStartLabel.Size = New System.Drawing.Size(215, 17)
-        Me.uiMenuItemImageMarginStartLabel.TabIndex = 6
-        Me.uiMenuItemImageMarginStartLabel.Text = "ImageMarginGradient StartColor:"
+        Me.uiStatusLabelBorderSidesLabel.AutoSize = True
+        Me.uiStatusLabelBorderSidesLabel.Location = New System.Drawing.Point(3, 184)
+        Me.uiStatusLabelBorderSidesLabel.Name = "uiStatusLabelBorderSidesLabel"
+        Me.uiStatusLabelBorderSidesLabel.Size = New System.Drawing.Size(90, 17)
+        Me.uiStatusLabelBorderSidesLabel.TabIndex = 10
+        Me.uiStatusLabelBorderSidesLabel.Text = "BorderSides:"
         '
-        'uiMenuItemImageMarginStartTextbox
+        'TextBox1
         '
-        Me.uiMenuItemImageMarginStartTextbox.Location = New System.Drawing.Point(3, 114)
-        Me.uiMenuItemImageMarginStartTextbox.Name = "uiMenuItemImageMarginStartTextbox"
-        Me.uiMenuItemImageMarginStartTextbox.Size = New System.Drawing.Size(313, 22)
-        Me.uiMenuItemImageMarginStartTextbox.TabIndex = 7
+        Me.TextBox1.Location = New System.Drawing.Point(3, 204)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(313, 22)
+        Me.TextBox1.TabIndex = 11
         '
-        'uiMenuItemImageMarginEndLabel
+        'uiStatusLabelBorderStyleLabel
         '
-        Me.uiMenuItemImageMarginEndLabel.AutoSize = True
-        Me.uiMenuItemImageMarginEndLabel.Location = New System.Drawing.Point(3, 139)
-        Me.uiMenuItemImageMarginEndLabel.Name = "uiMenuItemImageMarginEndLabel"
-        Me.uiMenuItemImageMarginEndLabel.Size = New System.Drawing.Size(210, 17)
-        Me.uiMenuItemImageMarginEndLabel.TabIndex = 8
-        Me.uiMenuItemImageMarginEndLabel.Text = "ImageMarginGradient EndColor:"
+        Me.uiStatusLabelBorderStyleLabel.AutoSize = True
+        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 229)
+        Me.uiStatusLabelBorderStyleLabel.Name = "uiStatusLabelBorderStyleLabel"
+        Me.uiStatusLabelBorderStyleLabel.Size = New System.Drawing.Size(86, 17)
+        Me.uiStatusLabelBorderStyleLabel.TabIndex = 12
+        Me.uiStatusLabelBorderStyleLabel.Text = "BorderStyle:"
         '
-        'uiMenuItemImageMarginEndTextbox
+        'TextBox2
         '
-        Me.uiMenuItemImageMarginEndTextbox.Location = New System.Drawing.Point(3, 159)
-        Me.uiMenuItemImageMarginEndTextbox.Name = "uiMenuItemImageMarginEndTextbox"
-        Me.uiMenuItemImageMarginEndTextbox.Size = New System.Drawing.Size(313, 22)
-        Me.uiMenuItemImageMarginEndTextbox.TabIndex = 9
+        Me.TextBox2.Location = New System.Drawing.Point(3, 249)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(313, 22)
+        Me.TextBox2.TabIndex = 13
         '
         'aaformMainWindow
         '
@@ -335,4 +375,8 @@ Partial Class aaformMainWindow
     Friend WithEvents uiMenuItemImageMarginStartTextbox As TextBox
     Friend WithEvents uiMenuItemImageMarginEndLabel As Label
     Friend WithEvents uiMenuItemImageMarginEndTextbox As TextBox
+    Friend WithEvents uiStatusLabelBorderSidesLabel As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents uiStatusLabelBorderStyleLabel As Label
+    Friend WithEvents TextBox2 As TextBox
 End Class
