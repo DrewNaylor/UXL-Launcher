@@ -45,6 +45,11 @@ Public Class aaformMainWindow
             uiBackColorTextbox.Text = themecontrolButtonBackColor
             uiForeColorTextbox.Text = themecontrolButtonForeColor
 
+            ' Update flatstyle dropdown and bordercolor textbox
+            ' with relevant properties.
+            dropdownButtonFlatStyle.Text = themecontrolButtonFlatStyle
+            textboxButtonFlatStyleBorderColor.Text = themecontrolButtonFlatStyleBorderColor
+
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
             uiBackColorTextbox.Show()
             uiForeColorTextbox.Show()
