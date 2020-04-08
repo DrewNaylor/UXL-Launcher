@@ -75,6 +75,13 @@ Public Class ThemeProcessor
         ' Get button forecolor.
         ThemeProperties.themecontrolButtonForeColor = NodeReader("Theme_Colors/Button/ForeColor", themeSheet, themeNamespaceManager, "ControlText")
 
+        ' Get button flatstyle.
+        ThemeProperties.themecontrolButtonFlatStyle = NodeReader("Theme_Colors/Button/FlatStyle", themeSheet, themeNamespaceManager, "Standard")
+        If Not ThemeProperties.themecontrolButtonFlatStyle = "Flat" Or ThemeProperties.themecontrolButtonFlatStyle = "Standard" Then
+            ThemeProperties.themecontrolButtonFlatStyle = "Standard"
+        End If
+
+
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)
         MessageBox.Show(ThemeProperties.themeinfoDescription)
@@ -84,6 +91,7 @@ Public Class ThemeProcessor
 
         MessageBox.Show(ThemeProperties.themecontrolButtonBackColor)
         MessageBox.Show(ThemeProperties.themecontrolButtonForeColor)
+        MessageBox.Show(ThemeProperties.themecontrolButtonFlatStyle)
 
     End Sub
 
