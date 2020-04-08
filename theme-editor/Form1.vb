@@ -53,10 +53,16 @@ Public Class aaformMainWindow
             uiForeColorTextbox.Text = flowlayoutpanelForeColor
 
         ElseIf comboboxControlSelector.Text = "StatusBar" Then
+            ' Show backcolor textbox.
             uiBackColorTextbox.Show()
+            ' Hide forecolor textbox since statusbars
+            ' don't support forecolors in the theme engine.
             uiForeColorTextbox.Hide()
+            ' Hide forecolor label since the textbox is hidden.
             uiForeColorLabel.Hide()
+            ' Show backcolor label.
             uiBackColorLabel.Show()
+            ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = statusbarBackColor
 
         ElseIf comboboxControlSelector.Text = "Label" Then
