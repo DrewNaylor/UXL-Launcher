@@ -395,6 +395,10 @@ Public Class aaformMainWindow
         ' Save the button flat style border color into its property.
         ThemeProperties.themecontrolButtonFlatStyleBorderColor = textboxButtonFlatStyleBorderColor.Text
     End Sub
+
+    Private Sub aaformMainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'ThemeProcessor.LoadTheme("C:\Users\drewn\Documents\0GitHub\UXL-Launcher\UXL-Launcher\VB Code-behind\Themes\TenDarkTheme_XML.xml")
+    End Sub
 End Class
 
 Public Class ThemeProperties

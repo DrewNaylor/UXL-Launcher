@@ -47,15 +47,11 @@ Public Class ThemeProcessor
         End If
 
         ' Get theme description from XML file.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
-            ThemeProperties.themeinfoDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-        Else
-            ThemeProperties.themeinfoDescription = "(No description specified)"
-        End If
-
+        ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager, "description")
+        'MessageBox.Show(ThemeProperties.themeinfoDescription)
     End Sub
 
-    Private Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager, Optional itemType As String = "item") As String
+    Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager, Optional itemType As String = "item") As String
         If inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager) IsNot Nothing Then
             Return inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager).InnerText
         Else
