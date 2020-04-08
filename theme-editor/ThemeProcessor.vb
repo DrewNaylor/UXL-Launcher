@@ -34,6 +34,8 @@ Public Class ThemeProcessor
             themeSheet.LoadXml(themeInput)
         End If
 
+        ' Most of this is based on the PortableThemeEngine theme loading code.
+        ' Create a namespace manager, and add a namespace to it.
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
