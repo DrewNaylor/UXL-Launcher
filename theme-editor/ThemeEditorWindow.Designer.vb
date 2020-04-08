@@ -136,6 +136,7 @@ Partial Class aaformMainWindow
         '
         'propertygridAdvanced
         '
+        Me.propertygridAdvanced.BackColor = System.Drawing.SystemColors.Window
         Me.propertygridAdvanced.Location = New System.Drawing.Point(352, 23)
         Me.propertygridAdvanced.Margin = New System.Windows.Forms.Padding(4)
         Me.propertygridAdvanced.Name = "propertygridAdvanced"
