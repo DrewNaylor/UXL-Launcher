@@ -72,6 +72,14 @@ Public Class aaformMainWindow
             uiForeColorLabel.Show()
             uiBackColorTextbox.Text = labelBackColor
             uiForeColorTextbox.Text = labelForeColor
+
+        ElseIf comboboxControlSelector.Text = "TextBox" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
+            uiBackColorTextbox.Text = textboxBackColor
+            uiForeColorTextbox.Text = textboxForeColor
         End If
     End Sub
 
@@ -82,6 +90,8 @@ Public Class aaformMainWindow
             groupboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
             flowlayoutpanelBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "StatusBar" Then
+            statusbarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelBackColor = uiBackColorTextbox.Text
         End If
@@ -200,6 +210,24 @@ Public Class aaformMainWindow
         End Get
         Set(value As String)
             _labelForeColor = value
+        End Set
+    End Property
+
+    Public Property textboxForeColor() As String
+        Get
+            Return _textboxForeColor
+        End Get
+        Set(value As String)
+            _textboxForeColor = value
+        End Set
+    End Property
+
+    Public Property textboxBackColor() As String
+        Get
+            Return _textboxBackColor
+        End Get
+        Set(value As String)
+            _textboxBackColor = value
         End Set
     End Property
 End Class
