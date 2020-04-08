@@ -230,4 +230,31 @@ Public Class aaformMainWindow
             _textboxBackColor = value
         End Set
     End Property
+
+    Public Property menuitemForeColor() As String
+        Get
+            Return _menuitemForeColor
+        End Get
+        Set(value As String)
+            _menuitemForeColor = value
+        End Set
+    End Property
+
+    Public Property menuitemImageMarginGradientStartColor() As String
+        Get
+            Return _menuitemImageMarginGradientStartColor
+        End Get
+        Set(value As String)
+            _menuitemImageMarginGradientStartColor = value
+        End Set
+    End Property
+
+    Public Property menuitemImageMarginGradientEndColor() As String
+        Get
+            Return _menuitemImageMarginGradientEndColor
+        End Get
+        Set(value As String)
+            _menuitemImageMarginGradientEndColor = value
+        End Set
+    End Property
 End Class
