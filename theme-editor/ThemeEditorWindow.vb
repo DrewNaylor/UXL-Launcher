@@ -290,14 +290,6 @@ Public Class aaformMainWindow
         End If
     End Sub
 
-    Private Sub ThemePropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        ' Show the theme properties window where
-        ' things like theme title, author, version,
-        ' description, and theme engine version
-        ' compatibility can be set.
-        ThemePropertiesWindow.Show()
-    End Sub
-
     ' Theme properties.
     Private _themeinfoTitle As String = "Untitled"
     Private _themeinfoDescription As String = "Theme description goes here."
