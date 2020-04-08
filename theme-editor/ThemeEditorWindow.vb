@@ -334,6 +334,8 @@ Public Class aaformMainWindow
     ' Control properties.
     Private _themecontrolButtonBackColor As String = "Transparent"
     Private _themecontrolButtonForeColor As String = "ControlText"
+    Private _themecontrolButtonFlatStyle As String = "Standard"
+    Private _themecontrolButtonFlatStyleBorderColor As String = "Nothing"
     Private _themecontrolGroupboxBackColor As String = "Transparent"
     Private _themecontrolGroupboxForeColor As String = "ControlText"
     Private _themecontrolFlowlayoutpanelBackColor As String = "Transparent"
