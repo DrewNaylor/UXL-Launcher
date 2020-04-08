@@ -1,27 +1,27 @@
-﻿Public Class Form1
-    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
-        If ComboBox1.Text = "Button" Then
-            TextBox1.Text = buttonBackColor
-            TextBox2.Text = buttonForeColor
-        ElseIf ComboBox1.Text = "Label" Then
-            TextBox1.Text = labelBackColor
-            TextBox2.Text = labelForeColor
+﻿Public Class aaformMainWindow
+    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
+        If comboboxControlSelector.Text = "Button" Then
+            textboxBackColor.Text = buttonBackColor
+            textboxForeColor.Text = buttonForeColor
+        ElseIf comboboxControlSelector.Text = "Label" Then
+            textboxBackColor.Text = labelBackColor
+            textboxForeColor.Text = labelForeColor
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        If ComboBox1.Text = "Button" Then
-            buttonBackColor = TextBox1.Text
-        ElseIf ComboBox1.Text = "Label" Then
-            labelBackColor = TextBox1.Text
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textboxBackColor.TextChanged
+        If comboboxControlSelector.Text = "Button" Then
+            buttonBackColor = textboxBackColor.Text
+        ElseIf comboboxControlSelector.Text = "Label" Then
+            labelBackColor = textboxBackColor.Text
         End If
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
-        If ComboBox1.Text = "Button" Then
-            buttonForeColor = TextBox2.Text
-        ElseIf ComboBox1.Text = "Label" Then
-            labelForeColor = TextBox2.Text
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles textboxForeColor.TextChanged
+        If comboboxControlSelector.Text = "Button" Then
+            buttonForeColor = textboxForeColor.Text
+        ElseIf comboboxControlSelector.Text = "Label" Then
+            labelForeColor = textboxForeColor.Text
         End If
     End Sub
 

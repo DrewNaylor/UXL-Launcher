@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class aaformMainWindow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,16 +22,16 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.PropertyGrid1 = New System.Windows.Forms.PropertyGrid()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(aaformMainWindow))
+        Me.comboboxControlSelector = New System.Windows.Forms.ComboBox()
+        Me.labelBackColor = New System.Windows.Forms.Label()
+        Me.labelForeColor = New System.Windows.Forms.Label()
+        Me.textboxBackColor = New System.Windows.Forms.TextBox()
+        Me.textboxForeColor = New System.Windows.Forms.TextBox()
+        Me.labelControlToTheme = New System.Windows.Forms.Label()
+        Me.propertygridAdvanced = New System.Windows.Forms.PropertyGrid()
+        Me.flowlayoutpanelPropertyList = New System.Windows.Forms.FlowLayoutPanel()
+        Me.menustripMenubar = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,101 +42,101 @@ Partial Class Form1
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.toolstripToolbar = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.FlowLayoutPanel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        Me.flowlayoutpanelPropertyList.SuspendLayout()
+        Me.menustripMenubar.SuspendLayout()
+        Me.toolstripToolbar.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ComboBox1
+        'comboboxControlSelector
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Button", "Label"})
-        Me.ComboBox1.Location = New System.Drawing.Point(20, 91)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(316, 24)
-        Me.ComboBox1.TabIndex = 0
+        Me.comboboxControlSelector.FormattingEnabled = True
+        Me.comboboxControlSelector.Items.AddRange(New Object() {"Button", "Label"})
+        Me.comboboxControlSelector.Location = New System.Drawing.Point(20, 91)
+        Me.comboboxControlSelector.Margin = New System.Windows.Forms.Padding(4)
+        Me.comboboxControlSelector.Name = "comboboxControlSelector"
+        Me.comboboxControlSelector.Size = New System.Drawing.Size(316, 24)
+        Me.comboboxControlSelector.TabIndex = 0
         '
-        'Label1
+        'labelBackColor
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 17)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "BackColor:"
+        Me.labelBackColor.AutoSize = True
+        Me.labelBackColor.Location = New System.Drawing.Point(4, 0)
+        Me.labelBackColor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labelBackColor.Name = "labelBackColor"
+        Me.labelBackColor.Size = New System.Drawing.Size(76, 17)
+        Me.labelBackColor.TabIndex = 1
+        Me.labelBackColor.Text = "BackColor:"
         '
-        'Label2
+        'labelForeColor
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 47)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 17)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "ForeColor:"
+        Me.labelForeColor.AutoSize = True
+        Me.labelForeColor.Location = New System.Drawing.Point(4, 47)
+        Me.labelForeColor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labelForeColor.Name = "labelForeColor"
+        Me.labelForeColor.Size = New System.Drawing.Size(74, 17)
+        Me.labelForeColor.TabIndex = 2
+        Me.labelForeColor.Text = "ForeColor:"
         '
-        'TextBox1
+        'textboxBackColor
         '
-        Me.TextBox1.Location = New System.Drawing.Point(4, 21)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(312, 22)
-        Me.TextBox1.TabIndex = 4
+        Me.textboxBackColor.Location = New System.Drawing.Point(4, 21)
+        Me.textboxBackColor.Margin = New System.Windows.Forms.Padding(4)
+        Me.textboxBackColor.Name = "textboxBackColor"
+        Me.textboxBackColor.Size = New System.Drawing.Size(312, 22)
+        Me.textboxBackColor.TabIndex = 4
         '
-        'TextBox2
+        'textboxForeColor
         '
-        Me.TextBox2.Location = New System.Drawing.Point(4, 68)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(312, 22)
-        Me.TextBox2.TabIndex = 5
+        Me.textboxForeColor.Location = New System.Drawing.Point(4, 68)
+        Me.textboxForeColor.Margin = New System.Windows.Forms.Padding(4)
+        Me.textboxForeColor.Name = "textboxForeColor"
+        Me.textboxForeColor.Size = New System.Drawing.Size(312, 22)
+        Me.textboxForeColor.TabIndex = 5
         '
-        'Label4
+        'labelControlToTheme
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 71)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(116, 17)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Control to theme:"
+        Me.labelControlToTheme.AutoSize = True
+        Me.labelControlToTheme.Location = New System.Drawing.Point(16, 71)
+        Me.labelControlToTheme.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.labelControlToTheme.Name = "labelControlToTheme"
+        Me.labelControlToTheme.Size = New System.Drawing.Size(116, 17)
+        Me.labelControlToTheme.TabIndex = 7
+        Me.labelControlToTheme.Text = "Control to theme:"
         '
-        'PropertyGrid1
+        'propertygridAdvanced
         '
-        Me.PropertyGrid1.Location = New System.Drawing.Point(359, 91)
-        Me.PropertyGrid1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PropertyGrid1.Name = "PropertyGrid1"
-        Me.PropertyGrid1.Size = New System.Drawing.Size(348, 383)
-        Me.PropertyGrid1.TabIndex = 8
+        Me.propertygridAdvanced.Location = New System.Drawing.Point(359, 91)
+        Me.propertygridAdvanced.Margin = New System.Windows.Forms.Padding(4)
+        Me.propertygridAdvanced.Name = "propertygridAdvanced"
+        Me.propertygridAdvanced.Size = New System.Drawing.Size(348, 383)
+        Me.propertygridAdvanced.TabIndex = 8
         '
-        'FlowLayoutPanel1
+        'flowlayoutpanelPropertyList
         '
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.TextBox1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Label2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.TextBox2)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(20, 124)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(331, 350)
-        Me.FlowLayoutPanel1.TabIndex = 9
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelBackColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxBackColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelForeColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxForeColor)
+        Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
+        Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
+        Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
+        Me.flowlayoutpanelPropertyList.Size = New System.Drawing.Size(331, 350)
+        Me.flowlayoutpanelPropertyList.TabIndex = 9
         '
-        'MenuStrip1
+        'menustripMenubar
         '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(723, 28)
-        Me.MenuStrip1.TabIndex = 10
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.menustripMenubar.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.menustripMenubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.menustripMenubar.Location = New System.Drawing.Point(0, 0)
+        Me.menustripMenubar.Name = "menustripMenubar"
+        Me.menustripMenubar.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.menustripMenubar.Size = New System.Drawing.Size(723, 28)
+        Me.menustripMenubar.TabIndex = 10
+        Me.menustripMenubar.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
@@ -205,15 +205,15 @@ Partial Class Form1
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(134, 26)
         Me.AboutToolStripMenuItem.Text = "&About..."
         '
-        'ToolStrip1
+        'toolstripToolbar
         '
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.OpenToolStripButton, Me.SaveToolStripButton})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 28)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(723, 27)
-        Me.ToolStrip1.TabIndex = 11
-        Me.ToolStrip1.Text = "ToolStrip1"
+        Me.toolstripToolbar.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.toolstripToolbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.OpenToolStripButton, Me.SaveToolStripButton})
+        Me.toolstripToolbar.Location = New System.Drawing.Point(0, 28)
+        Me.toolstripToolbar.Name = "toolstripToolbar"
+        Me.toolstripToolbar.Size = New System.Drawing.Size(723, 27)
+        Me.toolstripToolbar.TabIndex = 11
+        Me.toolstripToolbar.Text = "ToolStrip1"
         '
         'NewToolStripButton
         '
@@ -242,41 +242,41 @@ Partial Class Form1
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
         '
-        'Form1
+        'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(723, 495)
-        Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.PropertyGrid1)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Name = "Form1"
+        Me.Controls.Add(Me.toolstripToolbar)
+        Me.Controls.Add(Me.flowlayoutpanelPropertyList)
+        Me.Controls.Add(Me.propertygridAdvanced)
+        Me.Controls.Add(Me.labelControlToTheme)
+        Me.Controls.Add(Me.comboboxControlSelector)
+        Me.Controls.Add(Me.menustripMenubar)
+        Me.MainMenuStrip = Me.menustripMenubar
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Name = "aaformMainWindow"
         Me.Text = "theme editor for PortableThemeEngine"
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.flowlayoutpanelPropertyList.ResumeLayout(False)
+        Me.flowlayoutpanelPropertyList.PerformLayout()
+        Me.menustripMenubar.ResumeLayout(False)
+        Me.menustripMenubar.PerformLayout()
+        Me.toolstripToolbar.ResumeLayout(False)
+        Me.toolstripToolbar.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents PropertyGrid1 As PropertyGrid
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents comboboxControlSelector As ComboBox
+    Friend WithEvents labelBackColor As Label
+    Friend WithEvents labelForeColor As Label
+    Friend WithEvents textboxBackColor As TextBox
+    Friend WithEvents textboxForeColor As TextBox
+    Friend WithEvents labelControlToTheme As Label
+    Friend WithEvents propertygridAdvanced As PropertyGrid
+    Friend WithEvents flowlayoutpanelPropertyList As FlowLayoutPanel
+    Friend WithEvents menustripMenubar As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
@@ -287,7 +287,7 @@ Partial Class Form1
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents toolstripToolbar As ToolStrip
     Friend WithEvents NewToolStripButton As ToolStripButton
     Friend WithEvents OpenToolStripButton As ToolStripButton
     Friend WithEvents SaveToolStripButton As ToolStripButton
