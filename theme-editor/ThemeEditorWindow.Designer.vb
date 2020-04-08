@@ -358,7 +358,7 @@ Partial Class aaformMainWindow
         Me.MainMenuStrip = Me.menustripMenubar
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "aaformMainWindow"
-        Me.Text = "theme editor for PortableThemeEngine"
+        Me.Text = "PortableThemeEngine Theme Editor"
         Me.flowlayoutpanelPropertyList.ResumeLayout(False)
         Me.flowlayoutpanelPropertyList.PerformLayout()
         Me.menustripMenubar.ResumeLayout(False)
