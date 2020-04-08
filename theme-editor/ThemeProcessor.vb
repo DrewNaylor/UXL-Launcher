@@ -40,27 +40,28 @@ Public Class ThemeProcessor
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
         ' Get the theme title from the XML file.
-        ThemeProperties.themeinfoTitle = NodeReader("Title", themeSheet, themeNamespaceManager, "title")
+        ThemeProperties.themeinfoTitle = NodeReader("Title", themeSheet, themeNamespaceManager)
 
         ' Get theme description from XML file.
-        ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager, "description")
+        ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager)
 
         ' Get theme version from XML file.
-        ThemeProperties.themeinfoVersion = NodeReader("Version", themeSheet, themeNamespaceManager, "version")
+        ThemeProperties.themeinfoVersion = NodeReader("Version", themeSheet, themeNamespaceManager)
 
-
+        ' Get theme author.
+        ThemeProperties.themeinfoAuthor = NodeReader("Author", themeSheet, themeNamespaceManager)
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)
         MessageBox.Show(ThemeProperties.themeinfoDescription)
         MessageBox.Show(ThemeProperties.themeinfoVersion)
     End Sub
 
-    Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager, Optional itemType As String = "item") As String
+    Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager) As String
         ' Get theme info and return it to the calling code.
         If inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager) IsNot Nothing Then
             Return inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager).InnerText
         Else
-            Return "(No " & itemType & "specified)"
+            Return "(No " & inputNode.ToLowerInvariant & "specified)"
         End If
     End Function
 
