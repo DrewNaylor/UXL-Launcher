@@ -22,4 +22,8 @@
 
 Public Class ThemeProcessor
 
+    Friend Shared Sub LoadTheme(themeInput As String, Optional isFilename As Boolean = True)
+
+    End Sub
+
 End Class
