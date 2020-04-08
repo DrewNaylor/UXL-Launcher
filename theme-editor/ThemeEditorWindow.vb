@@ -290,7 +290,7 @@ Public Class aaformMainWindow
         End If
     End Sub
 
-    Private Sub ThemePropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThemePropertiesToolStripMenuItem.Click
+    Private Sub ThemePropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         ' Show the theme properties window where
         ' things like theme title, author, version,
         ' description, and theme engine version

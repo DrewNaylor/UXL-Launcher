@@ -48,8 +48,6 @@ Partial Class aaformMainWindow
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ThemePropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolstripToolbar = New System.Windows.Forms.ToolStrip()
@@ -236,7 +234,7 @@ Partial Class aaformMainWindow
         'menustripMenubar
         '
         Me.menustripMenubar.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.menustripMenubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.menustripMenubar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.menustripMenubar.Location = New System.Drawing.Point(0, 0)
         Me.menustripMenubar.Name = "menustripMenubar"
         Me.menustripMenubar.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
@@ -297,19 +295,6 @@ Partial Class aaformMainWindow
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
         Me.ExitToolStripMenuItem.Text = "E&xit"
-        '
-        'EditToolStripMenuItem
-        '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThemePropertiesToolStripMenuItem})
-        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(47, 24)
-        Me.EditToolStripMenuItem.Text = "&Edit"
-        '
-        'ThemePropertiesToolStripMenuItem
-        '
-        Me.ThemePropertiesToolStripMenuItem.Name = "ThemePropertiesToolStripMenuItem"
-        Me.ThemePropertiesToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
-        Me.ThemePropertiesToolStripMenuItem.Text = "&Theme properties..."
         '
         'HelpToolStripMenuItem
         '
@@ -549,8 +534,6 @@ Partial Class aaformMainWindow
     Friend WithEvents uiStatusLabelBorderStyleLabel As Label
     Friend WithEvents uiStatusLabelBorderSidesDropdown As ComboBox
     Friend WithEvents uiStatusLabelBorderStyleDropdown As ComboBox
-    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ThemePropertiesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
