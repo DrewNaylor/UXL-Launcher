@@ -319,6 +319,12 @@ Public Class aaformMainWindow
         themeinfoAuthor = textboxThemeAuthor.Text
     End Sub
 
+    Private Sub dropdownThemeEngineRuntimeVersion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropdownThemeEngineRuntimeVersion.SelectedIndexChanged
+        ' Save the theme engine runtime version into its property.
+        themeinfoUseThemeEngineVersion = dropdownThemeEngineRuntimeVersion.Text
+    End Sub
+
+
     ' Theme properties.
     Private _themeinfoTitle As String = "Untitled"
     Private _themeinfoDescription As String = "Theme description goes here."
