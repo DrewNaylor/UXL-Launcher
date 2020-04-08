@@ -220,6 +220,28 @@ Public Class aaformMainWindow
         End If
     End Sub
 
+    Private Sub hideButtonControls(Optional hideControls As Boolean = True)
+        If hideControls = True Then
+            ' Hide label for button flatstyle.
+            labelButtonFlatStyle.Hide()
+            ' Hide dropdown for button flatstyle.
+            dropdownButtonFlatStyle.Hide()
+            ' Hide label for button flatstyle bordercolor.
+            labelButtonFlatStyleBorderColor.Hide()
+            ' Hide textbox for button flatstyle bordercolor.
+            textboxButtonFlatStyleBorderColor.Hide()
+        ElseIf hideControls = False Then
+            ' Show label for button flatstyle.
+            labelButtonFlatStyle.Show()
+            ' Show dropdown for button flatstyle.
+            dropdownButtonFlatStyle.Show()
+            ' Show label for button flatstyle bordercolor.
+            labelButtonFlatStyleBorderColor.Show()
+            ' Show textbox for button flatstyle bordercolor.
+            textboxButtonFlatStyleBorderColor.Show()
+        End If
+    End Sub
+
     Private Sub uiBackColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiBackColorTextbox.TextChanged
         ' Save what's entered into the BackColor textbox
         ' into the relevant property depending on what's
