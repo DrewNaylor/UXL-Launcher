@@ -34,6 +34,8 @@ Public Class ThemeProcessor
             themeSheet.LoadXml(themeInput)
         End If
 
+        Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
+        themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
     End Sub
 
