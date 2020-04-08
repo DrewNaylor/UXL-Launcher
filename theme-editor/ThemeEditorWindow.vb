@@ -221,6 +221,9 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub uiBackColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiBackColorTextbox.TextChanged
+        ' Save what's entered into the BackColor textbox
+        ' into the relevant property depending on what's
+        ' in the Control selector.
         If comboboxControlSelector.Text = "Button" Then
             themecontrolButtonBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
@@ -243,6 +246,9 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub uiForeColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiForeColorTextbox.TextChanged
+        ' Save what's entered into the ForeColor textbox
+        ' into the relevant property depending on what's
+        ' in the Control selector.
         If comboboxControlSelector.Text = "Button" Then
             themecontrolButtonForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
@@ -261,6 +267,9 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub uiMenuItemImageMarginEndTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginEndTextbox.TextChanged
+        ' Save what's entered in the ImageMarginEnd textbox
+        ' into the menuitem image margin gradient end color
+        ' property.
         themecontrolMenuitemImageMarginGradientEndColor = uiMenuItemImageMarginEndTextbox.Text
     End Sub
 

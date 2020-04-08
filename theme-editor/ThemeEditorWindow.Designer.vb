@@ -79,11 +79,12 @@ Partial Class aaformMainWindow
         '
         Me.comboboxControlSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxControlSelector.FormattingEnabled = True
-        Me.comboboxControlSelector.Items.AddRange(New Object() {"Button", "GroupBox", "FlowLayoutPanel", "StatusBar", "Label", "TextBox", "MenuItem", "MenuBar", "StatusLabel"})
+        Me.comboboxControlSelector.Items.AddRange(New Object() {"Button", "FlowLayoutPanel", "GroupBox", "Label", "MenuBar", "MenuItem", "StatusBar", "StatusLabel", "TextBox"})
         Me.comboboxControlSelector.Location = New System.Drawing.Point(13, 23)
         Me.comboboxControlSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxControlSelector.Name = "comboboxControlSelector"
         Me.comboboxControlSelector.Size = New System.Drawing.Size(316, 24)
+        Me.comboboxControlSelector.Sorted = True
         Me.comboboxControlSelector.TabIndex = 0
         '
         'uiBackColorLabel
