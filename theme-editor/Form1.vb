@@ -280,6 +280,14 @@ Public Class aaformMainWindow
         ' Update statuslabel border sides property
         ' when the user chooses something from the list.
         statuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
+
+        ' Enable or disable BorderStyle dropdown depending on if
+        ' the user chose "None" or not.
+        If statuslabelBorderSides = "None" Then
+            uiStatusLabelBorderStyleDropdown.Enabled = False
+        Else
+            uiStatusLabelBorderStyleDropdown.Enabled = True
+        End If
     End Sub
 
     Private _buttonBackColor As String = "Transparent"
