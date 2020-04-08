@@ -39,6 +39,10 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderSidesDropdown = New System.Windows.Forms.ComboBox()
         Me.uiStatusLabelBorderStyleLabel = New System.Windows.Forms.Label()
         Me.uiStatusLabelBorderStyleDropdown = New System.Windows.Forms.ComboBox()
+        Me.labelButtonFlatStyle = New System.Windows.Forms.Label()
+        Me.dropdownButtonFlatStyle = New System.Windows.Forms.ComboBox()
+        Me.labelButtonFlatStyleBorderColor = New System.Windows.Forms.Label()
+        Me.textboxButtonFlatStyleBorderColor = New System.Windows.Forms.TextBox()
         Me.menustripMenubar = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,10 +71,6 @@ Partial Class aaformMainWindow
         Me.labelThemeDescription = New System.Windows.Forms.Label()
         Me.textboxThemeTitle = New System.Windows.Forms.TextBox()
         Me.labelThemeTitle = New System.Windows.Forms.Label()
-        Me.labelButtonFlatStyle = New System.Windows.Forms.Label()
-        Me.dropdownButtonFlatStyle = New System.Windows.Forms.ComboBox()
-        Me.labelButtonFlatStyleBorderColor = New System.Windows.Forms.Label()
-        Me.textboxButtonFlatStyleBorderColor = New System.Windows.Forms.TextBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -87,7 +87,7 @@ Partial Class aaformMainWindow
         Me.comboboxControlSelector.Location = New System.Drawing.Point(13, 23)
         Me.comboboxControlSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxControlSelector.Name = "comboboxControlSelector"
-        Me.comboboxControlSelector.Size = New System.Drawing.Size(316, 24)
+        Me.comboboxControlSelector.Size = New System.Drawing.Size(334, 24)
         Me.comboboxControlSelector.Sorted = True
         Me.comboboxControlSelector.TabIndex = 0
         '
@@ -240,6 +240,41 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderStyleDropdown.Name = "uiStatusLabelBorderStyleDropdown"
         Me.uiStatusLabelBorderStyleDropdown.Size = New System.Drawing.Size(331, 24)
         Me.uiStatusLabelBorderStyleDropdown.TabIndex = 15
+        '
+        'labelButtonFlatStyle
+        '
+        Me.labelButtonFlatStyle.AutoSize = True
+        Me.labelButtonFlatStyle.Location = New System.Drawing.Point(3, 278)
+        Me.labelButtonFlatStyle.Name = "labelButtonFlatStyle"
+        Me.labelButtonFlatStyle.Size = New System.Drawing.Size(111, 17)
+        Me.labelButtonFlatStyle.TabIndex = 16
+        Me.labelButtonFlatStyle.Text = "Button FlatStyle:"
+        '
+        'dropdownButtonFlatStyle
+        '
+        Me.dropdownButtonFlatStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.dropdownButtonFlatStyle.FormattingEnabled = True
+        Me.dropdownButtonFlatStyle.Items.AddRange(New Object() {"Standard", "Flat"})
+        Me.dropdownButtonFlatStyle.Location = New System.Drawing.Point(3, 298)
+        Me.dropdownButtonFlatStyle.Name = "dropdownButtonFlatStyle"
+        Me.dropdownButtonFlatStyle.Size = New System.Drawing.Size(331, 24)
+        Me.dropdownButtonFlatStyle.TabIndex = 17
+        '
+        'labelButtonFlatStyleBorderColor
+        '
+        Me.labelButtonFlatStyleBorderColor.AutoSize = True
+        Me.labelButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 325)
+        Me.labelButtonFlatStyleBorderColor.Name = "labelButtonFlatStyleBorderColor"
+        Me.labelButtonFlatStyleBorderColor.Size = New System.Drawing.Size(191, 17)
+        Me.labelButtonFlatStyleBorderColor.TabIndex = 18
+        Me.labelButtonFlatStyleBorderColor.Text = "Button FlatStyle BorderColor:"
+        '
+        'textboxButtonFlatStyleBorderColor
+        '
+        Me.textboxButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 345)
+        Me.textboxButtonFlatStyleBorderColor.Name = "textboxButtonFlatStyleBorderColor"
+        Me.textboxButtonFlatStyleBorderColor.Size = New System.Drawing.Size(331, 22)
+        Me.textboxButtonFlatStyleBorderColor.TabIndex = 19
         '
         'menustripMenubar
         '
@@ -485,41 +520,6 @@ Partial Class aaformMainWindow
         Me.labelThemeTitle.Size = New System.Drawing.Size(82, 17)
         Me.labelThemeTitle.TabIndex = 11
         Me.labelThemeTitle.Text = "Theme title:"
-        '
-        'labelButtonFlatStyle
-        '
-        Me.labelButtonFlatStyle.AutoSize = True
-        Me.labelButtonFlatStyle.Location = New System.Drawing.Point(3, 278)
-        Me.labelButtonFlatStyle.Name = "labelButtonFlatStyle"
-        Me.labelButtonFlatStyle.Size = New System.Drawing.Size(111, 17)
-        Me.labelButtonFlatStyle.TabIndex = 16
-        Me.labelButtonFlatStyle.Text = "Button FlatStyle:"
-        '
-        'dropdownButtonFlatStyle
-        '
-        Me.dropdownButtonFlatStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dropdownButtonFlatStyle.FormattingEnabled = True
-        Me.dropdownButtonFlatStyle.Items.AddRange(New Object() {"Standard", "Flat"})
-        Me.dropdownButtonFlatStyle.Location = New System.Drawing.Point(3, 298)
-        Me.dropdownButtonFlatStyle.Name = "dropdownButtonFlatStyle"
-        Me.dropdownButtonFlatStyle.Size = New System.Drawing.Size(331, 24)
-        Me.dropdownButtonFlatStyle.TabIndex = 17
-        '
-        'labelButtonFlatStyleBorderColor
-        '
-        Me.labelButtonFlatStyleBorderColor.AutoSize = True
-        Me.labelButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 326)
-        Me.labelButtonFlatStyleBorderColor.Name = "labelButtonFlatStyleBorderColor"
-        Me.labelButtonFlatStyleBorderColor.Size = New System.Drawing.Size(191, 17)
-        Me.labelButtonFlatStyleBorderColor.TabIndex = 18
-        Me.labelButtonFlatStyleBorderColor.Text = "Button FlatStyle BorderColor:"
-        '
-        'textboxButtonFlatStyleBorderColor
-        '
-        Me.textboxButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 346)
-        Me.textboxButtonFlatStyleBorderColor.Name = "textboxButtonFlatStyleBorderColor"
-        Me.textboxButtonFlatStyleBorderColor.Size = New System.Drawing.Size(331, 22)
-        Me.textboxButtonFlatStyleBorderColor.TabIndex = 19
         '
         'aaformMainWindow
         '

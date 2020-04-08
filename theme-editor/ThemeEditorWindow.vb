@@ -329,6 +329,11 @@ Public Class aaformMainWindow
         themecontrolButtonFlatStyle = dropdownButtonFlatStyle.Text
     End Sub
 
+    Private Sub textboxButtonFlatStyleBorderColor_TextChanged(sender As Object, e As EventArgs) Handles textboxButtonFlatStyleBorderColor.TextChanged
+        ' Save the button flat style border color into its property.
+        themecontrolButtonFlatStyleBorderColor = textboxButtonFlatStyleBorderColor.Text
+    End Sub
+
 
     ' Theme properties.
     Private _themeinfoTitle As String = "Untitled"
