@@ -77,6 +77,7 @@ Public Class ThemeProcessor
 
         ' Get button flatstyle.
         ThemeProperties.themecontrolButtonFlatStyle = NodeReader("Theme_Colors/Button/FlatStyle", themeSheet, themeNamespaceManager, "Standard")
+        ' If the button flatstyle is neither Flat nor Standard, set it to Standard.
         If Not ThemeProperties.themecontrolButtonFlatStyle = "Flat" Or ThemeProperties.themecontrolButtonFlatStyle = "Standard" Then
             ThemeProperties.themecontrolButtonFlatStyle = "Standard"
         End If
