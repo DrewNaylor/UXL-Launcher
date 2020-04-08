@@ -151,6 +151,28 @@ Public Class aaformMainWindow
 
             uiMenuItemImageMarginEndTextbox.Text = menuitemImageMarginGradientEndColor
             uiMenuItemImageMarginStartTextbox.Text = menuitemImageMarginGradientStartColor
+
+        ElseIf comboboxControlSelector.Text = "MenuBar" Then
+            ' Show backcolor textbox.
+            uiBackColorTextbox.Show()
+            ' Hide forecolor textbox since statusbars
+            ' don't support forecolors in the theme engine.
+            uiForeColorTextbox.Hide()
+            ' Hide forecolor label since the textbox is hidden.
+            uiForeColorLabel.Hide()
+            ' Show backcolor label.
+            uiBackColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
+
+            ' Update backcolor textbox with statusbar's backcolor.
+            uiBackColorTextbox.Text = menubarBackColor
         End If
     End Sub
 
