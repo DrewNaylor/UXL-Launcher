@@ -72,6 +72,9 @@ Public Class ThemeProcessor
         ' Get button backcolor.
         ThemeProperties.themecontrolButtonBackColor = NodeReader("Theme_Colors/Button/BackColor", themeSheet, themeNamespaceManager, "Transparent")
 
+        ' Get button forecolor.
+        ThemeProperties.themecontrolButtonForeColor = NodeReader("Theme_Colors/Button/ForeColor", themeSheet, themeNamespaceManager, "ControlText")
+
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)
         MessageBox.Show(ThemeProperties.themeinfoDescription)
@@ -80,6 +83,7 @@ Public Class ThemeProcessor
         MessageBox.Show(ThemeProperties.themeinfoUseThemeEngineVersion)
 
         MessageBox.Show(ThemeProperties.themecontrolButtonBackColor)
+        MessageBox.Show(ThemeProperties.themecontrolButtonForeColor)
 
     End Sub
 
