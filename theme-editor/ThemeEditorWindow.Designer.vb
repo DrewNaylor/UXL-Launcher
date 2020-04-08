@@ -54,9 +54,9 @@ Partial Class aaformMainWindow
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.tabcontrolThemeEditor = New System.Windows.Forms.TabControl()
+        Me.tabpageControls = New System.Windows.Forms.TabPage()
+        Me.tabpageThemeInfo = New System.Windows.Forms.TabPage()
         Me.dropdownThemeEngineRuntimeVersion = New System.Windows.Forms.ComboBox()
         Me.labelThemeEngineRuntimeVersion = New System.Windows.Forms.Label()
         Me.textboxThemeAuthor = New System.Windows.Forms.TextBox()
@@ -70,9 +70,9 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.tabcontrolThemeEditor.SuspendLayout()
+        Me.tabpageControls.SuspendLayout()
+        Me.tabpageThemeInfo.SuspendLayout()
         Me.SuspendLayout()
         '
         'comboboxControlSelector
@@ -347,50 +347,50 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
         '
-        'TabControl1
+        'tabcontrolThemeEditor
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 55)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(723, 440)
-        Me.TabControl1.TabIndex = 10000
+        Me.tabcontrolThemeEditor.Controls.Add(Me.tabpageControls)
+        Me.tabcontrolThemeEditor.Controls.Add(Me.tabpageThemeInfo)
+        Me.tabcontrolThemeEditor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tabcontrolThemeEditor.Location = New System.Drawing.Point(0, 55)
+        Me.tabcontrolThemeEditor.Name = "tabcontrolThemeEditor"
+        Me.tabcontrolThemeEditor.SelectedIndex = 0
+        Me.tabcontrolThemeEditor.Size = New System.Drawing.Size(723, 440)
+        Me.tabcontrolThemeEditor.TabIndex = 10000
         '
-        'TabPage1
+        'tabpageControls
         '
-        Me.TabPage1.Controls.Add(Me.uiControlToThemeLabel)
-        Me.TabPage1.Controls.Add(Me.comboboxControlSelector)
-        Me.TabPage1.Controls.Add(Me.flowlayoutpanelPropertyList)
-        Me.TabPage1.Controls.Add(Me.propertygridAdvanced)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(715, 411)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Controls"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.tabpageControls.Controls.Add(Me.uiControlToThemeLabel)
+        Me.tabpageControls.Controls.Add(Me.comboboxControlSelector)
+        Me.tabpageControls.Controls.Add(Me.flowlayoutpanelPropertyList)
+        Me.tabpageControls.Controls.Add(Me.propertygridAdvanced)
+        Me.tabpageControls.Location = New System.Drawing.Point(4, 25)
+        Me.tabpageControls.Name = "tabpageControls"
+        Me.tabpageControls.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageControls.Size = New System.Drawing.Size(715, 411)
+        Me.tabpageControls.TabIndex = 0
+        Me.tabpageControls.Text = "Controls"
+        Me.tabpageControls.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'tabpageThemeInfo
         '
-        Me.TabPage2.Controls.Add(Me.dropdownThemeEngineRuntimeVersion)
-        Me.TabPage2.Controls.Add(Me.labelThemeEngineRuntimeVersion)
-        Me.TabPage2.Controls.Add(Me.textboxThemeAuthor)
-        Me.TabPage2.Controls.Add(Me.labelThemeAuthor)
-        Me.TabPage2.Controls.Add(Me.textboxThemeVersion)
-        Me.TabPage2.Controls.Add(Me.labelThemeVersion)
-        Me.TabPage2.Controls.Add(Me.textboxThemeDescription)
-        Me.TabPage2.Controls.Add(Me.labelThemeDescription)
-        Me.TabPage2.Controls.Add(Me.textboxThemeTitle)
-        Me.TabPage2.Controls.Add(Me.labelThemeTitle)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(715, 411)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Theme info"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.tabpageThemeInfo.Controls.Add(Me.dropdownThemeEngineRuntimeVersion)
+        Me.tabpageThemeInfo.Controls.Add(Me.labelThemeEngineRuntimeVersion)
+        Me.tabpageThemeInfo.Controls.Add(Me.textboxThemeAuthor)
+        Me.tabpageThemeInfo.Controls.Add(Me.labelThemeAuthor)
+        Me.tabpageThemeInfo.Controls.Add(Me.textboxThemeVersion)
+        Me.tabpageThemeInfo.Controls.Add(Me.labelThemeVersion)
+        Me.tabpageThemeInfo.Controls.Add(Me.textboxThemeDescription)
+        Me.tabpageThemeInfo.Controls.Add(Me.labelThemeDescription)
+        Me.tabpageThemeInfo.Controls.Add(Me.textboxThemeTitle)
+        Me.tabpageThemeInfo.Controls.Add(Me.labelThemeTitle)
+        Me.tabpageThemeInfo.Location = New System.Drawing.Point(4, 25)
+        Me.tabpageThemeInfo.Name = "tabpageThemeInfo"
+        Me.tabpageThemeInfo.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageThemeInfo.Size = New System.Drawing.Size(715, 411)
+        Me.tabpageThemeInfo.TabIndex = 1
+        Me.tabpageThemeInfo.Text = "Theme info"
+        Me.tabpageThemeInfo.UseVisualStyleBackColor = True
         '
         'dropdownThemeEngineRuntimeVersion
         '
@@ -482,7 +482,7 @@ Partial Class aaformMainWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(723, 495)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.tabcontrolThemeEditor)
         Me.Controls.Add(Me.toolstripToolbar)
         Me.Controls.Add(Me.menustripMenubar)
         Me.MainMenuStrip = Me.menustripMenubar
@@ -495,11 +495,11 @@ Partial Class aaformMainWindow
         Me.menustripMenubar.PerformLayout()
         Me.toolstripToolbar.ResumeLayout(False)
         Me.toolstripToolbar.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.tabcontrolThemeEditor.ResumeLayout(False)
+        Me.tabpageControls.ResumeLayout(False)
+        Me.tabpageControls.PerformLayout()
+        Me.tabpageThemeInfo.ResumeLayout(False)
+        Me.tabpageThemeInfo.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -536,9 +536,9 @@ Partial Class aaformMainWindow
     Friend WithEvents uiStatusLabelBorderStyleLabel As Label
     Friend WithEvents uiStatusLabelBorderSidesDropdown As ComboBox
     Friend WithEvents uiStatusLabelBorderStyleDropdown As ComboBox
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents tabcontrolThemeEditor As TabControl
+    Friend WithEvents tabpageControls As TabPage
+    Friend WithEvents tabpageThemeInfo As TabPage
     Friend WithEvents dropdownThemeEngineRuntimeVersion As ComboBox
     Friend WithEvents labelThemeEngineRuntimeVersion As Label
     Friend WithEvents textboxThemeAuthor As TextBox
