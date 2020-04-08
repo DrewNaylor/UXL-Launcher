@@ -51,9 +51,25 @@ Public Class ThemeProcessor
         ' Get theme author.
         ThemeProperties.themeinfoAuthor = NodeReader("Author", themeSheet, themeNamespaceManager)
 
+        ' Get theme engine version to use.
+        ' Copied from PortableThemeEngine and modified.
+        If Decimal.TryParse(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager), CDec(1.01)) = True Then
+            If CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)) < 1.01 Then
+                ThemeProperties.themeinfoUseThemeEngineVersion = "1.01"
+            ElseIf CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)) >= 1.01 Then
+                ThemeProperties.themeinfoUseThemeEngineVersion = NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)
+            End If
+        Else
+            ThemeProperties.themeinfoUseThemeEngineVersion = "1.01"
+        End If
+
+
         MessageBox.Show(ThemeProperties.themeinfoTitle)
         MessageBox.Show(ThemeProperties.themeinfoDescription)
         MessageBox.Show(ThemeProperties.themeinfoVersion)
+        MessageBox.Show(ThemeProperties.themeinfoAuthor)
+        MessageBox.Show(ThemeProperties.themeinfoUseThemeEngineVersion)
+
     End Sub
 
     Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager) As String
