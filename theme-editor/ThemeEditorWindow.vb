@@ -167,7 +167,7 @@ Public Class aaformMainWindow
 
 
 
-            ' Update textboxes with menuitem stuff.
+            ' Update textboxes with statuslabel stuff.
             uiBackColorTextbox.Text = menuitemBackColor
             uiForeColorTextbox.Text = menuitemForeColor
 
