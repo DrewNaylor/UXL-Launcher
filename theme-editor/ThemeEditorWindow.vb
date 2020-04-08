@@ -114,8 +114,8 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
-            uiBackColorTextbox.Text = textboxBackColor
-            uiForeColorTextbox.Text = textboxForeColor
+            uiBackColorTextbox.Text = themecontrolTextboxBackColor
+            uiForeColorTextbox.Text = themecontrolTextboxForeColor
 
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
             uiBackColorTextbox.Show()
@@ -129,11 +129,11 @@ Public Class aaformMainWindow
             hideStatusLabelControls(True)
 
             ' Update textboxes with menuitem stuff.
-            uiBackColorTextbox.Text = menuitemBackColor
-            uiForeColorTextbox.Text = menuitemForeColor
+            uiBackColorTextbox.Text = themecontrolMenuitemBackColor
+            uiForeColorTextbox.Text = themecontrolMenuitemForeColor
 
-            uiMenuItemImageMarginEndTextbox.Text = menuitemImageMarginGradientEndColor
-            uiMenuItemImageMarginStartTextbox.Text = menuitemImageMarginGradientStartColor
+            uiMenuItemImageMarginEndTextbox.Text = themecontrolMenuitemImageMarginGradientEndColor
+            uiMenuItemImageMarginStartTextbox.Text = themecontrolMenuitemImageMarginGradientStartColor
 
         ElseIf comboboxControlSelector.Text = "MenuBar" Then
             ' Show backcolor textbox.
@@ -152,7 +152,7 @@ Public Class aaformMainWindow
             hideStatusLabelControls(True)
 
             ' Update backcolor textbox with statusbar's backcolor.
-            uiBackColorTextbox.Text = menubarBackColor
+            uiBackColorTextbox.Text = themecontrolMenubarBackColor
 
         ElseIf comboboxControlSelector.Text = "StatusLabel" Then
             uiBackColorTextbox.Show()
@@ -168,11 +168,11 @@ Public Class aaformMainWindow
 
 
             ' Update textboxes with statuslabel stuff.
-            uiBackColorTextbox.Text = menuitemBackColor
-            uiForeColorTextbox.Text = menuitemForeColor
+            uiBackColorTextbox.Text = themecontrolMenuitemBackColor
+            uiForeColorTextbox.Text = themecontrolMenuitemForeColor
 
-            uiStatusLabelBorderSidesDropdown.Text = statuslabelBorderSides
-            uiStatusLabelBorderStyleDropdown.Text = statuslabelBorderStyle
+            uiStatusLabelBorderSidesDropdown.Text = themecontrolStatuslabelBorderSides
+            uiStatusLabelBorderStyleDropdown.Text = themecontrolStatuslabelBorderStyle
         End If
     End Sub
 
@@ -232,13 +232,13 @@ Public Class aaformMainWindow
         ElseIf comboboxControlSelector.Text = "Label" Then
             themecontrolLabelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
-            textboxBackColor = uiBackColorTextbox.Text
+            themecontrolTextboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
-            menuitemBackColor = uiBackColorTextbox.Text
+            themecontrolMenuitemBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuBar" Then
-            menubarBackColor = uiBackColorTextbox.Text
+            themecontrolMenubarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusLabel" Then
-            statuslabelBackColor = uiBackColorTextbox.Text
+            themecontrolStatuslabelBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
@@ -252,38 +252,38 @@ Public Class aaformMainWindow
         ElseIf comboboxControlSelector.Text = "Label" Then
             themecontrolLabelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
-            textboxForeColor = uiForeColorTextbox.Text
+            themecontrolTextboxForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
-            menuitemForeColor = uiForeColorTextbox.Text
+            themecontrolMenuitemForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusLabel" Then
-            statuslabelForeColor = uiForeColorTextbox.Text
+            themecontrolStatuslabelForeColor = uiForeColorTextbox.Text
         End If
     End Sub
 
     Private Sub uiMenuItemImageMarginEndTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginEndTextbox.TextChanged
-        menuitemImageMarginGradientEndColor = uiMenuItemImageMarginEndTextbox.Text
+        themecontrolMenuitemImageMarginGradientEndColor = uiMenuItemImageMarginEndTextbox.Text
     End Sub
 
     Private Sub uiMenuItemImageMarginStartTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginStartTextbox.TextChanged
         ' Update image margin gradient start color property
         ' when the textbox is updated.
-        menuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
+        themecontrolMenuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
     End Sub
 
     Private Sub uiStatusLabelBorderStyleDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderStyleDropdown.SelectedIndexChanged
         ' Update statuslabel border style property
         ' when the user chooses something from the list.
-        statuslabelBorderStyle = uiStatusLabelBorderStyleDropdown.Text
+        themecontrolStatuslabelBorderStyle = uiStatusLabelBorderStyleDropdown.Text
     End Sub
 
     Private Sub uiStatusLabelBorderSidesDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderSidesDropdown.SelectedIndexChanged
         ' Update statuslabel border sides property
         ' when the user chooses something from the list.
-        statuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
+        themecontrolStatuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
 
         ' Enable or disable BorderStyle dropdown depending on if
         ' the user chose "None" or not.
-        If statuslabelBorderSides = "None" Then
+        If themecontrolStatuslabelBorderSides = "None" Then
             uiStatusLabelBorderStyleDropdown.Enabled = False
         Else
             uiStatusLabelBorderStyleDropdown.Enabled = True
@@ -409,7 +409,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property textboxForeColor() As String
+    Public Property themecontrolTextboxForeColor() As String
         Get
             Return _themecontrolTextboxForeColor
         End Get
@@ -418,7 +418,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property textboxBackColor() As String
+    Public Property themecontrolTextboxBackColor() As String
         Get
             Return _themecontrolTextboxBackColor
         End Get
@@ -427,7 +427,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property menuitemBackColor() As String
+    Public Property themecontrolMenuitemBackColor() As String
         Get
             Return _themecontrolMenuitemBackColor
         End Get
@@ -436,7 +436,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property menuitemForeColor() As String
+    Public Property themecontrolMenuitemForeColor() As String
         Get
             Return _themecontrolMenuitemForeColor
         End Get
@@ -445,7 +445,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property menuitemImageMarginGradientStartColor() As String
+    Public Property themecontrolMenuitemImageMarginGradientStartColor() As String
         Get
             Return _themecontrolMenuitemImageMarginGradientStartColor
         End Get
@@ -454,7 +454,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property menuitemImageMarginGradientEndColor() As String
+    Public Property themecontrolMenuitemImageMarginGradientEndColor() As String
         Get
             Return _themecontrolMenuitemImageMarginGradientEndColor
         End Get
@@ -463,7 +463,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property menubarBackColor() As String
+    Public Property themecontrolMenubarBackColor() As String
         Get
             Return _themecontrolMenubarBackColor
         End Get
@@ -472,7 +472,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property statuslabelBackColor() As String
+    Public Property themecontrolStatuslabelBackColor() As String
         Get
             Return _themecontrolStatuslabelBackColor
         End Get
@@ -481,7 +481,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property statuslabelForeColor() As String
+    Public Property themecontrolStatuslabelForeColor() As String
         Get
             Return _themecontrolStatuslabelForeColor
         End Get
@@ -490,7 +490,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property statuslabelBorderSides() As String
+    Public Property themecontrolStatuslabelBorderSides() As String
         Get
             Return _themecontrolStatuslabelBorderSides
         End Get
@@ -499,7 +499,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property statuslabelBorderStyle() As String
+    Public Property themecontrolStatuslabelBorderStyle() As String
         Get
             Return _themecontrolStatuslabelBorderStyle
         End Get
