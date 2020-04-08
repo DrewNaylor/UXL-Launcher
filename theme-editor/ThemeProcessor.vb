@@ -40,11 +40,7 @@ Public Class ThemeProcessor
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
         ' Get the theme title from the XML file.
-        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
-            ThemeProperties.themeinfoTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-        Else
-            ThemeProperties.themeinfoTitle = "(No title specified)"
-        End If
+        ThemeProperties.themeinfoTitle = NodeReader("Title", themeSheet, themeNamespaceManager, "title")
 
         ' Get theme description from XML file.
         ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager, "description")
