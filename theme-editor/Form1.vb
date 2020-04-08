@@ -231,6 +231,15 @@ Public Class aaformMainWindow
         End Set
     End Property
 
+    Public Property menuitemBackColor() As String
+        Get
+            Return _menuitemBackColor
+        End Get
+        Set(value As String)
+            _menuitemBackColor = value
+        End Set
+    End Property
+
     Public Property menuitemForeColor() As String
         Get
             Return _menuitemForeColor
