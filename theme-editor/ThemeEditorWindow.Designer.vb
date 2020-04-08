@@ -67,6 +67,8 @@ Partial Class aaformMainWindow
         Me.labelThemeDescription = New System.Windows.Forms.Label()
         Me.textboxThemeTitle = New System.Windows.Forms.TextBox()
         Me.labelThemeTitle = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -144,6 +146,7 @@ Partial Class aaformMainWindow
         '
         'flowlayoutpanelPropertyList
         '
+        Me.flowlayoutpanelPropertyList.AutoScroll = True
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiForeColorLabel)
@@ -156,6 +159,8 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesDropdown)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleDropdown)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.Label1)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.ComboBox1)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(13, 56)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -477,6 +482,25 @@ Partial Class aaformMainWindow
         Me.labelThemeTitle.TabIndex = 11
         Me.labelThemeTitle.Text = "Theme title:"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 278)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(111, 17)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Button FlatStyle:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Standard", "Flat"})
+        Me.ComboBox1.Location = New System.Drawing.Point(3, 298)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(313, 24)
+        Me.ComboBox1.TabIndex = 17
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -549,4 +573,6 @@ Partial Class aaformMainWindow
     Friend WithEvents labelThemeDescription As Label
     Friend WithEvents textboxThemeTitle As TextBox
     Friend WithEvents labelThemeTitle As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
