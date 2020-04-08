@@ -191,6 +191,8 @@ Public Class aaformMainWindow
             textboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
             menuitemBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "MenuBar" Then
+            menubarBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
