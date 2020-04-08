@@ -51,9 +51,9 @@ Partial Class aaformMainWindow
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.uiStatusLabelBorderSidesLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.uiStatusLabelBorderStyleLabel = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -134,9 +134,9 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiMenuItemImageMarginEndTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderSidesLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.TextBox1)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.ComboBox1)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.TextBox2)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.ComboBox2)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -299,28 +299,30 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderSidesLabel.TabIndex = 10
         Me.uiStatusLabelBorderSidesLabel.Text = "BorderSides:"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(3, 204)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(313, 22)
-        Me.TextBox1.TabIndex = 11
-        '
         'uiStatusLabelBorderStyleLabel
         '
         Me.uiStatusLabelBorderStyleLabel.AutoSize = True
-        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 229)
+        Me.uiStatusLabelBorderStyleLabel.Location = New System.Drawing.Point(3, 231)
         Me.uiStatusLabelBorderStyleLabel.Name = "uiStatusLabelBorderStyleLabel"
         Me.uiStatusLabelBorderStyleLabel.Size = New System.Drawing.Size(86, 17)
         Me.uiStatusLabelBorderStyleLabel.TabIndex = 12
         Me.uiStatusLabelBorderStyleLabel.Text = "BorderStyle:"
         '
-        'TextBox2
+        'ComboBox1
         '
-        Me.TextBox2.Location = New System.Drawing.Point(3, 249)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(313, 22)
-        Me.TextBox2.TabIndex = 13
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(3, 204)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(313, 24)
+        Me.ComboBox1.TabIndex = 14
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(3, 251)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(313, 24)
+        Me.ComboBox2.TabIndex = 15
         '
         'aaformMainWindow
         '
@@ -376,7 +378,7 @@ Partial Class aaformMainWindow
     Friend WithEvents uiMenuItemImageMarginEndLabel As Label
     Friend WithEvents uiMenuItemImageMarginEndTextbox As TextBox
     Friend WithEvents uiStatusLabelBorderSidesLabel As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents uiStatusLabelBorderStyleLabel As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
 End Class
