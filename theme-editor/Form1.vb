@@ -31,6 +31,15 @@ Public Class aaformMainWindow
             uiBackColorLabel.Show()
             ' Show label for forecolor.
             uiForeColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
+
             ' Update backcolor and forecolor textboxes with
             ' the button's properties.
             uiBackColorTextbox.Text = buttonBackColor
@@ -41,6 +50,14 @@ Public Class aaformMainWindow
             uiForeColorTextbox.Show()
             uiBackColorLabel.Show()
             uiForeColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
             uiBackColorTextbox.Text = groupboxBackColor
             uiForeColorTextbox.Text = groupboxForeColor
 
@@ -49,6 +66,14 @@ Public Class aaformMainWindow
             uiForeColorTextbox.Show()
             uiBackColorLabel.Show()
             uiForeColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
             uiBackColorTextbox.Text = flowlayoutpanelBackColor
             uiForeColorTextbox.Text = flowlayoutpanelForeColor
 
@@ -62,6 +87,15 @@ Public Class aaformMainWindow
             uiForeColorLabel.Hide()
             ' Show backcolor label.
             uiBackColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = statusbarBackColor
 
@@ -70,6 +104,14 @@ Public Class aaformMainWindow
             uiForeColorTextbox.Show()
             uiBackColorLabel.Show()
             uiForeColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
             uiBackColorTextbox.Text = labelBackColor
             uiForeColorTextbox.Text = labelForeColor
 
@@ -78,6 +120,14 @@ Public Class aaformMainWindow
             uiForeColorTextbox.Show()
             uiBackColorLabel.Show()
             uiForeColorLabel.Show()
+            ' Hide label for menuitem image margin start.
+            uiMenuItemImageMarginStartLabel.Hide()
+            ' Hide textbox for menuitem image margin start.
+            uiMenuItemImageMarginStartTextbox.Hide()
+            ' Hide label for menuitem image margin end.
+            uiMenuItemImageMarginEndLabel.Hide()
+            ' Hide textbox for image margin end.
+            uiMenuItemImageMarginEndTextbox.Hide()
             uiBackColorTextbox.Text = textboxBackColor
             uiForeColorTextbox.Text = textboxForeColor
         End If
