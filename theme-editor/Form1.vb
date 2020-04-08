@@ -1,15 +1,41 @@
 ﻿Public Class aaformMainWindow
     Private Sub comboboxControlSelector_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
         If comboboxControlSelector.Text = "Button" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
             uiBackColorTextbox.Text = buttonBackColor
             uiForeColorTextbox.Text = buttonForeColor
+
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
             uiBackColorTextbox.Text = groupboxBackColor
             uiForeColorTextbox.Text = groupboxForeColor
+
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
             uiBackColorTextbox.Text = flowlayoutpanelBackColor
             uiForeColorTextbox.Text = flowlayoutpanelForeColor
+
+        ElseIf comboboxControlSelector.Text = "StatusBar" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Hide()
+            uiForeColorLabel.Hide()
+            uiBackColorLabel.Show()
+            uiBackColorTextbox.Text = statusbarBackColor
+
         ElseIf comboboxControlSelector.Text = "Label" Then
+            uiBackColorTextbox.Show()
+            uiForeColorTextbox.Show()
+            uiBackColorLabel.Show()
+            uiForeColorLabel.Show()
             uiBackColorTextbox.Text = labelBackColor
             uiForeColorTextbox.Text = labelForeColor
         End If
@@ -113,6 +139,15 @@
         End Get
         Set(value As String)
             _flowlayoutpanelForeColor = value
+        End Set
+    End Property
+
+    Public Property statusbarBackColor() As String
+        Get
+            Return _statusbarBackColor
+        End Get
+        Set(value As String)
+            _statusbarBackColor = value
         End Set
     End Property
 
