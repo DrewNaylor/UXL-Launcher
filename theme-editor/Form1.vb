@@ -1,34 +1,41 @@
 ﻿Public Class aaformMainWindow
     Private Sub comboboxControlSelector_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
         If comboboxControlSelector.Text = "Button" Then
-            textboxBackColor.Text = buttonBackColor
-            textboxForeColor.Text = buttonForeColor
+            uiBackColorTextbox.Text = buttonBackColor
+            uiForeColorTextbox.Text = buttonForeColor
         ElseIf comboboxControlSelector.Text = "Label" Then
-            textboxBackColor.Text = labelBackColor
-            textboxForeColor.Text = labelForeColor
+            uiBackColorTextbox.Text = labelBackColor
+            uiForeColorTextbox.Text = labelForeColor
         End If
     End Sub
 
-    Private Sub textboxBackColor_TextChanged(sender As Object, e As EventArgs) Handles textboxBackColor.TextChanged
+    Private Sub uiBackColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiBackColorTextbox.TextChanged
         If comboboxControlSelector.Text = "Button" Then
-            buttonBackColor = textboxBackColor.Text
+            buttonBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
-            labelBackColor = textboxBackColor.Text
+            labelBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
-    Private Sub textboxForeColor_TextChanged(sender As Object, e As EventArgs) Handles textboxForeColor.TextChanged
+    Private Sub uiForeColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiForeColorTextbox.TextChanged
         If comboboxControlSelector.Text = "Button" Then
-            buttonForeColor = textboxForeColor.Text
+            buttonForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
-            labelForeColor = textboxForeColor.Text
+            labelForeColor = uiForeColorTextbox.Text
         End If
     End Sub
 
     Private _buttonBackColor As String = "Transparent"
     Private _buttonForeColor As String = "ControlText"
+    Private _groupboxBackColor As String = "Transparent"
+    Private _groupboxForeColor As String = "ControlText"
+    Private _flowlayoutpanelBackColor As String = "Transparent"
+    Private _flowlayoutpanelForeColor As String = "ControlText"
+    Private _statusbarBackColor As String = "LiteralNothing"
     Private _labelBackColor As String = "Transparent"
     Private _labelForeColor As String = "ControlText"
+    Private _textboxBackColor As String = "Transparent"
+    Private _textboxForeColor As String = "ControlText"
 
     Public Property buttonBackColor() As String
         Get

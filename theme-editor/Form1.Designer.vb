@@ -26,8 +26,8 @@ Partial Class aaformMainWindow
         Me.comboboxControlSelector = New System.Windows.Forms.ComboBox()
         Me.uiBackColorLabel = New System.Windows.Forms.Label()
         Me.uiForeColorLabel = New System.Windows.Forms.Label()
-        Me.textboxBackColor = New System.Windows.Forms.TextBox()
-        Me.textboxForeColor = New System.Windows.Forms.TextBox()
+        Me.uiBackColorTextbox = New System.Windows.Forms.TextBox()
+        Me.uiForeColorTextbox = New System.Windows.Forms.TextBox()
         Me.uiControlToThemeLabel = New System.Windows.Forms.Label()
         Me.propertygridAdvanced = New System.Windows.Forms.PropertyGrid()
         Me.flowlayoutpanelPropertyList = New System.Windows.Forms.FlowLayoutPanel()
@@ -81,21 +81,21 @@ Partial Class aaformMainWindow
         Me.uiForeColorLabel.TabIndex = 2
         Me.uiForeColorLabel.Text = "ForeColor:"
         '
-        'textboxBackColor
+        'uiBackColorTextbox
         '
-        Me.textboxBackColor.Location = New System.Drawing.Point(4, 21)
-        Me.textboxBackColor.Margin = New System.Windows.Forms.Padding(4)
-        Me.textboxBackColor.Name = "textboxBackColor"
-        Me.textboxBackColor.Size = New System.Drawing.Size(312, 22)
-        Me.textboxBackColor.TabIndex = 4
+        Me.uiBackColorTextbox.Location = New System.Drawing.Point(4, 21)
+        Me.uiBackColorTextbox.Margin = New System.Windows.Forms.Padding(4)
+        Me.uiBackColorTextbox.Name = "uiBackColorTextbox"
+        Me.uiBackColorTextbox.Size = New System.Drawing.Size(312, 22)
+        Me.uiBackColorTextbox.TabIndex = 4
         '
-        'textboxForeColor
+        'uiForeColorTextbox
         '
-        Me.textboxForeColor.Location = New System.Drawing.Point(4, 68)
-        Me.textboxForeColor.Margin = New System.Windows.Forms.Padding(4)
-        Me.textboxForeColor.Name = "textboxForeColor"
-        Me.textboxForeColor.Size = New System.Drawing.Size(312, 22)
-        Me.textboxForeColor.TabIndex = 5
+        Me.uiForeColorTextbox.Location = New System.Drawing.Point(4, 68)
+        Me.uiForeColorTextbox.Margin = New System.Windows.Forms.Padding(4)
+        Me.uiForeColorTextbox.Name = "uiForeColorTextbox"
+        Me.uiForeColorTextbox.Size = New System.Drawing.Size(312, 22)
+        Me.uiForeColorTextbox.TabIndex = 5
         '
         'uiControlToThemeLabel
         '
@@ -118,9 +118,9 @@ Partial Class aaformMainWindow
         'flowlayoutpanelPropertyList
         '
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxBackColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorTextbox)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiForeColorLabel)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxForeColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiForeColorTextbox)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(20, 124)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -271,8 +271,8 @@ Partial Class aaformMainWindow
     Friend WithEvents comboboxControlSelector As ComboBox
     Friend WithEvents uiBackColorLabel As Label
     Friend WithEvents uiForeColorLabel As Label
-    Friend WithEvents textboxBackColor As TextBox
-    Friend WithEvents textboxForeColor As TextBox
+    Friend WithEvents uiBackColorTextbox As TextBox
+    Friend WithEvents uiForeColorTextbox As TextBox
     Friend WithEvents uiControlToThemeLabel As Label
     Friend WithEvents propertygridAdvanced As PropertyGrid
     Friend WithEvents flowlayoutpanelPropertyList As FlowLayoutPanel
