@@ -52,14 +52,20 @@ Public Class ThemeProcessor
         ThemeProperties.themeinfoAuthor = NodeReader("Author", themeSheet, themeNamespaceManager)
 
         ' Get theme engine version to use.
-        ' Copied from PortableThemeEngine and modified.
+        ' The theme engine can benefit from this code, so it'll
+        ' be put into there eventually.
+        ' First check to see if it's a decimal and if it can be parsed.
         If Decimal.TryParse(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager), CDec(1.01)) = True Then
+            ' If it is a decimal, then cast it as one and check if it's less than 1.01.
             If CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)) < 1.01 Then
+                ' If it is, then set the theme engine runtime version to 1.01.
                 ThemeProperties.themeinfoUseThemeEngineVersion = "1.01"
             ElseIf CDec(NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)) >= 1.01 Then
+                ' Otherwise, it's equal to or larger than 1.01, so just load whatever it is.
                 ThemeProperties.themeinfoUseThemeEngineVersion = NodeReader("UseThemeEngineVersion", themeSheet, themeNamespaceManager)
             End If
         Else
+            ' If it can't be parsed as a decimal, then set the theme engine runtime version to 1.01.
             ThemeProperties.themeinfoUseThemeEngineVersion = "1.01"
         End If
 
