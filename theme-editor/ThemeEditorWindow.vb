@@ -418,7 +418,7 @@ Public Class ThemeProperties
     Private Shared _themecontrolGroupboxForeColor As String = "ControlText"
     Private Shared _themecontrolFlowlayoutpanelBackColor As String = "Transparent"
     Private Shared _themecontrolFlowlayoutpanelForeColor As String = "ControlText"
-    Private Shared _themecontrolStatusbarBackColor As String = "LiteralNothing"
+    Private Shared _themecontrolStatusbarBackColor As String = "Control"
     Private Shared _themecontrolLabelBackColor As String = "Transparent"
     Private Shared _themecontrolLabelForeColor As String = "ControlText"
     Private Shared _themecontrolTextboxBackColor As String = "Window"
