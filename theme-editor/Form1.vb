@@ -1,5 +1,5 @@
 ﻿Public Class aaformMainWindow
-    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
+    Private Sub comboboxControlSelector_TextChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.TextChanged
         If comboboxControlSelector.Text = "Button" Then
             textboxBackColor.Text = buttonBackColor
             textboxForeColor.Text = buttonForeColor
@@ -9,7 +9,7 @@
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textboxBackColor.TextChanged
+    Private Sub textboxBackColor_TextChanged(sender As Object, e As EventArgs) Handles textboxBackColor.TextChanged
         If comboboxControlSelector.Text = "Button" Then
             buttonBackColor = textboxBackColor.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
@@ -17,7 +17,7 @@
         End If
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles textboxForeColor.TextChanged
+    Private Sub textboxForeColor_TextChanged(sender As Object, e As EventArgs) Handles textboxForeColor.TextChanged
         If comboboxControlSelector.Text = "Button" Then
             buttonForeColor = textboxForeColor.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
