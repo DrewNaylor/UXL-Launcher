@@ -17,6 +17,14 @@
         End If
     End Sub
 
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        If ComboBox1.Text = "Button" Then
+            buttonForeColor = TextBox2.Text
+        ElseIf ComboBox1.Text = "Label" Then
+            labelForeColor = TextBox2.Text
+        End If
+    End Sub
+
     Private _buttonBackColor As String = "Transparent"
     Private _buttonForeColor As String = "ControlText"
     Private _labelBackColor As String = "Transparent"
