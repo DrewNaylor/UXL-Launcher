@@ -298,6 +298,13 @@ Public Class aaformMainWindow
         ThemePropertiesWindow.Show()
     End Sub
 
+    ' Theme properties.
+    Private _themeTitle As String = "Untitled"
+    Private _themeDescription As String = "Theme description goes here."
+    Private _themeAuthor As String = "Author"
+    Private _themeVersion As String = "1.0"
+    Private _themeUseThemeEngineVersion As String = "1.01"
+    ' Control properties.
     Private _buttonBackColor As String = "Transparent"
     Private _buttonForeColor As String = "ControlText"
     Private _groupboxBackColor As String = "Transparent"
