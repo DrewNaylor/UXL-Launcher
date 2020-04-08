@@ -34,8 +34,12 @@
     Private _statusbarBackColor As String = "LiteralNothing"
     Private _labelBackColor As String = "Transparent"
     Private _labelForeColor As String = "ControlText"
-    Private _textboxBackColor As String = "Transparent"
-    Private _textboxForeColor As String = "ControlText"
+    Private _textboxBackColor As String = "Window"
+    Private _textboxForeColor As String = "WindowText"
+    Private _menuitemBackColor As String = "Window"
+    Private _menuitemForeColor As String = "ControlText"
+    Private _menuitemImageMarginGradientStartColor As String = "0xFCFCFC"
+    Private _menuitemImageMarginGradientEndColor As String = "0xF1F1F1"
 
     Public Property buttonBackColor() As String
         Get
