@@ -54,6 +54,7 @@ Partial Class aaformMainWindow
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ThemePropertiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -227,7 +228,7 @@ Partial Class aaformMainWindow
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.toolStripSeparator2, Me.SaveToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.toolStripSeparator3, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.toolStripSeparator2, Me.SaveToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.toolStripSeparator3, Me.ExitToolStripMenuItem, Me.ThemePropertiesToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
         Me.FileToolStripMenuItem.Text = "&File"
@@ -237,7 +238,7 @@ Partial Class aaformMainWindow
         Me.NewToolStripMenuItem.Image = CType(resources.GetObject("NewToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.NewToolStripMenuItem.Text = "&New"
         '
         'OpenToolStripMenuItem
@@ -245,13 +246,13 @@ Partial Class aaformMainWindow
         Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OpenToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.OpenToolStripMenuItem.Text = "&Open"
         '
         'toolStripSeparator2
         '
         Me.toolStripSeparator2.Name = "toolStripSeparator2"
-        Me.toolStripSeparator2.Size = New System.Drawing.Size(162, 6)
+        Me.toolStripSeparator2.Size = New System.Drawing.Size(178, 6)
         '
         'SaveToolStripMenuItem
         '
@@ -259,24 +260,24 @@ Partial Class aaformMainWindow
         Me.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.SaveToolStripMenuItem.Text = "&Save"
         '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.SaveAsToolStripMenuItem.Text = "Save &As"
         '
         'toolStripSeparator3
         '
         Me.toolStripSeparator3.Name = "toolStripSeparator3"
-        Me.toolStripSeparator3.Size = New System.Drawing.Size(162, 6)
+        Me.toolStripSeparator3.Size = New System.Drawing.Size(178, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'HelpToolStripMenuItem
@@ -328,6 +329,12 @@ Partial Class aaformMainWindow
         Me.SaveToolStripButton.Name = "SaveToolStripButton"
         Me.SaveToolStripButton.Size = New System.Drawing.Size(24, 24)
         Me.SaveToolStripButton.Text = "&Save"
+        '
+        'ThemePropertiesToolStripMenuItem
+        '
+        Me.ThemePropertiesToolStripMenuItem.Name = "ThemePropertiesToolStripMenuItem"
+        Me.ThemePropertiesToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
+        Me.ThemePropertiesToolStripMenuItem.Text = "&Theme properties..."
         '
         'aaformMainWindow
         '
@@ -386,4 +393,5 @@ Partial Class aaformMainWindow
     Friend WithEvents uiStatusLabelBorderStyleLabel As Label
     Friend WithEvents uiStatusLabelBorderSidesDropdown As ComboBox
     Friend WithEvents uiStatusLabelBorderStyleDropdown As ComboBox
+    Friend WithEvents ThemePropertiesToolStripMenuItem As ToolStripMenuItem
 End Class

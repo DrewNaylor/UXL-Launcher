@@ -290,6 +290,14 @@ Public Class aaformMainWindow
         End If
     End Sub
 
+    Private Sub ThemePropertiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThemePropertiesToolStripMenuItem.Click
+        ' Show the theme properties window where
+        ' things like theme title, author, version,
+        ' description, and theme engine version
+        ' compatibility can be set.
+        ThemePropertiesWindow.Show()
+    End Sub
+
     Private _buttonBackColor As String = "Transparent"
     Private _buttonForeColor As String = "ControlText"
     Private _groupboxBackColor As String = "Transparent"
