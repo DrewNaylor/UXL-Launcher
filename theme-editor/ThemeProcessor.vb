@@ -44,10 +44,19 @@ Public Class ThemeProcessor
 
         ' Get theme description from XML file.
         ThemeProperties.themeinfoDescription = NodeReader("Description", themeSheet, themeNamespaceManager, "description")
-        'MessageBox.Show(ThemeProperties.themeinfoDescription)
+
+        ' Get theme version from XML file.
+        ThemeProperties.themeinfoVersion = NodeReader("Version", themeSheet, themeNamespaceManager, "version")
+
+
+
+        MessageBox.Show(ThemeProperties.themeinfoTitle)
+        MessageBox.Show(ThemeProperties.themeinfoDescription)
+        MessageBox.Show(ThemeProperties.themeinfoVersion)
     End Sub
 
     Private Shared Function NodeReader(inputNode As String, inputThemeSheet As XmlDocument, inputThemeNamespaceManager As XmlNamespaceManager, Optional itemType As String = "item") As String
+        ' Get theme info and return it to the calling code.
         If inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager) IsNot Nothing Then
             Return inputThemeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", inputThemeNamespaceManager).InnerText
         Else
