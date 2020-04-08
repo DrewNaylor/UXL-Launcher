@@ -394,11 +394,12 @@ Partial Class aaformMainWindow
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"1.01", "1.02", "1.03", "2.0"})
         Me.ComboBox1.Location = New System.Drawing.Point(14, 317)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(193, 24)
         Me.ComboBox1.TabIndex = 20
         '
         'Label5
@@ -406,9 +407,9 @@ Partial Class aaformMainWindow
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(11, 296)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(51, 17)
+        Me.Label5.Size = New System.Drawing.Size(196, 17)
         Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Label5"
+        Me.Label5.Text = "Theme engine version to use:"
         '
         'TextBox4
         '
@@ -422,9 +423,9 @@ Partial Class aaformMainWindow
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(8, 247)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.Size = New System.Drawing.Size(101, 17)
         Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Label4"
+        Me.Label4.Text = "Theme author:"
         '
         'TextBox3
         '
@@ -438,9 +439,9 @@ Partial Class aaformMainWindow
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(8, 197)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 17)
+        Me.Label3.Size = New System.Drawing.Size(106, 17)
         Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "Theme version:"
         '
         'TextBox2
         '
@@ -456,9 +457,9 @@ Partial Class aaformMainWindow
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(8, 54)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.Size = New System.Drawing.Size(129, 17)
         Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "Theme description:"
         '
         'TextBox1
         '
@@ -472,9 +473,9 @@ Partial Class aaformMainWindow
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(8, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.Size = New System.Drawing.Size(82, 17)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Theme title:"
         '
         'aaformMainWindow
         '
