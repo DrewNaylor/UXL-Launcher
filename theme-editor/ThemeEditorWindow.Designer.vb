@@ -57,16 +57,16 @@ Partial Class aaformMainWindow
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dropdownThemeEngineRuntimeVersion = New System.Windows.Forms.ComboBox()
+        Me.labelThemeEngineRuntimeVersion = New System.Windows.Forms.Label()
+        Me.textboxThemeAuthor = New System.Windows.Forms.TextBox()
+        Me.labelThemeAuthor = New System.Windows.Forms.Label()
+        Me.textboxThemeVersion = New System.Windows.Forms.TextBox()
+        Me.labelThemeVersion = New System.Windows.Forms.Label()
+        Me.textboxThemeDescription = New System.Windows.Forms.TextBox()
+        Me.labelThemeDescription = New System.Windows.Forms.Label()
+        Me.textboxThemeTitle = New System.Windows.Forms.TextBox()
+        Me.labelThemeTitle = New System.Windows.Forms.Label()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -307,7 +307,7 @@ Partial Class aaformMainWindow
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(134, 26)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.AboutToolStripMenuItem.Text = "&About..."
         '
         'toolstripToolbar
@@ -374,16 +374,16 @@ Partial Class aaformMainWindow
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.ComboBox1)
-        Me.TabPage2.Controls.Add(Me.Label5)
-        Me.TabPage2.Controls.Add(Me.TextBox4)
-        Me.TabPage2.Controls.Add(Me.Label4)
-        Me.TabPage2.Controls.Add(Me.TextBox3)
-        Me.TabPage2.Controls.Add(Me.Label3)
-        Me.TabPage2.Controls.Add(Me.TextBox2)
-        Me.TabPage2.Controls.Add(Me.Label2)
-        Me.TabPage2.Controls.Add(Me.TextBox1)
-        Me.TabPage2.Controls.Add(Me.Label1)
+        Me.TabPage2.Controls.Add(Me.dropdownThemeEngineRuntimeVersion)
+        Me.TabPage2.Controls.Add(Me.labelThemeEngineRuntimeVersion)
+        Me.TabPage2.Controls.Add(Me.textboxThemeAuthor)
+        Me.TabPage2.Controls.Add(Me.labelThemeAuthor)
+        Me.TabPage2.Controls.Add(Me.textboxThemeVersion)
+        Me.TabPage2.Controls.Add(Me.labelThemeVersion)
+        Me.TabPage2.Controls.Add(Me.textboxThemeDescription)
+        Me.TabPage2.Controls.Add(Me.labelThemeDescription)
+        Me.TabPage2.Controls.Add(Me.textboxThemeTitle)
+        Me.TabPage2.Controls.Add(Me.labelThemeTitle)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -392,90 +392,90 @@ Partial Class aaformMainWindow
         Me.TabPage2.Text = "Theme info"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'dropdownThemeEngineRuntimeVersion
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"1.01", "1.02", "1.03", "2.0"})
-        Me.ComboBox1.Location = New System.Drawing.Point(14, 317)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(193, 24)
-        Me.ComboBox1.TabIndex = 20
+        Me.dropdownThemeEngineRuntimeVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.dropdownThemeEngineRuntimeVersion.FormattingEnabled = True
+        Me.dropdownThemeEngineRuntimeVersion.Items.AddRange(New Object() {"1.01", "1.02", "1.03", "2.0"})
+        Me.dropdownThemeEngineRuntimeVersion.Location = New System.Drawing.Point(14, 317)
+        Me.dropdownThemeEngineRuntimeVersion.Name = "dropdownThemeEngineRuntimeVersion"
+        Me.dropdownThemeEngineRuntimeVersion.Size = New System.Drawing.Size(193, 24)
+        Me.dropdownThemeEngineRuntimeVersion.TabIndex = 20
         '
-        'Label5
+        'labelThemeEngineRuntimeVersion
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(11, 296)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(196, 17)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Theme engine version to use:"
+        Me.labelThemeEngineRuntimeVersion.AutoSize = True
+        Me.labelThemeEngineRuntimeVersion.Location = New System.Drawing.Point(11, 296)
+        Me.labelThemeEngineRuntimeVersion.Name = "labelThemeEngineRuntimeVersion"
+        Me.labelThemeEngineRuntimeVersion.Size = New System.Drawing.Size(204, 17)
+        Me.labelThemeEngineRuntimeVersion.TabIndex = 19
+        Me.labelThemeEngineRuntimeVersion.Text = "Theme engine runtime version:"
         '
-        'TextBox4
+        'textboxThemeAuthor
         '
-        Me.TextBox4.Location = New System.Drawing.Point(11, 267)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(295, 22)
-        Me.TextBox4.TabIndex = 18
+        Me.textboxThemeAuthor.Location = New System.Drawing.Point(11, 267)
+        Me.textboxThemeAuthor.Name = "textboxThemeAuthor"
+        Me.textboxThemeAuthor.Size = New System.Drawing.Size(295, 22)
+        Me.textboxThemeAuthor.TabIndex = 18
         '
-        'Label4
+        'labelThemeAuthor
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 247)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 17)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Theme author:"
+        Me.labelThemeAuthor.AutoSize = True
+        Me.labelThemeAuthor.Location = New System.Drawing.Point(8, 247)
+        Me.labelThemeAuthor.Name = "labelThemeAuthor"
+        Me.labelThemeAuthor.Size = New System.Drawing.Size(101, 17)
+        Me.labelThemeAuthor.TabIndex = 17
+        Me.labelThemeAuthor.Text = "Theme author:"
         '
-        'TextBox3
+        'textboxThemeVersion
         '
-        Me.TextBox3.Location = New System.Drawing.Point(11, 217)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(295, 22)
-        Me.TextBox3.TabIndex = 16
+        Me.textboxThemeVersion.Location = New System.Drawing.Point(11, 217)
+        Me.textboxThemeVersion.Name = "textboxThemeVersion"
+        Me.textboxThemeVersion.Size = New System.Drawing.Size(295, 22)
+        Me.textboxThemeVersion.TabIndex = 16
         '
-        'Label3
+        'labelThemeVersion
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 197)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 17)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Theme version:"
+        Me.labelThemeVersion.AutoSize = True
+        Me.labelThemeVersion.Location = New System.Drawing.Point(8, 197)
+        Me.labelThemeVersion.Name = "labelThemeVersion"
+        Me.labelThemeVersion.Size = New System.Drawing.Size(106, 17)
+        Me.labelThemeVersion.TabIndex = 15
+        Me.labelThemeVersion.Text = "Theme version:"
         '
-        'TextBox2
+        'textboxThemeDescription
         '
-        Me.TextBox2.Location = New System.Drawing.Point(11, 74)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox2.Size = New System.Drawing.Size(552, 116)
-        Me.TextBox2.TabIndex = 14
+        Me.textboxThemeDescription.Location = New System.Drawing.Point(11, 74)
+        Me.textboxThemeDescription.Multiline = True
+        Me.textboxThemeDescription.Name = "textboxThemeDescription"
+        Me.textboxThemeDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.textboxThemeDescription.Size = New System.Drawing.Size(552, 116)
+        Me.textboxThemeDescription.TabIndex = 14
         '
-        'Label2
+        'labelThemeDescription
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 54)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(129, 17)
-        Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Theme description:"
+        Me.labelThemeDescription.AutoSize = True
+        Me.labelThemeDescription.Location = New System.Drawing.Point(8, 54)
+        Me.labelThemeDescription.Name = "labelThemeDescription"
+        Me.labelThemeDescription.Size = New System.Drawing.Size(129, 17)
+        Me.labelThemeDescription.TabIndex = 13
+        Me.labelThemeDescription.Text = "Theme description:"
         '
-        'TextBox1
+        'textboxThemeTitle
         '
-        Me.TextBox1.Location = New System.Drawing.Point(11, 24)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(552, 22)
-        Me.TextBox1.TabIndex = 12
+        Me.textboxThemeTitle.Location = New System.Drawing.Point(11, 24)
+        Me.textboxThemeTitle.Name = "textboxThemeTitle"
+        Me.textboxThemeTitle.Size = New System.Drawing.Size(552, 22)
+        Me.textboxThemeTitle.TabIndex = 12
         '
-        'Label1
+        'labelThemeTitle
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 17)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Theme title:"
+        Me.labelThemeTitle.AutoSize = True
+        Me.labelThemeTitle.Location = New System.Drawing.Point(8, 3)
+        Me.labelThemeTitle.Name = "labelThemeTitle"
+        Me.labelThemeTitle.Size = New System.Drawing.Size(82, 17)
+        Me.labelThemeTitle.TabIndex = 11
+        Me.labelThemeTitle.Text = "Theme title:"
         '
         'aaformMainWindow
         '
@@ -539,14 +539,14 @@ Partial Class aaformMainWindow
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents dropdownThemeEngineRuntimeVersion As ComboBox
+    Friend WithEvents labelThemeEngineRuntimeVersion As Label
+    Friend WithEvents textboxThemeAuthor As TextBox
+    Friend WithEvents labelThemeAuthor As Label
+    Friend WithEvents textboxThemeVersion As TextBox
+    Friend WithEvents labelThemeVersion As Label
+    Friend WithEvents textboxThemeDescription As TextBox
+    Friend WithEvents labelThemeDescription As Label
+    Friend WithEvents textboxThemeTitle As TextBox
+    Friend WithEvents labelThemeTitle As Label
 End Class
