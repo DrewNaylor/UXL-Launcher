@@ -167,6 +167,8 @@ Public Class aaformMainWindow
             labelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
             textboxBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "MenuItem" Then
+            menuitemBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
@@ -181,7 +183,17 @@ Public Class aaformMainWindow
             labelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
             textboxForeColor = uiForeColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "MenuItem" Then
+            menuitemForeColor = uiForeColorTextbox.Text
         End If
+    End Sub
+
+    Private Sub uiMenuItemImageMarginEndTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginEndTextbox.TextChanged
+        menuitemImageMarginGradientEndColor = uiMenuItemImageMarginEndTextbox.Text
+    End Sub
+
+    Private Sub uiMenuItemImageMarginStartTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginStartTextbox.TextChanged
+        menuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
     End Sub
 
     Private _buttonBackColor As String = "Transparent"
