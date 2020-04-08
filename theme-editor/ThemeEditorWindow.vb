@@ -324,6 +324,11 @@ Public Class aaformMainWindow
         themeinfoUseThemeEngineVersion = dropdownThemeEngineRuntimeVersion.Text
     End Sub
 
+    Private Sub dropdownButtonFlatStyle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropdownButtonFlatStyle.SelectedIndexChanged
+        ' Save the button flat style value to its property.
+        themecontrolButtonFlatStyle = dropdownButtonFlatStyle.Text
+    End Sub
+
 
     ' Theme properties.
     Private _themeinfoTitle As String = "Untitled"
