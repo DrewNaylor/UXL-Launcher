@@ -127,6 +127,9 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
+            ' Show statuslabel controls.
+            hideStatusLabelControls(True)
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = menubarBackColor
 
@@ -138,6 +141,8 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
+            ' Show statuslabel controls.
+            hideStatusLabelControls(False)
 
 
 
@@ -150,7 +155,7 @@ Public Class aaformMainWindow
         End If
     End Sub
 
-    Private Sub hideImageMarginControls(hideControls As Boolean)
+    Private Sub hideImageMarginControls(Optional hideControls As Boolean = True)
         If hideControls = True Then
             ' Hide label for menuitem image margin start.
             uiMenuItemImageMarginStartLabel.Hide()
@@ -172,7 +177,7 @@ Public Class aaformMainWindow
         End If
     End Sub
 
-    Private Sub hideStatusLabelControls(hideControls As Boolean)
+    Private Sub hideStatusLabelControls(Optional hideControls As Boolean = True)
         If hideControls = True Then
             ' Hide label for statuslabel bordersides.
             uiStatusLabelBorderSidesLabel.Hide()
