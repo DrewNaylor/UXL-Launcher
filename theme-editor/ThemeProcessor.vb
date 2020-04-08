@@ -20,10 +20,15 @@
 
 
 
+Imports System.Xml
+
 Public Class ThemeProcessor
 
     Friend Shared Sub LoadTheme(themeInput As String, Optional isFilename As Boolean = True)
-        ThemeProperties.themeinfoTitle = themeInput
+        ' Create a new XmlDocument to load the theme into.
+        Dim themeSheet As XmlDocument = New XmlDocument()
+
+
     End Sub
 
 End Class
