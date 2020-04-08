@@ -30,10 +30,8 @@ Public Class ThemeProcessor
 
         ' Try to load the theme. We'll assume it's a file first before
         ' loading it as an XmlDocument.
-        If isFilename = True Then
-            If System.IO.File.Exists(themeInput) Then
-                themeSheet.LoadXml(themeInput)
-            End If
+        If isFilename = True AndAlso System.IO.File.Exists(themeInput) Then
+            themeSheet.LoadXml(themeInput)
         End If
 
 
