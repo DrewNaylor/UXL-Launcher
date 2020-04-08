@@ -237,6 +237,8 @@ Public Class aaformMainWindow
             menuitemBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuBar" Then
             menubarBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "StatusLabel" Then
+            statuslabelBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
@@ -253,6 +255,8 @@ Public Class aaformMainWindow
             textboxForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
             menuitemForeColor = uiForeColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "StatusLabel" Then
+            statuslabelForeColor = uiForeColorTextbox.Text
         End If
     End Sub
 
@@ -262,6 +266,14 @@ Public Class aaformMainWindow
 
     Private Sub uiMenuItemImageMarginStartTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginStartTextbox.TextChanged
         menuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
+    End Sub
+
+    Private Sub uiStatusLabelBorderStyleDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderStyleDropdown.SelectedIndexChanged
+        statuslabelBorderStyle = uiStatusLabelBorderStyleDropdown.Text
+    End Sub
+
+    Private Sub uiStatusLabelBorderSidesDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderSidesDropdown.SelectedIndexChanged
+        statuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
     End Sub
 
     Private _buttonBackColor As String = "Transparent"
