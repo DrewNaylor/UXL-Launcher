@@ -28,6 +28,14 @@ Public Class ThemeProcessor
         ' Create a new XmlDocument to load the theme into.
         Dim themeSheet As XmlDocument = New XmlDocument()
 
+        ' Try to load the theme. We'll assume it's a file first before
+        ' loading it as an XmlDocument.
+        If isFilename = True Then
+            If System.IO.File.Exists(themeInput) Then
+                themeSheet.LoadXml(themeInput)
+            End If
+        End If
+
 
     End Sub
 
