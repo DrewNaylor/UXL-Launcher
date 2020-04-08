@@ -42,13 +42,13 @@ Public Class aaformMainWindow
 
             ' Update backcolor and forecolor textboxes with
             ' the button's properties.
-            uiBackColorTextbox.Text = themecontrolButtonBackColor
-            uiForeColorTextbox.Text = themecontrolButtonForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolButtonBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolButtonForeColor
 
             ' Update flatstyle dropdown and bordercolor textbox
             ' with relevant properties.
-            dropdownButtonFlatStyle.Text = themecontrolButtonFlatStyle
-            textboxButtonFlatStyleBorderColor.Text = themecontrolButtonFlatStyleBorderColor
+            dropdownButtonFlatStyle.Text = ThemeProperties.themecontrolButtonFlatStyle
+            textboxButtonFlatStyleBorderColor.Text = ThemeProperties.themecontrolButtonFlatStyleBorderColor
 
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
             uiBackColorTextbox.Show()
@@ -64,8 +64,8 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
-            uiBackColorTextbox.Text = themecontrolGroupboxBackColor
-            uiForeColorTextbox.Text = themecontrolGroupboxForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolGroupboxBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolGroupboxForeColor
 
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
             uiBackColorTextbox.Show()
@@ -81,8 +81,8 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
-            uiBackColorTextbox.Text = themecontrolFlowayoutpanelBackColor
-            uiForeColorTextbox.Text = themecontrolFlowayoutpanelForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolFlowayoutpanelBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolFlowayoutpanelForeColor
 
         ElseIf comboboxControlSelector.Text = "StatusBar" Then
             ' Show backcolor textbox.
@@ -104,7 +104,7 @@ Public Class aaformMainWindow
             hideButtonControls(True)
 
             ' Update backcolor textbox with statusbar's backcolor.
-            uiBackColorTextbox.Text = themecontrolStatusbarBackColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolStatusbarBackColor
 
         ElseIf comboboxControlSelector.Text = "Label" Then
             uiBackColorTextbox.Show()
@@ -120,8 +120,8 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
-            uiBackColorTextbox.Text = themecontrolLabelBackColor
-            uiForeColorTextbox.Text = themecontrolLabelForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolLabelBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolLabelForeColor
 
         ElseIf comboboxControlSelector.Text = "TextBox" Then
             uiBackColorTextbox.Show()
@@ -137,8 +137,8 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
-            uiBackColorTextbox.Text = themecontrolTextboxBackColor
-            uiForeColorTextbox.Text = themecontrolTextboxForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolTextboxBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolTextboxForeColor
 
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
             uiBackColorTextbox.Show()
@@ -155,11 +155,11 @@ Public Class aaformMainWindow
             hideButtonControls(True)
 
             ' Update textboxes with menuitem stuff.
-            uiBackColorTextbox.Text = themecontrolMenuitemBackColor
-            uiForeColorTextbox.Text = themecontrolMenuitemForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolMenuitemBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolMenuitemForeColor
 
-            uiMenuItemImageMarginEndTextbox.Text = themecontrolMenuitemImageMarginGradientEndColor
-            uiMenuItemImageMarginStartTextbox.Text = themecontrolMenuitemImageMarginGradientStartColor
+            uiMenuItemImageMarginEndTextbox.Text = ThemeProperties.themecontrolMenuitemImageMarginGradientEndColor
+            uiMenuItemImageMarginStartTextbox.Text = ThemeProperties.themecontrolMenuitemImageMarginGradientStartColor
 
         ElseIf comboboxControlSelector.Text = "MenuBar" Then
             ' Show backcolor textbox.
@@ -181,7 +181,7 @@ Public Class aaformMainWindow
             hideButtonControls(True)
 
             ' Update backcolor textbox with statusbar's backcolor.
-            uiBackColorTextbox.Text = themecontrolMenubarBackColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolMenubarBackColor
 
         ElseIf comboboxControlSelector.Text = "StatusLabel" Then
             uiBackColorTextbox.Show()
@@ -200,11 +200,11 @@ Public Class aaformMainWindow
 
 
             ' Update textboxes with statuslabel stuff.
-            uiBackColorTextbox.Text = themecontrolStatuslabelBackColor
-            uiForeColorTextbox.Text = themecontrolStatuslabelForeColor
+            uiBackColorTextbox.Text = ThemeProperties.themecontrolStatuslabelBackColor
+            uiForeColorTextbox.Text = ThemeProperties.themecontrolStatuslabelForeColor
 
-            uiStatusLabelBorderSidesDropdown.Text = themecontrolStatuslabelBorderSides
-            uiStatusLabelBorderStyleDropdown.Text = themecontrolStatuslabelBorderStyle
+            uiStatusLabelBorderSidesDropdown.Text = ThemeProperties.themecontrolStatuslabelBorderSides
+            uiStatusLabelBorderStyleDropdown.Text = ThemeProperties.themecontrolStatuslabelBorderStyle
         End If
     End Sub
 
@@ -279,23 +279,23 @@ Public Class aaformMainWindow
         ' into the relevant property depending on what's
         ' in the Control selector.
         If comboboxControlSelector.Text = "Button" Then
-            themecontrolButtonBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolButtonBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
-            themecontrolGroupboxBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolGroupboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
-            themecontrolFlowayoutpanelBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolFlowayoutpanelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusBar" Then
-            themecontrolStatusbarBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolStatusbarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
-            themecontrolLabelBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolLabelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
-            themecontrolTextboxBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolTextboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
-            themecontrolMenuitemBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolMenuitemBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuBar" Then
-            themecontrolMenubarBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolMenubarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusLabel" Then
-            themecontrolStatuslabelBackColor = uiBackColorTextbox.Text
+            ThemeProperties.themecontrolStatuslabelBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
@@ -304,19 +304,19 @@ Public Class aaformMainWindow
         ' into the relevant property depending on what's
         ' in the Control selector.
         If comboboxControlSelector.Text = "Button" Then
-            themecontrolButtonForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolButtonForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
-            themecontrolGroupboxForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolGroupboxForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
-            themecontrolFlowayoutpanelForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolFlowayoutpanelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
-            themecontrolLabelForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolLabelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
-            themecontrolTextboxForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolTextboxForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "MenuItem" Then
-            themecontrolMenuitemForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolMenuitemForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusLabel" Then
-            themecontrolStatuslabelForeColor = uiForeColorTextbox.Text
+            ThemeProperties.themecontrolStatuslabelForeColor = uiForeColorTextbox.Text
         End If
     End Sub
 
@@ -324,29 +324,29 @@ Public Class aaformMainWindow
         ' Save what's entered in the ImageMarginEnd textbox
         ' into the menuitem image margin gradient end color
         ' property.
-        themecontrolMenuitemImageMarginGradientEndColor = uiMenuItemImageMarginEndTextbox.Text
+        ThemeProperties.themecontrolMenuitemImageMarginGradientEndColor = uiMenuItemImageMarginEndTextbox.Text
     End Sub
 
     Private Sub uiMenuItemImageMarginStartTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiMenuItemImageMarginStartTextbox.TextChanged
         ' Update image margin gradient start color property
         ' when the textbox is updated.
-        themecontrolMenuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
+        ThemeProperties.themecontrolMenuitemImageMarginGradientStartColor = uiMenuItemImageMarginStartTextbox.Text
     End Sub
 
     Private Sub uiStatusLabelBorderStyleDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderStyleDropdown.SelectedIndexChanged
         ' Update statuslabel border style property
         ' when the user chooses something from the list.
-        themecontrolStatuslabelBorderStyle = uiStatusLabelBorderStyleDropdown.Text
+        ThemeProperties.themecontrolStatuslabelBorderStyle = uiStatusLabelBorderStyleDropdown.Text
     End Sub
 
     Private Sub uiStatusLabelBorderSidesDropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uiStatusLabelBorderSidesDropdown.SelectedIndexChanged
         ' Update statuslabel border sides property
         ' when the user chooses something from the list.
-        themecontrolStatuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
+        ThemeProperties.themecontrolStatuslabelBorderSides = uiStatusLabelBorderSidesDropdown.Text
 
         ' Enable or disable BorderStyle dropdown depending on if
         ' the user chose "None" or not.
-        If themecontrolStatuslabelBorderSides = "None" Then
+        If ThemeProperties.themecontrolStatuslabelBorderSides = "None" Then
             uiStatusLabelBorderStyleDropdown.Enabled = False
         Else
             uiStatusLabelBorderStyleDropdown.Enabled = True
@@ -355,36 +355,36 @@ Public Class aaformMainWindow
 
     Private Sub textboxThemeTitle_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeTitle.TextChanged
         ' Save theme title into its property.
-        themeinfoTitle = textboxThemeTitle.Text
+        ThemeProperties.themeinfoTitle = textboxThemeTitle.Text
     End Sub
 
     Private Sub textboxThemeDescription_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeDescription.TextChanged
         'Save theme description into its property.
-        themeinfoDescription = textboxThemeDescription.Text
+        ThemeProperties.themeinfoDescription = textboxThemeDescription.Text
     End Sub
 
     Private Sub textboxThemeVersion_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeVersion.TextChanged
         ' Save theme version into its property.
-        themeinfoVersion = textboxThemeVersion.Text
+        ThemeProperties.themeinfoVersion = textboxThemeVersion.Text
     End Sub
 
     Private Sub textboxThemeAuthor_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeAuthor.TextChanged
         ' Save theme author into its property.
-        themeinfoAuthor = textboxThemeAuthor.Text
+        ThemeProperties.themeinfoAuthor = textboxThemeAuthor.Text
     End Sub
 
     Private Sub dropdownThemeEngineRuntimeVersion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropdownThemeEngineRuntimeVersion.SelectedIndexChanged
         ' Save the theme engine runtime version into its property.
-        themeinfoUseThemeEngineVersion = dropdownThemeEngineRuntimeVersion.Text
+        ThemeProperties.themeinfoUseThemeEngineVersion = dropdownThemeEngineRuntimeVersion.Text
     End Sub
 
     Private Sub dropdownButtonFlatStyle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropdownButtonFlatStyle.SelectedIndexChanged
         ' Save the button flat style value to its property.
-        themecontrolButtonFlatStyle = dropdownButtonFlatStyle.Text
+        ThemeProperties.themecontrolButtonFlatStyle = dropdownButtonFlatStyle.Text
 
         ' Enable or disable button flatstyle border color textbox based on 
         ' what's in the flatstyle property.
-        If themecontrolButtonFlatStyle = "Flat" Then
+        If ThemeProperties.themecontrolButtonFlatStyle = "Flat" Then
             textboxButtonFlatStyleBorderColor.Enabled = True
         Else
             textboxButtonFlatStyleBorderColor.Enabled = False
@@ -393,51 +393,53 @@ Public Class aaformMainWindow
 
     Private Sub textboxButtonFlatStyleBorderColor_TextChanged(sender As Object, e As EventArgs) Handles textboxButtonFlatStyleBorderColor.TextChanged
         ' Save the button flat style border color into its property.
-        themecontrolButtonFlatStyleBorderColor = textboxButtonFlatStyleBorderColor.Text
+        ThemeProperties.themecontrolButtonFlatStyleBorderColor = textboxButtonFlatStyleBorderColor.Text
     End Sub
+End Class
 
+Public Class ThemeProperties
 
     ' Theme properties.
-    Private _themeinfoTitle As String = "Untitled"
-    Private _themeinfoDescription As String = "Theme description goes here."
-    Private _themeinfoAuthor As String = "Author"
-    Private _themeinfoVersion As String = "1.0"
-    Private _themeinfoUseThemeEngineVersion As String = "1.01"
+    Private Shared _themeinfoTitle As String = "Untitled"
+    Private Shared _themeinfoDescription As String = "Theme description goes here."
+    Private Shared _themeinfoAuthor As String = "Author"
+    Private Shared _themeinfoVersion As String = "1.0"
+    Private Shared _themeinfoUseThemeEngineVersion As String = "1.01"
     ' Control properties.
-    Private _themecontrolButtonBackColor As String = "Transparent"
-    Private _themecontrolButtonForeColor As String = "ControlText"
-    Private _themecontrolButtonFlatStyle As String = "Standard"
-    Private _themecontrolButtonFlatStyleBorderColor As String = "Nothing"
-    Private _themecontrolGroupboxBackColor As String = "Transparent"
-    Private _themecontrolGroupboxForeColor As String = "ControlText"
-    Private _themecontrolFlowlayoutpanelBackColor As String = "Transparent"
-    Private _themecontrolFlowlayoutpanelForeColor As String = "ControlText"
-    Private _themecontrolStatusbarBackColor As String = "LiteralNothing"
-    Private _themecontrolLabelBackColor As String = "Transparent"
-    Private _themecontrolLabelForeColor As String = "ControlText"
-    Private _themecontrolTextboxBackColor As String = "Window"
-    Private _themecontrolTextboxForeColor As String = "WindowText"
-    Private _themecontrolMenuitemBackColor As String = "Window"
-    Private _themecontrolMenuitemForeColor As String = "ControlText"
-    Private _themecontrolMenuitemImageMarginGradientStartColor As String = "0xFCFCFC"
-    Private _themecontrolMenuitemImageMarginGradientEndColor As String = "0xF1F1F1"
-    Private _themecontrolMenubarBackColor As String = "Control"
-    Private _themecontrolStatuslabelBackColor As String = "Transparent"
-    Private _themecontrolStatuslabelForeColor As String = "ControlText"
-    Private _themecontrolStatuslabelBorderSides As String = "None"
-    Private _themecontrolStatuslabelBorderStyle As String = "Flat"
+    Private Shared _themecontrolButtonBackColor As String = "Transparent"
+    Private Shared _themecontrolButtonForeColor As String = "ControlText"
+    Private Shared _themecontrolButtonFlatStyle As String = "Standard"
+    Private Shared _themecontrolButtonFlatStyleBorderColor As String = "Nothing"
+    Private Shared _themecontrolGroupboxBackColor As String = "Transparent"
+    Private Shared _themecontrolGroupboxForeColor As String = "ControlText"
+    Private Shared _themecontrolFlowlayoutpanelBackColor As String = "Transparent"
+    Private Shared _themecontrolFlowlayoutpanelForeColor As String = "ControlText"
+    Private Shared _themecontrolStatusbarBackColor As String = "LiteralNothing"
+    Private Shared _themecontrolLabelBackColor As String = "Transparent"
+    Private Shared _themecontrolLabelForeColor As String = "ControlText"
+    Private Shared _themecontrolTextboxBackColor As String = "Window"
+    Private Shared _themecontrolTextboxForeColor As String = "WindowText"
+    Private Shared _themecontrolMenuitemBackColor As String = "Window"
+    Private Shared _themecontrolMenuitemForeColor As String = "ControlText"
+    Private Shared _themecontrolMenuitemImageMarginGradientStartColor As String = "0xFCFCFC"
+    Private Shared _themecontrolMenuitemImageMarginGradientEndColor As String = "0xF1F1F1"
+    Private Shared _themecontrolMenubarBackColor As String = "Control"
+    Private Shared _themecontrolStatuslabelBackColor As String = "Transparent"
+    Private Shared _themecontrolStatuslabelForeColor As String = "ControlText"
+    Private Shared _themecontrolStatuslabelBorderSides As String = "None"
+    Private Shared _themecontrolStatuslabelBorderStyle As String = "Flat"
 
     ' Theme properties.
-    Public Property themeinfoTitle() As String
+    Public Shared Property themeinfoTitle() As String
         Get
-            Return _themeinfoTitle
+            Return ThemeProperties._themeinfoTitle
         End Get
         Set(value As String)
-            _themeinfoTitle = value
+            ThemeProperties._themeinfoTitle = value
         End Set
     End Property
 
-    Public Property themeinfoDescription() As String
+    Public Shared Property themeinfoDescription() As String
         Get
             Return _themeinfoDescription
         End Get
@@ -446,7 +448,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themeinfoAuthor() As String
+    Public Shared Property themeinfoAuthor() As String
         Get
             Return _themeinfoAuthor
         End Get
@@ -455,7 +457,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themeinfoVersion() As String
+    Public Shared Property themeinfoVersion() As String
         Get
             Return _themeinfoVersion
         End Get
@@ -464,7 +466,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themeinfoUseThemeEngineVersion() As String
+    Public Shared Property themeinfoUseThemeEngineVersion() As String
         Get
             Return _themeinfoUseThemeEngineVersion
         End Get
@@ -474,7 +476,7 @@ Public Class aaformMainWindow
     End Property
 
     ' Control properties.
-    Public Property themecontrolButtonBackColor() As String
+    Public Shared Property themecontrolButtonBackColor() As String
         Get
             Return _themecontrolButtonBackColor
         End Get
@@ -483,7 +485,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolButtonForeColor() As String
+    Public Shared Property themecontrolButtonForeColor() As String
         Get
             Return _themecontrolButtonForeColor
         End Get
@@ -492,7 +494,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolButtonFlatStyle() As String
+    Public Shared Property themecontrolButtonFlatStyle() As String
         Get
             Return _themecontrolButtonFlatStyle
         End Get
@@ -501,7 +503,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolButtonFlatStyleBorderColor() As String
+    Public Shared Property themecontrolButtonFlatStyleBorderColor() As String
         Get
             Return _themecontrolButtonFlatStyleBorderColor
         End Get
@@ -510,7 +512,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolGroupboxBackColor() As String
+    Public Shared Property themecontrolGroupboxBackColor() As String
         Get
             Return _themecontrolGroupboxBackColor
         End Get
@@ -519,7 +521,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolGroupboxForeColor() As String
+    Public Shared Property themecontrolGroupboxForeColor() As String
         Get
             Return _themecontrolGroupboxForeColor
         End Get
@@ -528,7 +530,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolFlowayoutpanelBackColor() As String
+    Public Shared Property themecontrolFlowayoutpanelBackColor() As String
         Get
             Return _themecontrolFlowlayoutpanelBackColor
         End Get
@@ -537,7 +539,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolFlowayoutpanelForeColor() As String
+    Public Shared Property themecontrolFlowayoutpanelForeColor() As String
         Get
             Return _themecontrolFlowlayoutpanelForeColor
         End Get
@@ -546,7 +548,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolStatusbarBackColor() As String
+    Public Shared Property themecontrolStatusbarBackColor() As String
         Get
             Return _themecontrolStatusbarBackColor
         End Get
@@ -555,7 +557,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolLabelBackColor() As String
+    Public Shared Property themecontrolLabelBackColor() As String
         Get
             Return _themecontrolLabelBackColor
         End Get
@@ -564,7 +566,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolLabelForeColor() As String
+    Public Shared Property themecontrolLabelForeColor() As String
         Get
             Return _themecontrolLabelForeColor
         End Get
@@ -573,7 +575,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolTextboxForeColor() As String
+    Public Shared Property themecontrolTextboxForeColor() As String
         Get
             Return _themecontrolTextboxForeColor
         End Get
@@ -582,7 +584,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolTextboxBackColor() As String
+    Public Shared Property themecontrolTextboxBackColor() As String
         Get
             Return _themecontrolTextboxBackColor
         End Get
@@ -591,7 +593,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolMenuitemBackColor() As String
+    Public Shared Property themecontrolMenuitemBackColor() As String
         Get
             Return _themecontrolMenuitemBackColor
         End Get
@@ -600,7 +602,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolMenuitemForeColor() As String
+    Public Shared Property themecontrolMenuitemForeColor() As String
         Get
             Return _themecontrolMenuitemForeColor
         End Get
@@ -609,7 +611,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolMenuitemImageMarginGradientStartColor() As String
+    Public Shared Property themecontrolMenuitemImageMarginGradientStartColor() As String
         Get
             Return _themecontrolMenuitemImageMarginGradientStartColor
         End Get
@@ -618,7 +620,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolMenuitemImageMarginGradientEndColor() As String
+    Public Shared Property themecontrolMenuitemImageMarginGradientEndColor() As String
         Get
             Return _themecontrolMenuitemImageMarginGradientEndColor
         End Get
@@ -627,7 +629,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolMenubarBackColor() As String
+    Public Shared Property themecontrolMenubarBackColor() As String
         Get
             Return _themecontrolMenubarBackColor
         End Get
@@ -636,7 +638,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolStatuslabelBackColor() As String
+    Public Shared Property themecontrolStatuslabelBackColor() As String
         Get
             Return _themecontrolStatuslabelBackColor
         End Get
@@ -645,7 +647,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolStatuslabelForeColor() As String
+    Public Shared Property themecontrolStatuslabelForeColor() As String
         Get
             Return _themecontrolStatuslabelForeColor
         End Get
@@ -654,7 +656,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolStatuslabelBorderSides() As String
+    Public Shared Property themecontrolStatuslabelBorderSides() As String
         Get
             Return _themecontrolStatuslabelBorderSides
         End Get
@@ -663,7 +665,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property themecontrolStatuslabelBorderStyle() As String
+    Public Shared Property themecontrolStatuslabelBorderStyle() As String
         Get
             Return _themecontrolStatuslabelBorderStyle
         End Get
