@@ -165,6 +165,8 @@ Public Class aaformMainWindow
             statusbarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelBackColor = uiBackColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "TextBox" Then
+            textboxBackColor = uiBackColorTextbox.Text
         End If
     End Sub
 
@@ -177,6 +179,8 @@ Public Class aaformMainWindow
             flowlayoutpanelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelForeColor = uiForeColorTextbox.Text
+        ElseIf comboboxControlSelector.Text = "TextBox" Then
+            textboxForeColor = uiForeColorTextbox.Text
         End If
     End Sub
 
