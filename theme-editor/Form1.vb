@@ -34,6 +34,9 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
+
             ' Update backcolor and forecolor textboxes with
             ' the button's properties.
             uiBackColorTextbox.Text = buttonBackColor
@@ -47,6 +50,9 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
+
             uiBackColorTextbox.Text = groupboxBackColor
             uiForeColorTextbox.Text = groupboxForeColor
 
@@ -57,6 +63,9 @@ Public Class aaformMainWindow
             uiForeColorLabel.Show()
             ' Hide image margin controls.
             hideImageMarginControls(True)
+
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
 
             uiBackColorTextbox.Text = flowlayoutpanelBackColor
             uiForeColorTextbox.Text = flowlayoutpanelForeColor
@@ -74,6 +83,9 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = statusbarBackColor
 
@@ -84,6 +96,9 @@ Public Class aaformMainWindow
             uiForeColorLabel.Show()
             ' Hide image margin controls.
             hideImageMarginControls(True)
+
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
 
             uiBackColorTextbox.Text = labelBackColor
             uiForeColorTextbox.Text = labelForeColor
@@ -96,6 +111,9 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
+
             uiBackColorTextbox.Text = textboxBackColor
             uiForeColorTextbox.Text = textboxForeColor
 
@@ -106,6 +124,9 @@ Public Class aaformMainWindow
             uiForeColorLabel.Show()
             ' Show image margin controls.
             hideImageMarginControls(False)
+
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
 
             ' Update textboxes with menuitem stuff.
             uiBackColorTextbox.Text = menuitemBackColor
@@ -127,7 +148,7 @@ Public Class aaformMainWindow
             ' Hide image margin controls.
             hideImageMarginControls(True)
 
-            ' Show statuslabel controls.
+            ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
             ' Update backcolor textbox with statusbar's backcolor.
