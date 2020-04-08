@@ -39,8 +39,8 @@ Public Class aaformMainWindow
 
             ' Update backcolor and forecolor textboxes with
             ' the button's properties.
-            uiBackColorTextbox.Text = buttonBackColor
-            uiForeColorTextbox.Text = buttonForeColor
+            uiBackColorTextbox.Text = themecontrolButtonBackColor
+            uiForeColorTextbox.Text = themecontrolButtonForeColor
 
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
             uiBackColorTextbox.Show()
@@ -53,8 +53,8 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
-            uiBackColorTextbox.Text = groupboxBackColor
-            uiForeColorTextbox.Text = groupboxForeColor
+            uiBackColorTextbox.Text = themecontrolGroupboxBackColor
+            uiForeColorTextbox.Text = themecontrolGroupboxForeColor
 
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
             uiBackColorTextbox.Show()
@@ -67,8 +67,8 @@ Public Class aaformMainWindow
             ' Hide statuslabel controls.
             hideStatusLabelControls(True)
 
-            uiBackColorTextbox.Text = flowlayoutpanelBackColor
-            uiForeColorTextbox.Text = flowlayoutpanelForeColor
+            uiBackColorTextbox.Text = themecontrolFlowayoutpanelBackColor
+            uiForeColorTextbox.Text = themecontrolFlowayoutpanelForeColor
 
         ElseIf comboboxControlSelector.Text = "StatusBar" Then
             ' Show backcolor textbox.
@@ -222,11 +222,11 @@ Public Class aaformMainWindow
 
     Private Sub uiBackColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiBackColorTextbox.TextChanged
         If comboboxControlSelector.Text = "Button" Then
-            buttonBackColor = uiBackColorTextbox.Text
+            themecontrolButtonBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
-            groupboxBackColor = uiBackColorTextbox.Text
+            themecontrolGroupboxBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
-            flowlayoutpanelBackColor = uiBackColorTextbox.Text
+            themecontrolFlowayoutpanelBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "StatusBar" Then
             statusbarBackColor = uiBackColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
@@ -244,11 +244,11 @@ Public Class aaformMainWindow
 
     Private Sub uiForeColorTextbox_TextChanged(sender As Object, e As EventArgs) Handles uiForeColorTextbox.TextChanged
         If comboboxControlSelector.Text = "Button" Then
-            buttonForeColor = uiForeColorTextbox.Text
+            themecontrolButtonForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
-            groupboxForeColor = uiForeColorTextbox.Text
+            themecontrolGroupboxForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "FlowLayoutPanel" Then
-            flowlayoutpanelForeColor = uiForeColorTextbox.Text
+            themecontrolFlowayoutpanelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "Label" Then
             labelForeColor = uiForeColorTextbox.Text
         ElseIf comboboxControlSelector.Text = "TextBox" Then
@@ -328,7 +328,7 @@ Public Class aaformMainWindow
 
 
 
-    Public Property buttonBackColor() As String
+    Public Property themecontrolButtonBackColor() As String
         Get
             Return _themecontrolButtonBackColor
         End Get
@@ -337,7 +337,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property buttonForeColor() As String
+    Public Property themecontrolButtonForeColor() As String
         Get
             Return _themecontrolButtonForeColor
         End Get
@@ -346,7 +346,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property groupboxBackColor() As String
+    Public Property themecontrolGroupboxBackColor() As String
         Get
             Return _themecontrolGroupboxBackColor
         End Get
@@ -355,7 +355,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property groupboxForeColor() As String
+    Public Property themecontrolGroupboxForeColor() As String
         Get
             Return _themecontrolGroupboxForeColor
         End Get
@@ -364,7 +364,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property flowlayoutpanelBackColor() As String
+    Public Property themecontrolFlowayoutpanelBackColor() As String
         Get
             Return _themecontrolFlowlayoutpanelBackColor
         End Get
@@ -373,7 +373,7 @@ Public Class aaformMainWindow
         End Set
     End Property
 
-    Public Property flowlayoutpanelForeColor() As String
+    Public Property themecontrolFlowayoutpanelForeColor() As String
         Get
             Return _themecontrolFlowlayoutpanelForeColor
         End Get
