@@ -54,7 +54,7 @@ Partial Class aaformMainWindow
         'comboboxControlSelector
         '
         Me.comboboxControlSelector.FormattingEnabled = True
-        Me.comboboxControlSelector.Items.AddRange(New Object() {"Button", "Label"})
+        Me.comboboxControlSelector.Items.AddRange(New Object() {"Button", "GroupBox", "FlowLayoutPanel", "StatusBar", "Label", "TextBox", "MenuItem", "MenuBar", "StatusLabel"})
         Me.comboboxControlSelector.Location = New System.Drawing.Point(20, 91)
         Me.comboboxControlSelector.Margin = New System.Windows.Forms.Padding(4)
         Me.comboboxControlSelector.Name = "comboboxControlSelector"
