@@ -314,6 +314,11 @@ Public Class aaformMainWindow
         themeinfoVersion = textboxThemeVersion.Text
     End Sub
 
+    Private Sub textboxThemeAuthor_TextChanged(sender As Object, e As EventArgs) Handles textboxThemeAuthor.TextChanged
+        ' Save theme author into its property.
+        themeinfoAuthor = textboxThemeAuthor.Text
+    End Sub
+
     ' Theme properties.
     Private _themeinfoTitle As String = "Untitled"
     Private _themeinfoDescription As String = "Theme description goes here."
