@@ -82,6 +82,9 @@ Public Class ThemeProcessor
             ThemeProperties.themecontrolButtonFlatStyle = "Standard"
         End If
 
+        ' Get button flatstyle bordercolor.
+        ThemeProperties.themecontrolButtonFlatAppearanceBorderColor = NodeReader("Theme_Colors/Button/FlatAppearance/BorderColor", themeSheet, themeNamespaceManager, "Nothing")
+
 
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)

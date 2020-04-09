@@ -48,7 +48,7 @@ Public Class aaformMainWindow
             ' Update flatstyle dropdown and bordercolor textbox
             ' with relevant properties.
             dropdownButtonFlatStyle.Text = ThemeProperties.themecontrolButtonFlatStyle
-            textboxButtonFlatStyleBorderColor.Text = ThemeProperties.themecontrolButtonFlatStyleBorderColor
+            textboxButtonFlatAppearanceBorderColor.Text = ThemeProperties.themecontrolButtonFlatAppearanceBorderColor
 
         ElseIf comboboxControlSelector.Text = "GroupBox" Then
             uiBackColorTextbox.Show()
@@ -259,18 +259,18 @@ Public Class aaformMainWindow
             ' Hide dropdown for button flatstyle.
             dropdownButtonFlatStyle.Hide()
             ' Hide label for button flatstyle bordercolor.
-            labelButtonFlatStyleBorderColor.Hide()
+            labelButtonFlatAppearanceBorderColor.Hide()
             ' Hide textbox for button flatstyle bordercolor.
-            textboxButtonFlatStyleBorderColor.Hide()
+            textboxButtonFlatAppearanceBorderColor.Hide()
         ElseIf hideControls = False Then
             ' Show label for button flatstyle.
             labelButtonFlatStyle.Show()
             ' Show dropdown for button flatstyle.
             dropdownButtonFlatStyle.Show()
             ' Show label for button flatstyle bordercolor.
-            labelButtonFlatStyleBorderColor.Show()
+            labelButtonFlatAppearanceBorderColor.Show()
             ' Show textbox for button flatstyle bordercolor.
-            textboxButtonFlatStyleBorderColor.Show()
+            textboxButtonFlatAppearanceBorderColor.Show()
         End If
     End Sub
 
@@ -385,15 +385,15 @@ Public Class aaformMainWindow
         ' Enable or disable button flatstyle border color textbox based on 
         ' what's in the flatstyle property.
         If ThemeProperties.themecontrolButtonFlatStyle = "Flat" Then
-            textboxButtonFlatStyleBorderColor.Enabled = True
+            textboxButtonFlatAppearanceBorderColor.Enabled = True
         Else
-            textboxButtonFlatStyleBorderColor.Enabled = False
+            textboxButtonFlatAppearanceBorderColor.Enabled = False
         End If
     End Sub
 
-    Private Sub textboxButtonFlatStyleBorderColor_TextChanged(sender As Object, e As EventArgs) Handles textboxButtonFlatStyleBorderColor.TextChanged
+    Private Sub textboxButtonFlatAppearanceBorderColor_TextChanged(sender As Object, e As EventArgs) Handles textboxButtonFlatAppearanceBorderColor.TextChanged
         ' Save the button flat style border color into its property.
-        ThemeProperties.themecontrolButtonFlatStyleBorderColor = textboxButtonFlatStyleBorderColor.Text
+        ThemeProperties.themecontrolButtonFlatAppearanceBorderColor = textboxButtonFlatAppearanceBorderColor.Text
     End Sub
 
     Private Sub aaformMainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -413,7 +413,7 @@ Public Class ThemeProperties
     Private Shared _themecontrolButtonBackColor As String = "Transparent"
     Private Shared _themecontrolButtonForeColor As String = "ControlText"
     Private Shared _themecontrolButtonFlatStyle As String = "Standard"
-    Private Shared _themecontrolButtonFlatStyleBorderColor As String = "Nothing"
+    Private Shared _themecontrolButtonFlatAppearanceBorderColor As String = "Nothing"
     Private Shared _themecontrolGroupboxBackColor As String = "Transparent"
     Private Shared _themecontrolGroupboxForeColor As String = "ControlText"
     Private Shared _themecontrolFlowlayoutpanelBackColor As String = "Transparent"
@@ -507,12 +507,12 @@ Public Class ThemeProperties
         End Set
     End Property
 
-    Public Shared Property themecontrolButtonFlatStyleBorderColor() As String
+    Public Shared Property themecontrolButtonFlatAppearanceBorderColor() As String
         Get
-            Return _themecontrolButtonFlatStyleBorderColor
+            Return _themecontrolButtonFlatAppearanceBorderColor
         End Get
         Set(value As String)
-            _themecontrolButtonFlatStyleBorderColor = value
+            _themecontrolButtonFlatAppearanceBorderColor = value
         End Set
     End Property
 

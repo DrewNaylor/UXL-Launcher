@@ -41,8 +41,8 @@ Partial Class aaformMainWindow
         Me.uiStatusLabelBorderStyleDropdown = New System.Windows.Forms.ComboBox()
         Me.labelButtonFlatStyle = New System.Windows.Forms.Label()
         Me.dropdownButtonFlatStyle = New System.Windows.Forms.ComboBox()
-        Me.labelButtonFlatStyleBorderColor = New System.Windows.Forms.Label()
-        Me.textboxButtonFlatStyleBorderColor = New System.Windows.Forms.TextBox()
+        Me.labelButtonFlatAppearanceBorderColor = New System.Windows.Forms.Label()
+        Me.textboxButtonFlatAppearanceBorderColor = New System.Windows.Forms.TextBox()
         Me.menustripMenubar = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -163,8 +163,8 @@ Partial Class aaformMainWindow
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiStatusLabelBorderStyleDropdown)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelButtonFlatStyle)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.dropdownButtonFlatStyle)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelButtonFlatStyleBorderColor)
-        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxButtonFlatStyleBorderColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.labelButtonFlatAppearanceBorderColor)
+        Me.flowlayoutpanelPropertyList.Controls.Add(Me.textboxButtonFlatAppearanceBorderColor)
         Me.flowlayoutpanelPropertyList.Location = New System.Drawing.Point(13, 56)
         Me.flowlayoutpanelPropertyList.Margin = New System.Windows.Forms.Padding(4)
         Me.flowlayoutpanelPropertyList.Name = "flowlayoutpanelPropertyList"
@@ -260,21 +260,21 @@ Partial Class aaformMainWindow
         Me.dropdownButtonFlatStyle.Size = New System.Drawing.Size(331, 24)
         Me.dropdownButtonFlatStyle.TabIndex = 17
         '
-        'labelButtonFlatStyleBorderColor
+        'labelButtonFlatAppearanceBorderColor
         '
-        Me.labelButtonFlatStyleBorderColor.AutoSize = True
-        Me.labelButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 325)
-        Me.labelButtonFlatStyleBorderColor.Name = "labelButtonFlatStyleBorderColor"
-        Me.labelButtonFlatStyleBorderColor.Size = New System.Drawing.Size(191, 17)
-        Me.labelButtonFlatStyleBorderColor.TabIndex = 18
-        Me.labelButtonFlatStyleBorderColor.Text = "Button FlatStyle BorderColor:"
+        Me.labelButtonFlatAppearanceBorderColor.AutoSize = True
+        Me.labelButtonFlatAppearanceBorderColor.Location = New System.Drawing.Point(3, 325)
+        Me.labelButtonFlatAppearanceBorderColor.Name = "labelButtonFlatAppearanceBorderColor"
+        Me.labelButtonFlatAppearanceBorderColor.Size = New System.Drawing.Size(237, 17)
+        Me.labelButtonFlatAppearanceBorderColor.TabIndex = 18
+        Me.labelButtonFlatAppearanceBorderColor.Text = "Button FlatAppearance BorderColor:"
         '
-        'textboxButtonFlatStyleBorderColor
+        'textboxButtonFlatAppearanceBorderColor
         '
-        Me.textboxButtonFlatStyleBorderColor.Location = New System.Drawing.Point(3, 345)
-        Me.textboxButtonFlatStyleBorderColor.Name = "textboxButtonFlatStyleBorderColor"
-        Me.textboxButtonFlatStyleBorderColor.Size = New System.Drawing.Size(331, 22)
-        Me.textboxButtonFlatStyleBorderColor.TabIndex = 19
+        Me.textboxButtonFlatAppearanceBorderColor.Location = New System.Drawing.Point(3, 345)
+        Me.textboxButtonFlatAppearanceBorderColor.Name = "textboxButtonFlatAppearanceBorderColor"
+        Me.textboxButtonFlatAppearanceBorderColor.Size = New System.Drawing.Size(331, 22)
+        Me.textboxButtonFlatAppearanceBorderColor.TabIndex = 19
         '
         'menustripMenubar
         '
@@ -595,6 +595,6 @@ Partial Class aaformMainWindow
     Friend WithEvents labelThemeTitle As Label
     Friend WithEvents labelButtonFlatStyle As Label
     Friend WithEvents dropdownButtonFlatStyle As ComboBox
-    Friend WithEvents labelButtonFlatStyleBorderColor As Label
-    Friend WithEvents textboxButtonFlatStyleBorderColor As TextBox
+    Friend WithEvents labelButtonFlatAppearanceBorderColor As Label
+    Friend WithEvents textboxButtonFlatAppearanceBorderColor As TextBox
 End Class
