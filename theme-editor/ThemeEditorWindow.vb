@@ -409,15 +409,31 @@ Public Class aaformMainWindow
     End Sub
 
     Private Sub OpenToolStripButton_Click(sender As Object, e As EventArgs) Handles OpenToolStripButton.Click
+        openTheme()
+    End Sub
+
+    Private Sub NewToolStripButton_Click(sender As Object, e As EventArgs) Handles NewToolStripButton.Click
+        createNewTheme()
+    End Sub
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        createNewTheme()
+    End Sub
+
+    Private Sub createNewTheme()
+        ThemeProcessor.LoadTheme(My.Resources.NewBlankTheme_TE1Dot01, False)
+        updateThemeInfo()
+    End Sub
+
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+        openTheme()
+    End Sub
+
+    Private Sub openTheme()
         If openfiledialogOpenTheme.ShowDialog = DialogResult.OK Then
             ThemeProcessor.LoadTheme(openfiledialogOpenTheme.FileName)
             updateThemeInfo()
         End If
-    End Sub
-
-    Private Sub NewToolStripButton_Click(sender As Object, e As EventArgs) Handles NewToolStripButton.Click
-        ThemeProcessor.LoadTheme(My.Resources.NewBlankTheme_TE1Dot01, False)
-        updateThemeInfo()
     End Sub
 End Class
 
