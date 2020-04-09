@@ -129,6 +129,12 @@ Public Class ThemeProcessor
         ' Get statuslabel borderstyle.
         ThemeProperties.themecontrolStatuslabelBorderStyle = NodeReader("Theme_Colors/StatusLabel/BorderStyle", "Flat")
 
+        ' Get textbox backcolor.
+        ThemeProperties.themecontrolTextboxBackColor = NodeReader("Theme_Colors/TextBox/BackColor", "Window")
+
+        ' Get textbox backcolor.
+        ThemeProperties.themecontrolTextboxForeColor = NodeReader("Theme_Colors/TextBox/ForeColor", "WindowText")
+
 
         'MessageBox.Show(ThemeProperties.themeinfoTitle)
         'MessageBox.Show(ThemeProperties.themeinfoDescription)
