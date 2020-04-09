@@ -398,6 +398,15 @@ Public Class aaformMainWindow
 
     Private Sub aaformMainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'ThemeProcessor.LoadTheme("C:\Users\drewn\Documents\0GitHub\UXL-Launcher\UXL-Launcher\VB Code-behind\Themes\TenDarkTheme_XML.xml")
+        updateThemeInfo()
+    End Sub
+
+    Private Sub updateThemeInfo()
+        textboxThemeTitle.Text = ThemeProperties.themeinfoTitle
+        textboxThemeDescription.Text = ThemeProperties.themeinfoDescription
+        textboxThemeVersion.Text = ThemeProperties.themeinfoVersion
+        textboxThemeAuthor.Text = ThemeProperties.themeinfoAuthor
+        dropdownThemeEngineRuntimeVersion.Text = ThemeProperties.themeinfoUseThemeEngineVersion
     End Sub
 End Class
 
