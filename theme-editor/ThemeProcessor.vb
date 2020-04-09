@@ -85,7 +85,7 @@ Public Class ThemeProcessor
         ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/BackColor", "Transparent")
 
         ' Get groupbox forecolor.
-        ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/ForeColor", "ControlText")
+        ThemeProperties.themecontrolGroupboxForeColor = NodeReader("Theme_Colors/GroupBox/ForeColor", "ControlText")
 
 
 
