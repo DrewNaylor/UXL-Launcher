@@ -402,15 +402,16 @@ Public Class aaformMainWindow
         textboxThemeVersion.Text = ThemeProperties.themeinfoVersion
         textboxThemeAuthor.Text = ThemeProperties.themeinfoAuthor
         dropdownThemeEngineRuntimeVersion.Text = ThemeProperties.themeinfoUseThemeEngineVersion
+
+        Dim currentIndex As Integer = comboboxControlSelector.SelectedIndex
+        comboboxControlSelector.SelectedIndex = -1
+        comboboxControlSelector.SelectedIndex = currentIndex
     End Sub
 
     Private Sub OpenToolStripButton_Click(sender As Object, e As EventArgs) Handles OpenToolStripButton.Click
         If openfiledialogOpenTheme.ShowDialog = DialogResult.OK Then
             ThemeProcessor.LoadTheme(openfiledialogOpenTheme.FileName)
             updateThemeInfo()
-            Dim currentIndex As Integer = comboboxControlSelector.SelectedIndex
-            comboboxControlSelector.SelectedIndex = -1
-            comboboxControlSelector.SelectedIndex = currentIndex
         End If
     End Sub
 End Class
