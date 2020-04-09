@@ -117,6 +117,18 @@ Public Class ThemeProcessor
         ' Get statusbar backcolor.
         ThemeProperties.themecontrolStatusbarBackColor = NodeReader("Theme_Colors/StatusBar/BackColor", "Window")
 
+        ' Get statuslabel backcolor.
+        ThemeProperties.themecontrolStatuslabelBackColor = NodeReader("Theme_Colors/StatusLabel/BackColor", "Transparent")
+
+        ' Get statuslabel backcolor.
+        ThemeProperties.themecontrolStatuslabelForeColor = NodeReader("Theme_Colors/StatusLabel/ForeColor", "ControlText")
+
+        ' Get statuslabel bordersides.
+        ThemeProperties.themecontrolStatuslabelBorderSides = NodeReader("Theme_Colors/StatusLabel/BorderSides", "None")
+
+        ' Get statuslabel borderstyle.
+        ThemeProperties.themecontrolStatuslabelBorderStyle = NodeReader("Theme_Colors/StatusLabel/BorderStyle", "Flat")
+
 
         'MessageBox.Show(ThemeProperties.themeinfoTitle)
         'MessageBox.Show(ThemeProperties.themeinfoDescription)
