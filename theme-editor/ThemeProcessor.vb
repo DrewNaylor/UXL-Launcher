@@ -85,6 +85,9 @@ Public Class ThemeProcessor
         ' Get button flatstyle bordercolor.
         ThemeProperties.themecontrolButtonFlatAppearanceBorderColor = NodeReader("Theme_Colors/Button/FlatAppearance/BorderColor", themeSheet, themeNamespaceManager, "Nothing")
 
+        ' Get groupbox backcolor.
+        ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/BackColor", themeSheet, themeNamespaceManager, "Nothing")
+
 
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)

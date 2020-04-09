@@ -20,6 +20,8 @@
 
 
 
+Imports System.Xml
+
 Public Class aaformMainWindow
     Private Sub comboboxControlSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.SelectedIndexChanged
         If comboboxControlSelector.Text = "Button" Then
@@ -196,8 +198,6 @@ Public Class aaformMainWindow
 
             ' Hide button controls.
             hideButtonControls(True)
-
-
 
             ' Update textboxes with statuslabel stuff.
             uiBackColorTextbox.Text = ThemeProperties.themecontrolStatuslabelBackColor
@@ -403,6 +403,9 @@ End Class
 
 Public Class ThemeProperties
 
+    ' Theme file and namespace stuff.
+    Private Shared _themeSheet As XmlDocument = New XmlDocument()
+    Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
     ' Theme properties.
     Private Shared _themeinfoTitle As String = "Untitled"
     Private Shared _themeinfoDescription As String = "Theme description goes here."
@@ -432,6 +435,25 @@ Public Class ThemeProperties
     Private Shared _themecontrolStatuslabelForeColor As String = "ControlText"
     Private Shared _themecontrolStatuslabelBorderSides As String = "None"
     Private Shared _themecontrolStatuslabelBorderStyle As String = "Flat"
+
+    ' Theme file and namespace.
+    Public Shared Property themeSheet() As XmlDocument
+        Get
+            Return ThemeProperties._themeSheet
+        End Get
+        Set(value As XmlDocument)
+            ThemeProperties._themeSheet = value
+        End Set
+    End Property
+
+    Public Shared Property themeNamespaceManager() As XmlNamespaceManager
+        Get
+            Return ThemeProperties._themeNamespaceManager
+        End Get
+        Set(value As XmlNamespaceManager)
+            ThemeProperties._themeNamespaceManager = value
+        End Set
+    End Property
 
     ' Theme properties.
     Public Shared Property themeinfoTitle() As String
