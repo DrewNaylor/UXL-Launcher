@@ -102,6 +102,18 @@ Public Class ThemeProcessor
         ' Get menubar backcolor.
         ThemeProperties.themecontrolMenubarBackColor = NodeReader("Theme_Colors/MenuBar/BackColor", "Control")
 
+        ' Get menuitem backcolor.
+        ThemeProperties.themecontrolMenuitemBackColor = NodeReader("Theme_Colors/MenuItem/BackColor", "Window")
+
+        ' Get menuitem forecolor.
+        ThemeProperties.themecontrolMenuitemForeColor = NodeReader("Theme_Colors/MenuItem/ForeColor", "ControlText")
+
+        ' Get menuitem ImageMarginGradient StartColor.
+        ThemeProperties.themecontrolMenuitemImageMarginGradientStartColor = NodeReader("Theme_Colors/MenuItem/ImageMarginGradient/StartColor", "0xFCFCFC")
+
+        ' Get menuitem ImageMarginGradient EndColor.
+        ThemeProperties.themecontrolMenuitemImageMarginGradientEndColor = NodeReader("Theme_Colors/MenuItem/ImageMarginGradient/EndColor", "0xF1F1F1")
+
 
 
         'MessageBox.Show(ThemeProperties.themeinfoTitle)
