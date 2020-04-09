@@ -414,6 +414,11 @@ Public Class aaformMainWindow
             updateThemeInfo()
         End If
     End Sub
+
+    Private Sub NewToolStripButton_Click(sender As Object, e As EventArgs) Handles NewToolStripButton.Click
+        ThemeProcessor.LoadTheme(My.Resources.NewBlankTheme_TE1Dot01, False)
+        updateThemeInfo()
+    End Sub
 End Class
 
 Public Class ThemeProperties
@@ -424,7 +429,7 @@ Public Class ThemeProperties
     ' Theme properties.
     Private Shared _themeinfoTitle As String = "Untitled"
     Private Shared _themeinfoDescription As String = "Theme description goes here."
-    Private Shared _themeinfoAuthor As String = "Author"
+    Private Shared _themeinfoAuthor As String = "Your name here"
     Private Shared _themeinfoVersion As String = "1.0"
     Private Shared _themeinfoUseThemeEngineVersion As String = "1.01"
     ' Control properties.

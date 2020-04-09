@@ -29,6 +29,8 @@ Public Class ThemeProcessor
         ' loading it as an XmlDocument.
         If isFilename = True AndAlso System.IO.File.Exists(themeInput) Then
             ThemeProperties.themeSheet.Load(themeInput)
+        Else
+            ThemeProperties.themeSheet.LoadXml(My.Resources.NewBlankTheme_TE1Dot01)
         End If
 
         ' Most of this is based on the PortableThemeEngine theme loading code.
