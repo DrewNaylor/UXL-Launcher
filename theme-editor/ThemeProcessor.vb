@@ -114,6 +114,8 @@ Public Class ThemeProcessor
         ' Get menuitem ImageMarginGradient EndColor.
         ThemeProperties.themecontrolMenuitemImageMarginGradientEndColor = NodeReader("Theme_Colors/MenuItem/ImageMarginGradient/EndColor", "0xF1F1F1")
 
+        ' Get statusbar backcolor.
+        ThemeProperties.themecontrolStatusbarBackColor = NodeReader("Theme_Colors/StatusBar/BackColor", "Window")
 
 
         'MessageBox.Show(ThemeProperties.themeinfoTitle)
