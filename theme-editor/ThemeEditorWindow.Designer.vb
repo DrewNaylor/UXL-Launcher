@@ -71,6 +71,7 @@ Partial Class aaformMainWindow
         Me.labelThemeDescription = New System.Windows.Forms.Label()
         Me.textboxThemeTitle = New System.Windows.Forms.TextBox()
         Me.labelThemeTitle = New System.Windows.Forms.Label()
+        Me.openfiledialogOpenTheme = New System.Windows.Forms.OpenFileDialog()
         Me.flowlayoutpanelPropertyList.SuspendLayout()
         Me.menustripMenubar.SuspendLayout()
         Me.toolstripToolbar.SuspendLayout()
@@ -299,7 +300,7 @@ Partial Class aaformMainWindow
         Me.NewToolStripMenuItem.Image = CType(resources.GetObject("NewToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.NewToolStripMenuItem.Text = "&New"
         '
         'OpenToolStripMenuItem
@@ -521,6 +522,11 @@ Partial Class aaformMainWindow
         Me.labelThemeTitle.TabIndex = 11
         Me.labelThemeTitle.Text = "Theme title:"
         '
+        'openfiledialogOpenTheme
+        '
+        Me.openfiledialogOpenTheme.FileName = "OpenFileDialog1"
+        Me.openfiledialogOpenTheme.Title = "Open theme file"
+        '
         'aaformMainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -597,4 +603,5 @@ Partial Class aaformMainWindow
     Friend WithEvents dropdownButtonFlatStyle As ComboBox
     Friend WithEvents labelButtonFlatAppearanceBorderColor As Label
     Friend WithEvents textboxButtonFlatAppearanceBorderColor As TextBox
+    Friend WithEvents openfiledialogOpenTheme As OpenFileDialog
 End Class

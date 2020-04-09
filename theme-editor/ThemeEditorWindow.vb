@@ -396,17 +396,22 @@ Public Class aaformMainWindow
         ThemeProperties.themecontrolButtonFlatAppearanceBorderColor = textboxButtonFlatAppearanceBorderColor.Text
     End Sub
 
-    Private Sub aaformMainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'ThemeProcessor.LoadTheme("C:\Users\drewn\Documents\0GitHub\UXL-Launcher\UXL-Launcher\VB Code-behind\Themes\TenDarkTheme_XML.xml")
-        updateThemeInfo()
-    End Sub
-
     Private Sub updateThemeInfo()
         textboxThemeTitle.Text = ThemeProperties.themeinfoTitle
         textboxThemeDescription.Text = ThemeProperties.themeinfoDescription
         textboxThemeVersion.Text = ThemeProperties.themeinfoVersion
         textboxThemeAuthor.Text = ThemeProperties.themeinfoAuthor
         dropdownThemeEngineRuntimeVersion.Text = ThemeProperties.themeinfoUseThemeEngineVersion
+    End Sub
+
+    Private Sub OpenToolStripButton_Click(sender As Object, e As EventArgs) Handles OpenToolStripButton.Click
+        If openfiledialogOpenTheme.ShowDialog = DialogResult.OK Then
+            ThemeProcessor.LoadTheme(openfiledialogOpenTheme.FileName)
+            updateThemeInfo()
+            Dim currentIndex As Integer = comboboxControlSelector.SelectedIndex
+            comboboxControlSelector.SelectedIndex = -1
+            comboboxControlSelector.SelectedIndex = currentIndex
+        End If
     End Sub
 End Class
 
