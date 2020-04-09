@@ -81,6 +81,12 @@ Public Class ThemeProcessor
         ' Get button flatstyle bordercolor.
         ThemeProperties.themecontrolButtonFlatAppearanceBorderColor = NodeReader("Theme_Colors/Button/FlatAppearance/BorderColor", "Nothing")
 
+        ' Get flowlayoutpanel backcolor.
+        ThemeProperties.themecontrolFlowayoutpanelBackColor = NodeReader("Theme_Colors/FlowLayoutPanel/BackColor", "Transparent")
+
+        ' Get flowlayoutpanel forecolor.
+        ThemeProperties.themecontrolFlowayoutpanelForeColor = NodeReader("Theme_Colors/FlowLayoutPanel/ForeColor", "ControlText")
+
         ' Get groupbox backcolor.
         ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/BackColor", "Transparent")
 
