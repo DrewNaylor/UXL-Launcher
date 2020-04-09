@@ -93,6 +93,12 @@ Public Class ThemeProcessor
         ' Get groupbox forecolor.
         ThemeProperties.themecontrolGroupboxForeColor = NodeReader("Theme_Colors/GroupBox/ForeColor", "ControlText")
 
+        ' Get label backcolor.
+        ThemeProperties.themecontrolLabelBackColor = NodeReader("Theme_Colors/Label/BackColor", "Transparent")
+
+        ' Get label forecolor.
+        ThemeProperties.themecontrolLabelForeColor = NodeReader("Theme_Colors/Label/ForeColor", "ControlText")
+
 
 
         MessageBox.Show(ThemeProperties.themeinfoTitle)
