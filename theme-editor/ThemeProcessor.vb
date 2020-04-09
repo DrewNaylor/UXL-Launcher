@@ -82,7 +82,10 @@ Public Class ThemeProcessor
         ThemeProperties.themecontrolButtonFlatAppearanceBorderColor = NodeReader("Theme_Colors/Button/FlatAppearance/BorderColor", "Nothing")
 
         ' Get groupbox backcolor.
-        ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/BackColor", "Nothing")
+        ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/BackColor", "Transparent")
+
+        ' Get groupbox forecolor.
+        ThemeProperties.themecontrolGroupboxBackColor = NodeReader("Theme_Colors/GroupBox/ForeColor", "ControlText")
 
 
 
