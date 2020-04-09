@@ -99,17 +99,20 @@ Public Class ThemeProcessor
         ' Get label forecolor.
         ThemeProperties.themecontrolLabelForeColor = NodeReader("Theme_Colors/Label/ForeColor", "ControlText")
 
+        ' Get menubar backcolor.
+        ThemeProperties.themecontrolMenubarBackColor = NodeReader("Theme_Colors/MenuBar/BackColor", "Control")
 
 
-        MessageBox.Show(ThemeProperties.themeinfoTitle)
-        MessageBox.Show(ThemeProperties.themeinfoDescription)
-        MessageBox.Show(ThemeProperties.themeinfoVersion)
-        MessageBox.Show(ThemeProperties.themeinfoAuthor)
-        MessageBox.Show(ThemeProperties.themeinfoUseThemeEngineVersion)
 
-        MessageBox.Show(ThemeProperties.themecontrolButtonBackColor)
-        MessageBox.Show(ThemeProperties.themecontrolButtonForeColor)
-        MessageBox.Show(ThemeProperties.themecontrolButtonFlatStyle)
+        'MessageBox.Show(ThemeProperties.themeinfoTitle)
+        'MessageBox.Show(ThemeProperties.themeinfoDescription)
+        'MessageBox.Show(ThemeProperties.themeinfoVersion)
+        'MessageBox.Show(ThemeProperties.themeinfoAuthor)
+        'MessageBox.Show(ThemeProperties.themeinfoUseThemeEngineVersion)
+
+        'MessageBox.Show(ThemeProperties.themecontrolButtonBackColor)
+        'MessageBox.Show(ThemeProperties.themecontrolButtonForeColor)
+        'MessageBox.Show(ThemeProperties.themecontrolButtonFlatStyle)
 
     End Sub
 
