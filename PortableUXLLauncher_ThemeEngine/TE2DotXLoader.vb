@@ -86,8 +86,8 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Sub GetAttributes()
+    Private Shared Function GetAttribute() As String
 
-    End Sub
+    End Function
 
 End Class
