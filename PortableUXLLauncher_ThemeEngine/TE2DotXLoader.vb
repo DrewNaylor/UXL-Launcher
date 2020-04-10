@@ -94,14 +94,10 @@ Public Class TE2DotXLoader
     End Sub
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
-        ' Create a variable to store the attribute value.
-        Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager)
-        MessageBox.Show(NodePath.Name)
-        Dim AttributeValue As String = NodePath.Attributes(AttributeName).Value
-        If AttributeValue IsNot Nothing Then
+        If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName) IsNot Nothing Then
             ' If the attribute exists and is compatible with the version of the theme engine
             ' the theme wants to use, return the attribute.
-            Return AttributeValue.ToString
+            Return ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName).Value
         Else
             ' Otherwise, return the default value.
             Return DefaultValue
