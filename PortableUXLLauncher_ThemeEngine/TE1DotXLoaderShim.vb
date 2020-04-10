@@ -24,11 +24,15 @@
 Public Class TE1DotXLoaderShim
 
     ' TODO: This file will load in TE1.x themes by assigning
-    ' properties in ThemeProperties to XmlNode.InnerText values.
-    ' How a TE1.x theme is determined is if the theme either doesn't
-    ' have an attribute saying what theme engine runtime it's for
-    ' (Example: <UseThemeEngineVersion>1.03</UseThemeEngineVersion> in TE1.x
-    ' or <ThemeEngine runtimeVersion="2.0"> in TE2.x themes.)
+    ' properties in ThemeProperties to XmlNode.InnerText values, just
+    ' like TE1.x does.
+    '
+    ' How a TE1.x theme is determined is if the theme doesn't
+    ' have an attribute saying what theme engine runtime version it's for.
+    '
+    ' Example: <UseThemeEngineVersion>1.03</UseThemeEngineVersion> in TE1.x
+    ' or <ThemeEngine runtimeVersion="2.0"> in TE2.x themes; themes lacking
+    ' the TE2.x-style attribute will be assumed to be TE1.x.
     '
 
 End Class
