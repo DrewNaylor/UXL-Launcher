@@ -34,5 +34,8 @@ Public Class TE1DotXLoaderShim
     ' or <ThemeEngine runtimeVersion="2.0"> in TE2.x themes; themes lacking
     ' the TE2.x-style attribute will be assumed to be TE1.x.
     '
+    ' The determination will be made in the theme loading code, then
+    ' if necessary, it'll be passed here for processing.
+    ' Afterward, it'll go back to the code to change the control colors.
 
 End Class
