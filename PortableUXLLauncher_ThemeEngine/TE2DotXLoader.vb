@@ -64,23 +64,27 @@ Public Class TE2DotXLoader
             Select Case TERuntimeVersionInThemeFile.CompareTo(TE2xVersion)
                 Case 0 ' Theme says to use TE2.x.
                     ' Load theme in the TE2.x loader.
-                    GetAttributes()
+                    AssignProperties()
                 Case 1 ' Theme says to use TE2.x.
                     ' Load theme in the TE2.x loader.
-                    GetAttributes()
+                    AssignProperties()
                 Case -1 ' Theme says to use TE1.x.
                     ' Load theme in the TE1.x loader shim.
-                    TE1DotXLoaderShim.GetAttributes()
+                    TE1DotXLoaderShim.AssignProperties()
 
             End Select
         Else
             ' There's no runtime version node, so fall back to
             ' loading like TE1.x did with UseThemeEngineVersion.
-            TE1DotXLoaderShim.GetAttributes()
+            TE1DotXLoaderShim.AssignProperties()
         End If
     End Sub
 
-    Friend Shared Sub GetAttributes()
+    Friend Shared Sub AssignProperties()
+
+    End Sub
+
+    Private Shared Sub GetAttributes()
 
     End Sub
 
