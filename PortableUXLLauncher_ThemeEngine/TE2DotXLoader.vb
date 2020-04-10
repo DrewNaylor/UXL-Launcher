@@ -58,6 +58,10 @@ Public Class TE2DotXLoader
                     TE1DotXLoaderShim.GetAttributes()
 
             End Select
+        Else
+            ' There's no runtime version node, so fall back to
+            ' loading like TE1.x did with UseThemeEngineVersion.
+            TE1DotXLoaderShim.GetAttributes()
 
 
     End Sub
