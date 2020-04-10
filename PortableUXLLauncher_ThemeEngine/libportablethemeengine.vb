@@ -41,10 +41,16 @@ Public Class themeenginemain
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         If isFilename = True AndAlso File.Exists(themeInput) Then
+            ' If the theme input is a filename and the path exists,
+            ' load it into the theme sheet.
             ThemeProperties.themeSheet.Load(themeInput)
         ElseIf isFilename = True AndAlso Not File.Exists(themeInput) Then
+            ' If the theme input is a filename and doesn't exist,
+            ' load the default theme.
             ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
         ElseIf isFilename = False Then
+            ' If it's not a filename, assume it's a resource and load it
+            ' into the theme sheet directly.
             ThemeProperties.themeSheet.LoadXml(themeInput)
         End If
 
