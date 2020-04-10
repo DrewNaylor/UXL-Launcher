@@ -98,8 +98,10 @@ Public Class TE2DotXLoader
 
     Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True) As Color
         If TERuntimeIs2DotX = True Then
+            ' If the theme wants to use TE 2.x, load the color from an attribute.
             Return ColorTranslator.FromHtml(GetAttribute("Theme_Colors/" & ControlName, ControlProperty, DefaultValue))
         Else
+            ' Otherwise, assume the theme wants to load from a node's InnerText.
             Return ColorTranslator.FromHtml(GetInnerText("Theme_Colors/" & ControlName & "/" & ControlProperty, DefaultValue))
         End If
     End Function
