@@ -500,6 +500,46 @@ Public Class ThemeProperties
             _useTableLayoutPanelColorInsideAboutAppTab = value
         End Set
     End Property
+
+    ' TabPage back color.
+    Public Shared Property colorTabPageBackColor() As Color
+        Get
+            Return _colorTabPageBackColor
+        End Get
+        Set(value As Color)
+            _colorTabPageBackColor = value
+        End Set
+    End Property
+
+    ' TabPage fore color.
+    Public Shared Property colorTabPageForeColor() As Color
+        Get
+            Return _colorTabPageForeColor
+        End Get
+        Set(value As Color)
+            _colorTabPageForeColor = value
+        End Set
+    End Property
+
+    ' Textbox back color.
+    Public Shared Property colorTextboxBackColor() As Color
+        Get
+            Return _colorTextboxBackColor
+        End Get
+        Set(value As Color)
+            _colorTextboxBackColor = value
+        End Set
+    End Property
+
+    ' Textbox fore color.
+    Public Shared Property colorTextboxForeColor() As Color
+        Get
+            Return _colorTextboxForeColor
+        End Get
+        Set(value As Color)
+            _colorTextboxForeColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
