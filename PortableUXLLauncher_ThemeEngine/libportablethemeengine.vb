@@ -96,72 +96,7 @@ Public Class themeenginemain
         Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
         themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
-#Region "Define strings for controls and things in the XML document."
 
-        ' About window Banner style (Dark or Light):
-        Dim bannerStyle As Drawing.Image
-        ' Button colors:
-        Dim colorButtonBackColor As Color
-        Dim colorButtonForeColor As Color
-        Dim flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is "= Flat", the flatstyle is Flat. Standard is "FlatStyle = FlatStyle.Standard".
-        Dim flatappearanceButtonBorderColor As Color ' The border of the buttons if "FlatStyle = FlatStyle.Flat".
-        Dim flatappearanceButtonMouseOverBackColor As Color ' The color of the buttons on mouseover if "FlatStyle = FlatStyle.Flat".
-        Dim flatappearanceButtonMouseDownBackColor As Color ' The color of the buttons on mousedown if "FlatStyle = FlatStyle.Flat".
-        ' Checkbox colors:
-        Dim colorCheckBoxBackColor As Color
-        Dim colorCheckBoxForeColor As Color
-        ' Checkbox colors:
-        Dim colorDropdownBackColor As Color
-        Dim colorDropdownForeColor As Color
-        ' Groupbox colors:
-        Dim colorGroupBoxBackColor As Color
-        Dim colorGroupBoxForeColor As Color
-        ' FlowLayoutPanel colors:
-        Dim colorFlowLayoutPanelBackColor As Color
-        Dim colorFlowLayoutPanelForeColor As Color
-        ' Menubar colors:
-        Dim colorMenubarBackColor As Color
-        ' Status Bar colors:
-        Dim colorStatusBarBackColor As Color
-        ' Label colors:
-        Dim colorLabelBackColor As Color
-        Dim colorLabelForeColor As Color
-        ' LinkLabel colors:
-        Dim colorLinkLabelBackColor As Color ' used for link's background color.
-        Dim colorLinkLabelForeColor As Color ' used for non-link text.
-        Dim colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
-        Dim colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
-        ' Radio Button colors:
-        Dim colorRadioButtonBackColor As Color
-        Dim colorRadioButtonForeColor As Color
-        ' TableLayoutPanel colors:
-        Dim colorTableLayoutPanelBackColor As Color
-        Dim colorTableLayoutPanelForeColor As Color
-        ' If the theme says to use this in the About window's
-        ' About tab for the tableLayoutPanelAboutAppTab control,
-        ' apply colorTableLayoutPanelBackColor to it.
-        ' Otherwise, just use the colorTabPageBackColor
-        ' and have the table layout panel inherit it.
-        Dim useTableLayoutPanelColorInsideAboutAppTab As Boolean = False
-        ' TabPage colors:
-        Dim colorTabPageBackColor As Color
-        Dim colorTabPageForeColor As Color
-        ' Textbox colors:
-        Dim colorTextboxBackColor As Color
-        Dim colorTextboxForeColor As Color
-        ' Menubar entry colors:
-        Dim colorMenuItemBackColor As Color
-        Dim colorMenuItemForeColor As Color
-        ' Menubar item margin colors:
-        Dim colorMenuItemImageMarginGradientStartColor As Color
-        Dim colorMenuItemImageMarginGradientEndColor As Color
-        ' Statusbar label colors:
-        Dim colorStatusLabelBackColor As Color
-        Dim colorStatusLabelForeColor As Color
-        ' Other statusbar label properties
-        Dim propertyStatusLabelBorderSides As ToolStripStatusLabelBorderSides
-        Dim propertyStatusLabelBorderStyle As Border3DStyle
-#End Region
 
 #Region "Pull theme colors and other elements from XML documents."
 

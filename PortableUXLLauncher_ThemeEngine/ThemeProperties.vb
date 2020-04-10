@@ -21,6 +21,8 @@
 
 
 
+Imports System.Drawing
+Imports System.Windows.Forms
 Imports System.Xml
 
 Public Class ThemeProperties
@@ -46,6 +48,71 @@ Public Class ThemeProperties
     ' Variable to store the theme name in.
     Private Shared _themeName As String
 
+#Region "Define strings for controls and things in the XML document."
 
+    ' About window Banner style (Dark or Light):
+    Private Shared _bannerStyle As Drawing.Image
+    ' Button colors:
+    Private Shared _colorButtonBackColor As Color
+    Private Shared _colorButtonForeColor As Color
+    Private Shared _flatstyleButtonFlatStyle As FlatStyle ' If flatstyleButtonFlatStyle is "= Flat", the flatstyle is Flat. Standard is "FlatStyle = FlatStyle.Standard".
+    Private Shared _flatappearanceButtonBorderColor As Color ' The border of the buttons if "FlatStyle = FlatStyle.Flat".
+    Private Shared _flatappearanceButtonMouseOverBackColor As Color ' The color of the buttons on mouseover if "FlatStyle = FlatStyle.Flat".
+    Private Shared _flatappearanceButtonMouseDownBackColor As Color ' The color of the buttons on mousedown if "FlatStyle = FlatStyle.Flat".
+    ' Checkbox colors:
+    Private Shared _colorCheckBoxBackColor As Color
+    Private Shared _colorCheckBoxForeColor As Color
+    ' Checkbox colors:
+    Private Shared _colorDropdownBackColor As Color
+    Private Shared _colorDropdownForeColor As Color
+    ' Groupbox colors:
+    Private Shared _colorGroupBoxBackColor As Color
+    Private Shared _colorGroupBoxForeColor As Color
+    ' FlowLayoutPanel colors:
+    Private Shared _colorFlowLayoutPanelBackColor As Color
+    Private Shared _colorFlowLayoutPanelForeColor As Color
+    ' Menubar colors:
+    Private Shared _colorMenubarBackColor As Color
+    ' Status Bar colors:
+    Private Shared _colorStatusBarBackColor As Color
+    ' Label colors:
+    Private Shared _colorLabelBackColor As Color
+    Private Shared _colorLabelForeColor As Color
+    ' LinkLabel colors:
+    Private Shared _colorLinkLabelBackColor As Color ' used for link's background color.
+    Private Shared _colorLinkLabelForeColor As Color ' used for non-link text.
+    Private Shared _colorLinkLabelLinkColor As Color ' used for the link's usual color when not clicking it.
+    Private Shared _colorLinkLabelActiveLinkColor As Color ' used when clicking on a link.
+    ' Radio Button colors:
+    Private Shared _colorRadioButtonBackColor As Color
+    Private Shared _colorRadioButtonForeColor As Color
+    ' TableLayoutPanel colors:
+    Private Shared _colorTableLayoutPanelBackColor As Color
+    Private Shared _colorTableLayoutPanelForeColor As Color
+    ' If the theme says to use this in the About window's
+    ' About tab for the tableLayoutPanelAboutAppTab control,
+    ' apply colorTableLayoutPanelBackColor to it.
+    ' Otherwise, just use the colorTabPageBackColor
+    ' and have the table layout panel inherit it.
+    Private Shared _useTableLayoutPanelColorInsideAboutAppTab As Boolean = False
+    ' TabPage colors:
+    Private Shared _colorTabPageBackColor As Color
+    Private Shared _colorTabPageForeColor As Color
+    ' Textbox colors:
+    Private Shared _colorTextboxBackColor As Color
+    Private Shared _colorTextboxForeColor As Color
+    ' Menubar entry colors:
+    Private Shared _colorMenuItemBackColor As Color
+    Private Shared _colorMenuItemForeColor As Color
+    ' Menubar item margin colors:
+    Private Shared _colorMenuItemImageMarginGradientStartColor As Color
+    Private Shared _colorMenuItemImageMarginGradientEndColor As Color
+    ' Statusbar label colors:
+    Private Shared _colorStatusLabelBackColor As Color
+    Private Shared _colorStatusLabelForeColor As Color
+    ' Other statusbar label properties
+    Private Shared _propertyStatusLabelBorderSides As ToolStripStatusLabelBorderSides
+    Private Shared _propertyStatusLabelBorderStyle As Border3DStyle
+#End Region
 
 End Class
