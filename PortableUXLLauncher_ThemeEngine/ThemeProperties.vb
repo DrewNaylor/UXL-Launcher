@@ -115,4 +115,17 @@ Public Class ThemeProperties
     Private Shared _propertyStatusLabelBorderStyle As Border3DStyle
 #End Region
 
+#Region "Theme properties."
+
+    ' Theme file.
+    Public Shared Property themeSheet() As XmlDocument
+        Get
+            Return _themeSheet
+        End Get
+        Set(value As XmlDocument)
+            _themeSheet = value
+        End Set
+    End Property
+
+#End Region
 End Class
