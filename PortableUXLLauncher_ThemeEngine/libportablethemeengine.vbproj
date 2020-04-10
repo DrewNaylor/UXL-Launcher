@@ -85,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TE1DotXLoaderShim.vb" />
     <Compile Include="Themes\WindowsThemeSettings.vb" />
   </ItemGroup>
   <ItemGroup>
