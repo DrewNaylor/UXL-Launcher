@@ -326,6 +326,26 @@ Public Class ThemeProperties
             _colorDropdownForeColor = value
         End Set
     End Property
+
+    ' Groupbox back color.
+    Public Shared Property colorGroupBoxBackColor() As Color
+        Get
+            Return _colorGroupBoxBackColor
+        End Get
+        Set(value As Color)
+            _colorGroupBoxBackColor = value
+        End Set
+    End Property
+
+    ' Groupbox fore color.
+    Public Shared Property colorGroupBoxForeColor() As Color
+        Get
+            Return _colorGroupBoxForeColor
+        End Get
+        Set(value As Color)
+            _colorGroupBoxForeColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
