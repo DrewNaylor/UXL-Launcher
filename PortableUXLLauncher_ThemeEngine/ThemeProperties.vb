@@ -187,5 +187,15 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' Toolstrip pro renderer.
+    Public Shared Property toolstripProRenderer As uxlProToolstripRenderer
+        Get
+            Return _toolstripProRenderer
+        End Get
+        Set(value As uxlProToolstripRenderer)
+            _toolstripProRenderer = value
+        End Set
+    End Property
+
 #End Region
 End Class
