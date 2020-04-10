@@ -113,14 +113,19 @@ Public Class TE2DotXLoader
     End Function
 
     Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
-        ' Create a variable to store the node innertext.
-        Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
-        If NodeInnerText IsNot Nothing Then
-            ' If the node exists and is compatible with the version of the theme engine
-            ' the theme wants to use, return the innertext.
-            Return NodeInnerText
+        If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+            ' First check if the node exists.
+            ' If it does exist, create a variable to store the node innertext.
+            Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
+            If NodeInnerText IsNot Nothing Then
+                ' If the node exists and is compatible with the version of the theme engine
+                ' the theme wants to use, return the innertext.
+                Return NodeInnerText
+            Else
+                ' Otherwise, return the default value.
+                Return DefaultValue
+            End If
         Else
-            ' Otherwise, return the default value.
             Return DefaultValue
         End If
     End Function
