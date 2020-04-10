@@ -87,19 +87,27 @@ Public Class TE2DotXLoader
     End Sub
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
+        ' Create a variable to store the attribute value.
         Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName).Attributes(AttributeName).ToString
         If AttributeValue IsNot Nothing Then
+            ' If the attribute exists and is compatible with the version of the theme engine
+            ' the theme wants to use, return the attribute.
             Return AttributeValue
         Else
+            ' Otherwise, return the default value.
             Return DefaultValue
         End If
     End Function
 
     Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
+        ' Create a variable to store the node innertext.
         Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node).InnerText.ToString
         If NodeInnerText IsNot Nothing Then
+            ' If the node exists and is compatible with the version of the theme engine
+            ' the theme wants to use, return the innertext.
             Return NodeInnerText
         Else
+            ' Otherwise, return the default value.
             Return DefaultValue
         End If
     End Function
