@@ -21,6 +21,7 @@
 
 
 
+Imports System.Drawing
 Imports System.Xml
 
 Public Class TE2DotXLoader
@@ -83,6 +84,9 @@ Public Class TE2DotXLoader
     End Sub
 
     Friend Shared Sub AssignProperties()
+
+        ' Assign the Button property.
+        ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(GetAttribute("Button", "BackColor", "Transparent"))
 
     End Sub
 
