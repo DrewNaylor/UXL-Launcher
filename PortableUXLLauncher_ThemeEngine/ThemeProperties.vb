@@ -28,7 +28,18 @@ Public Class ThemeProperties
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
     ' Variable to store the theme namespace manager.
-    Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
+    ' TODO: Uncomment this next line for later use when
+    ' assigning properties.
+    'Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
+    ' Variables to store theme title, description, author, version.
+    Private Shared _themeSheetTitle As String
+    Private Shared _themeSheetDescription As String
+    Private Shared _themeSheetAuthor As String
+    Private Shared _themeSheetFileVersion As String
+    ' Version variable to store theme engine runtime version the theme
+    ' says it works with.
+    Private Shared _themeSheetEngineRuntimeVersion As Version
+
 
 
 End Class
