@@ -87,6 +87,12 @@ Public Class TE2DotXLoader
     End Sub
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
+        Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName).Attributes(AttributeName).ToString
+        If AttributeValue IsNot Nothing Then
+            Return AttributeValue
+        Else
+            Return DefaultValue
+        End If
 
     End Function
 
