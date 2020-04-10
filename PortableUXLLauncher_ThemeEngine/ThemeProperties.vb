@@ -266,6 +266,26 @@ Public Class ThemeProperties
             _flatappearanceButtonBorderColor = value
         End Set
     End Property
+
+    ' Button flatappearance mouseover back color.
+    Public Shared Property flatappearanceButtonMouseOverBackColor() As Color
+        Get
+            Return _flatappearanceButtonMouseOverBackColor
+        End Get
+        Set(value As Color)
+            _flatappearanceButtonMouseOverBackColor = value
+        End Set
+    End Property
+
+    ' Button flatappearance mousedown back color.
+    Public Shared Property flatappearanceButtonMouseDownBackColor() As Color
+        Get
+            Return _flatappearanceButtonMouseDownBackColor
+        End Get
+        Set(value As Color)
+            _flatappearanceButtonMouseDownBackColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
