@@ -117,7 +117,7 @@ Public Class ThemeProperties
 
 #Region "Theme properties."
 
-    ' Theme file.
+    ' Theme XML file.
     Public Shared Property themeSheet() As XmlDocument
         Get
             Return _themeSheet
@@ -126,6 +126,10 @@ Public Class ThemeProperties
             _themeSheet = value
         End Set
     End Property
+
+    ' Theme filename. This is used to determine what theme the calling
+    ' application wants to apply. One way it's used is to see
+    ' if the theme is located in My.Resources.
 
     ' Theme namespace manager.
     Public Shared Property themeNamespaceManager() As XmlNamespaceManager
