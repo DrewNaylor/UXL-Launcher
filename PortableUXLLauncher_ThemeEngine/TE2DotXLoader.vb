@@ -87,12 +87,12 @@ Public Class TE2DotXLoader
 
     Friend Shared Sub AssignProperties()
 
-        ' Assign the Button property.
+        ' Assign the Button backcolor property.
         ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent")
-        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
-        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", False)
-        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
+        ' Assign Button forecolor property.
+        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText")
+
 
     End Sub
 
