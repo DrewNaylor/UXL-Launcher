@@ -45,16 +45,29 @@ Public Class TE2DotXLoader
     ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
 
     Friend Shared Sub AssignProperties()
-        Dim TERuntimeVersionNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine")
-        If TERuntimeVersionNode IsNot Nothing Then
-            Dim TERuntimeVersionInThemeFile As New Version(TERuntimeVersionNode.Attributes("RuntimeVersion").ToString)
+        ' Assign variable for TE runtime version node.
+        Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine")
+        If ThemeEngineNode IsNot Nothing Then
+            ' If the theme engine node exists, check what's in the runtime
+            ' version attribute.
+
+            ' Make a variable to store the runtime version.
+            Dim TERuntimeVersionInThemeFile As New Version(ThemeEngineNode.Attributes("RuntimeVersion").ToString)
+
+            ' Make a version variable to store the theme engine version we want to compare to.
             Dim TE2xVersion As New Version("2.0")
+
+            ' Check what the theme has in the attribute against the
+            ' base version number of TE2.x.
             Select Case TERuntimeVersionInThemeFile.CompareTo(TE2xVersion)
                 Case 0 ' Theme says to use TE2.x.
+                    ' Load theme in the TE2.x loader.
                     GetAttributes()
                 Case 1 ' Theme says to use TE2.x.
+                    ' Load theme in the TE2.x loader.
                     GetAttributes()
                 Case -1 ' Theme says to use TE1.x.
+                    ' Load theme in the TE1.x loader shim.
                     TE1DotXLoaderShim.GetAttributes()
 
             End Select
@@ -62,6 +75,7 @@ Public Class TE2DotXLoader
             ' There's no runtime version node, so fall back to
             ' loading like TE1.x did with UseThemeEngineVersion.
             TE1DotXLoaderShim.GetAttributes()
+        End If
     End Sub
 
     Friend Shared Sub GetAttributes()
