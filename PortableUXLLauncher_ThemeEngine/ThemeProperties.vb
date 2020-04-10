@@ -446,6 +446,46 @@ Public Class ThemeProperties
             _colorLinkLabelActiveLinkColor = value
         End Set
     End Property
+
+    ' Radio button back color.
+    Public Shared Property colorRadioButtonBackColor() As Color
+        Get
+            Return _colorRadioButtonBackColor
+        End Get
+        Set(value As Color)
+            _colorRadioButtonBackColor = value
+        End Set
+    End Property
+
+    ' Radio button fore color.
+    Public Shared Property colorRadioButtonForeColor() As Color
+        Get
+            Return _colorRadioButtonForeColor
+        End Get
+        Set(value As Color)
+            _colorRadioButtonForeColor = value
+        End Set
+    End Property
+
+    ' TableLayoutPanel back color.
+    Public Shared Property colorTableLayoutPanelBackColor() As Color
+        Get
+            Return _colorTableLayoutPanelBackColor
+        End Get
+        Set(value As Color)
+            _colorTableLayoutPanelBackColor = value
+        End Set
+    End Property
+
+    ' TableLayoutPanel fore color.
+    Public Shared Property colorTableLayoutPanelForeColor() As Color
+        Get
+            Return _colorTableLayoutPanelForeColor
+        End Get
+        Set(value As Color)
+            _colorTableLayoutPanelForeColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
