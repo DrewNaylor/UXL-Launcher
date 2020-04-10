@@ -45,8 +45,8 @@ Public Class ThemeProperties
     ' Variable to store the toolstrip pro renderer in.
     Private Shared _toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
 
-    ' Variable to store the theme name in.
-    Private Shared _themeName As String = ""
+    ' Variable to store the theme filename in.
+    Private Shared _themeFileNameToLoad As String = ""
 
 #Region "Define strings for controls and things in the XML document."
 
@@ -130,6 +130,16 @@ Public Class ThemeProperties
     ' Theme filename. This is used to determine what theme the calling
     ' application wants to apply. One way it's used is to see
     ' if the theme is located in My.Resources.
+    ' Equivelant to the old userChosenTheme variable, so basically
+    ' it's the theme the user chose to load.
+    Public Shared Property themeFileNameToLoad() As String
+        Get
+
+        End Get
+        Set(value As String)
+
+        End Set
+    End Property
 
     ' Theme namespace manager.
     Public Shared Property themeNamespaceManager() As XmlNamespaceManager
