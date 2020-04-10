@@ -21,6 +21,8 @@
 
 
 
+Imports System.Xml
+
 Public Class TE2DotXLoader
 
     ' TODO: See TE1DotXLoaderShim.vb for a detailed TODO comment.
@@ -43,8 +45,10 @@ Public Class TE2DotXLoader
     ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
 
     Friend Shared Sub AssignProperties()
+        Dim RuntimeVersionNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcherr_Theme/ThemeEngine")
+        If RuntimeVersionNode IsNot Nothing Then
 
-
+        End If
 
     End Sub
 
