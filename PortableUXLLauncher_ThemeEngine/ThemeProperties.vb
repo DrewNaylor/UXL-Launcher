@@ -600,6 +600,26 @@ Public Class ThemeProperties
             _colorStatusLabelForeColor = value
         End Set
     End Property
+
+    ' Statusbar label border sides.
+    Public Shared Property propertyStatusLabelBorderSides() As ToolStripStatusLabelBorderSides
+        Get
+            Return _propertyStatusLabelBorderSides
+        End Get
+        Set(value As ToolStripStatusLabelBorderSides)
+            _propertyStatusLabelBorderSides = value
+        End Set
+    End Property
+
+    ' Statusbar label border 3D style.
+    Public Shared Property propertyStatusLabelBorderStyle As Border3DStyle
+        Get
+            Return _propertyStatusLabelBorderStyle
+        End Get
+        Set(value As Border3DStyle)
+            _propertyStatusLabelBorderStyle = value
+        End Set
+    End Property
 #End Region
 
 #End Region
