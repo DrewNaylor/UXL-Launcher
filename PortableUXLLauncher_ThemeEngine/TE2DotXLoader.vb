@@ -22,6 +22,7 @@
 
 
 Imports System.Drawing
+Imports System.Windows.Forms
 Imports System.Xml
 
 Public Class TE2DotXLoader
@@ -87,12 +88,13 @@ Public Class TE2DotXLoader
 
         ' Assign the Button property.
         ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(GetAttribute("Button", "BackColor", "Transparent"))
+        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
     End Sub
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
         ' Create a variable to store the attribute value.
-        Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName).Attributes(AttributeName).ToString
+        Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName).ToString
         If AttributeValue IsNot Nothing Then
             ' If the attribute exists and is compatible with the version of the theme engine
             ' the theme wants to use, return the attribute.
@@ -105,7 +107,7 @@ Public Class TE2DotXLoader
 
     Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
         ' Create a variable to store the node innertext.
-        Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node).InnerText.ToString
+        Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
         If NodeInnerText IsNot Nothing Then
             ' If the node exists and is compatible with the version of the theme engine
             ' the theme wants to use, return the innertext.
