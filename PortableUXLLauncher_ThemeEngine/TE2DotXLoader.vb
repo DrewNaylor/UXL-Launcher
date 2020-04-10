@@ -45,11 +45,23 @@ Public Class TE2DotXLoader
     ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
 
     Friend Shared Sub AssignProperties()
-        Dim RuntimeVersionNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcherr_Theme/ThemeEngine")
-        If RuntimeVersionNode IsNot Nothing Then
+        Dim TERuntimeVersionNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine")
+        If TERuntimeVersionNode IsNot Nothing Then
+            Dim TERuntimeVersionInThemeFile As New Version(TERuntimeVersionNode.Attributes("RuntimeVersion").ToString)
+            Dim TE2xVersion As New Version("2.0")
+            Select Case TERuntimeVersionInThemeFile.CompareTo(TE2xVersion)
+                Case 0 ' Theme says to use TE2.x.
 
-        End If
+                Case 1 ' Theme says to use TE2.x.
+
+                Case -1 ' Theme says to use TE1.x.
+                    TE1DotXLoaderShim.GetAttributes()
+
+            End Select
+
 
     End Sub
+
+
 
 End Class
