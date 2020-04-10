@@ -216,6 +216,26 @@ Public Class ThemeProperties
             _toolstripProRenderer = value
         End Set
     End Property
+
+    ' About window banner style for UXL Launcher.
+    Public Shared Property bannerStyle As Drawing.Image
+        Get
+            Return _bannerStyle
+        End Get
+        Set(value As Drawing.Image)
+            _bannerStyle = value
+        End Set
+    End Property
+
+    ' Button back color.
+    Public Shared Property colorButtonBackColor As Color
+        Get
+            Return _colorButtonBackColor
+        End Get
+        Set(value As Color)
+            _colorButtonBackColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
