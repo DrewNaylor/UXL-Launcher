@@ -33,23 +33,6 @@ Public Class themeenginemain
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
 #Region "Set Theme via PortableThemeEngine."
 
-    ' Make a variable that differs based on what theme is chosen.
-    Public Shared userTheme As XmlDocument = New XmlDocument()
-    ' Create strings for theme title, description, and author.
-    Public Shared themeSheetTitle As String
-    Public Shared themeSheetDescription As String
-    Public Shared themeSheetAuthor As String
-    ' This is the version number for the theme file itself. Not to
-    ' be confused with the decimal below known as themeSheetUseThemeEngineVersion.
-    Public Shared themeSheetFileVersion As String
-    ' Create string for version of Theme Engine the theme is compatible with.
-    Public Shared themeSheetUseThemeEngineVersion As Decimal
-
-    ' Create a variable for the toolstrip pro renderer.
-    Public Shared toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
-    ' Create a string to store the theme name.
-    Public Shared themeName As String = ""
-
     ' Specify whether to output debug info.
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 

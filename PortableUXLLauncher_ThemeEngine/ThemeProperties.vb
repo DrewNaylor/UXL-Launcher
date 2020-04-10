@@ -32,7 +32,7 @@ Public Class ThemeProperties
     ' Variable to store the theme namespace manager.
     ' TODO: Uncomment this next line for later use when
     ' assigning properties.
-    'Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
+    Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
     ' Variables to store theme title, description, author, version.
     Private Shared _themeSheetTitle As String
     Private Shared _themeSheetDescription As String
@@ -46,7 +46,7 @@ Public Class ThemeProperties
     Private Shared _toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
 
     ' Variable to store the theme name in.
-    Private Shared _themeName As String
+    Private Shared _themeName As String = ""
 
 #Region "Define strings for controls and things in the XML document."
 
