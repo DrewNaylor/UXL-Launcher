@@ -23,4 +23,21 @@
 
 Public Class TE2DotXLoader
 
+    ' TODO: See TE1DotXLoaderShim.vb for a detailed TODO comment.
+    ' The TE2.x theme loader will pull from attributes instead
+    ' of XmlNode.InnerText.
+
+    ' Example of how to read attributes:
+
+    'For Each characterNode As XmlNode In xmlFileToSearch.SelectSingleNode("/root/characterCodeSection")
+    '     ' Underscores are replaced with and symbols so that they match how HTML expects
+    '     ' character codes to look. The underscores are necessary for now as XML complains
+    '     ' when they're in the file, so this is a workaround.
+    '     textboxOutput.AppendText(characterNode.Attributes("name").Value.ToString & ": " & characterNode.Attributes("code").Value.Replace("_", "&") & vbCrLf)
+    'Next
+
+    ' Above code copied from HTML Character Code Acquisition Program.
+    ' Will require very different XML node stuff.
+    ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
+
 End Class
