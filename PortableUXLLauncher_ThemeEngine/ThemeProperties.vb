@@ -138,7 +138,7 @@ Public Class ThemeProperties
     End Property
 
     ' Theme title.
-    Public Property themeSheetTitle() As String
+    Public Shared Property themeSheetTitle() As String
         Get
             Return _themeSheetTitle
         End Get
@@ -148,7 +148,7 @@ Public Class ThemeProperties
     End Property
 
     ' Theme description.
-    Public Property themeSheetDescription() As String
+    Public Shared Property themeSheetDescription() As String
         Get
             Return _themeSheetDescription
         End Get
@@ -158,7 +158,7 @@ Public Class ThemeProperties
     End Property
 
     ' Theme author.
-    Public Property themeSheetAuthor() As String
+    Public Shared Property themeSheetAuthor() As String
         Get
             Return _themeSheetAuthor
         End Get
@@ -168,7 +168,7 @@ Public Class ThemeProperties
     End Property
 
     ' Theme file version.
-    Public Property themeSheetFileVersion() As String
+    Public Shared Property themeSheetFileVersion() As String
         Get
             Return _themeSheetFileVersion
         End Get
@@ -176,6 +176,9 @@ Public Class ThemeProperties
             _themeSheetFileVersion = value
         End Set
     End Property
+
+    ' Theme engine version that the theme is meant to work with.
+    Public Shared Property
 
 #End Region
 End Class
