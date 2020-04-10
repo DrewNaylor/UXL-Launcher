@@ -42,4 +42,8 @@ Public Class TE2DotXLoader
     ' Will require very different XML node stuff.
     ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
 
+    Friend Shared Sub AssignProperties()
+
+    End Sub
+
 End Class
