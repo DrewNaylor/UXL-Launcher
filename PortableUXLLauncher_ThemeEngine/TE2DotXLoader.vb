@@ -86,7 +86,7 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Function GetAttribute() As String
+    Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
 
     End Function
 
