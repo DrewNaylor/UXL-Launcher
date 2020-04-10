@@ -88,18 +88,20 @@ Public Class TE2DotXLoader
     Friend Shared Sub AssignProperties()
 
         ' Assign the Button property.
-        ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(GetAttribute("Button", "BackColor", "Transparent"))
+        ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(GetAttribute("Theme_Colors/Button", "BackColor", "Transparent"))
         MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
     End Sub
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
         ' Create a variable to store the attribute value.
-        Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName).Value.ToString
+        Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager)
+        MessageBox.Show(NodePath.Name)
+        Dim AttributeValue As String = NodePath.Attributes(AttributeName).Value
         If AttributeValue IsNot Nothing Then
             ' If the attribute exists and is compatible with the version of the theme engine
             ' the theme wants to use, return the attribute.
-            Return AttributeValue
+            Return AttributeValue.ToString
         Else
             ' Otherwise, return the default value.
             Return DefaultValue
