@@ -134,10 +134,10 @@ Public Class ThemeProperties
     ' it's the theme the user chose to load.
     Public Shared Property themeFileNameToLoad() As String
         Get
-
+            Return _themeFileNameToLoad
         End Get
         Set(value As String)
-
+            _themeFileNameToLoad = value
         End Set
     End Property
 
