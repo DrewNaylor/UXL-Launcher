@@ -137,5 +137,15 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' Theme title.
+    Public Property themeSheetTitle() As String
+        Get
+            Return _themeSheetTitle
+        End Get
+        Set(value As String)
+            _themeSheetTitle = value
+        End Set
+    End Property
+
 #End Region
 End Class
