@@ -486,6 +486,20 @@ Public Class ThemeProperties
             _colorTableLayoutPanelForeColor = value
         End Set
     End Property
+
+    ' If the theme says to use this in the About window's
+    ' About tab for the tableLayoutPanelAboutAppTab control,
+    ' apply colorTableLayoutPanelBackColor to it.
+    ' Otherwise, just use the colorTabPageBackColor
+    ' and have the table layout panel inherit it.
+    Public Shared Property useTableLayoutPanelColorInsideAboutAppTab() As Boolean
+        Get
+            Return _useTableLayoutPanelColorInsideAboutAppTab
+        End Get
+        Set(value As Boolean)
+            _useTableLayoutPanelColorInsideAboutAppTab = value
+        End Set
+    End Property
 #End Region
 
 #End Region
