@@ -95,6 +95,7 @@ Public Class TE2DotXLoader
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
         If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+            ' If the node exists, store it in a variable to make the code easier to read.
             Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager)
             If NodePath.Attributes(AttributeName) IsNot Nothing Then
                 ' If the attribute exists and is compatible with the version of the theme engine
@@ -105,6 +106,7 @@ Public Class TE2DotXLoader
                 Return DefaultValue
             End If
         Else
+            ' If the node does not exist, return the default value.
             Return DefaultValue
         End If
 
