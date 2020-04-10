@@ -580,6 +580,26 @@ Public Class ThemeProperties
             _colorMenuItemImageMarginGradientEndColor = value
         End Set
     End Property
+
+    ' Statusbar label back color.
+    Public Shared Property colorStatusLabelBackColor() As Color
+        Get
+            Return _colorStatusLabelBackColor
+        End Get
+        Set(value As Color)
+            _colorStatusLabelBackColor = value
+        End Set
+    End Property
+
+    ' Statusbar label fore color.
+    Public Shared Property colorStatusLabelForeColor() As Color
+        Get
+            Return _colorStatusLabelForeColor
+        End Get
+        Set(value As Color)
+            _colorStatusLabelForeColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
