@@ -96,7 +96,12 @@ Public Class TE2DotXLoader
     End Function
 
     Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
-
+        Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node).InnerText.ToString
+        If NodeInnerText IsNot Nothing Then
+            Return NodeInnerText
+        Else
+            Return DefaultValue
+        End If
     End Function
 
 End Class
