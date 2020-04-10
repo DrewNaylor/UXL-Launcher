@@ -91,7 +91,17 @@ Public Class TE2DotXLoader
         ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(GetAttribute("Theme_Colors/Button", "BackColor", "Transparent"))
         MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
+        ThemeProperties.colorButtonBackColor = 
+
     End Sub
+
+    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeVersion As String = "TE2.x") As Color
+        If TERuntimeVersion = "TE2.x" Then
+            Return ColorTranslator.FromHtml(GetAttribute("Theme_Colors/" & ControlName, ControlProperty, DefaultValue))
+        Else
+            Return ColorTranslator.FromHtml(GetInnerText("Theme_Colors/" & ControlName & "/" & ControlProperty, DefaultValue))
+        End If
+    End Function
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
         If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then

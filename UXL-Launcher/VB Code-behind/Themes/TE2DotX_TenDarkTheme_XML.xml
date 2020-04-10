@@ -21,7 +21,7 @@
         <BannerStyle>Dark</BannerStyle>
       </AboutWindow>
       
-      <Button BackColor="#363636" ForeColor="White" />
+      <Button BackColor="#363636" ForeColor="White">
         <!-- The button BackColor and BorderColor values were eye-balled from the
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
@@ -39,7 +39,7 @@
           <MouseDownBackColor>Silver</MouseDownBackColor>
           <MouseOverBackColor>Gray</MouseOverBackColor>
         </FlatAppearance>
-      <Button2 />
+      </Button>
 
       <CheckBox>
         <BackColor>Transparent</BackColor>
