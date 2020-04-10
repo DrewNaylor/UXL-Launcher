@@ -286,6 +286,46 @@ Public Class ThemeProperties
             _flatappearanceButtonMouseDownBackColor = value
         End Set
     End Property
+
+    ' Checkbox back color.
+    Public Shared Property colorCheckBoxBackColor() As Color
+        Get
+            Return _colorCheckBoxBackColor
+        End Get
+        Set(value As Color)
+            _colorCheckBoxBackColor = value
+        End Set
+    End Property
+
+    ' Checkbox fore color.
+    Public Shared Property colorCheckBoxForeColor() As Color
+        Get
+            Return _colorCheckBoxForeColor
+        End Get
+        Set(value As Color)
+            _colorCheckBoxForeColor = value
+        End Set
+    End Property
+
+    ' Dropdown back color.
+    Public Shared Property colorDropdownBackColor() As Color
+        Get
+            Return _colorDropdownBackColor
+        End Get
+        Set(value As Color)
+            _colorDropdownBackColor = value
+        End Set
+    End Property
+
+    ' Dropdown fore color.
+    Public Shared Property colorDropdownForeColor() As Color
+        Get
+            Return _colorDropdownForeColor
+        End Get
+        Set(value As Color)
+            _colorDropdownForeColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
