@@ -178,7 +178,14 @@ Public Class ThemeProperties
     End Property
 
     ' Theme engine version that the theme is meant to work with.
-    Public Shared Property
+    Public Shared Property themeSheetEngineRuntimeVersion As Version
+        Get
+            Return _themeSheetEngineRuntimeVersion
+        End Get
+        Set(value As Version)
+            _themeSheetEngineRuntimeVersion = value
+        End Set
+    End Property
 
 #End Region
 End Class
