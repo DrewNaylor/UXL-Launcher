@@ -147,5 +147,35 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' Theme description.
+    Public Property themeSheetDescription() As String
+        Get
+            Return _themeSheetDescription
+        End Get
+        Set(value As String)
+            _themeSheetDescription = value
+        End Set
+    End Property
+
+    ' Theme author.
+    Public Property themeSheetAuthor() As String
+        Get
+            Return _themeSheetAuthor
+        End Get
+        Set(value As String)
+            _themeSheetAuthor = value
+        End Set
+    End Property
+
+    ' Theme file version.
+    Public Property themeSheetFileVersion() As String
+        Get
+            Return _themeSheetFileVersion
+        End Get
+        Set(value As String)
+            _themeSheetFileVersion = value
+        End Set
+    End Property
+
 #End Region
 End Class
