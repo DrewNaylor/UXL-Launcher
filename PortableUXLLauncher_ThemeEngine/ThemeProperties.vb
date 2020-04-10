@@ -40,6 +40,12 @@ Public Class ThemeProperties
     ' says it works with.
     Private Shared _themeSheetEngineRuntimeVersion As Version
 
+    ' Variable to store the toolstrip pro renderer in.
+    Private Shared _toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
+
+    ' Variable to store the theme name in.
+    Private Shared _themeName As String
+
 
 
 End Class
