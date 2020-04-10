@@ -26,6 +26,8 @@ Public Class TE2DotXLoader
     ' TODO: See TE1DotXLoaderShim.vb for a detailed TODO comment.
     ' The TE2.x theme loader will pull from attributes instead
     ' of XmlNode.InnerText.
+    ' Some properties may still be pulled from XmlNode.InnerText
+    ' if it makes sense, such as <Title> and <Description>.
 
     ' Example of how to read attributes:
 
