@@ -346,6 +346,66 @@ Public Class ThemeProperties
             _colorGroupBoxForeColor = value
         End Set
     End Property
+
+    ' FlowLayoutPanel back color.
+    Public Shared Property colorFlowLayoutPanelBackColor() As Color
+        Get
+            Return _colorFlowLayoutPanelBackColor
+        End Get
+        Set(value As Color)
+            _colorFlowLayoutPanelBackColor = value
+        End Set
+    End Property
+
+    ' FlowLayoutPanel fore color.
+    Public Shared Property colorFlowLayoutPanelForeColor() As Color
+        Get
+            Return _colorFlowLayoutPanelForeColor
+        End Get
+        Set(value As Color)
+            _colorFlowLayoutPanelForeColor = value
+        End Set
+    End Property
+
+    ' Menubar back color.
+    Public Shared Property colorMenubarBackColor() As Color
+        Get
+            Return _colorMenubarBackColor
+        End Get
+        Set(value As Color)
+            _colorMenubarBackColor = value
+        End Set
+    End Property
+
+    ' Status Bar back color.
+    Public Shared Property colorStatusBarBackColor() As Color
+        Get
+            Return _colorStatusBarBackColor
+        End Get
+        Set(value As Color)
+            _colorStatusBarBackColor = value
+        End Set
+    End Property
+
+    ' Label back color.
+    Public Shared Property colorLabelBackColor() As Color
+        Get
+            Return _colorLabelBackColor
+        End Get
+        Set(value As Color)
+            _colorLabelBackColor = value
+        End Set
+    End Property
+
+    ' Label fore color.
+    Public Shared Property colorLabelForeColor() As Color
+        Get
+            Return _colorLabelForeColor
+        End Get
+        Set(value As Color)
+            _colorLabelForeColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
