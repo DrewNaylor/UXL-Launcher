@@ -194,7 +194,7 @@ Public Class ThemeProperties
     End Property
 
     ' Theme engine version that the theme is meant to work with.
-    Public Shared Property themeSheetEngineRuntimeVersion As Version
+    Public Shared Property themeSheetEngineRuntimeVersion() As Version
         Get
             Return _themeSheetEngineRuntimeVersion
         End Get
@@ -208,7 +208,7 @@ Public Class ThemeProperties
 
 #Region "Theme controls."
     ' Toolstrip pro renderer.
-    Public Shared Property toolstripProRenderer As uxlProToolstripRenderer
+    Public Shared Property toolstripProRenderer() As uxlProToolstripRenderer
         Get
             Return _toolstripProRenderer
         End Get
@@ -218,7 +218,7 @@ Public Class ThemeProperties
     End Property
 
     ' About window banner style for UXL Launcher.
-    Public Shared Property bannerStyle As Drawing.Image
+    Public Shared Property bannerStyle() As Drawing.Image
         Get
             Return _bannerStyle
         End Get
@@ -228,12 +228,42 @@ Public Class ThemeProperties
     End Property
 
     ' Button back color.
-    Public Shared Property colorButtonBackColor As Color
+    Public Shared Property colorButtonBackColor() As Color
         Get
             Return _colorButtonBackColor
         End Get
         Set(value As Color)
             _colorButtonBackColor = value
+        End Set
+    End Property
+
+    ' Button fore color.
+    Public Shared Property colorButtonForeColor() As Color
+        Get
+            Return _colorButtonForeColor
+        End Get
+        Set(value As Color)
+            _colorButtonForeColor = value
+        End Set
+    End Property
+
+    ' Button flatstyle.
+    Public Shared Property flatstyleButtonFlatStyle() As FlatStyle
+        Get
+            Return _flatstyleButtonFlatStyle
+        End Get
+        Set(value As FlatStyle)
+            _flatstyleButtonFlatStyle = value
+        End Set
+    End Property
+
+    ' Button flatappearance border color.
+    Public Shared Property flatappearanceButtonBorderColor() As Color
+        Get
+            Return _flatappearanceButtonBorderColor
+        End Get
+        Set(value As Color)
+            _flatappearanceButtonBorderColor = value
         End Set
     End Property
 #End Region
