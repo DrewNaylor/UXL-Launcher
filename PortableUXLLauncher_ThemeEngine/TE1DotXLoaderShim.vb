@@ -37,5 +37,26 @@ Public Class TE1DotXLoaderShim
     ' The determination will be made in the theme loading code, then
     ' if necessary, it'll be passed here for processing.
     ' Afterward, it'll go back to the code to change the control colors.
+    '
+    ' The following function can be used to simplify the amount of code
+    ' needed to assign the properties:
+
+    'Private Shared Function NodeReader(inputNode As String, defaultValue As String) As String
+    '    ' Get theme info and return it to the calling code.
+    '    If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+    '        Return ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", ThemeProperties.themeNamespaceManager).InnerText
+    '    Else
+    '        Return defaultValue
+    '    End If
+    'End Function
+
+    ' Above code block is copied from the theme editor since it's
+    ' rather useful there.
+
+    ' Example of how to use:
+
+    'ThemeProperties.themecontrolButtonBackColor = NodeReader("Theme_Colors/Button/BackColor", "Transparent")
+
+    ' Modification will likely be required.
 
 End Class
