@@ -93,6 +93,9 @@ Public Class TE2DotXLoader
         Else
             Return DefaultValue
         End If
+    End Function
+
+    Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
 
     End Function
 
