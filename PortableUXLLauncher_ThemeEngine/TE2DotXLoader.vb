@@ -44,7 +44,7 @@ Public Class TE2DotXLoader
     ' Will require very different XML node stuff.
     ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
 
-    Friend Shared Sub CheckEngineRuntimeVersionCompatibility(Optional ThemeFile As String = ThemeProperties.themeFileNameToLoad)
+    Friend Shared Sub CheckEngineRuntimeVersionCompatibility()
 
         ' Assign variable for TE runtime version node.
         Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine")
