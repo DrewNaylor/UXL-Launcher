@@ -10,7 +10,7 @@
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
   <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
-  <ThemeEngine RuntimeVersion="2.0">
+  <ThemeEngine RuntimeVersion="2.0" />
   
     <Theme_Colors>
 
@@ -25,6 +25,7 @@
         <!-- The button BackColor and BorderColor values were eye-balled from the
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
+		
         <BackColor>#363636</BackColor>
         <ForeColor>White</ForeColor>
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set

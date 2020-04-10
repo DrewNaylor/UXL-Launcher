@@ -56,10 +56,11 @@ Public Class TE2DotXLoader
             ' version attribute.
 
             ' Make a variable to store the runtime version.
-            Dim TERuntimeVersionInThemeFile As New Version(ThemeEngineNode.Attributes("RuntimeVersion").ToString)
+            MessageBox.Show(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString)
+            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString)
 
             ' Make a version variable to store the theme engine version we want to compare to.
-            Dim TE2xVersion As New Version("2.0")
+            Dim TE2xVersion As Version = Version.Parse("2.0")
 
             ' Check what the theme has in the attribute against the
             ' base version number of TE2.x.
@@ -94,7 +95,7 @@ Public Class TE2DotXLoader
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
         ' Create a variable to store the attribute value.
-        Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName).ToString
+        Dim AttributeValue As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName).Value.ToString
         If AttributeValue IsNot Nothing Then
             ' If the attribute exists and is compatible with the version of the theme engine
             ' the theme wants to use, return the attribute.
