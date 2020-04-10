@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class aaformThemeLoader
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -52,15 +52,15 @@ Partial Class Form1
         Me.buttonLoadTheme.Text = "Load theme"
         Me.buttonLoadTheme.UseVisualStyleBackColor = True
         '
-        'Form1
+        'aaformThemeLoader
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(424, 96)
         Me.Controls.Add(Me.buttonLoadTheme)
         Me.Controls.Add(Me.labelPathDescription)
         Me.Controls.Add(Me.textboxThemePath)
-        Me.Name = "Form1"
+        Me.Name = "aaformThemeLoader"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
