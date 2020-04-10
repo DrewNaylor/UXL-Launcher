@@ -29,26 +29,28 @@ Public Class ThemeProperties
 
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
+
     ' Variable to store the theme namespace manager.
-    ' TODO: Uncomment this next line for later use when
-    ' assigning properties.
     Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
+
     ' Variables to store theme title, description, author, version.
     Private Shared _themeSheetTitle As String
     Private Shared _themeSheetDescription As String
     Private Shared _themeSheetAuthor As String
     Private Shared _themeSheetFileVersion As String
+
     ' Version variable to store theme engine runtime version the theme
     ' says it works with.
     Private Shared _themeSheetEngineRuntimeVersion As Version
 
-    ' Variable to store the toolstrip pro renderer in.
-    Private Shared _toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
 
     ' Variable to store the theme filename in.
     Private Shared _themeFileNameToLoad As String = ""
 
 #Region "Define strings for controls and things in the XML document."
+
+    ' Variable to store the toolstrip pro renderer in.
+    Private Shared _toolstripProRenderer As uxlProToolstripRenderer = New uxlProToolstripRenderer
 
     ' About window Banner style (Dark or Light):
     Private Shared _bannerStyle As Drawing.Image
@@ -116,7 +118,7 @@ Public Class ThemeProperties
 #End Region
 
 #Region "Theme properties."
-
+#Region "Theme info."
     ' Theme XML file.
     Public Shared Property themeSheet() As XmlDocument
         Get
@@ -201,6 +203,10 @@ Public Class ThemeProperties
         End Set
     End Property
 
+
+#End Region
+
+#Region "Theme controls."
     ' Toolstrip pro renderer.
     Public Shared Property toolstripProRenderer As uxlProToolstripRenderer
         Get
@@ -210,6 +216,7 @@ Public Class ThemeProperties
             _toolstripProRenderer = value
         End Set
     End Property
+#End Region
 
 #End Region
 End Class
