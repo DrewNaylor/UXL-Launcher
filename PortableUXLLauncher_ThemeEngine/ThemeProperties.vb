@@ -406,6 +406,46 @@ Public Class ThemeProperties
             _colorLabelForeColor = value
         End Set
     End Property
+
+    ' LinkLabel back color.
+    Public Shared Property colorLinkLabelBackColor() As Color
+        Get
+            Return _colorLinkLabelBackColor
+        End Get
+        Set(value As Color)
+            _colorLinkLabelBackColor = value
+        End Set
+    End Property
+
+    ' LinkLabel fore color.
+    Public Shared Property colorLinkLabelForeColor() As Color
+        Get
+            Return _colorLinkLabelForeColor
+        End Get
+        Set(value As Color)
+            _colorLinkLabelForeColor = value
+        End Set
+    End Property
+
+    ' LinkLabel link color.
+    Public Shared Property colorLinkLabelLinkColor() As Color
+        Get
+            Return _colorLinkLabelLinkColor
+        End Get
+        Set(value As Color)
+            _colorLinkLabelLinkColor = value
+        End Set
+    End Property
+
+    ' LinkLabel active link color.
+    Public Shared Property colorLinkLabelActiveLinkColor() As Color
+        Get
+            Return _colorLinkLabelActiveLinkColor
+        End Get
+        Set(value As Color)
+            _colorLinkLabelActiveLinkColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
