@@ -12,6 +12,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "libportablethemeengine", "P
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "theme-editor", "theme-editor\theme-editor.vbproj", "{BCDF1BEC-3766-4D58-A62F-04FEAC5C9854}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PortableThemeEngineDebugger", "PortableThemeEngineDebugger\PortableThemeEngineDebugger.vbproj", "{C63C5582-81AA-46F0-BA4F-D9A808B7E9F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{BCDF1BEC-3766-4D58-A62F-04FEAC5C9854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCDF1BEC-3766-4D58-A62F-04FEAC5C9854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCDF1BEC-3766-4D58-A62F-04FEAC5C9854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63C5582-81AA-46F0-BA4F-D9A808B7E9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63C5582-81AA-46F0-BA4F-D9A808B7E9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63C5582-81AA-46F0-BA4F-D9A808B7E9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63C5582-81AA-46F0-BA4F-D9A808B7E9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
