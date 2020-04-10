@@ -105,6 +105,9 @@ Public Class TE2DotXLoader
     End Function
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
+        ' TODO: Check to make sure the requested attribute is supported in
+        ' the version of the theme engine the theme is requesting to use.
+        ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
         If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' If the node exists, store it in a variable to make the code easier to read.
             Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager)
@@ -124,6 +127,9 @@ Public Class TE2DotXLoader
     End Function
 
     Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
+        ' TODO: Check to make sure the requested node innertext is supported in
+        ' the version of the theme engine the theme is requesting to use.
+        ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
         If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & Node, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' First check if the node exists.
             ' If it does exist, create a variable to store the node innertext.
