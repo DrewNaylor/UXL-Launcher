@@ -127,5 +127,15 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' Theme namespace manager.
+    Public Shared Property themeNamespaceManager() As XmlNamespaceManager
+        Get
+            Return _themeNamespaceManager
+        End Get
+        Set(value As XmlNamespaceManager)
+            _themeNamespaceManager = value
+        End Set
+    End Property
+
 #End Region
 End Class
