@@ -88,15 +88,16 @@ Public Class TE2DotXLoader
     Friend Shared Sub AssignProperties()
 
         ' Assign the Button property.
-        ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(GetAttribute("Theme_Colors/Button", "BackColor", "Transparent"))
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent")
         MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
-        ThemeProperties.colorButtonBackColor = 
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", False)
+        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
     End Sub
 
-    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeVersion As String = "TE2.x") As Color
-        If TERuntimeVersion = "TE2.x" Then
+    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True) As Color
+        If TERuntimeIs2DotX = True Then
             Return ColorTranslator.FromHtml(GetAttribute("Theme_Colors/" & ControlName, ControlProperty, DefaultValue))
         Else
             Return ColorTranslator.FromHtml(GetInnerText("Theme_Colors/" & ControlName & "/" & ControlProperty, DefaultValue))
