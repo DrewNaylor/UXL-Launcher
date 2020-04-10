@@ -21,6 +21,14 @@
 
 
 
+Imports System.Xml
+
 Public Class ThemeProperties
+
+    ' Define a variable to store the theme sheet.
+    Private Shared _themeSheet As XmlDocument = New XmlDocument()
+    ' Variable to store the theme namespace manager.
+    Private Shared _themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
+
 
 End Class
