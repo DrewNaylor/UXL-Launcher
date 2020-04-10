@@ -94,14 +94,20 @@ Public Class TE2DotXLoader
     End Sub
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
-        If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName) IsNot Nothing Then
-            ' If the attribute exists and is compatible with the version of the theme engine
-            ' the theme wants to use, return the attribute.
-            Return ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager).Attributes(AttributeName).Value
+        If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+            Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & NodeName, ThemeProperties.themeNamespaceManager)
+            If NodePath.Attributes(AttributeName) IsNot Nothing Then
+                ' If the attribute exists and is compatible with the version of the theme engine
+                ' the theme wants to use, return the attribute.
+                Return NodePath.Attributes(AttributeName).Value
+            Else
+                ' Otherwise, return the default value.
+                Return DefaultValue
+            End If
         Else
-            ' Otherwise, return the default value.
             Return DefaultValue
         End If
+
     End Function
 
     Friend Shared Function GetInnerText(Node As String, DefaultValue As String) As String
