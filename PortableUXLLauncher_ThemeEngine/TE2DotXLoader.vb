@@ -64,9 +64,11 @@ Public Class TE2DotXLoader
             Select Case TERuntimeVersionInThemeFile.CompareTo(TE2xVersion)
                 Case 0 ' Theme says to use TE2.x.
                     ' Load theme in the TE2.x loader.
+                    ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
                     AssignProperties()
                 Case 1 ' Theme says to use TE2.x.
                     ' Load theme in the TE2.x loader.
+                    ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
                     AssignProperties()
                 Case -1 ' Theme says to use TE1.x.
                     ' Load theme in the TE1.x loader shim.
