@@ -540,6 +540,46 @@ Public Class ThemeProperties
             _colorTextboxForeColor = value
         End Set
     End Property
+
+    ' Menubar entry back color.
+    Public Shared Property colorMenuItemBackColor() As Color
+        Get
+            Return _colorMenuItemBackColor
+        End Get
+        Set(value As Color)
+            _colorMenuItemBackColor = value
+        End Set
+    End Property
+
+    ' Menubar entry fore color.
+    Public Shared Property colorMenuItemForeColor() As Color
+        Get
+            Return _colorMenuItemForeColor
+        End Get
+        Set(value As Color)
+            _colorMenuItemForeColor = value
+        End Set
+    End Property
+
+    ' Menubar item margin gradient start color.
+    Public Shared Property colorMenuItemImageMarginGradientStartColor() As Color
+        Get
+            Return _colorMenuItemImageMarginGradientStartColor
+        End Get
+        Set(value As Color)
+            _colorMenuItemImageMarginGradientStartColor = value
+        End Set
+    End Property
+
+    ' Menubar item margin gradient end color.
+    Public Shared Property colorMenuItemImageMarginGradientEndColor() As Color
+        Get
+            Return _colorMenuItemImageMarginGradientEndColor
+        End Get
+        Set(value As Color)
+            _colorMenuItemImageMarginGradientEndColor = value
+        End Set
+    End Property
 #End Region
 
 #End Region
