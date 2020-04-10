@@ -22,6 +22,9 @@
 
 
 Public Class TE1DotXLoaderShim
+    Friend Shared Sub AssignProperties()
+        Throw New NotImplementedException()
+    End Sub
 
     ' TODO: This file will load in TE1.x themes by assigning
     ' properties in ThemeProperties to XmlNode.InnerText values, just
