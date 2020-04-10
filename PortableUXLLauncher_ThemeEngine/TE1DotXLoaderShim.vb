@@ -31,7 +31,7 @@ Public Class TE1DotXLoaderShim
     ' have an attribute saying what theme engine runtime version it's for.
     '
     ' Example: <UseThemeEngineVersion>1.03</UseThemeEngineVersion> in TE1.x
-    ' or <ThemeEngine runtimeVersion="2.0"> in TE2.x themes; themes lacking
+    ' or <ThemeEngine RuntimeVersion="2.0"> in TE2.x themes; themes lacking
     ' the TE2.x-style attribute will be assumed to be TE1.x.
     '
     ' The determination will be made in the theme loading code, then
