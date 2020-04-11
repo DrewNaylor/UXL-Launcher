@@ -165,12 +165,9 @@ Public Class TE2DotXLoader
 
                 End Select
             Else
-                ' If it doesn't match, return true anyway.
-                Return True
+                ' If it doesn't match, go to the next node and try again.
+                FeatureNode = FeatureNode.NextSibling
             End If
-
-            ' Go to the next feature node.
-            FeatureNode = FeatureNode.NextSibling
         Next
     End Function
 
