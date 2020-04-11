@@ -153,6 +153,11 @@ Public Class TE2DotXLoader
         NamespaceManager.AddNamespace("vercompat", "https://drewnaylor.github.io/xml")
 
         VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
+
+        For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList/Feature")
+            Select Case 
+
+        Next
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
