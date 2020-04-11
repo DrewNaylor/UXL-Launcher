@@ -149,9 +149,15 @@ Public Class TE2DotXLoader
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
             'MessageBox.Show(ColorFromTheme)
             If IsColorValid(ColorFromTheme) Then
-                ' If the color is a valid HTML or system color,
-                ' return the color.
-                MessageBox.Show(ColorFromTheme)
+            ' If the color is a valid HTML or system color,
+            ' return the color.
+            ' One situation where this could be confusing is
+            ' if the theme has something like #3 instead of
+            ' #363636. In this case, a color with alpha
+            ' transparency will be returned, and it might be
+            ' confusing. May be a good idea to make sure it has
+            ' a length of 3 numbers or 6 numbers.
+            MessageBox.Show(ColorFromTheme)
                 Return ColorTranslator.FromHtml(ColorFromTheme)
             ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
                 ' If it's not valid and the default value is Nothing, return Nothing.

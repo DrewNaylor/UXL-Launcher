@@ -21,6 +21,8 @@
 
         Catch ex As System.ArgumentException
         End Try
+
+        MessageBox.Show(StatusStrip1.BackColor.ToString)
     End Sub
 
     Private Sub buttonResetColor_Click(sender As Object, e As EventArgs) Handles buttonResetColor.Click
