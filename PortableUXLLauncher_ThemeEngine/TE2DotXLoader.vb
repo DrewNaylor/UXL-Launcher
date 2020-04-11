@@ -184,6 +184,9 @@ Public Class TE2DotXLoader
 
                         Case Else
                             If FeatureNode.ParentNode.LastChild IsNot Nothing Then
+                                MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
+                                                "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
+                                                "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
                                 FeatureNode = FeatureNode.NextSibling
                             Else
                                 Return True
@@ -195,7 +198,14 @@ Public Class TE2DotXLoader
                     '        FeatureNode = FeatureNode.NextSibling
                     'End If
                 Case XmlNodeType.Comment
-                    FeatureNode = FeatureNode.NextSibling
+                    If FeatureNode.ParentNode.NextSibling IsNot Nothing Then
+                        MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
+                                        "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
+                                        "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
+                        FeatureNode = FeatureNode.NextSibling
+                    Else
+                        Return True
+                    End If
                 Case Else
                     Return True
             End Select
