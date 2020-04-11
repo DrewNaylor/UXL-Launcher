@@ -214,7 +214,7 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Private Shared Function GetDefaultValueVersionVariant(PropertyToCheck As String) As String
+    Private Shared Function GetDefaultValueVersionVariant(NodeName As String, PropertyToCheck As String) As String
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
@@ -228,8 +228,8 @@ Public Class TE2DotXLoader
         For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
             MessageBox.Show("feature node: " & DefaultNode.Name & vbCrLf &
                             "property to check: " & PropertyToCheck & vbCrLf &
-                            "property value: " & DefaultNode.Attributes("Property").Value)
-            If PropertyToCheck = DefaultNode.Attributes("Property").Value Then
+                            "property value: " & DefaultNode.Attributes("PropertyName").Value)
+            If PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
                 Dim ver As Version = Version.Parse(DefaultNode.Attributes("VersionIntroduced").Value)
                 MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
                                 "feature added in version " & ver.ToString)
