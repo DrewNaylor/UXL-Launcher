@@ -146,6 +146,13 @@ Public Class TE2DotXLoader
                 Return Version.Parse("1.03")
 
         End Select
+
+        Dim VersionCompatibilityListSheet As XmlDocument = New XmlDocument()
+        Dim NamespaceManager As New XmlNamespaceManager(VersionCompatibilityListSheet.NameTable)
+
+        NamespaceManager.AddNamespace("vercompat", "https://drewnaylor.github.io/xml")
+
+        VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
