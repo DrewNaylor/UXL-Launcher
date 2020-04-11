@@ -116,10 +116,15 @@ Public Class TE2DotXLoader
         End Select
 
         ' Assign Button FlatAppearance BorderColor.
-        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", LoadFromAttribute)
+        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
+
+        ' Set Button FlatAppearance MouseDown color.
+        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
 
         ' Set Button FlatAppearance MouseOver color.
-        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", LoadFromAttribute)
+        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
+
+
 
 
 
