@@ -75,7 +75,9 @@ Public Class TE2DotXLoader
                     AssignControlProperties()
                 Case -1 ' Theme says to use TE1.x.
                     ' Load theme in the TE1.x loader shim.
-                    TE1DotXLoaderShim.AssignProperties()
+                    'TE1DotXLoaderShim.AssignProperties()
+                    ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
+                    AssignControlProperties()
 
             End Select
         Else
@@ -116,7 +118,7 @@ Public Class TE2DotXLoader
         End Select
 
         ' Get default statusbar backcolor.
-        MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString)
+        'MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString)
 
 
         ' Assign Button FlatAppearance BorderColor.
@@ -177,6 +179,8 @@ Public Class TE2DotXLoader
                     FeatureNode = FeatureNode.NextSibling
                 End If
             Else
+                ' Version checking is broken at the moment, so it needs to be fixed.
+                ' It's just skipping down to here even for the FlatApearance/BorderColor property.
                 Return True
             End If
         Next
@@ -322,6 +326,8 @@ Public Class TE2DotXLoader
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         ' Make sure the theme supports this feature.
+        MessageBox.Show("DesiredNode: " & DesiredNode & vbCrLf &
+                        "NodeAttribute: " & NodeAttribute)
         If ThemeSupportsFeature(DesiredNode, NodeAttribute) = True Then
 
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
