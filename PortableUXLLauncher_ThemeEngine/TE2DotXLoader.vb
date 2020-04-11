@@ -115,12 +115,14 @@ Public Class TE2DotXLoader
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
         End Select
 
-        If 
-        ' Assign Button FlatAppearance BorderColor.
-            ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
 
-            ' Set Button FlatAppearance MouseDown color.
-            ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
+        ' Assign Button FlatAppearance BorderColor.
+        ' Make sure the theme supports it.
+        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
+        MessageBox.Show(ThemeProperties.flatappearanceButtonBorderColor.ToString)
+
+        ' Set Button FlatAppearance MouseDown color.
+        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
 
             ' Set Button FlatAppearance MouseOver color.
             ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
@@ -131,7 +133,7 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Function CheckEngineVersionRuntimeFeatureAvailability(PropertyToCheck As String) As Boolean
+    Private Shared Function ThemeSupportsFeature(PropertyToCheck As String) As Boolean
         ' See if a particular feature is supported in a
         ' version of the theme engine.
         ' If the version the file is using
@@ -146,7 +148,7 @@ Public Class TE2DotXLoader
         VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
 
         For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList/Feature")
-            If FeatureNode.Attributes("Name").Value = PropertyToCheck Then
+            If FeatureNode.Attributes("Property").Value = PropertyToCheck Then
                 Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
                 Select Case ver.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
                     Case 0 ' Theme works with the same version the feature was introduced in.
@@ -157,6 +159,9 @@ Public Class TE2DotXLoader
                         Return False
 
                 End Select
+            Else
+                ' If it doesn't match, return true anyway.
+                Return True
             End If
 
             ' Go to the next feature node.
@@ -265,23 +270,30 @@ Public Class TE2DotXLoader
         ' Define a root prefix to start looking in.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
-        If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
-            ' If the theme wants to load the property from an attribute, do so.
-            ' This is typically the case with themes that support TE2.x,
-            ' although there are some situations where we don't want to load stuff
-            ' from an attribute, such as for the description.
-            Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute, DefaultValue)
-        ElseIf LoadFromAttribute = False AndAlso UseThemeColorPrefix = True Then
-            ' Assume that the theme doesn't want to load a property from an attribute,
-            ' but that the property we want to get is in the theme colors section.
-            ' This is often the case for things like the Button FlatAppearance section.
-            Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, DefaultValue)
+        If ThemeSupportsFeature(NodeAttribute) = True Then
+
+            If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
+                ' If the theme wants to load the property from an attribute, do so.
+                ' This is typically the case with themes that support TE2.x,
+                ' although there are some situations where we don't want to load stuff
+                ' from an attribute, such as for the description.
+                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute, DefaultValue)
+            ElseIf LoadFromAttribute = False AndAlso UseThemeColorPrefix = True Then
+                ' Assume that the theme doesn't want to load a property from an attribute,
+                ' but that the property we want to get is in the theme colors section.
+                ' This is often the case for things like the Button FlatAppearance section.
+                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, DefaultValue)
+            Else
+                ' Otherwise, assume the theme wants to load properties from a node's InnerText.
+                ' It's assumed that this isn't in the theme colors section.
+                ' This would be used in cases where we're trying
+                ' to get theme information like the title or description.
+                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, DefaultValue)
+            End If
+
         Else
-            ' Otherwise, assume the theme wants to load properties from a node's InnerText.
-            ' It's assumed that this isn't in the theme colors section.
-            ' This would be used in cases where we're trying
-            ' to get theme information like the title or description.
-            Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, DefaultValue)
+
+            Return DefaultValue
         End If
     End Function
 

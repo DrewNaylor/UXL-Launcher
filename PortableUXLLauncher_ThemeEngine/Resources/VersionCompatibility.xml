@@ -1,3 +1,3 @@
 <FeatureList>
-	<Feature Name="FlatAppearance/BorderColor" VersionIntroduced="1.03" />
+	<Feature For="Button" Property="FlatAppearance/BorderColor" VersionIntroduced="1.03" />
 </FeatureList>
