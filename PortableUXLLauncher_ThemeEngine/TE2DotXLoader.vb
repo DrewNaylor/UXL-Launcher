@@ -108,10 +108,24 @@ Public Class TE2DotXLoader
         MessageBox.Show(ThemeProperties.flatstyleButtonFlatStyle.ToString)
 
         ' Description.
-        ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", "", False, False)
+
         MessageBox.Show(ThemeProperties.themeSheetDescription)
 
 
+    End Sub
+
+    Friend Shared Sub AssignThemeInfoProperties()
+        ' Grab theme title.
+        ThemeProperties.themeSheetTitle = GetPropertySafe("Title", "", "(No title specified)", False, False)
+
+        ' Grab theme description.
+        ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", "(No description specified)", False, False)
+
+        ' Grab theme author.
+        ThemeProperties.themeSheetAuthor = GetPropertySafe("Author", "", "(No author specified)", False, False)
+
+        ' Grab theme file version.
+        ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", "(No version specified)", False, False)
     End Sub
 
     Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True) As Color
