@@ -234,5 +234,14 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;Feature Name=&quot;&quot; VersionIntroduced=&quot;1.03&quot;&gt;.
+        '''</summary>
+        Friend ReadOnly Property VersionCompatibility() As String
+            Get
+                Return ResourceManager.GetString("VersionCompatibility", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
