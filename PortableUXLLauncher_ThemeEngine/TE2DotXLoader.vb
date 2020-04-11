@@ -140,16 +140,13 @@ Public Class TE2DotXLoader
     End Sub
 
     Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = False) As Color
+        ' Grab the color for the control from the theme.
+        ' Make sure it's a valid color first.
+        ' Based off this SO answer:
+        ' https://stackoverflow.com/a/40681176
 
-        If LoadFromAttribute = True Then
-            ' If the theme wants to load the color from an attribute, do so.
-            ' This is typically used for themes that support TE2.x.
-            ' Make sure it's a valid color first.
-            ' Based off this SO answer:
-            ' https://stackoverflow.com/a/40681176
-
-            ' Put the theme's color value into a variable for easy access.
-            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
+        ' Put the theme's color value into a variable for easy access.
+        Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
             'MessageBox.Show(ColorFromTheme)
             If IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color,
@@ -163,28 +160,10 @@ Public Class TE2DotXLoader
                 ' Otherwise just return the default value.
                 Return ColorTranslator.FromHtml(DefaultValue)
             End If
-        Else
-            ' Otherwise, assume the theme wants to load from a node's InnerText.
-
-            ' Put the theme's color value into a variable for easy access.
-            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
-            'MessageBox.Show(ColorFromTheme)
-            If IsColorValid(ColorFromTheme) Then
-                ' If the color is a valid HTML or system color,
-                ' return the color.
-                Return ColorTranslator.FromHtml(ColorFromTheme)
-            ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
-                ' If it's not valid and the default value is Nothing, return Nothing.
-                Return Nothing
-            Else
-                ' Otherwise just return the default value.
-                Return ColorTranslator.FromHtml(DefaultValue)
-            End If
-        End If
     End Function
 
     Private Shared Function IsColorValid(InputColor As String) As Boolean
-        ' Color validator.
+        ' Color validator used in GetThemeColor().
         ' Based off this SO answer:
         ' https://stackoverflow.com/a/40681176
 
