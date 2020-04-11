@@ -85,7 +85,7 @@ Public Class TE2DotXLoader
         End If
     End Sub
 
-    Friend Shared Sub AssignControlProperties(Optional LoadFromAttribute As Boolean = False)
+    Friend Shared Sub AssignControlProperties(Optional LoadFromAttribute As Boolean = True)
         ' This part goes through the theme file and
         ' assigns stuff to each of the properties.
         ' "LoadFromAttributes" is used to determine
@@ -150,10 +150,11 @@ Public Class TE2DotXLoader
 
             ' Put the theme's color value into a variable for easy access.
             Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
-            MessageBox.Show(ColorFromTheme)
+            'MessageBox.Show(ColorFromTheme)
             If IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color,
                 ' return the color.
+                MessageBox.Show(ColorFromTheme)
                 Return ColorTranslator.FromHtml(ColorFromTheme)
             ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
                 ' If it's not valid and the default value is Nothing, return Nothing.
@@ -167,7 +168,7 @@ Public Class TE2DotXLoader
 
             ' Put the theme's color value into a variable for easy access.
             Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
-            MessageBox.Show(ColorFromTheme)
+            'MessageBox.Show(ColorFromTheme)
             If IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color,
                 ' return the color.
@@ -189,14 +190,14 @@ Public Class TE2DotXLoader
 
         ' Regex pattern.
         Dim Pattern As String = "^#[0-9A-F]{1," & InputColor.Length & "}$"
-        MessageBox.Show(Pattern)
+        'MessageBox.Show(Pattern)
         ' Make a new regex with a pattern.
         Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
-        If RegexWithPattern.IsMatch(InputColor) Then
+        If InputColor.StartsWith("#") AndAlso RegexWithPattern.IsMatch(InputColor) = True Then
             ' If the input color is a valid HTML color,
             ' return True.
             Return True
-        ElseIf Not RegexWithPattern.IsMatch(InputColor) Then
+        ElseIf Not InputColor.StartsWith("#") Then
             ' If it's not a valid HTML color,
             ' look through the known colors.
             For Each systemcolor As KnownColor In [Enum].GetValues(GetType(KnownColor))

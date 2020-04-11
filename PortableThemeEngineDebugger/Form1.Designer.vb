@@ -25,6 +25,10 @@ Partial Class aaformThemeLoader
         Me.textboxThemePath = New System.Windows.Forms.TextBox()
         Me.labelPathDescription = New System.Windows.Forms.Label()
         Me.buttonLoadTheme = New System.Windows.Forms.Button()
+        Me.labelColorTester = New System.Windows.Forms.Label()
+        Me.textboxColorTester = New System.Windows.Forms.TextBox()
+        Me.buttonSetColor = New System.Windows.Forms.Button()
+        Me.buttonResetColor = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'textboxThemePath
@@ -54,11 +58,49 @@ Partial Class aaformThemeLoader
         Me.buttonLoadTheme.Text = "Load theme"
         Me.buttonLoadTheme.UseVisualStyleBackColor = True
         '
+        'labelColorTester
+        '
+        Me.labelColorTester.AutoSize = True
+        Me.labelColorTester.Location = New System.Drawing.Point(12, 92)
+        Me.labelColorTester.Name = "labelColorTester"
+        Me.labelColorTester.Size = New System.Drawing.Size(85, 17)
+        Me.labelColorTester.TabIndex = 3
+        Me.labelColorTester.Text = "Color tester:"
+        '
+        'textboxColorTester
+        '
+        Me.textboxColorTester.Location = New System.Drawing.Point(12, 113)
+        Me.textboxColorTester.Name = "textboxColorTester"
+        Me.textboxColorTester.Size = New System.Drawing.Size(400, 22)
+        Me.textboxColorTester.TabIndex = 4
+        '
+        'buttonSetColor
+        '
+        Me.buttonSetColor.Location = New System.Drawing.Point(12, 142)
+        Me.buttonSetColor.Name = "buttonSetColor"
+        Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
+        Me.buttonSetColor.TabIndex = 5
+        Me.buttonSetColor.Text = "Set button color"
+        Me.buttonSetColor.UseVisualStyleBackColor = True
+        '
+        'buttonResetColor
+        '
+        Me.buttonResetColor.Location = New System.Drawing.Point(157, 142)
+        Me.buttonResetColor.Name = "buttonResetColor"
+        Me.buttonResetColor.Size = New System.Drawing.Size(108, 30)
+        Me.buttonResetColor.TabIndex = 6
+        Me.buttonResetColor.Text = "Reset color"
+        Me.buttonResetColor.UseVisualStyleBackColor = True
+        '
         'aaformThemeLoader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(424, 96)
+        Me.ClientSize = New System.Drawing.Size(424, 184)
+        Me.Controls.Add(Me.buttonResetColor)
+        Me.Controls.Add(Me.buttonSetColor)
+        Me.Controls.Add(Me.textboxColorTester)
+        Me.Controls.Add(Me.labelColorTester)
         Me.Controls.Add(Me.buttonLoadTheme)
         Me.Controls.Add(Me.labelPathDescription)
         Me.Controls.Add(Me.textboxThemePath)
@@ -72,4 +114,8 @@ Partial Class aaformThemeLoader
     Friend WithEvents textboxThemePath As TextBox
     Friend WithEvents labelPathDescription As Label
     Friend WithEvents buttonLoadTheme As Button
+    Friend WithEvents labelColorTester As Label
+    Friend WithEvents textboxColorTester As TextBox
+    Friend WithEvents buttonSetColor As Button
+    Friend WithEvents buttonResetColor As Button
 End Class
