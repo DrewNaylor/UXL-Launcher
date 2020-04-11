@@ -114,6 +114,7 @@
     <EmbeddedResource Include="Resources\VersionCompatibility.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Resources\DefaultValuesVersionDiff.txt" />
     <Content Include="Themes\DefaultTheme_XML.xml" />
     <Content Include="Themes\Eyesore2Theme_XML.xml" />
     <Content Include="Themes\EyesoreTheme_XML.xml" />
