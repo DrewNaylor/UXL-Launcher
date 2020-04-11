@@ -218,19 +218,19 @@ Public Class TE2DotXLoader
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
-        Dim VersionCompatibilityListSheet As XmlDocument = New XmlDocument()
-        Dim NamespaceManager As New XmlNamespaceManager(VersionCompatibilityListSheet.NameTable)
+        Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
+        Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
 
         NamespaceManager.AddNamespace("verdiffdefault", "https://drewnaylor.github.io/xml")
 
-        VersionCompatibilityListSheet.LoadXml(My.Resources.DefaultValuesVersionDiff)
+        DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
 
-        For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList")
-            MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
+        For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
+            MessageBox.Show("feature node: " & DefaultNode.Name & vbCrLf &
                             "property to check: " & PropertyToCheck & vbCrLf &
-                            "property value: " & FeatureNode.Attributes("Property").Value)
-            If PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-                Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
+                            "property value: " & DefaultNode.Attributes("Property").Value)
+            If PropertyToCheck = DefaultNode.Attributes("Property").Value Then
+                Dim ver As Version = Version.Parse(DefaultNode.Attributes("VersionIntroduced").Value)
                 MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
                                 "feature added in version " & ver.ToString)
                 Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
@@ -244,7 +244,7 @@ Public Class TE2DotXLoader
                 End Select
             Else
                 ' If it doesn't match, go to the next node and try again.
-                FeatureNode = FeatureNode.NextSibling
+                DefaultNode = DefaultNode.NextSibling
             End If
         Next
 
