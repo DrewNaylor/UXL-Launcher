@@ -85,7 +85,7 @@ Public Class TE2DotXLoader
         End If
     End Sub
 
-    Friend Shared Sub AssignControlProperties(Optional LoadFromAttributes As Boolean = True)
+    Friend Shared Sub AssignControlProperties(Optional LoadFromAttribute As Boolean = True)
         ' This part goes through the theme file and
         ' assigns stuff to each of the properties.
         ' "LoadFromAttributes" is used to determine
@@ -98,16 +98,16 @@ Public Class TE2DotXLoader
 
         ' Button properties.
         ' Assign the Button backcolor property.
-        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", LoadFromAttributes)
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", LoadFromAttribute)
         MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
 
         ' Assign Button forecolor property.
-        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", LoadFromAttributes)
+        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", LoadFromAttribute)
         MessageBox.Show(ThemeProperties.colorButtonForeColor.ToString)
 
         ' Set Button FlatStyle property.
-        Select Case GetPropertySafe("Button", "FlatStyle", "Standard", LoadFromAttributes)
+        Select Case GetPropertySafe("Button", "FlatStyle", "Standard", LoadFromAttribute)
             Case "Standard"
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
             Case "Flat"
@@ -117,7 +117,10 @@ Public Class TE2DotXLoader
         End Select
 
         ' Assign Button FlatAppearance BorderColor.
-        ThemeProperties.flatappearanceButtonBorderColor = 
+        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", LoadFromAttribute)
+
+        ' Set Button FlatAppearance MouseOver color.
+        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", LoadFromAttribute)
 
 
 
@@ -138,16 +141,22 @@ Public Class TE2DotXLoader
     End Sub
 
     Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True) As Color
-        MessageBox.Show(ControlName)
-        MessageBox.Show(ControlProperty)
         If LoadFromAttribute = True Then
             ' If the theme wants to load the color from an attribute, do so.
             ' This is typically used for themes that support TE2.x.
+            ' Make sure it's a valid color first.
+            ' Based off this SO answer:
+            ' https://stackoverflow.com/a/40681176
+
             Return ColorTranslator.FromHtml(GetPropertySafe(ControlName, ControlProperty, DefaultValue))
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
             Return ColorTranslator.FromHtml(GetPropertySafe(ControlName, ControlProperty, DefaultValue, False))
         End If
+    End Function
+
+    Private Shared Function IsColorValid(InputColor As String) As Boolean
+
     End Function
 
     Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String

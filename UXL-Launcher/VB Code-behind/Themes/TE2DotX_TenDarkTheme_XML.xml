@@ -37,7 +37,7 @@
         <FlatAppearance>
           <BorderColor>#363636</BorderColor>
           <MouseDownBackColor>Silver</MouseDownBackColor>
-          <MouseOverBackColor>Gray</MouseOverBackColor>
+          <!-- <MouseOverBackColor>Gray</MouseOverBackColor> -->
         </FlatAppearance>
       </Button>
 
