@@ -118,7 +118,7 @@ Public Class TE2DotXLoader
         End Select
 
         ' Get default statusbar backcolor.
-        'MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString)
+        MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString)
 
 
         ' Assign Button FlatAppearance BorderColor.
@@ -157,14 +157,14 @@ Public Class TE2DotXLoader
             'MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
             '                "property to check: " & PropertyToCheck & vbCrLf &
             '                "property value: " & FeatureNode.Attributes("PropertyName").Value)
-            MessageBox.Show("NodeName: " & NodeName & vbCrLf &
-                            "PropertyToCheck: " & PropertyToCheck & vbCrLf &
-                            "Current FeatureNode: " & FeatureNode.Name)
+            'MessageBox.Show("NodeName: " & NodeName & vbCrLf &
+            '                "PropertyToCheck: " & PropertyToCheck & vbCrLf &
+            '                "Current FeatureNode: " & FeatureNode.Name)
             Select Case FeatureNode.NodeType
                 Case XmlNodeType.Element
                     Select Case FeatureNode.Attributes("For").Value
                         Case NodeName
-                            MessageBox.Show("NodeName matches attribute.")
+                            'MessageBox.Show("NodeName matches attribute.")
                             If PropertyToCheck = FeatureNode.Attributes("Property").Value Then
 
                                 Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
@@ -185,9 +185,9 @@ Public Class TE2DotXLoader
 
                         Case Else
                             If FeatureNode.ParentNode.LastChild IsNot Nothing Then
-                                MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
-                                                "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
-                                                "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
+                                'MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
+                                '                "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
+                                '                "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
                                 FeatureNode = FeatureNode.NextSibling
                             Else
                                 Return True
@@ -200,9 +200,9 @@ Public Class TE2DotXLoader
                     'End If
                 Case XmlNodeType.Comment
                     If FeatureNode.ParentNode.NextSibling IsNot Nothing Then
-                        MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
-                                        "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
-                                        "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
+                        'MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
+                        '                "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
+                        '                "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
                         FeatureNode = FeatureNode.NextSibling
                     Else
                         Return True
@@ -279,11 +279,27 @@ Public Class TE2DotXLoader
         DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
 
         For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
-            MessageBox.Show("feature node: " & DefaultNode.Name & vbCrLf &
+            MessageBox.Show("node: " & DefaultNode.Name & vbCrLf &
                             "property to check: " & PropertyToCheck & vbCrLf &
-                            "property value: " & DefaultNode.Attributes("PropertyName").Value)
+                            "property name in xml: " & DefaultNode.Attributes("PropertyName").Value)
             If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
-                For Each DiffNode As XmlNode In DefaultNode.SelectSingleNode("/Diff")
+
+                Dim DiffNode As XmlNode = DefaultNode.SelectSingleNode("Diff")
+
+                MessageBox.Show("Diff node name: " & DiffNode.Name)
+
+                Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
+
+
+                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
+                    Case 0 ' Return the default value matching the version the theme works with.
+                        Return DiffNode.Attributes("Value").Value
+                    Case 1 ' Return the default value of an older version of the theme engine.
+                        Return DiffNode.Attributes("Value").Value
+                    Case -1 ' Theme doesn't support the version the feature was introduced in.
+                        DiffNode = DiffNode.NextSibling
+                End Select
+                For Each DiffNode As XmlNode In DefaultNode.SelectSingleNode("Diff")
 
                     Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
                     MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
@@ -364,8 +380,8 @@ Public Class TE2DotXLoader
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         ' Make sure the theme supports this feature.
-        MessageBox.Show("DesiredNode: " & DesiredNode & vbCrLf &
-                        "NodeAttribute: " & NodeAttribute)
+        'MessageBox.Show("DesiredNode: " & DesiredNode & vbCrLf &
+        '                "NodeAttribute: " & NodeAttribute)
         If ThemeSupportsFeature(DesiredNode, NodeAttribute) = True Then
 
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
