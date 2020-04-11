@@ -68,11 +68,11 @@ Public Class TE2DotXLoader
                 Case 0 ' Theme says to use TE2.x.
                     ' Load theme in the TE2.x loader.
                     ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
-                    AssignProperties()
+                    AssignControlProperties()
                 Case 1 ' Theme says to use TE2.x.
                     ' Load theme in the TE2.x loader.
                     ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
-                    AssignProperties()
+                    AssignControlProperties()
                 Case -1 ' Theme says to use TE1.x.
                     ' Load theme in the TE1.x loader shim.
                     TE1DotXLoaderShim.AssignProperties()
@@ -85,19 +85,29 @@ Public Class TE2DotXLoader
         End If
     End Sub
 
-    Friend Shared Sub AssignProperties()
+    Friend Shared Sub AssignControlProperties(Optional LoadFromAttributes As Boolean = True)
+        ' This part goes through the theme file and
+        ' assigns stuff to each of the properties.
+        ' "LoadFromAttributes" is used to determine
+        ' whether the item should load from attributes.
+        ' Typically this would be False if the theme is
+        ' a TE1.x theme being loaded through the shim.
 
+        ' Assign theme info properties.
+        AssignThemeInfoProperties()
+
+        ' Button properties.
         ' Assign the Button backcolor property.
-        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent")
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", LoadFromAttributes)
         MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
 
         ' Assign Button forecolor property.
-        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText")
+        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", LoadFromAttributes)
         MessageBox.Show(ThemeProperties.colorButtonForeColor.ToString)
 
         ' Set Button FlatStyle property.
-        Select Case GetPropertySafe("Button", "FlatStyle", "Standard")
+        Select Case GetPropertySafe("Button", "FlatStyle", "Standard", LoadFromAttributes)
             Case "Standard"
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
             Case "Flat"
@@ -105,11 +115,10 @@ Public Class TE2DotXLoader
             Case Else
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
         End Select
-        MessageBox.Show(ThemeProperties.flatstyleButtonFlatStyle.ToString)
 
-        ' Description.
+        ' Assign Button FlatAppearance BorderColor.
+        ThemeProperties.flatappearanceButtonBorderColor = 
 
-        MessageBox.Show(ThemeProperties.themeSheetDescription)
 
 
     End Sub
