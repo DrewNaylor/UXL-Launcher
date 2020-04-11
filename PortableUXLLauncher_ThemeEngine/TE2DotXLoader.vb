@@ -109,17 +109,19 @@ Public Class TE2DotXLoader
 
         ' Description.
         ThemeProperties.themeSheetDescription = GetAttributeSafe("Description", "", "", False, False)
-        ThemeProperties.themeSheetDescription = GetInnerTextSafe()
+        MessageBox.Show(ThemeProperties.themeSheetDescription)
+        ThemeProperties.themeSheetDescription = GetInnerTextSafe("Description", "", "", False)
         MessageBox.Show(ThemeProperties.themeSheetDescription)
 
 
     End Sub
 
-    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True) As Color
+    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True) As Color
         MessageBox.Show(ControlName)
         MessageBox.Show(ControlProperty)
-        If TERuntimeIs2DotX = True Then
-            ' If the theme wants to use TE 2.x, load the color from an attribute.
+        If LoadFromAttribute = True Then
+            ' If the theme wants to load the color from an attribute, do so.
+            ' This is typically used for themes that support TE2.x.
             Return ColorTranslator.FromHtml(GetAttributeSafe(ControlName, ControlProperty, DefaultValue))
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
@@ -127,18 +129,25 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Friend Shared Function GetAttributeSafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
+    Friend Shared Function GetAttributeSafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
 
+        ' Define a root prefix to start looking in.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
         If UseThemeColorPrefix = True Then
+            ' If we want to look in the theme colors
+            ' section, add that to the root prefix
+            ' for later use.
             RootPrefix = RootPrefix & "Theme_Colors/"
         End If
 
-        If TERuntimeIs2DotX = True Then
-            ' If the theme wants to use TE 2.x, load the color from an attribute.
+        If LoadFromAttribute = True Then
+            ' If the theme wants to load the color from an attribute, do so.
+            ' This is typically the case with themes that support TE2.x,
+            ' although there are some situations where we don't want to load stuff
+            ' from an attribute, such as for the description.
             Return GetAttribute(RootPrefix & DesiredNode, NodeAttribute, DefaultValue)
         Else
-            ' Otherwise, assume the theme wants to load from a node's InnerText.
+            ' Otherwise, assume the theme wants to load properties from a node's InnerText.
             Return GetInnerTextSafe(DesiredNode, NodeAttribute, DefaultValue, UseThemeColorPrefix)
         End If
     End Function
