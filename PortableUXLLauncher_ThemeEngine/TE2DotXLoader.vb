@@ -145,11 +145,25 @@ Public Class TE2DotXLoader
 
     Friend Shared Function GetInnerTextSafe(DesiredNode As String, NodeToReadInnerTextFrom As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
 
+        ' Define a root prefix to add to the beginning when getting the
+        ' node inner text.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         If UseThemeColorPrefix = True Then
+            ' If the desired node is in the theme colors section,
+            ' add the theme colors section after the root prefix
+            ' along with a forward slash at the end and the node
+            ' to read the inner text from.
+            ' This would be used in cases where the theme has
+            ' the Button BackColor in a node's InnerText rather
+            ' than in an Attribute.
             Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeToReadInnerTextFrom, DefaultValue)
         Else
+            ' If the node that's desired isn't meant to be in the
+            ' theme colors section, only pass the root prefix
+            ' and the desired node to the GetInnerText function.
+            ' This would be used in cases where we're trying
+            ' to get theme information like the title or description.
             Return GetInnerText(RootPrefix & DesiredNode, DefaultValue)
         End If
 
