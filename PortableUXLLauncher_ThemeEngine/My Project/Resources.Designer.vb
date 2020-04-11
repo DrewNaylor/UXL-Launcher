@@ -90,6 +90,21 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;DefaultValuesList&gt;
+        '''	&lt;Default For=&quot;StatusBar&quot; PropertyName=&quot;BackColor&quot;&gt;
+        '''		&lt;Diff RuntimeVersion=&quot;1.03&quot; Value=&quot;LiteralNothing&quot; /&gt;
+        '''		&lt;Diff RuntimeVersion=&quot;1.02&quot; Value=&quot;Control&quot; /&gt;
+        '''		&lt;Diff RuntimeVersion=&quot;1.01&quot; Value=&quot;Control&quot; /&gt;
+        '''	&lt;/Default&gt;
+        '''&lt;/DefaultValuesList&gt;.
+        '''</summary>
+        Friend ReadOnly Property DefaultValuesVersionDiff() As String
+            Get
+                Return ResourceManager.GetString("DefaultValuesVersionDiff", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
         '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
