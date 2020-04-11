@@ -75,7 +75,9 @@ Public Class TE2DotXLoader
                     AssignControlProperties()
                 Case -1 ' Theme says to use TE1.x.
                     ' Load theme in the TE1.x loader shim.
-                    TE1DotXLoaderShim.AssignProperties()
+                    'TE1DotXLoaderShim.AssignProperties()
+                    ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
+                    AssignControlProperties()
 
             End Select
         Else
