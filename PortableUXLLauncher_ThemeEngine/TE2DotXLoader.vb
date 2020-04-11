@@ -133,7 +133,7 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Function ThemeSupportsFeature(PropertyToCheck As String) As Boolean
+    Private Shared Function ThemeSupportsFeature(NodeName As String, PropertyToCheck As String) As Boolean
         ' See if a particular feature is supported in a
         ' version of the theme engine.
         ' If the version the file is using
@@ -151,7 +151,7 @@ Public Class TE2DotXLoader
             MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
                             "property to check: " & PropertyToCheck & vbCrLf &
                             "property value: " & FeatureNode.Attributes("Property").Value)
-            If PropertyToCheck = FeatureNode.Attributes("Property").Value Then
+            If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
                 Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
                 MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
                                 "feature added in version " & ver.ToString)
@@ -309,7 +309,7 @@ Public Class TE2DotXLoader
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         ' Make sure the theme supports this feature.
-        If ThemeSupportsFeature(NodeAttribute) = True Then
+        If ThemeSupportsFeature(DesiredNode, NodeAttribute) = True Then
 
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
                 ' If the theme wants to load the property from an attribute, do so.
