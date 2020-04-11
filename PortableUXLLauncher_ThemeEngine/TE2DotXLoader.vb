@@ -157,7 +157,7 @@ Public Class TE2DotXLoader
             MessageBox.Show("NodeName: " & NodeName & vbCrLf &
                             "PropertyToCheck: " & PropertyToCheck & vbCrLf &
                             "Current FeatureNode: " & FeatureNode.Name)
-            If FeatureNode.Name IsNot "#comment" Then
+            If FeatureNode.NodeType = Not XmlNodeType.Comment Then
 
                 If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
                     Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
