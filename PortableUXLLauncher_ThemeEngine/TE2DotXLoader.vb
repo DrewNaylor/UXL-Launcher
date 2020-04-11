@@ -109,9 +109,6 @@ Public Class TE2DotXLoader
 
         ' Description.
         ThemeProperties.themeSheetDescription = GetAttributeSafe("Description", "", "", False, False)
-        MessageBox.Show(ThemeProperties.themeSheetDescription)
-        ThemeProperties.themeSheetDescription = GetInnerTextSafe("Description", "", "", False)
-        MessageBox.Show(ThemeProperties.themeSheetDescription)
 
 
     End Sub
