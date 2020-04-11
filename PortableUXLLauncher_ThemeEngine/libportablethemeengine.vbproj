@@ -111,7 +111,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VersionCompatibility.txt" />
+    <Content Include="Resources\VersionCompatibility.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Themes\DefaultTheme_XML.xml" />
     <Content Include="Themes\Eyesore2Theme_XML.xml" />
     <Content Include="Themes\EyesoreTheme_XML.xml" />

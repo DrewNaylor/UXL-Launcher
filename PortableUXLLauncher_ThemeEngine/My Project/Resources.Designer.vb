@@ -236,7 +236,9 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to &lt;Feature Name=&quot;&quot; VersionIntroduced=&quot;1.03&quot;&gt;.
+        '''  Looks up a localized string similar to &lt;FeatureList&gt;
+        '''	&lt;Feature Name=&quot;FlatAppearance/BorderColor&quot; VersionIntroduced=&quot;1.03&quot; /&gt;
+        '''&lt;/FeatureList&gt;.
         '''</summary>
         Friend ReadOnly Property VersionCompatibility() As String
             Get
