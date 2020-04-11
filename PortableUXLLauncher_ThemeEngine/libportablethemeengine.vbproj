@@ -93,7 +93,6 @@
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -114,7 +113,7 @@
     <EmbeddedResource Include="Resources\VersionCompatibility.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Resources\DefaultValuesVersionDiff.txt" />
+    <Content Include="Resources\DefaultValuesVersionDiff.xml" />
     <Content Include="Themes\DefaultTheme_XML.xml" />
     <Content Include="Themes\Eyesore2Theme_XML.xml" />
     <Content Include="Themes\EyesoreTheme_XML.xml" />

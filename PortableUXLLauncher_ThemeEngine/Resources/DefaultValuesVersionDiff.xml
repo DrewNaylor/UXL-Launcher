@@ -1,7 +1,7 @@
 <DefaultValuesList>
 	<Default For="StatusBar" Name="BackColor">
 		<Diff RuntimeVersion="1.03" Value="LiteralNothing" />
-		<Diff RuntimeVersion="1.02" Value="Control">
-		<Diff RuntimeVersion="1.01" Value="Control">
+		<Diff RuntimeVersion="1.02" Value="Control" />
+		<Diff RuntimeVersion="1.01" Value="Control" />
 	</Default>
-</DefaultValueList>
+</DefaultValuesList>
