@@ -131,21 +131,12 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Function CheckEngineVersionRuntimeFeatureAvailability(PropertyToCheck As String) As Version
+    Private Shared Function CheckEngineVersionRuntimeFeatureAvailability(PropertyToCheck As String) As Boolean
         ' See if a particular feature is supported in a
         ' version of the theme engine.
         ' If the version the file is using
         ' is lower than the parsed version, the default
         ' value will be used instead.
-        Select Case PropertyToCheck
-            Case "FlatAppearance/BorderColor"
-                Return Version.Parse("1.03")
-            Case "FlatAppearance/MouseDownBackColor"
-                Return Version.Parse("1.03")
-            Case "FlatAppearance/MouseOverBackColor"
-                Return Version.Parse("1.03")
-
-        End Select
 
         Dim VersionCompatibilityListSheet As XmlDocument = New XmlDocument()
         Dim NamespaceManager As New XmlNamespaceManager(VersionCompatibilityListSheet.NameTable)
@@ -158,16 +149,18 @@ Public Class TE2DotXLoader
             If FeatureNode.Attributes("Name").Value = PropertyToCheck Then
                 Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
                 Select Case ver.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
-                    Case 0
-
-                    Case 1
-
-                    Case -1
-
+                    Case 0 ' Theme works with the same version the feature was introduced in.
+                        Return True
+                    Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
+                        Return True
+                    Case -1 ' Theme doesn't support the version the feature was introduced in.
+                        Return False
 
                 End Select
             End If
 
+            ' Go to the next feature node.
+            FeatureNode = FeatureNode.NextSibling
         Next
     End Function
 
