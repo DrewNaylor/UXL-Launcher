@@ -174,21 +174,23 @@ Public Class TE2DotXLoader
                                 Return False
 
                         End Select
+                    Else
+                        FeatureNode = FeatureNode.NextSibling
                     End If
                 Case XmlNodeType.Comment
                     FeatureNode = FeatureNode.NextSibling
             End Select
-            If FeatureNode.NodeType = Not XmlNodeType.Comment AndAlso NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
+            'If FeatureNode.NodeType = Not XmlNodeType.Comment AndAlso NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
 
-            Else
-                ' If it doesn't match, go to the next node and try again.
-                FeatureNode = FeatureNode.NextSibling
-            End If
             'Else
-            '    ' Version checking is broken at the moment, so it needs to be fixed.
-            '    ' It's just skipping down to here even for the FlatApearance/BorderColor property.
-            '    Return True
+            '    ' If it doesn't match, go to the next node and try again.
+            '    FeatureNode = FeatureNode.NextSibling
             'End If
+            ''Else
+            ''    ' Version checking is broken at the moment, so it needs to be fixed.
+            ''    ' It's just skipping down to here even for the FlatApearance/BorderColor property.
+            ''    Return True
+            ''End If
         Next
     End Function
 
