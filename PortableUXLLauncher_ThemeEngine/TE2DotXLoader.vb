@@ -115,6 +115,9 @@ Public Class TE2DotXLoader
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
         End Select
 
+        ' Get default statusbar backcolor.
+        MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString)
+
 
         ' Assign Button FlatAppearance BorderColor.
         ' Make sure the theme supports it.
@@ -133,7 +136,7 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Function ThemeSupportsFeature(NodeName As String, PropertyToCheck As String) As Boolean
+    Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
         ' See if a particular feature is supported in a
         ' version of the theme engine.
         ' If the version the file is using
@@ -148,25 +151,33 @@ Public Class TE2DotXLoader
         VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
 
         For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList")
-            MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
-                            "property to check: " & PropertyToCheck & vbCrLf &
-                            "property value: " & FeatureNode.Attributes("Property").Value)
-            If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-                Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
-                MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                "feature added in version " & ver.ToString)
-                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                    Case 0 ' Theme works with the same version the feature was introduced in.
-                        Return True
-                    Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-                        Return True
-                    Case -1 ' Theme doesn't support the version the feature was introduced in.
-                        Return False
+            'MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
+            '                "property to check: " & PropertyToCheck & vbCrLf &
+            '                "property value: " & FeatureNode.Attributes("PropertyName").Value)
+            MessageBox.Show("NodeName: " & NodeName & vbCrLf &
+                            "PropertyToCheck: " & PropertyToCheck & vbCrLf &
+                            "Current FeatureNode: " & FeatureNode.Name)
+            If FeatureNode.Name IsNot "#comment" Then
 
-                End Select
+                If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
+                    Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
+                    'MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                    '                "feature added in version " & ver.ToString)
+                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
+                        Case 0 ' Theme works with the same version the feature was introduced in.
+                            Return True
+                        Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
+                            Return True
+                        Case -1 ' Theme doesn't support the version the feature was introduced in.
+                            Return False
+
+                    End Select
+                Else
+                    ' If it doesn't match, go to the next node and try again.
+                    FeatureNode = FeatureNode.NextSibling
+                End If
             Else
-                ' If it doesn't match, go to the next node and try again.
-                FeatureNode = FeatureNode.NextSibling
+                Return True
             End If
         Next
     End Function
