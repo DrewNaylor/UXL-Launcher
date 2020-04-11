@@ -229,19 +229,21 @@ Public Class TE2DotXLoader
             MessageBox.Show("feature node: " & DefaultNode.Name & vbCrLf &
                             "property to check: " & PropertyToCheck & vbCrLf &
                             "property value: " & DefaultNode.Attributes("PropertyName").Value)
-            If PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
-                Dim ver As Version = Version.Parse(DefaultNode.Attributes("VersionIntroduced").Value)
-                MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                "feature added in version " & ver.ToString)
-                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                    Case 0 ' Theme works with the same version the feature was introduced in.
-                        Return True
-                    Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-                        Return True
-                    Case -1 ' Theme doesn't support the version the feature was introduced in.
-                        Return False
+            If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
+                For Each DiffNode As XmlNode In DefaultNode
 
-                End Select
+                    Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
+                    MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                "feature added in version " & ver.ToString)
+                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
+                        Case 0 ' Theme works with the same version the feature was introduced in.
+                            Return DiffNode.Attributes("Value").Value
+                        Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
+                            Return DiffNode = DiffNode.NextSibling
+                        Case -1 ' Theme doesn't support the version the feature was introduced in.
+                            Return DiffNode = DiffNode.NextSibling
+                    End Select
+                Next
             Else
                 ' If it doesn't match, go to the next node and try again.
                 DefaultNode = DefaultNode.NextSibling
