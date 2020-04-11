@@ -99,12 +99,11 @@ Public Class TE2DotXLoader
         ' Button properties.
         ' Assign the Button backcolor property.
         ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", LoadFromAttribute)
-        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
+        MessageBox.Show("button back color: " & ThemeProperties.colorButtonBackColor.ToString)
 
 
         ' Assign Button forecolor property.
         ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", LoadFromAttribute)
-        MessageBox.Show(ThemeProperties.colorButtonForeColor.ToString)
 
         ' Set Button FlatStyle property.
         Select Case GetPropertySafe("Button", "FlatStyle", "Standard", LoadFromAttribute)
@@ -121,7 +120,6 @@ Public Class TE2DotXLoader
 
         ' Set Button FlatAppearance MouseOver color.
         ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", LoadFromAttribute)
-        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
 
 
@@ -141,7 +139,8 @@ Public Class TE2DotXLoader
         ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", "(No version specified)", False, False)
     End Sub
 
-    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True) As Color
+    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = False) As Color
+
         If LoadFromAttribute = True Then
             ' If the theme wants to load the color from an attribute, do so.
             ' This is typically used for themes that support TE2.x.
@@ -150,7 +149,8 @@ Public Class TE2DotXLoader
             ' https://stackoverflow.com/a/40681176
 
             ' Put the theme's color value into a variable for easy access.
-            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue)
+            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
+            MessageBox.Show(ColorFromTheme)
             If IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color,
                 ' return the color.
@@ -166,7 +166,8 @@ Public Class TE2DotXLoader
             ' Otherwise, assume the theme wants to load from a node's InnerText.
 
             ' Put the theme's color value into a variable for easy access.
-            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue)
+            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
+            MessageBox.Show(ColorFromTheme)
             If IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color,
                 ' return the color.
@@ -187,7 +188,8 @@ Public Class TE2DotXLoader
         ' https://stackoverflow.com/a/40681176
 
         ' Regex pattern.
-        Dim Pattern As String = "^#[0-9A-F]{1,6}$"
+        Dim Pattern As String = "^#[0-9A-F]{1," & InputColor.Length & "}$"
+        MessageBox.Show(Pattern)
         ' Make a new regex with a pattern.
         Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
         If RegexWithPattern.IsMatch(InputColor) Then
@@ -239,7 +241,7 @@ Public Class TE2DotXLoader
         ' TODO: Check to make sure the requested attribute is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
-        MessageBox.Show(NodeName)
+
         If ThemeProperties.themeSheet.SelectSingleNode(NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' If the node exists, store it in a variable to make the code easier to read.
             Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode(NodeName, ThemeProperties.themeNamespaceManager)
@@ -263,7 +265,6 @@ Public Class TE2DotXLoader
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
 
-        MessageBox.Show(Node)
         ' Create a variable to store a forward slash char
         ' for trimming from the end of the node just in
         ' case one somehow ended up there, such as if
