@@ -212,6 +212,7 @@ Public Class TE2DotXLoader
                 Return DefaultValue
             End If
         Else
+            ' If the node doesn't exist, return the default value.
             Return DefaultValue
         End If
     End Function
