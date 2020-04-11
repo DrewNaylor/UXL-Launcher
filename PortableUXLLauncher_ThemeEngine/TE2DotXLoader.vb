@@ -221,7 +221,7 @@ Public Class TE2DotXLoader
         Dim VersionCompatibilityListSheet As XmlDocument = New XmlDocument()
         Dim NamespaceManager As New XmlNamespaceManager(VersionCompatibilityListSheet.NameTable)
 
-        NamespaceManager.AddNamespace("vercompat", "https://drewnaylor.github.io/xml")
+        NamespaceManager.AddNamespace("verdiffdefault", "https://drewnaylor.github.io/xml")
 
         VersionCompatibilityListSheet.LoadXml(My.Resources.DefaultValuesVersionDiff)
 
