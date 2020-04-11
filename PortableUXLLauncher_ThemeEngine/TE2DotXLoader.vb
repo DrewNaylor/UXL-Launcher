@@ -88,13 +88,16 @@ Public Class TE2DotXLoader
     Friend Shared Sub AssignProperties()
 
         ' Assign the Button backcolor property.
-        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent")
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", True)
+        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
+
 
         ' Assign Button forecolor property.
-        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText")
+        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", False)
+        MessageBox.Show(ThemeProperties.colorButtonForeColor.ToString)
 
         ' Set Button FlatStyle property.
-        Select Case GetInnerText("Button", "FlatStyle", "Standard")
+        Select Case GetAttributeSafe("Button", "FlatStyle", "Standard", False)
             Case "Standard"
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
             Case "Flat"
@@ -104,30 +107,64 @@ Public Class TE2DotXLoader
         End Select
         MessageBox.Show(ThemeProperties.flatstyleButtonFlatStyle.ToString)
 
+        ' Description.
+        ThemeProperties.themeSheetDescription = GetInnerTextSafe("Description", "", "", False)
+        MessageBox.Show(ThemeProperties.themeSheetDescription)
+
 
     End Sub
 
     Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True) As Color
+        MessageBox.Show(ControlName)
+        MessageBox.Show(ControlProperty)
         If TERuntimeIs2DotX = True Then
             ' If the theme wants to use TE 2.x, load the color from an attribute.
-            Return ColorTranslator.FromHtml(GetAttribute(ControlName, ControlProperty, DefaultValue))
+            Return ColorTranslator.FromHtml(GetAttributeSafe(ControlName, ControlProperty, DefaultValue))
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
-            Return ColorTranslator.FromHtml(GetInnerText(ControlName & "/" & ControlProperty, DefaultValue))
+            Return ColorTranslator.FromHtml(GetInnerTextSafe(ControlName, ControlProperty, DefaultValue, True))
         End If
     End Function
 
-    Friend Shared Function GetAttributeSafe(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True) As String
+    Friend Shared Function GetAttributeSafe(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
+
+        Dim SectionPrefix As String = "/UXL_Launcher_Theme/"
+        Dim ForwardSlash As String = ""
+        If UseThemeColorPrefix = True Then
+            SectionPrefix = SectionPrefix & "Theme_Colors/"
+            ForwardSlash = "/"
+        End If
+
+        If TERuntimeIs2DotX = True Then
+            ' If the theme wants to use TE 2.x, load the color from an attribute.
+            Return GetAttribute(SectionPrefix & ControlName, ControlProperty, DefaultValue, UseThemeColorPrefix)
+        Else
+            ' Otherwise, assume the theme wants to load from a node's InnerText.
+            Return GetInnerTextSafe(ControlName, ControlProperty, DefaultValue, UseThemeColorPrefix)
+        End If
+    End Function
+
+    Friend Shared Function GetInnerTextSafe(ControlName As String, ControlNameSubsection As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
+
+        Dim SectionPrefix As String = "/UXL_Launcher_Theme/"
+        Dim SubsectionPrefix As String = ""
+
+        If UseThemeColorPrefix = True Then
+            Return GetInnerText(SectionPrefix & "Theme_Colors/" & ControlName & "/" & ControlNameSubsection, DefaultValue)
+        Else
+            Return GetInnerText(SectionPrefix & ControlName, DefaultValue)
+        End If
 
     End Function
 
-    Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String, Optional SectionPrefix As String = "Theme_Colors/") As String
+    Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
         ' TODO: Check to make sure the requested attribute is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
-        If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & SectionPrefix & NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+        MessageBox.Show(NodeName)
+        If ThemeProperties.themeSheet.SelectSingleNode(NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' If the node exists, store it in a variable to make the code easier to read.
-            Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & SectionPrefix & NodeName, ThemeProperties.themeNamespaceManager)
+            Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode(NodeName, ThemeProperties.themeNamespaceManager)
             If NodePath.Attributes(AttributeName) IsNot Nothing Then
                 ' If the attribute exists and is compatible with the version of the theme engine
                 ' the theme wants to use, return the attribute.
@@ -143,14 +180,17 @@ Public Class TE2DotXLoader
 
     End Function
 
-    Friend Shared Function GetInnerText(Node As String, DefaultValue As String, Optional SectionPrefix As String = "Theme_Colors/") As String
+    Private Shared Function GetInnerText(Node As String, DefaultValue As String) As String
         ' TODO: Check to make sure the requested node innertext is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
-        If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & SectionPrefix & Node, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+
+        MessageBox.Show(Node)
+
+        If ThemeProperties.themeSheet.SelectSingleNode(Node, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' First check if the node exists.
             ' If it does exist, create a variable to store the node innertext.
-            Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & SectionPrefix & Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
+            Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode(Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
             If NodeInnerText IsNot Nothing Then
                 ' If the node exists and is compatible with the version of the theme engine
                 ' the theme wants to use, return the innertext.
