@@ -168,6 +168,21 @@ Public Class TE2DotXLoader
             End If
     End Function
 
+    Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
+        ' Simple function to make sure a hex code is
+        ' either three or six numbers long.
+        ' The cases below are the length plus one because
+        ' of the hash/pound symbol.
+        Select Case HexCode.Length
+            Case 4
+                Return True
+            Case 7
+                Return True
+            Case Else
+                Return False
+        End Select
+    End Function
+
     Private Shared Function IsColorValid(InputColor As String) As Boolean
         ' Color validator used in GetThemeColor().
         ' Based off this SO answer:
@@ -178,9 +193,10 @@ Public Class TE2DotXLoader
         'MessageBox.Show(Pattern)
         ' Make a new regex with a pattern.
         Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
-        If InputColor.StartsWith("#") AndAlso RegexWithPattern.IsMatch(InputColor) = True Then
+        If InputColor.StartsWith("#") AndAlso RegexWithPattern.IsMatch(InputColor) = True AndAlso IsHexCodeLengthValid(InputColor) Then
             ' If the input color is a valid HTML color,
-            ' return True.
+            ' has a RegEx match, and it's a valid length
+            ' of three or six numbers, return True.
             Return True
         ElseIf Not InputColor.StartsWith("#") Then
             ' If it's not a valid HTML color,
