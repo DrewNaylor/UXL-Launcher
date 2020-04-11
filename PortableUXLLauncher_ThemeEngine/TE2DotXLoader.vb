@@ -275,6 +275,7 @@ Public Class TE2DotXLoader
         ' Define a root prefix to start looking in.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
+        ' Make sure the theme supports this feature.
         If ThemeSupportsFeature(NodeAttribute) = True Then
 
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
