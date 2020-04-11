@@ -155,7 +155,18 @@ Public Class TE2DotXLoader
         VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
 
         For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList/Feature")
-            Select Case 
+            If FeatureNode.Attributes("Name").Value = PropertyToCheck Then
+                Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
+                Select Case ver.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                    Case 0
+
+                    Case 1
+
+                    Case -1
+
+
+                End Select
+            End If
 
         Next
     End Function
