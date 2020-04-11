@@ -234,7 +234,7 @@ Public Class TE2DotXLoader
 
                     Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
                     MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                "feature added in version " & ver.ToString)
+                                "default value will be pulled from the value for " & ver.ToString)
                     Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
                         Case 0 ' Theme works with the same version the feature was introduced in.
                             Return DiffNode.Attributes("Value").Value
