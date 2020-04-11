@@ -183,7 +183,11 @@ Public Class TE2DotXLoader
                             End If
 
                         Case Else
-                            FeatureNode = FeatureNode.NextSibling
+                            If FeatureNode.ParentNode.LastChild IsNot Nothing Then
+                                FeatureNode = FeatureNode.NextSibling
+                            Else
+                                Return True
+                            End If
                     End Select
                     'If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
 
