@@ -148,42 +148,66 @@ Public Class TE2DotXLoader
             ' Make sure it's a valid color first.
             ' Based off this SO answer:
             ' https://stackoverflow.com/a/40681176
+
+            ' Put the theme's color value into a variable for easy access.
             Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue)
             If IsColorValid(ColorFromTheme) Then
+                ' If the color is a valid HTML or system color,
+                ' return the color.
                 Return ColorTranslator.FromHtml(ColorFromTheme)
             ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
+                ' If it's not valid and the default value is Nothing, return Nothing.
                 Return Nothing
             Else
+                ' Otherwise just return the default value.
                 Return ColorTranslator.FromHtml(DefaultValue)
             End If
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
+
+            ' Put the theme's color value into a variable for easy access.
             Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue)
             If IsColorValid(ColorFromTheme) Then
+                ' If the color is a valid HTML or system color,
+                ' return the color.
                 Return ColorTranslator.FromHtml(ColorFromTheme)
             ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
+                ' If it's not valid and the default value is Nothing, return Nothing.
                 Return Nothing
             Else
+                ' Otherwise just return the default value.
                 Return ColorTranslator.FromHtml(DefaultValue)
             End If
         End If
     End Function
 
     Private Shared Function IsColorValid(InputColor As String) As Boolean
+        ' Color validator.
+        ' Based off this SO answer:
+        ' https://stackoverflow.com/a/40681176
+
+        ' Regex pattern.
         Dim Pattern As String = "^#[0-9A-F]{1,6}$"
+        ' Make a new regex with a pattern.
         Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
         If RegexWithPattern.IsMatch(InputColor) Then
+            ' If the input color is a valid HTML color,
+            ' return True.
             Return True
         ElseIf Not RegexWithPattern.IsMatch(InputColor) Then
+            ' If it's not a valid HTML color,
+            ' look through the known colors.
             For Each systemcolor As KnownColor In [Enum].GetValues(GetType(KnownColor))
                 If systemcolor.ToString = InputColor Then
+                    ' If a system color matches the input color,
+                    ' then it's valid.
                     Return True
                 End If
-            Next
+            Next ' Next system color.
         Else
+            ' Otherwise, it's assumed to be invalid.
             Return False
         End If
-
     End Function
 
     Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
