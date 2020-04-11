@@ -159,30 +159,36 @@ Public Class TE2DotXLoader
             MessageBox.Show("NodeName: " & NodeName & vbCrLf &
                             "PropertyToCheck: " & PropertyToCheck & vbCrLf &
                             "Current FeatureNode: " & FeatureNode.Name)
-            If FeatureNode.NodeType = Not XmlNodeType.Comment Then
+            Select Case FeatureNode.NodeType
+                Case XmlNodeType.Element
+                    If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
+                        Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
+                        'MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                        '                "feature added in version " & ver.ToString)
+                        Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
+                            Case 0 ' Theme works with the same version the feature was introduced in.
+                                Return True
+                            Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
+                                Return True
+                            Case -1 ' Theme doesn't support the version the feature was introduced in.
+                                Return False
 
-                If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-                    Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
-                    'MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                    '                "feature added in version " & ver.ToString)
-                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                        Case 0 ' Theme works with the same version the feature was introduced in.
-                            Return True
-                        Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-                            Return True
-                        Case -1 ' Theme doesn't support the version the feature was introduced in.
-                            Return False
-
-                    End Select
-                Else
-                    ' If it doesn't match, go to the next node and try again.
+                        End Select
+                    End If
+                Case XmlNodeType.Comment
                     FeatureNode = FeatureNode.NextSibling
-                End If
+            End Select
+            If FeatureNode.NodeType = Not XmlNodeType.Comment AndAlso NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
+
             Else
-                ' Version checking is broken at the moment, so it needs to be fixed.
-                ' It's just skipping down to here even for the FlatApearance/BorderColor property.
-                Return True
+                ' If it doesn't match, go to the next node and try again.
+                FeatureNode = FeatureNode.NextSibling
             End If
+            'Else
+            '    ' Version checking is broken at the moment, so it needs to be fixed.
+            '    ' It's just skipping down to here even for the FlatApearance/BorderColor property.
+            '    Return True
+            'End If
         Next
     End Function
 
