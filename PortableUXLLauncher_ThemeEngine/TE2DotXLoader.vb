@@ -128,9 +128,10 @@ Public Class TE2DotXLoader
 
         ' Set Button FlatAppearance MouseDown color.
         ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
+        MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
 
-            ' Set Button FlatAppearance MouseOver color.
-            ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
+        ' Set Button FlatAppearance MouseOver color.
+        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
 
 
 
