@@ -119,7 +119,7 @@ Public Class TE2DotXLoader
         ' Assign Button FlatAppearance BorderColor.
         ' Make sure the theme supports it.
         ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
-        MessageBox.Show(ThemeProperties.flatappearanceButtonBorderColor.ToString)
+        MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
 
         ' Set Button FlatAppearance MouseDown color.
         ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
@@ -147,10 +147,15 @@ Public Class TE2DotXLoader
 
         VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
 
-        For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList/Feature")
-            If FeatureNode.Attributes("Property").Value = PropertyToCheck Then
+        For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList")
+            MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
+                            "property to check: " & PropertyToCheck & vbCrLf &
+                            "property value: " & FeatureNode.Attributes("Property").Value)
+            If PropertyToCheck = FeatureNode.Attributes("Property").Value Then
                 Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
-                Select Case ver.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                "feature added in version " & ver.ToString)
+                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
                     Case 0 ' Theme works with the same version the feature was introduced in.
                         Return True
                     Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
