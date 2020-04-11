@@ -132,6 +132,11 @@ Public Class TE2DotXLoader
     End Sub
 
     Private Shared Function CheckEngineVersionRuntimeFeatureAvailability(PropertyToCheck As String) As Version
+        ' See if a particular feature is supported in a
+        ' version of the theme engine.
+        ' If the version the file is using
+        ' is lower than the parsed version, the default
+        ' value will be used instead.
         Select Case PropertyToCheck
             Case "FlatAppearance/BorderColor"
                 Return Version.Parse("1.03")
