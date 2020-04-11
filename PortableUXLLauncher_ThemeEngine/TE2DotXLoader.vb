@@ -88,16 +88,16 @@ Public Class TE2DotXLoader
     Friend Shared Sub AssignProperties()
 
         ' Assign the Button backcolor property.
-        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", True)
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent")
         MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
 
         ' Assign Button forecolor property.
-        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", False)
+        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText")
         MessageBox.Show(ThemeProperties.colorButtonForeColor.ToString)
 
         ' Set Button FlatStyle property.
-        Select Case GetAttributeSafe("Button", "FlatStyle", "Standard", False)
+        Select Case GetAttributeSafe("Button", "FlatStyle", "Standard", True)
             Case "Standard"
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
             Case "Flat"
@@ -108,7 +108,8 @@ Public Class TE2DotXLoader
         MessageBox.Show(ThemeProperties.flatstyleButtonFlatStyle.ToString)
 
         ' Description.
-        ThemeProperties.themeSheetDescription = GetInnerTextSafe("Description", "", "", False)
+        ThemeProperties.themeSheetDescription = GetAttributeSafe("Description", "", "", False, False)
+        ThemeProperties.themeSheetDescription = GetInnerTextSafe()
         MessageBox.Show(ThemeProperties.themeSheetDescription)
 
 
@@ -126,38 +127,35 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Friend Shared Function GetAttributeSafe(ControlName As String, ControlProperty As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
+    Friend Shared Function GetAttributeSafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional TERuntimeIs2DotX As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
 
-        Dim SectionPrefix As String = "/UXL_Launcher_Theme/"
-        Dim ForwardSlash As String = ""
+        Dim RootPrefix As String = "/UXL_Launcher_Theme/"
         If UseThemeColorPrefix = True Then
-            SectionPrefix = SectionPrefix & "Theme_Colors/"
-            ForwardSlash = "/"
+            RootPrefix = RootPrefix & "Theme_Colors/"
         End If
 
         If TERuntimeIs2DotX = True Then
             ' If the theme wants to use TE 2.x, load the color from an attribute.
-            Return GetAttribute(SectionPrefix & ControlName, ControlProperty, DefaultValue, UseThemeColorPrefix)
+            Return GetAttribute(RootPrefix & DesiredNode, NodeAttribute, DefaultValue)
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
-            Return GetInnerTextSafe(ControlName, ControlProperty, DefaultValue, UseThemeColorPrefix)
+            Return GetInnerTextSafe(DesiredNode, NodeAttribute, DefaultValue, UseThemeColorPrefix)
         End If
     End Function
 
-    Friend Shared Function GetInnerTextSafe(ControlName As String, ControlNameSubsection As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
+    Friend Shared Function GetInnerTextSafe(DesiredNode As String, NodeToReadInnerTextFrom As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
 
-        Dim SectionPrefix As String = "/UXL_Launcher_Theme/"
-        Dim SubsectionPrefix As String = ""
+        Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         If UseThemeColorPrefix = True Then
-            Return GetInnerText(SectionPrefix & "Theme_Colors/" & ControlName & "/" & ControlNameSubsection, DefaultValue)
+            Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeToReadInnerTextFrom, DefaultValue)
         Else
-            Return GetInnerText(SectionPrefix & ControlName, DefaultValue)
+            Return GetInnerText(RootPrefix & DesiredNode, DefaultValue)
         End If
 
     End Function
 
-    Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
+    Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
         ' TODO: Check to make sure the requested attribute is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
