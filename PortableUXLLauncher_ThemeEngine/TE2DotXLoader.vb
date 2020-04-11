@@ -193,8 +193,8 @@ Public Class TE2DotXLoader
 
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
-            'MessageBox.Show(ColorFromTheme)
-            If IsColorValid(ColorFromTheme) Then
+        'MessageBox.Show(ColorFromTheme)
+        If IsColorValid(ColorFromTheme) Then
             ' If the color is a valid HTML or system color,
             ' return the color.
             ' One situation where this could be confusing is
@@ -204,14 +204,20 @@ Public Class TE2DotXLoader
             ' confusing. May be a good idea to make sure it has
             ' a length of 3 numbers or 6 numbers.
             MessageBox.Show(ColorFromTheme)
-                Return ColorTranslator.FromHtml(ColorFromTheme)
-            ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
-                ' If it's not valid and the default value is Nothing, return Nothing.
-                Return Nothing
-            Else
-                ' Otherwise just return the default value.
-                Return ColorTranslator.FromHtml(DefaultValue)
-            End If
+            Return ColorTranslator.FromHtml(ColorFromTheme)
+        ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
+            ' If it's not valid and the default value is Nothing, return Nothing.
+            Return Nothing
+        Else
+            ' Otherwise just return the default value.
+            Return ColorTranslator.FromHtml(DefaultValue)
+        End If
+    End Function
+
+    Friend Shared Function GetDefaultValueVersionVariant() As String
+        ' If a default value is different between theme engine versions, this
+        ' can choose between the defaults.
+
     End Function
 
     Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
