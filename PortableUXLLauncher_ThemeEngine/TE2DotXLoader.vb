@@ -167,7 +167,7 @@ Public Class TE2DotXLoader
         ' Based off this SO answer:
         ' https://stackoverflow.com/a/40681176
 
-        ' Regex pattern.
+        ' Regex pattern. Mostly copied from answer.
         Dim Pattern As String = "^#[0-9A-F]{1," & InputColor.Length & "}$"
         'MessageBox.Show(Pattern)
         ' Make a new regex with a pattern.
