@@ -85,7 +85,7 @@ Public Class TE2DotXLoader
         End If
     End Sub
 
-    Friend Shared Sub AssignControlProperties(Optional LoadFromAttribute As Boolean = True)
+    Friend Shared Sub AssignControlProperties(Optional LoadFromAttribute As Boolean = False)
         ' This part goes through the theme file and
         ' assigns stuff to each of the properties.
         ' "LoadFromAttributes" is used to determine
@@ -121,6 +121,7 @@ Public Class TE2DotXLoader
 
         ' Set Button FlatAppearance MouseOver color.
         ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", LoadFromAttribute)
+        MessageBox.Show(ThemeProperties.colorButtonBackColor.ToString)
 
 
 
@@ -147,11 +148,24 @@ Public Class TE2DotXLoader
             ' Make sure it's a valid color first.
             ' Based off this SO answer:
             ' https://stackoverflow.com/a/40681176
-
-            Return ColorTranslator.FromHtml(GetPropertySafe(ControlName, ControlProperty, DefaultValue))
+            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue)
+            If IsColorValid(ColorFromTheme) Then
+                Return ColorTranslator.FromHtml(ColorFromTheme)
+            ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
+                Return Nothing
+            Else
+                Return ColorTranslator.FromHtml(DefaultValue)
+            End If
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
-            Return ColorTranslator.FromHtml(GetPropertySafe(ControlName, ControlProperty, DefaultValue, False))
+            Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue)
+            If IsColorValid(ColorFromTheme) Then
+                Return ColorTranslator.FromHtml(ColorFromTheme)
+            ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
+                Return Nothing
+            Else
+                Return ColorTranslator.FromHtml(DefaultValue)
+            End If
         End If
     End Function
 
@@ -160,7 +174,14 @@ Public Class TE2DotXLoader
         Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
         If RegexWithPattern.IsMatch(InputColor) Then
             Return True
-        ElseIf 
+        ElseIf Not RegexWithPattern.IsMatch(InputColor) Then
+            For Each systemcolor As KnownColor In [Enum].GetValues(GetType(KnownColor))
+                If systemcolor.ToString = InputColor Then
+                    Return True
+                End If
+            Next
+        Else
+            Return False
         End If
 
     End Function

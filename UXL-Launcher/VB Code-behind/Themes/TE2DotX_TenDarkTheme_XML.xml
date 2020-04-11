@@ -21,12 +21,12 @@
         <BannerStyle>Dark</BannerStyle>
       </AboutWindow>
       
-      <Button BackColor="#363636" ForeColor="White" FlatStyle="Flat">
+      <Button BackColor="fsdjdsdjgd" ForeColor="White" FlatStyle="Flat">
         <!-- The button BackColor and BorderColor values were eye-balled from the
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
 		
-        <BackColor>#363636</BackColor>
+        <BackColor>jfdfgsjkdjksd</BackColor>
         <ForeColor>White</ForeColor>
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
