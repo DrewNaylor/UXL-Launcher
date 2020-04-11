@@ -115,20 +115,33 @@ Public Class TE2DotXLoader
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
         End Select
 
+        If 
         ' Assign Button FlatAppearance BorderColor.
-        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
+            ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
 
-        ' Set Button FlatAppearance MouseDown color.
-        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
+            ' Set Button FlatAppearance MouseDown color.
+            ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
 
-        ' Set Button FlatAppearance MouseOver color.
-        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
+            ' Set Button FlatAppearance MouseOver color.
+            ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
 
 
 
 
 
     End Sub
+
+    Private Shared Function CheckEngineVersionRuntimeFeatureAvailability(PropertyToCheck As String) As Version
+        Select Case PropertyToCheck
+            Case "FlatAppearance/BorderColor"
+                Return Version.Parse("1.03")
+            Case "FlatAppearance/MouseDownBackColor"
+                Return Version.Parse("1.03")
+            Case "FlatAppearance/MouseOverBackColor"
+                Return Version.Parse("1.03")
+
+        End Select
+    End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
         ' Grab theme title.
