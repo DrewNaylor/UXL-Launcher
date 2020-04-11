@@ -97,7 +97,7 @@ Public Class TE2DotXLoader
         MessageBox.Show(ThemeProperties.colorButtonForeColor.ToString)
 
         ' Set Button FlatStyle property.
-        Select Case GetAttributeSafe("Button", "FlatStyle", "Standard", True)
+        Select Case GetPropertySafe("Button", "FlatStyle", "Standard")
             Case "Standard"
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
             Case "Flat"
@@ -108,7 +108,8 @@ Public Class TE2DotXLoader
         MessageBox.Show(ThemeProperties.flatstyleButtonFlatStyle.ToString)
 
         ' Description.
-        ThemeProperties.themeSheetDescription = GetAttributeSafe("Description", "", "", False, False)
+        ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", "", False, False)
+        MessageBox.Show(ThemeProperties.themeSheetDescription)
 
 
     End Sub
@@ -119,60 +120,36 @@ Public Class TE2DotXLoader
         If LoadFromAttribute = True Then
             ' If the theme wants to load the color from an attribute, do so.
             ' This is typically used for themes that support TE2.x.
-            Return ColorTranslator.FromHtml(GetAttributeSafe(ControlName, ControlProperty, DefaultValue))
+            Return ColorTranslator.FromHtml(GetPropertySafe(ControlName, ControlProperty, DefaultValue))
         Else
             ' Otherwise, assume the theme wants to load from a node's InnerText.
-            Return ColorTranslator.FromHtml(GetInnerTextSafe(ControlName, ControlProperty, DefaultValue, True))
+            Return ColorTranslator.FromHtml(GetPropertySafe(ControlName, ControlProperty, DefaultValue, False))
         End If
     End Function
 
-    Friend Shared Function GetAttributeSafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
+    Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
 
         ' Define a root prefix to start looking in.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
-        If UseThemeColorPrefix = True Then
-            ' If we want to look in the theme colors
-            ' section, add that to the root prefix
-            ' for later use.
-            RootPrefix = RootPrefix & "Theme_Colors/"
-        End If
 
-        If LoadFromAttribute = True Then
-            ' If the theme wants to load the color from an attribute, do so.
+        If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
+            ' If the theme wants to load the property from an attribute, do so.
             ' This is typically the case with themes that support TE2.x,
             ' although there are some situations where we don't want to load stuff
             ' from an attribute, such as for the description.
-            Return GetAttribute(RootPrefix & DesiredNode, NodeAttribute, DefaultValue)
+            Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute, DefaultValue)
+        ElseIf LoadFromAttribute = False AndAlso UseThemeColorPrefix = True Then
+            ' Assume that the theme doesn't want to load a property from an attribute,
+            ' but that the property we want to get is in the theme colors section.
+            ' This is often the case for things like the Button FlatAppearance section.
+            Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, DefaultValue)
         Else
             ' Otherwise, assume the theme wants to load properties from a node's InnerText.
-            Return GetInnerTextSafe(DesiredNode, NodeAttribute, DefaultValue, UseThemeColorPrefix)
-        End If
-    End Function
-
-    Friend Shared Function GetInnerTextSafe(DesiredNode As String, NodeToReadInnerTextFrom As String, DefaultValue As String, Optional UseThemeColorPrefix As Boolean = True) As String
-
-        ' Define a root prefix to add to the beginning when getting the
-        ' node inner text.
-        Dim RootPrefix As String = "/UXL_Launcher_Theme/"
-
-        If UseThemeColorPrefix = True Then
-            ' If the desired node is in the theme colors section,
-            ' add the theme colors section after the root prefix
-            ' along with a forward slash at the end and the node
-            ' to read the inner text from.
-            ' This would be used in cases where the theme has
-            ' the Button BackColor in a node's InnerText rather
-            ' than in an Attribute.
-            Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeToReadInnerTextFrom, DefaultValue)
-        Else
-            ' If the node that's desired isn't meant to be in the
-            ' theme colors section, only pass the root prefix
-            ' and the desired node to the GetInnerText function.
+            ' It's assumed that this isn't in the theme colors section.
             ' This would be used in cases where we're trying
             ' to get theme information like the title or description.
-            Return GetInnerText(RootPrefix & DesiredNode, DefaultValue)
+            Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, DefaultValue)
         End If
-
     End Function
 
     Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
@@ -204,8 +181,13 @@ Public Class TE2DotXLoader
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
 
         MessageBox.Show(Node)
-
-        If ThemeProperties.themeSheet.SelectSingleNode(Node, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+        ' Create a variable to store a forward slash char
+        ' for trimming from the end of the node just in
+        ' case one somehow ended up there, such as if
+        ' no node attribute was passed to the GetPropertySafe
+        ' function.
+        Dim ForwardSlash As Char = CChar("/")
+        If ThemeProperties.themeSheet.SelectSingleNode(Node.TrimEnd(ForwardSlash), ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' First check if the node exists.
             ' If it does exist, create a variable to store the node innertext.
             Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode(Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
