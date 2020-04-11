@@ -156,6 +156,12 @@ Public Class TE2DotXLoader
     End Function
 
     Private Shared Function IsColorValid(InputColor As String) As Boolean
+        Dim Pattern As String = "^#[0-9A-F]{1,6}$"
+        Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
+        If RegexWithPattern.IsMatch(InputColor) Then
+            Return True
+        ElseIf 
+        End If
 
     End Function
 
