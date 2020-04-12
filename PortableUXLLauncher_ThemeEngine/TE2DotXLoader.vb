@@ -169,6 +169,21 @@ Public Class TE2DotXLoader
         ' Assign Label forecolor property.
         ThemeProperties.colorLabelForeColor = GetThemeColor("Label", "ForeColor", LoadFromAttribute)
 
+        ' Assign LinkLabel ActiveLinkColor property.
+        ' Don't load link colors from attributes since there's kinda
+        ' a lot in the LinkLabel section.
+        ThemeProperties.colorLinkLabelActiveLinkColor = GetThemeColor("LinkLabel", "ActiveLinkColor", False)
+
+        ' Assign LinkLabel LinkColor property.
+        ' Don't load link colors from attributes since there's kinda
+        ' a lot in the LinkLabel section.
+        ThemeProperties.colorLinkLabelLinkColor = GetThemeColor("LinkLabel", "LinkColor", False)
+
+        ' Assign LinkLabel BackColor property.
+        ' Don't load link colors from attributes since there's kinda
+        ' a lot in the LinkLabel section.
+        ThemeProperties.colorLinkLabelLinkColor = GetThemeColor("LinkLabel", "BackColor", False)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
