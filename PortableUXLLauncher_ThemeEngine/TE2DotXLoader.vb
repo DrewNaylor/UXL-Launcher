@@ -204,6 +204,16 @@ Public Class TE2DotXLoader
         ' Assign RadioButton ForeColor property.
         ThemeProperties.colorRadioButtonForeColor = GetThemeColor("RadioButton", "ForeColor", LoadFromAttribute)
 
+        ' Assign TableLayoutPanel BackColor property.
+        ThemeProperties.colorTableLayoutPanelBackColor = GetThemeColor("TableLayoutPanel", "BackColor", LoadFromAttribute)
+
+        ' Assign TableLayoutPanel ForeColor property.
+        ThemeProperties.colorTableLayoutPanelForeColor = GetThemeColor("TableLayoutPanel", "ForeColor", LoadFromAttribute)
+
+        ' Assign TableLayoutPanel ApplyToAboutWindowAboutTabTLP property.
+        ' This won't be pulled from an attribute since that could make it messier.
+        ThemeProperties.useTableLayoutPanelColorInsideAboutAppTab = CBool(GetPropertySafe("TableLayoutPanel", "ApplyToAboutWindowAboutTabTLP", False))
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
