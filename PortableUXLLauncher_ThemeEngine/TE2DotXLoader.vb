@@ -283,35 +283,22 @@ Public Class TE2DotXLoader
                             "property to check: " & PropertyToCheck & vbCrLf &
                             "property name in xml: " & DefaultNode.Attributes("PropertyName").Value)
             If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
+                For Each DiffNode As XmlNode In DefaultNode
 
-                Dim DiffNode As XmlNode = DefaultNode.SelectSingleNode("Diff")
-
-                MessageBox.Show("Diff node name: " & DiffNode.Name)
-
-                Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
-
-
-                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                    Case 0 ' Return the default value matching the version the theme works with.
-                        Return DiffNode.Attributes("Value").Value
-                    Case 1 ' Return the default value of an older version of the theme engine.
-                        Return DiffNode.Attributes("Value").Value
-                    Case -1 ' Theme doesn't support the version the feature was introduced in.
-                        DiffNode = DiffNode.NextSibling
-                End Select
-                For Each DiffNode As XmlNode In DefaultNode.SelectSingleNode("Diff")
+                    MessageBox.Show("Diff node name: " & DiffNode.Name)
 
                     Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
-                    MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                "default value will be pulled from the value for " & ver.ToString)
+
+
                     Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                        Case 0 ' Theme works with the same version the feature was introduced in.
+                        Case 0 ' Return the default value matching the version the theme works with.
                             Return DiffNode.Attributes("Value").Value
-                        Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-                            DiffNode = DiffNode.NextSibling
+                        Case 1 ' Return the default value of an older version of the theme engine.
+                            Return DiffNode.Attributes("Value").Value
                         Case -1 ' Theme doesn't support the version the feature was introduced in.
                             DiffNode = DiffNode.NextSibling
                     End Select
+
                 Next
             Else
                 ' If it doesn't match, go to the next node and try again.
