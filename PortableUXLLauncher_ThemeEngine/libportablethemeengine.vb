@@ -37,10 +37,16 @@ Public Class themeenginemain
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
-    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True, Optional UseFullCompatibilityMode As Boolean = False)
+    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True, Optional UseTE1DotXFullCompatibilityMode As Boolean = False)
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
+
+        ' Set compatibility mode.
+        ' If it's False, loose compatibility mode will
+        ' be used when loading TE1.x themes, and if
+        ' it's True, full compatibility mode will be used.
+        ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = UseTE1DotXFullCompatibilityMode
 
         If isFilename = True AndAlso File.Exists(themeInput) Then
             ' If the theme input is a filename and the path exists,
@@ -62,7 +68,7 @@ Public Class themeenginemain
             ThemeProperties.themeSheet.LoadXml(themeInput)
         End If
 
-        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility()
+        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(formToApplyTo)
 
         'ApplyTheme(themeName, formToApplyTo)
     End Sub

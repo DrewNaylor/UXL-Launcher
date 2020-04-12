@@ -64,6 +64,11 @@ Public Class TE1DotXLoaderShim
 
             ' Load up the theme file and get its properties if loose compatibility is enabled.
             TE2DotXLoader.AssignControlProperties(False)
+
+        Else
+            ' Calling application wants to 
+
+
         End If
 
     End Sub
