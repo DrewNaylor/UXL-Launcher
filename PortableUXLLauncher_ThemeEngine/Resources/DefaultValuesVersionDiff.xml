@@ -183,6 +183,24 @@
     <Diff RuntimeVersion="1.02" Value="ControlText" />
     <Diff RuntimeVersion="1.01" Value="ControlText" />
   </Default>
+
+
+
+  <Default For="TableLayoutPanel" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.03" Value="Control" />
+    <!-- Support for table layout panels was added in 1.03, but
+    we still have to have entries for older versions. -->
+    <Diff RuntimeVersion="1.02" Value="Control" />
+    <Diff RuntimeVersion="1.01" Value="Control" />
+  </Default>
+
+  <Default For="TableLayoutPanel" PropertyName="ForeColor">
+    <Diff RuntimeVersion="1.03" Value="ControlText" />
+    <!-- Support for table layout panels was added in 1.03, but
+    we still have to have entries for older versions. -->
+    <Diff RuntimeVersion="1.02" Value="ControlText" />
+    <Diff RuntimeVersion="1.01" Value="ControlText" />
+  </Default>
   
   
   
