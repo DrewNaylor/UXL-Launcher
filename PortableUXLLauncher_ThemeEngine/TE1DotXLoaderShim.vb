@@ -108,29 +108,29 @@ Public Class TE1DotXLoaderShim
                         ThemeProperties.colorRadioButtonForeColor = GetDefaultColor("RadioButton", "ForeColor")
 
                         ' Default Checkbox colors.
-                        ThemeProperties.colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        ThemeProperties.colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorCheckBoxBackColor = GetDefaultColor("CheckBox", "BackColor")
+                        ThemeProperties.colorCheckBoxForeColor = GetDefaultColor("CheckBox", "ForeColor")
 
                         ' Default Dropdown box/ComboBox colors.
-                        ThemeProperties.colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
-                        ThemeProperties.colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorDropdownBackColor = GetDefaultColor("Dropdown", "BackColor")
+                        ThemeProperties.colorDropdownForeColor = GetDefaultColor("Dropdown", "ForeColor")
 
                         ' Default LinkLabel colors.
-                        ThemeProperties.colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        ThemeProperties.colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-                        ThemeProperties.colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
-                        ThemeProperties.colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+                        ThemeProperties.colorLinkLabelBackColor = GetDefaultColor("LinkLabel", "BackColor")
+                        ThemeProperties.colorLinkLabelForeColor = GetDefaultColor("LinkLabel", "ForeColor")
+                        ThemeProperties.colorLinkLabelLinkColor = GetDefaultColor("LinkLabel", "LinkColor")
+                        ThemeProperties.colorLinkLabelActiveLinkColor = GetDefaultColor("LinkLabel", "ActiveLinkColor")
 
                         ' Default Panel colors.
-                        ThemeProperties.colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-                        ThemeProperties.colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorPanelBackColor = GetDefaultColor("Panel", "BackColor")
+                        ThemeProperties.colorPanelForeColor = GetDefaultColor("Panel", "ForeColor")
 
                         ' Default About window banner.
                         ThemeProperties.bannerStyle = My.Resources.UXL_Launcher_Banner
 
                         'Default FlowLayoutPanel colors.
-                        ThemeProperties.colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
-                        ThemeProperties.colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorFlowLayoutPanelBackColor = GetDefaultColor("FlowLayoutPanel", "BackColor")
+                        ThemeProperties.colorFlowLayoutPanelForeColor = GetDefaultColor("FlowLayoutPanel", "ForeColor")
                 End Select
             End If
 #End Region
