@@ -109,7 +109,6 @@ Public Class TE2DotXLoader
         ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", LoadFromAttribute)
         MessageBox.Show("button back color: " & ThemeProperties.colorButtonBackColor.ToString)
 
-
         ' Assign Button forecolor property.
         ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", LoadFromAttribute)
 
@@ -123,26 +122,25 @@ Public Class TE2DotXLoader
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
         End Select
 
-        ' Get default statusbar backcolor.
-        ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor")
-        MessageBox.Show("statusbar backcolor: " & ThemeProperties.colorStatusBarBackColor.ToString)
-
-
         ' Assign Button FlatAppearance BorderColor.
         ' Make sure the theme supports it.
         MessageBox.Show("About to get FlatAppearance ButtonBorderColor. Please place breakpoints.")
         ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", False)
         MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
 
-        ' Set Button FlatAppearance MouseOver color.
-        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
-        MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
-
         ' Set Button FlatAppearance MouseDown color.
         ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", False)
         MessageBox.Show("flat appearance button mousedown color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
 
+        ' Set Button FlatAppearance MouseOver color.
+        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
+        MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
 
+
+
+        ' Get default statusbar backcolor.
+        ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor")
+        MessageBox.Show("statusbar backcolor: " & ThemeProperties.colorStatusBarBackColor.ToString)
 
 
 
