@@ -43,6 +43,14 @@ Public Class ThemeProperties
     ' says it works with.
     Private Shared _themeSheetEngineRuntimeVersion As Version
 
+    ' Variable to store whether the TE1.x shim should operate in
+    ' full compatibility mode or loose compatibility mode.
+    ' Full compatibility mode is basically "UXL Launcher Mode,"
+    ' where themes that don't support applying to forms other
+    ' than a form whose name is "aaformMainWindow" won't apply to
+    ' other forms, and instead will apply the default colors to
+    ' forms of other names.
+
 
     ' Variable to store the theme filename in.
     Private Shared _themeFileNameToLoad As String = ""
