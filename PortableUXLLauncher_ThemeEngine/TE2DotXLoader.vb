@@ -251,7 +251,7 @@ Public Class TE2DotXLoader
         ThemeProperties.colorStatusLabelForeColor = GetThemeColor("StatusLabel", "ForeColor", LoadFromAttribute)
 
         ' Assign StatusLabel BackColor property.
-        ThemeProperties.colorStatusLabelForeColor = GetThemeColor("StatusLabel", "BackColor", LoadFromAttribute)
+        ThemeProperties.colorStatusLabelBackColor = GetThemeColor("StatusLabel", "BackColor", LoadFromAttribute)
 
         ' Assign StatusLabel BorderSides property.
         ' Not loading from an attribute so it doesn't get messy.
