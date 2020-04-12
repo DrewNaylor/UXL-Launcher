@@ -45,11 +45,16 @@ Public Class ThemeProperties
 
     ' Variable to store whether the TE1.x shim should operate in
     ' full compatibility mode or loose compatibility mode.
+    ' This variable is set by the calling application, and
+    ' defaults to loose compatibility mode.
     ' Full compatibility mode is basically "UXL Launcher Mode,"
     ' where themes that don't support applying to forms other
     ' than a form whose name is "aaformMainWindow" won't apply to
     ' other forms, and instead will apply the default colors to
     ' forms of other names.
+    ' Loose compatibility mode will have theme colors
+    ' applied to any forms passed into the shim and is what's
+    ' recommended for most applications.
 
 
     ' Variable to store the theme filename in.
