@@ -148,7 +148,11 @@ Public Class TE2DotXLoader
         ' Assign Dropdown/combobox forecolor property.
         ThemeProperties.colorDropdownForeColor = GetThemeColor("Dropdown", "ForeColor", LoadFromAttribute)
 
+        ' Assign Groupbox backcolor property.
+        ThemeProperties.colorGroupBoxBackColor = GetThemeColor("GroupBox", "BackColor", LoadFromAttribute)
 
+        ' Assign Broupbox forecolor property.
+        ThemeProperties.colorGroupBoxForeColor = GetThemeColor("GroupBox", "ForeColor", LoadFromAttribute)
 
     End Sub
 
