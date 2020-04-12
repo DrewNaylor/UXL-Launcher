@@ -122,15 +122,17 @@ Public Class TE2DotXLoader
 
         ' Assign Button FlatAppearance BorderColor.
         ' Make sure the theme supports it.
+        MessageBox.Show("About to get FlatAppearance ButtonBorderColor. Please place breakpoints.")
         ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", False)
         MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
 
-        ' Set Button FlatAppearance MouseDown color.
+        ' Set Button FlatAppearance MouseOver color.
         ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
         MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
 
         ' Set Button FlatAppearance MouseDown color.
         ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", False)
+        MessageBox.Show("flat appearance button mousedown color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
 
 
 
@@ -204,7 +206,7 @@ Public Class TE2DotXLoader
                             End If
                     End Select
                 Case XmlNodeType.Comment
-                    If FeatureNode.ParentNode.NextSibling IsNot Nothing Then
+                    If FeatureNode.NextSibling IsNot Nothing Then
                         ' If the XML node is a comment, just move on to the next
                         ' node and check again.
                         FeatureNode = FeatureNode.NextSibling
