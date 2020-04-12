@@ -56,33 +56,37 @@ Public Class TE1DotXLoaderShim
             ' runtime value is based on this SO answer:
             ' https://stackoverflow.com/a/17432187
             For Each character As Char In ThemeEngineNode.InnerText.ToString
-                If VersionRegexWithPattern.IsMatch(character) = True AndAlso Int32 < Int32.MaxValue - 1 Then
+                If VersionRegexWithPattern.IsMatch(character) = True Then
                     cleaned = cleaned & character
-                    Debug.WriteLine("cleaned length: " & cleaned.Length & vbCrLf &
+                    Debug.WriteLine("cleaned length: " & cleaned.Replace(".", "") & vbCrLf &
                                     "Int32.MaxValue: " & Int32.MaxValue)
                 End If
             Next
 
+            If cleaned.Replace(".", "").Length > Convert.ToString(Int32.MaxValue).Length Then
+                MessageBox.Show("Too long.")
+            End If
+
             MessageBox.Show("cleaned: " & cleaned)
 
-            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(cleaned)
+                Dim TERuntimeVersionInThemeFile As Version = Version.Parse(cleaned)
 
-            ' Make a version variable to store the theme engine version we want to compare to.
-            Dim TE1xMinVersion As Version = Version.Parse("1.01")
+                ' Make a version variable to store the theme engine version we want to compare to.
+                Dim TE1xMinVersion As Version = Version.Parse("1.01")
 
-            Select Case TERuntimeVersionInThemeFile.CompareTo(TE1xMinVersion)
-                Case 0 ' The theme file wants to use Theme Engine version 1.01.
-                    ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TE1xMinVersion.ToString)
-                Case 1 ' The theme file wants to use a theme engine version newer than 1.01.
-                    ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TERuntimeVersionInThemeFile.ToString)
-                Case -1 ' The theme file has a version smaller than 1.01, so it'll be forced to 1.01.
-                    ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
-            End Select
+                Select Case TERuntimeVersionInThemeFile.CompareTo(TE1xMinVersion)
+                    Case 0 ' The theme file wants to use Theme Engine version 1.01.
+                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TE1xMinVersion.ToString)
+                    Case 1 ' The theme file wants to use a theme engine version newer than 1.01.
+                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TERuntimeVersionInThemeFile.ToString)
+                    Case -1 ' The theme file has a version smaller than 1.01, so it'll be forced to 1.01.
+                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
+                End Select
 
-        Else
+            Else
 
-            ' If there's no theme engine runtime version, set it to 1.01.
-            ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
+                ' If there's no theme engine runtime version, set it to 1.01.
+                ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
         End If
 
         MessageBox.Show(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)

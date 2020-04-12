@@ -527,11 +527,6 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
-    Friend Shared Function IsRuntimeVersionLengthValidAsInt32(InputInt As String) As Boolean
-        ' Split the number into separate parts to test each individually.
-        Dim TestInt As String = String.Split(".")
-    End Function
-
     Private Shared Function IsColorValid(InputColor As String) As Boolean
         ' Color validator used in GetThemeColor().
         ' Based off this SO answer:
