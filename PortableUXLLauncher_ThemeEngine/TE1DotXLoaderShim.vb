@@ -36,10 +36,20 @@ Public Class TE1DotXLoaderShim
 
             ' Set the engine runtime version to 1.01 if it's less than that.
             If ThemeEngineNode IsNot Nothing Then
+
+                ' Store the theme engine runtime version from the file.
                 Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
 
                 ' Make a version variable to store the theme engine version we want to compare to.
-                Dim TE2xVersion As Version = Version.Parse("1.01")
+                Dim TE1xMinVersion As Version = Version.Parse("1.01")
+
+                Select Case TERuntimeVersionInThemeFile.CompareTo(TE1xMinVersion)
+                    Case 0 ' The theme file wants to use Theme Engine version 1.01.
+                    Case 1 ' The theme file wants to use a theme engine version newer than 1.01.
+                    Case -1 ' The theme file has a version smaller than 1.01, so it'll be forced to 1.01.
+
+                End Select
+
             End If
         End If
 
