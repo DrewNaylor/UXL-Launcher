@@ -1,5 +1,5 @@
 <FeatureList>
-  <Feature For="Button" Property="FlatAppearance/BorderColor" VersionIntroduced="1.01" />
+  <Feature For="Button" Property="FlatAppearance/BorderColor" VersionIntroduced="2.6" />
   <Feature For="Button" Property="FlatAppearance/MouseDownBackColor" VersionIntroduced="1.03" />
   
   <!-- Example compatibility nodes: -->

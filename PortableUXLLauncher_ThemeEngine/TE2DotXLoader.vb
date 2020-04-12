@@ -126,11 +126,11 @@ Public Class TE2DotXLoader
         MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
 
         ' Set Button FlatAppearance MouseDown color.
-        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", False)
-        MessageBox.Show("flat appearance button mousedown color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
+        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
+        MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
 
-        ' Set Button FlatAppearance MouseOver color.
-        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
+        ' Set Button FlatAppearance MouseDown color.
+        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", False)
 
 
 
@@ -179,11 +179,15 @@ Public Class TE2DotXLoader
                                                         "First version to have this feature: " & ver.ToString, "Version matches theme file runtime version")
                                         Return True
                                     Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-                                        MessageBox.Show("Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                        MessageBox.Show("Node name: " & NodeName & vbCrLf &
+                                                        "Property name: " & PropertyToCheck & vbCrLf &
+                                                        "Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
                                                         "First version to have this feature: " & ver.ToString, "Theme file runtime version is newer than when the feature was introduced")
                                         Return True
                                     Case -1 ' Theme doesn't support the version the feature was introduced in.
-                                        MessageBox.Show("Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                        MessageBox.Show("Node name: " & NodeName & vbCrLf &
+                                                        "Property name: " & PropertyToCheck & vbCrLf &
+                                                        "Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
                                                         "First version to have this feature: " & ver.ToString, "Theme file runtime version doesn't support feature")
                                         Return False
                                 End Select ' Done seeing if the theme file supports a given feature.
