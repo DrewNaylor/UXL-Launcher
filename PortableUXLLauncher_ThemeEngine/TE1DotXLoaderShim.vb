@@ -79,7 +79,7 @@ Public Class TE1DotXLoaderShim
                         ' If the theme doesn't support TE1.03, apply defaults.
                         ' Default button colors.
                         ThemeProperties.colorButtonBackColor = GetDefaultColor("Button", "BackColor")
-                        ThemeProperties.colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorButtonForeColor = GetDefaultColor("Button", "ForeColor")
                         ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
                         ThemeProperties.flatappearanceButtonBorderColor = Nothing
 
