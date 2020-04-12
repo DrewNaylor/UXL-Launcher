@@ -93,7 +93,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Checkbox colors:
         Dim colorCheckBoxBackColor As Color
         Dim colorCheckBoxForeColor As Color
-        ' Checkbox colors:
+        ' Dropdown/combobox colors:
         Dim colorDropdownBackColor As Color
         Dim colorDropdownForeColor As Color
         ' Groupbox colors:

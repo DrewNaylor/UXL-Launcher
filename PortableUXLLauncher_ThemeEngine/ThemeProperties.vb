@@ -64,7 +64,7 @@ Public Class ThemeProperties
     ' Checkbox colors:
     Private Shared _colorCheckBoxBackColor As Color
     Private Shared _colorCheckBoxForeColor As Color
-    ' Checkbox colors:
+    ' Dropdown/combobox colors:
     Private Shared _colorDropdownBackColor As Color
     Private Shared _colorDropdownForeColor As Color
     ' Groupbox colors:
@@ -109,6 +109,9 @@ Public Class ThemeProperties
     ' Menubar item margin colors:
     Private Shared _colorMenuItemImageMarginGradientStartColor As Color
     Private Shared _colorMenuItemImageMarginGradientEndColor As Color
+    ' Panel colors:
+    Private Shared _colorPanelBackColor As Color
+    Private Shared _colorPanelForeColor As Color
     ' Statusbar label colors:
     Private Shared _colorStatusLabelBackColor As Color
     Private Shared _colorStatusLabelForeColor As Color
