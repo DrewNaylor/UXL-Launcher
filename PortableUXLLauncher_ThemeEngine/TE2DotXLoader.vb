@@ -281,35 +281,51 @@ Public Class TE2DotXLoader
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
+        ' Define some variables for holding an XML document and a namespace manager.
         Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
         Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
 
+        ' Add namespace.
         NamespaceManager.AddNamespace("verdiffdefault", "https://drewnaylor.github.io/xml")
 
+        ' Load in the default values list.
         DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
 
         For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
-            'MessageBox.Show("node: " & DefaultNode.Name & vbCrLf &
-            '                "property to check: " & PropertyToCheck & vbCrLf &
-            '                "property name in xml: " & DefaultNode.Attributes("PropertyName").Value)
+
+            ' Look at each node in the default values list.
+            ' These are the "<Default>" nodes.
             If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
+
+                ' If the default node's "For" attribute matches the node we're looking at,
+                ' and the property we want to check matching the node's "PropertyName" attribute,
+                ' we have the right one, so look at the nodes in that one.
                 For Each DiffNode As XmlNode In DefaultNode
 
-                    'MessageBox.Show("Diff node name: " & DiffNode.Name)
-
+                    ' Create a version variable that stores the "RuntimeVersion" attribute of
+                    ' the current "<Diff>" node.
                     Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
 
-
+                    ' Compare the theme engine runtime version that the theme it says supports
+                    ' to the version number in the "RuntimeVersion" attribute in the current
+                    ' "<Diff>" node.
                     Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                        Case 0 ' Return the default value matching the version the theme works with.
+                        Case 0
+                            ' The "RuntimeVersion" matches the version that the theme file says
+                            ' it works with. Return this value.
                             Return DiffNode.Attributes("Value").Value
-                        Case 1 ' Return the default value of an older version of the theme engine.
+                        Case 1
+                            ' The "RuntimeVersion" is older than the version of the theme engine
+                            ' that the theme file says it works with. Return this value.
                             Return DiffNode.Attributes("Value").Value
-                        Case -1 ' Theme doesn't support the version the feature was introduced in.
+                        Case -1
+                            ' The "RuntimeVersion" is newer than the version the theme engine works with.
+                            ' Go to the next node and try again.
+                            ' Theme doesn't support the version the feature was introduced in.
                             DiffNode = DiffNode.NextSibling
                     End Select
 
-                Next
+                Next ' Read next "<Diff>" node.
             Else
                 ' If it doesn't match, go to the next node and try again.
                 DefaultNode = DefaultNode.NextSibling
