@@ -97,8 +97,8 @@ Public Class TE2DotXLoader
         AssignThemeInfoProperties()
 
         ' About window banner style.
-        Select Case GetPropertySafe("AboutWindow", "BannerStyle", LoadFromAttribute)
-            Case "Dark"
+        Select Case GetPropertySafe("AboutWindow", "BannerStyle", LoadFromAttribute).ToLowerInvariant
+            Case "dark"
                 ThemeProperties.bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
             Case Else
                 ThemeProperties.bannerStyle = My.Resources.UXL_Launcher_Banner
@@ -212,6 +212,11 @@ Public Class TE2DotXLoader
 
         ' Assign TableLayoutPanel ApplyToAboutWindowAboutTabTLP property.
         ' This won't be pulled from an attribute since that could make it messier.
+        ' If the theme says to use this in the About window's
+        ' About tab for the tableLayoutPanelAboutAppTab control,
+        ' apply colorTableLayoutPanelBackColor to it.
+        ' Otherwise, just use the colorTabPageBackColor
+        ' and have the table layout panel inherit it.
         If GetPropertySafe("TableLayoutPanel", "ApplyToAboutWindowAboutTabTLP", False).ToLowerInvariant = "true" Then
             ThemeProperties.useTableLayoutPanelColorInsideAboutAppTab = True
         Else
