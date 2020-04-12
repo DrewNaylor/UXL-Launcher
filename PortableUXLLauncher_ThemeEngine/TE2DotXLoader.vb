@@ -100,15 +100,15 @@ Public Class TE2DotXLoader
 
         ' Button properties.
         ' Assign the Button backcolor property.
-        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", "Transparent", LoadFromAttribute)
+        ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", LoadFromAttribute)
         MessageBox.Show("button back color: " & ThemeProperties.colorButtonBackColor.ToString)
 
 
         ' Assign Button forecolor property.
-        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", "ControlText", LoadFromAttribute)
+        ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", LoadFromAttribute)
 
         ' Set Button FlatStyle property.
-        Select Case GetPropertySafe("Button", "FlatStyle", "Standard", LoadFromAttribute)
+        Select Case GetPropertySafe("Button", "FlatStyle", LoadFromAttribute)
             Case "Standard"
                 ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
             Case "Flat"
@@ -123,15 +123,15 @@ Public Class TE2DotXLoader
 
         ' Assign Button FlatAppearance BorderColor.
         ' Make sure the theme supports it.
-        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", "Nothing", False)
+        ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", False)
         MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
 
         ' Set Button FlatAppearance MouseDown color.
-        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", "Nothing", False)
+        ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", False)
         MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
 
         ' Set Button FlatAppearance MouseOver color.
-        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", "Nothing", False)
+        ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
 
 
 
@@ -235,17 +235,19 @@ Public Class TE2DotXLoader
         ThemeProperties.themeSheetAuthor = GetPropertySafe("Author", "", False, False)
 
         ' Grab theme file version.
-        ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", "(No version specified)", False, False)
+        ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", False, False)
     End Sub
 
-    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = False) As Color
+    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, Optional LoadFromAttribute As Boolean = False) As Color
         ' Grab the color for the control from the theme.
         ' Make sure it's a valid color first.
         ' Based off this SO answer:
         ' https://stackoverflow.com/a/40681176
 
+        Dim DefaultValue As String = GetDefaultValueVersionVariant(ControlName, ControlProperty)
+
         ' Put the theme's color value into a variable for easy access.
-        Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, DefaultValue, LoadFromAttribute)
+        Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
         'MessageBox.Show(ColorFromTheme)
         If IsColorValid(ColorFromTheme) Then
             ' If the color is a valid HTML or system color,

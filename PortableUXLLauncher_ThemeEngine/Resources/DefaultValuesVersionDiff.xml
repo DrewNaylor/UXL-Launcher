@@ -4,6 +4,42 @@
 		<Diff RuntimeVersion="1.02" Value="Control" />
 		<Diff RuntimeVersion="1.01" Value="Control" />
 	</Default>
+
+  <Default For="Button" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.03" Value="Transparent" />
+    <Diff RuntimeVersion="1.02" Value="Transparent" />
+    <Diff RuntimeVersion="1.01" Value="Transparent" />
+  </Default>
+
+  <Default For="Button" PropertyName="ForeColor">
+    <Diff RuntimeVersion="1.03" Value="ControlText" />
+    <Diff RuntimeVersion="1.02" Value="ControlText" />
+    <Diff RuntimeVersion="1.01" Value="ControlText" />
+  </Default>
+
+  <Default For="Button" PropertyName="FlatStyle">
+    <Diff RuntimeVersion="1.03" Value="Standard" />
+    <Diff RuntimeVersion="1.02" Value="Standard" />
+    <Diff RuntimeVersion="1.01" Value="Standard" />
+  </Default>
+
+  <Default For="Button" PropertyName="FlatAppearance/BorderColor">
+    <Diff RuntimeVersion="1.03" Value="LiteralNothing" />
+    <Diff RuntimeVersion="1.02" Value="Control" />
+    <Diff RuntimeVersion="1.01" Value="Control" />
+  </Default>
+
+  <Default For="Button" PropertyName="FlatAppearance/MouseDownBackColor">
+    <Diff RuntimeVersion="1.03" Value="LiteralNothing" />
+    <Diff RuntimeVersion="1.02" Value="LiteralNothing" />
+    <Diff RuntimeVersion="1.01" Value="LiteralNothing" />
+  </Default>
+
+  <Default For="Button" PropertyName="FlatAppearance/MouseDownBackColor">
+    <Diff RuntimeVersion="1.03" Value="LiteralNothing" />
+    <Diff RuntimeVersion="1.02" Value="LiteralNothing" />
+    <Diff RuntimeVersion="1.01" Value="LiteralNothing" />
+  </Default>
   
   <Default For="Title" PropertyName="">
     <Diff RuntimeVersion="1.01" Value="(No title specified)" />
@@ -17,7 +53,7 @@
     <Diff RuntimeVersion="1.01" Value="(No author specified)" />
   </Default>
 
-  <Default For="Author" PropertyName="">
-    <Diff RuntimeVersion="1.01" Value="(No author specified)" />
+  <Default For="Version" PropertyName="">
+    <Diff RuntimeVersion="1.01" Value="(No version specified)" />
   </Default>
 </DefaultValuesList>
