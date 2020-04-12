@@ -214,6 +214,12 @@ Public Class TE2DotXLoader
         ' This won't be pulled from an attribute since that could make it messier.
         ThemeProperties.useTableLayoutPanelColorInsideAboutAppTab = CBool(GetPropertySafe("TableLayoutPanel", "ApplyToAboutWindowAboutTabTLP", False))
 
+        ' Assign TabPage BackColor property.
+        ThemeProperties.colorTabPageBackColor = GetThemeColor("TabPage", "BackColor", LoadFromAttribute)
+
+        ' Assign TabPage ForeColor property.
+        ThemeProperties.colorTabPageForeColor = GetThemeColor("TabPage", "ForeColor", LoadFromAttribute)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
