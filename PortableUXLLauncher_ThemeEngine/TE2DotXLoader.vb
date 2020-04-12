@@ -226,6 +226,16 @@ Public Class TE2DotXLoader
         ' Assign TextBox ForeColor property.
         ThemeProperties.colorTextboxForeColor = GetThemeColor("TextBox", "ForeColor", LoadFromAttribute)
 
+        ' Assign MenuItem BackColor property.
+        ThemeProperties.colorMenuItemBackColor = GetThemeColor("MenuItem", "BackColor", LoadFromAttribute)
+
+        ' Assign MenuItem ForeColor property.
+        ThemeProperties.colorMenuItemForeColor = GetThemeColor("MenuItem", "ForeColor", LoadFromAttribute)
+
+        ' Assign MenuItem Image Margin Gradient Start Color property.
+        ' This isn't being loaded from an attribute as it could be messy.
+        ThemeProperties.colorMenuItemImageMarginGradientStartColor = GetThemeColor("MenuItem", "ImageMarginGradient/StartColor", False)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
