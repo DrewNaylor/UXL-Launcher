@@ -403,7 +403,7 @@ Public Class TE2DotXLoader
         MessageBox.Show(ThemeProperties.themeSheetFileVersion)
     End Sub
 
-    Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, Optional LoadFromAttribute As Boolean = False) As Color
+    Private Shared Function GetThemeColor(ControlName As String, ControlProperty As String, Optional LoadFromAttribute As Boolean = False) As Color
         ' Grab the color for the control from the theme.
         ' Make sure it's a valid color first.
         ' Based off this SO answer:
