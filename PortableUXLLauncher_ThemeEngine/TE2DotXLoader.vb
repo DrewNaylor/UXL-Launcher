@@ -527,6 +527,10 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
+    Friend Shared Function IsRuntimeVersionLengthValidAsInt32(InputInt) As Boolean
+
+    End Function
+
     Private Shared Function IsColorValid(InputColor As String) As Boolean
         ' Color validator used in GetThemeColor().
         ' Based off this SO answer:

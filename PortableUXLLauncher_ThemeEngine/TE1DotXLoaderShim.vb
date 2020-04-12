@@ -56,12 +56,15 @@ Public Class TE1DotXLoaderShim
             ' runtime value is based on this SO answer:
             ' https://stackoverflow.com/a/17432187
             For Each character As Char In ThemeEngineNode.InnerText.ToString
-                If VersionRegexWithPattern.IsMatch(character) = True Then
+                If VersionRegexWithPattern.IsMatch(character) = True AndAlso Int32 < Int32.MaxValue - 1 Then
                     cleaned = cleaned & character
+                    Debug.WriteLine("cleaned length: " & cleaned.Length & vbCrLf &
+                                    "Int32.MaxValue: " & Int32.MaxValue)
                 End If
             Next
 
             MessageBox.Show("cleaned: " & cleaned)
+
             Dim TERuntimeVersionInThemeFile As Version = Version.Parse(cleaned)
 
             ' Make a version variable to store the theme engine version we want to compare to.
