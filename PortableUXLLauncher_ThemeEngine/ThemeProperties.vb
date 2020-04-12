@@ -55,6 +55,7 @@ Public Class ThemeProperties
     ' Loose compatibility mode will have theme colors
     ' applied to any forms passed into the shim and is what's
     ' recommended for most applications.
+    Private Shared _compatibilityUseFullTE1DotXCompatibilityMode As Boolean = False
 
 
     ' Variable to store the theme filename in.
