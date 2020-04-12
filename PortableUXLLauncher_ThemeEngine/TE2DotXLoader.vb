@@ -192,11 +192,6 @@ Public Class TE2DotXLoader
                                 Return True
                             End If
                     End Select
-                    'If NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-
-                    'Else
-                    '        FeatureNode = FeatureNode.NextSibling
-                    'End If
                 Case XmlNodeType.Comment
                     If FeatureNode.ParentNode.NextSibling IsNot Nothing Then
                         'MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
@@ -209,17 +204,6 @@ Public Class TE2DotXLoader
                 Case Else
                     Return True
             End Select
-            'If FeatureNode.NodeType = Not XmlNodeType.Comment AndAlso NodeName = FeatureNode.Attributes("For").Value AndAlso PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-
-            'Else
-            '    ' If it doesn't match, go to the next node and try again.
-            '    FeatureNode = FeatureNode.NextSibling
-            'End If
-            ''Else
-            ''    ' Version checking is broken at the moment, so it needs to be fixed.
-            ''    ' It's just skipping down to here even for the FlatApearance/BorderColor property.
-            ''    Return True
-            ''End If
         Next
     End Function
 
