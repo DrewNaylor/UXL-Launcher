@@ -129,6 +129,14 @@
     <Diff RuntimeVersion="1.02" Value="#0000FF" />
     <Diff RuntimeVersion="1.01" Value="#0000FF" />
   </Default>
+
+  <Default For="LinkLabel" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.03" Value="Transparent" />
+    <!-- Support for linklabels was added in 1.03, but
+    we still have to have entries for older versions. -->
+    <Diff RuntimeVersion="1.02" Value="Transparent" />
+    <Diff RuntimeVersion="1.01" Value="Transparent" />
+  </Default>
   
   
   
