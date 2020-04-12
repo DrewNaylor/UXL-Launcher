@@ -220,6 +220,12 @@ Public Class TE2DotXLoader
         ' Assign TabPage ForeColor property.
         ThemeProperties.colorTabPageForeColor = GetThemeColor("TabPage", "ForeColor", LoadFromAttribute)
 
+        ' Assign TextBox BackColor property.
+        ThemeProperties.colorTextboxBackColor = GetThemeColor("TextBox", "BackColor", LoadFromAttribute)
+
+        ' Assign TextBox ForeColor property.
+        ThemeProperties.colorTextboxForeColor = GetThemeColor("TextBox", "ForeColor", LoadFromAttribute)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
