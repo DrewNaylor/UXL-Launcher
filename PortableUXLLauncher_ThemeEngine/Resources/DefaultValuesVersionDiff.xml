@@ -165,6 +165,24 @@
     <Diff RuntimeVersion="1.02" Value="ControlText" />
     <Diff RuntimeVersion="1.01" Value="ControlText" />
   </Default>
+
+
+
+  <Default For="RadioButton" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.03" Value="Transparent" />
+    <!-- Support for radio buttons was added in 1.03, but
+    we still have to have entries for older versions. -->
+    <Diff RuntimeVersion="1.02" Value="Transparent" />
+    <Diff RuntimeVersion="1.01" Value="Transparent" />
+  </Default>
+
+  <Default For="RadioButton" PropertyName="ForeColor">
+    <Diff RuntimeVersion="1.03" Value="ControlText" />
+    <!-- Support for radio buttons was added in 1.03, but
+    we still have to have entries for older versions. -->
+    <Diff RuntimeVersion="1.02" Value="ControlText" />
+    <Diff RuntimeVersion="1.01" Value="ControlText" />
+  </Default>
   
   
   
