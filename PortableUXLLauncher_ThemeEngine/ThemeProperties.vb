@@ -45,8 +45,8 @@ Public Class ThemeProperties
 
     ' Variable to store whether the TE1.x shim should operate in
     ' full compatibility mode or loose compatibility mode.
-    ' This variable is set by the calling application, and
-    ' defaults to loose compatibility mode.
+    ' This variable is set by the calling application when loading
+    ' a theme, and defaults to loose compatibility mode.
     ' Full compatibility mode is basically "UXL Launcher Mode,"
     ' where themes that don't support applying to forms other
     ' than a form whose name is "aaformMainWindow" won't apply to
@@ -221,7 +221,7 @@ Public Class ThemeProperties
     End Property
 
     ' Whether to use full or loose compatibility mode for the TE1.x shim.
-    Public Shared Property compatibilityUseFullTE1DotXCompatibilityMode() As Boolean
+    Friend Shared Property compatibilityUseFullTE1DotXCompatibilityMode() As Boolean
         Get
             Return _compatibilityUseFullTE1DotXCompatibilityMode
         End Get
