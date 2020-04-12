@@ -202,6 +202,14 @@
     <Diff RuntimeVersion="1.01" Value="ControlText" />
   </Default>
 
+  <Default For="TableLayoutPanel" PropertyName="ApplyToAboutWindowAboutTabTLP">
+    <Diff RuntimeVersion="1.03" Value="False" />
+    <!-- Even though TableLayoutPanel ApplyToAboutWindowAboutTabTLP was introduced
+    in version 1.03, we still have to provide defaults for 1.02 and 1.01 themes. -->
+    <Diff RuntimeVersion="1.02" Value="False" />
+    <Diff RuntimeVersion="1.01" Value="False" />
+  </Default>
+
 
 
   <Default For="TabPage" PropertyName="BackColor">
@@ -253,6 +261,24 @@
   <Default For="MenuBar" PropertyName="BackColor">
     <Diff RuntimeVersion="1.01" Value="Control" />
   </Default>
+
+
+
+  <Default For="StatusLabel" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.01" Value="Transparent" />
+  </Default>
+
+  <Default For="StatusLabel" PropertyName="ForeColor">
+    <Diff RuntimeVersion="1.01" Value="ControlText" />
+  </Default>
+
+  <Default For="StatusLabel" PropertyName="BorderSides">
+    <Diff RuntimeVersion="1.01" Value="None" />
+  </Default>
+
+  <Default For="StatusLabel" PropertyName="BorderStyle">
+    <Diff RuntimeVersion="1.01" Value="Flat" />
+  </Default>
   
   
   
@@ -270,13 +296,5 @@
 
   <Default For="Version" PropertyName="">
     <Diff RuntimeVersion="1.01" Value="(No version specified)" />
-  </Default>
-
-  <Default For="TableLayoutPanel" PropertyName="ApplyToAboutWindowAboutTabTLP">
-    <Diff RuntimeVersion="1.03" Value="False" />
-    <!-- Even though TableLayoutPanel ApplyToAboutWindowAboutTabTLP was introduced
-    in version 1.03, we still have to provide defaults for 1.02 and 1.01 themes. -->
-    <Diff RuntimeVersion="1.02" Value="False" />
-    <Diff RuntimeVersion="1.01" Value="False" />
   </Default>
 </DefaultValuesList>
