@@ -247,6 +247,29 @@ Public Class TE2DotXLoader
         ' Assign MenuBar BackColor property.
         ThemeProperties.colorMenubarBackColor = GetThemeColor("MenuBar", "BackColor", LoadFromAttribute)
 
+        ' Assign StatusLabel ForeColor property.
+        ThemeProperties.colorStatusLabelForeColor = GetThemeColor("StatusLabel", "ForeColor", LoadFromAttribute)
+
+        ' Assign StatusLabel BorderSides property.
+        ' Not loading from an attribute so it doesn't get messy.
+        Select Case GetPropertySafe("StatusLabel", "BackColor", False).ToLowerInvariant
+            Case "all"
+                ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
+            Case "top"
+                ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Top
+            Case "left"
+                ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Left
+            Case "bottom"
+                ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Bottom
+            Case "right"
+                ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Right
+            Case Else
+                ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
+        End Select
+
+
+
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
