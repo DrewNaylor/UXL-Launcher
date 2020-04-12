@@ -41,7 +41,7 @@ Public Class TE1DotXLoaderShim
             ' the dot as a literal.
             Dim tempTERuntimeFileVersionCleaner As String = ThemeEngineNode.InnerText.ToString
             ' Make a pattern for the regex.
-            Dim VersionPattern As String = "^[0-9\.]"
+            Dim VersionPattern As String = "^[0-9][\.]\b"
             ' Make a regex that we'll use with the above patters.
             Dim VersionRegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(VersionPattern)
             ' Parse the resulting regex and pull out what matches.
