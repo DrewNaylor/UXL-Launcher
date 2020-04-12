@@ -298,30 +298,36 @@ Public Class TE2DotXLoader
                 ' and the property we want to check matching the node's "PropertyName" attribute,
                 ' we have the right one, so look at the nodes in that one.
                 For Each DiffNode As XmlNode In DefaultNode
+                    Select Case DiffNode.NodeType
+                        Case XmlNodeType.Element
+                            ' Create a version variable that stores the "RuntimeVersion" attribute of
+                            ' the current "<Diff>" node.
+                            Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
 
-                    ' Create a version variable that stores the "RuntimeVersion" attribute of
-                    ' the current "<Diff>" node.
-                    Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
+                            ' Compare the theme engine runtime version that the theme it says supports
+                            ' to the version number in the "RuntimeVersion" attribute in the current
+                            ' "<Diff>" node.
+                            Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
+                                Case 0
+                                    ' The "RuntimeVersion" matches the version that the theme file says
+                                    ' it works with. Return this value.
+                                    Return DiffNode.Attributes("Value").Value
+                                Case 1
+                                    ' The "RuntimeVersion" is older than the version of the theme engine
+                                    ' that the theme file says it works with. Return this value.
+                                    Return DiffNode.Attributes("Value").Value
+                                Case -1
+                                    ' The "RuntimeVersion" is newer than the version the theme engine works with.
+                                    ' Go to the next node and try again.
+                                    ' Theme doesn't support the version the feature was introduced in.
+                                    DiffNode = DiffNode.NextSibling
+                            End Select
 
-                    ' Compare the theme engine runtime version that the theme it says supports
-                    ' to the version number in the "RuntimeVersion" attribute in the current
-                    ' "<Diff>" node.
-                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                        Case 0
-                            ' The "RuntimeVersion" matches the version that the theme file says
-                            ' it works with. Return this value.
-                            Return DiffNode.Attributes("Value").Value
-                        Case 1
-                            ' The "RuntimeVersion" is older than the version of the theme engine
-                            ' that the theme file says it works with. Return this value.
-                            Return DiffNode.Attributes("Value").Value
-                        Case -1
-                            ' The "RuntimeVersion" is newer than the version the theme engine works with.
-                            ' Go to the next node and try again.
-                            ' Theme doesn't support the version the feature was introduced in.
-                            DiffNode = DiffNode.NextSibling
+                        Case XmlNodeType.Comment
+                            If DiffNode.NextSibling IsNot Nothing Then
+                                DiffNode = DiffNode.NextSibling
+                            End If
                     End Select
-
                 Next ' Read next "<Diff>" node.
             Else
                 ' If it doesn't match, go to the next node and try again.
