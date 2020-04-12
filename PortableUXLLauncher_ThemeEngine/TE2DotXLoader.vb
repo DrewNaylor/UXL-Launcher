@@ -137,7 +137,13 @@ Public Class TE2DotXLoader
         MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
 
         ' Assign Checkbox backcolor property.
-        ThemeProperties.colorButtonForeColor = GetThemeColor("CheckBox", "BackColor", LoadFromAttribute)
+        ThemeProperties.colorCheckBoxBackColor = GetThemeColor("CheckBox", "BackColor", LoadFromAttribute)
+
+        ' Assign Checkbox forecolor property.
+        ThemeProperties.colorCheckBoxForeColor = GetThemeColor("CheckBox", "ForeColor", LoadFromAttribute)
+
+        ' Assign Dropdown/combobox backcolor property.
+        ThemeProperties.colorDropdownBackColor = GetThemeColor("Dropdown", "BackColor", LoadFromAttribute)
 
 
 
