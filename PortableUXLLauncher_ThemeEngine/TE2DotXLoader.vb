@@ -182,7 +182,15 @@ Public Class TE2DotXLoader
         ' Assign LinkLabel BackColor property.
         ' Don't load link colors from attributes since there's kinda
         ' a lot in the LinkLabel section.
-        ThemeProperties.colorLinkLabelLinkColor = GetThemeColor("LinkLabel", "BackColor", False)
+        ThemeProperties.colorLinkLabelBackColor = GetThemeColor("LinkLabel", "BackColor", False)
+
+        ' Assign LinkLabel ForeColor property.
+        ' Don't load link colors from attributes since there's kinda
+        ' a lot in the LinkLabel section.
+        ' LinkLabel ForeColors are only shown if the LinkLabel LinkArea
+        ' property is set to be less than the entire linklabel so that
+        ' a regular label is shown in the area not covered by the LinkArea.
+        ThemeProperties.colorLinkLabelForeColor = GetThemeColor("LinkLabel", "ForeColor", False)
 
     End Sub
 
