@@ -1,6 +1,6 @@
 ﻿Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
-        libportablethemeengine.themeenginemain.LoadTheme(textboxThemePath.Text, Me)
+        libportablethemeengine.themeenginemain.LoadTheme(textboxThemePath.Text, Me,, True)
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString
         Try
             ' Setting the form to ButtonBackColor.

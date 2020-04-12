@@ -74,7 +74,7 @@ Public Class TE1DotXLoaderShim
 #Region "Apply default colors to forms not supported by TE1.02 or lower."
             ' Apply default colors to forms that aren't supported by TE1.02 or lower.
             If formToApplyTo.Name IsNot "aaformMainWindow" Then
-                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo("1.03")
+                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(Version.Parse("1.03"))
                     Case -1
                         ' If the theme doesn't support TE1.03, apply defaults.
                         ' Default button colors.
