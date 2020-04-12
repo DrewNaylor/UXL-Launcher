@@ -136,10 +136,20 @@ Public Class TE1DotXLoaderShim
                         ThemeProperties.colorFlowLayoutPanelBackColor = GetDefaultColor("FlowLayoutPanel", "BackColor")
                         ThemeProperties.colorFlowLayoutPanelForeColor = GetDefaultColor("FlowLayoutPanel", "ForeColor")
                 End Select
+
+            Else
+                ' Get the theme colors for this form since it's named "aaformMainWindow".
+                TE2DotXLoader.AssignControlProperties(False)
             End If
 #End Region
 
         End If
+
+        ' Now that we're done figuring out what the properties are,
+        ' we can put the colors on the controls.
+        ' At this point, the code will go back to themeenginemain.LoadTheme,
+        ' so applying colors will have to be done after the comment there
+        ' saying that colors can be applied.
 
     End Sub
 
