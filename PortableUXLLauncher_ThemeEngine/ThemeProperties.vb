@@ -220,6 +220,16 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' Whether to use full or loose compatibility mode for the TE1.x shim.
+    Public Shared Property compatibilityUseFullTE1DotXCompatibilityMode() As Boolean
+        Get
+            Return _compatibilityUseFullTE1DotXCompatibilityMode
+        End Get
+        Set(value As Boolean)
+            _compatibilityUseFullTE1DotXCompatibilityMode = value
+        End Set
+    End Property
+
 
 #End Region
 
