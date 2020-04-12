@@ -56,17 +56,12 @@ Public Class TE1DotXLoaderShim
             ' runtime value is based on this SO answer:
             ' https://stackoverflow.com/a/17432187
             For Each character As Char In ThemeEngineNode.InnerText.ToString
-                If VersionRegexWithPattern.IsMatch(character) = True Then
+                If VersionRegexWithPattern.IsMatch(character) = True AndAlso TE2DotXLoader.IsRuntimeVerNumberTooLong(cleaned) = False Then
                     cleaned = cleaned & character
                     Debug.WriteLine("cleaned length: " & cleaned.Replace(".", "") & vbCrLf &
                                     "Int32.MaxValue: " & Int32.MaxValue)
                 End If
             Next
-
-            If cleaned.Replace(".", "").Length > Convert.ToString(Int32.MaxValue).Length Then
-                MessageBox.Show("Too long.")
-            End If
-
             MessageBox.Show("cleaned: " & cleaned)
 
                 Dim TERuntimeVersionInThemeFile As Version = Version.Parse(cleaned)

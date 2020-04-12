@@ -527,6 +527,17 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
+    Friend Shared Function IsRuntimeVerNumberTooLong(InputInt As String) As Boolean
+
+        If InputInt.Replace(".", "").Length >= Convert.ToString(Int32.MaxValue).Length Then
+            MessageBox.Show("Too long.")
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+
     Private Shared Function IsColorValid(InputColor As String) As Boolean
         ' Color validator used in GetThemeColor().
         ' Based off this SO answer:
