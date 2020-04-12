@@ -84,28 +84,28 @@ Public Class TE1DotXLoaderShim
                         ThemeProperties.flatappearanceButtonBorderColor = Nothing
 
                         ' Default TableLayoutPanel colors.
-                        ThemeProperties.colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-                        ThemeProperties.colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorTableLayoutPanelBackColor = GetDefaultColor("TableLayoutPanel", "BackColor")
+                        ThemeProperties.colorTableLayoutPanelForeColor = GetDefaultColor("TableLayoutPanel", "ForeColor")
 
                         ' Default TabPage colors.
-                        ThemeProperties.colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
-                        ThemeProperties.colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorTabPageBackColor = GetDefaultColor("TabPage", "BackColor")
+                        ThemeProperties.colorTabPageForeColor = GetDefaultColor("TabPage", "ForeColor")
 
                         ' Default GroupBox colors.
-                        ThemeProperties.colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        ThemeProperties.colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorGroupBoxBackColor = GetDefaultColor("GroupBox", "BackColor")
+                        ThemeProperties.colorGroupBoxForeColor = GetDefaultColor("GroupBox", "ForeColor")
 
                         ' Default Label colors.
-                        ThemeProperties.colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        ThemeProperties.colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorLabelBackColor = GetDefaultColor("Label", "BackColor")
+                        ThemeProperties.colorLabelForeColor = GetDefaultColor("Label", "ForeColor")
 
                         ' Default Textbox colors.
-                        ThemeProperties.colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
-                        ThemeProperties.colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
+                        ThemeProperties.colorTextboxBackColor = GetDefaultColor("TextBox", "BackColor")
+                        ThemeProperties.colorTextboxForeColor = GetDefaultColor("TextBox", "ForeColor")
 
                         ' Default RadioButton colors.
-                        ThemeProperties.colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        ThemeProperties.colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorRadioButtonBackColor = GetDefaultColor("RadioButton", "BackColor")
+                        ThemeProperties.colorRadioButtonForeColor = GetDefaultColor("RadioButton", "ForeColor")
 
                         ' Default Checkbox colors.
                         ThemeProperties.colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
