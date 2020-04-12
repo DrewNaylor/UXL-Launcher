@@ -153,22 +153,24 @@ Public Class TE2DotXLoader
         VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
 
         For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList")
-            'MessageBox.Show("feature node: " & FeatureNode.Name & vbCrLf &
-            '                "property to check: " & PropertyToCheck & vbCrLf &
-            '                "property value: " & FeatureNode.Attributes("PropertyName").Value)
-            'MessageBox.Show("NodeName: " & NodeName & vbCrLf &
-            '                "PropertyToCheck: " & PropertyToCheck & vbCrLf &
-            '                "Current FeatureNode: " & FeatureNode.Name)
+            ' Check inside each node that specifies one feature.
+            ' A feature is defined as something that the theme engine
+            ' can use, for example to change the color of something.
             Select Case FeatureNode.NodeType
+                ' Check the node type that we're looking at.
                 Case XmlNodeType.Element
+                    ' If the Xml node is an element, we can look in there.
                     Select Case FeatureNode.Attributes("For").Value
                         Case NodeName
-                            'MessageBox.Show("NodeName matches attribute.")
+                            ' If the feature node's "For" attribute matches the NodeName
+                            ' that we want to check, see if the "Property" value matches
+                            ' the property we want to check.
                             If PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-
+                                ' If the "Property" attribute matches the property we want to check,
+                                ' define a version number used for comparison.
                                 Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
-                                'MessageBox.Show("theme supports this version: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                '                "feature added in version " & ver.ToString)
+                                ' The version we're defining is the version number stored in the matching
+                                ' node's "VersionIntroduced" node.
                                 Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
                                     Case 0 ' Theme works with the same version the feature was introduced in.
                                         Return True
@@ -176,27 +178,23 @@ Public Class TE2DotXLoader
                                         Return True
                                     Case -1 ' Theme doesn't support the version the feature was introduced in.
                                         Return False
-
-                                End Select
-
-
-                            End If
+                                End Select ' Done seeing if the theme file supports a given feature.
+                            End If ' Done checking the property value.
 
                         Case Else
                             If FeatureNode.ParentNode.LastChild IsNot Nothing Then
-                                'MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
-                                '                "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
-                                '                "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
+                                ' If we're not at the end of XML file, go to the next
+                                ' sibling of the feature node and keep looking.
                                 FeatureNode = FeatureNode.NextSibling
                             Else
+                                ' Return True if the last child is nothing.
                                 Return True
                             End If
                     End Select
                 Case XmlNodeType.Comment
                     If FeatureNode.ParentNode.NextSibling IsNot Nothing Then
-                        'MessageBox.Show("ParentNode: " & FeatureNode.ParentNode.Name & vbCrLf &
-                        '                "ParentNode.LastChild: " & FeatureNode.ParentNode.LastChild.Name & vbCrLf &
-                        '                "FeatureNode.NextSibling: " & FeatureNode.NextSibling.Name)
+                        ' If the XML node is a comment, just move on to the next
+                        ' node and check again.
                         FeatureNode = FeatureNode.NextSibling
                     Else
                         Return True
