@@ -78,59 +78,59 @@ Public Class TE1DotXLoaderShim
                     Case -1
                         ' If the theme doesn't support TE1.03, apply defaults.
                         ' Default button colors.
-                        colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-                        flatstyleButtonFlatStyle = FlatStyle.Standard
-                        flatappearanceButtonBorderColor = Nothing
+                        ThemeProperties.colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
+                        ThemeProperties.flatappearanceButtonBorderColor = Nothing
 
                         ' Default TableLayoutPanel colors.
-                        colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-                        colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+                        ThemeProperties.colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default TabPage colors.
-                        colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
-                        colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
+                        ThemeProperties.colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default GroupBox colors.
-                        colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default Label colors.
-                        colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default Textbox colors.
-                        colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
-                        colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
+                        ThemeProperties.colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
+                        ThemeProperties.colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
 
                         ' Default RadioButton colors.
-                        colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default Checkbox colors.
-                        colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default Dropdown box/ComboBox colors.
-                        colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
-                        colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
+                        ThemeProperties.colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default LinkLabel colors.
-                        colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-                        colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-                        colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
-                        colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+                        ThemeProperties.colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
+                        ThemeProperties.colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
 
                         ' Default Panel colors.
-                        colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-                        colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+                        ThemeProperties.colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
 
                         ' Default About window banner.
-                        bannerStyle = My.Resources.UXL_Launcher_Banner
+                        ThemeProperties.bannerStyle = My.Resources.UXL_Launcher_Banner
 
                         'Default FlowLayoutPanel colors.
-                        colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
-                        colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        ThemeProperties.colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
+                        ThemeProperties.colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
                 End Select
             End If
 #End Region
