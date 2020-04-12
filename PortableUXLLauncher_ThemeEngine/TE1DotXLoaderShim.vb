@@ -31,7 +31,7 @@ Public Class TE1DotXLoaderShim
         ' Theme isn't a TE2.x theme, so load it with the TE1.x shim.
 
         ' Assign variable for TE runtime version node.
-        Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion")
+        Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion", ThemeProperties.themeNamespaceManager)
 
         ' Set the engine runtime version to 1.01 if it's less than that.
         If ThemeEngineNode IsNot Nothing Then
@@ -40,7 +40,11 @@ Public Class TE1DotXLoaderShim
             ' First make sure there are only numbers. We're escaping
             ' the dot as a literal.
             Dim tempTERuntimeFileVersionCleaner As String = ThemeEngineNode.InnerText.ToString
+            ' Make a pattern for the regex.
             Dim VersionPattern As String = "^#[0-9\.]{1," & tempTERuntimeFileVersionCleaner.Length & "}$"
+            ' Make a regex that we'll use with the above patters.
+            Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
+
             Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
 
             ' Make a version variable to store the theme engine version we want to compare to.
