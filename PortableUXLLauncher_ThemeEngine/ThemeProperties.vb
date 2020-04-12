@@ -310,7 +310,7 @@ Public Class ThemeProperties
         End Set
     End Property
 
-    ' Dropdown back color.
+    ' Dropdown/combobox back color.
     Public Shared Property colorDropdownBackColor() As Color
         Get
             Return _colorDropdownBackColor
@@ -320,7 +320,7 @@ Public Class ThemeProperties
         End Set
     End Property
 
-    ' Dropdown fore color.
+    ' Dropdown/combobox fore color.
     Public Shared Property colorDropdownForeColor() As Color
         Get
             Return _colorDropdownForeColor
