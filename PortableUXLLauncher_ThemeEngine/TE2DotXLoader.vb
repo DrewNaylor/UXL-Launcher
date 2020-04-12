@@ -83,7 +83,9 @@ Public Class TE2DotXLoader
         Else
             ' There's no runtime version node, so fall back to
             ' loading like TE1.x did with UseThemeEngineVersion.
-            TE1DotXLoaderShim.AssignProperties()
+            'TE1DotXLoaderShim.AssignProperties()
+            ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
+            AssignControlProperties()
         End If
     End Sub
 
@@ -287,13 +289,13 @@ Public Class TE2DotXLoader
         DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
 
         For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
-            MessageBox.Show("node: " & DefaultNode.Name & vbCrLf &
-                            "property to check: " & PropertyToCheck & vbCrLf &
-                            "property name in xml: " & DefaultNode.Attributes("PropertyName").Value)
+            'MessageBox.Show("node: " & DefaultNode.Name & vbCrLf &
+            '                "property to check: " & PropertyToCheck & vbCrLf &
+            '                "property name in xml: " & DefaultNode.Attributes("PropertyName").Value)
             If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
                 For Each DiffNode As XmlNode In DefaultNode
 
-                    MessageBox.Show("Diff node name: " & DiffNode.Name)
+                    'MessageBox.Show("Diff node name: " & DiffNode.Name)
 
                     Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
 
@@ -337,34 +339,39 @@ Public Class TE2DotXLoader
         ' https://stackoverflow.com/a/40681176
 
         ' Replace 0x in the input color with #, if it starts with it.
-        Dim SwitchToHashSymbol As String = InputColor
-        If SwitchToHashSymbol.StartsWith("0x") Then
-            SwitchToHashSymbol = InputColor.Replace("0x", "#")
-        End If
+        ' Make sure the input color exists.
+        If InputColor IsNot Nothing Then
+            Dim SwitchToHashSymbol As String = InputColor
+            If SwitchToHashSymbol.StartsWith("0x") Then
+                SwitchToHashSymbol = InputColor.Replace("0x", "#")
+            End If
 
-        ' Regex pattern. Mostly copied from answer.
-        Dim Pattern As String = "^#[0-9A-F]{1," & SwitchToHashSymbol.Length & "}$"
-        'MessageBox.Show(Pattern)
-        ' Make a new regex with a pattern.
-        Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
+            ' Regex pattern. Mostly copied from answer.
+            Dim Pattern As String = "^#[0-9A-F]{1," & SwitchToHashSymbol.Length & "}$"
+            'MessageBox.Show(Pattern)
+            ' Make a new regex with a pattern.
+            Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
 
-        If SwitchToHashSymbol.StartsWith("#") AndAlso RegexWithPattern.IsMatch(SwitchToHashSymbol) = True AndAlso IsHexCodeLengthValid(SwitchToHashSymbol) Then
-            ' If the input color is a valid HTML color,
-            ' has a RegEx match, and it's a valid length
-            ' of three or six numbers, return True.
-            Return True
-        ElseIf Not SwitchToHashSymbol.StartsWith("#") Then
-            ' If it's not a valid HTML color,
-            ' look through the known colors.
-            For Each systemcolor As KnownColor In [Enum].GetValues(GetType(KnownColor))
-                If systemcolor.ToString = SwitchToHashSymbol Then
-                    ' If a system color matches the input color,
-                    ' then it's valid.
-                    Return True
-                End If
-            Next ' Next system color.
+            If SwitchToHashSymbol.StartsWith("#") AndAlso RegexWithPattern.IsMatch(SwitchToHashSymbol) = True AndAlso IsHexCodeLengthValid(SwitchToHashSymbol) Then
+                ' If the input color is a valid HTML color,
+                ' has a RegEx match, and it's a valid length
+                ' of three or six numbers, return True.
+                Return True
+            ElseIf Not SwitchToHashSymbol.StartsWith("#") Then
+                ' If it's not a valid HTML color,
+                ' look through the known colors.
+                For Each systemcolor As KnownColor In [Enum].GetValues(GetType(KnownColor))
+                    If systemcolor.ToString = SwitchToHashSymbol Then
+                        ' If a system color matches the input color,
+                        ' then it's valid.
+                        Return True
+                    End If
+                Next ' Next system color.
+            Else
+                ' Otherwise, it's assumed to be invalid.
+                Return False
+            End If
         Else
-            ' Otherwise, it's assumed to be invalid.
             Return False
         End If
     End Function
