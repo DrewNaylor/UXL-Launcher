@@ -39,10 +39,10 @@ Public Class TE1DotXLoaderShim
         If ThemeEngineNode IsNot Nothing Then
 
             ' Store the theme engine runtime version from the file.
-            ' First make sure there are only numbers. We're escaping
-            ' the dot as a literal.
-            Dim tempTERuntimeFileVersionCleaner As String = ThemeEngineNode.InnerText.ToString
+            ' First make sure there are only numbers.
+
             ' Make a pattern for the regex.
+            ' We're escaping the dot as a literal.
             ' The carrat starts from the beginning, and it
             ' gets only numbers and periods. The asterisk
             ' makes it look through everything.
@@ -55,15 +55,11 @@ Public Class TE1DotXLoaderShim
             ' Pulling only numbers and periods from the engine version
             ' runtime value is based on this SO answer:
             ' https://stackoverflow.com/a/17432187
-            For Each character As Char In tempTERuntimeFileVersionCleaner
+            For Each character As Char In ThemeEngineNode.InnerText.ToString
                 If VersionRegexWithPattern.IsMatch(character) = True Then
                     cleaned = cleaned & character
                 End If
             Next
-
-            'For Each match As Match In VersionRegexWithPattern.Matches(ThemeEngineNode.InnerText.ToString)
-            '    cleaned = cleaned & match.Value
-            'Next
 
             MessageBox.Show("cleaned: " & cleaned)
             Dim TERuntimeVersionInThemeFile As Version = Version.Parse(cleaned)
