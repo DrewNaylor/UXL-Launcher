@@ -118,7 +118,7 @@ Public Class TE2DotXLoader
         End Select
 
         ' Get default statusbar backcolor.
-        MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString, "StatusBar BackColor")
+        ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor")
 
 
         ' Assign Button FlatAppearance BorderColor.
@@ -226,13 +226,13 @@ Public Class TE2DotXLoader
 
     Friend Shared Sub AssignThemeInfoProperties()
         ' Grab theme title.
-        ThemeProperties.themeSheetTitle = GetPropertySafe("Title", "", "(No title specified)", False, False)
+        ThemeProperties.themeSheetTitle = GetPropertySafe("Title", "", False, False)
 
         ' Grab theme description.
-        ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", "(No description specified)", False, False)
+        ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", False, False)
 
         ' Grab theme author.
-        ThemeProperties.themeSheetAuthor = GetPropertySafe("Author", "", "(No author specified)", False, False)
+        ThemeProperties.themeSheetAuthor = GetPropertySafe("Author", "", False, False)
 
         ' Grab theme file version.
         ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", "(No version specified)", False, False)
@@ -367,7 +367,7 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, DefaultValue As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
+    Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
 
         ' Define a root prefix to start looking in.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
@@ -382,23 +382,23 @@ Public Class TE2DotXLoader
                 ' This is typically the case with themes that support TE2.x,
                 ' although there are some situations where we don't want to load stuff
                 ' from an attribute, such as for the description.
-                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute, DefaultValue)
+                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute, GetDefaultValueVersionVariant(DesiredNode, NodeAttribute))
             ElseIf LoadFromAttribute = False AndAlso UseThemeColorPrefix = True Then
                 ' Assume that the theme doesn't want to load a property from an attribute,
                 ' but that the property we want to get is in the theme colors section.
                 ' This is often the case for things like the Button FlatAppearance section.
-                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, DefaultValue)
+                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, GetDefaultValueVersionVariant(DesiredNode, NodeAttribute))
             Else
                 ' Otherwise, assume the theme wants to load properties from a node's InnerText.
                 ' It's assumed that this isn't in the theme colors section.
                 ' This would be used in cases where we're trying
                 ' to get theme information like the title or description.
-                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, DefaultValue)
+                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, GetDefaultValueVersionVariant(DesiredNode, NodeAttribute))
             End If
 
         Else
-
-            Return DefaultValue
+            ' If we can't get the property from the theme, get the default value.
+            Return GetDefaultValueVersionVariant(DesiredNode, NodeAttribute)
         End If
     End Function
 

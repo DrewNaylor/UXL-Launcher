@@ -4,4 +4,20 @@
 		<Diff RuntimeVersion="1.02" Value="Control" />
 		<Diff RuntimeVersion="1.01" Value="Control" />
 	</Default>
+  
+  <Default For="Title" PropertyName="">
+    <Diff RuntimeVersion="1.01" Value="(No title specified)" />
+  </Default>
+
+  <Default For="Description" PropertyName="">
+    <Diff RuntimeVersion="1.01" Value="(No description specified)" />
+  </Default>
+
+  <Default For="Author" PropertyName="">
+    <Diff RuntimeVersion="1.01" Value="(No author specified)" />
+  </Default>
+
+  <Default For="Author" PropertyName="">
+    <Diff RuntimeVersion="1.01" Value="(No author specified)" />
+  </Default>
 </DefaultValuesList>
