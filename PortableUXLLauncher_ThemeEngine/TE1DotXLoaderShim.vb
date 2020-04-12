@@ -21,41 +21,49 @@
 
 
 
+Imports System.Windows.Forms
 Imports System.Xml
 
 Public Class TE1DotXLoaderShim
-    Friend Shared Sub AssignProperties()
+    Friend Shared Sub AssignProperties(formToApplyTo As Form)
 
+        ' Theme isn't a TE2.x theme, so load it with the TE1.x shim.
+
+        ' Assign variable for TE runtime version node.
+        Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion")
+
+        ' Set the engine runtime version to 1.01 if it's less than that.
+        If ThemeEngineNode IsNot Nothing Then
+
+            ' Store the theme engine runtime version from the file.
+            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
+
+            ' Make a version variable to store the theme engine version we want to compare to.
+            Dim TE1xMinVersion As Version = Version.Parse("1.01")
+
+            Select Case TERuntimeVersionInThemeFile.CompareTo(TE1xMinVersion)
+                Case 0 ' The theme file wants to use Theme Engine version 1.01.
+                    ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TE1xMinVersion.ToString)
+                Case 1 ' The theme file wants to use a theme engine version newer than 1.01.
+                    ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TERuntimeVersionInThemeFile.ToString)
+                Case -1 ' The theme file has a version smaller than 1.01, so it'll be forced to 1.01.
+                    ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
+            End Select
+
+        Else
+
+            ' If there's no theme engine runtime version, set it to 1.01.
+            ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
+        End If
+
+        MessageBox.Show(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)
         If ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = False Then
             ' If the calling app wants to use loose compatibility mode, get the
             ' theme engine runtime version the theme wants to use and send it
             ' back to the TE2.x loader.
 
-            ' Assign variable for TE runtime version node.
-            Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion")
-
-            ' Set the engine runtime version to 1.01 if it's less than that.
-            If ThemeEngineNode IsNot Nothing Then
-
-                ' Store the theme engine runtime version from the file.
-                Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
-
-                ' Make a version variable to store the theme engine version we want to compare to.
-                Dim TE1xMinVersion As Version = Version.Parse("1.01")
-
-                Select Case TERuntimeVersionInThemeFile.CompareTo(TE1xMinVersion)
-                    Case 0 ' The theme file wants to use Theme Engine version 1.01.
-                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TE1xMinVersion.ToString)
-                    Case 1 ' The theme file wants to use a theme engine version newer than 1.01.
-                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TERuntimeVersionInThemeFile.ToString)
-                    Case -1 ' The theme file has a version smaller than 1.01, so it'll be forced to 1.01.
-                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
-                End Select
-
-                ' Load up the theme file and get its properties if loose compatibility is enabled.
-                TE2DotXLoader.AssignControlProperties(False)
-
-            End If
+            ' Load up the theme file and get its properties if loose compatibility is enabled.
+            TE2DotXLoader.AssignControlProperties(False)
         End If
 
     End Sub
