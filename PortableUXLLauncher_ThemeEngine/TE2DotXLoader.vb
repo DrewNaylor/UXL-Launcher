@@ -97,7 +97,7 @@ Public Class TE2DotXLoader
         AssignThemeInfoProperties()
 
         ' About window banner style.
-        Select Case GetPropertySafe("AboutWindow", "BannerStyle")
+        Select Case GetPropertySafe("AboutWindow", "BannerStyle", LoadFromAttribute)
             Case "Dark"
                 ThemeProperties.bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
             Case Else
@@ -137,10 +137,6 @@ Public Class TE2DotXLoader
         MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
 
 
-
-        ' Get default statusbar backcolor.
-        ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor")
-        MessageBox.Show("statusbar backcolor: " & ThemeProperties.colorStatusBarBackColor.ToString)
 
 
 
