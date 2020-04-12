@@ -212,7 +212,11 @@ Public Class TE2DotXLoader
 
         ' Assign TableLayoutPanel ApplyToAboutWindowAboutTabTLP property.
         ' This won't be pulled from an attribute since that could make it messier.
-        ThemeProperties.useTableLayoutPanelColorInsideAboutAppTab = CBool(GetPropertySafe("TableLayoutPanel", "ApplyToAboutWindowAboutTabTLP", False))
+        If GetPropertySafe("TableLayoutPanel", "ApplyToAboutWindowAboutTabTLP", False).ToLowerInvariant = "true" Then
+            ThemeProperties.useTableLayoutPanelColorInsideAboutAppTab = True
+        Else
+            ThemeProperties.useTableLayoutPanelColorInsideAboutAppTab = False
+        End If
 
         ' Assign TabPage BackColor property.
         ThemeProperties.colorTabPageBackColor = GetThemeColor("TabPage", "BackColor", LoadFromAttribute)
@@ -235,6 +239,10 @@ Public Class TE2DotXLoader
         ' Assign MenuItem Image Margin Gradient Start Color property.
         ' This isn't being loaded from an attribute as it could be messy.
         ThemeProperties.colorMenuItemImageMarginGradientStartColor = GetThemeColor("MenuItem", "ImageMarginGradient/StartColor", False)
+
+        ' Assign MenuItem Image Margin Gradient End Color property.
+        ' This isn't being loaded from an attribute as it could be messy.
+        ThemeProperties.colorMenuItemImageMarginGradientEndColor = GetThemeColor("MenuItem", "ImageMarginGradient/EndColor", False)
 
     End Sub
 
@@ -318,13 +326,6 @@ Public Class TE2DotXLoader
                     Return True
             End Select
         Next
-
-        ' Just in case something doesn't work correctly here,
-        ' return nothing and show a messagebox.
-        MessageBox.Show("Something broke and we couldn't determine if the theme engine runtime version specified in the theme file supports the requested feature." & vbCrLf &
-                        "Requested node: " & NodeName & vbCrLf &
-                        "Property to be checked: " & PropertyToCheck, "libportablethemeengine.TE2DotXLoader.ThemeSupportsFeature")
-        Return Nothing
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
@@ -449,13 +450,6 @@ Public Class TE2DotXLoader
                 DefaultNode = DefaultNode.NextSibling
             End If
         Next
-
-        ' Just in case something doesn't work correctly here,
-        ' return nothing and show a messagebox.
-        MessageBox.Show("Something broke and we couldn't get default value for the theme engine runtime version the theme file specified to use." & vbCrLf &
-                        "Requested node: " & NodeName & vbCrLf &
-                        "Property to be checked: " & PropertyToCheck, "libportablethemeengine.TE2DotXLoader.GetDefaultValueVersionVariant")
-        Return Nothing
     End Function
 
     Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
@@ -515,12 +509,6 @@ Public Class TE2DotXLoader
             ' If the color does not exist, it's invalid.
             Return False
         End If
-
-        ' Just in case something doesn't work correctly here,
-        ' return nothing and show a messagebox.
-        MessageBox.Show("Something broke and we couldn't verify if color is valid." & vbCrLf &
-                        "Requested color: " & InputColor, "libportablethemeengine.TE2DotXLoader.IsColorValid")
-        Return Nothing
     End Function
 
     Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
