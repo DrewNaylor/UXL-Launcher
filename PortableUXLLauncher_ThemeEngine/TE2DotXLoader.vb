@@ -151,8 +151,14 @@ Public Class TE2DotXLoader
         ' Assign Groupbox backcolor property.
         ThemeProperties.colorGroupBoxBackColor = GetThemeColor("GroupBox", "BackColor", LoadFromAttribute)
 
-        ' Assign Broupbox forecolor property.
+        ' Assign Groupbox forecolor property.
         ThemeProperties.colorGroupBoxForeColor = GetThemeColor("GroupBox", "ForeColor", LoadFromAttribute)
+
+        ' Assign FlowLayoutPanel backcolor property.
+        ThemeProperties.colorFlowLayoutPanelBackColor = GetThemeColor("FlowLayoutPanel", "BackColor", LoadFromAttribute)
+
+        ' Assign FlowLayoutPanel forecolor property.
+        ThemeProperties.colorFlowLayoutPanelForeColor = GetThemeColor("FlowLayoutPanel", "ForeColor", LoadFromAttribute)
 
     End Sub
 
