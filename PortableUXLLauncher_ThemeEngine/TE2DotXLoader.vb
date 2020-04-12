@@ -527,13 +527,10 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
-    Friend Shared Function IsRuntimeVerNumberTooLong(InputInt As String) As Boolean
+    Friend Shared Function TrimTooLongVerNumberEnding(InputInt As String) As Boolean
 
-        If InputInt.Replace(".", "").Length >= Convert.ToString(Int32.MaxValue).Length Then
-            MessageBox.Show("Too long.")
-            Return True
-        Else
-            Return False
+        If Convert.ToDecimal(InputInt.Replace(".", "")) >= Int32.MaxValue Then
+
         End If
 
     End Function
