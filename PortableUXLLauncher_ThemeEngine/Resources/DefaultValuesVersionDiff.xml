@@ -35,10 +35,18 @@
 
   
   <Default For="CheckBox" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.03" Value="Transparent" />
+    <!-- Checkbox support was introduced in 1.03, but
+    older versions need defaults. -->
+    <Diff RuntimeVersion="1.02" Value="Transparent" />
     <Diff RuntimeVersion="1.01" Value="Transparent" />
   </Default>
 
   <Default For="CheckBox" PropertyName="ForeColor">
+    <Diff RuntimeVersion="1.03" Value="ControlText" />
+    <!-- Checkbox support was introduced in 1.03, but
+    older versions need defaults. -->
+    <Diff RuntimeVersion="1.02" Value="ControlText" />
     <Diff RuntimeVersion="1.01" Value="ControlText" />
   </Default>
 
@@ -53,8 +61,11 @@
     <Diff RuntimeVersion="1.01" Value="Window" />
   </Default>
 
-  <Default For="CheckBox" PropertyName="ForeColor">
+  <Default For="Dropdown" PropertyName="ForeColor">
     <Diff RuntimeVersion="1.03" Value="ControlText" />
+    <!-- Support for dropdowns/comboboxes was introduced
+    in version 1.03, but we still need to have defaults
+    for previous versions. -->
     <Diff RuntimeVersion="1.02" Value="ControlText" />
     <Diff RuntimeVersion="1.01" Value="ControlText" />
   </Default>
