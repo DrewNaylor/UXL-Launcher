@@ -458,6 +458,7 @@ Public Class TE2DotXLoader
 
             ' Look at each node in the default values list.
             ' These are the "<Default>" nodes.
+            Debug.WriteLine("DefaultNode attribute For: " & DefaultNode.Attributes("For").Value)
             If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
 
                 ' If the default node's "For" attribute matches the node we're looking at,
@@ -503,6 +504,8 @@ Public Class TE2DotXLoader
                     End Select
                 Next ' Read next "<Diff>" node.
             Else
+                Debug.WriteLine("NodeName: " & NodeName)
+                Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
                 ' If it doesn't match, go to the next node and try again.
                 DefaultNode = DefaultNode.NextSibling
             End If

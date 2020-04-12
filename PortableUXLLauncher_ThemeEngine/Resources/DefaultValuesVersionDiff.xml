@@ -1,5 +1,11 @@
 <DefaultValuesList>
 
+  <Default For="AboutWindow" PropertyName="BannerStyle">
+    <Diff RuntimeVersion="1.01" Value="Light" />
+  </Default>
+  
+  
+
   <Default For="Button" PropertyName="BackColor">
     <Diff RuntimeVersion="1.01" Value="Transparent" />
   </Default>
