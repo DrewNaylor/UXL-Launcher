@@ -96,6 +96,14 @@ Public Class TE2DotXLoader
         ' Assign theme info properties.
         AssignThemeInfoProperties()
 
+        ' About window banner style.
+        Select Case GetPropertySafe("AboutWindow", "BannerStyle")
+            Case "Dark"
+                ThemeProperties.bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
+            Case Else
+                ThemeProperties.bannerStyle = My.Resources.UXL_Launcher_Banner
+        End Select
+
         ' Button properties.
         ' Assign the Button backcolor property.
         ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", LoadFromAttribute)

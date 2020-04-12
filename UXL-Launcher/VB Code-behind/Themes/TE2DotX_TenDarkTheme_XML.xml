@@ -14,7 +14,7 @@
   
     <Theme_Colors>
 
-      <AboutWindow>
+      <AboutWindow BannerStyle="Dark">
         <!-- This controls how the About window's banner appears.
         Available BannerStyle options are "Light" and "Dark".
         Anything else will be set to "Light". -->
