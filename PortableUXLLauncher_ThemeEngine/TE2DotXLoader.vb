@@ -192,6 +192,12 @@ Public Class TE2DotXLoader
         ' a regular label is shown in the area not covered by the LinkArea.
         ThemeProperties.colorLinkLabelForeColor = GetThemeColor("LinkLabel", "ForeColor", False)
 
+        ' Assign Panel BackColor property.
+        ThemeProperties.colorPanelBackColor = GetThemeColor("Panel", "BackColor", LoadFromAttribute)
+
+        ' Assign Panel BackColor property.
+        ThemeProperties.colorPanelBackColor = GetThemeColor("Panel", "BackColor", LoadFromAttribute)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
@@ -399,6 +405,12 @@ Public Class TE2DotXLoader
             End If
         Next
 
+        ' Just in case something doesn't work correctly here,
+        ' return nothing and show a messagebox.
+        MessageBox.Show("Couldn't get default value for the theme engine runtime version the theme file specified to use." & vbCrLf &
+                        "Requested node: " & NodeName & vbCrLf &
+                        "Property to be checked: " & PropertyToCheck, "TE2DotXLoader.GetDefaultValueVersionVariant")
+        Return Nothing
     End Function
 
     Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
