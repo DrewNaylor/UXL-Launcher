@@ -139,6 +139,10 @@ Public Class TE1DotXLoaderShim
 
     End Sub
 
+    Private Function GetDefaultColor(ControlName As String, ControlProperty As String) As Color
+
+    End Function
+
     ' TODO: This file will load in TE1.x themes by assigning
     ' properties in ThemeProperties to XmlNode.InnerText values, just
     ' like TE1.x does.
