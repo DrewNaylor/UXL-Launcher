@@ -24,6 +24,8 @@
 Imports System.Drawing
 Imports System.Windows.Forms
 Imports System.Xml
+Imports System.Text.RegularExpressions
+
 
 Public Class TE1DotXLoaderShim
     Friend Shared Sub AssignProperties(formToApplyTo As Form)
@@ -44,13 +46,27 @@ Public Class TE1DotXLoaderShim
             ' The carrat starts from the beginning, and it
             ' gets only numbers and periods. The asterisk
             ' makes it look through everything.
-            Dim VersionPattern As String = "^[0-9\.]*"
+            Dim VersionPattern As String = "^[0-9\.]*$"
             ' Make a regex that we'll use with the above patters.
-            Dim VersionRegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(VersionPattern)
+            Dim VersionRegexWithPattern As New Regex(VersionPattern)
             ' Parse the resulting regex and pull out what matches.
-            Dim cleaned As String = VersionRegexWithPattern.Match(tempTERuntimeFileVersionCleaner).Value
+            Dim cleaned As String = ""
+
+            ' Pulling only numbers and periods from the engine version
+            ' runtime value is based on this SO answer:
+            ' https://stackoverflow.com/a/17432187
+            For Each character As Char In tempTERuntimeFileVersionCleaner
+                If VersionRegexWithPattern.IsMatch(character) = True Then
+                    cleaned = cleaned & character
+                End If
+            Next
+
+            'For Each match As Match In VersionRegexWithPattern.Matches(ThemeEngineNode.InnerText.ToString)
+            '    cleaned = cleaned & match.Value
+            'Next
+
             MessageBox.Show("cleaned: " & cleaned)
-            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(VersionRegexWithPattern.Match(tempTERuntimeFileVersionCleaner.ToString).ToString)
+            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(cleaned)
 
             ' Make a version variable to store the theme engine version we want to compare to.
             Dim TE1xMinVersion As Version = Version.Parse("1.01")
