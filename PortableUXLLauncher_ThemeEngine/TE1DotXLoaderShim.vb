@@ -66,7 +66,9 @@ Public Class TE1DotXLoaderShim
             TE2DotXLoader.AssignControlProperties(False)
 
         Else
-            ' Calling application wants to 
+            ' Calling application wants to use full TE1.x compatibility mode,
+            ' so make sure the form that's passed into the theme engine
+            ' can be themed.
 
 
         End If
