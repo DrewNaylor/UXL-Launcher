@@ -244,6 +244,9 @@ Public Class TE2DotXLoader
         ' This isn't being loaded from an attribute as it could be messy.
         ThemeProperties.colorMenuItemImageMarginGradientEndColor = GetThemeColor("MenuItem", "ImageMarginGradient/EndColor", False)
 
+        ' Assign MenuBar BackColor property.
+        ThemeProperties.colorMenubarBackColor = GetThemeColor("MenuBar", "BackColor", LoadFromAttribute)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
