@@ -198,6 +198,12 @@ Public Class TE2DotXLoader
         ' Assign Panel ForeColor property.
         ThemeProperties.colorPanelForeColor = GetThemeColor("Panel", "ForeColor", LoadFromAttribute)
 
+        ' Assign RadioButton BackColor property.
+        ThemeProperties.colorRadioButtonBackColor = GetThemeColor("RadioButton", "BackColor", LoadFromAttribute)
+
+        ' Assign RadioButton ForeColor property.
+        ThemeProperties.colorRadioButtonForeColor = GetThemeColor("RadioButton", "ForeColor", LoadFromAttribute)
+
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing) As Boolean
