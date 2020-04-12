@@ -141,6 +141,26 @@
   <Default For="LinkLabel" PropertyName="ForeColor">
     <Diff RuntimeVersion="1.03" Value="ControlText" />
     <!-- Support for linklabels was added in 1.03, but
+    we still have to have entries for older versions. 
+    ForeColor only shows up if the LinkArea property
+    is less than the entire length of the linklabel. -->
+    <Diff RuntimeVersion="1.02" Value="ControlText" />
+    <Diff RuntimeVersion="1.01" Value="ControlText" />
+  </Default>
+
+
+
+  <Default For="Panel" PropertyName="BackColor">
+    <Diff RuntimeVersion="1.03" Value="Control" />
+    <!-- Support for panels was added in 1.03, but
+    we still have to have entries for older versions. -->
+    <Diff RuntimeVersion="1.02" Value="Control" />
+    <Diff RuntimeVersion="1.01" Value="Control" />
+  </Default>
+
+  <Default For="Panel" PropertyName="ForeColor">
+    <Diff RuntimeVersion="1.03" Value="ControlText" />
+    <!-- Support for panels was added in 1.03, but
     we still have to have entries for older versions. -->
     <Diff RuntimeVersion="1.02" Value="ControlText" />
     <Diff RuntimeVersion="1.01" Value="ControlText" />
