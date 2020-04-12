@@ -527,8 +527,8 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
-    Friend Shared Function IsRuntimeVersionLengthValidAsInt32(InputInt) As Boolean
-
+    Friend Shared Function IsRuntimeVersionLengthValidAsInt32(InputInt As Boolean) As Boolean
+        ' Split the number into separate parts to test each individually.
     End Function
 
     Private Shared Function IsColorValid(InputColor As String) As Boolean
