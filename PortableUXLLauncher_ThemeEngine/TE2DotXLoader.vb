@@ -440,7 +440,7 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Private Shared Function GetDefaultValueVersionVariant(NodeName As String, PropertyToCheck As String) As String
+    Friend Shared Function GetDefaultValueVersionVariant(NodeName As String, PropertyToCheck As String) As String
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 

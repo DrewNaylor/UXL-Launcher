@@ -78,7 +78,7 @@ Public Class TE1DotXLoaderShim
                     Case -1
                         ' If the theme doesn't support TE1.03, apply defaults.
                         ' Default button colors.
-                        ThemeProperties.colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(TE2DotXLoader.GetDefaultValueVersionVariant("Button", "BackColor"))
                         ThemeProperties.colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
                         ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
                         ThemeProperties.flatappearanceButtonBorderColor = Nothing
