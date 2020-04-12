@@ -450,6 +450,26 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' Panel back color.
+    Public Shared Property colorPanelBackColor() As Color
+        Get
+            Return _colorTableLayoutPanelBackColor
+        End Get
+        Set(value As Color)
+            _colorTableLayoutPanelBackColor = value
+        End Set
+    End Property
+
+    ' Panel fore color.
+    Public Shared Property colortPanelForeColor() As Color
+        Get
+            Return _colorPanelForeColor
+        End Get
+        Set(value As Color)
+            _colorPanelForeColor = value
+        End Set
+    End Property
+
     ' Radio button back color.
     Public Shared Property colorRadioButtonBackColor() As Color
         Get
