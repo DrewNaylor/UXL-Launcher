@@ -45,9 +45,11 @@ Public Class TE1DotXLoaderShim
 
                 Select Case TERuntimeVersionInThemeFile.CompareTo(TE1xMinVersion)
                     Case 0 ' The theme file wants to use Theme Engine version 1.01.
+                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TE1xMinVersion.ToString)
                     Case 1 ' The theme file wants to use a theme engine version newer than 1.01.
+                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse(TERuntimeVersionInThemeFile.ToString)
                     Case -1 ' The theme file has a version smaller than 1.01, so it'll be forced to 1.01.
-
+                        ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
                 End Select
 
             End If
