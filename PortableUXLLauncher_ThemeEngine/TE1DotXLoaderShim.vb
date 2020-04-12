@@ -52,6 +52,9 @@ Public Class TE1DotXLoaderShim
                         ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
                 End Select
 
+                ' Load up the theme file and get its properties if loose compatibility is enabled.
+                TE2DotXLoader.AssignControlProperties(False)
+
             End If
         End If
 

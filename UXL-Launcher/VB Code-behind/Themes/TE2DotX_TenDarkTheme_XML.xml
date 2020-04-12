@@ -10,7 +10,7 @@
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
   <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
-  <ThemeEngine RuntimeVersion="2.0" />
+  <ThemeEngine RuntimeVersion="1.03" />
   
     <Theme_Colors>
 
