@@ -75,17 +75,13 @@ Public Class TE2DotXLoader
                     AssignControlProperties()
                 Case -1 ' Theme says to use TE1.x.
                     ' Load theme in the TE1.x loader shim.
-                    'TE1DotXLoaderShim.AssignProperties()
-                    ThemeProperties.themeSheetEngineRuntimeVersion = TERuntimeVersionInThemeFile
-                    AssignControlProperties()
+                    TE1DotXLoaderShim.AssignProperties()
 
             End Select
         Else
             ' There's no runtime version node, so fall back to
             ' loading like TE1.x did with UseThemeEngineVersion.
-            'TE1DotXLoaderShim.AssignProperties()
-            ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
-            AssignControlProperties()
+            TE1DotXLoaderShim.AssignProperties()
         End If
     End Sub
 
@@ -121,6 +117,7 @@ Public Class TE2DotXLoader
 
         ' Get default statusbar backcolor.
         ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor")
+        MessageBox.Show(ThemeProperties.colorStatusBarBackColor.ToString)
 
 
         ' Assign Button FlatAppearance BorderColor.
@@ -229,15 +226,19 @@ Public Class TE2DotXLoader
     Friend Shared Sub AssignThemeInfoProperties()
         ' Grab theme title.
         ThemeProperties.themeSheetTitle = GetPropertySafe("Title", "", False, False)
+        MessageBox.Show(ThemeProperties.themeSheetTitle)
 
         ' Grab theme description.
         ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", False, False)
+        MessageBox.Show(ThemeProperties.themeSheetDescription)
 
         ' Grab theme author.
         ThemeProperties.themeSheetAuthor = GetPropertySafe("Author", "", False, False)
+        MessageBox.Show(ThemeProperties.themeSheetAuthor)
 
         ' Grab theme file version.
         ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", False, False)
+        MessageBox.Show(ThemeProperties.themeSheetFileVersion)
     End Sub
 
     Friend Shared Function GetThemeColor(ControlName As String, ControlProperty As String, Optional LoadFromAttribute As Boolean = False) As Color
