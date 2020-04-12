@@ -78,7 +78,7 @@ Public Class TE1DotXLoaderShim
                     Case -1
                         ' If the theme doesn't support TE1.03, apply defaults.
                         ' Default button colors.
-                        ThemeProperties.colorButtonBackColor = ColorTranslator.FromHtml(TE2DotXLoader.GetDefaultValueVersionVariant("Button", "BackColor"))
+                        ThemeProperties.colorButtonBackColor = GetDefaultColor("Button", "BackColor")
                         ThemeProperties.colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
                         ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
                         ThemeProperties.flatappearanceButtonBorderColor = Nothing
@@ -139,8 +139,10 @@ Public Class TE1DotXLoaderShim
 
     End Sub
 
-    Private Function GetDefaultColor(ControlName As String, ControlProperty As String) As Color
-
+    Private Shared Function GetDefaultColor(ControlName As String, ControlProperty As String) As Color
+        ' This will use the GetDefaultValueVersionVariant in the TE2DotXLoader to get
+        ' default colors more easily.
+        Return ColorTranslator.FromHtml(TE2DotXLoader.GetDefaultValueVersionVariant(ControlName, ControlProperty))
     End Function
 
     ' TODO: This file will load in TE1.x themes by assigning
