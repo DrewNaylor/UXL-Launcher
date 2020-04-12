@@ -21,6 +21,7 @@
 
 
 
+Imports System.Drawing
 Imports System.Windows.Forms
 Imports System.Xml
 
@@ -70,6 +71,69 @@ Public Class TE1DotXLoaderShim
             ' so make sure the form that's passed into the theme engine
             ' can be themed.
 
+#Region "Apply default colors to forms not supported by TE1.02 or lower."
+            ' Apply default colors to forms that aren't supported by TE1.02 or lower.
+            If formToApplyTo.Name IsNot "aaformMainWindow" Then
+                Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo("1.03")
+                    Case -1
+                        ' If the theme doesn't support TE1.03, apply defaults.
+                        ' Default button colors.
+                        colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        flatstyleButtonFlatStyle = FlatStyle.Standard
+                        flatappearanceButtonBorderColor = Nothing
+
+                        ' Default TableLayoutPanel colors.
+                        colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+                        colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default TabPage colors.
+                        colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
+                        colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default GroupBox colors.
+                        colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default Label colors.
+                        colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default Textbox colors.
+                        colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
+                        colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
+
+                        ' Default RadioButton colors.
+                        colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default Checkbox colors.
+                        colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default Dropdown box/ComboBox colors.
+                        colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
+                        colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default LinkLabel colors.
+                        colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+                        colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                        colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
+                        colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
+
+                        ' Default Panel colors.
+                        colorPanelBackColor = Color.FromKnownColor(KnownColor.Control)
+                        colorPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+                        ' Default About window banner.
+                        bannerStyle = My.Resources.UXL_Launcher_Banner
+
+                        'Default FlowLayoutPanel colors.
+                        colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
+                        colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+                End Select
+            End If
+#End Region
 
         End If
 
