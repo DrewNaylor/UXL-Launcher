@@ -280,6 +280,13 @@ Public Class TE2DotXLoader
                     Return True
             End Select
         Next
+
+        ' Just in case something doesn't work correctly here,
+        ' return nothing and show a messagebox.
+        MessageBox.Show("Something broke and we couldn't determine if the theme engine runtime version specified in the theme file supports the requested feature." & vbCrLf &
+                        "Requested node: " & NodeName & vbCrLf &
+                        "Property to be checked: " & PropertyToCheck, "libportablethemeengine.TE2DotXLoader.ThemeSupportsFeature")
+        Return Nothing
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
@@ -407,9 +414,9 @@ Public Class TE2DotXLoader
 
         ' Just in case something doesn't work correctly here,
         ' return nothing and show a messagebox.
-        MessageBox.Show("Couldn't get default value for the theme engine runtime version the theme file specified to use." & vbCrLf &
+        MessageBox.Show("Something broke and we couldn't get default value for the theme engine runtime version the theme file specified to use." & vbCrLf &
                         "Requested node: " & NodeName & vbCrLf &
-                        "Property to be checked: " & PropertyToCheck, "TE2DotXLoader.GetDefaultValueVersionVariant")
+                        "Property to be checked: " & PropertyToCheck, "libportablethemeengine.TE2DotXLoader.GetDefaultValueVersionVariant")
         Return Nothing
     End Function
 
@@ -470,6 +477,12 @@ Public Class TE2DotXLoader
             ' If the color does not exist, it's invalid.
             Return False
         End If
+
+        ' Just in case something doesn't work correctly here,
+        ' return nothing and show a messagebox.
+        MessageBox.Show("Something broke and we couldn't verify if color is valid." & vbCrLf &
+                        "Requested color: " & InputColor, "libportablethemeengine.TE2DotXLoader.IsColorValid")
+        Return Nothing
     End Function
 
     Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True) As String
