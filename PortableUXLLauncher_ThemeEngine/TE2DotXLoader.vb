@@ -118,7 +118,7 @@ Public Class TE2DotXLoader
         End Select
 
         ' Get default statusbar backcolor.
-        MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString)
+        MessageBox.Show(GetThemeColor("StatusBar", "BackColor", GetDefaultValueVersionVariant("StatusBar", "BackColor").ToString).ToString, "StatusBar BackColor")
 
 
         ' Assign Button FlatAppearance BorderColor.
@@ -262,8 +262,14 @@ Public Class TE2DotXLoader
             ' If it's not valid and the default value is Nothing, return Nothing.
             Return Nothing
         Else
-            ' Otherwise just return the default value.
-            Return ColorTranslator.FromHtml(DefaultValue)
+            ' Otherwise just return Nothing if the default is "LiteralNothing".
+            ' This is the case for the default statusbar backcolor in 1.03 and above.
+            If DefaultValue = "LiteralNothing" Then
+                Return Nothing
+            Else
+                ' The default's not "LiteralNothing", so return the default color.
+                Return ColorTranslator.FromHtml(DefaultValue)
+            End If
         End If
     End Function
 
