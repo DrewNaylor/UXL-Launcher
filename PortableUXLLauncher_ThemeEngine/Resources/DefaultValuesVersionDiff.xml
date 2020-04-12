@@ -119,8 +119,15 @@
     <Diff RuntimeVersion="1.01" Value="Red" />
   </Default>
 
-  <Default For="FlowLayoutPanel" PropertyName="ForeColor">
-    <Diff RuntimeVersion="1.01" Value="ControlText" />
+  <Default For="LinkLabel" PropertyName="LinkColor">
+    <Diff RuntimeVersion="1.03" Value="#0000FF" />
+    <!-- Support for linklabels was added in 1.03, but
+    we still have to have entries for older versions.
+    Additionally, TE1.x used Color.FromArgb(0, 0, 255)
+    to get the blue color, but #0000FF is effectively
+    the same since it's also pure blue. -->
+    <Diff RuntimeVersion="1.02" Value="#0000FF" />
+    <Diff RuntimeVersion="1.01" Value="#0000FF" />
   </Default>
   
   
