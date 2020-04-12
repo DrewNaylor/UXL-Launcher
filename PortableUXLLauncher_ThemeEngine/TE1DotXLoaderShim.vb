@@ -21,6 +21,8 @@
 
 
 
+Imports System.Xml
+
 Public Class TE1DotXLoaderShim
     Friend Shared Sub AssignProperties()
 
@@ -29,6 +31,16 @@ Public Class TE1DotXLoaderShim
             ' theme engine runtime version the theme wants to use and send it
             ' back to the TE2.x loader.
 
+            ' Assign variable for TE runtime version node.
+            Dim ThemeEngineNode As XmlNode = ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion")
+
+            ' Set the engine runtime version to 1.01 if it's less than that.
+            If ThemeEngineNode IsNot Nothing Then
+                Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
+
+                ' Make a version variable to store the theme engine version we want to compare to.
+                Dim TE2xVersion As Version = Version.Parse("1.01")
+            End If
         End If
 
     End Sub
