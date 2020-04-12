@@ -299,6 +299,7 @@ Public Class TE2DotXLoader
                 ' we have the right one, so look at the nodes in that one.
                 For Each DiffNode As XmlNode In DefaultNode
                     Select Case DiffNode.NodeType
+                        ' Need to make sure the XML node is an element and not a comment.
                         Case XmlNodeType.Element
                             ' Create a version variable that stores the "RuntimeVersion" attribute of
                             ' the current "<Diff>" node.
@@ -324,6 +325,7 @@ Public Class TE2DotXLoader
                             End Select
 
                         Case XmlNodeType.Comment
+                            ' If the XML node is a comment, go to the next <Diff> node.
                             If DiffNode.NextSibling IsNot Nothing Then
                                 DiffNode = DiffNode.NextSibling
                             End If
