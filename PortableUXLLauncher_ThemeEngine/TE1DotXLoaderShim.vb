@@ -41,11 +41,13 @@ Public Class TE1DotXLoaderShim
             ' the dot as a literal.
             Dim tempTERuntimeFileVersionCleaner As String = ThemeEngineNode.InnerText.ToString
             ' Make a pattern for the regex.
-            Dim VersionPattern As String = "^#[0-9\.]{1," & tempTERuntimeFileVersionCleaner.Length & "}$"
+            Dim VersionPattern As String = "^[0-9\.]"
             ' Make a regex that we'll use with the above patters.
-            Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
-
-            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
+            Dim VersionRegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(VersionPattern)
+            ' Parse the resulting regex and pull out what matches.
+            Dim cleaned As String = VersionRegexWithPattern.Match(tempTERuntimeFileVersionCleaner).Value
+            MessageBox.Show("cleaned: " & cleaned)
+            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(VersionRegexWithPattern.Match(tempTERuntimeFileVersionCleaner.ToString).ToString)
 
             ' Make a version variable to store the theme engine version we want to compare to.
             Dim TE1xMinVersion As Version = Version.Parse("1.01")
