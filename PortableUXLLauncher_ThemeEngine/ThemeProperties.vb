@@ -461,7 +461,7 @@ Public Class ThemeProperties
     End Property
 
     ' Panel fore color.
-    Public Shared Property colortPanelForeColor() As Color
+    Public Shared Property colorPanelForeColor() As Color
         Get
             Return _colorPanelForeColor
         End Get

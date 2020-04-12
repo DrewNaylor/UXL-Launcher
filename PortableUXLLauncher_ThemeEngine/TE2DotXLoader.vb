@@ -195,8 +195,8 @@ Public Class TE2DotXLoader
         ' Assign Panel BackColor property.
         ThemeProperties.colorPanelBackColor = GetThemeColor("Panel", "BackColor", LoadFromAttribute)
 
-        ' Assign Panel BackColor property.
-        ThemeProperties.colorPanelBackColor = GetThemeColor("Panel", "BackColor", LoadFromAttribute)
+        ' Assign Panel ForeColor property.
+        ThemeProperties.colorPanelForeColor = GetThemeColor("Panel", "ForeColor", LoadFromAttribute)
 
     End Sub
 
