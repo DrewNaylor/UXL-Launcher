@@ -270,7 +270,30 @@ Public Class TE2DotXLoader
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
         End Select
 
-
+        ' Assign StatusLabel BorderStyle property.
+        ' Not loading from an attribute so it doesn't get messy.
+        Select Case GetPropertySafe("StatusLabel", "BorderStyle", False).ToLowerInvariant
+            Case "adjust"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Adjust
+            Case "bump"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Bump
+            Case "etched"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Etched
+            Case "raised"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Raised
+            Case "raisedinner"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.RaisedInner
+            Case "raisedouter"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.RaisedOuter
+            Case "sunken"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Sunken
+            Case "sunkeninner"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
+            Case "sunkenouter"
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.SunkenOuter
+            Case Else
+                ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Flat
+        End Select
 
 
     End Sub
