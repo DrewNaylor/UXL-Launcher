@@ -1,16 +1,16 @@
 ﻿Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
-        libportablethemeengine.themeenginemain.LoadTheme(textboxThemePath.Text, Me,, True)
+        libportablethemeengine.themeenginemain.LoadTheme(textboxThemePath.Text, Me,)
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString
-        Try
-            ' Setting the form to ButtonBackColor.
-            ' Don't worry if it says it can't use transparent colors.
-            Me.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
+        'Try
+        '    ' Setting the form to ButtonBackColor.
+        '    ' Don't worry if it says it can't use transparent colors.
+        '    Me.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
 
-        Catch ex As System.ArgumentException
-            Debug.WriteLine("That's the debugger's main window saying it can't apply transparent colors to forms.")
-        End Try
-        buttonLoadTheme.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
+        'Catch ex As System.ArgumentException
+        '    Debug.WriteLine("That's the debugger's main window saying it can't apply transparent colors to forms.")
+        'End Try
+        'buttonLoadTheme.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
     End Sub
 
     Private Sub buttonSetColor_Click(sender As Object, e As EventArgs) Handles buttonSetColor.Click
