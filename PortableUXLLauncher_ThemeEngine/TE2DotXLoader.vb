@@ -145,6 +145,9 @@ Public Class TE2DotXLoader
         ' Assign Dropdown/combobox backcolor property.
         ThemeProperties.colorDropdownBackColor = GetThemeColor("Dropdown", "BackColor", LoadFromAttribute)
 
+        ' Assign Dropdown/combobox forecolor property.
+        ThemeProperties.colorDropdownForeColor = GetThemeColor("Dropdown", "ForeColor", LoadFromAttribute)
+
 
 
     End Sub
