@@ -40,7 +40,7 @@ Public Class TE1DotXLoaderShim
             ' First make sure there are only numbers. We're escaping
             ' the dot as a literal.
             Dim tempTERuntimeFileVersionCleaner As String = ThemeEngineNode.InnerText.ToString
-            Dim Pattern As String = "^#[0-9\.]{1," & tempTERuntimeFileVersionCleaner.Length & "}$"
+            Dim VersionPattern As String = "^#[0-9\.]{1," & tempTERuntimeFileVersionCleaner.Length & "}$"
             Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.InnerText.ToString)
 
             ' Make a version variable to store the theme engine version we want to compare to.
