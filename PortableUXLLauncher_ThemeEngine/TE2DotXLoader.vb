@@ -160,9 +160,6 @@ Public Class TE2DotXLoader
         ' Assign FlowLayoutPanel forecolor property.
         ThemeProperties.colorFlowLayoutPanelForeColor = GetThemeColor("FlowLayoutPanel", "ForeColor", LoadFromAttribute)
 
-        ' Assign StatusBar backcolor property.
-        ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor", LoadFromAttribute)
-
         ' Assign Label backcolor property.
         ThemeProperties.colorLabelBackColor = GetThemeColor("Label", "BackColor", LoadFromAttribute)
 
@@ -251,6 +248,9 @@ Public Class TE2DotXLoader
 
         ' Assign MenuBar BackColor property.
         ThemeProperties.colorMenubarBackColor = GetThemeColor("MenuBar", "BackColor", LoadFromAttribute)
+
+        ' Assign StatusBar backcolor property.
+        ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor", LoadFromAttribute)
 
         ' Assign StatusLabel ForeColor property.
         ThemeProperties.colorStatusLabelForeColor = GetThemeColor("StatusLabel", "ForeColor", LoadFromAttribute)
