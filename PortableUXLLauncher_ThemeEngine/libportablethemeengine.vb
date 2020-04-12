@@ -37,13 +37,21 @@ Public Class themeenginemain
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
-    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True)
+    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True, Optional UseFullCompatibilityMode As Boolean = False)
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
+
+        ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
         If isFilename = True AndAlso File.Exists(themeInput) Then
             ' If the theme input is a filename and the path exists,
             ' load it into the theme sheet.
-            ThemeProperties.themeSheet.Load(themeInput)
+            ' Make sure to catch any XmlExceptions and load
+            ' the default theme if they occur.
+            Try
+                ThemeProperties.themeSheet.Load(themeInput)
+            Catch ex As XmlException
+                ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            End Try
         ElseIf isFilename = True AndAlso Not File.Exists(themeInput) Then
             ' If the theme input is a filename and doesn't exist,
             ' load the default theme.
@@ -54,6 +62,7 @@ Public Class themeenginemain
             ThemeProperties.themeSheet.LoadXml(themeInput)
         End If
 
+        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility()
 
         'ApplyTheme(themeName, formToApplyTo)
     End Sub

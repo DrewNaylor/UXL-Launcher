@@ -23,7 +23,14 @@
 
 Public Class TE1DotXLoaderShim
     Friend Shared Sub AssignProperties()
-        Throw New NotImplementedException()
+
+        If ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = False Then
+            ' If the calling app wants to use loose compatibility mode, get the
+            ' theme engine runtime version the theme wants to use and send it
+            ' back to the TE2.x loader.
+
+        End If
+
     End Sub
 
     ' TODO: This file will load in TE1.x themes by assigning
