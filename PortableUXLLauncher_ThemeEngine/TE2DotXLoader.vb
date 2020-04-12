@@ -527,10 +527,13 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
-    Friend Shared Function TrimTooLongVerNumberEnding(InputInt As String) As Boolean
+    Friend Shared Function TrimTooLongVerNumberEnding(InputInt As String) As String
+        Dim number As Integer = 0
 
-        If Convert.ToDecimal(InputInt.Replace(".", "")) >= Int32.MaxValue Then
-
+        If Integer.TryParse(InputInt.Replace(".", ""), number) = False Then
+            Return InputInt.Substring(0, Int32.MaxValue)
+        Else
+            Return InputInt
         End If
 
     End Function
