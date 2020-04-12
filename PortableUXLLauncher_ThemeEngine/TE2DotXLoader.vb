@@ -117,7 +117,7 @@ Public Class TE2DotXLoader
 
         ' Get default statusbar backcolor.
         ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor")
-        MessageBox.Show(ThemeProperties.colorStatusBarBackColor.ToString)
+        MessageBox.Show("statusbar backcolor: " & ThemeProperties.colorStatusBarBackColor.ToString)
 
 
         ' Assign Button FlatAppearance BorderColor.
@@ -211,9 +211,12 @@ Public Class TE2DotXLoader
                         ' node and check again.
                         FeatureNode = FeatureNode.NextSibling
                     Else
+                        ' If there is no next node after this, return True
+                        ' since it's assumed that the feature is supported.
                         Return True
                     End If
                 Case Else
+                    ' If it's another kind of XML node, return True.
                     Return True
             End Select
         Next
@@ -326,6 +329,11 @@ Public Class TE2DotXLoader
 
                         Case XmlNodeType.Comment
                             ' If the XML node is a comment, go to the next <Diff> node.
+                            If DiffNode.NextSibling IsNot Nothing Then
+                                DiffNode = DiffNode.NextSibling
+                            End If
+                        Case Else
+                            ' Go to the next node.
                             If DiffNode.NextSibling IsNot Nothing Then
                                 DiffNode = DiffNode.NextSibling
                             End If

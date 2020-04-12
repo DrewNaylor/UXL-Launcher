@@ -23,8 +23,6 @@
   </Default>
 
   <Default For="Button" PropertyName="FlatAppearance/MouseDownBackColor">
-    <!-- Even though Button FlatAppearance MouseDownBackColor was introduced
-    in version 1.03, we still have to provide defaults for 1.02 and 1.01. -->
     <Diff RuntimeVersion="1.03" Value="LiteralNothing" />
     <!-- Even though Button FlatAppearance MouseDownBackColor was introduced
     in version 1.03, we still have to provide defaults for 1.02 and 1.01. -->
