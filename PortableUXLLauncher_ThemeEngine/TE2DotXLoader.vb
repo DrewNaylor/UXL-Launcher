@@ -372,6 +372,7 @@ Public Class TE2DotXLoader
                 Return False
             End If
         Else
+            ' If the color does not exist, it's invalid.
             Return False
         End If
     End Function
