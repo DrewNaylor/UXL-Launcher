@@ -345,6 +345,7 @@ Public Class themeenginemain
 
         ' To allow theming components on multiple forms, something like this
         ' would need to be done:
+        '
         ' Inside sub UXL_Launcher.aaformMainWindow.Load:
         '    Private Sub Me.Load()
         '       ...
@@ -352,10 +353,17 @@ Public Class themeenginemain
         '       forceOptionsWindowTab.RunThemeEngine()
         '       ...
         '    End Sub
+        '
         ' Inside the Options window load sub:
         '     Friend Sub RunThemeEngine()
         '           UXLLauncher_ThemeEngine.RunThemeEngine(Me, Me.components)
         '     End Sub
+        '
+        ' Inside the UXLLauncher_ThemeEngine class:
+        '     Friend Shared Sub RunThemeEngine(formToApplyTo As Form, componentsToApplyTo As ComponentModel.IContainer)
+        '           libportablethemeengine.themeenginemain.LoadTheme("C:\Users\drewn\Documents\0GitHub\UXL-Launcher\UXL-Launcher\VB Code-behind\Themes\TE2DotX_TenDarkTheme_XML.xml", formToApplyTo, componentsToApplyTo)
+        '     End Sub
+        '
 
 
         ' Set color for the toolstrip pro renderer.
