@@ -23,7 +23,7 @@
         <BannerStyle>Dark</BannerStyle>
       </AboutWindow>
       
-      <Button BackColor="#363636" ForeColor="white" FlatStyle="Flat">
+      <Button BackColor="#363636" ForeColor="White" FlatStyle="Flat">
 	    <!-- Button FlatAppearance properties are being kept in XML InnerText
 		     just like TE1.x since Visual Studio groups them together in the
 			 Properties window. -->

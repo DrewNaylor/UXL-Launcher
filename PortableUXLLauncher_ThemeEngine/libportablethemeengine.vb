@@ -80,831 +80,6 @@ Public Class themeenginemain
     End Sub
 
     Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form)
-        '#Region "Read XML Theme Document."
-        '        '' Parse the test theme XML document and apply stuff that's in it.
-        '        Dim themeSheet As XmlDocument = userTheme
-
-        '        '' Load the user's theme. If it's not able to be used, just load the default theme.
-        '        'Try
-        '        '    If userTheme IsNot Nothing Then
-        '        '        themeSheet = (userTheme)
-        '        '    Else
-        '        '        themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-        '        '    End If
-        '        'Catch ex As XmlException
-        '        '    themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-        '        '    themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString & vbCrLf & "(Also, this code is near the top" &
-        '        '                                "of the ApplyTheme code and it doesn't usually get hit.)")
-        '        '    ' Complain to the user if the chosen theme doesn't have a root element.
-        '        '    MessageBox.Show("There was a problem trying to load the " &
-        '        '                    themeName & " theme." & vbCrLf &
-        '        '                    "Please notify the theme's author of the message below." & vbCrLf & vbCrLf & vbCrLf &
-        '        '                    "Theme file chosen:" & vbCrLf & themeName & vbCrLf & vbCrLf &
-        '        '                    "Error message: " & vbCrLf & ex.Message & vbCrLf &
-        '        '                    vbCrLf & "Error type:" & vbCrLf & ex.GetType.ToString, "PortableThemeEngine",
-        '        '                    MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '        'End Try
-
-        '        Dim themeNamespaceManager As New XmlNamespaceManager(themeSheet.NameTable)
-        '        themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
-
-
-
-        '#Region "Pull theme colors and other elements from XML documents."
-
-        '#Region "Pull UseThemeEngineVersion element from XML."
-
-        '        ' If the value in the theme file isn't a decimal,
-        '        ' set it to 1.01 in the Catch part of this Try...Catch block.
-        '        ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/126
-        '        Try
-        '            ' Only pull the UseThemeEngineVersion element from XML if it exists.
-        '            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
-        '                ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
-        '                If CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
-        '                    themeSheetUseThemeEngineVersion = CDec(1.01)
-        '                    outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
-
-        '                    ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
-        '                    ' set it to whatever the version is specified in the theme file.
-        '                ElseIf CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
-        '                    themeSheetUseThemeEngineVersion = CDec(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
-
-        '                    outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
-        '                End If
-        '            Else
-        '                ' If the XML element is missing, manually force the value to be 1.01.
-        '                themeSheetUseThemeEngineVersion = CDec(1.01)
-
-        '                outputThemeEngineVersionToUse(themeSheetUseThemeEngineVersion)
-        '            End If
-        '        Catch ex As System.InvalidCastException
-        '            ' Catch invalid numbers as referenced in this issue:
-        '            ' https://github.com/DrewNaylor/UXL-Launcher/issues/126
-        '            ' This will force the themeSheetUseThemeEngineVersion decimal to be
-        '            ' set to be 1.01 if this exception occurs.
-
-        '            themeSheetUseThemeEngineVersion = CDec(1.01)
-        '        End Try
-
-        '#End Region
-
-        '#Region "Pull Title theme element from XML."
-
-        '        ' Only pull the title element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
-        '            themeSheetTitle = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-
-        '        Else
-        '            themeSheetTitle = "(No title specified)"
-
-        '        End If
-        '#End Region
-
-        '#Region "Pull Description theme element from XML."
-        '        ' Only pull the description element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
-        '            themeSheetDescription = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
-
-        '        Else
-        '            themeSheetDescription = "(No description specified)"
-
-        '        End If
-        '#End Region
-
-        '#Region "Pull Author theme element from XML."
-        '        ' Only pull the Author element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
-        '            themeSheetAuthor = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
-
-        '        Else
-        '            themeSheetAuthor = "(No author specified)"
-
-        '        End If
-        '#End Region
-
-        '#Region "Pull Version theme element from XML."
-        '        ' Only pull the Author element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
-        '            themeSheetFileVersion = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
-
-        '        Else
-        '            themeSheetFileVersion = "(No version specified)"
-
-        '        End If
-        '#End Region
-
-        '#Region "About window Banner Style"
-        '        ' Only look at the banner style if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager) IsNot Nothing Then
-        '            ' If the theme says to use the "Dark" banner, use it.
-        '            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/AboutWindow/BannerStyle[1]", themeNamespaceManager).InnerText = "Dark" Then
-        '                bannerStyle = My.Resources.DARK_UXL_Launcher_Banner
-
-        '            Else
-        '                ' If the element is something else, use the regular banner.
-        '                bannerStyle = My.Resources.UXL_Launcher_Banner
-        '            End If
-        '        Else
-        '            ' Otherwise, make sure it's set if it's not in the theme.
-        '            bannerStyle = My.Resources.UXL_Launcher_Banner
-        '        End If
-        '#End Region
-
-        '#Region "Pull Button theme element from XML."
-        '        ' Try to pull the Button colors from XML.
-        '#Region "Button BackColor"
-        '        ' Only pull the Button BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorButtonBackColor = Color.Transparent
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorButtonBackColor = Color.Transparent
-        '        End If
-        '#End Region
-
-        '#Region "Button ForeColor"
-        '        ' Only pull the Button ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "Button flat style"
-        '        ' Only pull the Button BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatStyle[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                ' See what the theme file has flat style set up as. Currently, only "Flat" and "Standard" are supported.
-        '                If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatStyle[1]", themeNamespaceManager).InnerText = "Flat" Then
-        '                    flatstyleButtonFlatStyle = FlatStyle.Flat
-        '                Else
-        '                    flatstyleButtonFlatStyle = FlatStyle.Standard
-        '                End If
-
-        '                ' If the element isn't valid, just replace it with the default.
-        '            Catch ex As Exception
-        '                flatstyleButtonFlatStyle = FlatStyle.Standard
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            flatstyleButtonFlatStyle = FlatStyle.Standard
-        '        End If
-        '#End Region
-
-        '#Region "Button flat appearance border color"
-        '        ' Only pull the Button FlatAppearance BorderColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                flatappearanceButtonBorderColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/BorderColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                flatappearanceButtonBorderColor = Nothing
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            flatappearanceButtonBorderColor = Nothing
-        '        End If
-        '#End Region
-
-        '#Region "Button flat appearance mousedown color (TE 1.03 or greater)"
-        '        ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
-        '        If themeSheetUseThemeEngineVersion >= 1.03 Then
-
-        '            ' Only pull the Button FlatAppearance MouseDownBackColor element from XML if it exists.
-        '            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '                Try
-        '                    flatappearanceButtonMouseDownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseDownBackColor[1]", themeNamespaceManager).InnerText)
-
-        '                    ' If the element isn't a valid HTML color, just replace it with the default.
-        '                Catch ex As Exception
-        '                    flatappearanceButtonMouseDownBackColor = Nothing
-        '                End Try
-        '            Else
-        '                ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '                flatappearanceButtonMouseDownBackColor = Nothing
-        '            End If
-        '        Else
-        '            ' If the theme file is set to use something lower than 1.03,
-        '            ' use the default value.
-        '            flatappearanceButtonMouseDownBackColor = Nothing
-        '        End If
-        '#End Region
-
-        '#Region "Button flat appearance mouseover color (TE 1.03 or greater)"
-        '        ' Make sure the theme file is set to use ThemeEngine 1.03 or higher.
-        '        If themeSheetUseThemeEngineVersion >= 1.03 Then
-
-        '            ' Only pull the Button FlatAppearance MouseOverBackColor element from XML if it exists.
-        '            If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '                Try
-        '                    flatappearanceButtonMouseOverBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Button/FlatAppearance/MouseOverBackColor[1]", themeNamespaceManager).InnerText)
-
-        '                    ' If the element isn't a valid HTML color, just replace it with the default.
-        '                Catch ex As Exception
-        '                    flatappearanceButtonMouseOverBackColor = Nothing
-        '                End Try
-        '            Else
-        '                ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '                flatappearanceButtonMouseOverBackColor = Nothing
-        '            End If
-        '        Else
-        '            ' If the theme file is set to use something lower than 1.03,
-        '            ' use the default value.
-        '            flatappearanceButtonMouseOverBackColor = Nothing
-        '        End If
-        '#End Region
-
-        '#End Region
-
-        '#Region "CheckBox BackColor"
-        '        ' Only pull the Checkbox BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorCheckBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '        End If
-        '#End Region
-
-        '#Region "CheckBox ForeColor"
-        '        ' Only pull the CheckBox ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorCheckBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/CheckBox/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "Dropdown BackColor"
-        '        ' Only pull the Dropdown BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorDropdownBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
-        '        End If
-        '#End Region
-
-        '#Region "Dropdown ForeColor"
-        '        ' Only pull the Dropdown ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorDropdownForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Dropdown/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "GroupBox BackColor"
-        '        ' Only pull the GroupBox BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorGroupBoxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '        End If
-        '#End Region
-
-        '#Region "GroupBox ForeColor."
-        '        ' Only pull the GroupBox ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorGroupBoxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/GroupBox/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "FlowLayoutPanel BackColor."
-        '        ' Only pull the FlowLayoutPanel BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorFlowLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
-        '        End If
-        '#End Region
-
-        '#Region "FlowLayoutPanel ForeColor"
-        '        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorFlowLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/FlowLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "StatusBar BackColor."
-        '        ' Only pull the StatusBar BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            ' If the node exists and if it has "LiteralNothing" in the inner text, then we literally set the
-        '            ' color for the statusbar back color to "Nothing".
-        '            ' This makes it so that the statusbar appears like it would if the theme engine were turned off.
-        '            ' Only used if the theme is compatible with TE1.03 or greater.
-        '            If themeSheetUseThemeEngineVersion >= 1.03 AndAlso themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
-        '                colorStatusBarBackColor = Nothing
-
-        '                ' If the theme doesn't want to use "Nothing" as a color, then 
-        '                ' use the color it says to use.
-        '            ElseIf Not themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText = "LiteralNothing" Then
-        '                Try
-        '                    colorStatusBarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusBar/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                    ' If the element isn't a valid HTML color, just replace it with the default.
-        '                Catch ex As Exception
-        '                    colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
-        '                End Try
-        '            Else
-        '                ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '                colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
-        '            End If
-        '        End If
-        '#End Region
-
-        '#Region "Label BackColor"
-        '        ' Only pull the Label BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '        End If
-        '#End Region
-
-        '#Region "Label ForeColor"
-        '        ' Only pull the Label ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/Label/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "LinkLabel ActiveLinkColor"
-        '        ' Only pull the LinkLabel ActiveLinkColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ActiveLinkColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorLinkLabelActiveLinkColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ActiveLinkColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
-        '        End If
-        '#End Region
-
-        '#Region "LinkLabel LinkColor"
-        '        ' Only pull the LinkLabel LinkColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/LinkColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorLinkLabelLinkColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/LinkColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
-        '        End If
-        '#End Region
-
-        '#Region "LinkLabel BackColor"
-        '        ' Only pull the LinkLabel BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorLinkLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '        End If
-        '#End Region
-
-        '#Region "LinkLabel ForeColor"
-        '        ' Only pull the LinkLabel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorLinkLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/LinkLabel/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "Radio Button BackColor"
-        '        ' Only pull the Radio Button BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorRadioButtonBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '        End If
-        '#End Region
-
-        '#Region "Radio Button ForeColor"
-        '        ' Only pull the Radio Button ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorRadioButtonForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/RadioButton/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "TableLayoutPanel BackColor"
-        '        ' Only pull the TableLayoutPanel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorTableLayoutPanelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-        '        End If
-        '#End Region
-
-        '#Region "TableLayoutPanel ApplyToAboutWindowAboutTabTLP"
-        '        ' Only pull the TableLayoutPanel ApplyToAboutWindowAboutTabTLP element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                useTableLayoutPanelColorInsideAboutAppTab = CBool(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ApplyToAboutWindowAboutTabTLP[1]", themeNamespaceManager).InnerText.ToString)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                useTableLayoutPanelColorInsideAboutAppTab = False
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            useTableLayoutPanelColorInsideAboutAppTab = False
-        '        End If
-        '#End Region
-
-        '#Region "TableLayoutPanel ForeColor"
-        '        ' Only pull the TableLayoutPanel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorTableLayoutPanelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TableLayoutPanel/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "TabPage BackColor"
-        '        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorTabPageBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
-        '        End If
-        '#End Region
-
-        '#Region "TabPage ForeColor"
-        '        ' Only pull the FlowLayoutPanel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorTabPageForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TabPage/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "TextBox BackColor."
-        '        ' Only pull the TextBox BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorTextboxBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
-        '        End If
-        '#End Region
-
-        '#Region "TextBox ForeColor."
-        '        ' Only pull the TextBox ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorTextboxForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/TextBox/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
-        '        End If
-        '#End Region
-
-        '#Region "MenuItem BackColor"
-        '        ' Only pull the MenuItem BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorMenuItemBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorMenuItemBackColor = Color.FromKnownColor(KnownColor.Window)
-        '        End If
-        '#End Region
-
-        '#Region "MenuItem Image margin background gradient"
-        '#Region "Start color"
-        '        ' Only pull the MenuItem Image Margin Gradient Start Color element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/StartColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorMenuItemImageMarginGradientStartColor = ColorTranslator.FromHtml("0xFCFCFC")
-        '        End If
-        '#End Region
-        '#Region "End color"
-        '        ' Only pull the MenuItem Image Margin Gradient End Color element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ImageMarginGradient/EndColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorMenuItemImageMarginGradientEndColor = ColorTranslator.FromHtml("0xF1F1F1")
-        '        End If
-        '#End Region
-        '#End Region
-
-        '#Region "MenuBar BackColor"
-        '        ' Only pull the MenuBar BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorMenubarBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuBar/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorMenubarBackColor = Color.FromKnownColor(KnownColor.Control)
-        '        End If
-        '#End Region
-
-        '#Region "MenuItem ForeColor."
-        '        ' Only pull the MenuItem ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorMenuItemForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/MenuItem/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorMenuItemForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorMenuItemForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "StatusLabel BackColor."
-        '        ' Only pull the StatusLabel BackColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorStatusLabelBackColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BackColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorStatusLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorStatusLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '        End If
-        '#End Region
-
-        '#Region "StatusLabel ForeColor."
-        '        ' Only pull the StatusLabel ForeColor element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                colorStatusLabelForeColor = ColorTranslator.FromHtml(themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/ForeColor[1]", themeNamespaceManager).InnerText)
-
-        '                ' If the element isn't a valid HTML color, just replace it with the default.
-        '            Catch ex As Exception
-        '                colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            End Try
-        '        Else
-        '            ' If the element doesn't exist, overwrite it with the Default theme's value.
-        '            colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
-
-        '#Region "StatusLabel BorderSides."
-        '        ' Only pull the StatusLabel BorderSides element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                Dim tempBorderSidesXMLValue As String
-        '                tempBorderSidesXMLValue = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderSides[1]", themeNamespaceManager).InnerText
-        '                ' Because I can't find an easy way to set propertyStatusLabelBorderSides to the XML element directly, I have to set it with a string comparison.
-        '                If tempBorderSidesXMLValue = "All" Then
-        '                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
-        '                ElseIf tempBorderSidesXMLValue = "Top" Then
-        '                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Top
-        '                ElseIf tempBorderSidesXMLValue = "Left" Then
-        '                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Left
-        '                ElseIf tempBorderSidesXMLValue = "Bottom" Then
-        '                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Bottom
-        '                ElseIf tempBorderSidesXMLValue = "Right" Then
-        '                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Right
-        '                    ' If the theme file has something else, then we'll just set it to None.
-        '                Else
-        '                    propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
-        '                End If
-
-        '                ' If the element isn't valid, just replace it with the default.
-        '            Catch ex As Exception
-        '                propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
-        '            End Try
-        '        End If
-        '#End Region
-
-        '#Region "StatusLabel BorderStyle."
-        '        ' Only pull the StatusLabel BorderStyle element from XML if it exists.
-        '        If themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager) IsNot Nothing Then
-        '            Try
-        '                Dim tempBorderStyleXMLValue As String
-        '                tempBorderStyleXMLValue = themeSheet.SelectSingleNode("/UXL_Launcher_Theme/Theme_Colors/StatusLabel/BorderStyle[1]", themeNamespaceManager).InnerText
-        '                ' Because I can't find an easy way to set propertyStatusLabelBorderSides to the XML element directly, I have to set it with a string comparison.
-        '                If tempBorderStyleXMLValue = "Adjust" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.Adjust
-        '                ElseIf tempBorderStyleXMLValue = "Bump" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.Bump
-        '                ElseIf tempBorderStyleXMLValue = "Etched" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.Etched
-        '                ElseIf tempBorderStyleXMLValue = "Raised" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.Raised
-        '                ElseIf tempBorderStyleXMLValue = "RaisedInner" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.RaisedInner
-        '                ElseIf tempBorderStyleXMLValue = "RaisedOuter" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.RaisedOuter
-        '                ElseIf tempBorderStyleXMLValue = "Sunken" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.Sunken
-        '                ElseIf tempBorderStyleXMLValue = "SunkenInner" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
-        '                ElseIf tempBorderStyleXMLValue = "SunkenOuter" Then
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.SunkenOuter
-        '                    ' If the theme file has something else, then we'll just set it to Flat.
-        '                Else
-        '                    propertyStatusLabelBorderStyle = Border3DStyle.Flat
-        '                End If
-
-        '                ' If the element isn't valid, just replace it with the default.
-        '            Catch ex As Exception
-        '                propertyStatusLabelBorderStyle = Border3DStyle.Flat
-        '            End Try
-        '        End If
-        '#End Region
 
         '#Region "Set colors for controls."
 
@@ -913,72 +88,17 @@ Public Class themeenginemain
         '        ' Code based on this VBForums post:
         '        ' http://www.vbforums.com/showthread.php?387308-Visit-Every-Control-on-a-Form-(includes-nested-controls-no-recursion)
 
+        ' Placeholder form-applying code that's not ready yet.
         '        'formToApplyTo.BackColor = colorFlowLayoutPanelBackColor
         '        'formToApplyTo.ForeColor = colorFlowLayoutPanelForeColor
 
-        '#Region "Apply default colors to forms not supported by TE1.02 or lower."
-        '        ' Apply default colors to forms that aren't supported by TE1.02 or lower.
-        '        If formToApplyTo.Name = "aaformAboutWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Or formToApplyTo.Name = "aaformOptionsWindow" AndAlso themeSheetUseThemeEngineVersion < 1.03 Then
-        '            ' If the theme doesn't support TE1.03, apply defaults.
-        '            ' Default button colors.
-        '            colorButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            colorButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            flatstyleButtonFlatStyle = FlatStyle.Standard
-        '            flatappearanceButtonBorderColor = Nothing
-
-        '            ' Default TableLayoutPanel colors.
-        '            colorTableLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Control)
-        '            colorTableLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default TabPage colors.
-        '            colorTabPageBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            colorTabPageForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default GroupBox colors.
-        '            colorGroupBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            colorGroupBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default Label colors.
-        '            colorLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            colorLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default Textbox colors.
-        '            colorTextboxBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            colorTextboxForeColor = Color.FromKnownColor(KnownColor.WindowText)
-
-        '            ' Default RadioButton colors.
-        '            colorRadioButtonBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            colorRadioButtonForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default Checkbox colors.
-        '            colorCheckBoxBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            colorCheckBoxForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default Dropdown box/ComboBox colors.
-        '            colorDropdownBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            colorDropdownForeColor = Color.FromKnownColor(KnownColor.ControlText)
-
-        '            ' Default LinkLabel colors.
-        '            colorLinkLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
-        '            colorLinkLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '            colorLinkLabelLinkColor = Color.FromArgb(0, 0, 255)
-        '            colorLinkLabelActiveLinkColor = Color.FromKnownColor(KnownColor.Red)
-
-        '            ' Default About window banner.
-        '            bannerStyle = My.Resources.UXL_Launcher_Banner
-
-        '            'Default FlowLayoutPanel colors.
-        '            colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
-        '            colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
-        '        End If
-        '#End Region
 
 #Region "Now apply colors to controls in each form passed to the theme engine."
         Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
         Do Until ctrl Is Nothing
-    'MessageBox.Show(ctrl.Name.ToString)
+            'MessageBox.Show(ctrl.Name.ToString)
 
-    If TypeOf ctrl Is GroupBox Then
+            If TypeOf ctrl Is GroupBox Then
                 ' If the control is a groupbox, theme it as a groupbox.
                 ctrl.BackColor = ThemeProperties.colorGroupBoxBackColor
                 ctrl.ForeColor = ThemeProperties.colorGroupBoxForeColor
@@ -994,10 +114,10 @@ Public Class themeenginemain
 
 
             ElseIf TypeOf ctrl Is Button Then
-    ' If the control is a button, theme it as a button.
-    ' We have to define a button locally since "FlatStyle"
-    ' isn't something that Control types have by default.
-    Dim button As Button = CType(ctrl, Button)
+                ' If the control is a button, theme it as a button.
+                ' We have to define a button locally since "FlatStyle"
+                ' isn't something that Control types have by default.
+                Dim button As Button = CType(ctrl, Button)
                 ' Set button BackColor (background color).
                 button.BackColor = ThemeProperties.colorButtonBackColor
                 ' Set button ForeColor (text color).
@@ -1024,7 +144,7 @@ Public Class themeenginemain
                         button.FlatAppearance.BorderColor = Nothing
                     End If
                     themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-                    End Try
+                End Try
 
                 ' Now change the color for when the mouse clicks down
                 ' on a button and the flat appearance is set to flat.
@@ -1036,13 +156,13 @@ Public Class themeenginemain
 
             ElseIf TypeOf ctrl Is ComboBox Then
 
-    Try ' Try to apply the dropdown backcolor.
+                Try ' Try to apply the dropdown backcolor.
                     ctrl.BackColor = ThemeProperties.colorDropdownBackColor
                 Catch ex As ArgumentException
-                        ' Now, make sure the background isn't transparent.
-                        ' Dropdown boxes/comboboxes don't support transparent backgrounds.
-                        ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
-                    End Try
+                    ' Now, make sure the background isn't transparent.
+                    ' Dropdown boxes/comboboxes don't support transparent backgrounds.
+                    ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                End Try
                 ' Now do the forecolor.
                 ctrl.ForeColor = ThemeProperties.colorDropdownForeColor
 
@@ -1061,14 +181,14 @@ Public Class themeenginemain
                 ctrl.ForeColor = ThemeProperties.colorFlowLayoutPanelForeColor
 
             ElseIf TypeOf ctrl Is LinkLabel Then
-    ' If the control is a LinkLabel, theme it appropriately.
-    ' Define a linklabel locally since there are things it has
-    ' that Control doesn't have by default.
+                ' If the control is a LinkLabel, theme it appropriately.
+                ' Define a linklabel locally since there are things it has
+                ' that Control doesn't have by default.
 
-    ' This needs to be above the "Label" entry as otherwise
-    ' the colors won't apply to linklabels for the linkcolor
-    ' and activelinkcolor properties.
-    Dim linklabel As LinkLabel = CType(ctrl, LinkLabel)
+                ' This needs to be above the "Label" entry as otherwise
+                ' the colors won't apply to linklabels for the linkcolor
+                ' and activelinkcolor properties.
+                Dim linklabel As LinkLabel = CType(ctrl, LinkLabel)
                 linklabel.BackColor = ThemeProperties.colorLinkLabelBackColor
                 linklabel.ForeColor = ThemeProperties.colorLinkLabelForeColor
                 linklabel.LinkColor = ThemeProperties.colorLinkLabelLinkColor
@@ -1082,10 +202,10 @@ Public Class themeenginemain
                 ctrl.ForeColor = ThemeProperties.colorLabelForeColor
 
             ElseIf TypeOf ctrl Is MenuStrip Then
-    ' If the control is a menustrip (menu bar), theme it as such.
+                ' If the control is a menustrip (menu bar), theme it as such.
 
-    ' Create a local variable to refer to the menustrip.
-    Dim menustrip As MenuStrip = CType(ctrl, MenuStrip)
+                ' Create a local variable to refer to the menustrip.
+                Dim menustrip As MenuStrip = CType(ctrl, MenuStrip)
 
                 'MessageBox.Show(menustrip.Name.ToString)
 
@@ -1093,34 +213,36 @@ Public Class themeenginemain
                 menustrip.BackColor = ThemeProperties.colorMenubarBackColor
 
 
-                ' Set color for the toolstrip pro renderer.
-                ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
-                ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
-                ThemeProperties.toolstripProRenderer.DropdownBackColor = ThemeProperties.colorMenuItemBackColor
-                ThemeProperties.toolstripProRenderer.ImageMarginGradientStartColor = ThemeProperties.colorMenuItemImageMarginGradientStartColor
-                ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
-                ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
+
+
 
                 ' Look at each ToolStripMenuItem in the menustrip.
                 For Each menuitem As ToolStripMenuItem In menustrip.Items
-    'MessageBox.Show(menuitem.Name.ToString)
+                    'MessageBox.Show(menuitem.Name.ToString)
 
-    If menuitem.Owner Is menustrip Then
+                    If menuitem.Owner Is menustrip Then
                         ' If the owner of the menuitem is the menustrip,
                         ' theme it to match the menustrip.
+                        Debug.WriteLine(menuitem.Name)
                         menuitem.BackColor = ThemeProperties.colorMenubarBackColor
                         menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
-
-                    Else
+                        'Else
+                        ' Now we look in each menu and theme them appropriately.
                         ' Otherwise, theme it as a dropdown since its
                         ' owner isn't the menustrip.
-                        menuitem.BackColor = ThemeProperties.colorMenuItemBackColor
-                        menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
+                        For Each dropdownmenu As ToolStripItem In menuitem.DropDownItems
+                            Debug.WriteLine(dropdownmenu.Name)
+                            dropdownmenu.BackColor = ThemeProperties.colorMenuItemBackColor
+                            dropdownmenu.ForeColor = ThemeProperties.colorMenuItemForeColor
+                        Next
+                        'menuitem.BackColor = ThemeProperties.colorMenuItemBackColor
+                        'menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
 
                     End If
-    Next
+                Next
 
-    ElseIf TypeOf ctrl Is TextBox Then
+                    ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
                 ctrl.BackColor = ThemeProperties.colorTextboxBackColor
@@ -1210,7 +332,16 @@ Public Class themeenginemain
                 ctrl = formToApplyTo.GetNextControl(ctrl, True)
             Loop
 #End Region
-    '#End Region
+
+        ' Set color for the toolstrip pro renderer.
+        ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
+        ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
+        ThemeProperties.toolstripProRenderer.DropdownBackColor = ThemeProperties.colorMenuItemBackColor
+        ThemeProperties.toolstripProRenderer.ImageMarginGradientStartColor = ThemeProperties.colorMenuItemImageMarginGradientStartColor
+        ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
+        ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
+        '#End Region
     End Sub ' End of ApplyTheme Sub.
     '#End Region
     '#End Region
