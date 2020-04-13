@@ -359,6 +359,7 @@ Public Class TE2DotXLoader
 
         ' Only check for compatibility if the feature requests it,
         ' as this takes a lot of time.
+
         If CheckCompatibility = True Then
 
             Dim VersionCompatibilityListSheet As XmlDocument = New XmlDocument()
@@ -439,6 +440,7 @@ Public Class TE2DotXLoader
             ' so assume it's compatible across all versions.
             Return True
         End If
+
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
@@ -498,6 +500,8 @@ Public Class TE2DotXLoader
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
+        Dim starttime As DateTime = DateTime.Now
+
         ' Define some variables for holding an XML document and a namespace manager.
         Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
         Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
@@ -533,10 +537,12 @@ Public Class TE2DotXLoader
                                 Case 0
                                     ' The "RuntimeVersion" matches the version that the theme file says
                                     ' it works with. Return this value.
+
                                     Return DiffNode.Attributes("Value").Value
                                 Case 1
                                     ' The "RuntimeVersion" is older than the version of the theme engine
                                     ' that the theme file says it works with. Return this value.
+
                                     Return DiffNode.Attributes("Value").Value
                                 Case -1
                                     ' The "RuntimeVersion" is newer than the version the theme engine works with.
@@ -561,6 +567,8 @@ Public Class TE2DotXLoader
                 'Debug.WriteLine("NodeName: " & NodeName)
                 'Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
                 ' If it doesn't match, go to the next node and try again.
+                Dim endtime As DateTime = DateTime.Now
+                Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
                 DefaultNode = DefaultNode.NextSibling
             End If
         Next
@@ -635,7 +643,10 @@ Public Class TE2DotXLoader
         '                "NodeAttribute: " & NodeAttribute)
         ' This is only checked if the feature requests compatibility checking
         ' as this is a rather expensive operation.
+        Dim starttime As DateTime = DateTime.Now
         If ThemeSupportsFeature(DesiredNode, NodeAttribute, CheckCompatibility) = True Then
+            Dim endtime As DateTime = DateTime.Now
+            Debug.WriteLine("Compatibility checker took " & (endtime - starttime).Milliseconds & " ms to run.")
 
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
                 ' If the theme wants to load the property from an attribute, do so.
