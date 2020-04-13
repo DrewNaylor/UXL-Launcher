@@ -1,6 +1,9 @@
 ﻿Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
+        Dim startdate As DateTime = DateTime.Now
         libportablethemeengine.themeenginemain.LoadTheme(textboxThemePath.Text, Me,)
+        Dim enddate As DateTime = DateTime.Now
+        Debug.WriteLine("Theme engine took " & (enddate - startdate).Milliseconds & " milliseconds to run.")
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString
         'Try
         '    ' Setting the form to ButtonBackColor.
@@ -11,6 +14,9 @@
         '    Debug.WriteLine("That's the debugger's main window saying it can't apply transparent colors to forms.")
         'End Try
         'buttonLoadTheme.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
+
+
+
     End Sub
 
     Private Sub buttonSetColor_Click(sender As Object, e As EventArgs) Handles buttonSetColor.Click

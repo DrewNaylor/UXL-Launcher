@@ -70,7 +70,7 @@ Public Class TE2DotXLoader
                 cleaned = cleaned & character
             End If
         Next
-        MessageBox.Show("cleaned: " & cleaned)
+        'MessageBox.Show("cleaned: " & cleaned)
         Return cleaned
     End Function
 
@@ -84,7 +84,7 @@ Public Class TE2DotXLoader
             ' version attribute.
 
             ' Make a variable to store the runtime version.
-            MessageBox.Show(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString)
+            'MessageBox.Show(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString)
             Dim TERuntimeVersionInThemeFile As Version
 
             ' Make a version variable to store the theme engine version we want to compare to.
@@ -154,7 +154,7 @@ Public Class TE2DotXLoader
         ' Button properties.
         ' Assign the Button backcolor property.
         ThemeProperties.colorButtonBackColor = GetThemeColor("Button", "BackColor", LoadFromAttribute)
-        MessageBox.Show("button back color: " & ThemeProperties.colorButtonBackColor.ToString)
+        'MessageBox.Show("button back color: " & ThemeProperties.colorButtonBackColor.ToString)
 
         ' Assign Button forecolor property.
         ThemeProperties.colorButtonForeColor = GetThemeColor("Button", "ForeColor", LoadFromAttribute)
@@ -171,17 +171,17 @@ Public Class TE2DotXLoader
 
         ' Assign Button FlatAppearance BorderColor.
         ' Make sure the theme supports it.
-        MessageBox.Show("About to get FlatAppearance ButtonBorderColor. Please place breakpoints.")
+        'MessageBox.Show("About to get FlatAppearance ButtonBorderColor. Please place breakpoints.")
         ThemeProperties.flatappearanceButtonBorderColor = GetThemeColor("Button", "FlatAppearance/BorderColor", False)
-        MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
+        'MessageBox.Show("flat appearance button border color: " & ThemeProperties.flatappearanceButtonBorderColor.ToString)
 
         ' Set Button FlatAppearance MouseDown color.
         ThemeProperties.flatappearanceButtonMouseDownBackColor = GetThemeColor("Button", "FlatAppearance/MouseDownBackColor", False)
-        MessageBox.Show("flat appearance button mousedown color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
+        'MessageBox.Show("flat appearance button mousedown color: " & ThemeProperties.flatappearanceButtonMouseDownBackColor.ToString)
 
         ' Set Button FlatAppearance MouseOver color.
         ThemeProperties.flatappearanceButtonMouseOverBackColor = GetThemeColor("Button", "FlatAppearance/MouseOverBackColor", False)
-        MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
+        'MessageBox.Show("flat appearance button mouseover color: " & ThemeProperties.flatappearanceButtonMouseOverBackColor.ToString)
 
         ' Assign Checkbox backcolor property.
         ThemeProperties.colorCheckBoxBackColor = GetThemeColor("CheckBox", "BackColor", LoadFromAttribute)
@@ -385,22 +385,22 @@ Public Class TE2DotXLoader
                                 ' node's "VersionIntroduced" node.
                                 Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
                                     Case 0 ' Theme works with the same version the feature was introduced in.
-                                        MessageBox.Show("Node name: " & NodeName & vbCrLf &
-                                                        "Property name: " & PropertyToCheck & vbCrLf &
-                                                        "Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                                        "First version to have this feature: " & ver.ToString, "Version matches theme file runtime version")
+                                        'MessageBox.Show("Node name: " & NodeName & vbCrLf &
+                                        '"Property name: " & PropertyToCheck & vbCrLf &
+                                        '"Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                        '"First version to have this feature: " & ver.ToString, "Version matches theme file runtime version")
                                         Return True
                                     Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-                                        MessageBox.Show("Node name: " & NodeName & vbCrLf &
-                                                        "Property name: " & PropertyToCheck & vbCrLf &
-                                                        "Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                                        "First version to have this feature: " & ver.ToString, "Theme file runtime version is newer than when the feature was introduced")
+                                        'MessageBox.Show("Node name: " & NodeName & vbCrLf &
+                                        '"Property name: " & PropertyToCheck & vbCrLf &
+                                        '"Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                        '"First version to have this feature: " & ver.ToString, "Theme file runtime version is newer than when the feature was introduced")
                                         Return True
                                     Case -1 ' Theme doesn't support the version the feature was introduced in.
-                                        MessageBox.Show("Node name: " & NodeName & vbCrLf &
-                                                        "Property name: " & PropertyToCheck & vbCrLf &
-                                                        "Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-                                                        "First version to have this feature: " & ver.ToString, "Theme file runtime version doesn't support feature")
+                                        'MessageBox.Show("Node name: " & NodeName & vbCrLf &
+                                        '"Property name: " & PropertyToCheck & vbCrLf &
+                                        '"Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
+                                        '"First version to have this feature: " & ver.ToString, "Theme file runtime version doesn't support feature")
                                         Return False
                                 End Select ' Done seeing if the theme file supports a given feature.
                             End If ' Done checking the property value.
@@ -435,19 +435,19 @@ Public Class TE2DotXLoader
     Friend Shared Sub AssignThemeInfoProperties()
         ' Grab theme title.
         ThemeProperties.themeSheetTitle = GetPropertySafe("Title", "", False, False)
-        MessageBox.Show(ThemeProperties.themeSheetTitle)
+        'MessageBox.Show(ThemeProperties.themeSheetTitle)
 
         ' Grab theme description.
         ThemeProperties.themeSheetDescription = GetPropertySafe("Description", "", False, False)
-        MessageBox.Show(ThemeProperties.themeSheetDescription)
+        'MessageBox.Show(ThemeProperties.themeSheetDescription)
 
         ' Grab theme author.
         ThemeProperties.themeSheetAuthor = GetPropertySafe("Author", "", False, False)
-        MessageBox.Show(ThemeProperties.themeSheetAuthor)
+        'MessageBox.Show(ThemeProperties.themeSheetAuthor)
 
         ' Grab theme file version.
         ThemeProperties.themeSheetFileVersion = GetPropertySafe("Version", "", False, False)
-        MessageBox.Show(ThemeProperties.themeSheetFileVersion)
+        'MessageBox.Show(ThemeProperties.themeSheetFileVersion)
     End Sub
 
     Private Shared Function GetThemeColor(ControlName As String, ControlProperty As String, Optional LoadFromAttribute As Boolean = False) As Color
@@ -460,7 +460,7 @@ Public Class TE2DotXLoader
 
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
-        'MessageBox.Show(ColorFromTheme)
+        ''MessageBox.Show(ColorFromTheme)
         If IsColorValid(ColorFromTheme) Then
             ' If the color is a valid HTML or system color,
             ' return the color.
@@ -470,7 +470,7 @@ Public Class TE2DotXLoader
             ' transparency will be returned, and it might be
             ' confusing. May be a good idea to make sure it has
             ' a length of 3 numbers or 6 numbers.
-            MessageBox.Show(ColorFromTheme)
+            'MessageBox.Show(ColorFromTheme)
             Return ColorTranslator.FromHtml(ColorFromTheme)
         ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
             ' If it's not valid and the default value is Nothing, return Nothing.
@@ -505,7 +505,7 @@ Public Class TE2DotXLoader
 
             ' Look at each node in the default values list.
             ' These are the "<Default>" nodes.
-            Debug.WriteLine("DefaultNode attribute For: " & DefaultNode.Attributes("For").Value)
+            'Debug.WriteLine("DefaultNode attribute For: " & DefaultNode.Attributes("For").Value)
             If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
 
                 ' If the default node's "For" attribute matches the node we're looking at,
@@ -551,8 +551,8 @@ Public Class TE2DotXLoader
                     End Select
                 Next ' Read next "<Diff>" node.
             Else
-                Debug.WriteLine("NodeName: " & NodeName)
-                Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
+                'Debug.WriteLine("NodeName: " & NodeName)
+                'Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
                 ' If it doesn't match, go to the next node and try again.
                 DefaultNode = DefaultNode.NextSibling
             End If
@@ -589,7 +589,7 @@ Public Class TE2DotXLoader
 
             ' Regex pattern. Mostly copied from answer.
             Dim Pattern As String = "^#[0-9A-F]{1," & SwitchToHashSymbol.Length & "}$"
-            'MessageBox.Show(Pattern)
+            ''MessageBox.Show(Pattern)
             ' Make a new regex with a pattern.
             Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
 
@@ -624,7 +624,7 @@ Public Class TE2DotXLoader
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         ' Make sure the theme supports this feature.
-        'MessageBox.Show("DesiredNode: " & DesiredNode & vbCrLf &
+        ''MessageBox.Show("DesiredNode: " & DesiredNode & vbCrLf &
         '                "NodeAttribute: " & NodeAttribute)
         If ThemeSupportsFeature(DesiredNode, NodeAttribute) = True Then
 

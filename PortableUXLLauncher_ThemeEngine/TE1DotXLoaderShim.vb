@@ -80,7 +80,7 @@ Public Class TE1DotXLoaderShim
                 ThemeProperties.themeSheetEngineRuntimeVersion = Version.Parse("1.01")
         End If
 
-        MessageBox.Show(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)
+        'MessageBox.Show(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)
         If ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = False Then
             ' If the calling app wants to use loose compatibility mode, get the
             ' theme engine runtime version the theme wants to use and send it
