@@ -73,8 +73,6 @@ Public Class themeenginemain
 
         ' Now that we're done figuring out what the properties are,
         ' we can put the colors on the controls.
-        ' TODO: Set the color-applying code to use the new properties
-        ' instead of the old local variables.
         'MessageBox.Show("Back to themeenginemain. Theme colors can be applied now.")
 
         ApplyTheme(themeInput, formToApplyTo, componentsToApplyTo)
