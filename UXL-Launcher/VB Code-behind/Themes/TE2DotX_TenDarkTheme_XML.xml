@@ -1,4 +1,6 @@
 ﻿<UXL_Launcher_Theme>
+  <!-- Title, description, version, and author properties are still in
+       XML InnerText, kinda like what HTML does. -->
   <Title>Ten Dark</Title>
   <Description>A dark theme similar to Windows 10's "Dark Mode".</Description>
   <Version>v1.1</Version>
@@ -22,6 +24,10 @@
       </AboutWindow>
       
       <Button BackColor="#363636" ForeColor="white" FlatStyle="Flat">
+	    <!-- Button FlatAppearance properties are being kept in XML InnerText
+		     just like TE1.x since Visual Studio groups them together in the
+			 Properties window. -->
+			 
         <!-- The button BackColor and BorderColor values were eye-balled from the
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
@@ -37,7 +43,7 @@
         <FlatAppearance>
           <BorderColor>#363636</BorderColor>
           <MouseDownBackColor>Silver</MouseDownBackColor>
-          <!-- <MouseOverBackColor>Gray</MouseOverBackColor> -->
+          <MouseOverBackColor>Gray</MouseOverBackColor>
         </FlatAppearance>
       </Button>
 
