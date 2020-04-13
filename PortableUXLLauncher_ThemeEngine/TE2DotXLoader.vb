@@ -579,6 +579,31 @@ Public Class TE2DotXLoader
                                 Return defaultStatusBarOriginalBackColor
                         End Select
                 End Select
+            Case "Label"
+                ' Check label defaults and return them.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultLabelBackColor
+                    Case "ForeColor"
+                        Return defaultLabelForeColor
+                End Select
+            Case "LinkLabel"
+                ' Check linklabel defaults.
+                Select Case PropertyToCheck
+                    Case "ActiveLinkColor"
+                        Return defaultLinkLabelActiveLinkColor
+                    Case "LinkColor"
+                        ' TE1.x used Color.FromArgb(0, 0, 255)
+                        ' to get the blue color, but #0000FF is effectively
+                        ' the same since it's also pure blue.
+                        Return defaultLinkLabelLinkColor
+                    Case "BackColor"
+                        Return defaultLinkLabelBackColor
+                    Case "ForeColor"
+                        ' ForeColor only shows up if the LinkArea property
+                        ' is less than the entire length of the linklabel.
+                        Return defaultLinkLabelForeColor
+                End Select
         End Select
 
         '' Define some variables for holding an XML document and a namespace manager.
