@@ -9,8 +9,8 @@
   versions of the theme engine that designers or developers don't want
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
-  <UseThemeEngineVersion>1.02</UseThemeEngineVersion>
-  <ThemeEngine RuntimeVersion="1.03" />
+  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  <ThemeEngine RuntimeVersion="2.0" />
   
     <Theme_Colors>
 
@@ -21,7 +21,7 @@
         <BannerStyle>Dark</BannerStyle>
       </AboutWindow>
       
-      <Button BackColor="#363636" ForeColor="White" FlatStyle="Flat">
+      <Button BackColor="#363636" ForeColor="white" FlatStyle="Flat">
         <!-- The button BackColor and BorderColor values were eye-balled from the
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
@@ -53,7 +53,7 @@
         <ForeColor>White</ForeColor>
       </Dropdown>
       
-      <GroupBox>
+      <GroupBox BackColor="Transparent" ForeColor="White">
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </GroupBox>
@@ -68,28 +68,31 @@
         <ForeColor>White</ForeColor>
       </TableLayoutPanel>
 
-      <TabPage>
+      <TabPage BackColor="Black" ForeColor="White">
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </TabPage>
       
-      <StatusBar>
+      <StatusBar BackColor="#202020">
         <BackColor>#202020</BackColor>
       </StatusBar>
 
-      <Label>
+      <Label BackColor="Transparent" ForeColor="White">
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
 
       <LinkLabel>
+	  <!-- LinkLabel colors are being loaded from
+	       XML InnerText like TE1.x as using attributes
+		   for them might make things messy. -->
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
         <ActiveLinkColor>Red</ActiveLinkColor>
         <LinkColor>DodgerBlue</LinkColor>
       </LinkLabel>
       
-      <Panel>
+      <Panel BackColor="Black" ForeColor="White">
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </Panel>
