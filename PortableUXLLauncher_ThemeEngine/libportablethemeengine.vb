@@ -206,7 +206,7 @@ Public Class themeenginemain
 
                 ' Create a local variable to refer to the menustrip.
                 Dim menustrip As MenuStrip = CType(ctrl, MenuStrip)
-
+                menustrip.Renderer = ThemeProperties.toolstripProRenderer
                 'MessageBox.Show(menustrip.Name.ToString)
 
                 ' Set menustrip back color as apropriate.
@@ -231,11 +231,19 @@ Public Class themeenginemain
                         ' Now we look in each menu and theme them appropriately.
                         ' Otherwise, theme it as a dropdown since its
                         ' owner isn't the menustrip.
-                        For Each dropdownmenu As ToolStripItem In menuitem.DropDownItems
-                            Debug.WriteLine(dropdownmenu.Name)
-                            dropdownmenu.BackColor = ThemeProperties.colorMenuItemBackColor
-                            dropdownmenu.ForeColor = ThemeProperties.colorMenuItemForeColor
-                        Next
+                        Debug.WriteLine(menustrip.Renderer.ToString)
+                        'For Each dropdownmenu As ToolStripItem In menuitem.DropDownItems
+                        'Debug.WriteLine(dropdownmenu.Name)
+                        'dropdownmenu.BackColor = ThemeProperties.colorMenuItemBackColor
+                        'dropdownmenu.ForeColor = ThemeProperties.colorMenuItemForeColor
+                        ' Set color for the toolstrip pro renderer.
+                        ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
+                            ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
+                            ThemeProperties.toolstripProRenderer.DropdownBackColor = ThemeProperties.colorMenuItemBackColor
+                            ThemeProperties.toolstripProRenderer.ImageMarginGradientStartColor = ThemeProperties.colorMenuItemImageMarginGradientStartColor
+                            ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
+                            ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+                        'Next
                         'menuitem.BackColor = ThemeProperties.colorMenuItemBackColor
                         'menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
 
@@ -332,14 +340,6 @@ Public Class themeenginemain
                 ctrl = formToApplyTo.GetNextControl(ctrl, True)
             Loop
 #End Region
-
-        ' Set color for the toolstrip pro renderer.
-        ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
-        ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
-        ThemeProperties.toolstripProRenderer.DropdownBackColor = ThemeProperties.colorMenuItemBackColor
-        ThemeProperties.toolstripProRenderer.ImageMarginGradientStartColor = ThemeProperties.colorMenuItemImageMarginGradientStartColor
-        ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
-        ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
         '#End Region
     End Sub ' End of ApplyTheme Sub.
