@@ -85,10 +85,29 @@ Public Class TE2DotXLoader
 
             ' Make a variable to store the runtime version.
             MessageBox.Show(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString)
-            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString)
+            Dim TERuntimeVersionInThemeFile As Version
 
             ' Make a version variable to store the theme engine version we want to compare to.
             Dim TE2xVersion As Version = Version.Parse("2.0")
+
+            ' Make sure the version in the file is valid.
+            ' If it were easy to not use a try...catch block,
+            ' I would, but I couldn't figure out how not to.
+            Try
+                TERuntimeVersionInThemeFile = Version.Parse(PullNumbersAndDotsRegex(ThemeEngineNode.Attributes("RuntimeVersion").Value.ToString))
+                ' FormatException:
+                ' The version isn't written correctly. Could possibly
+                ' be something like "1..2".
+                ' OverflowException:
+                ' Version specified in theme file is too big for Int32.
+                ' ArgumentException:
+                ' There's either no value or it's not formatted correctly.
+                ' Exception:
+                ' Catch all the above for easier code changing.
+            Catch ex As Exception
+                ' If it's invalid, consider it a 1.x theme.
+                TERuntimeVersionInThemeFile = Version.Parse("1.01")
+            End Try
 
             ' Check what the theme has in the attribute against the
             ' base version number of TE2.x.

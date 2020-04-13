@@ -48,15 +48,17 @@ Public Class TE1DotXLoaderShim
             Dim TERuntimeVersionInThemeFile As Version
             Try
                 TERuntimeVersionInThemeFile = Version.Parse(CleanedVersion)
-            Catch ex As FormatException
+                ' FormatException:
                 ' The version isn't written correctly. Could possibly
                 ' be something like "1..2".
-                TERuntimeVersionInThemeFile = Version.Parse("1.01")
-            Catch ex As OverflowException
+                ' OverflowException:
                 ' Version specified in theme file is too big for Int32.
-                TERuntimeVersionInThemeFile = Version.Parse("1.01")
-            Catch ex As ArgumentException
+                ' ArgumentException:
                 ' There's either no value or it's not formatted correctly.
+                ' Exception:
+                ' Catch all the above for easier code changing.
+            Catch ex As Exception
+                ' If it's invalid, set it to the lowest number for TE1.x themes.
                 TERuntimeVersionInThemeFile = Version.Parse("1.01")
             End Try
 
