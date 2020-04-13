@@ -350,7 +350,7 @@ Public Class TE2DotXLoader
 
     End Sub
 
-    Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing, Optional CheckCompatibility As Boolean = False) As Boolean
+    Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing, Optional CheckCompatibility As Boolean = True) As Boolean
         ' See if a particular feature is supported in a
         ' version of the theme engine.
         ' If the version the file is using
@@ -465,8 +465,6 @@ Public Class TE2DotXLoader
         ' Based off this SO answer:
         ' https://stackoverflow.com/a/40681176
 
-        Dim DefaultValue As String = GetDefaultValueVersionVariant(ControlName, ControlProperty)
-
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
         ''MessageBox.Show(ColorFromTheme)
@@ -481,22 +479,22 @@ Public Class TE2DotXLoader
             ' a length of 3 numbers or 6 numbers.
             'MessageBox.Show(ColorFromTheme)
             Return ColorTranslator.FromHtml(ColorFromTheme)
-        ElseIf Not IsColorValid(ColorFromTheme) AndAlso DefaultValue = "Nothing" Then
+        ElseIf Not IsColorValid(ColorFromTheme) AndAlso GetDefaultValue(ControlName, ControlProperty) = "Nothing" Then
             ' If it's not valid and the default value is Nothing, return Nothing.
             Return Nothing
         Else
             ' Otherwise just return Nothing if the default is "LiteralNothing".
             ' This is the case for the default statusbar backcolor in 1.03 and above.
-            If DefaultValue = "LiteralNothing" Then
+            If GetDefaultValue(ControlName, ControlProperty) = "LiteralNothing" Then
                 Return Nothing
             Else
                 ' The default's not "LiteralNothing", so return the default color.
-                Return ColorTranslator.FromHtml(DefaultValue)
+                Return ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
             End If
         End If
     End Function
 
-    Friend Shared Function GetDefaultValueVersionVariant(NodeName As String, PropertyToCheck As String) As String
+    Friend Shared Function GetDefaultValue(NodeName As String, PropertyToCheck As String, Optional FullNodePath As String = Nothing) As String
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
@@ -627,7 +625,7 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True, Optional CheckCompatibility As Boolean = False) As String
+    Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True, Optional CheckCompatibility As Boolean = True) As String
 
         ' Define a root prefix to start looking in.
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
@@ -644,23 +642,23 @@ Public Class TE2DotXLoader
                 ' This is typically the case with themes that support TE2.x,
                 ' although there are some situations where we don't want to load stuff
                 ' from an attribute, such as for the description.
-                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute, GetDefaultValueVersionVariant(DesiredNode, NodeAttribute))
+                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute)
             ElseIf LoadFromAttribute = False AndAlso UseThemeColorPrefix = True Then
                 ' Assume that the theme doesn't want to load a property from an attribute,
                 ' but that the property we want to get is in the theme colors section.
                 ' This is often the case for things like the Button FlatAppearance section.
-                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, GetDefaultValueVersionVariant(DesiredNode, NodeAttribute))
+                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute)
             Else
                 ' Otherwise, assume the theme wants to load properties from a node's InnerText.
                 ' It's assumed that this isn't in the theme colors section.
                 ' This would be used in cases where we're trying
                 ' to get theme information like the title or description.
-                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, GetDefaultValueVersionVariant(DesiredNode, NodeAttribute))
+                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute)
             End If
 
         Else
             ' If we can't get the property from the theme, get the default value.
-            Return GetDefaultValueVersionVariant(DesiredNode, NodeAttribute)
+            Return GetDefaultValue(DesiredNode, NodeAttribute)
         End If
     End Function
 
@@ -687,7 +685,7 @@ Public Class TE2DotXLoader
 
     End Function
 
-    Private Shared Function GetInnerText(Node As String, DefaultValue As String) As String
+    Private Shared Function GetInnerText(Node As String) As String
         ' TODO: Check to make sure the requested node innertext is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
@@ -708,7 +706,7 @@ Public Class TE2DotXLoader
                 Return NodeInnerText
             Else
                 ' Otherwise, return the default value.
-                Return DefaultValue
+                Return GetDefaultValueVersionVariant(ControlName, ControlProperty)
             End If
         Else
             ' If the node doesn't exist, return the default value.

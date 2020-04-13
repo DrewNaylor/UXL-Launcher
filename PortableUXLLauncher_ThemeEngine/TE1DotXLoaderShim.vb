@@ -179,7 +179,7 @@ Public Class TE1DotXLoaderShim
     Private Shared Function GetDefaultColor(ControlName As String, ControlProperty As String) As Color
         ' This will use the GetDefaultValueVersionVariant in the TE2DotXLoader to get
         ' default colors more easily.
-        Return ColorTranslator.FromHtml(TE2DotXLoader.GetDefaultValueVersionVariant(ControlName, ControlProperty))
+        Return ColorTranslator.FromHtml(TE2DotXLoader.GetDefaultValue(ControlName, ControlProperty))
     End Function
 
     ' TODO: This file will load in TE1.x themes by assigning
