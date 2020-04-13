@@ -500,8 +500,11 @@ Public Class TE2DotXLoader
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
+        ' Determine which About window banner to use
+        ' in UXL Launcher's About window.
         Const defaultAboutWindowBannerStyle As String = "Light"
 
+        ' Specify default Button properties.
         Const defaultButtonBackColor As String = "Transparent"
         Const defaultButtonForeColor As String = "ControlText"
         Const defaultButtonFlatStyle As String = "Standard"
@@ -509,18 +512,28 @@ Public Class TE2DotXLoader
         Const defaultButtonFlatAppearanceMouseDownBackColor As String = "Nothing"
         Const defaultButtonFlatAppearanceMouseOverBackColor As String = "Nothing"
 
+        ' Specify default CheckBox properties.
         Const defaultCheckboxBackColor As String = "Transparent"
         Const defaultCheckboxForeColor As String = "ControlText"
 
+        ' Specify default Dropdown/combobox properties.
         Const defaultDropdownBackColor As String = "Window"
         Const defaultDropdownForeColor As String = "ControlText"
 
+        ' Specify default GroupBox properties.
         Const defaultGroupBoxBackColor As String = "Transparent"
         Const defaultGroupBoxForeColor As String = "ControlText"
 
+        ' Specify default FlowLayoutPanel properties.
         Const defaultFlowLayoutPanelBackColor As String = "Window"
         Const defaultFlowLayoutPanelForeColor As String = "ControlText"
 
+        ' Specify default StatusBar properties.
+        ' These vary between theme engine versions,
+        ' so themes targeting 1.03 or newer get
+        ' Nothing as the default, while themes
+        ' targeting 1.01 or 1.02 get Control as
+        ' the default.
         Const defaultStatusBar1Dot03BackColor As String = "Nothing"
         Const defaultStatusBarOriginalBackColor = "Control"
 
