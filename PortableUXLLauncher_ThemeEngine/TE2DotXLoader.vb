@@ -530,6 +530,27 @@ Public Class TE2DotXLoader
         Const defaultLinkLabelBackColor As String = "Transparent"
         Const defaultLinkLabelForeColor As String = "ControlText"
 
+        Const defaultPanelBackColor As String = "Control"
+        Const defaultPanelForeColor As String = "ControlText"
+
+        Const defaultRadioButtonBackColor As String = "Transparent"
+        Const defaultRadioButtonForeColor As String = "ControlText"
+
+        Const defaultTableLayoutPanelBackColor As String = "Control"
+        Const defaultTableLayoutPanelForeColor As String = "ControlText"
+        Const defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP As String = "False"
+
+        Const defaultTabPageBackColor As String = "Window"
+        Const defaultTabPageForeColor As String = "ControlText"
+
+        Const defaultTextBoxBackColor As String = "Window"
+        Const defaultTextBoxForeColor As String = "WindowText"
+
+        Const defaultMenuItemBackColor As String = "Window"
+        Const defaultMenuItemForeColor As String = "ControlText"
+        Const defaultMenuItemImageMarginGradientStartColor As String = "#FCFCFC"
+        Const defaultMenuItemImageMarginGradientEndColor As String = "#F1F1F1"
+
 
         Dim starttime As DateTime = DateTime.Now
 
