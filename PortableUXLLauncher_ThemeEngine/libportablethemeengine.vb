@@ -212,11 +212,6 @@ Public Class themeenginemain
                 ' Set menustrip back color as apropriate.
                 menustrip.BackColor = ThemeProperties.colorMenubarBackColor
 
-
-
-
-
-
                 ' Look at each ToolStripMenuItem in the menustrip.
                 For Each menuitem As ToolStripMenuItem In menustrip.Items
                     'MessageBox.Show(menuitem.Name.ToString)
@@ -236,13 +231,7 @@ Public Class themeenginemain
                         'Debug.WriteLine(dropdownmenu.Name)
                         'dropdownmenu.BackColor = ThemeProperties.colorMenuItemBackColor
                         'dropdownmenu.ForeColor = ThemeProperties.colorMenuItemForeColor
-                        ' Set color for the toolstrip pro renderer.
-                        ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
-                            ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
-                            ThemeProperties.toolstripProRenderer.DropdownBackColor = ThemeProperties.colorMenuItemBackColor
-                            ThemeProperties.toolstripProRenderer.ImageMarginGradientStartColor = ThemeProperties.colorMenuItemImageMarginGradientStartColor
-                            ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
-                            ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
+
                         'Next
                         'menuitem.BackColor = ThemeProperties.colorMenuItemBackColor
                         'menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
@@ -340,6 +329,23 @@ Public Class themeenginemain
                 ctrl = formToApplyTo.GetNextControl(ctrl, True)
             Loop
 #End Region
+
+        ' This code works when it's in a form, but Me.components.Components
+        ' is private, so this may be another thing to pass along in addition to forms.
+        'For Each component As ComponentModel.Component In Me.components.Components
+        '    If TypeOf component Is ContextMenuStrip Then
+        '        Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
+        '        contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
+        '    End If
+        'Next
+
+        ' Set color for the toolstrip pro renderer.
+        ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
+        ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
+        ThemeProperties.toolstripProRenderer.DropdownBackColor = ThemeProperties.colorMenuItemBackColor
+        ThemeProperties.toolstripProRenderer.ImageMarginGradientStartColor = ThemeProperties.colorMenuItemImageMarginGradientStartColor
+        ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
+        ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
         '#End Region
     End Sub ' End of ApplyTheme Sub.
