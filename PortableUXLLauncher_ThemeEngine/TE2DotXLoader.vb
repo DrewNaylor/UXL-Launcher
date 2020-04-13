@@ -527,19 +527,6 @@ Public Class TE2DotXLoader
         End Select
     End Function
 
-    Friend Shared Function TrimTooLongVerNumber(InputInt As String) As String
-        Dim ver As Version = Nothing
-
-        If Version.TryParse(InputInt, ver) = False Then
-            MessageBox.Show(Int32.MaxValue.ToString.Length.ToString)
-            MessageBox.Show(InputInt.Substring(0, Int32.MaxValue.ToString.Length))
-            Return InputInt.Substring(0, Int32.MaxValue)
-        Else
-            Return ver.ToString
-        End If
-
-    End Function
-
     Private Shared Function IsColorValid(InputColor As String) As Boolean
         ' Color validator used in GetThemeColor().
         ' Based off this SO answer:
