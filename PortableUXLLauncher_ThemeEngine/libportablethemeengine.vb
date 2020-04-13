@@ -27,6 +27,7 @@ Imports System.Xml
 Imports System.Windows.Forms
 Imports System.Net.Mime.MediaTypeNames
 Imports System.Drawing
+Imports System.ComponentModel
 
 Public Class themeenginemain
 
@@ -37,7 +38,7 @@ Public Class themeenginemain
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
-    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional isFilename As Boolean = True, Optional UseTE1DotXFullCompatibilityMode As Boolean = False)
+    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional componentsToApplyTo As IContainer = Nothing, Optional isFilename As Boolean = True, Optional UseTE1DotXFullCompatibilityMode As Boolean = False)
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -76,10 +77,10 @@ Public Class themeenginemain
         ' instead of the old local variables.
         'MessageBox.Show("Back to themeenginemain. Theme colors can be applied now.")
 
-        ApplyTheme(themeInput, formToApplyTo)
+        ApplyTheme(themeInput, formToApplyTo, componentsToApplyTo)
     End Sub
 
-    Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form)
+    Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form, componentsToApplyTo As IContainer)
 
         '#Region "Set colors for controls."
 
@@ -239,7 +240,7 @@ Public Class themeenginemain
                     End If
                 Next
 
-                    ElseIf TypeOf ctrl Is TextBox Then
+            ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
                 ctrl.BackColor = ThemeProperties.colorTextboxBackColor
@@ -254,19 +255,19 @@ Public Class themeenginemain
                 ctrl.ForeColor = ThemeProperties.colorRadioButtonForeColor
 
             ElseIf TypeOf ctrl Is StatusStrip Then
-    ' Create a local variable and cast "ctrl" as a StatusStrip.
-    Dim statusstrip As StatusStrip = CType(ctrl, StatusStrip)
+                ' Create a local variable and cast "ctrl" as a StatusStrip.
+                Dim statusstrip As StatusStrip = CType(ctrl, StatusStrip)
                 ' Apply the BackColor to the statusstrip variable created earlier.
                 statusstrip.BackColor = ThemeProperties.colorStatusBarBackColor
 
                 ' Look inside the controls that are in the statusstrip's items collection.
                 For Each statusstripcontrol As ToolStripItem In statusstrip.Items
-    ' If an item is a toolstripstatuslabel, then theme it like one.
-    If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
-    ' We have to create a local variable to refer to
-    ' the statuslabels, since otherwise we'd run into
-    ' an invalid cast exception.
-    Dim statuslabel As ToolStripStatusLabel = CType(statusstripcontrol, ToolStripStatusLabel)
+                    ' If an item is a toolstripstatuslabel, then theme it like one.
+                    If TypeOf statusstripcontrol Is ToolStripStatusLabel Then
+                        ' We have to create a local variable to refer to
+                        ' the statuslabels, since otherwise we'd run into
+                        ' an invalid cast exception.
+                        Dim statuslabel As ToolStripStatusLabel = CType(statusstripcontrol, ToolStripStatusLabel)
                         ' Apply statuslabel BackColor.
                         statuslabel.BackColor = ThemeProperties.colorStatusLabelBackColor
                         ' Apply statuslabel ForeColor.
@@ -283,11 +284,11 @@ Public Class themeenginemain
                             ' It may be a good idea to output text talking about this exception if people run into it.
                             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                         End Try
-    End If
-    ' Move on to next control in the statusstrip.
-    Next
+                    End If
+                    ' Move on to next control in the statusstrip.
+                Next
 
-    ElseIf TypeOf ctrl Is TabPage Then
+            ElseIf TypeOf ctrl Is TabPage Then
                 ' If the control is a tabpage, theme it as such.
                 ' TabPage BackColor.
                 ctrl.BackColor = ThemeProperties.colorTabPageBackColor
@@ -315,29 +316,29 @@ Public Class themeenginemain
                 '    ctrl.ForeColor = colorTableLayoutPanelForeColor
 
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
-    ' Apply dark/light banners in the About window if the theme
-    ' wants to.
-    ' Create a local PictureBox control since "Image" isn't a thing in
-    ' "Control" by default.
-    Dim picturebox As PictureBox = CType(ctrl, PictureBox)
+                ' Apply dark/light banners in the About window if the theme
+                ' wants to.
+                ' Create a local PictureBox control since "Image" isn't a thing in
+                ' "Control" by default.
+                Dim picturebox As PictureBox = CType(ctrl, PictureBox)
                 picturebox.Image = ThemeProperties.bannerStyle
 
 
             End If ' End of If statement for checking to see what each control's type is.
 
-                ' Get the next control in the tab order.
-                ctrl = formToApplyTo.GetNextControl(ctrl, True)
-            Loop
+            ' Get the next control in the tab order.
+            ctrl = formToApplyTo.GetNextControl(ctrl, True)
+        Loop
 #End Region
 
         ' This code works when it's in a form, but Me.components.Components
         ' is private, so this may be another thing to pass along in addition to forms.
-        'For Each component As ComponentModel.Component In Me.components.Components
-        '    If TypeOf component Is ContextMenuStrip Then
-        '        Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
-        '        contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
-        '    End If
-        'Next
+        For Each component As Component In componentsToApplyTo.Components
+            If TypeOf component Is ContextMenuStrip Then
+                Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
+                contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
+            End If
+        Next
 
         ' Set color for the toolstrip pro renderer.
         ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
