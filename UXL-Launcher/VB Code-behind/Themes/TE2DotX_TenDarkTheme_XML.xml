@@ -46,7 +46,7 @@
         <ForeColor>White</ForeColor>
       </CheckBox>
 
-      <Dropdown>
+      <Dropdown BackColor="#363636" ForeColor="White">
         <!-- This is for the ComboBox controls, but "Dropdown" is probably
         a more common name for people to call them. -->
         <BackColor>#363636</BackColor>
@@ -58,12 +58,12 @@
         <ForeColor>White</ForeColor>
       </GroupBox>
 
-      <FlowLayoutPanel>
+      <FlowLayoutPanel BackColor="Black" ForeColor="White">
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </FlowLayoutPanel>
 
-      <TableLayoutPanel>
+      <TableLayoutPanel BackColor="#202020" ForeColor="White">
         <BackColor>#202020</BackColor>
         <ForeColor>White</ForeColor>
       </TableLayoutPanel>
@@ -97,17 +97,21 @@
         <ForeColor>White</ForeColor>
       </Panel>
 
-      <RadioButton>
+      <RadioButton BackColor="Transparent" ForeColor="White">
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </RadioButton>
       
-      <TextBox>
+      <TextBox BackColor="Black" ForeColor="White">
         <BackColor>Black</BackColor>
         <ForeColor>White</ForeColor>
       </TextBox>
 
-      <MenuItem>
+      <MenuItem BackColor="Black" ForeColor="White">
+	  <!-- MenuItem ImageMarginGradient colors are being loaded from
+	       XML InnerText like TE1.x as using attributes
+		   for them might make things messy. -->
+		   
         <!-- Background color for menubar dropdown items. -->
         <BackColor>Black</BackColor>
         <!-- Text color for menubar dropdown items. -->
@@ -128,15 +132,20 @@
         </ImageMarginGradient>
       </MenuItem>
 
-      <MenuBar>
+      <MenuBar BackColor="#202020">
         <!-- Background color for the menubar itself. -->
         <BackColor>#202020</BackColor>
       </MenuBar>
       
-      <StatusLabel>
+      <StatusLabel BackColor="Transparent" ForeColor="White">
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
         
+		<!-- StatusLabel BorderSides and BorderStyle
+             properties are still in XML InnerText
+			 like TE1.x themes as they could be messy
+			 in attributes. -->
+		
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>None</BorderSides>
 
