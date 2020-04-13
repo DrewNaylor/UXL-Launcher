@@ -676,6 +676,18 @@ Public Class TE2DotXLoader
                     Case "BorderStyle"
                         Return defaultStatusLabelBorderStyle
                 End Select
+            Case "Title"
+                ' Check title defaults.
+                Return defaultThemeTitle
+            Case "Description"
+                ' Check description defaults.
+                Return defaultThemeDescription
+            Case "Author"
+                ' Check author defaults.
+                Return defaultThemeAuthor
+            Case "Version"
+                ' Check version defaults.
+                Return defaultThemeVersion
         End Select
 
                 '' Define some variables for holding an XML document and a namespace manager.
