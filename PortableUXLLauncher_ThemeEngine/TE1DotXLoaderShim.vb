@@ -64,7 +64,7 @@ Public Class TE1DotXLoaderShim
             Next
             MessageBox.Show("cleaned: " & cleaned)
 
-            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(TE2DotXLoader.TrimTooLongVerNumberEnding(cleaned))
+            Dim TERuntimeVersionInThemeFile As Version = Version.Parse(TE2DotXLoader.TrimTooLongVerNumber(cleaned))
 
             ' Make a version variable to store the theme engine version we want to compare to.
             Dim TE1xMinVersion As Version = Version.Parse("1.01")
