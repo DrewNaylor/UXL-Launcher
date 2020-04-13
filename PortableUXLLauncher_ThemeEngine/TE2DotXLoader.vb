@@ -519,6 +519,17 @@ Public Class TE2DotXLoader
         Const defaultFlowLayoutPanelBackColor As String = "Window"
         Const defaultFlowLayoutPanelForeColor As String = "ControlText"
 
+        Const defaultStatusBar1Dot03BackColor As String = "Nothing"
+        Const defaultStatusBarOriginalBackColor = "Control"
+
+        Const defaultLabelBackColor As String = "Transparent"
+        Const defaultLabelForeColor As String = "ControlText"
+
+        Const defaultLinkLabelActiveLinkColor As String = "Red"
+        Const defaultLinkLabelLinkColor As String = "#0000FF"
+        Const defaultLinkLabelBackColor As String = "Transparent"
+        Const defaultLinkLabelForeColor As String = "ControlText"
+
 
         Dim starttime As DateTime = DateTime.Now
 
