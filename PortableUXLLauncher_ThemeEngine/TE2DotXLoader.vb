@@ -537,42 +537,56 @@ Public Class TE2DotXLoader
         Const defaultStatusBar1Dot03BackColor As String = "Nothing"
         Const defaultStatusBarOriginalBackColor = "Control"
 
+        ' Specify default Label properties.
         Const defaultLabelBackColor As String = "Transparent"
         Const defaultLabelForeColor As String = "ControlText"
 
+        ' Specify default LinkLabel properties.
         Const defaultLinkLabelActiveLinkColor As String = "Red"
+        ' TE1.x used Color.FromArgb(0, 0, 255)
+        ' to get the blue color, but #0000FF is effectively
+        ' the same since it's also pure blue.
         Const defaultLinkLabelLinkColor As String = "#0000FF"
         Const defaultLinkLabelBackColor As String = "Transparent"
         Const defaultLinkLabelForeColor As String = "ControlText"
 
+        ' Specify default Panel properties.
         Const defaultPanelBackColor As String = "Control"
         Const defaultPanelForeColor As String = "ControlText"
 
+        ' Specify default RadioButton properties.
         Const defaultRadioButtonBackColor As String = "Transparent"
         Const defaultRadioButtonForeColor As String = "ControlText"
 
+        ' Specify default TableLayoutPanel properties.
         Const defaultTableLayoutPanelBackColor As String = "Control"
         Const defaultTableLayoutPanelForeColor As String = "ControlText"
         Const defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP As String = "False"
 
+        ' Specify default TabPage properties.
         Const defaultTabPageBackColor As String = "Window"
         Const defaultTabPageForeColor As String = "ControlText"
 
+        ' Specify default TextBox properties.
         Const defaultTextBoxBackColor As String = "Window"
         Const defaultTextBoxForeColor As String = "WindowText"
 
+        ' Specify default MenuItem properties.
         Const defaultMenuItemBackColor As String = "Window"
         Const defaultMenuItemForeColor As String = "ControlText"
         Const defaultMenuItemImageMarginGradientStartColor As String = "#FCFCFC"
         Const defaultMenuItemImageMarginGradientEndColor As String = "#F1F1F1"
 
+        ' Specify default MenuBar properties.
         Const defaultMenuBarBackColor As String = "Control"
 
+        ' Specify default StatusLabel properties.
         Const defaultStatusLabelBackColor As String = "Transparent"
         Const defaultStatusLabelForeColor As String = "ControlText"
         Const defaultStatusLabelBorderSides As String = "None"
         Const defaultStatusLabelBorderStyle As String = "Flat"
 
+        ' Specify default theme info properties.
         Const defaultThemeTitle As String = "(No title specified)"
         Const defaultThemeDescription As String = "(No description specified)"
         Const defaultThemeAuthor As String = "(No author specified)"
