@@ -502,6 +502,10 @@ Public Class TE2DotXLoader
 
         Const defaultButtonBackColor As String = "Transparent"
         Const defaultButtonForeColor As String = "ControlText"
+        Const defaultButtonFlatStyle As String = "Standard"
+        Const defaultButtonFlatAppearanceBorderColor As String = "Nothing"
+        Const defaultButtonFlatAppearanceMouseDownBackColor As String = "Nothing"
+        Const defaultButtonFlatAppearanceMouseOverBackColor As String = "Nothing"
 
 
         Dim starttime As DateTime = DateTime.Now
@@ -521,6 +525,8 @@ Public Class TE2DotXLoader
                         Return defaultButtonFlatAppearanceBorderColor
                     Case "FlatAppearance/MouseDownBackColor"
                         Return defaultButtonFlatAppearanceMouseDownBackColor
+                    Case "FlatAppearance/MouseOverBackColor"
+                        Return defaultButtonFlatAppearanceMouseOverBackColor
                 End Select
         End Select
 
