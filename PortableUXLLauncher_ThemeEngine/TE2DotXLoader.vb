@@ -515,7 +515,12 @@ Public Class TE2DotXLoader
                         Return defaultButtonBackColor
                     Case "ForeColor"
                         Return defaultButtonForeColor
-
+                    Case "FlatStyle"
+                        Return defaultButtonFlatStyle
+                    Case "FlatAppearance/BorderColor"
+                        Return defaultButtonFlatAppearanceBorderColor
+                    Case "FlatAppearance/MouseDownBackColor"
+                        Return defaultButtonFlatAppearanceMouseDownBackColor
                 End Select
         End Select
 
