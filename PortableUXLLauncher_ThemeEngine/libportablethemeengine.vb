@@ -60,6 +60,9 @@ Public Class themeenginemain
         ' redirected to PortableThemeEngine. Re-applying times
         ' could be high as well, though they were around 60 milliseconds
         ' in the PortableThemeEngineDebugger project.
+        ' The theme editor project seems to take around 60-70 ms to load
+        ' on startup, so maybe it's related to being loaded from a DLL.
+        ' Or maybe this library needs optimization, which it probably does.
         ' One thing that could help would be to see if the theme
         ' file that's being passed in is the same one as is already in the
         ' themeSheet.
