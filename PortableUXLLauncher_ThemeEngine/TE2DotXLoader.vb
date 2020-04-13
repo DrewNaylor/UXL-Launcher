@@ -516,6 +516,12 @@ Public Class TE2DotXLoader
         Select Case NodeName
             ' If the node name matches what we want to look at,
             ' check if the property matches.
+            Case "AboutWindow"
+                ' Check about window defaults.
+                Select Case PropertyToCheck
+                    Case "BannerStyle"
+                        Return defaultAboutWindowBannerStyle
+                End Select
             Case "Button"
                 Select Case PropertyToCheck
                     ' Check the button's requested properties.
@@ -690,78 +696,78 @@ Public Class TE2DotXLoader
                 Return defaultThemeVersion
         End Select
 
-                '' Define some variables for holding an XML document and a namespace manager.
-                'Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
-                'Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
+        '' Define some variables for holding an XML document and a namespace manager.
+        'Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
+        'Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
 
-                '' Add namespace.
-                'NamespaceManager.AddNamespace("verdiffdefault", "https://drewnaylor.github.io/xml")
+        '' Add namespace.
+        'NamespaceManager.AddNamespace("verdiffdefault", "https://drewnaylor.github.io/xml")
 
-                '' Load in the default values list.
-                'DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
+        '' Load in the default values list.
+        'DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
 
-                'For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
+        'For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
 
-                '    ' Look at each node in the default values list.
-                '    ' These are the "<Default>" nodes.
-                '    'Debug.WriteLine("DefaultNode attribute For: " & DefaultNode.Attributes("For").Value)
-                '    If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
+        '    ' Look at each node in the default values list.
+        '    ' These are the "<Default>" nodes.
+        '    'Debug.WriteLine("DefaultNode attribute For: " & DefaultNode.Attributes("For").Value)
+        '    If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
 
-                '        ' If the default node's "For" attribute matches the node we're looking at,
-                '        ' and the property we want to check matching the node's "PropertyName" attribute,
-                '        ' we have the right one, so look at the nodes in that one.
-                '        For Each DiffNode As XmlNode In DefaultNode
-                '            Select Case DiffNode.NodeType
-                '                ' Need to make sure the XML node is an element and not a comment.
-                '                Case XmlNodeType.Element
-                '                    ' Create a version variable that stores the "RuntimeVersion" attribute of
-                '                    ' the current "<Diff>" node.
-                '                    Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
+        '        ' If the default node's "For" attribute matches the node we're looking at,
+        '        ' and the property we want to check matching the node's "PropertyName" attribute,
+        '        ' we have the right one, so look at the nodes in that one.
+        '        For Each DiffNode As XmlNode In DefaultNode
+        '            Select Case DiffNode.NodeType
+        '                ' Need to make sure the XML node is an element and not a comment.
+        '                Case XmlNodeType.Element
+        '                    ' Create a version variable that stores the "RuntimeVersion" attribute of
+        '                    ' the current "<Diff>" node.
+        '                    Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
 
-                '                    ' Compare the theme engine runtime version that the theme it says supports
-                '                    ' to the version number in the "RuntimeVersion" attribute in the current
-                '                    ' "<Diff>" node.
-                '                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-                '                        Case 0
-                '                            ' The "RuntimeVersion" matches the version that the theme file says
-                '                            ' it works with. Return this value.
+        '                    ' Compare the theme engine runtime version that the theme it says supports
+        '                    ' to the version number in the "RuntimeVersion" attribute in the current
+        '                    ' "<Diff>" node.
+        '                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
+        '                        Case 0
+        '                            ' The "RuntimeVersion" matches the version that the theme file says
+        '                            ' it works with. Return this value.
 
-                '                            Return DiffNode.Attributes("Value").Value
-                '                        Case 1
-                '                            ' The "RuntimeVersion" is older than the version of the theme engine
-                '                            ' that the theme file says it works with. Return this value.
+        '                            Return DiffNode.Attributes("Value").Value
+        '                        Case 1
+        '                            ' The "RuntimeVersion" is older than the version of the theme engine
+        '                            ' that the theme file says it works with. Return this value.
 
-                '                            Return DiffNode.Attributes("Value").Value
-                '                        Case -1
-                '                            ' The "RuntimeVersion" is newer than the version the theme engine works with.
-                '                            ' Go to the next node and try again.
-                '                            ' Theme doesn't support the version the feature was introduced in.
-                '                            DiffNode = DiffNode.NextSibling
-                '                    End Select
+        '                            Return DiffNode.Attributes("Value").Value
+        '                        Case -1
+        '                            ' The "RuntimeVersion" is newer than the version the theme engine works with.
+        '                            ' Go to the next node and try again.
+        '                            ' Theme doesn't support the version the feature was introduced in.
+        '                            DiffNode = DiffNode.NextSibling
+        '                    End Select
 
-                '                Case XmlNodeType.Comment
-                '                    ' If the XML node is a comment, go to the next <Diff> node.
-                '                    If DiffNode.NextSibling IsNot Nothing Then
-                '                        DiffNode = DiffNode.NextSibling
-                '                    End If
-                '                Case Else
-                '                    ' Go to the next node.
-                '                    If DiffNode.NextSibling IsNot Nothing Then
-                '                        DiffNode = DiffNode.NextSibling
-                '                    End If
-                '            End Select
-                '        Next ' Read next "<Diff>" node.
-                '    Else
-                '        'Debug.WriteLine("NodeName: " & NodeName)
-                '        'Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
-                '        ' If it doesn't match, go to the next node and try again.
-                '        Dim endtime As DateTime = DateTime.Now
-                '        Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
-                '        DefaultNode = DefaultNode.NextSibling
-                '    End If
-                'Next
+        '                Case XmlNodeType.Comment
+        '                    ' If the XML node is a comment, go to the next <Diff> node.
+        '                    If DiffNode.NextSibling IsNot Nothing Then
+        '                        DiffNode = DiffNode.NextSibling
+        '                    End If
+        '                Case Else
+        '                    ' Go to the next node.
+        '                    If DiffNode.NextSibling IsNot Nothing Then
+        '                        DiffNode = DiffNode.NextSibling
+        '                    End If
+        '            End Select
+        '        Next ' Read next "<Diff>" node.
+        '    Else
+        '        'Debug.WriteLine("NodeName: " & NodeName)
+        '        'Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
+        '        ' If it doesn't match, go to the next node and try again.
+        '        Dim endtime As DateTime = DateTime.Now
+        '        Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
+        '        DefaultNode = DefaultNode.NextSibling
+        '    End If
+        'Next
 
-                Dim endtime As DateTime = DateTime.Now
+        Dim endtime As DateTime = DateTime.Now
         Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
     End Function
 
