@@ -22,6 +22,7 @@
 
 
 Imports System.Drawing
+Imports System.Text.RegularExpressions
 Imports System.Windows.Forms
 Imports System.Xml
 
@@ -64,12 +65,13 @@ Public Class TE2DotXLoader
         ' Pulling only numbers and periods from the engine version
         ' runtime value is based on this SO answer:
         ' https://stackoverflow.com/a/17432187
-        For Each character As Char In ThemeEngineNode.InnerText.ToString
+        For Each character As Char In InputVersion
             If VersionRegexWithPattern.IsMatch(character) = True Then
                 cleaned = cleaned & character
             End If
         Next
         MessageBox.Show("cleaned: " & cleaned)
+        Return cleaned
     End Function
 
     Friend Shared Sub CheckEngineRuntimeVersionCompatibility(formToApplyTo As Form)
