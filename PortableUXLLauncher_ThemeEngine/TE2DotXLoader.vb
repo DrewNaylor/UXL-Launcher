@@ -551,6 +551,14 @@ Public Class TE2DotXLoader
         Const defaultMenuItemImageMarginGradientStartColor As String = "#FCFCFC"
         Const defaultMenuItemImageMarginGradientEndColor As String = "#F1F1F1"
 
+        Const defaultMenuBarBackColor As String = "Control"
+
+        Const defaultStatusLabelBackColor As String = "Transparent"
+        Const defaultStatusLabelForeColor As String = "ControlText"
+        Const defaultStatusLabelBorderSides As String = "None"
+        Const defaultStatusLabelBorderStyle As String = "Flat"
+
+
 
         Dim starttime As DateTime = DateTime.Now
 
