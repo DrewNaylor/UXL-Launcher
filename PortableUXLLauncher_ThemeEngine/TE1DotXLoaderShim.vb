@@ -58,8 +58,6 @@ Public Class TE1DotXLoaderShim
             For Each character As Char In ThemeEngineNode.InnerText.ToString
                 If VersionRegexWithPattern.IsMatch(character) = True Then
                     cleaned = cleaned & character
-                    Debug.WriteLine("cleaned length: " & cleaned.Replace(".", "") & vbCrLf &
-                                    "Int32.MaxValue: " & Int32.MaxValue)
                 End If
             Next
             MessageBox.Show("cleaned: " & cleaned)
