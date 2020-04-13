@@ -507,6 +507,9 @@ Public Class TE2DotXLoader
         Const defaultButtonFlatAppearanceMouseDownBackColor As String = "Nothing"
         Const defaultButtonFlatAppearanceMouseOverBackColor As String = "Nothing"
 
+        Const defaultCheckboxBackColor As String = "Transparent"
+        Const defaultCheckboxForeColor As String = "ControlText"
+
 
         Dim starttime As DateTime = DateTime.Now
 
@@ -533,6 +536,9 @@ Public Class TE2DotXLoader
                 ' We're looking at the requested checkbox properties.
                 Select Case PropertyToCheck
                     Case "BackColor"
+                        Return defaultCheckboxBackColor
+                    Case "ForeColor"
+                        Return defaultCheckboxForeColor
                 End Select
         End Select
 
