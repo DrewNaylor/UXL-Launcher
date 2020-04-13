@@ -340,6 +340,21 @@ Public Class themeenginemain
             End If
         Next
 
+        ' To allow theming components on multiple forms, something like this
+        ' would need to be done:
+        ' Inside sub UXL_Launcher.aaformMainWindow.Load:
+        '    Private Sub Me.Load()
+        '       ...
+        '       UXLLauncher_ThemeEngine.RunThemeEngine(Me, Me.components)
+        '       forceOptionsWindowTab.RunThemeEngine()
+        '       ...
+        '    End Sub
+        ' Inside the Options window load sub:
+        '     Friend Sub RunThemeEngine()
+        '           UXLLauncher_ThemeEngine.RunThemeEngine(Me, Me.components)
+        '     End Sub
+
+
         ' Set color for the toolstrip pro renderer.
         ThemeProperties.toolstripProRenderer.BackColor = ThemeProperties.colorMenubarBackColor
         ThemeProperties.toolstripProRenderer.ForeColor = ThemeProperties.colorMenuItemForeColor
