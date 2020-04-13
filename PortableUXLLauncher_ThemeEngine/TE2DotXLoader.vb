@@ -494,7 +494,7 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Friend Shared Function GetDefaultValue(NodeName As String, PropertyToCheck As String, Optional FullNodePath As String = Nothing) As String
+    Friend Shared Function GetDefaultValue(NodeName As String, PropertyToCheck As String) As String
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
@@ -642,18 +642,18 @@ Public Class TE2DotXLoader
                 ' This is typically the case with themes that support TE2.x,
                 ' although there are some situations where we don't want to load stuff
                 ' from an attribute, such as for the description.
-                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, NodeAttribute)
+                Return GetAttribute(RootPrefix & "Theme_Colors/" & DesiredNode, DesiredNode, NodeAttribute)
             ElseIf LoadFromAttribute = False AndAlso UseThemeColorPrefix = True Then
                 ' Assume that the theme doesn't want to load a property from an attribute,
                 ' but that the property we want to get is in the theme colors section.
                 ' This is often the case for things like the Button FlatAppearance section.
-                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute)
+                Return GetInnerText(RootPrefix & "Theme_Colors/" & DesiredNode & "/" & NodeAttribute, DesiredNode, NodeAttribute)
             Else
                 ' Otherwise, assume the theme wants to load properties from a node's InnerText.
                 ' It's assumed that this isn't in the theme colors section.
                 ' This would be used in cases where we're trying
                 ' to get theme information like the title or description.
-                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute)
+                Return GetInnerText(RootPrefix & DesiredNode & NodeAttribute, DesiredNode, NodeAttribute)
             End If
 
         Else
@@ -662,30 +662,30 @@ Public Class TE2DotXLoader
         End If
     End Function
 
-    Private Shared Function GetAttribute(NodeName As String, AttributeName As String, DefaultValue As String) As String
+    Private Shared Function GetAttribute(NodePath As String, NodeName As String, AttributeName As String) As String
         ' TODO: Check to make sure the requested attribute is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
 
-        If ThemeProperties.themeSheet.SelectSingleNode(NodeName, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+        If ThemeProperties.themeSheet.SelectSingleNode(NodePath, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' If the node exists, store it in a variable to make the code easier to read.
-            Dim NodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode(NodeName, ThemeProperties.themeNamespaceManager)
-            If NodePath.Attributes(AttributeName) IsNot Nothing Then
+            Dim FullNodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode(NodePath, ThemeProperties.themeNamespaceManager)
+            If FullNodePath.Attributes(AttributeName) IsNot Nothing Then
                 ' If the attribute exists and is compatible with the version of the theme engine
                 ' the theme wants to use, return the attribute.
-                Return NodePath.Attributes(AttributeName).Value
+                Return FullNodePath.Attributes(AttributeName).Value
             Else
                 ' Otherwise, return the default value.
-                Return DefaultValue
+                Return GetDefaultValue(NodeName, AttributeName)
             End If
         Else
             ' If the node does not exist, return the default value.
-            Return DefaultValue
+            Return GetDefaultValue(NodeName, AttributeName)
         End If
 
     End Function
 
-    Private Shared Function GetInnerText(Node As String) As String
+    Private Shared Function GetInnerText(NodePath As String, NodeName As String, NodeAttribute As String) As String
         ' TODO: Check to make sure the requested node innertext is supported in
         ' the version of the theme engine the theme is requesting to use.
         ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
@@ -696,21 +696,21 @@ Public Class TE2DotXLoader
         ' no node attribute was passed to the GetPropertySafe
         ' function.
         Dim ForwardSlash As Char = CChar("/")
-        If ThemeProperties.themeSheet.SelectSingleNode(Node.TrimEnd(ForwardSlash), ThemeProperties.themeNamespaceManager) IsNot Nothing Then
+        If ThemeProperties.themeSheet.SelectSingleNode(NodePath.TrimEnd(ForwardSlash), ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' First check if the node exists.
             ' If it does exist, create a variable to store the node innertext.
-            Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode(Node, ThemeProperties.themeNamespaceManager).InnerText.ToString
+            Dim NodeInnerText As String = ThemeProperties.themeSheet.SelectSingleNode(NodePath, ThemeProperties.themeNamespaceManager).InnerText.ToString
             If NodeInnerText IsNot Nothing Then
                 ' If the node exists and is compatible with the version of the theme engine
                 ' the theme wants to use, return the innertext.
                 Return NodeInnerText
             Else
                 ' Otherwise, return the default value.
-                Return GetDefaultValueVersionVariant(ControlName, ControlProperty)
+                Return GetDefaultValue(NodeName, NodeAttribute)
             End If
         Else
             ' If the node doesn't exist, return the default value.
-            Return DefaultValue
+            Return GetDefaultValue(NodeName, NodeAttribute)
         End If
     End Function
 
