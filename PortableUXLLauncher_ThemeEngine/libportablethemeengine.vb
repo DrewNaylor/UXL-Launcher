@@ -49,6 +49,15 @@ Public Class themeenginemain
         ' it's True, full compatibility mode will be used.
         ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = UseTE1DotXFullCompatibilityMode
 
+        ' TODO: Optimize the theme engine.
+        ' At the moment, it takes about 60-120 milliseconds to
+        ' apply themes in UXL Launcher using PortableThemeEngine,
+        ' whereas using the built-in theme engine usually takes
+        ' less than 40 milliseconds, generally being around 10-20.
+        ' One thing that could help would be to see if the theme
+        ' file that's being passed in is the same one as is already in the
+        ' themeSheet.
+
         If isFilename = True AndAlso File.Exists(themeInput) Then
             ' If the theme input is a filename and the path exists,
             ' load it into the theme sheet.
