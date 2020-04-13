@@ -500,6 +500,8 @@ Public Class TE2DotXLoader
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
+        Const defaultAboutWindowBannerStyle As String = "Light"
+
         Const defaultButtonBackColor As String = "Transparent"
         Const defaultButtonForeColor As String = "ControlText"
         Const defaultButtonFlatStyle As String = "Standard"
@@ -557,6 +559,11 @@ Public Class TE2DotXLoader
         Const defaultStatusLabelForeColor As String = "ControlText"
         Const defaultStatusLabelBorderSides As String = "None"
         Const defaultStatusLabelBorderStyle As String = "Flat"
+
+        Const defaultThemeTitle As String = "(No title specified)"
+        Const defaultThemeDescription As String = "(No description specified)"
+        Const defaultThemeAuthor As String = "(No author specified)"
+        Const defaultThemeVersion As String = "(No version specified)"
 
 
 
