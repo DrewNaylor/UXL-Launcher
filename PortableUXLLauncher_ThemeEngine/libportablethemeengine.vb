@@ -50,10 +50,16 @@ Public Class themeenginemain
         ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = UseTE1DotXFullCompatibilityMode
 
         ' TODO: Optimize the theme engine.
-        ' At the moment, it takes about 60-120 milliseconds to
+        ' At the moment, it takes about 60-150 milliseconds to
         ' apply themes in UXL Launcher using PortableThemeEngine,
         ' whereas using the built-in theme engine usually takes
-        ' less than 40 milliseconds, generally being around 10-20.
+        ' about 60 milliseconds to do the full thing starting at
+        ' aaformMainWindow.themeChooser().
+        ' Please note that only the startup times could be determined
+        ' at the moment, as the Options window saving code hasn't been
+        ' redirected to PortableThemeEngine. Re-applying times
+        ' could be high as well, though they were around 60 milliseconds
+        ' in the PortableThemeEngineDebugger project.
         ' One thing that could help would be to see if the theme
         ' file that's being passed in is the same one as is already in the
         ' themeSheet.
