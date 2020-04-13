@@ -333,12 +333,15 @@ Public Class themeenginemain
 
         ' This code works when it's in a form, but Me.components.Components
         ' is private, so this may be another thing to pass along in addition to forms.
-        For Each component As Component In componentsToApplyTo.Components
-            If TypeOf component Is ContextMenuStrip Then
-                Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
-                contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
-            End If
-        Next
+        ' Make sure the components exist, as they're not required to be passed.
+        If componentsToApplyTo IsNot Nothing Then
+            For Each component As Component In componentsToApplyTo.Components
+                If TypeOf component Is ContextMenuStrip Then
+                    Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
+                    contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
+                End If
+            Next
+        End If
 
         ' To allow theming components on multiple forms, something like this
         ' would need to be done:
