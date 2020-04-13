@@ -630,7 +630,34 @@ Public Class TE2DotXLoader
                     Case "ApplyToAboutWindowAboutTabTLP"
                         Return defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP
                 End Select
-            Case 
+            Case "TabPage"
+                ' Check tabpage defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultTabPageBackColor
+                    Case "ForeColor"
+                        Return defaultTabPageForeColor
+                End Select
+            Case "TextBox"
+                ' Check textbox defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultTextBoxBackColor
+                    Case "ForeColor"
+                        Return defaultTextBoxForeColor
+                End Select
+            Case "MenuItem"
+                ' Check menuitem defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultMenuItemBackColor
+                    Case "ForeColor"
+                        Return defaultMenuItemForeColor
+                    Case "ImageMarginGradient/StartColor"
+                        Return defaultMenuItemImageMarginGradientStartColor
+                    Case "ImageMarginGradient/EndColor"
+                        Return defaultMenuItemImageMarginGradientEndColor
+                End Select
         End Select
 
                 '' Define some variables for holding an XML document and a namespace manager.
