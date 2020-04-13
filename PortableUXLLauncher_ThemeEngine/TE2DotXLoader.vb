@@ -510,6 +510,15 @@ Public Class TE2DotXLoader
         Const defaultCheckboxBackColor As String = "Transparent"
         Const defaultCheckboxForeColor As String = "ControlText"
 
+        Const defaultDropdownBackColor As String = "Window"
+        Const defaultDropdownForeColor As String = "ControlText"
+
+        Const defaultGroupBoxBackColor As String = "Transparent"
+        Const defaultGroupBoxForeColor As String = "ControlText"
+
+        Const defaultFlowLayoutPanelBackColor As String = "Window"
+        Const defaultFlowLayoutPanelForeColor As String = "ControlText"
+
 
         Dim starttime As DateTime = DateTime.Now
 
