@@ -658,6 +658,24 @@ Public Class TE2DotXLoader
                     Case "ImageMarginGradient/EndColor"
                         Return defaultMenuItemImageMarginGradientEndColor
                 End Select
+            Case "MenuBar"
+                ' Check menubar defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultMenuBarBackColor
+                End Select
+            Case "StatusLabel"
+                ' Check statuslabel defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultStatusLabelBackColor
+                    Case "ForeColor"
+                        Return defaultStatusLabelForeColor
+                    Case "BorderSides"
+                        Return defaultStatusLabelBorderSides
+                    Case "BorderStyle"
+                        Return defaultStatusLabelBorderStyle
+                End Select
         End Select
 
                 '' Define some variables for holding an XML document and a namespace manager.
