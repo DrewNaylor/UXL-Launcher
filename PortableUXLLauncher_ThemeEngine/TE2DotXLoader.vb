@@ -540,6 +540,31 @@ Public Class TE2DotXLoader
                     Case "ForeColor"
                         Return defaultCheckboxForeColor
                 End Select
+            Case "Dropdown"
+                ' We're looking through the dropdowns/comboboxes.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultDropdownBackColor
+                    Case "ForeColor"
+                        Return defaultDropdownForeColor
+                End Select
+            Case "GroupBox"
+                ' Check the groupbox defaults
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultGroupBoxBackColor
+                    Case "ForeColor"
+                        Return defaultGroupBoxForeColor
+                End Select
+            Case "FlowLayoutPanel"
+                ' Check flow layout panel defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return defaultFlowLayoutPanelBackColor
+                    Case "ForeColor"
+                        Return defaultFlowLayoutPanelForeColor
+                End Select
+            Case 
         End Select
 
                 '' Define some variables for holding an XML document and a namespace manager.
