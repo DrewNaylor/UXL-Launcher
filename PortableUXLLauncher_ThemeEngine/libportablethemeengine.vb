@@ -38,7 +38,7 @@ Public Class themeenginemain
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
-    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional componentsToApplyTo As IContainer = Nothing, Optional isFilename As Boolean = True, Optional UseTE1DotXFullCompatibilityMode As Boolean = False)
+    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional isFilename As Boolean = True, Optional UseTE1DotXFullCompatibilityMode As Boolean = False)
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -93,10 +93,10 @@ Public Class themeenginemain
         ' we can put the colors on the controls.
         'MessageBox.Show("Back to themeenginemain. Theme colors can be applied now.")
 
-        ApplyTheme(themeInput, formToApplyTo, componentsToApplyTo)
+        ApplyTheme(themeInput, formToApplyTo, formComponents)
     End Sub
 
-    Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form, componentsToApplyTo As IContainer)
+    Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form, formComponents As IContainer)
 
         '#Region "Set colors for controls."
 
@@ -350,8 +350,8 @@ Public Class themeenginemain
         ' This code works when it's in a form, but Me.components.Components
         ' is private, so this may be another thing to pass along in addition to forms.
         ' Make sure the components exist, as they're not required to be passed.
-        If componentsToApplyTo IsNot Nothing Then
-            For Each component As Component In componentsToApplyTo.Components
+        If formComponents IsNot Nothing Then
+            For Each component As Component In formComponents.Components
                 If TypeOf component Is ContextMenuStrip Then
                     Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
                     contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
