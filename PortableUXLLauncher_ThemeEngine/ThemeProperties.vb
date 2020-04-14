@@ -494,10 +494,10 @@ Public Class ThemeProperties
     ' Panel back color.
     Public Shared Property colorPanelBackColor() As Color
         Get
-            Return _colorTableLayoutPanelBackColor
+            Return _colorPanelBackColor
         End Get
         Set(value As Color)
-            _colorTableLayoutPanelBackColor = value
+            _colorPanelBackColor = value
         End Set
     End Property
 
