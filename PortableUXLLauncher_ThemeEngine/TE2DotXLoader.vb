@@ -530,8 +530,19 @@ Public Class TE2DotXLoader
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
         'Debug.WriteLine(ColorFromTheme)
         ''MessageBox.Show(ColorFromTheme)
-        Dim UseSafeColorValidation As Boolean = False
+        Dim UseSafeColorValidation As Boolean = True
         If UseSafeColorValidation = True Then
+            ' If the calling application wants to use safe color
+            ' validation, then we'll use it.
+            ' During testing, it seemed to generally be around
+            ' 20-40 ms to re-apply a theme, and somewhere between
+            ' 60-90 ms (rarely as high as 110 ms) to apply
+            ' a theme on startup. These numbers are based on
+            ' UXL Launcher version 3.3, and it was temporarily
+            ' redirected to use PortableThemeEngine instead
+            ' of the built-in one. These numbers can vary
+            ' depending on the theme. For example, the Default
+            ' theme had really high times of around 100 ms or more.
             If ColorFromTheme IsNot "LiteralNothing" AndAlso IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color
                 ' and it's not LiteralNothing, return the color.
