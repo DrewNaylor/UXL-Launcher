@@ -307,8 +307,8 @@ Public Class TE2DotXLoader
 
         ' Assign StatusLabel BorderSides property.
         ' Not loading from an attribute so it doesn't get messy.
-        Select Case GetPropertySafe("StatusLabel", "BackColor", False).ToLowerInvariant
             Case "all"
+        Select Case GetPropertySafe("StatusLabel", "BorderSides", False)
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
             Case "top"
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Top

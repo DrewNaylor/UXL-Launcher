@@ -321,7 +321,7 @@ Public Class ThemeEngine
                 End If
 
             ElseIf TypeOf ctrl Is Panel Then
-                ' Panels aren't yet fully supported and this is just a placeholder.\
+                ' Apply color to panels.
                 ctrl.BackColor = ThemeProperties.colorPanelBackColor
                 ctrl.ForeColor = ThemeProperties.colorPanelForeColor
 
