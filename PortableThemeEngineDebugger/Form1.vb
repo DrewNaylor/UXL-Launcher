@@ -1,7 +1,7 @@
 ﻿Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
         Dim startdate As DateTime = DateTime.Now
-        libportablethemeengine.themeenginemain.LoadTheme(textboxThemePath.Text, Me,)
+        libportablethemeengine.ThemeEngine.LoadTheme(textboxThemePath.Text, Me,)
         Dim enddate As DateTime = DateTime.Now
         Debug.WriteLine("Theme engine took " & (enddate - startdate).Milliseconds & " milliseconds to run.")
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString

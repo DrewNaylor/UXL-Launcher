@@ -29,7 +29,7 @@ Imports System.Net.Mime.MediaTypeNames
 Imports System.Drawing
 Imports System.ComponentModel
 
-Public Class themeenginemain
+Public Class ThemeEngine
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
     '#Region "Set Theme via PortableThemeEngine."

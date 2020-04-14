@@ -27,6 +27,16 @@ Imports System.Xml
 
 Public Class ThemeProperties
 
+    ' Some properties to control various theme engine functions.
+    ' Safe color validation uses regex to make sure the color
+    ' that's being applied to a given control is a valid HTML color.
+    ' If it's not a valid HTML color, it's looked up in the system colors
+    ' list. Disabling safe color validation enables fast color validation,
+    ' which relies on an exception handler to make sure colors are valid like TE1.x.
+    ' See more details in TE2DotXLoader.GetThemeColor.
+    Private Shared _themeengineUseSafeColorValidation As Boolean = True
+    Private Shared _themeengineUseTE1DotXFullCompatibilityMode As Boolean = False
+
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
 
