@@ -580,6 +580,9 @@ Public Class TE2DotXLoader
             ' will take a lot longer to re-apply, sometimes upwards
             ' of 60 ms or more. This is due to running into the
             ' exception handler.
+            ' Themes that run into the exception handler can take
+            ' over 100 ms to apply on startup, sometimes taking more
+            ' than 140 ms.
             If ColorFromTheme IsNot "LiteralNothing" Then
                 ' If the color we're looking at isn't "LiteralNothing",
                 ' try to return it as a color.
