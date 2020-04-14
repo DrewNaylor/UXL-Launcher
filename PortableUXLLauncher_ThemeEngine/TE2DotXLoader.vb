@@ -371,7 +371,7 @@ Public Class TE2DotXLoader
                             ' compatibility against the version of the
                             ' theme engine the theme wants to use.
                             VersionIntroduced = Version.Parse("1.01")
-                            Select Case VersionIntroduced.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                            Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(VersionIntroduced)
                                 Case 0 ' Theme is compatible with 1.01 exactly, so use it.
                                     Return True
                                 Case 1 ' Theme is compatible with a version newer than 1.01, so use it.
@@ -383,7 +383,7 @@ Public Class TE2DotXLoader
                             ' Check if the theme engine runtime version the theme
                             ' wants to use supports Button FlatAppearance MouseDownBackColor.
                             VersionIntroduced = Version.Parse("1.03")
-                            Select Case VersionIntroduced.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                            Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(VersionIntroduced)
                                 Case 0 ' Theme is compatible with 1.03 exactly, so use it.
                                     Return True
                                 Case 1 ' Theme is compatible with an engine runtime version newer than 1.03, so use it.
@@ -395,7 +395,7 @@ Public Class TE2DotXLoader
                             ' Check if the theme engine runtime version the theme
                             ' wants to use supports Button FlatAppearance MouseOverBackColor.
                             VersionIntroduced = Version.Parse("1.03")
-                            Select Case VersionIntroduced.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                            Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(VersionIntroduced)
                                 Case 0 ' Theme is compatible with 1.03 exactly, so use it.
                                     Return True
                                 Case 1 ' Theme is compatible with an engine runtime version newer than 1.03, so use it.
