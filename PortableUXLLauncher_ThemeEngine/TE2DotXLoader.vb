@@ -528,12 +528,13 @@ Public Class TE2DotXLoader
 
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
+        Debug.WriteLine(ColorFromTheme)
         ''MessageBox.Show(ColorFromTheme)
         Dim UseSafeChecker As Boolean = False
         If UseSafeChecker = True Then
-            If IsColorValid(ColorFromTheme) Then
-                ' If the color is a valid HTML or system color,
-                ' return the color.
+            If ColorFromTheme IsNot "LiteralNothing" AndAlso IsColorValid(ColorFromTheme) Then
+                ' If the color is a valid HTML or system color
+                ' and it's not LiteralNothing, return the color.
                 ' One situation where this could be confusing is
                 ' if the theme has something like #3 instead of
                 ' #363636. In this case, a color with alpha
@@ -543,8 +544,8 @@ Public Class TE2DotXLoader
                 'MessageBox.Show(ColorFromTheme)
                 Return ColorTranslator.FromHtml(ColorFromTheme)
 
-            ElseIf Not IsColorValid(ColorFromTheme) AndAlso GetDefaultValue(ControlName, ControlProperty) = "Nothing" Then
-                ' If it's not valid and the default value is Nothing, return Nothing.
+            ElseIf ColorFromTheme = "LiteralNothing" Then
+                ' If the value is LiteralNothing, return Nothing.
                 Return Nothing
             Else
                 ' Otherwise just return Nothing if the default is "LiteralNothing".
@@ -557,11 +558,11 @@ Public Class TE2DotXLoader
                 End If
             End If
         Else
-            If ColorFromTheme IsNot "Nothing" Then
+            If ColorFromTheme IsNot "LiteralNothing" Then
                 Try
                     Return ColorTranslator.FromHtml(ColorFromTheme)
                 Catch ex As Exception
-                    If GetDefaultValue(ControlName, ControlProperty) = "Nothing" Then
+                    If GetDefaultValue(ControlName, ControlProperty) = "LiteralNothing" Then
                         Return Nothing
                     Else
                         ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
