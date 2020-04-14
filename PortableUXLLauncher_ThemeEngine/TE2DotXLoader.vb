@@ -536,13 +536,13 @@ Public Class TE2DotXLoader
             ' validation, then we'll use it.
             ' During testing, it seemed to generally be around
             ' 20-40 ms to re-apply a theme, and somewhere between
-            ' 60-90 ms (rarely as high as 110 ms) to apply
+            ' 60-90 ms (rarely as high as 140 ms or more) to apply
             ' a theme on startup. These numbers are based on
             ' UXL Launcher version 3.3, and it was temporarily
             ' redirected to use PortableThemeEngine instead
             ' of the built-in one. These numbers can vary
             ' depending on the theme. For example, the Default
-            ' theme had really high times of around 100 ms or more.
+            ' theme generally seemed to be around 20-30 ms to re-apply
             If ColorFromTheme IsNot "LiteralNothing" AndAlso IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color
                 ' and it's not LiteralNothing, return the color.
