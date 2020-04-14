@@ -528,10 +528,10 @@ Public Class TE2DotXLoader
 
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
-        Debug.WriteLine(ColorFromTheme)
+        'Debug.WriteLine(ColorFromTheme)
         ''MessageBox.Show(ColorFromTheme)
-        Dim UseSafeChecker As Boolean = False
-        If UseSafeChecker = True Then
+        Dim UseSafeColorValidation As Boolean = False
+        If UseSafeColorValidation = True Then
             If ColorFromTheme IsNot "LiteralNothing" AndAlso IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color
                 ' and it's not LiteralNothing, return the color.
@@ -558,20 +558,33 @@ Public Class TE2DotXLoader
                 End If
             End If
         Else
+            ' If the calling application wants to use fast
+            ' color validation, rely on a try...catch block.
+            ' Generally fast color validation is around 10 ms to
+            ' re-apply a theme, and about 40 ms to apply a theme
+            ' for the first time. These numbers are from testing
+            ' PortableThemeEngine with UXL Launcher version 3.3.
             If ColorFromTheme IsNot "LiteralNothing" Then
+                ' If the color we're looking at isn't "LiteralNothing",
+                ' try to return it as a color.
                 Try
                     Return ColorTranslator.FromHtml(ColorFromTheme)
                 Catch ex As Exception
+                    ' Couldn't return it as a color, so if the default color is
+                    ' "LiteralNothing", return Nothing.
                     If GetDefaultValue(ControlName, ControlProperty) = "LiteralNothing" Then
                         Return Nothing
                     Else
+                        ' Otherwise, the default color is a valid color, so return it.
                         ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
                     End If
-                End Try
+                End Try ' End try...catch block in fast color validation section.
             Else
+                ' If the color the theme wants to use is "LiteralNothing",
+                ' return Nothing.
                 Return Nothing
-            End If
-        End If
+            End If ' End the part where we see if the theme wants to use "LiteralNothing" here.
+        End If ' End part where we decide between fast and safe color validation.
     End Function
 
     Friend Shared Function GetDefaultValue(NodeName As String, PropertyToCheck As String) As String
