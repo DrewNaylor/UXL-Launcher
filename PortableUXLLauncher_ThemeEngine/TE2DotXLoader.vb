@@ -364,10 +364,20 @@ Public Class TE2DotXLoader
 
             Select Case NodeName
                 Case "Button"
+                    ' The feature we're checking is for buttons.
                     Select Case PropertyToCheck
                         Case "FlatAppearance/BorderColor"
+                            ' Check Button FlatAppearance BorderColor
+                            ' compatibility against the version of the
+                            ' theme engine the theme wants to use.
                             VersionIntroduced = Version.Parse("1.01")
-
+                            Select Case VersionIntroduced.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                                Case 0 ' Theme is compatible with 1.01 exactly, so use it.
+                                    Return True
+                                Case 1 ' Theme is compatible with a version newer than 1.01, so use it.
+                                    Return True
+                                Case -1 ' Theme isn't compatible with 1.01 or newer (which is impossible, but this is an example.)
+                            End Select
                     End Select
             End Select
         End If
