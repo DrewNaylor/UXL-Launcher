@@ -529,28 +529,44 @@ Public Class TE2DotXLoader
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
         ''MessageBox.Show(ColorFromTheme)
-        If IsColorValid(ColorFromTheme) Then
-            ' If the color is a valid HTML or system color,
-            ' return the color.
-            ' One situation where this could be confusing is
-            ' if the theme has something like #3 instead of
-            ' #363636. In this case, a color with alpha
-            ' transparency will be returned, and it might be
-            ' confusing. May be a good idea to make sure it has
-            ' a length of 3 numbers or 6 numbers.
-            'MessageBox.Show(ColorFromTheme)
-            Return ColorTranslator.FromHtml(ColorFromTheme)
-        ElseIf Not IsColorValid(ColorFromTheme) AndAlso GetDefaultValue(ControlName, ControlProperty) = "Nothing" Then
-            ' If it's not valid and the default value is Nothing, return Nothing.
-            Return Nothing
-        Else
-            ' Otherwise just return Nothing if the default is "LiteralNothing".
-            ' This is the case for the default statusbar backcolor in 1.03 and above.
-            If GetDefaultValue(ControlName, ControlProperty) = "LiteralNothing" Then
+        Dim UseSafeChecker As Boolean = True
+        If UseSafeChecker = True Then
+            If IsColorValid(ColorFromTheme) Then
+                ' If the color is a valid HTML or system color,
+                ' return the color.
+                ' One situation where this could be confusing is
+                ' if the theme has something like #3 instead of
+                ' #363636. In this case, a color with alpha
+                ' transparency will be returned, and it might be
+                ' confusing. May be a good idea to make sure it has
+                ' a length of 3 numbers or 6 numbers.
+                'MessageBox.Show(ColorFromTheme)
+                Return ColorTranslator.FromHtml(ColorFromTheme)
+
+            ElseIf Not IsColorValid(ColorFromTheme) AndAlso GetDefaultValue(ControlName, ControlProperty) = "Nothing" Then
+                ' If it's not valid and the default value is Nothing, return Nothing.
                 Return Nothing
             Else
-                ' The default's not "LiteralNothing", so return the default color.
-                Return ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
+                ' Otherwise just return Nothing if the default is "LiteralNothing".
+                ' This is the case for the default statusbar backcolor in 1.03 and above.
+                If GetDefaultValue(ControlName, ControlProperty) = "LiteralNothing" Then
+                    Return Nothing
+                Else
+                    ' The default's not "LiteralNothing", so return the default color.
+                    Return ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
+                End If
+            End If
+        Else
+            If ColorFromTheme IsNot "Nothing" Then
+                Try
+                    Return ColorTranslator.FromHtml(ColorFromTheme)
+                Catch ex As Exception
+                    If GetDefaultValue(ControlName, ControlProperty) = "Nothing" Then
+                        Return Nothing
+                    Else
+                        ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
+                    End If
+                End Try
             End If
         End If
     End Function
@@ -559,101 +575,7 @@ Public Class TE2DotXLoader
         ' If a default value is different between theme engine versions, this
         ' can choose between the defaults.
 
-        ' Determine which About window banner to use
-        ' in UXL Launcher's About window.
-        Const defaultAboutWindowBannerStyle As String = "Light"
-
-        ' Specify default Button properties.
-        Const defaultButtonBackColor As String = "Transparent"
-        Const defaultButtonForeColor As String = "ControlText"
-        Const defaultButtonFlatStyle As String = "Standard"
-        Const defaultButtonFlatAppearanceBorderColor As String = "Nothing"
-        Const defaultButtonFlatAppearanceMouseDownBackColor As String = "Nothing"
-        Const defaultButtonFlatAppearanceMouseOverBackColor As String = "Nothing"
-
-        ' Specify default CheckBox properties.
-        Const defaultCheckboxBackColor As String = "Transparent"
-        Const defaultCheckboxForeColor As String = "ControlText"
-
-        ' Specify default Dropdown/combobox properties.
-        Const defaultDropdownBackColor As String = "Window"
-        Const defaultDropdownForeColor As String = "ControlText"
-
-        ' Specify default GroupBox properties.
-        Const defaultGroupBoxBackColor As String = "Transparent"
-        Const defaultGroupBoxForeColor As String = "ControlText"
-
-        ' Specify default FlowLayoutPanel properties.
-        Const defaultFlowLayoutPanelBackColor As String = "Window"
-        Const defaultFlowLayoutPanelForeColor As String = "ControlText"
-
-        ' Specify default StatusBar properties.
-        ' These vary between theme engine versions,
-        ' so themes targeting 1.03 or newer get
-        ' Nothing as the default, while themes
-        ' targeting 1.01 or 1.02 get Control as
-        ' the default.
-        Const defaultStatusBar1Dot03BackColor As String = "Nothing"
-        Const defaultStatusBarOriginalBackColor = "Control"
-
-        ' Specify default Label properties.
-        Const defaultLabelBackColor As String = "Transparent"
-        Const defaultLabelForeColor As String = "ControlText"
-
-        ' Specify default LinkLabel properties.
-        Const defaultLinkLabelActiveLinkColor As String = "Red"
-        ' TE1.x used Color.FromArgb(0, 0, 255)
-        ' to get the blue color, but #0000FF is effectively
-        ' the same since it's also pure blue.
-        Const defaultLinkLabelLinkColor As String = "#0000FF"
-        Const defaultLinkLabelBackColor As String = "Transparent"
-        Const defaultLinkLabelForeColor As String = "ControlText"
-
-        ' Specify default Panel properties.
-        Const defaultPanelBackColor As String = "Control"
-        Const defaultPanelForeColor As String = "ControlText"
-
-        ' Specify default RadioButton properties.
-        Const defaultRadioButtonBackColor As String = "Transparent"
-        Const defaultRadioButtonForeColor As String = "ControlText"
-
-        ' Specify default TableLayoutPanel properties.
-        Const defaultTableLayoutPanelBackColor As String = "Control"
-        Const defaultTableLayoutPanelForeColor As String = "ControlText"
-        Const defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP As String = "False"
-
-        ' Specify default TabPage properties.
-        Const defaultTabPageBackColor As String = "Window"
-        Const defaultTabPageForeColor As String = "ControlText"
-
-        ' Specify default TextBox properties.
-        Const defaultTextBoxBackColor As String = "Window"
-        Const defaultTextBoxForeColor As String = "WindowText"
-
-        ' Specify default MenuItem properties.
-        Const defaultMenuItemBackColor As String = "Window"
-        Const defaultMenuItemForeColor As String = "ControlText"
-        Const defaultMenuItemImageMarginGradientStartColor As String = "#FCFCFC"
-        Const defaultMenuItemImageMarginGradientEndColor As String = "#F1F1F1"
-
-        ' Specify default MenuBar properties.
-        Const defaultMenuBarBackColor As String = "Control"
-
-        ' Specify default StatusLabel properties.
-        Const defaultStatusLabelBackColor As String = "Transparent"
-        Const defaultStatusLabelForeColor As String = "ControlText"
-        Const defaultStatusLabelBorderSides As String = "None"
-        Const defaultStatusLabelBorderStyle As String = "Flat"
-
-        ' Specify default theme info properties.
-        Const defaultThemeTitle As String = "(No title specified)"
-        Const defaultThemeDescription As String = "(No description specified)"
-        Const defaultThemeAuthor As String = "(No author specified)"
-        Const defaultThemeVersion As String = "(No version specified)"
-
-
-
-        Dim starttime As DateTime = DateTime.Now
+        'Dim starttime As DateTime = DateTime.Now
 
         Select Case NodeName
             ' If the node name matches what we want to look at,
@@ -662,55 +584,55 @@ Public Class TE2DotXLoader
                 ' Check about window defaults.
                 Select Case PropertyToCheck
                     Case "BannerStyle"
-                        Return defaultAboutWindowBannerStyle
+                        Return ThemeProperties.defaultAboutWindowBannerStyle
                 End Select
             Case "Button"
                 Select Case PropertyToCheck
                     ' Check the button's requested properties.
                     Case "BackColor"
-                        Return defaultButtonBackColor
+                        Return ThemeProperties.defaultButtonBackColor
                     Case "ForeColor"
-                        Return defaultButtonForeColor
+                        Return ThemeProperties.defaultButtonForeColor
                     Case "FlatStyle"
-                        Return defaultButtonFlatStyle
+                        Return ThemeProperties.defaultButtonFlatStyle
                     Case "FlatAppearance/BorderColor"
-                        Return defaultButtonFlatAppearanceBorderColor
+                        Return ThemeProperties.defaultButtonFlatAppearanceBorderColor
                     Case "FlatAppearance/MouseDownBackColor"
-                        Return defaultButtonFlatAppearanceMouseDownBackColor
+                        Return ThemeProperties.defaultButtonFlatAppearanceMouseDownBackColor
                     Case "FlatAppearance/MouseOverBackColor"
-                        Return defaultButtonFlatAppearanceMouseOverBackColor
+                        Return ThemeProperties.defaultButtonFlatAppearanceMouseOverBackColor
                 End Select
             Case "CheckBox"
                 ' We're looking at the requested checkbox properties.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultCheckboxBackColor
+                        Return ThemeProperties.defaultCheckboxBackColor
                     Case "ForeColor"
-                        Return defaultCheckboxForeColor
+                        Return ThemeProperties.defaultCheckboxForeColor
                 End Select
             Case "Dropdown"
                 ' We're looking through the dropdowns/comboboxes.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultDropdownBackColor
+                        Return ThemeProperties.defaultDropdownBackColor
                     Case "ForeColor"
-                        Return defaultDropdownForeColor
+                        Return ThemeProperties.defaultDropdownForeColor
                 End Select
             Case "GroupBox"
                 ' Check the groupbox defaults
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultGroupBoxBackColor
+                        Return ThemeProperties.defaultGroupBoxBackColor
                     Case "ForeColor"
-                        Return defaultGroupBoxForeColor
+                        Return ThemeProperties.defaultGroupBoxForeColor
                 End Select
             Case "FlowLayoutPanel"
                 ' Check flow layout panel defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultFlowLayoutPanelBackColor
+                        Return ThemeProperties.defaultFlowLayoutPanelBackColor
                     Case "ForeColor"
-                        Return defaultFlowLayoutPanelForeColor
+                        Return ThemeProperties.defaultFlowLayoutPanelForeColor
                 End Select
             Case "StatusBar"
                 ' Check statusbar defaults.
@@ -719,128 +641,128 @@ Public Class TE2DotXLoader
                     Case "BackColor"
                         Dim VersionWhenDefaultChanged As Version = Version.Parse("1.03")
                         Select Case VersionWhenDefaultChanged.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
-                            Case 0 ' If it's the same version, return the new default in 1.03.
-                                Return defaultStatusBar1Dot03BackColor
+                            Case 0 ' If it's the same version, Return the new default in 1.03.
+                                Return ThemeProperties.defaultStatusBar1Dot03BackColor
                             Case 1 ' If it's newer than 1.03, return the 1.03 default.
-                                Return defaultStatusBar1Dot03BackColor
+                                Return ThemeProperties.defaultStatusBar1Dot03BackColor
                             Case -1 ' If it's older than 1.03, return the original default.
-                                Return defaultStatusBarOriginalBackColor
+                                Return ThemeProperties.defaultStatusBarOriginalBackColor
                         End Select
                 End Select
             Case "Label"
                 ' Check label defaults and return them.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultLabelBackColor
+                        Return ThemeProperties.defaultLabelBackColor
                     Case "ForeColor"
-                        Return defaultLabelForeColor
+                        Return ThemeProperties.defaultLabelForeColor
                 End Select
             Case "LinkLabel"
                 ' Check linklabel defaults.
                 Select Case PropertyToCheck
                     Case "ActiveLinkColor"
-                        Return defaultLinkLabelActiveLinkColor
+                        Return ThemeProperties.defaultLinkLabelActiveLinkColor
                     Case "LinkColor"
                         ' TE1.x used Color.FromArgb(0, 0, 255)
                         ' to get the blue color, but #0000FF is effectively
                         ' the same since it's also pure blue.
-                        Return defaultLinkLabelLinkColor
+                        Return ThemeProperties.defaultLinkLabelLinkColor
                     Case "BackColor"
-                        Return defaultLinkLabelBackColor
+                        Return ThemeProperties.defaultLinkLabelBackColor
                     Case "ForeColor"
                         ' ForeColor only shows up if the LinkArea property
                         ' is less than the entire length of the linklabel.
-                        Return defaultLinkLabelForeColor
+                        Return ThemeProperties.defaultLinkLabelForeColor
                 End Select
             Case "Panel"
                 ' Check panel defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultPanelBackColor
+                        Return ThemeProperties.defaultPanelBackColor
                     Case "ForeColor"
-                        Return defaultPanelForeColor
+                        Return ThemeProperties.defaultPanelForeColor
                 End Select
             Case "RadioButton"
                 'Check radiobutton defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultRadioButtonBackColor
+                        Return ThemeProperties.defaultRadioButtonBackColor
                     Case "ForeColor"
-                        Return defaultRadioButtonForeColor
+                        Return ThemeProperties.defaultRadioButtonForeColor
                 End Select
             Case "TableLayoutPanel"
                 ' Check tablelayoutpanel defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultTableLayoutPanelBackColor
+                        Return ThemeProperties.defaultTableLayoutPanelBackColor
                     Case "ForeColor"
-                        Return defaultTableLayoutPanelForeColor
+                        Return ThemeProperties.defaultTableLayoutPanelForeColor
                     Case "ApplyToAboutWindowAboutTabTLP"
-                        Dim endtime As DateTime = DateTime.Now
-                        Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
-                        Return defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP
+                        'Dim endtime As DateTime = DateTime.Now
+                        'Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
+                        Return ThemeProperties.defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP
                 End Select
             Case "TabPage"
                 ' Check tabpage defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultTabPageBackColor
+                        Return ThemeProperties.defaultTabPageBackColor
                     Case "ForeColor"
-                        Return defaultTabPageForeColor
+                        Return ThemeProperties.defaultTabPageForeColor
                 End Select
             Case "TextBox"
                 ' Check textbox defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultTextBoxBackColor
+                        Return ThemeProperties.defaultTextBoxBackColor
                     Case "ForeColor"
-                        Return defaultTextBoxForeColor
+                        Return ThemeProperties.defaultTextBoxForeColor
                 End Select
             Case "MenuItem"
                 ' Check menuitem defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultMenuItemBackColor
+                        Return ThemeProperties.defaultMenuItemBackColor
                     Case "ForeColor"
-                        Return defaultMenuItemForeColor
+                        Return ThemeProperties.defaultMenuItemForeColor
                     Case "ImageMarginGradient/StartColor"
-                        Return defaultMenuItemImageMarginGradientStartColor
+                        Return ThemeProperties.defaultMenuItemImageMarginGradientStartColor
                     Case "ImageMarginGradient/EndColor"
-                        Return defaultMenuItemImageMarginGradientEndColor
+                        Return ThemeProperties.defaultMenuItemImageMarginGradientEndColor
                 End Select
             Case "MenuBar"
                 ' Check menubar defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultMenuBarBackColor
+                        Return ThemeProperties.defaultMenuBarBackColor
                 End Select
             Case "StatusLabel"
                 ' Check statuslabel defaults.
                 Select Case PropertyToCheck
                     Case "BackColor"
-                        Return defaultStatusLabelBackColor
+                        Return ThemeProperties.defaultStatusLabelBackColor
                     Case "ForeColor"
-                        Return defaultStatusLabelForeColor
+                        Return ThemeProperties.defaultStatusLabelForeColor
                     Case "BorderSides"
-                        Return defaultStatusLabelBorderSides
+                        Return ThemeProperties.defaultStatusLabelBorderSides
                     Case "BorderStyle"
-                        Return defaultStatusLabelBorderStyle
+                        Return ThemeProperties.defaultStatusLabelBorderStyle
                 End Select
             Case "Title"
                 ' Check title defaults.
-                Return defaultThemeTitle
+                Return ThemeProperties.defaultThemeTitle
             Case "Description"
                 ' Check description defaults.
-                Return defaultThemeDescription
+                Return ThemeProperties.defaultThemeDescription
             Case "Author"
                 ' Check author defaults.
-                Return defaultThemeAuthor
+                Return ThemeProperties.defaultThemeAuthor
             Case "Version"
                 ' Check version defaults.
-                Return defaultThemeVersion
+                Return ThemeProperties.defaultThemeVersion
         End Select
 
-        '' Define some variables for holding an XML document and a namespace manager.
+        ''' Define some variables for holding an XML document and a namespace manager.
         'Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
         'Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
 
@@ -905,8 +827,8 @@ Public Class TE2DotXLoader
         '        'Debug.WriteLine("NodeName: " & NodeName)
         '        'Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
         '        ' If it doesn't match, go to the next node and try again.
-        '        Dim endtime As DateTime = DateTime.Now
-        '        Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
+        '        'Dim endtime As DateTime = DateTime.Now
+        '        'Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
         '        DefaultNode = DefaultNode.NextSibling
         '    End If
         'Next
@@ -936,7 +858,9 @@ Public Class TE2DotXLoader
 
         ' Replace 0x in the input color with #, if it starts with it.
         ' Make sure the input color exists.
+        'Return True
         If InputColor IsNot Nothing Then
+
             Dim SwitchToHashSymbol As String = InputColor
             If SwitchToHashSymbol.StartsWith("0x") Then
                 SwitchToHashSymbol = InputColor.Replace("0x", "#")
@@ -983,10 +907,10 @@ Public Class TE2DotXLoader
         '                "NodeAttribute: " & NodeAttribute)
         ' This is only checked if the feature requests compatibility checking
         ' as this is a rather expensive operation.
-        Dim starttime As DateTime = DateTime.Now
+        'Dim starttime As DateTime = DateTime.Now
         If ThemeSupportsFeature(DesiredNode, NodeAttribute, CheckCompatibility) = True Then
-            Dim endtime As DateTime = DateTime.Now
-            Debug.WriteLine("Compatibility checker took " & (endtime - starttime).Milliseconds & " ms to run.")
+            'Dim endtime As DateTime = DateTime.Now
+            'Debug.WriteLine("Compatibility checker took " & (endtime - starttime).Milliseconds & " ms to run.")
 
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
                 ' If the theme wants to load the property from an attribute, do so.

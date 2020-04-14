@@ -670,4 +670,98 @@ Public Class ThemeProperties
 #End Region
 
 #End Region
+
+#Region "Theme defaults."
+    ' Determine which About window banner to use
+    ' in UXL Launcher's About window.
+    Friend Shared ReadOnly defaultAboutWindowBannerStyle As String = "Light"
+
+    ' Specify default Button properties.
+    Friend Shared ReadOnly defaultButtonBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultButtonForeColor As String = "ControlText"
+    Friend Shared ReadOnly defaultButtonFlatStyle As String = "Standard"
+    Friend Shared ReadOnly defaultButtonFlatAppearanceBorderColor As String = "Nothing"
+    Friend Shared ReadOnly defaultButtonFlatAppearanceMouseDownBackColor As String = "Nothing"
+    Friend Shared ReadOnly defaultButtonFlatAppearanceMouseOverBackColor As String = "Nothing"
+
+    ' Specify default CheckBox properties.
+    Friend Shared ReadOnly defaultCheckboxBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultCheckboxForeColor As String = "ControlText"
+
+    ' Specify default Dropdown/combobox properties.
+    Friend Shared ReadOnly defaultDropdownBackColor As String = "Window"
+    Friend Shared ReadOnly defaultDropdownForeColor As String = "ControlText"
+
+    ' Specify default GroupBox properties.
+    Friend Shared ReadOnly defaultGroupBoxBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultGroupBoxForeColor As String = "ControlText"
+
+    ' Specify default FlowLayoutPanel properties.
+    Friend Shared ReadOnly defaultFlowLayoutPanelBackColor As String = "Window"
+    Friend Shared ReadOnly defaultFlowLayoutPanelForeColor As String = "ControlText"
+
+    ' Specify default StatusBar properties.
+    ' These vary between theme engine versions,
+    ' so themes targeting 1.03 or newer get
+    ' Nothing as the default, while themes
+    ' targeting 1.01 or 1.02 get Control as
+    ' the default.
+    Friend Shared ReadOnly defaultStatusBar1Dot03BackColor As String = "Nothing"
+    Friend Shared ReadOnly defaultStatusBarOriginalBackColor As String = "Control"
+
+    ' Specify default Label properties.
+    Friend Shared ReadOnly defaultLabelBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultLabelForeColor As String = "ControlText"
+
+    ' Specify default LinkLabel properties.
+    Friend Shared ReadOnly defaultLinkLabelActiveLinkColor As String = "Red"
+    ' TE1.x used Color.FromArgb(0, 0, 255)
+    ' to get the blue color, but #0000FF is effectively
+    ' the same since it's also pure blue.
+    Friend Shared ReadOnly defaultLinkLabelLinkColor As String = "#0000FF"
+    Friend Shared ReadOnly defaultLinkLabelBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultLinkLabelForeColor As String = "ControlText"
+
+    ' Specify default Panel properties.
+    Friend Shared ReadOnly defaultPanelBackColor As String = "Control"
+    Friend Shared ReadOnly defaultPanelForeColor As String = "ControlText"
+
+    ' Specify default RadioButton properties.
+    Friend Shared ReadOnly defaultRadioButtonBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultRadioButtonForeColor As String = "ControlText"
+
+    ' Specify default TableLayoutPanel properties.
+    Friend Shared ReadOnly defaultTableLayoutPanelBackColor As String = "Control"
+    Friend Shared ReadOnly defaultTableLayoutPanelForeColor As String = "ControlText"
+    Friend Shared ReadOnly defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP As String = "False"
+
+    ' Specify default TabPage properties.
+    Friend Shared ReadOnly defaultTabPageBackColor As String = "Window"
+    Friend Shared ReadOnly defaultTabPageForeColor As String = "ControlText"
+
+    ' Specify default TextBox properties.
+    Friend Shared ReadOnly defaultTextBoxBackColor As String = "Window"
+    Friend Shared ReadOnly defaultTextBoxForeColor As String = "WindowText"
+
+    ' Specify default MenuItem properties.
+    Friend Shared ReadOnly defaultMenuItemBackColor As String = "Window"
+    Friend Shared ReadOnly defaultMenuItemForeColor As String = "ControlText"
+    Friend Shared ReadOnly defaultMenuItemImageMarginGradientStartColor As String = "#FCFCFC"
+    Friend Shared ReadOnly defaultMenuItemImageMarginGradientEndColor As String = "#F1F1F1"
+
+    ' Specify default MenuBar properties.
+    Friend Shared ReadOnly defaultMenuBarBackColor As String = "Control"
+
+    ' Specify default StatusLabel properties.
+    Friend Shared ReadOnly defaultStatusLabelBackColor As String = "Transparent"
+    Friend Shared ReadOnly defaultStatusLabelForeColor As String = "ControlText"
+    Friend Shared ReadOnly defaultStatusLabelBorderSides As String = "None"
+    Friend Shared ReadOnly defaultStatusLabelBorderStyle As String = "Flat"
+
+    ' Specify default theme info properties.
+    Friend Shared ReadOnly defaultThemeTitle As String = "(No title specified)"
+    Friend Shared ReadOnly defaultThemeDescription As String = "(No description specified)"
+    Friend Shared ReadOnly defaultThemeAuthor As String = "(No author specified)"
+    Friend Shared ReadOnly defaultThemeVersion As String = "(No version specified)"
+#End Region
 End Class

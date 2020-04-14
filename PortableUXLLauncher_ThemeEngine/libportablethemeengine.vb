@@ -236,14 +236,14 @@ Public Class themeenginemain
                     If menuitem.Owner Is menustrip Then
                         ' If the owner of the menuitem is the menustrip,
                         ' theme it to match the menustrip.
-                        Debug.WriteLine(menuitem.Name)
+                        'Debug.WriteLine(menuitem.Name)
                         menuitem.BackColor = ThemeProperties.colorMenubarBackColor
                         menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
                         'Else
                         ' Now we look in each menu and theme them appropriately.
                         ' Otherwise, theme it as a dropdown since its
                         ' owner isn't the menustrip.
-                        Debug.WriteLine(menustrip.Renderer.ToString)
+                        'Debug.WriteLine(menustrip.Renderer.ToString)
                         'For Each dropdownmenu As ToolStripItem In menuitem.DropDownItems
                         'Debug.WriteLine(dropdownmenu.Name)
                         'dropdownmenu.BackColor = ThemeProperties.colorMenuItemBackColor
