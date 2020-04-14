@@ -408,6 +408,17 @@ Public Class TE2DotXLoader
                             ' If it's another property, say it's compatible.
                             Return True
                     End Select
+                Case "Panel"
+                    ' Panels aren't supported before TE1.03.
+                    VersionIntroduced = Version.Parse("1.03")
+                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(VersionIntroduced)
+                        Case 0 ' Theme is compatible with 1.03 exactly, so use it.
+                            Return True
+                        Case 1 ' Theme is compatible with an engine runtime version newer than 1.03, so use it.
+                            Return True
+                        Case -1 ' Theme isn't compatible with 1.03 or newer.
+                            Return False
+                    End Select
                 Case Else
                     ' If it's some other control, say it's compatible.
                     Return True
