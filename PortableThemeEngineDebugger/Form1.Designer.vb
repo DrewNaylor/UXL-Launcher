@@ -31,12 +31,14 @@ Partial Class aaformThemeLoader
         Me.buttonResetColor = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'textboxThemePath
         '
-        Me.textboxThemePath.Location = New System.Drawing.Point(12, 24)
+        Me.textboxThemePath.Location = New System.Drawing.Point(11, 29)
         Me.textboxThemePath.Name = "textboxThemePath"
         Me.textboxThemePath.Size = New System.Drawing.Size(400, 22)
         Me.textboxThemePath.TabIndex = 0
@@ -46,7 +48,7 @@ Partial Class aaformThemeLoader
         'labelPathDescription
         '
         Me.labelPathDescription.AutoSize = True
-        Me.labelPathDescription.Location = New System.Drawing.Point(13, 4)
+        Me.labelPathDescription.Location = New System.Drawing.Point(12, 9)
         Me.labelPathDescription.Name = "labelPathDescription"
         Me.labelPathDescription.Size = New System.Drawing.Size(88, 17)
         Me.labelPathDescription.TabIndex = 1
@@ -54,7 +56,7 @@ Partial Class aaformThemeLoader
         '
         'buttonLoadTheme
         '
-        Me.buttonLoadTheme.Location = New System.Drawing.Point(12, 53)
+        Me.buttonLoadTheme.Location = New System.Drawing.Point(11, 58)
         Me.buttonLoadTheme.Name = "buttonLoadTheme"
         Me.buttonLoadTheme.Size = New System.Drawing.Size(113, 32)
         Me.buttonLoadTheme.TabIndex = 2
@@ -64,7 +66,7 @@ Partial Class aaformThemeLoader
         'labelColorTester
         '
         Me.labelColorTester.AutoSize = True
-        Me.labelColorTester.Location = New System.Drawing.Point(12, 92)
+        Me.labelColorTester.Location = New System.Drawing.Point(11, 97)
         Me.labelColorTester.Name = "labelColorTester"
         Me.labelColorTester.Size = New System.Drawing.Size(85, 17)
         Me.labelColorTester.TabIndex = 3
@@ -72,7 +74,7 @@ Partial Class aaformThemeLoader
         '
         'textboxColorTester
         '
-        Me.textboxColorTester.Location = New System.Drawing.Point(12, 113)
+        Me.textboxColorTester.Location = New System.Drawing.Point(11, 118)
         Me.textboxColorTester.Name = "textboxColorTester"
         Me.textboxColorTester.Size = New System.Drawing.Size(400, 22)
         Me.textboxColorTester.TabIndex = 4
@@ -80,7 +82,7 @@ Partial Class aaformThemeLoader
         'buttonSetColor
         '
         Me.buttonSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.buttonSetColor.Location = New System.Drawing.Point(12, 142)
+        Me.buttonSetColor.Location = New System.Drawing.Point(11, 147)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
         Me.buttonSetColor.TabIndex = 5
@@ -89,7 +91,7 @@ Partial Class aaformThemeLoader
         '
         'buttonResetColor
         '
-        Me.buttonResetColor.Location = New System.Drawing.Point(157, 142)
+        Me.buttonResetColor.Location = New System.Drawing.Point(156, 147)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(108, 30)
         Me.buttonResetColor.TabIndex = 6
@@ -112,23 +114,34 @@ Partial Class aaformThemeLoader
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(153, 20)
         Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.labelPathDescription)
+        Me.Panel1.Controls.Add(Me.textboxThemePath)
+        Me.Panel1.Controls.Add(Me.buttonResetColor)
+        Me.Panel1.Controls.Add(Me.buttonLoadTheme)
+        Me.Panel1.Controls.Add(Me.buttonSetColor)
+        Me.Panel1.Controls.Add(Me.labelColorTester)
+        Me.Panel1.Controls.Add(Me.textboxColorTester)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(424, 201)
+        Me.Panel1.TabIndex = 8
+        '
         'aaformThemeLoader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.ClientSize = New System.Drawing.Size(424, 226)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.buttonResetColor)
-        Me.Controls.Add(Me.buttonSetColor)
-        Me.Controls.Add(Me.textboxColorTester)
-        Me.Controls.Add(Me.labelColorTester)
-        Me.Controls.Add(Me.buttonLoadTheme)
-        Me.Controls.Add(Me.labelPathDescription)
-        Me.Controls.Add(Me.textboxThemePath)
         Me.Name = "aaformThemeLoader"
         Me.Text = "Form1"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -143,4 +156,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents buttonResetColor As Button
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
+    Friend WithEvents Panel1 As Panel
 End Class
