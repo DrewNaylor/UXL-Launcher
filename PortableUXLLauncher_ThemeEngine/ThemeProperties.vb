@@ -37,6 +37,8 @@ Public Class ThemeProperties
     Private Shared _themeengineUseSafeColorValidation As Boolean = True
     ' Enabling TE1.x full compatibility mode causes forms not named "aaformMainWindow"
     ' to not be themed if the theme file doesn't support TE1.03 or greater.
+    ' Other TE1.x-related features that UXL Launcher relied on will also be enabled,
+    ' but as of April 14, 2020, this is the only one.
     ' This is to allow TE2.x to eventually replace TE1.x in UXL Launcher.
     ' Please don't enable this unless you absolutely have to.
     Private Shared _themeengineUseTE1DotXFullCompatibilityMode As Boolean = False
