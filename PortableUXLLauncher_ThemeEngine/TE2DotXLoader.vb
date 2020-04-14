@@ -376,7 +376,20 @@ Public Class TE2DotXLoader
                                     Return True
                                 Case 1 ' Theme is compatible with a version newer than 1.01, so use it.
                                     Return True
-                                Case -1 ' Theme isn't compatible with 1.01 or newer (which is impossible, but this is an example.)
+                                Case -1 ' Theme isn't compatible with 1.01 or newer (which is impossible, but this is an example).
+                                    Return False
+                            End Select
+                        Case "FlatAppearance/MouseDownBackColor"
+                            ' Check if the theme engine runtime version the theme
+                            ' wants to use supports Button FlatAppearance MouseDownBackColor.
+                            VersionIntroduced = Version.Parse("1.03")
+                            Select Case VersionIntroduced.CompareTo(ThemeProperties.themeSheetEngineRuntimeVersion)
+                                Case 0 ' Theme is compatible with 1.03 exactly, so use it.
+                                    Return True
+                                Case 1 ' Theme is compatible with an engine runtime version newer than 1.03, so use it.
+                                    Return True
+                                Case -1 ' Theme isn't compatible with 1.03 or newer.
+                                    Return False
                             End Select
                     End Select
             End Select
