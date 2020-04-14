@@ -680,9 +680,9 @@ Public Class ThemeProperties
     Friend Shared ReadOnly defaultButtonBackColor As String = "Transparent"
     Friend Shared ReadOnly defaultButtonForeColor As String = "ControlText"
     Friend Shared ReadOnly defaultButtonFlatStyle As String = "Standard"
-    Friend Shared ReadOnly defaultButtonFlatAppearanceBorderColor As String = "Nothing"
-    Friend Shared ReadOnly defaultButtonFlatAppearanceMouseDownBackColor As String = "Nothing"
-    Friend Shared ReadOnly defaultButtonFlatAppearanceMouseOverBackColor As String = "Nothing"
+    Friend Shared ReadOnly defaultButtonFlatAppearanceBorderColor As String = "LiteralNothing"
+    Friend Shared ReadOnly defaultButtonFlatAppearanceMouseDownBackColor As String = "LiteralNothing"
+    Friend Shared ReadOnly defaultButtonFlatAppearanceMouseOverBackColor As String = "LiteralNothing"
 
     ' Specify default CheckBox properties.
     Friend Shared ReadOnly defaultCheckboxBackColor As String = "Transparent"
@@ -706,7 +706,7 @@ Public Class ThemeProperties
     ' Nothing as the default, while themes
     ' targeting 1.01 or 1.02 get Control as
     ' the default.
-    Friend Shared ReadOnly defaultStatusBar1Dot03BackColor As String = "Nothing"
+    Friend Shared ReadOnly defaultStatusBar1Dot03BackColor As String = "LiteralNothing"
     Friend Shared ReadOnly defaultStatusBarOriginalBackColor As String = "Control"
 
     ' Specify default Label properties.
