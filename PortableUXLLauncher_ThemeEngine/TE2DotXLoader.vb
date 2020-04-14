@@ -717,6 +717,8 @@ Public Class TE2DotXLoader
                     Case "ForeColor"
                         Return defaultTableLayoutPanelForeColor
                     Case "ApplyToAboutWindowAboutTabTLP"
+                        Dim endtime As DateTime = DateTime.Now
+                        Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
                         Return defaultTableLayoutPanelApplyToAboutWindowAboutTabTLP
                 End Select
             Case "TabPage"
@@ -850,8 +852,7 @@ Public Class TE2DotXLoader
         '    End If
         'Next
 
-        Dim endtime As DateTime = DateTime.Now
-        Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
+
     End Function
 
     Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
@@ -886,7 +887,7 @@ Public Class TE2DotXLoader
             Dim Pattern As String = "^#[0-9A-F]{1," & SwitchToHashSymbol.Length & "}$"
             ''MessageBox.Show(Pattern)
             ' Make a new regex with a pattern.
-            Dim RegexWithPattern As System.Text.RegularExpressions.Regex = New System.Text.RegularExpressions.Regex(Pattern)
+            Dim RegexWithPattern As Regex = New Regex(Pattern)
 
             If SwitchToHashSymbol.StartsWith("#") AndAlso RegexWithPattern.IsMatch(SwitchToHashSymbol) = True AndAlso IsHexCodeLengthValid(SwitchToHashSymbol) Then
                 ' If the input color is a valid HTML color,
