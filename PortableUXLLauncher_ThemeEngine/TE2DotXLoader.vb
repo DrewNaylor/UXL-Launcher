@@ -529,7 +529,7 @@ Public Class TE2DotXLoader
         ' Put the theme's color value into a variable for easy access.
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
         ''MessageBox.Show(ColorFromTheme)
-        Dim UseSafeChecker As Boolean = True
+        Dim UseSafeChecker As Boolean = False
         If UseSafeChecker = True Then
             If IsColorValid(ColorFromTheme) Then
                 ' If the color is a valid HTML or system color,
@@ -567,6 +567,8 @@ Public Class TE2DotXLoader
                         ColorTranslator.FromHtml(GetDefaultValue(ControlName, ControlProperty))
                     End If
                 End Try
+            Else
+                Return Nothing
             End If
         End If
     End Function
