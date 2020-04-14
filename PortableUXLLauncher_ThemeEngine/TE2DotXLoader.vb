@@ -307,16 +307,17 @@ Public Class TE2DotXLoader
 
         ' Assign StatusLabel BorderSides property.
         ' Not loading from an attribute so it doesn't get messy.
-            Case "all"
-        Select Case GetPropertySafe("StatusLabel", "BorderSides", False)
+
+        Select Case GetPropertySafe("StatusLabel", "BorderSides", False).ToUpperInvariant
+            Case "ALL"
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.All
-            Case "top"
+            Case "TOP"
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Top
-            Case "left"
+            Case "LEFT"
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Left
-            Case "bottom"
+            Case "BOTTOM"
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Bottom
-            Case "right"
+            Case "RIGHT"
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.Right
             Case Else
                 ThemeProperties.propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
@@ -324,24 +325,24 @@ Public Class TE2DotXLoader
 
         ' Assign StatusLabel BorderStyle property.
         ' Not loading from an attribute so it doesn't get messy.
-        Select Case GetPropertySafe("StatusLabel", "BorderStyle", False).ToLowerInvariant
-            Case "adjust"
+        Select Case GetPropertySafe("StatusLabel", "BorderStyle", False).ToUpperInvariant
+            Case "ADJUST"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Adjust
-            Case "bump"
+            Case "BUMP"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Bump
-            Case "etched"
+            Case "ETCHED"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Etched
-            Case "raised"
+            Case "RAISED"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Raised
-            Case "raisedinner"
+            Case "RAISEDINNER"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.RaisedInner
-            Case "raisedouter"
+            Case "RAISEDOUTER"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.RaisedOuter
-            Case "sunken"
+            Case "SUNKEN"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Sunken
-            Case "sunkeninner"
+            Case "SUNKENINNER"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.SunkenInner
-            Case "sunkenouter"
+            Case "SUNKENOUTER"
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.SunkenOuter
             Case Else
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Flat
