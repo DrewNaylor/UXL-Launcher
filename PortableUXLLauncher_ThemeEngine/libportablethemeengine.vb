@@ -320,10 +320,10 @@ Public Class ThemeEngine
                     ctrl.ForeColor = ThemeProperties.colorTabPageForeColor
                 End If
 
-                'ElseIf TypeOf ctrl Is Panel Then
-                '    ' Panels aren't yet fully supported and this is just a placeholder.
-                '    ctrl.BackColor = colorTableLayoutPanelBackColor
-                '    ctrl.ForeColor = colorTableLayoutPanelForeColor
+            ElseIf TypeOf ctrl Is Panel Then
+                ' Panels aren't yet fully supported and this is just a placeholder.\
+                ctrl.BackColor = ThemeProperties.colorPanelBackColor
+                ctrl.ForeColor = ThemeProperties.colorPanelForeColor
 
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
                 ' Apply dark/light banners in the About window if the theme
