@@ -1,4 +1,26 @@
-﻿Public Class aaformThemeLoader
+﻿'PortableThemeEngineDebugger - Simple application used to test PortableThemeEngine.
+'Copyright (C) 2020 Drew Naylor. Licensed under Gnu GPLv3+.
+'Any companies mentioned own their respective copyrights/trademarks.
+'(Note that the copyright years include the years left out by the hyphen.)
+'
+'This file is part of PortableThemeEngineDebugger.
+'
+'PortableThemeEngineDebugger is free software: you can redistribute it and/or modify
+'it under the terms of the GNU General Public License as published by
+'the Free Software Foundation, either version 3 of the License, or
+'(at your option) any later version.
+'
+'PortableThemeEngineDebugger is distributed in the hope that it will be useful,
+'but WITHOUT ANY WARRANTY; without even the implied warranty of
+'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'GNU General Public License for more details.
+'
+'You should have received a copy of the GNU General Public License
+'along with PortableThemeEngineDebugger.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
         Dim startdate As DateTime = DateTime.Now
         libportablethemeengine.ThemeEngine.LoadTheme(textboxThemePath.Text, Me,)
