@@ -109,6 +109,8 @@ Public Class TE1DotXLoaderShim
                         ThemeProperties.colorButtonForeColor = GetDefaultColor("Button", "ForeColor")
                         ThemeProperties.flatstyleButtonFlatStyle = FlatStyle.Standard
                         ThemeProperties.flatappearanceButtonBorderColor = Nothing
+                        ThemeProperties.flatappearanceButtonMouseDownBackColor = Nothing
+                        ThemeProperties.flatappearanceButtonMouseOverBackColor = Nothing
 
                         ' Default TableLayoutPanel colors.
                         ThemeProperties.colorTableLayoutPanelBackColor = GetDefaultColor("TableLayoutPanel", "BackColor")
@@ -170,7 +172,7 @@ Public Class TE1DotXLoaderShim
 
         ' Now that we're done figuring out what the properties are,
         ' we can put the colors on the controls.
-        ' At this point, the code will go back to themeenginemain.LoadTheme,
+        ' At this point, the code will go back to ThemeEngine.LoadTheme,
         ' so applying colors will have to be done after the comment there
         ' saying that colors can be applied.
 
@@ -181,41 +183,4 @@ Public Class TE1DotXLoaderShim
         ' default colors more easily.
         Return ColorTranslator.FromHtml(TE2DotXLoader.GetDefaultValue(ControlName, ControlProperty))
     End Function
-
-    ' TODO: This file will load in TE1.x themes by assigning
-    ' properties in ThemeProperties to XmlNode.InnerText values, just
-    ' like TE1.x does.
-    '
-    ' How a TE1.x theme is determined is if the theme doesn't
-    ' have an attribute saying what theme engine runtime version it's for.
-    '
-    ' Example: <UseThemeEngineVersion>1.03</UseThemeEngineVersion> in TE1.x
-    ' or <ThemeEngine RuntimeVersion="2.0"> in TE2.x themes; themes lacking
-    ' the TE2.x-style attribute will be assumed to be TE1.x.
-    '
-    ' The determination will be made in the theme loading code, then
-    ' if necessary, it'll be passed here for processing.
-    ' Afterward, it'll go back to the code to change the control colors.
-    '
-    ' The following function can be used to simplify the amount of code
-    ' needed to assign the properties:
-
-    'Private Shared Function NodeReader(inputNode As String, defaultValue As String) As String
-    '    ' Get theme info and return it to the calling code.
-    '    If ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", ThemeProperties.themeNamespaceManager) IsNot Nothing Then
-    '        Return ThemeProperties.themeSheet.SelectSingleNode("/UXL_Launcher_Theme/" & inputNode & "[1]", ThemeProperties.themeNamespaceManager).InnerText
-    '    Else
-    '        Return defaultValue
-    '    End If
-    'End Function
-
-    ' Above code block is copied from the theme editor since it's
-    ' rather useful there.
-
-    ' Example of how to use:
-
-    'ThemeProperties.themecontrolButtonBackColor = NodeReader("Theme_Colors/Button/BackColor", "Transparent")
-
-    ' Modification will likely be required.
-
 End Class

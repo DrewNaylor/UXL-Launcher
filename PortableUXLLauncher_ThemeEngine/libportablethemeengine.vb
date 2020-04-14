@@ -43,24 +43,6 @@ Public Class ThemeEngine
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
-        ' TODO: Optimize the theme engine.
-        ' At the moment, it takes about 60-150 milliseconds to
-        ' apply themes in UXL Launcher using PortableThemeEngine,
-        ' whereas using the built-in theme engine usually takes
-        ' about 60 milliseconds to do the full thing starting at
-        ' aaformMainWindow.themeChooser().
-        ' Please note that only the startup times could be determined
-        ' at the moment, as the Options window saving code hasn't been
-        ' redirected to PortableThemeEngine. Re-applying times
-        ' could be high as well, though they were around 60 milliseconds
-        ' in the PortableThemeEngineDebugger project.
-        ' The theme editor project seems to take around 60-70 ms to load
-        ' on startup, so maybe it's related to being loaded from a DLL.
-        ' Or maybe this library needs optimization, which it probably does.
-        ' One thing that could help would be to see if the theme
-        ' file that's being passed in is the same one as is already in the
-        ' themeSheet.
-
         If isFilename = True AndAlso File.Exists(themeInput) Then
             ' If the theme input is a filename and the path exists,
             ' load it into the theme sheet.
@@ -233,19 +215,6 @@ Public Class ThemeEngine
                         'Debug.WriteLine(menuitem.Name)
                         menuitem.BackColor = ThemeProperties.colorMenubarBackColor
                         menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
-                        'Else
-                        ' Now we look in each menu and theme them appropriately.
-                        ' Otherwise, theme it as a dropdown since its
-                        ' owner isn't the menustrip.
-                        'Debug.WriteLine(menustrip.Renderer.ToString)
-                        'For Each dropdownmenu As ToolStripItem In menuitem.DropDownItems
-                        'Debug.WriteLine(dropdownmenu.Name)
-                        'dropdownmenu.BackColor = ThemeProperties.colorMenuItemBackColor
-                        'dropdownmenu.ForeColor = ThemeProperties.colorMenuItemForeColor
-
-                        'Next
-                        'menuitem.BackColor = ThemeProperties.colorMenuItemBackColor
-                        'menuitem.ForeColor = ThemeProperties.colorMenuItemForeColor
 
                     End If
                 Next

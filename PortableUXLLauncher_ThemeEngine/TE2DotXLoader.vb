@@ -28,25 +28,6 @@ Imports System.Xml
 
 Public Class TE2DotXLoader
 
-    ' TODO: See TE1DotXLoaderShim.vb for a detailed TODO comment.
-    ' The TE2.x theme loader will pull from attributes instead
-    ' of XmlNode.InnerText.
-    ' Some properties may still be pulled from XmlNode.InnerText
-    ' if it makes sense, such as <Title> and <Description>.
-
-    ' Example of how to read attributes:
-
-    'For Each characterNode As XmlNode In xmlFileToSearch.SelectSingleNode("/root/characterCodeSection")
-    '     ' Underscores are replaced with and symbols so that they match how HTML expects
-    '     ' character codes to look. The underscores are necessary for now as XML complains
-    '     ' when they're in the file, so this is a workaround.
-    '     textboxOutput.AppendText(characterNode.Attributes("name").Value.ToString & ": " & characterNode.Attributes("code").Value.Replace("_", "&") & vbCrLf)
-    'Next
-
-    ' Above code copied from HTML Character Code Acquisition Program.
-    ' Will require very different XML node stuff.
-    ' xmlFileToSearch is an XmlDocument, just like the themeSheet.
-
     Friend Shared Function PullNumbersAndDotsRegex(InputVersion As String) As String
         ' Store the theme engine runtime version from the file.
         ' First make sure there are only numbers.
@@ -347,8 +328,6 @@ Public Class TE2DotXLoader
             Case Else
                 ThemeProperties.propertyStatusLabelBorderStyle = Border3DStyle.Flat
         End Select
-
-
     End Sub
 
     Private Shared Function ThemeSupportsFeature(NodeName As String, Optional PropertyToCheck As String = Nothing, Optional CheckCompatibility As Boolean = True) As Boolean
@@ -482,91 +461,6 @@ Public Class TE2DotXLoader
         Else
             Return True
         End If
-
-        '' Only check for compatibility if the feature requests it,
-        '' as this takes a lot of time.
-
-        'If CheckCompatibility = True Then
-
-        '    Dim VersionCompatibilityListSheet As XmlDocument = New XmlDocument()
-        '    Dim NamespaceManager As New XmlNamespaceManager(VersionCompatibilityListSheet.NameTable)
-
-        '    NamespaceManager.AddNamespace("vercompat", "https://drewnaylor.github.io/xml")
-
-        '    VersionCompatibilityListSheet.LoadXml(My.Resources.VersionCompatibility)
-
-        '    For Each FeatureNode As XmlNode In VersionCompatibilityListSheet.SelectSingleNode("/FeatureList")
-        '        ' Check inside each node that specifies one feature.
-        '        ' A feature is defined as something that the theme engine
-        '        ' can use, for example to change the color of something.
-        '        Select Case FeatureNode.NodeType
-        '        ' Check the node type that we're looking at.
-        '            Case XmlNodeType.Element
-        '                ' If the Xml node is an element, we can look in there.
-        '                Select Case FeatureNode.Attributes("For").Value
-        '                    Case NodeName
-        '                        ' If the feature node's "For" attribute matches the NodeName
-        '                        ' that we want to check, see if the "Property" value matches
-        '                        ' the property we want to check.
-        '                        If PropertyToCheck = FeatureNode.Attributes("Property").Value Then
-        '                            ' If the "Property" attribute matches the property we want to check,
-        '                            ' define a version number used for comparison.
-        '                            Dim ver As Version = Version.Parse(FeatureNode.Attributes("VersionIntroduced").Value)
-        '                            ' The version we're defining is the version number stored in the matching
-        '                            ' node's "VersionIntroduced" node.
-        '                            Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-        '                                Case 0 ' Theme works with the same version the feature was introduced in.
-        '                                    'MessageBox.Show("Node name: " & NodeName & vbCrLf &
-        '                                    '"Property name: " & PropertyToCheck & vbCrLf &
-        '                                    '"Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-        '                                    '"First version to have this feature: " & ver.ToString, "Version matches theme file runtime version")
-        '                                    Return True
-        '                                Case 1 ' Theme supports a version that's newer than the version the feature was introduced in.
-        '                                    'MessageBox.Show("Node name: " & NodeName & vbCrLf &
-        '                                    '"Property name: " & PropertyToCheck & vbCrLf &
-        '                                    '"Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-        '                                    '"First version to have this feature: " & ver.ToString, "Theme file runtime version is newer than when the feature was introduced")
-        '                                    Return True
-        '                                Case -1 ' Theme doesn't support the version the feature was introduced in.
-        '                                    'MessageBox.Show("Node name: " & NodeName & vbCrLf &
-        '                                    '"Property name: " & PropertyToCheck & vbCrLf &
-        '                                    '"Version theme file wants to use: " & ThemeProperties.themeSheetEngineRuntimeVersion.ToString & vbCrLf &
-        '                                    '"First version to have this feature: " & ver.ToString, "Theme file runtime version doesn't support feature")
-        '                                    Return False
-        '                            End Select ' Done seeing if the theme file supports a given feature.
-        '                        End If ' Done checking the property value.
-
-        '                    Case Else
-        '                        If FeatureNode.ParentNode.LastChild IsNot Nothing Then
-        '                            ' If we're not at the end of XML file, go to the next
-        '                            ' sibling of the feature node and keep looking.
-        '                            FeatureNode = FeatureNode.NextSibling
-        '                        Else
-        '                            ' Return True if the last child is nothing.
-        '                            Return True
-        '                        End If
-        '                End Select
-        '            Case XmlNodeType.Comment
-        '                If FeatureNode.NextSibling IsNot Nothing Then
-        '                    ' If the XML node is a comment, just move on to the next
-        '                    ' node and check again.
-        '                    FeatureNode = FeatureNode.NextSibling
-        '                Else
-        '                    ' If there is no next node after this, return True
-        '                    ' since it's assumed that the feature is supported.
-        '                    Return True
-        '                End If
-        '            Case Else
-        '                ' If it's another kind of XML node, return True.
-        '                Return True
-        '        End Select
-        '    Next
-        'Else
-        '    ' Feature didn't request a compatibility check,
-        '    ' so assume it's compatible across all versions.
-        '    Return True
-        'End If
-
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
@@ -862,79 +756,6 @@ Public Class TE2DotXLoader
                 ' Check version defaults.
                 Return ThemeProperties.defaultThemeVersion
         End Select
-
-        ''' Define some variables for holding an XML document and a namespace manager.
-        'Dim DefaultValuesVerDiff As XmlDocument = New XmlDocument()
-        'Dim NamespaceManager As New XmlNamespaceManager(DefaultValuesVerDiff.NameTable)
-
-        '' Add namespace.
-        'NamespaceManager.AddNamespace("verdiffdefault", "https://drewnaylor.github.io/xml")
-
-        '' Load in the default values list.
-        'DefaultValuesVerDiff.LoadXml(My.Resources.DefaultValuesVersionDiff)
-
-        'For Each DefaultNode As XmlNode In DefaultValuesVerDiff.SelectSingleNode("/DefaultValuesList")
-
-        '    ' Look at each node in the default values list.
-        '    ' These are the "<Default>" nodes.
-        '    'Debug.WriteLine("DefaultNode attribute For: " & DefaultNode.Attributes("For").Value)
-        '    If NodeName = DefaultNode.Attributes("For").Value AndAlso PropertyToCheck = DefaultNode.Attributes("PropertyName").Value Then
-
-        '        ' If the default node's "For" attribute matches the node we're looking at,
-        '        ' and the property we want to check matching the node's "PropertyName" attribute,
-        '        ' we have the right one, so look at the nodes in that one.
-        '        For Each DiffNode As XmlNode In DefaultNode
-        '            Select Case DiffNode.NodeType
-        '                ' Need to make sure the XML node is an element and not a comment.
-        '                Case XmlNodeType.Element
-        '                    ' Create a version variable that stores the "RuntimeVersion" attribute of
-        '                    ' the current "<Diff>" node.
-        '                    Dim ver As Version = Version.Parse(DiffNode.Attributes("RuntimeVersion").Value)
-
-        '                    ' Compare the theme engine runtime version that the theme it says supports
-        '                    ' to the version number in the "RuntimeVersion" attribute in the current
-        '                    ' "<Diff>" node.
-        '                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(ver)
-        '                        Case 0
-        '                            ' The "RuntimeVersion" matches the version that the theme file says
-        '                            ' it works with. Return this value.
-
-        '                            Return DiffNode.Attributes("Value").Value
-        '                        Case 1
-        '                            ' The "RuntimeVersion" is older than the version of the theme engine
-        '                            ' that the theme file says it works with. Return this value.
-
-        '                            Return DiffNode.Attributes("Value").Value
-        '                        Case -1
-        '                            ' The "RuntimeVersion" is newer than the version the theme engine works with.
-        '                            ' Go to the next node and try again.
-        '                            ' Theme doesn't support the version the feature was introduced in.
-        '                            DiffNode = DiffNode.NextSibling
-        '                    End Select
-
-        '                Case XmlNodeType.Comment
-        '                    ' If the XML node is a comment, go to the next <Diff> node.
-        '                    If DiffNode.NextSibling IsNot Nothing Then
-        '                        DiffNode = DiffNode.NextSibling
-        '                    End If
-        '                Case Else
-        '                    ' Go to the next node.
-        '                    If DiffNode.NextSibling IsNot Nothing Then
-        '                        DiffNode = DiffNode.NextSibling
-        '                    End If
-        '            End Select
-        '        Next ' Read next "<Diff>" node.
-        '    Else
-        '        'Debug.WriteLine("NodeName: " & NodeName)
-        '        'Debug.WriteLine("PropertyToCheck: " & PropertyToCheck)
-        '        ' If it doesn't match, go to the next node and try again.
-        '        'Dim endtime As DateTime = DateTime.Now
-        '        'Debug.WriteLine("Default value grabber took " & (endtime - starttime).Milliseconds & " ms to run.")
-        '        DefaultNode = DefaultNode.NextSibling
-        '    End If
-        'Next
-
-
     End Function
 
     Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
@@ -1004,15 +825,10 @@ Public Class TE2DotXLoader
         Dim RootPrefix As String = "/UXL_Launcher_Theme/"
 
         ' Make sure the theme supports this feature.
-        ''MessageBox.Show("DesiredNode: " & DesiredNode & vbCrLf &
-        '                "NodeAttribute: " & NodeAttribute)
         ' This is only checked if the feature requests compatibility checking
-        ' as this is a rather expensive operation.
-        'Dim starttime As DateTime = DateTime.Now
+        ' as this is a rather expensive operation. Or it was, when it was using
+        ' XML files.
         If ThemeSupportsFeature(DesiredNode, NodeAttribute, CheckCompatibility) = True Then
-            'Dim endtime As DateTime = DateTime.Now
-            'Debug.WriteLine("Compatibility checker took " & (endtime - starttime).Milliseconds & " ms to run.")
-
             If LoadFromAttribute = True AndAlso UseThemeColorPrefix = True Then
                 ' If the theme wants to load the property from an attribute, do so.
                 ' This is typically the case with themes that support TE2.x,
@@ -1039,10 +855,6 @@ Public Class TE2DotXLoader
     End Function
 
     Private Shared Function GetAttribute(NodePath As String, NodeName As String, AttributeName As String) As String
-        ' TODO: Check to make sure the requested attribute is supported in
-        ' the version of the theme engine the theme is requesting to use.
-        ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
-
         If ThemeProperties.themeSheet.SelectSingleNode(NodePath, ThemeProperties.themeNamespaceManager) IsNot Nothing Then
             ' If the node exists, store it in a variable to make the code easier to read.
             Dim FullNodePath As XmlNode = ThemeProperties.themeSheet.SelectSingleNode(NodePath, ThemeProperties.themeNamespaceManager)
@@ -1062,10 +874,6 @@ Public Class TE2DotXLoader
     End Function
 
     Private Shared Function GetInnerText(NodePath As String, NodeName As String, NodeAttribute As String) As String
-        ' TODO: Check to make sure the requested node innertext is supported in
-        ' the version of the theme engine the theme is requesting to use.
-        ' See also https://github.com/DrewNaylor/UXL-Launcher/issues/170
-
         ' Create a variable to store a forward slash char
         ' for trimming from the end of the node just in
         ' case one somehow ended up there, such as if
