@@ -35,6 +35,10 @@ Public Class ThemeProperties
     ' which relies on an exception handler to make sure colors are valid like TE1.x.
     ' See more details in TE2DotXLoader.GetThemeColor.
     Private Shared _themeengineUseSafeColorValidation As Boolean = True
+    ' Enabling TE1.x full compatibility mode causes forms not named "aaformMainWindow"
+    ' to not be themed if the theme file doesn't support TE1.03 or greater.
+    ' This is to allow TE2.x to eventually replace TE1.x in UXL Launcher.
+    ' Please don't enable this unless you absolutely have to.
     Private Shared _themeengineUseTE1DotXFullCompatibilityMode As Boolean = False
 
     ' Define a variable to store the theme sheet.
