@@ -37,11 +37,16 @@ Public Class ThemeProperties
     Private Shared _themeengineUseSafeColorValidation As Boolean = True
     ' Enabling TE1.x full compatibility mode causes forms not named "aaformMainWindow"
     ' to not be themed if the theme file doesn't support TE1.03 or greater.
+    ' Default colors will be applied to forms of other names.
     ' Other TE1.x-related features that UXL Launcher relied on will also be enabled,
     ' but as of April 14, 2020, this is the only one.
     ' This is to allow TE2.x to eventually replace TE1.x in UXL Launcher.
     ' Please don't enable this unless you absolutely have to.
-    Private Shared _themeengineUseTE1DotXFullCompatibilityMode As Boolean = False
+    ' The default is loose compatibility mode.
+    ' Loose compatibility mode will have theme colors
+    ' applied to any forms passed into the TE1.x shim and is what's
+    ' recommended for most applications.
+    Private Shared _compatibilityUseFullTE1DotXCompatibilityMode As Boolean = False
 
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
@@ -58,20 +63,6 @@ Public Class ThemeProperties
     ' Version variable to store theme engine runtime version the theme
     ' says it works with.
     Private Shared _themeSheetEngineRuntimeVersion As Version
-
-    ' Variable to store whether the TE1.x shim should operate in
-    ' full compatibility mode or loose compatibility mode.
-    ' This variable is set by the calling application when loading
-    ' a theme, and defaults to loose compatibility mode.
-    ' Full compatibility mode is basically "UXL Launcher Mode,"
-    ' where themes that don't support applying to forms other
-    ' than a form whose name is "aaformMainWindow" won't apply to
-    ' other forms, and instead will apply the default colors to
-    ' forms of other names.
-    ' Loose compatibility mode will have theme colors
-    ' applied to any forms passed into the shim and is what's
-    ' recommended for most applications.
-    Private Shared _compatibilityUseFullTE1DotXCompatibilityMode As Boolean = False
 
 
     ' Variable to store the theme filename in.
@@ -148,6 +139,28 @@ Public Class ThemeProperties
     ' Other statusbar label properties
     Private Shared _propertyStatusLabelBorderSides As ToolStripStatusLabelBorderSides
     Private Shared _propertyStatusLabelBorderStyle As Border3DStyle
+#End Region
+
+#Region "Theme engine properties that can be set from the calling app."
+    ' Safe color validation.
+    Public Shared Property themeengineUseSafeColorValidation() As Boolean
+        Get
+            Return _themeengineUseSafeColorValidation
+        End Get
+        Set(value As Boolean)
+            _themeengineUseSafeColorValidation = value
+        End Set
+    End Property
+
+    ' Whether to use full or loose compatibility mode for the TE1.x shim.
+    Public Shared Property compatibilityUseFullTE1DotXCompatibilityMode() As Boolean
+        Get
+            Return _compatibilityUseFullTE1DotXCompatibilityMode
+        End Get
+        Set(value As Boolean)
+            _compatibilityUseFullTE1DotXCompatibilityMode = value
+        End Set
+    End Property
 #End Region
 
 #Region "Theme properties."
@@ -235,18 +248,6 @@ Public Class ThemeProperties
             _themeSheetEngineRuntimeVersion = value
         End Set
     End Property
-
-    ' Whether to use full or loose compatibility mode for the TE1.x shim.
-    Friend Shared Property compatibilityUseFullTE1DotXCompatibilityMode() As Boolean
-        Get
-            Return _compatibilityUseFullTE1DotXCompatibilityMode
-        End Get
-        Set(value As Boolean)
-            _compatibilityUseFullTE1DotXCompatibilityMode = value
-        End Set
-    End Property
-
-
 #End Region
 
 #Region "Theme controls."

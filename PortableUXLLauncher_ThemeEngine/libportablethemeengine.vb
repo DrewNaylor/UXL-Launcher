@@ -38,16 +38,10 @@ Public Class ThemeEngine
     Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
 
 
-    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional isFilename As Boolean = True, Optional UseTE1DotXFullCompatibilityMode As Boolean = False)
+    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional isFilename As Boolean = True)
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
-
-        ' Set compatibility mode.
-        ' If it's False, loose compatibility mode will
-        ' be used when loading TE1.x themes, and if
-        ' it's True, full compatibility mode will be used.
-        ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = UseTE1DotXFullCompatibilityMode
 
         ' TODO: Optimize the theme engine.
         ' At the moment, it takes about 60-150 milliseconds to
