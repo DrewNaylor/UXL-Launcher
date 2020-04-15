@@ -397,6 +397,12 @@ Public Class ThemeEngine
     '#Region "Start the theme engine and apply the user's theme."
     '    Public Shared Sub themeEngine_ChooseUserTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer, Optional customThemePath As String = "", Optional allowCustomThemes As Boolean = True)
 
+    ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources,
+    ' another sub to allow loading in from a file on the hard drive or over the Internet,
+    ' and make this sub select from the built-in themes based on the theme name
+    ' passed into it, just like UXL Launcher Theme Engine currently does.
+
+
     '        ' This documentation page helped a lot for getting this working:
     '        ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
 
