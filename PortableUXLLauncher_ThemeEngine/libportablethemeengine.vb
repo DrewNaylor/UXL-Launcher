@@ -740,6 +740,12 @@ Public Class ThemeEngine
     '    End Sub
 
     '#Region "Get theme file info."
+
+    ' TODO: Get this function working again for apps that may want to use it,
+    ' but make it so that the calling app can choose whether to get one thing,
+    ' or to get everything. Getting everything is done by not specifying
+    ' a node to get info from.
+
     '    ' This code is based on this issue in the
     '    ' GitHub repository:
     '    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
