@@ -47,6 +47,9 @@ Public Class ThemeProperties
     ' applied to any forms passed into the TE1.x shim and is what's
     ' recommended for most applications.
     Private Shared _compatibilityUseFullTE1DotXCompatibilityMode As Boolean = False
+    ' Determine whether theme engine output is shown in the Immediate Window.
+    ' This can be set by the calling application.
+    Private Shared _debugmodeShowThemeEngineOutput As Boolean = False
 
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
@@ -159,6 +162,17 @@ Public Class ThemeProperties
         End Get
         Set(value As Boolean)
             _compatibilityUseFullTE1DotXCompatibilityMode = value
+        End Set
+    End Property
+
+    ' Determine whether theme engine output is shown in the Immediate Window.
+    ' This can be set by the calling application.
+    Public Shared Property debugmodeShowThemeEngineOutput() As Boolean
+        Get
+            Return _debugmodeShowThemeEngineOutput
+        End Get
+        Set(value As Boolean)
+            _debugmodeShowThemeEngineOutput = value
         End Set
     End Property
 #End Region
