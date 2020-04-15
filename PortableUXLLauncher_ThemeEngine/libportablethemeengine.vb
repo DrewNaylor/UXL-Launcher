@@ -242,7 +242,23 @@ Public Class ThemeEngine
             ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
-                ctrl.BackColor = ThemeProperties.colorTextboxBackColor
+                ' Make sure it's not a transparent color.
+                If Not ThemeProperties.colorTextboxBackColor = Color.Transparent Then
+                    ' Have a Try...Catch block to make sure we don't miss anything.
+                    Try
+                        ctrl.BackColor = ThemeProperties.colorTextboxBackColor
+                    Catch ex As System.ArgumentException
+                        ' Set the textbox to the default textbox backcolor.
+                        ctrl.BackColor = ColorTranslator.FromHtml(ThemeProperties.defaultTextBoxBackColor)
+                        ' Send an error to the theme engine output thing.
+                        themeSettingsInvalidMessage("System.ArgumentException", "Textboxes do not support transparent background colors.")
+                    End Try
+                Else
+                    ' If it's a transparent color, use the default property.
+                    ctrl.BackColor = ColorTranslator.FromHtml(ThemeProperties.defaultTextBoxBackColor)
+                    ' Output an error to the theme engine output code thing.
+                    themeSettingsInvalidMessage("System.ArgumentException", "Textboxes do not support transparent background colors.")
+                End If
                 ' Set textbox ForeColor (text color).
                 ctrl.ForeColor = ThemeProperties.colorTextboxForeColor
 
@@ -486,7 +502,7 @@ Public Class ThemeEngine
     '#End Region
 
 #Region "Theme Settings Invalid Message output code."
-    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)", Optional themeName As String = "(Not provided)", Optional customThemePath As String = "Not provided")
+    Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)", Optional themeName As String = "(Not provided)", Optional customThemePath As String = "Not provided", Optional ForceOutput As Boolean = False)
         ' Tell the user, developer, or theme designer that there's a problem with the
         ' chosen theme or custom theme. This can range from not having a root element
         ' in the chosen theme to typing the theme incorrectly in the config file.
@@ -494,7 +510,7 @@ Public Class ThemeEngine
         ' This sub accepts parameters for choosing which exceptionType message to show.
 
 
-        If enableDebugOutput = True Then
+        If ThemeProperties.debugmodeShowThemeEngineOutput = True Or ForceOutput = True Then
             ' First, identify this block of text as part of the theme engine
             ' and that it's output for invalid theme settings.
 
