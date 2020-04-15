@@ -401,6 +401,7 @@ Public Class ThemeEngine
     ' another sub to allow loading in from a file on the hard drive or over the Internet,
     ' and make this sub select from the built-in themes based on the theme name
     ' passed into it, just like UXL Launcher Theme Engine currently does.
+    ' Remember to pay attention to whether the calling app wants to allow custom themes or not.
     ' TODO eventually since it could be more difficult:
     ' Additionally, allow the calling app to choose whether it loads from a \Themes folder
     ' located right by the calling app, or have it look in a specific folder.

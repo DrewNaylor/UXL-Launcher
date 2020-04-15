@@ -50,6 +50,8 @@ Public Class ThemeProperties
     ' Determine whether theme engine output is shown in the Immediate Window.
     ' This can be set by the calling application.
     Private Shared _debugmodeShowThemeEngineOutput As Boolean = False
+    ' Whether custom themes are allowed by the calling app.
+    Private Shared _themeengineAllowCustomThemes As Boolean = True
 
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
@@ -173,6 +175,17 @@ Public Class ThemeProperties
         End Get
         Set(value As Boolean)
             _debugmodeShowThemeEngineOutput = value
+        End Set
+    End Property
+
+    ' Determine whether custom themes are allowed to be loaded.
+    ' This is set by the calling app.
+    Public Shared Property themeengineAllowCustomThemes() As Boolean
+        Get
+            Return _themeengineAllowCustomThemes
+        End Get
+        Set(value As Boolean)
+            _themeengineAllowCustomThemes = value
         End Set
     End Property
 #End Region
