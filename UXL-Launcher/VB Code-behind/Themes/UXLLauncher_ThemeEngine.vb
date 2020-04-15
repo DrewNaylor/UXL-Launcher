@@ -1148,7 +1148,22 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
-                ctrl.BackColor = colorTextboxBackColor
+                ' Make sure textboxes aren't trying to have Transparent
+                ' colors applied to them
+                If Not colorTextboxBackColor = Color.Transparent Then
+                    Try
+                        ' Have a Try...Catch block to prevent any other issues from showing up, too.
+                        ctrl.BackColor = colorTextboxBackColor
+                    Catch ex As System.ArgumentException
+                        ' If some other exception happens, catch it.
+                        ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                    End Try
+                Else
+                    ' If it is, set it to the default and output an error message.
+                    ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                    themeSettingsInvalidMessage("System.ArgumentException", "Textboxes do not support transparent background colors.")
+                End If
                 ' Set textbox ForeColor (text color).
                 ctrl.ForeColor = colorTextboxForeColor
 
@@ -1440,6 +1455,23 @@ Public Class UXLLauncher_ThemeEngine
                             "theme name specified for My.Settings.userChosenTheme doesn't" & vbCrLf &
                             "match any theme files in My.Resources." & vbCrLf &
                             "Please refer to the exception message above for more details.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "System.ArgumentException" Then
+                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+                ' a theme file in My.Resources, give a message for this problem.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("The TextBox BackColor property doesn't support the specified color.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
