@@ -124,8 +124,28 @@ Public Class ThemeEngine
                 ' ("Nothing" is the default value based on my testing).
                 ' Using "Transparent" causes a System.NotSupportedException
                 ' exception, so add a try...catch block and explain in the debug output.
+                ' Actually, we're using an If statement to make sure it's not Transparent,
+                ' but we're also keeping the Try...Catch block just in case there's
+                ' another color that's not supported.
                 Try
-                    button.FlatAppearance.BorderColor = ThemeProperties.flatappearanceButtonBorderColor
+                    ' If the button border color is not Transparent, set it.
+                    ' This avoids hitting the NotSupportedException,
+                    ' but it's still staying there just in case something
+                    ' else isn't a supported color.
+                    If Not ThemeProperties.flatappearanceButtonBorderColor = Color.Transparent Then
+                        button.FlatAppearance.BorderColor = ThemeProperties.flatappearanceButtonBorderColor
+                    Else
+                        ' Set the border color to the default.
+                        ' If it's not set, it just uses the current
+                        ' color, and that could be confusing to theme
+                        ' designers. Resetting to Nothing is only
+                        ' done if the theme supports TE1.02 or greater.
+                        If ThemeProperties.themeSheetEngineRuntimeVersion >= Version.Parse("1.02") Then
+                            button.FlatAppearance.BorderColor = Nothing
+                        End If
+                        themeSettingsInvalidMessage("System.NotSupportedException", "Buttons don't support a FlatAppearance" &
+                                                    " BorderColor of Transparent.")
+                    End If
                 Catch ex As System.NotSupportedException
                     ' If the engine runtime version element in the theme is
                     ' set to 1.02 or greater, also set bordercolor
