@@ -251,7 +251,7 @@ Public Class ThemeEngine
                         ' Set the textbox to the default textbox backcolor.
                         ctrl.BackColor = ColorTranslator.FromHtml(ThemeProperties.defaultTextBoxBackColor)
                         ' Send an error to the theme engine output thing.
-                        themeSettingsInvalidMessage("System.ArgumentException", "Textboxes do not support transparent background colors.")
+                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
                     End Try
                 Else
                     ' If it's a transparent color, use the default property.
@@ -606,6 +606,23 @@ Public Class ThemeEngine
                             "theme name specified for themeName doesn't" & vbCrLf &
                             "match any theme files in My.Resources." & vbCrLf &
                             "Please refer to the exception message above for more details.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & themeName)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If themeName = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
+            ElseIf exceptionType.ToString = "System.ArgumentException" Then
+                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+                ' a theme file in My.Resources, give a message for this problem.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("The TextBox BackColor property doesn't support the specified color.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & themeName)
                 ' Only show custom theme path if the chosen theme is "(Custom)"
