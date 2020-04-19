@@ -395,10 +395,20 @@ Public Class ThemeEngine
     '#End Region
 
     '#Region "Start the theme engine and apply the user's theme."
-    '    Public Shared Sub themeEngine_ChooseUserTheme(themeName As String, formToApplyTo As Form, toolstripProRenderer As uxlProToolstripRenderer, Optional customThemePath As String = "", Optional allowCustomThemes As Boolean = True)
+    '    Public Shared Sub SelectBuiltinTheme(themeName As String, formToApplyTo As Form, Optional customThemePath As String = "")
 
-    ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources,
-    ' another sub to allow loading in from a file on the hard drive or over the Internet,
+    ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources
+    ' (might already be done with the LoadTheme() sub),
+    ' another sub to allow loading in from a file on the hard drive or over the Internet
+    ' (again, might already be done with the LoadTheme() sub, except it may be
+    ' useful to allow the calling app to specify a folder to look for themes in and a theme
+    ' filename; for example, a "\Themes" dir in the app's installation directory
+    ' that has theme files that are loaded into a list the user can select from
+    ' in the app's Options window; this "\Themes" dir should be set by the calling app
+    ' as it could allow themes to be used from near the install dir, or from an AppData folder;
+    ' this sub could be called "LoadFromThemesDir()" or something, with the args being
+    ' LoadFromThemesDir(ThemeFilename As String, ThemesDir As String, FormToApplyTo As Form,
+    ' FormToApplyToDOTcomponents As System.ComponentCollection)),
     ' and make this sub select from the built-in themes based on the theme name
     ' passed into it, just like UXL Launcher Theme Engine currently does.
     ' Remember to pay attention to whether the calling app wants to allow custom themes or not.
