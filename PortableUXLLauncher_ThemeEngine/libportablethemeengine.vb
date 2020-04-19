@@ -413,8 +413,8 @@ Public Class ThemeEngine
     ' passed into it, just like UXL Launcher Theme Engine currently does.
     ' Remember to pay attention to whether the calling app wants to allow custom themes or not.
     ' TODO eventually since it could be more difficult:
-    ' Additionally, allow the calling app to choose whether it loads from a \Themes folder
-    ' located right by the calling app, or have it look in a specific folder.
+    ' The custom themes folder idea above might be more difficult, so it would be a good idea to 
+    ' maybe wait until PortableThemeEngine is at feature parity with the UXL Launcher Theme Engine.
 
 
     '        ' This documentation page helped a lot for getting this working:
