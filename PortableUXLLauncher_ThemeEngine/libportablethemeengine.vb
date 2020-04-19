@@ -395,7 +395,7 @@ Public Class ThemeEngine
     '#End Region
 
     '#Region "Start the theme engine and apply the user's theme."
-    '    Public Shared Sub SelectBuiltinTheme(themeName As String, formToApplyTo As Form, Optional customThemePath As String = "")
+    '    Public Shared Sub SelectBuiltinTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As System.ComponentCollection = Nothing, Optional CustomThemePath As String = "")
 
     ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources
     ' (might already be done with the LoadTheme() sub),
