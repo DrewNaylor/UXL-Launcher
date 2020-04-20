@@ -805,7 +805,7 @@ Public Class ThemeEngine
                 ' If custom themes aren't allowed, let the user know.
                 LocalThemeInfoDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
                                        " This may be due to data protection policies put in place by your organization." &
-                                       " If you believe you've received this message in error and you're using UXL Launcher, you can try to modify the" &
+                                       " If you believe you've received this message in error and you're using UXL Launcher, you can either re-install it, or try to modify the" &
                                        " configuration files for UXL Launcher located in this folder:" & vbCrLf &
                                        My.Application.Info.DirectoryPath & vbCrLf & vbCrLf &
                                        "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," &
