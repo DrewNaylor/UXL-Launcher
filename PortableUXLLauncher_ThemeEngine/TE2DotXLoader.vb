@@ -26,7 +26,7 @@ Imports System.Text.RegularExpressions
 Imports System.Windows.Forms
 Imports System.Xml
 
-Public Class TE2DotXLoader
+Friend Class TE2DotXLoader
 
     Friend Shared Function PullNumbersAndDotsRegex(InputVersion As String) As String
         ' Store the theme engine runtime version from the file.

@@ -57,7 +57,7 @@ Public Class ThemeEngine
         ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
     End Sub
 
-    Public Shared Sub ApplyTheme(ThemeName As String, FormToApplyTo As Form, FormToApplyToDOTcomponents As IContainer)
+    Friend Shared Sub ApplyTheme(ThemeName As String, FormToApplyTo As Form, FormToApplyToDOTcomponents As IContainer)
 
         '#Region "Set colors for controls."
 
