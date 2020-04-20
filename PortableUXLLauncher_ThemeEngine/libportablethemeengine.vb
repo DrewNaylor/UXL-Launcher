@@ -829,10 +829,11 @@ Public Class ThemeEngine
                 If themeFile.EndsWith("Theme") Then
                     ' If the input ends with "Theme", append "_XML" to it.
                     LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "_XML"))
+                ElseIf themeFile.EndsWith("Theme_XML") Then
+                    ' If it ends with "Theme_XML", just use it.
+                    LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile))
                 Else
-                    ' If it doesn't end with "Theme", append "Theme_XML" to it.
-                    ' Might be a good idea to add a case for if it ends with "_XML"
-                    ' as well, but not quite yet.
+                    ' If it doesn't end with "Theme" or "Theme_XML", append "Theme_XML" to it.
                     LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "Theme_XML"))
                 End If
             Catch ex As System.Xml.XmlException
