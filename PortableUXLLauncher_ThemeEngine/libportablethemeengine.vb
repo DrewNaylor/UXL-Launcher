@@ -904,32 +904,51 @@ Public Class ThemeEngine
 
 #Region "Pull UseThemeEngineVersion element from XML."
         ' Use the new TE2.x attribute if it exists.
-        Dim TE2xEngineRuntimeVersionNode As XmlNode = LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine")
+        Dim TE2xEngineRuntimeVersionNode As XmlNode = LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine", LocalThemeInfoNamespaceManager)
+        ' If the node exists, check the attributes.
         If TE2xEngineRuntimeVersionNode IsNot Nothing Then
-
-        End If
-
-        ' Only pull the UseThemeEngineVersion element from XML if it exists.
-        If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
-            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
-            ' Make a temporary version variable.
-            Dim tempVer As Version = Version.Parse(LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager).InnerText)
-            Select Case tempVer.CompareTo(Version.Parse("1.01"))
-                Case 0
-                    ' If the theme file says to use 1.01, use 1.01.
-                    LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
-                Case 1
-                    ' If the theme file says to use a newer version, use it.
-                    LocalThemeInfoUseThemeEngineVersion = tempVer
-                Case -1
-                    ' If the theme says to use an older version, use 1.01 instead.
-                    LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
-            End Select
+            ' If the RuntimeVersion attribute exists, check what it has in it.
+            If TE2xEngineRuntimeVersionNode.Attributes("RuntimeVersion") IsNot Nothing Then
+                ' Make a temporary version variable to compare to what's in the file.
+                Dim tempVer As Version = Version.Parse(TE2xEngineRuntimeVersionNode.Attributes("RuntimeVersion").Value)
+                Select Case tempVer.CompareTo(Version.Parse("1.01"))
+                    Case 0
+                        ' If the theme file says to use 1.01, use 1.01.
+                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                    Case 1
+                        ' If the theme file says to use a newer version, use it.
+                        LocalThemeInfoUseThemeEngineVersion = tempVer
+                    Case -1
+                        ' If the theme says to use an older version, use 1.01 instead.
+                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                End Select
+            Else
+                ' If it is Nothing, set the version number to be 1.01.
+                LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+            End If
         Else
-            ' If the theme engine runtime version thing doesn't exist, use 1.01.
-            LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
-            ' TODO: Allow for TE2.x theme engine runtime info attribute usage.
+            ' Only pull the UseThemeEngineVersion element from XML if it exists.
+            If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
+                ' Make a temporary version variable to compare to what's in the file.
+                Dim tempVer As Version = Version.Parse(LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager).InnerText)
+                Select Case tempVer.CompareTo(Version.Parse("1.01"))
+                    Case 0
+                        ' If the theme file says to use 1.01, use 1.01.
+                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                    Case 1
+                        ' If the theme file says to use a newer version, use it.
+                        LocalThemeInfoUseThemeEngineVersion = tempVer
+                    Case -1
+                        ' If the theme says to use an older version, use 1.01 instead.
+                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                End Select
+            Else
+                ' If the theme engine runtime version thing doesn't exist, use 1.01.
+                LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+            End If
         End If
+
+
 #End Region
 #End Region
 
