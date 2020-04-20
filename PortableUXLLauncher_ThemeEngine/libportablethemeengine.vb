@@ -395,129 +395,129 @@ Public Class ThemeEngine
     '#End Region
 
     '#Region "Start the theme engine and apply the user's theme."
-    '    Public Shared Sub SelectBuiltinTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional CustomThemePath As String = "")
+    Public Shared Sub SelectBuiltinTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional CustomThemePath As String = "")
 
-    ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources
-    ' (might already be done with the LoadTheme() sub),
-    ' another sub to allow loading in from a file on the hard drive or over the Internet
-    ' (again, might already be done with the LoadTheme() sub, except it may be
-    ' useful to allow the calling app to specify a folder to look for themes in and a theme
-    ' filename; for example, a "\Themes" dir in the app's installation directory
-    ' that has theme files that are loaded into a list the user can select from
-    ' in the app's Options window; this "\Themes" dir should be set by the calling app
-    ' as it could allow themes to be used from near the install dir, or from an AppData folder;
-    ' this sub could be called "LoadFromThemesDir()" or something, with the args being
-    ' LoadFromThemesDir(ThemeFilename As String, ThemesDir As String, FormToApplyTo As Form,
-    ' FormToApplyToDOTcomponents As IContainer)),
-    ' and make this sub select from the built-in themes based on the theme name
-    ' passed into it, just like UXL Launcher Theme Engine currently does.
-    ' Remember to pay attention to whether the calling app wants to allow custom themes or not.
-    ' TODO eventually since it could be more difficult:
-    ' The custom themes folder idea above might be more difficult, so it would be a good idea to 
-    ' maybe wait until PortableThemeEngine is at feature parity with the UXL Launcher Theme Engine.
-
-
-    '        ' This documentation page helped a lot for getting this working:
-    '        ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
-
-    '        ' First, remove the double-quotes from the custom theme path.
-    '        ' This was moved up here so that it can be referred to in other
-    '        ' parts of this sub.
-    '        Dim tempRemoveQuotesInCustomThemePath As String = customThemePath.Replace("""", "")
-
-    '        Try ' Make sure the theme engine doesn't break.
+        ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources
+        ' (might already be done with the LoadTheme() sub),
+        ' another sub to allow loading in from a file on the hard drive or over the Internet
+        ' (again, might already be done with the LoadTheme() sub, except it may be
+        ' useful to allow the calling app to specify a folder to look for themes in and a theme
+        ' filename; for example, a "\Themes" dir in the app's installation directory
+        ' that has theme files that are loaded into a list the user can select from
+        ' in the app's Options window; this "\Themes" dir should be set by the calling app
+        ' as it could allow themes to be used from near the install dir, or from an AppData folder;
+        ' this sub could be called "LoadFromThemesDir()" or something, with the args being
+        ' LoadFromThemesDir(ThemeFilename As String, ThemesDir As String, FormToApplyTo As Form,
+        ' FormToApplyToDOTcomponents As IContainer)),
+        ' and make this sub select from the built-in themes based on the theme name
+        ' passed into it, just like UXL Launcher Theme Engine currently does.
+        ' Remember to pay attention to whether the calling app wants to allow custom themes or not.
+        ' TODO eventually since it could be more difficult:
+        ' The custom themes folder idea above might be more difficult, so it would be a good idea to 
+        ' maybe wait until PortableThemeEngine is at feature parity with the UXL Launcher Theme Engine.
 
 
-    '            ' Then we see if the userChosenTheme setting contains the word "Theme."
-    '            ' If it does not, we just add "Theme_XML" to the end of the string.
-    '            If Not themeName.Contains("Theme") And Not themeName = ("(Custom)") Then
-    '                userTheme.LoadXml(My.Resources.ResourceManager.GetString(themeName & "Theme_XML"))
-    '                ' However, if it does, then we only add "_XML" to the string.
-    '            ElseIf themeName.Contains("Theme") Then
-    '                userTheme.LoadXml(My.Resources.ResourceManager.GetString(themeName & "_XML"))
-    '                ' If the user has a custom theme enabled, use that instead.
-    '            ElseIf themeName = "(Custom)" Then
-    '                ' Make sure the theme path and file exists and custom themes are allowed
-    '                ' to be used.
-    '                If File.Exists(tempRemoveQuotesInCustomThemePath) And allowCustomThemes = True Then
-    '                    userTheme.Load(tempRemoveQuotesInCustomThemePath)
-    '                    ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
-    '                    ' Then we output that the custom theme file wasn't found if that's the problem, or if custom
-    '                    ' themes are not allowed to be used.
-    '                ElseIf Not File.Exists(tempRemoveQuotesInCustomThemePath) Then
-    '                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-    '                    ' If the theme engine output debug setting is enabled, output an error
-    '                    ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
-    '                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
-    '                ElseIf allowCustomThemes = False Then
-    '                    ' If custom themes are not allowed to be used, use the Default theme and tell the
-    '                    ' user in the debug output that they're not allowed.
-    '                    userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-    '                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.CustomThemesNotAllowed", "Custom themes are not allowed to be used." & vbCrLf &
-    '                                                "Please contact your administrator for further assistance.")
-    '                End If
-    '            Else
-    '                ' If none of the above conditions apply, just load the Default theme.
-    '                userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-    '            End If
-    '        Catch ex As System.ArgumentNullException
-    '            ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
-    '            ' included in My.Resources, the ArgumentNullException will be fired and the default theme
-    '            ' will be used instead temporarily. The developer, user, or theme designer will be notified
-    '            ' about this error in the Immediate Window.
-    '            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-    '            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-    '        Catch ex As XmlException
-    '            ' If there's an XmlException (which can occur if the selected theme has no
-    '            ' root element), tell the user, developer, or theme designer
-    '            ' and use the default theme.
-    '            userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-    '            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-    '        Catch ex As System.UnauthorizedAccessException
-    '            ' Also catch UnauthorizedAccessException.
-    '            ' If this exception occurs, it may be because
-    '            ' a file was accessed that's not allowed to be accessed,
-    '            ' such as a file in the Windows directory.
-    '            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-    '        End Try
+        '        ' This documentation page helped a lot for getting this working:
+        '        ' https://msdn.microsoft.com/en-us/library/system.xml.xmldocument.loadxml(v=vs.110).aspx
 
-    '        ' After this is all done, we then write the settingsThemeName string and the actual XML document
-    '        ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
-    '        ' this happens BEFORE any theme colors are applied.
-    '        If enableDebugOutput = True Then
-    '            Debug.WriteLine("")
-    '            Debug.WriteLine("")
-    '            Debug.WriteLine("")
-    '            Debug.WriteLine("Theme name in config file:")
-    '            Debug.WriteLine(themeName)
-    '            Debug.WriteLine("")
-    '            If themeName = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
-    '                ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
-    '                Debug.WriteLine("")
-    '                Debug.WriteLine("Custom theme path:")
-    '                Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
-    '            End If
-    '            Debug.WriteLine("Theme XML file:")
-    '            Debug.WriteLine(userTheme.OuterXml)
+        '        ' First, remove the double-quotes from the custom theme path.
+        '        ' This was moved up here so that it can be referred to in other
+        '        ' parts of this sub.
+        Dim tempRemoveQuotesInCustomThemePath As String = CustomThemePath.Replace("""", "")
 
-    '            ' Also output theme info for testing purposes.
-    '            ' This will be used in the Options window soon.
-    '            Debug.WriteLine("getThemeFileInfo function.")
-    '            ' First check that the theme to use is a custom theme.
-    '            ' If it is, specify that it is.
-    '            If themeName = "(Custom)" Then
-    '                Debug.WriteLine(getThemeFileInfo(userTheme, True, tempRemoveQuotesInCustomThemePath))
-    '            Else
-    '                ' Otherwise, just write it out.
-    '                Debug.WriteLine(getThemeFileInfo(userTheme))
-    '            End If
+        Try ' Make sure the theme engine doesn't break.
 
 
-    '        End If
+    ' Then we see if the userChosenTheme setting contains the word "Theme."
+    ' If it does not, we just add "Theme_XML" to the end of the string.
+    If Not themeName.Contains("Theme") And Not themeName = ("(Custom)") Then
+                ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
+                ' However, if it does, then we only add "_XML" to the string.
+            ElseIf themeName.Contains("Theme") Then
+                ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "_XML"))
+                ' If the user has a custom theme enabled, use that instead.
+            ElseIf themeName = "(Custom)" Then
+                ' Make sure the theme path and file exists and custom themes are allowed
+                ' to be used.
+                If File.Exists(tempRemoveQuotesInCustomThemePath) And ThemeProperties.themeengineAllowCustomThemes = True Then
+                    ThemeProperties.themeSheet.Load(tempRemoveQuotesInCustomThemePath)
+                    ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
+                    ' Then we output that the custom theme file wasn't found if that's the problem, or if custom
+                    ' themes are not allowed to be used.
+                ElseIf Not File.Exists(tempRemoveQuotesInCustomThemePath) Then
+                    ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+                    ' If the theme engine output debug setting is enabled, output an error
+                    ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
+                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
+                ElseIf ThemeProperties.themeengineAllowCustomThemes = False Then
+                    ' If custom themes are not allowed to be used, use the Default theme and tell the
+                    ' user in the debug output that they're not allowed.
+                    ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+                    themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.CustomThemesNotAllowed", "Custom themes are not allowed to be used." & vbCrLf &
+                                                    "Please contact your administrator for further assistance.")
+                    End If
+    Else
+                ' If none of the above conditions apply, just load the Default theme.
+                ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            End If
+    Catch ex As System.ArgumentNullException
+                ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
+                ' included in My.Resources, the ArgumentNullException will be fired and the default theme
+                ' will be used instead temporarily. The developer, user, or theme designer will be notified
+                ' about this error in the Immediate Window.
+                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+            ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+        Catch ex As XmlException
+            ' If there's an XmlException (which can occur if the selected theme has no
+            ' root element), tell the user, developer, or theme designer
+            ' and use the default theme.
+            ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+            Catch ex As System.UnauthorizedAccessException
+                ' Also catch UnauthorizedAccessException.
+                ' If this exception occurs, it may be because
+                ' a file was accessed that's not allowed to be accessed,
+                ' such as a file in the Windows directory.
+                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+            End Try
 
-    '        ' Apply the theme.
-    '        ThemeEngine.ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
-    '    End Sub
+    ' After this is all done, we then write the settingsThemeName string and the actual XML document
+    ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
+    ' this happens BEFORE any theme colors are applied.
+    If enableDebugOutput = True Then
+                Debug.WriteLine("")
+                Debug.WriteLine("")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name in config file:")
+                Debug.WriteLine(themeName)
+                Debug.WriteLine("")
+                If themeName = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
+                    ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
+                    Debug.WriteLine("")
+                    Debug.WriteLine("Custom theme path:")
+                    Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
+                End If
+                Debug.WriteLine("Theme XML file:")
+            Debug.WriteLine(ThemeProperties.themeSheet.OuterXml)
+
+            ' Also output theme info for testing purposes.
+            ' This will be used in the Options window soon.
+            Debug.WriteLine("getThemeFileInfo function.")
+                ' First check that the theme to use is a custom theme.
+                ' If it is, specify that it is.
+                If themeName = "(Custom)" Then
+                Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet, True, tempRemoveQuotesInCustomThemePath))
+            Else
+                ' Otherwise, just write it out.
+                Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet))
+            End If
+
+
+    End If
+
+            ' Apply the theme.
+            ThemeEngine.ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
+        End Sub
     '#End Region
     '#End Region
 
