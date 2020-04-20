@@ -424,15 +424,15 @@ Public Class ThemeEngine
         Try ' Make sure the theme engine doesn't break.
 
 
-    ' Then we see if the userChosenTheme setting contains the word "Theme."
-    ' If it does not, we just add "Theme_XML" to the end of the string.
-    If Not themeName.Contains("Theme") And Not themeName = ("(Custom)") Then
-                ThemeProperties.themeSheet.LoadXml(libportablethemeengine.My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
+            ' Then we see if the userChosenTheme setting contains the word "Theme."
+            ' If it does not, we just add "Theme_XML" to the end of the string.
+            If Not ThemeName.EndsWith("Theme") And Not ThemeName = ("(Custom)") Then
+                ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
                 ' However, if it does, then we only add "_XML" to the string.
-            ElseIf themeName.Contains("Theme") Then
+            ElseIf ThemeName.EndsWith("Theme") Then
                 ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "_XML"))
                 ' If the user has a custom theme enabled, use that instead.
-            ElseIf themeName = "(Custom)" Then
+            ElseIf ThemeName = "(Custom)" Then
                 ' Make sure the theme path and file exists and custom themes are allowed
                 ' to be used.
                 If File.Exists(tempRemoveQuotesInCustomThemePath) And ThemeProperties.themeengineAllowCustomThemes = True Then
@@ -451,8 +451,8 @@ Public Class ThemeEngine
                     ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
                     themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.CustomThemesNotAllowed", "Custom themes are not allowed to be used." & vbCrLf &
                                                     "Please contact your administrator for further assistance.")
-                    End If
-    Else
+                End If
+            Else
                 ' If none of the above conditions apply, just load the Default theme.
                 ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             End If
