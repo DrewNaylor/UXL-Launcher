@@ -753,12 +753,13 @@ Public Class ThemeEngine
     End Sub
 #End Region
 
-    Public Shared Sub OutputThemeEngineVersionToUse()
+    Public Shared Sub OutputThemeEngineRuntimeVersionForDebugging()
         ' Show theme engine version that the theme wants to use in the Immediate Window
         ' if the proper setting is enabled.
+        ' This can be used for debugging.
         If ThemeProperties.debugmodeShowThemeEngineOutput = True Then
             Debug.WriteLine("")
-            Debug.WriteLine("UseThemeEngineVersion string:")
+            Debug.WriteLine("ThemeEngine RuntimeVersion string:")
             Debug.WriteLine(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)
         End If
     End Sub
@@ -998,7 +999,7 @@ Public Class ThemeEngine
                                "Description: " & LocalThemeInfoDescription & vbCrLf &
                                "Version: " & LocalThemeInfoVersion & vbCrLf &
                                "Author: " & LocalThemeInfoAuthor & vbCrLf &
-                               "Theme Engine version to use: " & LocalThemeInfoUseThemeEngineVersion.ToString
+                               "ThemeEngine RuntimeVersion: " & LocalThemeInfoUseThemeEngineVersion.ToString
 #End Region
         ' Show the user the completed string.
         Return LocalThemeInfoDetailsComplete
