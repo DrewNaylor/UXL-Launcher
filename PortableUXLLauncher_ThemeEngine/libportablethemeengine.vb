@@ -34,7 +34,7 @@ Public Class ThemeEngine
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
     '#Region "Set Theme via PortableThemeEngine."
 
-    Public Shared Sub LoadThemeFromXML(ThemeInput As XmlDocument, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional ThemeName As String = "(Name not available)")
+    Public Shared Sub LoadThemeFromXML(ThemeInput As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional ThemeName As String = "(Name not available)")
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -43,7 +43,7 @@ Public Class ThemeEngine
         ' Custom themes and builtin themes specified by name
         ' are loaded with SelectTheme().
         Try
-            ThemeProperties.themeSheet.LoadXml(ThemeInput.OuterXml)
+            ThemeProperties.themeSheet.LoadXml(ThemeInput)
         Catch ex As XmlException
             ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
         End Try
