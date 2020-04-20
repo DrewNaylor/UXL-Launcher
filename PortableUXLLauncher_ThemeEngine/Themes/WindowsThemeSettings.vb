@@ -21,12 +21,12 @@
 
 
 
-Public Class WindowsThemeSettings
+Friend Class WindowsThemeSettings
 
     ' This class is used for getting the Windows 10 system theme settings.
     ' It returns Dark for the dark theme and Light for the light theme.
 
-    Friend Shared Function getWindowsThemeSettings() As String
+    Friend Shared Function GetWindowsThemeSettings() As String
         ' We need to read Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize\AppsUseLightTheme
         ' for this.
 
