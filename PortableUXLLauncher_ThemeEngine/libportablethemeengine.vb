@@ -765,7 +765,7 @@ Public Class ThemeEngine
     '    ' GitHub repository:
     '    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
-    Public Shared Function getThemeFileInfo(themeFile As String, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
+    Public Shared Function GetThemeFileInfo(themeFile As String, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
         ' This function takes the themeFile as input along with whether or not the themeFile
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
@@ -872,14 +872,14 @@ Public Class ThemeEngine
         End If
 #End Region
 
-            ' Now that loading is done, get the theme info.
-            ' This code was copy-pasted from above to make work
-            ' a bit easier.
+        ' Now that loading is done, get the theme info.
+        ' This code was copy-pasted from above to make work
+        ' a bit easier.
 #Region "Pull info from file."
 #Region "Pull Title theme element from XML."
 
-            ' Only pull the title element from XML if it exists.
-            If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
+        ' Only pull the title element from XML if it exists.
+        If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
             LocalThemeInfoTitle = LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", LocalThemeInfoNamespaceManager).InnerText
         Else
             LocalThemeInfoTitle = "(No title specified)"
