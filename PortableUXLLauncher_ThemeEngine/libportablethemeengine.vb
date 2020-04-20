@@ -784,7 +784,7 @@ Public Class ThemeEngine
             ' First, make sure the theme file exists.
             ' Make sure the theme path and file exists and custom themes are allowed
             ' to be used.
-            If File.Exists(themeFileLocation) And allowCustomThemes = True Then
+            If File.Exists(themeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
                 Try
                     LocalThemeInfoFileReader.LoadXml(themeFile.OuterXml)
@@ -795,13 +795,13 @@ Public Class ThemeEngine
                     ' aren't any problems in the theme engine that might
                     ' slip by when using valid XML.
                 End Try
-            ElseIf Not File.Exists(themeFileLocation) And allowCustomThemes = True Then
+            ElseIf Not File.Exists(themeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
                 ' If the file doesn't exist but custom themes are allowed,
                 ' say that the Default theme will be used temporarily.
                 LocalThemeInfoDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
                                         themeFileLocation
                 Return LocalThemeInfoDetailsComplete
-            ElseIf allowCustomThemes = False Then
+            ElseIf ThemeProperties.themeengineAllowCustomThemes = False Then
                 ' If custom themes aren't allowed, let the user know.
                 LocalThemeInfoDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
                                        " This may be due to data protection policies put in place by your organization." &
