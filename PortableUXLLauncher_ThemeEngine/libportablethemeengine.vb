@@ -521,11 +521,10 @@ Public Class ThemeEngine
 
 
             End If
-
-            ' Apply the theme after figuring out engine compatibility.
-            TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(FormToApplyTo)
-            ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
         End If
+        ' Apply the theme after figuring out engine compatibility.
+        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(FormToApplyTo)
+        ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
     End Sub
     '#End Region
     '#End Region
