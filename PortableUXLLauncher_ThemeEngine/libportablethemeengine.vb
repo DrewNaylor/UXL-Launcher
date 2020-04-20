@@ -391,10 +391,10 @@ Public Class ThemeEngine
     '#End Region
 
     '#Region "Start the theme engine and apply the user's theme."
-    Public Shared Sub SelectBuiltinTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional CustomThemePath As String = "")
+    Public Shared Sub SelectTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional CustomThemePath As String = "")
 
         ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources
-        ' (might already be done with the LoadTheme() sub),
+        ' (the LoadTheme() sub would need to be changed for this),
         ' another sub to allow loading in from a file on the hard drive or over the Internet
         ' (again, might already be done with the LoadTheme() sub, except it may be
         ' useful to allow the calling app to specify a folder to look for themes in and a theme
@@ -422,6 +422,9 @@ Public Class ThemeEngine
         Dim tempRemoveQuotesInCustomThemePath As String = CustomThemePath.Replace("""", "")
 
         Try ' Make sure the theme engine doesn't break.
+
+            ' Add theme engine namespace.
+            ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
 
             ' Then we see if the userChosenTheme setting contains the word "Theme."
@@ -460,12 +463,12 @@ Public Class ThemeEngine
                 ' If none of the above conditions apply, just load the Default theme.
                 ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             End If
-    Catch ex As System.ArgumentNullException
-                ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
-                ' included in My.Resources, the ArgumentNullException will be fired and the default theme
-                ' will be used instead temporarily. The developer, user, or theme designer will be notified
-                ' about this error in the Immediate Window.
-                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        Catch ex As System.ArgumentNullException
+            ' If the theme name in My.Settings.userChosenTheme does not match one of the theme files
+            ' included in My.Resources, the ArgumentNullException will be fired and the default theme
+            ' will be used instead temporarily. The developer, user, or theme designer will be notified
+            ' about this error in the Immediate Window.
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
             ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
         Catch ex As XmlException
             ' If there's an XmlException (which can occur if the selected theme has no
@@ -473,13 +476,13 @@ Public Class ThemeEngine
             ' and use the default theme.
             ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-            Catch ex As System.UnauthorizedAccessException
-                ' Also catch UnauthorizedAccessException.
-                ' If this exception occurs, it may be because
-                ' a file was accessed that's not allowed to be accessed,
-                ' such as a file in the Windows directory.
-                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
-            End Try
+        Catch ex As System.UnauthorizedAccessException
+            ' Also catch UnauthorizedAccessException.
+            ' If this exception occurs, it may be because
+            ' a file was accessed that's not allowed to be accessed,
+            ' such as a file in the Windows directory.
+            themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+        End Try
 
         ' After this is all done, we then write the settingsThemeName string and the actual XML document
         ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
