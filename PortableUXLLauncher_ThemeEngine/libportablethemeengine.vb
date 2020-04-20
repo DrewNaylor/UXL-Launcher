@@ -382,21 +382,27 @@ Public Class ThemeEngine
     '#Region "Start the theme engine and apply the user's theme."
     Public Shared Sub SelectTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional CustomThemePath As String = "")
 
-        ' TODO: Add a sub to allow loading in an XML file from the calling app's My.Resources
-        ' (the LoadTheme() sub would need to be changed for this),
+        ' TODO: 
+        ' Start Done
+        ' ~~Add a sub to allow loading in an XML file from the calling app's My.Resources~~
+        ' (the LoadThemeFromXML() sub can do this, just that the calling app has to pass the files itself),
+        ' End Done
         ' another sub to allow loading in from a file on the hard drive or over the Internet
-        ' (again, might already be done with the LoadTheme() sub, except it may be
+        ' (would have to be done with something like a LoadThemeFromThemesDir() sub, except it may be
         ' useful to allow the calling app to specify a folder to look for themes in and a theme
         ' filename; for example, a "\Themes" dir in the app's installation directory
         ' that has theme files that are loaded into a list the user can select from
         ' in the app's Options window; this "\Themes" dir should be set by the calling app
         ' as it could allow themes to be used from near the install dir, or from an AppData folder;
-        ' this sub could be called "LoadFromThemesDir()" or something, with the args being
-        ' LoadFromThemesDir(ThemeFilename As String, ThemesDir As String, FormToApplyTo As Form,
+        ' this sub could be called "LoadThemeFromThemesDir()" or something, with the args being
+        ' LoadThemeFromThemesDir(ThemeFilename As String, ThemesDir As String, FormToApplyTo As Form,
         ' FormToApplyToDOTcomponents As IContainer)),
-        ' and make this sub select from the built-in themes based on the theme name
-        ' passed into it, just like UXL Launcher Theme Engine currently does.
-        ' Remember to pay attention to whether the calling app wants to allow custom themes or not.
+        ' Start Done
+        ' and ~~make this sub select from the built-in themes based on the theme name
+        ' passed into it, just like UXL Launcher Theme Engine currently does~~ (already done).
+        ' ~~Remember to pay attention to whether the calling app wants to allow custom themes or not~~ (already
+        ' done as well).
+        ' End Done
         ' TODO eventually since it could be more difficult:
         ' The custom themes folder idea above might be more difficult, so it would be a good idea to 
         ' maybe wait until PortableThemeEngine is at feature parity with the UXL Launcher Theme Engine.
