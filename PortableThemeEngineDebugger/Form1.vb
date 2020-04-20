@@ -32,7 +32,7 @@ Public Class aaformThemeLoader
             Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(Nothing, True, textboxThemePath.Text))
             libportablethemeengine.ThemeEngine.SelectBuiltinTheme("(Custom)", Me,, textboxThemePath.Text)
         Else
-            'Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(textboxThemePath.Text, False))
+            Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(textboxThemePath.Text, False))
             libportablethemeengine.ThemeEngine.SelectBuiltinTheme(textboxThemePath.Text, Me)
         End If
         Dim enddate As DateTime = DateTime.Now
