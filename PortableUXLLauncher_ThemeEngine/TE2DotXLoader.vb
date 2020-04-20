@@ -461,6 +461,8 @@ Public Class TE2DotXLoader
         Else
             Return True
         End If
+        ' If we somehow get here, return Nothing.
+        Return Nothing
     End Function
 
     Friend Shared Sub AssignThemeInfoProperties()
@@ -756,6 +758,8 @@ Public Class TE2DotXLoader
                 ' Check version defaults.
                 Return ThemeProperties.defaultThemeVersion
         End Select
+        ' If we somehow get here, return Nothing.
+        Return Nothing
     End Function
 
     Private Shared Function IsHexCodeLengthValid(HexCode As String) As Boolean
@@ -817,6 +821,9 @@ Public Class TE2DotXLoader
             ' If the color does not exist, it's invalid.
             Return False
         End If
+        ' If somehow we get outside this If...Else block,
+        ' return Nothing so it's discovered.
+        Return Nothing
     End Function
 
     Friend Shared Function GetPropertySafe(DesiredNode As String, NodeAttribute As String, Optional LoadFromAttribute As Boolean = True, Optional UseThemeColorPrefix As Boolean = True, Optional CheckCompatibility As Boolean = True) As String
