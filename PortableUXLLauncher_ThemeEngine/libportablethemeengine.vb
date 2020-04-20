@@ -34,10 +34,6 @@ Public Class ThemeEngine
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
     '#Region "Set Theme via PortableThemeEngine."
 
-    ' Specify whether to output debug info.
-    Friend Shared enableDebugOutput As Boolean = ThemeProperties.debugmodeShowThemeEngineOutput
-
-
     Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional isFilename As Boolean = True)
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
@@ -481,31 +477,31 @@ Public Class ThemeEngine
                 themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
             End Try
 
-    ' After this is all done, we then write the settingsThemeName string and the actual XML document
-    ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
-    ' this happens BEFORE any theme colors are applied.
-    If enableDebugOutput = True Then
+        ' After this is all done, we then write the settingsThemeName string and the actual XML document
+        ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
+        ' this happens BEFORE any theme colors are applied.
+        If ThemeProperties.debugmodeShowThemeEngineOutput = True Then
+            Debug.WriteLine("")
+            Debug.WriteLine("")
+            Debug.WriteLine("")
+            Debug.WriteLine("Theme name in config file:")
+            Debug.WriteLine(ThemeName)
+            Debug.WriteLine("")
+            If ThemeName = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
+                ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
                 Debug.WriteLine("")
-                Debug.WriteLine("")
-                Debug.WriteLine("")
-                Debug.WriteLine("Theme name in config file:")
-                Debug.WriteLine(themeName)
-                Debug.WriteLine("")
-                If themeName = "(Custom)" And File.Exists(tempRemoveQuotesInCustomThemePath) Then
-                    ' Also output the configured custom theme's file path if the user has a custom theme and it exists.
-                    Debug.WriteLine("")
-                    Debug.WriteLine("Custom theme path:")
-                    Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
-                End If
-                Debug.WriteLine("Theme XML file:")
+                Debug.WriteLine("Custom theme path:")
+                Debug.WriteLine(tempRemoveQuotesInCustomThemePath)
+            End If
+            Debug.WriteLine("Theme XML file:")
             Debug.WriteLine(ThemeProperties.themeSheet.OuterXml)
 
             ' Also output theme info for testing purposes.
             ' This will be used in the Options window soon.
             Debug.WriteLine("getThemeFileInfo function.")
-                ' First check that the theme to use is a custom theme.
-                ' If it is, specify that it is.
-                If themeName = "(Custom)" Then
+            ' First check that the theme to use is a custom theme.
+            ' If it is, specify that it is.
+            If ThemeName = "(Custom)" Then
                 Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet, True, tempRemoveQuotesInCustomThemePath))
             Else
                 ' Otherwise, just write it out.
@@ -513,10 +509,10 @@ Public Class ThemeEngine
             End If
 
 
-    End If
+        End If
 
-            ' Apply the theme.
-            ThemeEngine.ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
+        ' Apply the theme.
+        ThemeEngine.ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
         End Sub
     '#End Region
     '#End Region
