@@ -498,7 +498,7 @@ Public Class ThemeEngine
 
             ' Also output theme info for testing purposes.
             ' This will be used in the Options window soon.
-            Debug.WriteLine("getThemeFileInfo function.")
+            Debug.WriteLine("Output theme info via GetThemeFileInfo function:")
             ' First check that the theme to use is a custom theme.
             ' If it is, specify that it is.
             If ThemeName = "(Custom)" Then
