@@ -408,13 +408,14 @@ Public Class ThemeEngine
         ' Check if the calling app wants to match the system theme first.
         If ThemeProperties.matchWindows10ThemeSettings = True Then
             ' If the Windows 10 theme is Light, use Default.
-            If SystemThemeSettings.GetWindowsThemeSettings() = "Light" Then
-                ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+            Select Case SystemThemeSettings.GetWindowsThemeSettings()
+                Case "Light"
+                    ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
 
                 ' Otherwise, load TenDark.
-            ElseIf SystemThemeSettings.GetWindowsThemeSettings() = "Dark" Then
-                ThemeProperties.themeSheet.LoadXml(My.Resources.TenDarkTheme_XML)
-            End If
+                Case "Dark"
+                    ThemeProperties.themeSheet.LoadXml(My.Resources.TenDarkTheme_XML)
+            End Select
 
             ' If the calling app doesn't want to match the Windows 10 theme,
             ' just move on.
