@@ -32,8 +32,8 @@ Partial Class aaformThemeLoader
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.checkboxIsCustomTheme = New System.Windows.Forms.CheckBox()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
+        Me.checkboxIsCustomTheme = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -83,7 +83,6 @@ Partial Class aaformThemeLoader
         '
         'buttonSetColor
         '
-        Me.buttonSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.buttonSetColor.Location = New System.Drawing.Point(12, 162)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
@@ -133,16 +132,6 @@ Partial Class aaformThemeLoader
         Me.Panel1.Size = New System.Drawing.Size(424, 201)
         Me.Panel1.TabIndex = 8
         '
-        'checkboxIsCustomTheme
-        '
-        Me.checkboxIsCustomTheme.AutoSize = True
-        Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(250, 58)
-        Me.checkboxIsCustomTheme.Name = "checkboxIsCustomTheme"
-        Me.checkboxIsCustomTheme.Size = New System.Drawing.Size(132, 21)
-        Me.checkboxIsCustomTheme.TabIndex = 7
-        Me.checkboxIsCustomTheme.Text = "Is custom theme"
-        Me.checkboxIsCustomTheme.UseVisualStyleBackColor = True
-        '
         'checkboxAllowCustomThemes
         '
         Me.checkboxAllowCustomThemes.AutoSize = True
@@ -152,6 +141,16 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.TabIndex = 8
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
+        '
+        'checkboxIsCustomTheme
+        '
+        Me.checkboxIsCustomTheme.AutoSize = True
+        Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(250, 58)
+        Me.checkboxIsCustomTheme.Name = "checkboxIsCustomTheme"
+        Me.checkboxIsCustomTheme.Size = New System.Drawing.Size(132, 21)
+        Me.checkboxIsCustomTheme.TabIndex = 7
+        Me.checkboxIsCustomTheme.Text = "Is custom theme"
+        Me.checkboxIsCustomTheme.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '

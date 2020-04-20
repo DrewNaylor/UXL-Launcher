@@ -23,18 +23,18 @@
 Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
         Dim startdate As DateTime = DateTime.Now
-        libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me,)
+        'libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me,)
         ' If it's a custom theme being entered into the theme path textbox,
         ' load it like one.
-        'If checkboxIsCustomTheme.Checked = True Then
-        '    ' Specify whether custom themes are allowed.
-        '    libportablethemeengine.ThemeProperties.themeengineAllowCustomThemes = checkboxAllowCustomThemes.Checked
-        '    Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(Nothing, True, textboxThemePath.Text))
-        '    libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
-        'Else
-        '    Debug.WriteLine(libportablethemeengine.ThemeEngine.GetThemeFileInfo(textboxThemePath.Text, False))
-        '    libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me,)
-        'End If
+        If checkboxIsCustomTheme.Checked = True Then
+            ' Specify whether custom themes are allowed.
+            libportablethemeengine.ThemeProperties.themeengineAllowCustomThemes = checkboxAllowCustomThemes.Checked
+            Debug.WriteLine(libportablethemeengine.ThemeEngine.GetThemeFileInfo(Nothing, True, textboxThemePath.Text))
+            libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
+        Else
+            Debug.WriteLine(libportablethemeengine.ThemeEngine.GetThemeFileInfo(textboxThemePath.Text, False))
+            libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me,)
+        End If
         Dim enddate As DateTime = DateTime.Now
         Debug.WriteLine("Theme engine took " & (enddate - startdate).Milliseconds & " milliseconds to run.")
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString
