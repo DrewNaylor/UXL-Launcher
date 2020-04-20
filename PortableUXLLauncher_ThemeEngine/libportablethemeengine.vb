@@ -758,148 +758,140 @@ Public Class ThemeEngine
     '    ' GitHub repository:
     '    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
-    '    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "", Optional allowCustomThemes As Boolean = True) As String
-    '        ' This function takes the themeFile as input along with whether or not the themeFile
-    '        ' is a custom theme and returns information from the file including the theme's
-    '        ' title, author, description, and theme file version in one string for easy
-    '        ' display such as in the Options window.
-    '#Region "Objects to store theme info."
-    '        Dim themeFileReader As XmlDocument = New XmlDocument()
-    '        ' Theme file information properties.
-    '        Dim themeTitle As String = "(Not provided)"
-    '        Dim themeAuthor As String = "(Not provided)"
-    '        Dim themeDescription As String = "(Not provided)"
-    '        Dim themeVersion As String = "(Not provided)"
-    '        Dim themeUseThemeEngineVersion As Decimal = CDec(1.01)
-    '        ' The completed string for use wherever it's needed.
-    '        Dim themeDetailsComplete As String = "Please wait..."
-    '        ' Theme namespace manager.
-    '        Dim themeNamespaceManager As New XmlNamespaceManager(themeFileReader.NameTable)
-    '        themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
-    '#End Region
+    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
+        ' This function takes the themeFile as input along with whether or not the themeFile
+        ' is a custom theme and returns information from the file including the theme's
+        ' title, author, description, and theme file version in one string for easy
+        ' display such as in the Options window.
+#Region "Objects to store theme info."
 
-    '#Region "Loading theme files."
-    '        If isCustomTheme = True Then
-    '            ' Code to run if the selected theme is a custom theme.
-    '            ' First, make sure the theme file exists.
-    '            ' Make sure the theme path and file exists and custom themes are allowed
-    '            ' to be used.
-    '            If File.Exists(themeFileLocation) And allowCustomThemes = True Then
-    '                ' Load the custom theme file into the file reader.
-    '                Try
-    '                    themeFileReader.LoadXml(themeFile.OuterXml)
-    '                Catch ex As Xml.XmlException
-    '                    ' Catch XmlException.
-    '                    ' This can be caused by using the "None" theme that
-    '                    ' has purposefully invalid XML just to make sure there
-    '                    ' aren't any problems in the theme engine that might
-    '                    ' slip by when using valid XML.
-    '                End Try
-    '            ElseIf Not File.Exists(themeFileLocation) And allowCustomThemes = True Then
-    '                ' If the file doesn't exist but custom themes are allowed,
-    '                ' say that the Default theme will be used temporarily.
-    '                themeDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
-    '                                        themeFileLocation
-    '                Return themeDetailsComplete
-    '            ElseIf allowCustomThemes = False Then
-    '                ' If custom themes aren't allowed, let the user know.
-    '                themeDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
-    '                                       " This may be due to data protection policies put in place by your organization." &
-    '                                       " If you believe you've received this message in error, you can try to modify the" &
-    '                                       " configuration files for UXL Launcher located in this folder:" & vbCrLf &
-    '                                       My.Application.Info.DirectoryPath & vbCrLf & vbCrLf &
-    '                                       "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," &
-    '                                       " make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." &
-    '                                       " You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." &
-    '                                       " Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." &
-    '                                       " Afterward, restart UXL Launcher."
-    '                Return themeDetailsComplete
-    '            End If
-    '        Else
-    '            ' If the selected theme is a built-in theme, just load the file.
-    '            ' Catch an exception if the root element is missing.
-    '            ' This can be caused if the user tries to type in a specific name
-    '            ' into the theme list in the Options window that doesn't match a
-    '            ' theme file exactly.
-    '            Try
-    '                themeFileReader.LoadXml(themeFile.OuterXml)
-    '            Catch ex As System.Xml.XmlException
-    '            End Try
-    '        End If
-    '#End Region
+        ' The completed string for use wherever it's needed.
+        Dim themeDetailsComplete As String = "Please wait..."
 
-    '        ' Now that loading is done, get the theme info.
-    '        ' This code was copy-pasted from above to make work
-    '        ' a bit easier.
-    '#Region "Pull info from file."
-    '#Region "Pull Title theme element from XML."
+#End Region
 
-    '        ' Only pull the title element from XML if it exists.
-    '        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
-    '            themeTitle = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
-    '        Else
-    '            themeTitle = "(No title specified)"
-    '        End If
-    '#End Region
+#Region "Loading theme files."
+        If isCustomTheme = True Then
+            ' Code to run if the selected theme is a custom theme.
+            ' First, make sure the theme file exists.
+            ' Make sure the theme path and file exists and custom themes are allowed
+            ' to be used.
+            If File.Exists(themeFileLocation) And allowCustomThemes = True Then
+                ' Load the custom theme file into the file reader.
+                Try
+                    themeFileReader.LoadXml(themeFile.OuterXml)
+                Catch ex As Xml.XmlException
+                    ' Catch XmlException.
+                    ' This can be caused by using the "None" theme that
+                    ' has purposefully invalid XML just to make sure there
+                    ' aren't any problems in the theme engine that might
+                    ' slip by when using valid XML.
+                End Try
+            ElseIf Not File.Exists(themeFileLocation) And allowCustomThemes = True Then
+                ' If the file doesn't exist but custom themes are allowed,
+                ' say that the Default theme will be used temporarily.
+                themeDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
+                                        themeFileLocation
+                Return themeDetailsComplete
+            ElseIf allowCustomThemes = False Then
+                ' If custom themes aren't allowed, let the user know.
+                themeDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
+                                       " This may be due to data protection policies put in place by your organization." &
+                                       " If you believe you've received this message in error, you can try to modify the" &
+                                       " configuration files for UXL Launcher located in this folder:" & vbCrLf &
+                                       My.Application.Info.DirectoryPath & vbCrLf & vbCrLf &
+                                       "In this folder, you'll find a file named ""UXL-Launcher.exe.config"". First," &
+                                       " make a backup copy of this file. Next, open this file in your favorite text editor such as Notepad++." &
+                                       " You should find an XML element that has a name of ""allowCustomThemes"" within the ""userSettings"" element." &
+                                       " Below that setting XML element, you'll want to change the ""value"" from ""False"" to ""True""." &
+                                       " Afterward, restart UXL Launcher."
+                Return themeDetailsComplete
+            End If
+        Else
+            ' If the selected theme is a built-in theme, just load the file.
+            ' Catch an exception if the root element is missing.
+            ' This can be caused if the user tries to type in a specific name
+            ' into the theme list in the Options window that doesn't match a
+            ' theme file exactly.
+            Try
+                themeFileReader.LoadXml(themeFile.OuterXml)
+            Catch ex As System.Xml.XmlException
+            End Try
+        End If
+#End Region
 
-    '#Region "Pull Description theme element from XML."
-    '        ' Only pull the description element from XML if it exists.
-    '        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
-    '            themeDescription = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
-    '        Else
-    '            themeDescription = "(No description specified)"
-    '        End If
-    '#End Region
+        ' Now that loading is done, get the theme info.
+        ' This code was copy-pasted from above to make work
+        ' a bit easier.
+#Region "Pull info from file."
+#Region "Pull Title theme element from XML."
 
-    '#Region "Pull Author theme element from XML."
-    '        ' Only pull the Author element from XML if it exists.
-    '        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
-    '            themeAuthor = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
-    '        Else
-    '            themeAuthor = "(No author specified)"
-    '        End If
-    '#End Region
+        ' Only pull the title element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager) IsNot Nothing Then
+            themeTitle = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", themeNamespaceManager).InnerText
+        Else
+            themeTitle = "(No title specified)"
+        End If
+#End Region
 
-    '#Region "Pull Version theme element from XML."
-    '        ' Only pull the Author element from XML if it exists.
-    '        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
-    '            themeVersion = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
-    '        Else
-    '            themeVersion = "(No version specified)"
-    '        End If
-    '#End Region
+#Region "Pull Description theme element from XML."
+        ' Only pull the description element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager) IsNot Nothing Then
+            themeDescription = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Description[1]", themeNamespaceManager).InnerText
+        Else
+            themeDescription = "(No description specified)"
+        End If
+#End Region
 
-    '#Region "Pull UseThemeEngineVersion element from XML."
-    '        ' Only pull the UseThemeEngineVersion element from XML if it exists.
-    '        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
-    '            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
-    '            If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
-    '                themeUseThemeEngineVersion = CDec(1.01)
+#Region "Pull Author theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager) IsNot Nothing Then
+            themeAuthor = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Author[1]", themeNamespaceManager).InnerText
+        Else
+            themeAuthor = "(No author specified)"
+        End If
+#End Region
 
-    '                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
-    '                ' set it to whatever the version is specified in the theme file.
-    '            ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
-    '                themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
-    '            End If
-    '        Else
-    '            ' If the XML element is missing, manually force the value to be 1.01.
-    '            themeSheetUseThemeEngineVersion = CDec(1.01)
-    '        End If
-    '#End Region
-    '#End Region
+#Region "Pull Version theme element from XML."
+        ' Only pull the Author element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager) IsNot Nothing Then
+            themeVersion = themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/Version[1]", themeNamespaceManager).InnerText
+        Else
+            themeVersion = "(No version specified)"
+        End If
+#End Region
 
-    '#Region "Put together theme info into one string."
-    '        ' Put each string together into one string to present to the user.
-    '        themeDetailsComplete = "Title: " & themeTitle & vbCrLf &
-    '                               "Description: " & themeDescription & vbCrLf &
-    '                               "Version: " & themeVersion & vbCrLf &
-    '                               "Author: " & themeAuthor & vbCrLf &
-    '                               "Theme Engine version to use: " & themeUseThemeEngineVersion
-    '#End Region
-    '        ' Show the user the completed string.
-    '        Return themeDetailsComplete
-    '    End Function
-    '#End Region
+#Region "Pull UseThemeEngineVersion element from XML."
+        ' Only pull the UseThemeEngineVersion element from XML if it exists.
+        If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
+            ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
+            If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                themeUseThemeEngineVersion = CDec(1.01)
+
+                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                ' set it to whatever the version is specified in the theme file.
+            ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+            End If
+        Else
+            ' If the XML element is missing, manually force the value to be 1.01.
+            themeSheetUseThemeEngineVersion = CDec(1.01)
+        End If
+#End Region
+#End Region
+
+#Region "Put together theme info into one string."
+        ' Put each string together into one string to present to the user.
+        themeDetailsComplete = "Title: " & themeTitle & vbCrLf &
+                               "Description: " & themeDescription & vbCrLf &
+                               "Version: " & themeVersion & vbCrLf &
+                               "Author: " & themeAuthor & vbCrLf &
+                               "Theme Engine version to use: " & themeUseThemeEngineVersion
+#End Region
+        ' Show the user the completed string.
+        Return themeDetailsComplete
+    End Function
+#End Region
 
 End Class
 
