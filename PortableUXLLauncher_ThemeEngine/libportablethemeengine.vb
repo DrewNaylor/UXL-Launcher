@@ -35,7 +35,7 @@ Public Class ThemeEngine
     '#Region "Set Theme via PortableThemeEngine."
 
     ' Specify whether to output debug info.
-    Friend Shared enableDebugOutput As Boolean = My.Settings.enableDebugOutput
+    Friend Shared enableDebugOutput As Boolean = ThemeProperties.debugmodeShowThemeEngineOutput
 
 
     Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional isFilename As Boolean = True)
