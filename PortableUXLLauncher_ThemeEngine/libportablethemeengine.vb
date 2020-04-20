@@ -747,7 +747,7 @@ Public Class ThemeEngine
     '        End If
     '    End Sub
 
-    '#Region "Get theme file info."
+#Region "Get theme file info."
 
     ' TODO: Get this function working again for apps that may want to use it,
     ' but make it so that the calling app can choose whether to get one thing,
