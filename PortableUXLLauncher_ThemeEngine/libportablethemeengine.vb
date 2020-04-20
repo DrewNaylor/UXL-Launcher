@@ -427,7 +427,7 @@ Public Class ThemeEngine
     ' Then we see if the userChosenTheme setting contains the word "Theme."
     ' If it does not, we just add "Theme_XML" to the end of the string.
     If Not themeName.Contains("Theme") And Not themeName = ("(Custom)") Then
-                ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
+                ThemeProperties.themeSheet.LoadXml(libportablethemeengine.My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
                 ' However, if it does, then we only add "_XML" to the string.
             ElseIf themeName.Contains("Theme") Then
                 ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "_XML"))
@@ -511,9 +511,10 @@ Public Class ThemeEngine
 
         End If
 
-        ' Apply the theme.
-        ThemeEngine.ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
-        End Sub
+        ' Apply the theme after figuring out engine compatibility.
+        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(FormToApplyTo)
+        ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
+    End Sub
     '#End Region
     '#End Region
 
