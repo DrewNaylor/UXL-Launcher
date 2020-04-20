@@ -29,8 +29,10 @@ Public Class aaformThemeLoader
         If checkboxIsCustomTheme.Checked = True Then
             ' Specify whether custom themes are allowed.
             libportablethemeengine.ThemeProperties.themeengineAllowCustomThemes = checkboxAllowCustomThemes.Checked
+            Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(Nothing, True, textboxThemePath.Text))
             libportablethemeengine.ThemeEngine.SelectBuiltinTheme("(Custom)", Me,, textboxThemePath.Text)
         Else
+            'Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(textboxThemePath.Text, False))
             libportablethemeengine.ThemeEngine.SelectBuiltinTheme(textboxThemePath.Text, Me)
         End If
         Dim enddate As DateTime = DateTime.Now
