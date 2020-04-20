@@ -21,7 +21,7 @@
 
 
 
-Friend Class WindowsThemeSettings
+Friend Class SystemThemeSettings
 
     ' This class is used for getting the Windows 10 system theme settings.
     ' It returns Dark for the dark theme and Light for the light theme.
@@ -49,30 +49,30 @@ Friend Class WindowsThemeSettings
         End If
     End Function
 
-    '    'Friend Shared Sub checkIfUserWantsToMatchTheme()
-    '    '    ' If the user wants to have the theme match the Windows 10 theme settings,
-    '    '    ' then do that.
-    '    '    ' This should be done by a theme engine property.
-    '    '    If My.Settings.matchWindows10ThemeSettings = True Then
-    '    '        ' If the Windows 10 theme is Light, use Default.
-    '    '        If getWindowsThemeSettings() = "Light" Then
-    '    '            PortableThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
-    '    '            aaformMainWindow.themeApplier()
+    'Friend Shared Function checkIfUserWantsToMatchTheme() As Boolean
+    '    ' If the user wants to have the theme match the Windows 10 theme settings,
+    '    ' then do that.
+    '    ' This should be done by a theme engine property.
+    '    If ThemeProperties.matchWindows10ThemeSettings = True Then
+    '        ' If the Windows 10 theme is Light, use Default.
+    '        If GetWindowsThemeSettings() = "Light" Then
+    '            ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
+    '            aaformMainWindow.themeApplier()
 
-    '    '            ' Otherwise, load TenDark.
-    '    '        ElseIf getWindowsThemeSettings() = "Dark" Then
-    '    '            PortableThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
-    '    '            aaformMainWindow.themeApplier()
-    '    '        End If
-    '    '    Else
+    '            ' Otherwise, load TenDark.
+    '        ElseIf GetWindowsThemeSettings() = "Dark" Then
+    '            ThemeProperties.themeSheet.LoadXml(My.Resources.TenDarkTheme_XML)
+    '            aaformMainWindow.themeApplier()
+    '        End If
+    '    Else
 
-    '    '        ' If the user doesn't want to match the Windows 10 theme,
-    '    '        ' just move on.
+    '        ' If the user doesn't want to match the Windows 10 theme,
+    '        ' just move on.
 
-    '    '        ' Choose the user's theme and apply it if the Windows
-    '    '        ' settings won't be used.
-    '    '        aaformMainWindow.themeChooser()
-    '    '    End If
-    '    End Sub
+    '        ' Choose the user's theme and apply it if the Windows
+    '        ' settings won't be used.
+    '        aaformMainWindow.themeChooser()
+    '    End If
+    'End Function
 
 End Class
