@@ -1689,14 +1689,30 @@ Public Class UXLLauncher_ThemeEngine
         ' Only pull the UseThemeEngineVersion element from XML if it exists.
         If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
             ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
-            If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
-                themeUseThemeEngineVersion = CDec(1.01)
+            ' Make sure it doesn't crash on something like "1.03..34"
+            ' Code backported from TE2.x and modified for use in TE1.x.
+            Try
+                If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                    themeUseThemeEngineVersion = CDec(1.01)
 
-                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
-                ' set it to whatever the version is specified in the theme file.
-            ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
-                themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
-            End If
+                    ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                    ' set it to whatever the version is specified in the theme file.
+                ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                    themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+                End If
+                ' FormatException:
+                ' The version isn't written correctly. Could possibly
+                ' be something like "1..2".
+                ' OverflowException:
+                ' Version specified in theme file is too big for Int32.
+                ' ArgumentException:
+                ' There's either no value or it's not formatted correctly.
+                ' Exception:
+                ' Catch all the above for easier code changing.
+            Catch ex As Exception
+                ' If it's invalid, consider it a 1.x theme.
+                themeSheetUseThemeEngineVersion = CDec(1.01)
+            End Try
         Else
             ' If the XML element is missing, manually force the value to be 1.01.
             themeSheetUseThemeEngineVersion = CDec(1.01)
