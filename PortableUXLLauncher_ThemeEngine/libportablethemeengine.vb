@@ -502,10 +502,10 @@ Public Class ThemeEngine
             ' First check that the theme to use is a custom theme.
             ' If it is, specify that it is.
             If ThemeName = "(Custom)" Then
-                Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet, True, tempRemoveQuotesInCustomThemePath))
+                'Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet, True, tempRemoveQuotesInCustomThemePath))
             Else
                 ' Otherwise, just write it out.
-                Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet))
+                'Debug.WriteLine(getThemeFileInfo(ThemeProperties.themeSheet))
             End If
 
 
