@@ -34,7 +34,7 @@ Public Class ThemeEngine
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
     '#Region "Set Theme via PortableThemeEngine."
 
-    Public Shared Sub LoadThemeFromXML(themeInput As XmlDocument, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional themeName As String = "(Name not available)")
+    Public Shared Sub LoadThemeFromXML(ThemeInput As XmlDocument, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional ThemeName As String = "(Name not available)")
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -43,21 +43,21 @@ Public Class ThemeEngine
         ' Custom themes and builtin themes specified by name
         ' are loaded with SelectTheme().
         Try
-            ThemeProperties.themeSheet.LoadXml(themeInput.OuterXml)
+            ThemeProperties.themeSheet.LoadXml(ThemeInput.OuterXml)
         Catch ex As XmlException
             ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
         End Try
 
-        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(formToApplyTo)
+        TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(FormToApplyTo)
 
         ' Now that we're done figuring out what the properties are,
         ' we can put the colors on the controls.
         'MessageBox.Show("Back to themeenginemain. Theme colors can be applied now.")
 
-        ApplyTheme(themeName, formToApplyTo, formComponents)
+        ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
     End Sub
 
-    Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form, formComponents As IContainer)
+    Public Shared Sub ApplyTheme(ThemeName As String, FormToApplyTo As Form, FormToApplyToDOTcomponents As IContainer)
 
         '#Region "Set colors for controls."
 
@@ -72,7 +72,7 @@ Public Class ThemeEngine
 
 
 #Region "Now apply colors to controls in each form passed to the theme engine."
-        Dim ctrl As Control = formToApplyTo.GetNextControl(formToApplyTo, True)
+        Dim ctrl As Control = FormToApplyTo.GetNextControl(FormToApplyTo, True)
         Do Until ctrl Is Nothing
             'MessageBox.Show(ctrl.Name.ToString)
 
@@ -327,15 +327,15 @@ Public Class ThemeEngine
             End If ' End of If statement for checking to see what each control's type is.
 
             ' Get the next control in the tab order.
-            ctrl = formToApplyTo.GetNextControl(ctrl, True)
+            ctrl = FormToApplyTo.GetNextControl(ctrl, True)
         Loop
 #End Region
 
         ' This code works when it's in a form, but Me.components.Components
         ' is private, so this may be another thing to pass along in addition to forms.
         ' Make sure the components exist, as they're not required to be passed.
-        If formComponents IsNot Nothing Then
-            For Each component As Component In formComponents.Components
+        If FormToApplyToDOTcomponents IsNot Nothing Then
+            For Each component As Component In FormToApplyToDOTcomponents.Components
                 If TypeOf component Is ContextMenuStrip Then
                     Dim contextmenustrip As ContextMenuStrip = CType(component, ContextMenuStrip)
                     contextmenustrip.Renderer = libportablethemeengine.ThemeProperties.toolstripProRenderer
