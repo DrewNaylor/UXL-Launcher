@@ -758,7 +758,7 @@ Public Class ThemeEngine
     '    ' GitHub repository:
     '    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
-    Public Shared Function getThemeFileInfo(themeFile As XmlDocument, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
+    Public Shared Function getThemeFileInfo(themeFile As String, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
         ' This function takes the themeFile as input along with whether or not the themeFile
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
@@ -786,8 +786,11 @@ Public Class ThemeEngine
             ' to be used.
             If File.Exists(themeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
+                ' This behavior changed from TE1.x to TE2.x,
+                ' so applications using TE2.x can just load in the
+                ' theme file location into the string.
                 Try
-                    LocalThemeInfoFileReader.LoadXml(themeFile.OuterXml)
+                    LocalThemeInfoFileReader.Load(themeFileLocation)
                 Catch ex As Xml.XmlException
                     ' Catch XmlException.
                     ' This can be caused by using the "None" theme that
@@ -903,8 +906,8 @@ Public Class ThemeEngine
                                "Author: " & LocalThemeInfoAuthor & vbCrLf &
                                "Theme Engine version to use: " & LocalThemeInfoUseThemeEngineVersion.ToString
 #End Region
-            ' Show the user the completed string.
-            Return LocalThemeInfoDetailsComplete
+        ' Show the user the completed string.
+        Return LocalThemeInfoDetailsComplete
     End Function
 #End Region
 
