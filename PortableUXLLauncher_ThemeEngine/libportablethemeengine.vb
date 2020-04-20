@@ -34,30 +34,19 @@ Public Class ThemeEngine
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
     '#Region "Set Theme via PortableThemeEngine."
 
-    Public Shared Sub LoadTheme(themeInput As String, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional isFilename As Boolean = True)
+    Public Shared Sub LoadThemeFromXML(themeInput As XmlDocument, formToApplyTo As Form, Optional formComponents As IContainer = Nothing, Optional themeName As String = "(Name not available)")
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
 
         ThemeProperties.themeNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
 
-        If isFilename = True AndAlso File.Exists(themeInput) Then
-            ' If the theme input is a filename and the path exists,
-            ' load it into the theme sheet.
-            ' Make sure to catch any XmlExceptions and load
-            ' the default theme if they occur.
-            Try
-                ThemeProperties.themeSheet.Load(themeInput)
-            Catch ex As XmlException
-                ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-            End Try
-        ElseIf isFilename = True AndAlso Not File.Exists(themeInput) Then
-            ' If the theme input is a filename and doesn't exist,
-            ' load the default theme.
+        ' Try to load the XML file that's passed to this sub.
+        ' Custom themes and builtin themes specified by name
+        ' are loaded with SelectTheme().
+        Try
+            ThemeProperties.themeSheet.LoadXml(themeInput.OuterXml)
+        Catch ex As XmlException
             ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-        ElseIf isFilename = False Then
-            ' If it's not a filename, assume it's a resource and load it
-            ' into the theme sheet directly.
-            ThemeProperties.themeSheet.LoadXml(themeInput)
-        End If
+        End Try
 
         TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(formToApplyTo)
 
@@ -65,7 +54,7 @@ Public Class ThemeEngine
         ' we can put the colors on the controls.
         'MessageBox.Show("Back to themeenginemain. Theme colors can be applied now.")
 
-        ApplyTheme(themeInput, formToApplyTo, formComponents)
+        ApplyTheme(themeName, formToApplyTo, formComponents)
     End Sub
 
     Public Shared Sub ApplyTheme(themeName As String, formToApplyTo As Form, formComponents As IContainer)
