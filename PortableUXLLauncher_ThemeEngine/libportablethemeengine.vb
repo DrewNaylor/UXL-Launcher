@@ -999,7 +999,7 @@ Public Class ThemeEngine
                                "Description: " & LocalThemeInfoDescription & vbCrLf &
                                "Version: " & LocalThemeInfoVersion & vbCrLf &
                                "Author: " & LocalThemeInfoAuthor & vbCrLf &
-                               "ThemeEngine RuntimeVersion: " & LocalThemeInfoUseThemeEngineVersion.ToString
+                               "Uses ThemeEngine runtime version " & LocalThemeInfoUseThemeEngineVersion.ToString
 #End Region
         ' Show the user the completed string.
         Return LocalThemeInfoDetailsComplete
