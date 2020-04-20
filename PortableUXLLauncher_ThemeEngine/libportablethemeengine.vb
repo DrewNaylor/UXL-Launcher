@@ -32,7 +32,7 @@ Imports System.ComponentModel
 Public Class ThemeEngine
 
     ' This file tells the theme engine what to color things. Theme engine is based on this Stack Overflow question: http://stackoverflow.com/q/199521
-    '#Region "Set Theme via PortableThemeEngine."
+#Region "Set Theme via PortableThemeEngine."
 
     Public Shared Sub LoadThemeFromXML(ThemeInput As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional ThemeName As String = "(Name not available)")
         'Dim themesDir As String = Directory.GetCurrentDirectory & "\Themes\"
@@ -59,7 +59,7 @@ Public Class ThemeEngine
 
     Friend Shared Sub ApplyTheme(ThemeName As String, FormToApplyTo As Form, FormToApplyToDOTcomponents As IContainer)
 
-        '#Region "Set colors for controls."
+#Region "Set colors for controls."
 
         '        ' Look at all the controls in the form passed to the theme engine
         '        ' and change their theme.
@@ -374,12 +374,11 @@ Public Class ThemeEngine
         ThemeProperties.toolstripProRenderer.ImageMarginGradientEndColor = ThemeProperties.colorMenuItemImageMarginGradientEndColor
         ThemeProperties.toolstripProRenderer.TextHighlightColor = Color.FromKnownColor(KnownColor.ControlText)
 
-        '#End Region
+#End Region
     End Sub ' End of ApplyTheme Sub.
-    '#End Region
-    '#End Region
+#End Region
 
-    '#Region "Start the theme engine and apply the user's theme."
+#Region "Start the theme engine and apply the user's theme."
     Public Shared Sub SelectTheme(ThemeName As String, FormToApplyTo As Form, Optional FormToApplyToDOTcomponents As IContainer = Nothing, Optional CustomThemePath As String = "")
 
         ' TODO: 
@@ -533,8 +532,7 @@ Public Class ThemeEngine
         TE2DotXLoader.CheckEngineRuntimeVersionCompatibility(FormToApplyTo)
         ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
     End Sub
-    '#End Region
-    '#End Region
+#End Region
 
 #Region "Theme Settings Invalid Message output code."
     Private Shared Sub themeSettingsInvalidMessage(exceptionType As String, Optional exceptionMessage As String = "(Not provided)", Optional fullException As String = "(Not provided)", Optional themeName As String = "(Not provided)", Optional customThemePath As String = "Not provided", Optional ForceOutput As Boolean = False)
