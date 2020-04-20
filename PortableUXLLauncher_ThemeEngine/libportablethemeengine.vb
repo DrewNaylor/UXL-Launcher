@@ -903,6 +903,12 @@ Public Class ThemeEngine
 #End Region
 
 #Region "Pull UseThemeEngineVersion element from XML."
+        ' Use the new TE2.x attribute if it exists.
+        Dim TE2xEngineRuntimeVersionNode As XmlNode = LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine")
+        If TE2xEngineRuntimeVersionNode IsNot Nothing Then
+
+        End If
+
         ' Only pull the UseThemeEngineVersion element from XML if it exists.
         If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
             ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
