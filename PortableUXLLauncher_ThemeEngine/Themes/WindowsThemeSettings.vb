@@ -32,22 +32,22 @@ Public Class WindowsThemeSettings
 
         Dim tempThemeSettingsValue As Object = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "AppsUseLightTheme", Nothing)
 
-        '    ' If the value has a 1 in it, then that means the
-    '    ' light theme should be used.
-    '    If tempThemeSettingsValue.ToString = "1" Then
-    '        Return "Light"
+        ' If the value has a 1 in it, then that means the
+        ' light theme should be used.
+        If tempThemeSettingsValue.ToString = "1" Then
+            Return "Light"
 
-    '        ' If the value has a 0 in it, then the dark theme
-    '        ' should be used.
-    '    ElseIf tempThemeSettingsValue.ToString = "0" Then
-    '        Return "Dark"
+            ' If the value has a 0 in it, then the dark theme
+            ' should be used.
+        ElseIf tempThemeSettingsValue.ToString = "0" Then
+            Return "Dark"
 
-    '        ' If some other value is there or the value doesn't exist,
-    '        ' use the light theme.
-    '    Else
-    '        Return "Light"
-    '    End If
-    'End Function
+            ' If some other value is there or the value doesn't exist,
+            ' use the light theme.
+        Else
+            Return "Light"
+        End If
+    End Function
 
     '    'Friend Shared Sub checkIfUserWantsToMatchTheme()
     '    '    ' If the user wants to have the theme match the Windows 10 theme settings,
