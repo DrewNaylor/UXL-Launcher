@@ -30,10 +30,10 @@ Public Class aaformThemeLoader
             ' Specify whether custom themes are allowed.
             libportablethemeengine.ThemeProperties.themeengineAllowCustomThemes = checkboxAllowCustomThemes.Checked
             Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(Nothing, True, textboxThemePath.Text))
-            libportablethemeengine.ThemeEngine.SelectBuiltinTheme("(Custom)", Me,, textboxThemePath.Text)
+            libportablethemeengine.ThemeEngine.LoadTheme("(Custom)", Me,, True)
         Else
             Debug.WriteLine(libportablethemeengine.ThemeEngine.getThemeFileInfo(textboxThemePath.Text, False))
-            libportablethemeengine.ThemeEngine.SelectBuiltinTheme(textboxThemePath.Text, Me)
+            libportablethemeengine.ThemeEngine.LoadTheme(textboxThemePath.Text, Me,, False)
         End If
         Dim enddate As DateTime = DateTime.Now
         Debug.WriteLine("Theme engine took " & (enddate - startdate).Milliseconds & " milliseconds to run.")

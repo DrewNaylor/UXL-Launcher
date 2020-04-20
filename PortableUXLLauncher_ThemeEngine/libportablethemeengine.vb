@@ -777,6 +777,9 @@ Public Class ThemeEngine
         Dim LocalThemeInfoUseThemeEngineVersion As Version = Version.Parse("1.01")
         ' The completed string for use wherever it's needed.
         Dim LocalThemeInfoDetailsComplete As String = "Please wait..."
+        ' Whether to clear the theme info details after getting them.
+        ' This is used to determine if extra stuff should be shown along with it.
+        Dim LocalClearThemeInfoBeforeAssigningFullString As Boolean = True
         ' Theme namespace manager.
         Dim LocalThemeInfoNamespaceManager As New XmlNamespaceManager(LocalThemeInfoFileReader.NameTable)
         LocalThemeInfoNamespaceManager.AddNamespace("uxl", "https://drewnaylor.github.io/xml")
@@ -848,6 +851,8 @@ Public Class ThemeEngine
                     ' Catch ArgumentNullExceptions if there isn't anything there.
                     LocalThemeInfoFileReader.LoadXml(My.Resources.DefaultTheme_XML)
                     ' Say we're using the default theme info if so.
+                    ' Be sure to have this shown in the full string.
+                    LocalClearThemeInfoBeforeAssigningFullString = False
                     LocalThemeInfoDetailsComplete = "We're using the Default theme's info since we couldn't find the specified theme name:" & vbCrLf &
                         themeFile & vbCrLf & vbCrLf
                 End Try
@@ -856,6 +861,8 @@ Public Class ThemeEngine
                 ' output the default theme info and say the file
                 ' hasn't been specified.
                 LocalThemeInfoFileReader.LoadXml(My.Resources.DefaultTheme_XML)
+                ' Be sure to have this shown in the full string.
+                LocalClearThemeInfoBeforeAssigningFullString = False
                 LocalThemeInfoDetailsComplete = "We're using the Default theme's info since we couldn't find the specified theme name:" & vbCrLf &
                         themeFile & vbCrLf & vbCrLf
             End If
@@ -930,6 +937,10 @@ Public Class ThemeEngine
 
 #Region "Put together theme info into one string."
         ' Put each string together into one string to present to the user.
+        ' Reset it to be empty if desired.
+        If LocalClearThemeInfoBeforeAssigningFullString = True Then
+            LocalThemeInfoDetailsComplete = String.Empty
+        End If
         LocalThemeInfoDetailsComplete = LocalThemeInfoDetailsComplete & "Title: " & LocalThemeInfoTitle & vbCrLf &
                                "Description: " & LocalThemeInfoDescription & vbCrLf &
                                "Version: " & LocalThemeInfoVersion & vbCrLf &
