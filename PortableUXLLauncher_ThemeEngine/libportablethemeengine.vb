@@ -826,7 +826,15 @@ Public Class ThemeEngine
             ' into the theme list in the Options window that doesn't match a
             ' theme file exactly.
             Try
-                LocalThemeInfoFileReader.LoadXml(themeFile.OuterXml)
+                If themeFile.EndsWith("Theme") Then
+                    ' If the input ends with "Theme", append "_XML" to it.
+                    LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "_XML"))
+                Else
+                    ' If it doesn't end with "Theme", append "Theme_XML" to it.
+                    ' Might be a good idea to add a case for if it ends with "_XML"
+                    ' as well, but not quite yet.
+                    LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "Theme_XML"))
+                End If
             Catch ex As System.Xml.XmlException
             End Try
         End If
