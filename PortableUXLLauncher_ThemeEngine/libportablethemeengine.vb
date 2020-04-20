@@ -770,7 +770,7 @@ Public Class ThemeEngine
     '    ' GitHub repository:
     '    ' https://github.com/DrewNaylor/UXL-Launcher/issues/113
 
-    Public Shared Function GetThemeFileInfo(themeFile As String, Optional isCustomTheme As Boolean = False, Optional themeFileLocation As String = "") As String
+    Public Shared Function GetThemeFileInfo(ThemeFile As String, Optional IsCustomTheme As Boolean = False, Optional ThemeFileLocation As String = "") As String
         ' This function takes the themeFile as input along with whether or not the themeFile
         ' is a custom theme and returns information from the file including the theme's
         ' title, author, description, and theme file version in one string for easy
@@ -794,18 +794,18 @@ Public Class ThemeEngine
 #End Region
 
 #Region "Loading theme files."
-        If isCustomTheme = True Then
+        If IsCustomTheme = True Then
             ' Code to run if the selected theme is a custom theme.
             ' First, make sure the theme file exists.
             ' Make sure the theme path and file exists and custom themes are allowed
             ' to be used.
-            If File.Exists(themeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
+            If File.Exists(ThemeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
                 ' This behavior changed from TE1.x to TE2.x,
                 ' so applications using TE2.x can just load in the
                 ' theme file location into the string.
                 Try
-                    LocalThemeInfoFileReader.Load(themeFileLocation)
+                    LocalThemeInfoFileReader.Load(ThemeFileLocation)
                 Catch ex As Xml.XmlException
                     ' Catch XmlException.
                     ' This can be caused by using the "None" theme that
@@ -813,11 +813,11 @@ Public Class ThemeEngine
                     ' aren't any problems in the theme engine that might
                     ' slip by when using valid XML.
                 End Try
-            ElseIf Not File.Exists(themeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
+            ElseIf Not File.Exists(ThemeFileLocation) And ThemeProperties.themeengineAllowCustomThemes = True Then
                 ' If the file doesn't exist but custom themes are allowed,
                 ' say that the Default theme will be used temporarily.
                 LocalThemeInfoDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
-                                        themeFileLocation
+                                        ThemeFileLocation
                 Return LocalThemeInfoDetailsComplete
             ElseIf ThemeProperties.themeengineAllowCustomThemes = False Then
                 ' If custom themes aren't allowed, let the user know.
@@ -841,18 +841,18 @@ Public Class ThemeEngine
             ' into the theme list in the Options window that doesn't match a
             ' theme file exactly.
             ' Make sure it's not Nothing.
-            If themeFile IsNot Nothing Then
+            If ThemeFile IsNot Nothing Then
 
                 Try
-                    If themeFile.EndsWith("Theme") Then
+                    If ThemeFile.EndsWith("Theme") Then
                         ' If the input ends with "Theme", append "_XML" to it.
-                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "_XML"))
-                    ElseIf themeFile.EndsWith("Theme_XML") Then
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile & "_XML"))
+                    ElseIf ThemeFile.EndsWith("Theme_XML") Then
                         ' If it ends with "Theme_XML", just use it.
-                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile))
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile))
                     Else
                         ' If it doesn't end with "Theme" or "Theme_XML", append "Theme_XML" to it.
-                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "Theme_XML"))
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile & "Theme_XML"))
                     End If
                 Catch ex As System.Xml.XmlException
                 Catch ex As ArgumentNullException
@@ -862,7 +862,7 @@ Public Class ThemeEngine
                     ' Be sure to have this shown in the full string.
                     LocalClearThemeInfoBeforeAssigningFullString = False
                     LocalThemeInfoDetailsComplete = "We're using the Default theme's info since we couldn't find the specified theme name:" & vbCrLf &
-                        themeFile & vbCrLf & vbCrLf
+                        ThemeFile & vbCrLf & vbCrLf
                 End Try
             Else
                 ' If the theme file is Nothing/hasn't been set,
@@ -872,7 +872,7 @@ Public Class ThemeEngine
                 ' Be sure to have this shown in the full string.
                 LocalClearThemeInfoBeforeAssigningFullString = False
                 LocalThemeInfoDetailsComplete = "We're using the Default theme's info since we couldn't find the specified theme name:" & vbCrLf &
-                        themeFile & vbCrLf & vbCrLf
+                        ThemeFile & vbCrLf & vbCrLf
             End If
         End If
 #End Region
