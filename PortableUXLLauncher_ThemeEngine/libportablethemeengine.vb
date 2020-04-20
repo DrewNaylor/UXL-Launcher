@@ -883,7 +883,7 @@ Public Class ThemeEngine
             End If
         Else
             ' If the XML element is missing, manually force the value to be 1.01.
-            themeSheetUseThemeEngineVersion = CDec(1.01)
+            LocalThemeInfoUseThemeEngineVersion = CDec(1.01)
         End If
 #End Region
 #End Region
