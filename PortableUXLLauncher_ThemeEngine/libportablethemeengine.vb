@@ -25,7 +25,6 @@ Imports System.Drawing.Drawing2D
 Imports System.IO
 Imports System.Xml
 Imports System.Windows.Forms
-Imports System.Net.Mime.MediaTypeNames
 Imports System.Drawing
 Imports System.ComponentModel
 
@@ -967,7 +966,23 @@ Public Class ThemeEngine
             ' Only pull the UseThemeEngineVersion element from XML if it exists.
             If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
                 ' Make a temporary version variable to compare to what's in the file.
-                Dim tempVer As Version = Version.Parse(LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager).InnerText)
+                ' Don't crash with invalid version numbers.
+                Dim tempVer As Version
+                Try
+                    tempVer = Version.Parse(LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", LocalThemeInfoNamespaceManager).InnerText)
+                    ' FormatException:
+                    ' The version isn't written correctly. Could possibly
+                    ' be something like "1..2".
+                    ' OverflowException:
+                    ' Version specified in theme file is too big for Int32.
+                    ' ArgumentException:
+                    ' There's either no value or it's not formatted correctly.
+                    ' Exception:
+                    ' Catch all the above for easier code changing.
+                Catch ex As Exception
+                    ' If it's invalid, consider it a 1.x theme.
+                    tempVer = Version.Parse("1.01")
+                End Try
                 Select Case tempVer.CompareTo(Version.Parse("1.01"))
                     Case 0
                         ' If the theme file says to use 1.01, use 1.01.
