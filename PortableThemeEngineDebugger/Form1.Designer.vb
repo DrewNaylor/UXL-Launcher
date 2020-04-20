@@ -32,6 +32,7 @@ Partial Class aaformThemeLoader
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.checkboxIsCustomTheme = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -116,6 +117,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.checkboxIsCustomTheme)
         Me.Panel1.Controls.Add(Me.labelPathDescription)
         Me.Panel1.Controls.Add(Me.textboxThemePath)
         Me.Panel1.Controls.Add(Me.buttonResetColor)
@@ -128,6 +130,16 @@ Partial Class aaformThemeLoader
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(424, 201)
         Me.Panel1.TabIndex = 8
+        '
+        'checkboxIsCustomTheme
+        '
+        Me.checkboxIsCustomTheme.AutoSize = True
+        Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(130, 65)
+        Me.checkboxIsCustomTheme.Name = "checkboxIsCustomTheme"
+        Me.checkboxIsCustomTheme.Size = New System.Drawing.Size(132, 21)
+        Me.checkboxIsCustomTheme.TabIndex = 7
+        Me.checkboxIsCustomTheme.Text = "Is custom theme"
+        Me.checkboxIsCustomTheme.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
@@ -157,4 +169,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents checkboxIsCustomTheme As CheckBox
 End Class

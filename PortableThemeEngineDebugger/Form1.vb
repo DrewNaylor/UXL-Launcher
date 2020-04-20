@@ -24,7 +24,13 @@ Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
         Dim startdate As DateTime = DateTime.Now
         'libportablethemeengine.ThemeEngine.LoadTheme(textboxThemePath.Text, Me,)
-        libportablethemeengine.ThemeEngine.SelectBuiltinTheme(textboxThemePath.Text, Me,)
+        ' If it's a custom theme being entered into the theme path textbox,
+        ' load it like one.
+        If checkboxIsCustomTheme.Checked = True Then
+            libportablethemeengine.ThemeEngine.SelectBuiltinTheme("(Custom)", Me,, textboxThemePath.Text)
+        Else
+            libportablethemeengine.ThemeEngine.SelectBuiltinTheme(textboxThemePath.Text, Me)
+        End If
         Dim enddate As DateTime = DateTime.Now
         Debug.WriteLine("Theme engine took " & (enddate - startdate).Milliseconds & " milliseconds to run.")
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString
