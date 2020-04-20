@@ -431,6 +431,10 @@ Public Class ThemeEngine
                 ' However, if it does, then we only add "_XML" to the string.
             ElseIf ThemeName.EndsWith("Theme") Then
                 ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "_XML"))
+                ' Sometimes the theme name will have "Theme_XML" in it.
+                ' If that's the case, just load it.
+            ElseIf ThemeName.EndsWith("Theme_XML") Then
+                ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName))
                 ' If the user has a custom theme enabled, use that instead.
             ElseIf ThemeName = "(Custom)" Then
                 ' Make sure the theme path and file exists and custom themes are allowed
@@ -825,30 +829,47 @@ Public Class ThemeEngine
             ' This can be caused if the user tries to type in a specific name
             ' into the theme list in the Options window that doesn't match a
             ' theme file exactly.
-            Try
-                If themeFile.EndsWith("Theme") Then
-                    ' If the input ends with "Theme", append "_XML" to it.
-                    LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "_XML"))
-                ElseIf themeFile.EndsWith("Theme_XML") Then
-                    ' If it ends with "Theme_XML", just use it.
-                    LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile))
-                Else
-                    ' If it doesn't end with "Theme" or "Theme_XML", append "Theme_XML" to it.
-                    LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "Theme_XML"))
-                End If
-            Catch ex As System.Xml.XmlException
-            End Try
+            ' Make sure it's not Nothing.
+            If themeFile IsNot Nothing Then
+
+                Try
+                    If themeFile.EndsWith("Theme") Then
+                        ' If the input ends with "Theme", append "_XML" to it.
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "_XML"))
+                    ElseIf themeFile.EndsWith("Theme_XML") Then
+                        ' If it ends with "Theme_XML", just use it.
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile))
+                    Else
+                        ' If it doesn't end with "Theme" or "Theme_XML", append "Theme_XML" to it.
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(themeFile & "Theme_XML"))
+                    End If
+                Catch ex As System.Xml.XmlException
+                Catch ex As ArgumentNullException
+                    ' Catch ArgumentNullExceptions if there isn't anything there.
+                    LocalThemeInfoFileReader.LoadXml(My.Resources.DefaultTheme_XML)
+                    ' Say we're using the default theme info if so.
+                    LocalThemeInfoDetailsComplete = "We're using the Default theme's info since we couldn't find the specified theme name:" & vbCrLf &
+                        themeFile & vbCrLf & vbCrLf
+                End Try
+            Else
+                ' If the theme file is Nothing/hasn't been set,
+                ' output the default theme info and say the file
+                ' hasn't been specified.
+                LocalThemeInfoFileReader.LoadXml(My.Resources.DefaultTheme_XML)
+                LocalThemeInfoDetailsComplete = "We're using the Default theme's info since we couldn't find the specified theme name:" & vbCrLf &
+                        themeFile & vbCrLf & vbCrLf
+            End If
         End If
 #End Region
 
-        ' Now that loading is done, get the theme info.
-        ' This code was copy-pasted from above to make work
-        ' a bit easier.
+            ' Now that loading is done, get the theme info.
+            ' This code was copy-pasted from above to make work
+            ' a bit easier.
 #Region "Pull info from file."
 #Region "Pull Title theme element from XML."
 
-        ' Only pull the title element from XML if it exists.
-        If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
+            ' Only pull the title element from XML if it exists.
+            If LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", LocalThemeInfoNamespaceManager) IsNot Nothing Then
             LocalThemeInfoTitle = LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/Title[1]", LocalThemeInfoNamespaceManager).InnerText
         Else
             LocalThemeInfoTitle = "(No title specified)"
@@ -909,7 +930,7 @@ Public Class ThemeEngine
 
 #Region "Put together theme info into one string."
         ' Put each string together into one string to present to the user.
-        LocalThemeInfoDetailsComplete = "Title: " & LocalThemeInfoTitle & vbCrLf &
+        LocalThemeInfoDetailsComplete = LocalThemeInfoDetailsComplete & "Title: " & LocalThemeInfoTitle & vbCrLf &
                                "Description: " & LocalThemeInfoDescription & vbCrLf &
                                "Version: " & LocalThemeInfoVersion & vbCrLf &
                                "Author: " & LocalThemeInfoAuthor & vbCrLf &
