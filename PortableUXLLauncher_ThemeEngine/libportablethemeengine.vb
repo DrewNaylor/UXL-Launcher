@@ -516,7 +516,7 @@ Public Class ThemeEngine
     '        End If
 
     '        ' Apply the theme.
-    '        themeenginemain.ApplyTheme(themeName, formToApplyTo)
+    '        ThemeEngine.ApplyTheme(ThemeName, FormToApplyTo, FormToApplyToDOTcomponents)
     '    End Sub
     '#End Region
     '#End Region
