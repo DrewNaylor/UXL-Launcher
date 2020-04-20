@@ -52,6 +52,8 @@ Public Class ThemeProperties
     Private Shared _debugmodeShowThemeEngineOutput As Boolean = False
     ' Whether custom themes are allowed by the calling app.
     Private Shared _themeengineAllowCustomThemes As Boolean = True
+    ' Whether the calling app wants to match the Windows 10 theme or not.
+    Private Shared _matchWindows10ThemeSettings As Boolean = False
 
     ' Define a variable to store the theme sheet.
     Private Shared _themeSheet As XmlDocument = New XmlDocument()
@@ -186,6 +188,17 @@ Public Class ThemeProperties
         End Get
         Set(value As Boolean)
             _themeengineAllowCustomThemes = value
+        End Set
+    End Property
+
+    ' Determine whether the theme engine should match the Windows 10 theme.
+    ' This is set by the calling app.
+    Public Shared Property matchWindows10ThemeSettings() As Boolean
+        Get
+            Return _matchWindows10ThemeSettings
+        End Get
+        Set(value As Boolean)
+            _matchWindows10ThemeSettings = value
         End Set
     End Property
 #End Region
