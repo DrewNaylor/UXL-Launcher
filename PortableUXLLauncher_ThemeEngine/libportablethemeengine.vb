@@ -421,9 +421,9 @@ Public Class ThemeEngine
             ' just move on.
         Else
 
-            '        ' First, remove the double-quotes from the custom theme path.
-            '        ' This was moved up here so that it can be referred to in other
-            '        ' parts of this sub.
+            ' First, remove the double-quotes from the custom theme path.
+            ' This was moved up here so that it can be referred to in other
+            ' parts of this sub.
             Dim tempRemoveQuotesInCustomThemePath As String = CustomThemePath.Replace("""", "")
 
             Try ' Make sure the theme engine doesn't break.
