@@ -33,6 +33,7 @@ Partial Class aaformThemeLoader
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.checkboxIsCustomTheme = New System.Windows.Forms.CheckBox()
+        Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -67,7 +68,7 @@ Partial Class aaformThemeLoader
         'labelColorTester
         '
         Me.labelColorTester.AutoSize = True
-        Me.labelColorTester.Location = New System.Drawing.Point(11, 97)
+        Me.labelColorTester.Location = New System.Drawing.Point(12, 112)
         Me.labelColorTester.Name = "labelColorTester"
         Me.labelColorTester.Size = New System.Drawing.Size(85, 17)
         Me.labelColorTester.TabIndex = 3
@@ -75,7 +76,7 @@ Partial Class aaformThemeLoader
         '
         'textboxColorTester
         '
-        Me.textboxColorTester.Location = New System.Drawing.Point(11, 118)
+        Me.textboxColorTester.Location = New System.Drawing.Point(12, 133)
         Me.textboxColorTester.Name = "textboxColorTester"
         Me.textboxColorTester.Size = New System.Drawing.Size(400, 22)
         Me.textboxColorTester.TabIndex = 4
@@ -83,7 +84,7 @@ Partial Class aaformThemeLoader
         'buttonSetColor
         '
         Me.buttonSetColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.buttonSetColor.Location = New System.Drawing.Point(11, 147)
+        Me.buttonSetColor.Location = New System.Drawing.Point(12, 162)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
         Me.buttonSetColor.TabIndex = 5
@@ -92,7 +93,7 @@ Partial Class aaformThemeLoader
         '
         'buttonResetColor
         '
-        Me.buttonResetColor.Location = New System.Drawing.Point(156, 147)
+        Me.buttonResetColor.Location = New System.Drawing.Point(157, 162)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(108, 30)
         Me.buttonResetColor.TabIndex = 6
@@ -117,6 +118,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.checkboxAllowCustomThemes)
         Me.Panel1.Controls.Add(Me.checkboxIsCustomTheme)
         Me.Panel1.Controls.Add(Me.labelPathDescription)
         Me.Panel1.Controls.Add(Me.textboxThemePath)
@@ -134,12 +136,22 @@ Partial Class aaformThemeLoader
         'checkboxIsCustomTheme
         '
         Me.checkboxIsCustomTheme.AutoSize = True
-        Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(130, 65)
+        Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(250, 58)
         Me.checkboxIsCustomTheme.Name = "checkboxIsCustomTheme"
         Me.checkboxIsCustomTheme.Size = New System.Drawing.Size(132, 21)
         Me.checkboxIsCustomTheme.TabIndex = 7
         Me.checkboxIsCustomTheme.Text = "Is custom theme"
         Me.checkboxIsCustomTheme.UseVisualStyleBackColor = True
+        '
+        'checkboxAllowCustomThemes
+        '
+        Me.checkboxAllowCustomThemes.AutoSize = True
+        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(250, 85)
+        Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
+        Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
+        Me.checkboxAllowCustomThemes.TabIndex = 8
+        Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
+        Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
@@ -170,4 +182,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents checkboxIsCustomTheme As CheckBox
+    Friend WithEvents checkboxAllowCustomThemes As CheckBox
 End Class
