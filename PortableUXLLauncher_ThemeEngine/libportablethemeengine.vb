@@ -473,7 +473,7 @@ Public Class ThemeEngine
                 ' included in My.Resources, the ArgumentNullException will be fired and the default theme
                 ' will be used instead temporarily. The developer, user, or theme designer will be notified
                 ' about this error in the Immediate Window.
-                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString, ThemeName)
                 ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             Catch ex As XmlException
                 ' If there's an XmlException (which can occur if the selected theme has no
