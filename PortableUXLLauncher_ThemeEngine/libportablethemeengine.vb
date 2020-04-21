@@ -988,6 +988,7 @@ Public Class ThemeEngine
     End Function
 
     Private Shared Function GetTE1DotXThemeEngineRuntimeVersion(ThemeFile As XmlDocument, ThemeNamespaceManager As XmlNamespaceManager) As Version
+        ' TE1.x UseThemeEngineVersion fallback function.
         ' Only pull the UseThemeEngineVersion element from XML if it exists.
         If ThemeFile.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", ThemeNamespaceManager) IsNot Nothing Then
             ' Make a temporary version variable to compare to what's in the file.
