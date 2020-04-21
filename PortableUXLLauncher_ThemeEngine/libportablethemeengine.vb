@@ -473,20 +473,20 @@ Public Class ThemeEngine
                 ' included in My.Resources, the ArgumentNullException will be fired and the default theme
                 ' will be used instead temporarily. The developer, user, or theme designer will be notified
                 ' about this error in the Immediate Window.
-                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString, ThemeName)
+                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString, ThemeName, CustomThemePath)
                 ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
             Catch ex As XmlException
                 ' If there's an XmlException (which can occur if the selected theme has no
                 ' root element), tell the user, developer, or theme designer
                 ' and use the default theme.
                 ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
-                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString, ThemeName, CustomThemePath)
             Catch ex As System.UnauthorizedAccessException
                 ' Also catch UnauthorizedAccessException.
                 ' If this exception occurs, it may be because
                 ' a file was accessed that's not allowed to be accessed,
                 ' such as a file in the Windows directory.
-                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString, ThemeName, CustomThemePath)
             End Try
 
             ' After this is all done, we then write the settingsThemeName string and the actual XML document
@@ -670,7 +670,7 @@ Public Class ThemeEngine
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
                             "chosen theme that themeName is set to or the" & vbCrLf &
                             "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
-                            "doesn't have a root element or otherwise has malformed XML." & vbCrLf &
+                            "doesn't have a root element or otherwise has invalid XML." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & themeName)
