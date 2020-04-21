@@ -33,7 +33,7 @@ Public Class aaformThemeLoader
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
             libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
         Else
-            Debug.WriteLine(libportablethemeengine.ThemeEngine.GetThemeFileInfo(textboxThemePath.Text, False))
+            libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
             libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me,)
         End If
         Dim enddate As DateTime = DateTime.Now
