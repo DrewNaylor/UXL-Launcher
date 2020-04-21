@@ -29,6 +29,7 @@ Public Class aaformThemeLoader
         If checkboxIsCustomTheme.Checked = True Then
             ' Specify whether custom themes are allowed.
             libportablethemeengine.ThemeProperties.themeengineAllowCustomThemes = checkboxAllowCustomThemes.Checked
+            libportablethemeengine.ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = True
             Debug.WriteLine(libportablethemeengine.ThemeEngine.GetThemeFileInfo(Nothing, True, textboxThemePath.Text))
             libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
         Else

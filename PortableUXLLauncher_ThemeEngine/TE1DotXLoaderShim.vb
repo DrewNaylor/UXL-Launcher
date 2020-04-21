@@ -159,6 +159,20 @@ Friend Class TE1DotXLoaderShim
                         'Default FlowLayoutPanel colors.
                         ThemeProperties.colorFlowLayoutPanelBackColor = GetDefaultColor("FlowLayoutPanel", "BackColor")
                         ThemeProperties.colorFlowLayoutPanelForeColor = GetDefaultColor("FlowLayoutPanel", "ForeColor")
+
+                        ' Default statusbar colors and properties.
+                        Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo("1.03")
+                            Case 0 ' If the version is 1.03, use the new default of Nothing for statusbar backcolor.
+                                ThemeProperties.colorStatusBarBackColor = Nothing
+                            Case 1 ' If the version is newer than 1.03, also use Nothing.
+                                ThemeProperties.colorStatusBarBackColor = Nothing
+                            Case -1 ' If the version is older than 1.03, use the original default.
+                                ThemeProperties.colorStatusBarBackColor = GetDefaultColor("StatusBar", "BackColor")
+                        End Select
+
+                        ThemeProperties.colorStatusLabelBackColor = GetDefaultColor("StatusLabel", "BackColor")
+                            ThemeProperties.colorStatusLabelForeColor = GetDefaultColor("StatusLabel", "ForeColor")
+                        ThemeProperties.propertyStatusLabelBorderSides = CType(ThemeProperties.defaultStatusLabelBorderSides, ToolStripStatusLabelBorderSides)
                 End Select
 
             Else
