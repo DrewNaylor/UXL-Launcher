@@ -493,7 +493,7 @@ Friend Class TE2DotXLoader
         Dim ColorFromTheme As String = GetPropertySafe(ControlName, ControlProperty, LoadFromAttribute)
         'Debug.WriteLine(ColorFromTheme)
         ''MessageBox.Show(ColorFromTheme)
-        If ThemeEngine.themeengineUseSafeColorValidation = True Then
+        If ThemeEngine.UseSafeColorValidation = True Then
             ' If the calling application wants to use safe color
             ' validation, then we'll use it.
             ' During testing, it seemed to generally be around

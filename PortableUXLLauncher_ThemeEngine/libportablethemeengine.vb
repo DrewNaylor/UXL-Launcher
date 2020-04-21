@@ -451,7 +451,7 @@ Public Class ThemeEngine
                 ElseIf ThemeName = "(Custom)" Then
                     ' Make sure the theme path and file exists and custom themes are allowed
                     ' to be used.
-                    If File.Exists(tempRemoveQuotesInCustomThemePath) And themeengineAllowCustomThemes = True Then
+                    If File.Exists(tempRemoveQuotesInCustomThemePath) And AllowCustomThemes = True Then
                         ThemeProperties.themeSheet.Load(tempRemoveQuotesInCustomThemePath)
                         ' Otherwise, just set the theme to use to the Default theme to make sure everything works.
                         ' Then we output that the custom theme file wasn't found if that's the problem, or if custom
@@ -461,7 +461,7 @@ Public Class ThemeEngine
                         ' If the theme engine output debug setting is enabled, output an error
                         ' in the Immediate Window or debug textbox if the custom theme file cannot be found.
                         themeSettingsInvalidMessage("UXLLauncher.ThemeEngine.FileNotFound_CustomTheme", "Couldn't find custom theme file.")
-                    ElseIf themeengineAllowCustomThemes = False Then
+                    ElseIf AllowCustomThemes = False Then
                         ' If custom themes are not allowed to be used, use the Default theme and tell the
                         ' user in the debug output that they're not allowed.
                         ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
@@ -803,7 +803,7 @@ Public Class ThemeEngine
             ' First, make sure the theme file exists.
             ' Make sure the theme path and file exists and custom themes are allowed
             ' to be used.
-            If File.Exists(ThemeFileLocation) And themeengineAllowCustomThemes = True Then
+            If File.Exists(ThemeFileLocation) And AllowCustomThemes = True Then
                 ' Load the custom theme file into the file reader.
                 ' This behavior changed from TE1.x to TE2.x,
                 ' so applications using TE2.x can just load in the
@@ -817,13 +817,13 @@ Public Class ThemeEngine
                     ' aren't any problems in the theme engine that might
                     ' slip by when using valid XML.
                 End Try
-            ElseIf Not File.Exists(ThemeFileLocation) And themeengineAllowCustomThemes = True Then
+            ElseIf Not File.Exists(ThemeFileLocation) And AllowCustomThemes = True Then
                 ' If the file doesn't exist but custom themes are allowed,
                 ' say that the Default theme will be used temporarily.
                 LocalThemeInfoDetailsComplete = "We couldn't find the custom theme file previously located below, so the Default theme will be used temporarily." & vbCrLf &
                                         ThemeFileLocation
                 Return LocalThemeInfoDetailsComplete
-            ElseIf themeengineAllowCustomThemes = False Then
+            ElseIf AllowCustomThemes = False Then
                 ' If custom themes aren't allowed, let the user know.
                 LocalThemeInfoDetailsComplete = "Your administrator has disabled custom themes from being used in UXL Launcher, so the Default theme will be used temporarily." &
                                        " This may be due to data protection policies put in place by your organization." &
@@ -1061,7 +1061,7 @@ Public Class ThemeEngine
     Private Shared _matchWindows10ThemeSettings As Boolean = False
 
     ' Safe color validation.
-    Public Shared Property themeengineUseSafeColorValidation() As Boolean
+    Public Shared Property UseSafeColorValidation() As Boolean
         Get
             Return _themeengineUseSafeColorValidation
         End Get
@@ -1071,7 +1071,7 @@ Public Class ThemeEngine
     End Property
 
     ' Whether to use full or loose compatibility mode for the TE1.x shim.
-    Public Shared Property compatibilityUseFullTE1DotXCompatibilityMode() As Boolean
+    Public Shared Property UseFullTE1DotXCompatibilityMode() As Boolean
         Get
             Return _compatibilityUseFullTE1DotXCompatibilityMode
         End Get
@@ -1093,7 +1093,7 @@ Public Class ThemeEngine
 
     ' Determine whether custom themes are allowed to be loaded.
     ' This is set by the calling app.
-    Public Shared Property themeengineAllowCustomThemes() As Boolean
+    Public Shared Property AllowCustomThemes() As Boolean
         Get
             Return _themeengineAllowCustomThemes
         End Get
@@ -1104,7 +1104,7 @@ Public Class ThemeEngine
 
     ' Determine whether the theme engine should match the Windows 10 theme.
     ' This is set by the calling app.
-    Public Shared Property matchWindows10ThemeSettings() As Boolean
+    Public Shared Property MatchWindows10ThemeSettings() As Boolean
         Get
             Return _matchWindows10ThemeSettings
         End Get
