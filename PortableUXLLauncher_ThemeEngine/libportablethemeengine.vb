@@ -496,7 +496,7 @@ Public Class ThemeEngine
             ' After this is all done, we then write the settingsThemeName string and the actual XML document
             ' containing the theme to the Debugger/Immediate Window, if theme output is enabled. Note that
             ' this happens BEFORE any theme colors are applied.
-            If debugmodeShowThemeEngineOutput = True Then
+            If ShowThemeEngineDebuggingOutput = True Then
                 Debug.WriteLine("")
                 Debug.WriteLine("")
                 Debug.WriteLine("")
@@ -542,7 +542,7 @@ Public Class ThemeEngine
         ' This sub accepts parameters for choosing which exceptionType message to show.
 
 
-        If debugmodeShowThemeEngineOutput = True Or ForceOutput = True Then
+        If ShowThemeEngineDebuggingOutput = True Or ForceOutput = True Then
             ' First, identify this block of text as part of the theme engine
             ' and that it's output for invalid theme settings.
 
@@ -756,7 +756,7 @@ Public Class ThemeEngine
         ' Show theme engine version that the theme wants to use in the Immediate Window
         ' if the proper setting is enabled.
         ' This can be used for debugging.
-        If debugmodeShowThemeEngineOutput = True Then
+        If ShowThemeEngineDebuggingOutput = True Then
             Debug.WriteLine("")
             Debug.WriteLine("ThemeEngine RuntimeVersion string:")
             Debug.WriteLine(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)
@@ -1082,7 +1082,7 @@ Public Class ThemeEngine
 
     ' Determine whether theme engine output is shown in the Immediate Window.
     ' This can be set by the calling application.
-    Public Shared Property debugmodeShowThemeEngineOutput() As Boolean
+    Public Shared Property ShowThemeEngineDebuggingOutput() As Boolean
         Get
             Return _debugmodeShowThemeEngineOutput
         End Get
