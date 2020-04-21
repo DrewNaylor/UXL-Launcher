@@ -439,8 +439,6 @@ Public Class ThemeEngine
                 ' Then we see if the userChosenTheme setting contains the word "Theme."
                 ' If it does not, we just add "Theme_XML" to the end of the string.
                 If Not ThemeName.EndsWith("Theme") And Not ThemeName = ("(Custom)") Then
-                    MessageBox.Show(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
-
                     ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
                     ' However, if it does, then we only add "_XML" to the string.
                 ElseIf ThemeName.EndsWith("Theme") Then
