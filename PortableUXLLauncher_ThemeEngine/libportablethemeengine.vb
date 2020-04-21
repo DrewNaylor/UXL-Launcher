@@ -956,14 +956,15 @@ Public Class ThemeEngine
                         LocalThemeInfoUseThemeEngineVersion = tempVer
                     Case -1
                         ' If the theme says to use an older version, treat it as a 1.x theme instead.
-                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                        LocalThemeInfoUseThemeEngineVersion = GetTE1DotXThemeEngineRuntimeVersion(LocalThemeInfoFileReader, LocalThemeInfoNamespaceManager)
                 End Select
             Else
-                ' If it is Nothing, set the version number to be 1.01.
-                LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                ' If the attribute is Nothing, fall back to TE1.x mode.
+                LocalThemeInfoUseThemeEngineVersion = GetTE1DotXThemeEngineRuntimeVersion(LocalThemeInfoFileReader, LocalThemeInfoNamespaceManager)
             End If
         Else
-
+            ' If the ThemeEngine node is Nothing, fall back to TE1.x mode.
+            LocalThemeInfoUseThemeEngineVersion = GetTE1DotXThemeEngineRuntimeVersion(LocalThemeInfoFileReader, LocalThemeInfoNamespaceManager)
         End If
 
 
@@ -986,7 +987,7 @@ Public Class ThemeEngine
         Return LocalThemeInfoDetailsComplete
     End Function
 
-    Private Function GetTE1DotXThemeEngineRuntimeVersion(ThemeFile As XmlDocument, ThemeNamespaceManager As XmlNamespaceManager) As Version
+    Private Shared Function GetTE1DotXThemeEngineRuntimeVersion(ThemeFile As XmlDocument, ThemeNamespaceManager As XmlNamespaceManager) As Version
         ' Only pull the UseThemeEngineVersion element from XML if it exists.
         If ThemeFile.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", ThemeNamespaceManager) IsNot Nothing Then
             ' Make a temporary version variable to compare to what's in the file.
