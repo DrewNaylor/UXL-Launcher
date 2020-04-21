@@ -955,7 +955,7 @@ Public Class ThemeEngine
                         ' If the theme file says to use a newer version, use it.
                         LocalThemeInfoUseThemeEngineVersion = tempVer
                     Case -1
-                        ' If the theme says to use an older version, treat it as a 1.x theme instead.
+                        ' If the theme says to use an older version, treat it as a 1.x theme instead and fall back to TE1.x mode.
                         LocalThemeInfoUseThemeEngineVersion = GetTE1DotXThemeEngineRuntimeVersion(LocalThemeInfoFileReader, LocalThemeInfoNamespaceManager)
                 End Select
             Else
