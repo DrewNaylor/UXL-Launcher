@@ -1505,7 +1505,7 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
                             "chosen theme that My.Settings.userChosenTheme is set to or the" & vbCrLf &
                             "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
-                            "doesn't have a root element or otherwise has malformed XML." & vbCrLf &
+                            "doesn't have a root element or otherwise has invalid XML." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
