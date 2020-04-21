@@ -923,7 +923,7 @@ Public Class ThemeEngine
 #End Region
 
 #Region "Pull UseThemeEngineVersion element from XML."
-        ' Use the new TE2.x attribute if it exists.
+        ' Use the new TE2.x attribute if it exists and it's 2.0 or greater.
         Dim TE2xEngineRuntimeVersionNode As XmlNode = LocalThemeInfoFileReader.SelectSingleNode("/UXL_Launcher_Theme/ThemeEngine", LocalThemeInfoNamespaceManager)
         ' If the node exists, check the attributes.
         If TE2xEngineRuntimeVersionNode IsNot Nothing Then
@@ -947,15 +947,15 @@ Public Class ThemeEngine
                     ' If it's invalid, consider it a 1.x theme.
                     tempVer = Version.Parse("1.01")
                 End Try
-                Select Case tempVer.CompareTo(Version.Parse("1.01"))
+                Select Case tempVer.CompareTo(Version.Parse("2.0"))
                     Case 0
-                        ' If the theme file says to use 1.01, use 1.01.
-                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                        ' If the theme file is 2.0-compatible, use 2.0.
+                        LocalThemeInfoUseThemeEngineVersion = Version.Parse("2.0")
                     Case 1
                         ' If the theme file says to use a newer version, use it.
                         LocalThemeInfoUseThemeEngineVersion = tempVer
                     Case -1
-                        ' If the theme says to use an older version, use 1.01 instead.
+                        ' If the theme says to use an older version, treat it as a 1.x theme instead.
                         LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
                 End Select
             Else
@@ -1018,6 +1018,10 @@ Public Class ThemeEngine
 #End Region
         ' Show the user the completed string.
         Return LocalThemeInfoDetailsComplete
+    End Function
+
+    Private Function GetTE1DotXThemeEngineRuntimeVersion(ThemeFile As String, Optional IsCustomTheme As Boolean = False, Optional ThemeFilePath As String = "") As Version
+
     End Function
 #End Region
 
