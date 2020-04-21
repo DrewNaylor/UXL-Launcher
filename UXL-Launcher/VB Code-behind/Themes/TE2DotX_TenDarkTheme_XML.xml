@@ -11,7 +11,13 @@
   versions of the theme engine that designers or developers don't want
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
-  <!-- Starting with 2.0, this is changed to be the Theme Engine Runtime Version. -->
+  <!-- Starting with 2.0, this is changed to be the Theme Engine Runtime Version.
+  For compatibility with TE1.x, it may be a good idea to include the
+  UseThemeEngineVersion node alongside the ThemeEngine RuntimeVersion node
+  and attribute.
+  RuntimeVersion numbers lower than 2.0 are treated as TE1.x themes, and
+  the version number in the UseThemeEngineVersion node will be used instead.
+  Same thing happens if the ThemeEngine RuntimeVersion attribute is missing. -->
   <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
   <ThemeEngine RuntimeVersion="2.0" />
   
