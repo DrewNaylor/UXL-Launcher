@@ -1005,23 +1005,25 @@ Public Class ThemeEngine
                 ' Catch all the above for easier code changing.
             Catch ex As Exception
                 ' If it's invalid, consider it a 1.x theme.
-                tempVer = Version.Parse("1.01")
+                Return Version.Parse("1.01")
             End Try
             Select Case tempVer.CompareTo(Version.Parse("1.01"))
                 Case 0
                     ' If the theme file says to use 1.01, use 1.01.
-                    LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                    Return Version.Parse("1.01")
                 Case 1
                     ' If the theme file says to use a newer version, use it.
-                    LocalThemeInfoUseThemeEngineVersion = tempVer
+                    Return tempVer
                 Case -1
                     ' If the theme says to use an older version, use 1.01 instead.
-                    LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+                    Return Version.Parse("1.01")
             End Select
         Else
             ' If the theme engine runtime version thing doesn't exist, use 1.01.
-            LocalThemeInfoUseThemeEngineVersion = Version.Parse("1.01")
+            Return Version.Parse("1.01")
         End If
+        ' If we somehow get out here, return Nothing to know something is wrong.
+        Return Nothing
     End Function
 #End Region
 
