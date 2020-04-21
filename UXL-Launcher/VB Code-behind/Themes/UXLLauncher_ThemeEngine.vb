@@ -1044,6 +1044,20 @@ Public Class UXLLauncher_ThemeEngine
             'Default FlowLayoutPanel colors.
             colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
             colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default statusbar colors. Backported from TE2.x and modified for TE1.x.
+            If themeSheetUseThemeEngineVersion >= 1.03 Then
+                ' If the version is 1.03 or greater, use the new default of Nothing for statusbar backcolor.
+                colorStatusBarBackColor = Nothing
+            Else ' If the version is older than 1.03, use the original default.
+                colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
+            End If
+
+            ' Default statuslabel colors and properties. Backported from TE2.x and modified for TE1.x.
+            colorStatusLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
+            propertyStatusLabelBorderStyle = Border3DStyle.Flat
         End If
 #End Region
 
