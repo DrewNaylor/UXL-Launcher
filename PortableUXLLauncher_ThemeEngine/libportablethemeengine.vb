@@ -439,14 +439,12 @@ Public Class ThemeEngine
                 ' Then we see if the userChosenTheme setting contains the word "Theme."
                 ' If it does not, we just add "Theme_XML" to the end of the string.
                 If Not ThemeName.EndsWith("Theme") And Not ThemeName = ("(Custom)") Then
+                    MessageBox.Show(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
+
                     ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "Theme_XML"))
                     ' However, if it does, then we only add "_XML" to the string.
                 ElseIf ThemeName.EndsWith("Theme") Then
                     ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName & "_XML"))
-                    ' Sometimes the theme name will have "Theme_XML" in it.
-                    ' If that's the case, just load it.
-                ElseIf ThemeName.EndsWith("Theme_XML") Then
-                    ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(ThemeName))
                     ' If the user has a custom theme enabled, use that instead.
                 ElseIf ThemeName = "(Custom)" Then
                     ' Make sure the theme path and file exists and custom themes are allowed
@@ -518,10 +516,10 @@ Public Class ThemeEngine
                 ' First check that the theme to use is a custom theme.
                 ' If it is, specify that it is.
                 If ThemeName = "(Custom)" Then
-                    Debug.WriteLine(GetThemeFileInfo(ThemeProperties.themeSheet.OuterXml, True, tempRemoveQuotesInCustomThemePath))
+                    Debug.WriteLine(GetThemeFileInfo(ThemeName, True, tempRemoveQuotesInCustomThemePath))
                 Else
                     ' Otherwise, just write it out.
-                    Debug.WriteLine(GetThemeFileInfo(ThemeProperties.themeSheet.OuterXml))
+                    Debug.WriteLine(GetThemeFileInfo(ThemeName))
                 End If
 
 
@@ -848,15 +846,15 @@ Public Class ThemeEngine
             If ThemeFile IsNot Nothing Then
 
                 Try
-                    If ThemeFile.EndsWith("Theme") Then
+                    If Not ThemeFile.EndsWith("Theme") Then
                         ' If the input ends with "Theme", append "_XML" to it.
-                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile & "_XML"))
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile & "Theme_XML"))
                     ElseIf ThemeFile.EndsWith("Theme_XML") Then
                         ' If it ends with "Theme_XML", just use it.
                         LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile))
                     Else
                         ' If it doesn't end with "Theme" or "Theme_XML", append "Theme_XML" to it.
-                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile & "Theme_XML"))
+                        LocalThemeInfoFileReader.LoadXml(My.Resources.ResourceManager.GetString(ThemeFile & "_XML"))
                     End If
                 Catch ex As System.Xml.XmlException
                 Catch ex As ArgumentNullException
