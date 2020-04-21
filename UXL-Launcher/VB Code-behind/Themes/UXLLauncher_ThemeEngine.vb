@@ -93,7 +93,7 @@ Public Class UXLLauncher_ThemeEngine
         ' Checkbox colors:
         Dim colorCheckBoxBackColor As Color
         Dim colorCheckBoxForeColor As Color
-        ' Checkbox colors:
+        ' Dropdown/combobox colors:
         Dim colorDropdownBackColor As Color
         Dim colorDropdownForeColor As Color
         ' Groupbox colors:
@@ -1044,6 +1044,20 @@ Public Class UXLLauncher_ThemeEngine
             'Default FlowLayoutPanel colors.
             colorFlowLayoutPanelBackColor = Color.FromKnownColor(KnownColor.Window)
             colorFlowLayoutPanelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+
+            ' Default statusbar colors. Backported from TE2.x and modified for TE1.x.
+            If themeSheetUseThemeEngineVersion >= 1.03 Then
+                ' If the version is 1.03 or greater, use the new default of Nothing for statusbar backcolor.
+                colorStatusBarBackColor = Nothing
+            Else ' If the version is older than 1.03, use the original default.
+                colorStatusBarBackColor = Color.FromKnownColor(KnownColor.Control)
+            End If
+
+            ' Default statuslabel colors and properties. Backported from TE2.x and modified for TE1.x.
+            colorStatusLabelBackColor = Color.FromKnownColor(KnownColor.Transparent)
+            colorStatusLabelForeColor = Color.FromKnownColor(KnownColor.ControlText)
+            propertyStatusLabelBorderSides = ToolStripStatusLabelBorderSides.None
+            propertyStatusLabelBorderStyle = Border3DStyle.Flat
         End If
 #End Region
 
@@ -1148,7 +1162,22 @@ Public Class UXLLauncher_ThemeEngine
             ElseIf TypeOf ctrl Is TextBox Then
                 ' If the control is a textbox, theme it as a textbox.
                 ' Set textbox BackColor (background color).
-                ctrl.BackColor = colorTextboxBackColor
+                ' Make sure textboxes aren't trying to have Transparent
+                ' colors applied to them
+                If Not colorTextboxBackColor = Color.Transparent Then
+                    Try
+                        ' Have a Try...Catch block to prevent any other issues from showing up, too.
+                        ctrl.BackColor = colorTextboxBackColor
+                    Catch ex As System.ArgumentException
+                        ' If some other exception happens, catch it.
+                        ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                        themeSettingsInvalidMessage(ex.GetType.ToString, ex.Message, ex.ToString)
+                    End Try
+                Else
+                    ' If it is, set it to the default and output an error message.
+                    ctrl.BackColor = Color.FromKnownColor(KnownColor.Window)
+                    themeSettingsInvalidMessage("System.ArgumentException", "Textboxes do not support transparent background colors.")
+                End If
                 ' Set textbox ForeColor (text color).
                 ctrl.ForeColor = colorTextboxForeColor
 
@@ -1450,6 +1479,23 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("Full exception: " & vbCrLf & fullException)
                 Debug.WriteLine("")
 
+            ElseIf exceptionType.ToString = "System.ArgumentException" Then
+                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
+                ' a theme file in My.Resources, give a message for this problem.
+                Debug.WriteLine("Exception: " & exceptionType)
+                Debug.WriteLine("Exception message: " & exceptionMessage)
+                Debug.WriteLine("")
+                Debug.WriteLine("The TextBox BackColor property doesn't support the specified color.")
+                Debug.WriteLine("")
+                Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
+                ' Only show custom theme path if the chosen theme is "(Custom)"
+                If My.Settings.userChosenTheme = "(Custom)" Then
+                    Debug.WriteLine("Custom theme path:" & vbCrLf & tempRemoveQuotesInCustomThemePath)
+                End If
+                Debug.WriteLine("")
+                Debug.WriteLine("Full exception: " & vbCrLf & fullException)
+                Debug.WriteLine("")
+
             ElseIf exceptionType.ToString = "System.Xml.XmlException" Then
                 ' If the theme doesn't have a root element and the exception "XmlException" is triggered,
                 ' say that the chosen theme has no root element.
@@ -1459,7 +1505,7 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("The theme was temporarily reset to the Default theme because either the" & vbCrLf &
                             "chosen theme that My.Settings.userChosenTheme is set to or the" & vbCrLf &
                             "custom theme specified in My.Settings.userCustomThemePath" & vbCrLf &
-                            "doesn't have a root element or otherwise has malformed XML." & vbCrLf &
+                            "doesn't have a root element or otherwise has invalid XML." & vbCrLf &
                             "Please refer to the exception message above for more details.")
                 Debug.WriteLine("")
                 Debug.WriteLine("Theme name:" & vbCrLf & My.Settings.userChosenTheme)
@@ -1657,14 +1703,30 @@ Public Class UXLLauncher_ThemeEngine
         ' Only pull the UseThemeEngineVersion element from XML if it exists.
         If themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager) IsNot Nothing Then
             ' If the version of the theme engine to be used as specified in the theme file is less than 1.01, set it to 1.01.
-            If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
-                themeUseThemeEngineVersion = CDec(1.01)
+            ' Make sure it doesn't crash on something like "1.03..34"
+            ' Code backported from TE2.x and modified for use in TE1.x.
+            Try
+                If CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) < 1.01 Then
+                    themeUseThemeEngineVersion = CDec(1.01)
 
-                ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
-                ' set it to whatever the version is specified in the theme file.
-            ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
-                themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
-            End If
+                    ' If the version of the theme engine to be used as specified in the theme file is greater than or equal to 1.01,
+                    ' set it to whatever the version is specified in the theme file.
+                ElseIf CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText) >= 1.01 Then
+                    themeUseThemeEngineVersion = CDec(themeFileReader.SelectSingleNode("/UXL_Launcher_Theme/UseThemeEngineVersion[1]", themeNamespaceManager).InnerText)
+                End If
+                ' FormatException:
+                ' The version isn't written correctly. Could possibly
+                ' be something like "1..2".
+                ' OverflowException:
+                ' Version specified in theme file is too big for Int32.
+                ' ArgumentException:
+                ' There's either no value or it's not formatted correctly.
+                ' Exception:
+                ' Catch all the above for easier code changing.
+            Catch ex As Exception
+                ' If it's invalid, consider it a 1.x theme.
+                themeSheetUseThemeEngineVersion = CDec(1.01)
+            End Try
         Else
             ' If the XML element is missing, manually force the value to be 1.01.
             themeSheetUseThemeEngineVersion = CDec(1.01)
