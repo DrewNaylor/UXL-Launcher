@@ -80,7 +80,7 @@ Friend Class TE1DotXLoaderShim
         End If
 
         'MessageBox.Show(ThemeProperties.themeSheetEngineRuntimeVersion.ToString)
-        If ThemeProperties.compatibilityUseFullTE1DotXCompatibilityMode = False Then
+        If ThemeEngine.compatibilityUseFullTE1DotXCompatibilityMode = False Then
             ' If the calling app wants to use loose compatibility mode, get the
             ' theme engine runtime version the theme wants to use and send it
             ' back to the TE2.x loader.
