@@ -1,8 +1,0 @@
-<FeatureList>
-  <Feature For="Button" Property="FlatAppearance/BorderColor" VersionIntroduced="1.01" />
-  <Feature For="Button" Property="FlatAppearance/MouseDownBackColor" VersionIntroduced="1.03" />
-  
-  <!-- Example compatibility nodes: -->
-  <!--<Feature For="Button" Property="BackColor" VersionIntroduced="2.1" />
-  <Feature For="Button" Property="ForeColor" VersionIntroduced="4.3" />-->
-</FeatureList>

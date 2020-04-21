@@ -80,7 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<!--     <Compile Include="My Project\Resources1.Designer.vb">
+    <!--     <Compile Include="My Project\Resources1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -116,12 +116,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\VersionCompatibility.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Content Include="Resources\DefaultValuesVersionDiff.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Themes\DefaultTheme_XML.xml" />
     <Content Include="Themes\Eyesore2Theme_XML.xml" />
     <Content Include="Themes\EyesoreTheme_XML.xml" />
@@ -133,6 +127,9 @@
     <Content Include="Themes\ReturnOfNightTheme_XML.xml" />
     <Content Include="Themes\RGBTheme_XML.xml" />
     <Content Include="Themes\TenDarkTheme_XML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
