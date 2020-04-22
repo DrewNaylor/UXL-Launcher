@@ -350,11 +350,11 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(300, 412)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(300, 440)
         '
         'notifyiconWord
         '
-        Me.notifyiconWord.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
+        Me.notifyiconWord.Image = Global.UXL_Launcher.My.Resources.Resources.WordSmallSVG_24x24
         Me.notifyiconWord.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconWord.Name = "notifyiconWord"
         Me.notifyiconWord.Size = New System.Drawing.Size(299, 30)
@@ -362,7 +362,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconExcel
         '
-        Me.notifyiconExcel.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
+        Me.notifyiconExcel.Image = Global.UXL_Launcher.My.Resources.Resources.ExcelSmallSVG_24x24
         Me.notifyiconExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconExcel.Name = "notifyiconExcel"
         Me.notifyiconExcel.Size = New System.Drawing.Size(299, 30)
@@ -370,7 +370,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconPowerpoint
         '
-        Me.notifyiconPowerpoint.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
+        Me.notifyiconPowerpoint.Image = Global.UXL_Launcher.My.Resources.Resources.PowerpointSmallSVG_24x24
         Me.notifyiconPowerpoint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPowerpoint.Name = "notifyiconPowerpoint"
         Me.notifyiconPowerpoint.Size = New System.Drawing.Size(299, 30)
@@ -378,7 +378,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconOutlook
         '
-        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookSmallSVG_24x24
         Me.notifyiconOutlook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOutlook.Name = "notifyiconOutlook"
         Me.notifyiconOutlook.Size = New System.Drawing.Size(299, 30)
@@ -386,7 +386,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconOnenote
         '
-        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.small_Onenote
+        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.OneNoteSmallSVG_24x24
         Me.notifyiconOnenote.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOnenote.Name = "notifyiconOnenote"
         Me.notifyiconOnenote.Size = New System.Drawing.Size(299, 30)
