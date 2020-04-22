@@ -63,16 +63,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Public ReadOnly Property Access() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Access", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Public ReadOnly Property AccessLargeSVG_3D() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("AccessLargeSVG_3D", resourceCulture)
@@ -139,22 +129,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-04-21T07:24:51
+        '''  Looks up a localized string similar to 2020-04-22T15:58:08
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
             Get
                 Return ResourceManager.GetString("BuildDate", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Clip_Organizer() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Clip_Organizer", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -194,16 +174,6 @@ Namespace My.Resources
         Public ReadOnly Property DefaultTheme_XML() As String
             Get
                 Return ResourceManager.GetString("DefaultTheme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Excel() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Excel", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -284,16 +254,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Public ReadOnly Property Infopath() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Infopath", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Public ReadOnly Property InfopathLargeSVG_3D() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("InfopathLargeSVG_3D", resourceCulture)
@@ -366,16 +326,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Microsoft_Query() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Microsoft_Query", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Mitty Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Most of the work for version 3.2 was done while my calico cat, Mitty, was still around, so it felt like a good idea to make this theme for her. I miss her.
@@ -388,16 +338,6 @@ Namespace My.Resources
         Public ReadOnly Property MittyTheme_XML() As String
             Get
                 Return ResourceManager.GetString("MittyTheme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Onenote() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Onenote", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -417,16 +357,6 @@ Namespace My.Resources
         Public ReadOnly Property OneNoteSmallSVG_24x24() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("OneNoteSmallSVG_24x24", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Outlook() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Outlook", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -464,29 +394,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Public ReadOnly Property Picture_Manager() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Picture_Manager", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Public ReadOnly Property picture_manager_75x75() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("picture_manager_75x75", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Powerpoint() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Powerpoint", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -517,16 +427,6 @@ Namespace My.Resources
         Public ReadOnly Property PowerpointSmallSVG_24x24() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("PowerpointSmallSVG_24x24", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Publisher() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Publisher", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -620,16 +520,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Public ReadOnly Property Sharepoint_Workspace() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Sharepoint_Workspace", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Public ReadOnly Property SharepointLargeSVG_3D() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("SharepointLargeSVG_3D", resourceCulture)
@@ -650,99 +540,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Public ReadOnly Property small_Access() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Access", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Excel() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Excel", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Infopath() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Infopath", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Public ReadOnly Property small_Language_Settings() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("small_Language_Settings", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Onenote() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Onenote", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Outlook() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Outlook", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Powerpoint() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Powerpoint", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Publisher() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Publisher", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Sharepoint() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Sharepoint", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property small_Word() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("small_Word", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -889,16 +689,6 @@ Namespace My.Resources
         Public ReadOnly Property UXLLauncherInfo_TXT() As String
             Get
                 Return ResourceManager.GetString("UXLLauncherInfo_TXT", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Public ReadOnly Property Word() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Word", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

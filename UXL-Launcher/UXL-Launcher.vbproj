@@ -246,29 +246,8 @@
     <Content Include="VB Code-behind\Themes\ReturnOfNightTheme_XML.xml" />
     <Content Include="VB Code-behind\Themes\Eyesore2Theme_XML.xml" />
     <None Include="Resources\gpl-rtf.rtf" />
-    <None Include="Resources\Word.png" />
-    <None Include="Resources\Sharepoint Workspace.png" />
-    <None Include="Resources\Publisher.png" />
-    <None Include="Resources\Powerpoint.png" />
-    <None Include="Resources\Outlook.png" />
-    <None Include="Resources\Onenote.png" />
-    <None Include="Resources\Infopath.png" />
-    <None Include="Resources\Excel.png" />
-    <None Include="Resources\Access.png" />
-    <None Include="Resources\Microsoft Query.png" />
-    <None Include="Resources\picture manager.png" />
-    <None Include="Resources\Clip Organizer.png" />
     <None Include="Resources\Language Settings.png" />
     <None Include="Resources\small Language Settings.png" />
-    <None Include="Resources\small-icons\small-Access.png" />
-    <None Include="Resources\small-icons\small-Excel.png" />
-    <None Include="Resources\small-icons\small-Infopath.png" />
-    <None Include="Resources\small-icons\small-Onenote.png" />
-    <None Include="Resources\small-icons\small-Outlook.png" />
-    <None Include="Resources\small-icons\small-Powerpoint.png" />
-    <None Include="Resources\small-icons\small-Publisher.png" />
-    <None Include="Resources\small-icons\small-Sharepoint.png" />
-    <None Include="Resources\small-icons\small-Word.png" />
     <Content Include="UXL_Launcher_Icon_For_Windows.ico" />
   </ItemGroup>
   <ItemGroup>
