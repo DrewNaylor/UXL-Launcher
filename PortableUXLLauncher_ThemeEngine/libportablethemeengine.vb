@@ -983,6 +983,17 @@ Public Class ThemeEngine
                                "Author: " & LocalThemeInfoAuthor & vbCrLf &
                                "Uses ThemeEngine runtime version " & LocalThemeInfoUseThemeEngineVersion.ToString & "."
 #End Region
+
+        ' In case the theme supports a version of the theme engine that's newer than
+        ' the theme engine version being used currently, issue a warning.
+        Select Case LocalThemeInfoUseThemeEngineVersion.CompareTo(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version)
+            Case 0 Or -1 ' Same version or lower version; do nothing.
+            Case 1 ' If it's newer, we issue a warning.
+                LocalThemeInfoDetailsComplete = LocalThemeInfoDetailsComplete & vbCrLf & vbCrLf &
+                    "Warning: This theme supports PortableThemeEngine version " & LocalThemeInfoUseThemeEngineVersion.ToString & ", which is newer than the version" & vbCrLf &
+                    "of the theme engine currenty in use (version " & System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString & ", to be specific)." & vbCrLf &
+                    "There may be some issues, but the theme should work for the most part."
+        End Select
         ' Show the user the completed string.
         Return LocalThemeInfoDetailsComplete
     End Function

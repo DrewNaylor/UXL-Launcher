@@ -1742,6 +1742,14 @@ Public Class UXLLauncher_ThemeEngine
                                "Author: " & themeAuthor & vbCrLf &
                                "Theme Engine version to use: " & themeUseThemeEngineVersion
 #End Region
+        ' If the version that's specified in the theme file is newer than the version
+        ' of the theme engine in the app, add a warning.
+        If themeUseThemeEngineVersion > CDec(My.Resources.themeEngineVersion) Then
+            themeDetailsComplete = themeDetailsComplete & vbCrLf & vbCrLf &
+                "Warning: This theme supports UXL Launcher Theme Engine version " & themeUseThemeEngineVersion.ToString & ", which is newer than the version" & vbCrLf &
+                "of the theme engine in this version of UXL Launcher (version " & My.Resources.themeEngineVersion & ", to be specific)." & vbCrLf &
+                "There may be some issues, but the theme should work for the most part."
+        End If
         ' Show the user the completed string.
         Return themeDetailsComplete
     End Function
