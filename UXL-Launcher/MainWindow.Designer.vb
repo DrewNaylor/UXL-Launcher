@@ -631,7 +631,7 @@ Partial Class aaformMainWindow
         '
         'pictureWordIcon
         '
-        Me.pictureWordIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Word
+        Me.pictureWordIcon.Image = Global.UXL_Launcher.My.Resources.Resources.WordLargeSVG_3D
         Me.pictureWordIcon.Location = New System.Drawing.Point(9, 25)
         Me.pictureWordIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureWordIcon.Name = "pictureWordIcon"
