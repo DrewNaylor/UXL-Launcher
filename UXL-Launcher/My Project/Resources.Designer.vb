@@ -101,15 +101,15 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to applauncher-icons
         '''By Drew Naylor. Licensed under CC BY 4.0.
-        '''Version 2.1
+        '''Version 3.0
         '''
         '''The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
         '''
         '''Link to applauncher-icons project repository:
         '''https://github.com/DrewNaylor/applauncher-icons
         '''
-        '''Link to applauncher-icons version 2.1 GitHub Releases page:
-        '''https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.1
+        '''Link to applauncher-icons version 3.0 GitHub Releases page:
+        '''https://github.com/DrewNaylor/applauncher-icons/releases/tag/v3.0
         '''
         '''T [rest of string was truncated]&quot;;.
         '''</summary>
@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-04-22T15:58:08
+        '''  Looks up a localized string similar to 2020-04-22T16:25:57
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String

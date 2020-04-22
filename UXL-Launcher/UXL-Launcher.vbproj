@@ -232,6 +232,10 @@
     <None Include="Resources\picture manager-75x75.png" />
     <None Include="Resources\Clip Organizer-75x64.png" />
     <None Include="Resources\Query-64x64.png" />
+    <None Include="Resources\DARK_UXL_Launcher_Banner.png" />
+    <None Include="Resources\Language_Settings.png" />
+    <None Include="Resources\small_Language_Settings.png" />
+    <None Include="Resources\UXL_Launcher_Banner.png" />
     <Content Include="VB Code-behind\Themes\TenDarkTheme_XML.xml" />
     <None Include="Resources\unsafeExtensions_TXT.txt" />
     <None Include="Resources\DARK_UXL-Launcher-Banner.png" />
