@@ -158,7 +158,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewWordDoc
         '
-        Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
+        Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.WordNewDocument
         Me.menuitemNewWordDoc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewWordDoc.Name = "menuitemNewWordDoc"
         Me.menuitemNewWordDoc.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
@@ -167,7 +167,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewExcelWorkbook
         '
-        Me.menuitemNewExcelWorkbook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
+        Me.menuitemNewExcelWorkbook.Image = Global.UXL_Launcher.My.Resources.Resources.ExcelNewWorksheet
         Me.menuitemNewExcelWorkbook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewExcelWorkbook.Name = "menuitemNewExcelWorkbook"
         Me.menuitemNewExcelWorkbook.Size = New System.Drawing.Size(354, 30)
@@ -176,7 +176,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewPPTPresentation
         '
-        Me.menuitemNewPPTPresentation.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
+        Me.menuitemNewPPTPresentation.Image = Global.UXL_Launcher.My.Resources.Resources.PowerPointNewPresentation
         Me.menuitemNewPPTPresentation.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewPPTPresentation.Name = "menuitemNewPPTPresentation"
         Me.menuitemNewPPTPresentation.Size = New System.Drawing.Size(354, 30)
@@ -189,7 +189,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewOutlookEmail
         '
-        Me.menuitemNewOutlookEmail.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.menuitemNewOutlookEmail.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookNewEmailContact
         Me.menuitemNewOutlookEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookEmail.Name = "menuitemNewOutlookEmail"
         Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(354, 30)
@@ -197,7 +197,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewOutlookContact
         '
-        Me.menuitemNewOutlookContact.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.menuitemNewOutlookContact.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookNewEmailContact
         Me.menuitemNewOutlookContact.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookContact.Name = "menuitemNewOutlookContact"
         Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(354, 30)
@@ -210,7 +210,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewPublisherPublication
         '
-        Me.menuitemNewPublisherPublication.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
+        Me.menuitemNewPublisherPublication.Image = Global.UXL_Launcher.My.Resources.Resources.PublisherNewPublication
         Me.menuitemNewPublisherPublication.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewPublisherPublication.Name = "menuitemNewPublisherPublication"
         Me.menuitemNewPublisherPublication.Size = New System.Drawing.Size(354, 30)
@@ -350,11 +350,11 @@ Partial Class aaformMainWindow
         Me.contextmenuNotifyicon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.notifyiconWord, Me.notifyiconExcel, Me.notifyiconPowerpoint, Me.notifyiconOutlook, Me.notifyiconOnenote, Me.notifyiconSeparator1, Me.notifyiconAccess, Me.notifyiconPublisher, Me.notifyiconInfopath, Me.notifyiconSharepointWkSp, Me.notifyiconSeparator2, Me.notifyiconOfficeLang, Me.notifyiconUXLOptions, Me.notifyiconSeparator3, Me.notifyiconShowApp, Me.notifyiconExitApp})
         Me.contextmenuNotifyicon.Name = "contextmenuNotifyicon"
         Me.contextmenuNotifyicon.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(300, 412)
+        Me.contextmenuNotifyicon.Size = New System.Drawing.Size(300, 440)
         '
         'notifyiconWord
         '
-        Me.notifyiconWord.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
+        Me.notifyiconWord.Image = Global.UXL_Launcher.My.Resources.Resources.WordSmallSVG_24x24
         Me.notifyiconWord.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconWord.Name = "notifyiconWord"
         Me.notifyiconWord.Size = New System.Drawing.Size(299, 30)
@@ -362,7 +362,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconExcel
         '
-        Me.notifyiconExcel.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
+        Me.notifyiconExcel.Image = Global.UXL_Launcher.My.Resources.Resources.ExcelSmallSVG_24x24
         Me.notifyiconExcel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconExcel.Name = "notifyiconExcel"
         Me.notifyiconExcel.Size = New System.Drawing.Size(299, 30)
@@ -370,7 +370,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconPowerpoint
         '
-        Me.notifyiconPowerpoint.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
+        Me.notifyiconPowerpoint.Image = Global.UXL_Launcher.My.Resources.Resources.PowerpointSmallSVG_24x24
         Me.notifyiconPowerpoint.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPowerpoint.Name = "notifyiconPowerpoint"
         Me.notifyiconPowerpoint.Size = New System.Drawing.Size(299, 30)
@@ -378,7 +378,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconOutlook
         '
-        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.notifyiconOutlook.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookSmallSVG_24x24
         Me.notifyiconOutlook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOutlook.Name = "notifyiconOutlook"
         Me.notifyiconOutlook.Size = New System.Drawing.Size(299, 30)
@@ -386,7 +386,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconOnenote
         '
-        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.small_Onenote
+        Me.notifyiconOnenote.Image = Global.UXL_Launcher.My.Resources.Resources.OneNoteSmallSVG_24x24
         Me.notifyiconOnenote.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconOnenote.Name = "notifyiconOnenote"
         Me.notifyiconOnenote.Size = New System.Drawing.Size(299, 30)
@@ -399,7 +399,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconAccess
         '
-        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.small_Access
+        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.AccessSmallSVG_24x24
         Me.notifyiconAccess.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconAccess.Name = "notifyiconAccess"
         Me.notifyiconAccess.Size = New System.Drawing.Size(299, 30)
@@ -407,7 +407,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconPublisher
         '
-        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
+        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.PublisherSmallSVG_24x24
         Me.notifyiconPublisher.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPublisher.Name = "notifyiconPublisher"
         Me.notifyiconPublisher.Size = New System.Drawing.Size(299, 30)
@@ -415,7 +415,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconInfopath
         '
-        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.small_Infopath
+        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.InfopathSmallSVG_24x24
         Me.notifyiconInfopath.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconInfopath.Name = "notifyiconInfopath"
         Me.notifyiconInfopath.Size = New System.Drawing.Size(299, 30)
@@ -423,7 +423,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconSharepointWkSp
         '
-        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.small_Sharepoint
+        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.SharepointSmallSVG_24x24
         Me.notifyiconSharepointWkSp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
         Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(299, 30)
@@ -587,7 +587,7 @@ Partial Class aaformMainWindow
         '
         'pictureOneNoteIcon
         '
-        Me.pictureOneNoteIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.pictureOneNoteIcon.Image = Global.UXL_Launcher.My.Resources.Resources.OnenoteLargeSVG_3D
         Me.pictureOneNoteIcon.Location = New System.Drawing.Point(9, 345)
         Me.pictureOneNoteIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureOneNoteIcon.Name = "pictureOneNoteIcon"
@@ -598,7 +598,7 @@ Partial Class aaformMainWindow
         '
         'pictureOutlookIcon
         '
-        Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
+        Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookLargeSVG_3D
         Me.pictureOutlookIcon.Location = New System.Drawing.Point(9, 265)
         Me.pictureOutlookIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureOutlookIcon.Name = "pictureOutlookIcon"
@@ -609,7 +609,7 @@ Partial Class aaformMainWindow
         '
         'picturePowerpointIcon
         '
-        Me.picturePowerpointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Powerpoint
+        Me.picturePowerpointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.PowerpointLargeSVG_3D
         Me.picturePowerpointIcon.Location = New System.Drawing.Point(9, 185)
         Me.picturePowerpointIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.picturePowerpointIcon.Name = "picturePowerpointIcon"
@@ -620,7 +620,7 @@ Partial Class aaformMainWindow
         '
         'pictureExcelIcon
         '
-        Me.pictureExcelIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Excel
+        Me.pictureExcelIcon.Image = Global.UXL_Launcher.My.Resources.Resources.ExcelLargeSVG_3D
         Me.pictureExcelIcon.Location = New System.Drawing.Point(9, 105)
         Me.pictureExcelIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureExcelIcon.Name = "pictureExcelIcon"
@@ -631,7 +631,7 @@ Partial Class aaformMainWindow
         '
         'pictureWordIcon
         '
-        Me.pictureWordIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Word
+        Me.pictureWordIcon.Image = Global.UXL_Launcher.My.Resources.Resources.WordLargeSVG_3D
         Me.pictureWordIcon.Location = New System.Drawing.Point(9, 25)
         Me.pictureWordIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureWordIcon.Name = "pictureWordIcon"
@@ -692,7 +692,7 @@ Partial Class aaformMainWindow
         '
         'pictureAccessIcon
         '
-        Me.pictureAccessIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Access
+        Me.pictureAccessIcon.Image = Global.UXL_Launcher.My.Resources.Resources.AccessLargeSVG_3D
         Me.pictureAccessIcon.Location = New System.Drawing.Point(9, 25)
         Me.pictureAccessIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureAccessIcon.Name = "pictureAccessIcon"
@@ -713,7 +713,7 @@ Partial Class aaformMainWindow
         '
         'picturePublisherIcon
         '
-        Me.picturePublisherIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Publisher
+        Me.picturePublisherIcon.Image = Global.UXL_Launcher.My.Resources.Resources.PublisherLargeSVG_3D
         Me.picturePublisherIcon.Location = New System.Drawing.Point(9, 105)
         Me.picturePublisherIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.picturePublisherIcon.Name = "picturePublisherIcon"
@@ -724,7 +724,7 @@ Partial Class aaformMainWindow
         '
         'pictureInfoPathIcon
         '
-        Me.pictureInfoPathIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Infopath
+        Me.pictureInfoPathIcon.Image = Global.UXL_Launcher.My.Resources.Resources.InfopathLargeSVG_3D
         Me.pictureInfoPathIcon.Location = New System.Drawing.Point(9, 185)
         Me.pictureInfoPathIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureInfoPathIcon.Name = "pictureInfoPathIcon"
@@ -735,7 +735,7 @@ Partial Class aaformMainWindow
         '
         'pictureSharepointIcon
         '
-        Me.pictureSharepointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Sharepoint_Workspace
+        Me.pictureSharepointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.SharepointLargeSVG_3D
         Me.pictureSharepointIcon.Location = New System.Drawing.Point(9, 265)
         Me.pictureSharepointIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureSharepointIcon.Name = "pictureSharepointIcon"
@@ -777,7 +777,7 @@ Partial Class aaformMainWindow
         '
         'pictureQueryIcon
         '
-        Me.pictureQueryIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Microsoft_Query
+        Me.pictureQueryIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Query_64x64
         Me.pictureQueryIcon.Location = New System.Drawing.Point(9, 25)
         Me.pictureQueryIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureQueryIcon.Name = "pictureQueryIcon"
@@ -798,7 +798,7 @@ Partial Class aaformMainWindow
         '
         'pictureOneNoteQuickLaunchIcon
         '
-        Me.pictureOneNoteQuickLaunchIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.pictureOneNoteQuickLaunchIcon.Image = Global.UXL_Launcher.My.Resources.Resources.OnenoteLargeSVG_3D
         Me.pictureOneNoteQuickLaunchIcon.Location = New System.Drawing.Point(9, 265)
         Me.pictureOneNoteQuickLaunchIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureOneNoteQuickLaunchIcon.Name = "pictureOneNoteQuickLaunchIcon"
@@ -819,7 +819,7 @@ Partial Class aaformMainWindow
         '
         'picturePictureManagerIcon
         '
-        Me.picturePictureManagerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Picture_Manager
+        Me.picturePictureManagerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.picture_manager_75x75
         Me.picturePictureManagerIcon.Location = New System.Drawing.Point(9, 185)
         Me.picturePictureManagerIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.picturePictureManagerIcon.Name = "picturePictureManagerIcon"
@@ -830,7 +830,7 @@ Partial Class aaformMainWindow
         '
         'pictureClipOrganizerIcon
         '
-        Me.pictureClipOrganizerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer
+        Me.pictureClipOrganizerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer_75x64
         Me.pictureClipOrganizerIcon.Location = New System.Drawing.Point(9, 106)
         Me.pictureClipOrganizerIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureClipOrganizerIcon.Name = "pictureClipOrganizerIcon"
