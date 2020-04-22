@@ -587,7 +587,7 @@ Partial Class aaformMainWindow
         '
         'pictureOneNoteIcon
         '
-        Me.pictureOneNoteIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.pictureOneNoteIcon.Image = Global.UXL_Launcher.My.Resources.Resources.OnenoteLargeSVG_3D
         Me.pictureOneNoteIcon.Location = New System.Drawing.Point(9, 345)
         Me.pictureOneNoteIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureOneNoteIcon.Name = "pictureOneNoteIcon"
@@ -598,7 +598,7 @@ Partial Class aaformMainWindow
         '
         'pictureOutlookIcon
         '
-        Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Outlook
+        Me.pictureOutlookIcon.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookLargeSVG_3D
         Me.pictureOutlookIcon.Location = New System.Drawing.Point(9, 265)
         Me.pictureOutlookIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureOutlookIcon.Name = "pictureOutlookIcon"
@@ -609,7 +609,7 @@ Partial Class aaformMainWindow
         '
         'picturePowerpointIcon
         '
-        Me.picturePowerpointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Powerpoint
+        Me.picturePowerpointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.PowerpointLargeSVG_3D
         Me.picturePowerpointIcon.Location = New System.Drawing.Point(9, 185)
         Me.picturePowerpointIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.picturePowerpointIcon.Name = "picturePowerpointIcon"
@@ -620,7 +620,7 @@ Partial Class aaformMainWindow
         '
         'pictureExcelIcon
         '
-        Me.pictureExcelIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Excel
+        Me.pictureExcelIcon.Image = Global.UXL_Launcher.My.Resources.Resources.ExcelLargeSVG_3D
         Me.pictureExcelIcon.Location = New System.Drawing.Point(9, 105)
         Me.pictureExcelIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureExcelIcon.Name = "pictureExcelIcon"
@@ -692,7 +692,7 @@ Partial Class aaformMainWindow
         '
         'pictureAccessIcon
         '
-        Me.pictureAccessIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Access
+        Me.pictureAccessIcon.Image = Global.UXL_Launcher.My.Resources.Resources.AccessLargeSVG_3D
         Me.pictureAccessIcon.Location = New System.Drawing.Point(9, 25)
         Me.pictureAccessIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureAccessIcon.Name = "pictureAccessIcon"
@@ -713,7 +713,7 @@ Partial Class aaformMainWindow
         '
         'picturePublisherIcon
         '
-        Me.picturePublisherIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Publisher
+        Me.picturePublisherIcon.Image = Global.UXL_Launcher.My.Resources.Resources.PublisherLargeSVG_3D
         Me.picturePublisherIcon.Location = New System.Drawing.Point(9, 105)
         Me.picturePublisherIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.picturePublisherIcon.Name = "picturePublisherIcon"
@@ -724,7 +724,7 @@ Partial Class aaformMainWindow
         '
         'pictureInfoPathIcon
         '
-        Me.pictureInfoPathIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Infopath
+        Me.pictureInfoPathIcon.Image = Global.UXL_Launcher.My.Resources.Resources.InfopathLargeSVG_3D
         Me.pictureInfoPathIcon.Location = New System.Drawing.Point(9, 185)
         Me.pictureInfoPathIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureInfoPathIcon.Name = "pictureInfoPathIcon"
@@ -735,7 +735,7 @@ Partial Class aaformMainWindow
         '
         'pictureSharepointIcon
         '
-        Me.pictureSharepointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Sharepoint_Workspace
+        Me.pictureSharepointIcon.Image = Global.UXL_Launcher.My.Resources.Resources.SharepointLargeSVG_3D
         Me.pictureSharepointIcon.Location = New System.Drawing.Point(9, 265)
         Me.pictureSharepointIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureSharepointIcon.Name = "pictureSharepointIcon"
