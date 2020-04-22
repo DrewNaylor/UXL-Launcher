@@ -399,7 +399,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconAccess
         '
-        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.small_Access
+        Me.notifyiconAccess.Image = Global.UXL_Launcher.My.Resources.Resources.AccessSmallSVG_24x24
         Me.notifyiconAccess.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconAccess.Name = "notifyiconAccess"
         Me.notifyiconAccess.Size = New System.Drawing.Size(299, 30)
@@ -407,7 +407,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconPublisher
         '
-        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
+        Me.notifyiconPublisher.Image = Global.UXL_Launcher.My.Resources.Resources.PublisherSmallSVG_24x24
         Me.notifyiconPublisher.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconPublisher.Name = "notifyiconPublisher"
         Me.notifyiconPublisher.Size = New System.Drawing.Size(299, 30)
@@ -415,7 +415,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconInfopath
         '
-        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.small_Infopath
+        Me.notifyiconInfopath.Image = Global.UXL_Launcher.My.Resources.Resources.InfopathSmallSVG_24x24
         Me.notifyiconInfopath.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconInfopath.Name = "notifyiconInfopath"
         Me.notifyiconInfopath.Size = New System.Drawing.Size(299, 30)
@@ -423,7 +423,7 @@ Partial Class aaformMainWindow
         '
         'notifyiconSharepointWkSp
         '
-        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.small_Sharepoint
+        Me.notifyiconSharepointWkSp.Image = Global.UXL_Launcher.My.Resources.Resources.SharepointSmallSVG_24x24
         Me.notifyiconSharepointWkSp.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.notifyiconSharepointWkSp.Name = "notifyiconSharepointWkSp"
         Me.notifyiconSharepointWkSp.Size = New System.Drawing.Size(299, 30)
