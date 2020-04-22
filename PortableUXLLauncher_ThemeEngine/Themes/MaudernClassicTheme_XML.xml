@@ -73,7 +73,7 @@
         <LinkColor>LightBlue</LinkColor>
       </LinkLabel>
 	  
-	  <RadioButton>
+	    <RadioButton>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </RadioButton>
@@ -86,6 +86,11 @@
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
+
+      <Panel>
+        <BackColor>DimGray</BackColor>
+        <ForeColor>White</ForeColor>
+      </Panel>
 
       <TextBox>
         <BackColor>Gray</BackColor>

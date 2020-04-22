@@ -71,6 +71,11 @@
         <LinkColor>Aqua</LinkColor>
       </LinkLabel>
 
+      <Panel>
+        <BackColor>Indigo</BackColor>
+        <ForeColor>White</ForeColor>
+      </Panel>
+
       <RadioButton>
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>

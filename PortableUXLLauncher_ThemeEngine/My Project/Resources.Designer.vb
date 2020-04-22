@@ -208,6 +208,44 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Arr G. Bee&lt;/Title&gt;
+        '''  &lt;Description&gt;Arr G. Bee is a theme that&apos;s influenced by the UXL Launcher logo.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.01 is the oldest version number available and anything
+        '''  smaller than  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property TE2DotX_RGBTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("TE2DotX_RGBTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;!-- Title, description, version, and author properties are still in
+        '''       XML InnerText, kinda like what HTML does. --&gt;
+        '''  &lt;Title&gt;Ten Dark&lt;/Title&gt;
+        '''  &lt;Description&gt;A dark theme similar to Windows 10&apos;s &quot;Dark Mode&quot;.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or develo [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property TE2DotX_TenDarkTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("TE2DotX_TenDarkTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Ten Dark&lt;/Title&gt;
         '''  &lt;Description&gt;A dark theme similar to Windows 10&apos;s &quot;Dark Mode&quot;.&lt;/Description&gt;
         '''  &lt;Version&gt;v1.1&lt;/Version&gt;

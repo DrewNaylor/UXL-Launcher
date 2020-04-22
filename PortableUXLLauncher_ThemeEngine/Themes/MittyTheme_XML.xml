@@ -45,6 +45,11 @@
         <ForeColor>Black</ForeColor>
       </Label>
 
+      <Panel>
+        <BackColor>DarkOrange</BackColor>
+        <ForeColor>Black</ForeColor>
+      </Panel>
+
       <TabPage>
         <BackColor>DarkOrange</BackColor>
         <ForeColor>Black</ForeColor>

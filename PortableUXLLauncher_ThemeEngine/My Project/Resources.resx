@@ -365,34 +365,6 @@
         0Pwb6ZIPz87fJv3y9vn/B5zqHCjTyl1+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DefaultTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\DefaultTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Eyesore2Theme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\Eyesore2Theme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="EyesoreTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\EyesoreTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="MaudernClassicTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\MaudernClassicTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="MaudernTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\MaudernTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="MittyTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\MittyTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="ReturnOfNightTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\ReturnOfNightTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="RGBTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\RGBTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="TenDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Themes\TenDarkTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="UXL_Launcher_Banner" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAQACAMAAACgdhHyAAAABGdBTUEAALGPC/xhBQAAATVQTFRF////
@@ -627,5 +599,39 @@
         QgghhBBCCCGEEEIIIYQQQgghhBBCSOnMZv8fqLVG+cwV8usAAAAASUVORK5CYII=
 </value>
     <comment>About window banner</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DefaultTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\DefaultTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Eyesore2Theme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\Eyesore2Theme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EyesoreTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\EyesoreTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MaudernClassicTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\MaudernClassicTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="MaudernTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\MaudernTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MittyTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\MittyTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReturnOfNightTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\ReturnOfNightTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="RGBTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\RGBTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TE2DotX_RGBTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\TE2DotX_RGBTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TE2DotX_TenDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\TE2DotX_TenDarkTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="TenDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\TenDarkTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

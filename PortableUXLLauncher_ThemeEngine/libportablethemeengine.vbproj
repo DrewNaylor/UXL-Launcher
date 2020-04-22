@@ -126,6 +126,8 @@
     </Content>
     <Content Include="Themes\ReturnOfNightTheme_XML.xml" />
     <Content Include="Themes\RGBTheme_XML.xml" />
+    <None Include="Themes\TE2DotX_RGBTheme_XML.xml" />
+    <None Include="Themes\TE2DotX_TenDarkTheme_XML.xml" />
     <Content Include="Themes\TenDarkTheme_XML.xml" />
   </ItemGroup>
   <ItemGroup>
