@@ -295,12 +295,14 @@ Public Class aaformOptionsWindow
     Private Sub buttonSaveSettings_Click(sender As Object, e As EventArgs) Handles buttonSaveSettings.Click
         ' Moved saving code to its own sub so that closing the Options
         ' window isn't required when saving.
-        saveStuff()
-        Me.Close()
+        ' Make sure it was successful before closing the window.
+        If saveStuff() = 0 Then
+            Me.Close()
+        End If
 
     End Sub
 
-    Private Sub saveStuff()
+    Private Function saveStuff() As Integer
         ' Look at the length of the text in the "Office Install Drive" textbox and if there is no text in it then kindly tell the
         ' user they need to type in one drive letter.
         If textboxOfficeDrive.Text.Length = 0 Then
@@ -314,6 +316,10 @@ Public Class aaformOptionsWindow
             ' Set focus to the Office Drive Location textbox, and select all text in it.
             textboxOfficeDrive.Focus()
             textboxOfficeDrive.SelectAll()
+            ' Return 1, which means there's a problem.
+            ' When this happens, code that uses this function
+            ' will exit and not continue.
+            Return 1
         Else
             '
             ' This space reserved for more settings.
@@ -425,8 +431,13 @@ Public Class aaformOptionsWindow
                         "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
 
+            ' Saving was successful.
+            ' Return 0.
+            ' Fortunately, this was just to save
+            ' settings, rather than the entire world.
+            Return 0
         End If
-    End Sub
+    End Function
 #End Region
 
 #Region "Code that runs when the user clicks the Cancel button."
@@ -463,37 +474,42 @@ Public Class aaformOptionsWindow
                         "Test settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
             ' Save the user's settings first before testing.
-            saveStuff()
-            ' Hide the Options window so it doesn't get in the way.
-            Me.Hide()
-            ' Now, try to see if SETLANG.EXE is located in the configured directory.
-            ' If it is found, show the user a few of the file's properties.
-            ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
-            If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
-                ' If the file for Office Language Preferences was found, tell the user.
-                MessageBox.Show(Me, "Office Language Preferences has been found in the configured location." &
+            ' Make sure saving the settings was successful first.
+            If saveStuff() = 0 Then
+                ' Hide the Options window so it doesn't get in the way.
+                Me.Hide()
+                ' Now, try to see if SETLANG.EXE is located in the configured directory.
+                ' If it is found, show the user a few of the file's properties.
+                ' See also this issue: https://github.com/DrewNaylor/UXL-Launcher/issues/96
+                If My.Computer.FileSystem.FileExists(OfficeLocater.fullLauncherCodeString & "SETLANG.EXE") Then
+                    ' If the file for Office Language Preferences was found, tell the user.
+                    MessageBox.Show(Me, "Office Language Preferences has been found in the configured location." &
                                 " You shouldn't have to change your Office-related settings further unless you encounter problems or upgrade Office." & vbCrLf &
                                 vbCrLf &
                                 "Configured location: " & OfficeLocater.fullLauncherCodeString,
                                 "Test settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                ' If it's not found, let the user know and give them the option to open
-                ' the Options window to change their settings if they want to.
-                Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." &
+                Else
+                    ' If it's not found, let the user know and give them the option to open
+                    ' the Options window to change their settings if they want to.
+                    Dim msgResultDidntFindOfficeLangPrefs As Integer = MessageBox.Show(Me, "We couldn't find Office Language Preferences in the configured location." &
                                                                                    " Would you like to open the Options window to change your settings?" & vbCrLf &
                                                                                    vbCrLf &
                                                                                    "Configured location: " & OfficeLocater.fullLauncherCodeString,
                                                                                    "Test settings", MessageBoxButtons.YesNo, MessageBoxIcon.Stop)
 
-                ' If the user clicks "Yes", show the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-                If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
-                    Me.Show()
+                    ' If the user clicks "Yes", show the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
+                    If msgResultDidntFindOfficeLangPrefs = DialogResult.Yes Then
+                        Me.Show()
 
-                Else
-                    ' If the user doesn't want to open the Options window, make
-                    ' sure that it's closed.
-                    Me.Close()
+                    Else
+                        ' If the user doesn't want to open the Options window, make
+                        ' sure that it's closed.
+                        Me.Close()
+                    End If
                 End If
+            Else
+                ' If we couldn't save the settings, don't test them.
+                Exit Sub
             End If
         End If
     End Sub
