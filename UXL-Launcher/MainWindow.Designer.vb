@@ -777,7 +777,7 @@ Partial Class aaformMainWindow
         '
         'pictureQueryIcon
         '
-        Me.pictureQueryIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Microsoft_Query
+        Me.pictureQueryIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Query_64x64
         Me.pictureQueryIcon.Location = New System.Drawing.Point(9, 25)
         Me.pictureQueryIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureQueryIcon.Name = "pictureQueryIcon"
@@ -798,7 +798,7 @@ Partial Class aaformMainWindow
         '
         'pictureOneNoteQuickLaunchIcon
         '
-        Me.pictureOneNoteQuickLaunchIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Onenote
+        Me.pictureOneNoteQuickLaunchIcon.Image = Global.UXL_Launcher.My.Resources.Resources.OnenoteLargeSVG_3D
         Me.pictureOneNoteQuickLaunchIcon.Location = New System.Drawing.Point(9, 265)
         Me.pictureOneNoteQuickLaunchIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureOneNoteQuickLaunchIcon.Name = "pictureOneNoteQuickLaunchIcon"
@@ -819,7 +819,7 @@ Partial Class aaformMainWindow
         '
         'picturePictureManagerIcon
         '
-        Me.picturePictureManagerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Picture_Manager
+        Me.picturePictureManagerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.picture_manager_75x75
         Me.picturePictureManagerIcon.Location = New System.Drawing.Point(9, 185)
         Me.picturePictureManagerIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.picturePictureManagerIcon.Name = "picturePictureManagerIcon"
@@ -830,7 +830,7 @@ Partial Class aaformMainWindow
         '
         'pictureClipOrganizerIcon
         '
-        Me.pictureClipOrganizerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer
+        Me.pictureClipOrganizerIcon.Image = Global.UXL_Launcher.My.Resources.Resources.Clip_Organizer_75x64
         Me.pictureClipOrganizerIcon.Location = New System.Drawing.Point(9, 106)
         Me.pictureClipOrganizerIcon.Margin = New System.Windows.Forms.Padding(2)
         Me.pictureClipOrganizerIcon.Name = "pictureClipOrganizerIcon"
