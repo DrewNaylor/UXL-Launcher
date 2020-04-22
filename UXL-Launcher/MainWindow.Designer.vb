@@ -158,7 +158,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewWordDoc
         '
-        Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.small_Word
+        Me.menuitemNewWordDoc.Image = Global.UXL_Launcher.My.Resources.Resources.WordNewDocument
         Me.menuitemNewWordDoc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewWordDoc.Name = "menuitemNewWordDoc"
         Me.menuitemNewWordDoc.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
@@ -167,7 +167,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewExcelWorkbook
         '
-        Me.menuitemNewExcelWorkbook.Image = Global.UXL_Launcher.My.Resources.Resources.small_Excel
+        Me.menuitemNewExcelWorkbook.Image = Global.UXL_Launcher.My.Resources.Resources.ExcelNewWorksheet
         Me.menuitemNewExcelWorkbook.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewExcelWorkbook.Name = "menuitemNewExcelWorkbook"
         Me.menuitemNewExcelWorkbook.Size = New System.Drawing.Size(354, 30)
@@ -176,7 +176,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewPPTPresentation
         '
-        Me.menuitemNewPPTPresentation.Image = Global.UXL_Launcher.My.Resources.Resources.small_Powerpoint
+        Me.menuitemNewPPTPresentation.Image = Global.UXL_Launcher.My.Resources.Resources.PowerPointNewPresentation
         Me.menuitemNewPPTPresentation.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewPPTPresentation.Name = "menuitemNewPPTPresentation"
         Me.menuitemNewPPTPresentation.Size = New System.Drawing.Size(354, 30)
@@ -189,7 +189,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewOutlookEmail
         '
-        Me.menuitemNewOutlookEmail.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.menuitemNewOutlookEmail.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookNewEmailContact
         Me.menuitemNewOutlookEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookEmail.Name = "menuitemNewOutlookEmail"
         Me.menuitemNewOutlookEmail.Size = New System.Drawing.Size(354, 30)
@@ -197,7 +197,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewOutlookContact
         '
-        Me.menuitemNewOutlookContact.Image = Global.UXL_Launcher.My.Resources.Resources.small_Outlook
+        Me.menuitemNewOutlookContact.Image = Global.UXL_Launcher.My.Resources.Resources.OutlookNewEmailContact
         Me.menuitemNewOutlookContact.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewOutlookContact.Name = "menuitemNewOutlookContact"
         Me.menuitemNewOutlookContact.Size = New System.Drawing.Size(354, 30)
@@ -210,7 +210,7 @@ Partial Class aaformMainWindow
         '
         'menuitemNewPublisherPublication
         '
-        Me.menuitemNewPublisherPublication.Image = Global.UXL_Launcher.My.Resources.Resources.small_Publisher
+        Me.menuitemNewPublisherPublication.Image = Global.UXL_Launcher.My.Resources.Resources.PublisherNewPublication
         Me.menuitemNewPublisherPublication.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menuitemNewPublisherPublication.Name = "menuitemNewPublisherPublication"
         Me.menuitemNewPublisherPublication.Size = New System.Drawing.Size(354, 30)
