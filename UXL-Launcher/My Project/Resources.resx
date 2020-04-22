@@ -6336,4 +6336,82 @@ This decimal is to be used for the About window when talking about what version 
   <data name="MaudernClassicTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\vb code-behind\themes\maudernclassictheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="AccessLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AccessLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AccessSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AccessSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clip_Organizer_75x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clip Organizer-75x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExcelLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExcelLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExcelNewWorksheet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExcelNewWorksheet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExcelSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExcelSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InfopathLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InfopathLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InfopathSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InfopathSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OnenoteLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OnenoteLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OneNoteSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OneNoteSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OutlookLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OutlookLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OutlookNewEmailContact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OutlookNewEmailContact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OutlookSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OutlookSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picture_manager_75x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picture manager-75x75.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerpointLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerpointLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerPointNewPresentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerPointNewPresentation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerpointSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerpointSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PublisherLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PublisherLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PublisherNewPublication" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PublisherNewPublication.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PublisherSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PublisherSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Query_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Query-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SharepointLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SharepointLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SharepointSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SharepointSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordLargeSVG_3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WordLargeSVG-3D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordNewDocument" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WordNewDocument.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordSmallSVG_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WordSmallSVG-24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
