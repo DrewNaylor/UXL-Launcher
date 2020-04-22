@@ -204,7 +204,6 @@
     <None Include="Resources\UXLLauncherInfo_TXT.txt" />
     <None Include="Resources\ThemeEngineInfo_TXT.txt" />
     <None Include="Resources\ApplauncherIconsInfo_TXT.txt" />
-    <None Include="Resources\UXL-Launcher-Banner.png" />
     <None Include="Resources\uxl_icon_24x24.png" />
     <None Include="Resources\WordLargeSVG-3D.png" />
     <None Include="Resources\AccessLargeSVG-3D.png" />
