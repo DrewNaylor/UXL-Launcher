@@ -18,7 +18,7 @@
   RuntimeVersion numbers lower than 2.0 are treated as TE1.x themes, and
   the version number in the UseThemeEngineVersion node will be used instead.
   Same thing happens if the ThemeEngine RuntimeVersion attribute is missing. -->
-  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  <!-- TE1.x compatibility: --><UseThemeEngineVersion>1.03</UseThemeEngineVersion>
   <ThemeEngine RuntimeVersion="2.0" />
   
     <Theme_Colors>
@@ -27,7 +27,8 @@
         <!-- This controls how the About window's banner appears.
         Available BannerStyle options are "Light" and "Dark".
         Anything else will be set to "Light". -->
-        <BannerStyle>Dark</BannerStyle>
+		
+        <!-- TE1.x compatibility: --><BannerStyle>Dark</BannerStyle>
       </AboutWindow>
       
       <Button BackColor="#363636" ForeColor="White" FlatStyle="Flat">
@@ -39,12 +40,15 @@
         color used in the Settings app for the Windows Update "Check for Updates"
         button; it wasn't sampled from a screenshot. -->
 		
-        <BackColor>#363636</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>#363636</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
+		
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
         Quotation marks are not supported. -->
-        <FlatStyle>Flat</FlatStyle>
+		
+        <!-- TE1.x compatibility: --><FlatStyle>Flat</FlatStyle>
+		
         <!-- Anything within the "FlatAppearance" element will only be used if
         "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
@@ -55,44 +59,45 @@
       </Button>
 
       <CheckBox BackColor="Transparent" ForeColor="White">
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Transparent</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </CheckBox>
 
       <Dropdown BackColor="#363636" ForeColor="White">
         <!-- This is for the ComboBox controls, but "Dropdown" is probably
         a more common name for people to call them. -->
-        <BackColor>#363636</BackColor>
-        <ForeColor>White</ForeColor>
+		
+        <!-- TE1.x compatibility: --><BackColor>#363636</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </Dropdown>
       
       <GroupBox BackColor="Transparent" ForeColor="White">
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Transparent</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel BackColor="Black" ForeColor="White">
-        <BackColor>Black</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Black</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </FlowLayoutPanel>
 
       <TableLayoutPanel BackColor="#202020" ForeColor="White">
-        <BackColor>#202020</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>#202020</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </TableLayoutPanel>
 
       <TabPage BackColor="Black" ForeColor="White">
-        <BackColor>Black</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Black</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </TabPage>
       
       <StatusBar BackColor="#202020">
-        <BackColor>#202020</BackColor>
+        <!-- TE1.x compatibility: --><BackColor>#202020</BackColor>
       </StatusBar>
 
       <Label BackColor="Transparent" ForeColor="White">
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Transparent</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </Label>
 
       <LinkLabel>
@@ -106,18 +111,18 @@
       </LinkLabel>
       
       <Panel BackColor="Black" ForeColor="White">
-        <BackColor>Black</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Black</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </Panel>
 
       <RadioButton BackColor="Transparent" ForeColor="White">
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Transparent</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </RadioButton>
       
       <TextBox BackColor="Black" ForeColor="White">
-        <BackColor>Black</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Black</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
       </TextBox>
 
       <MenuItem BackColor="Black" ForeColor="White">
@@ -126,9 +131,11 @@
 		   for them might make things messy. -->
 		   
         <!-- Background color for menubar dropdown items. -->
-        <BackColor>Black</BackColor>
+        <!-- TE1.x compatibility: --><BackColor>Black</BackColor>
+		
         <!-- Text color for menubar dropdown items. -->
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
+		
         <ImageMarginGradient>
           <!-- The "ImageMarginGradient" is the small box on the
           left side of many Windows dropdown menu items. 
@@ -147,12 +154,13 @@
 
       <MenuBar BackColor="#202020">
         <!-- Background color for the menubar itself. -->
-        <BackColor>#202020</BackColor>
+		
+        <!-- TE1.x compatibility: --><BackColor>#202020</BackColor>
       </MenuBar>
       
       <StatusLabel BackColor="Transparent" ForeColor="White">
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <!-- TE1.x compatibility: --><BackColor>Transparent</BackColor>
+        <!-- TE1.x compatibility: --><ForeColor>White</ForeColor>
         
 		<!-- StatusLabel BorderSides and BorderStyle
              properties are still in XML InnerText
