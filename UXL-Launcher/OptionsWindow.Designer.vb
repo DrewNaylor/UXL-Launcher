@@ -183,17 +183,18 @@ Partial Class aaformOptionsWindow
         'labelHelpWithOfficeVersions
         '
         Me.labelHelpWithOfficeVersions.AutoSize = True
-        Me.labelHelpWithOfficeVersions.Location = New System.Drawing.Point(105, 154)
+        Me.labelHelpWithOfficeVersions.Location = New System.Drawing.Point(103, 138)
         Me.labelHelpWithOfficeVersions.Name = "labelHelpWithOfficeVersions"
-        Me.labelHelpWithOfficeVersions.Size = New System.Drawing.Size(298, 68)
+        Me.labelHelpWithOfficeVersions.Size = New System.Drawing.Size(364, 51)
         Me.labelHelpWithOfficeVersions.TabIndex = 6
-        Me.labelHelpWithOfficeVersions.Text = "If unsure which version you use, just select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the latest one. A future version wi" &
-    "ll default" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to Office 2019 since Office 2010 support ends" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "October 2020."
+        Me.labelHelpWithOfficeVersions.Text = "If you're unsure of which version you use, just select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the latest one. A future " &
+    "version will default to Office 2019" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "since Office 2010 support ends October 2020" &
+    "."
         '
         'labelOfficeInstallMethodDescription
         '
         Me.labelOfficeInstallMethodDescription.AutoSize = True
-        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(104, 99)
+        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(104, 75)
         Me.labelOfficeInstallMethodDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstallMethodDescription.Name = "labelOfficeInstallMethodDescription"
         Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(254, 17)
@@ -203,7 +204,7 @@ Partial Class aaformOptionsWindow
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(108, 118)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(108, 94)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(307, 21)
