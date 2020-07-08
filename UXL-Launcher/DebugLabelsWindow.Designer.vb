@@ -132,9 +132,9 @@ Partial Class aaformDebugLabels
         Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(5, 49)
         Me.debugLabelForofficeInstallMethodString.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
-        Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(221, 34)
+        Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(258, 17)
         Me.debugLabelForofficeInstallMethodString.TabIndex = 29
-        Me.debugLabelForofficeInstallMethodString.Text = "debugLabelForofficeInstallMethod" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "String"
+        Me.debugLabelForofficeInstallMethodString.Text = "debugLabelForofficeInstallMethodString"
         '
         'debugLabelForcpuTypeString
         '
