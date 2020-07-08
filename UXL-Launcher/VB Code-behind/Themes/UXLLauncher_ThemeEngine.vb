@@ -1480,8 +1480,8 @@ Public Class UXLLauncher_ThemeEngine
                 Debug.WriteLine("")
 
             ElseIf exceptionType.ToString = "System.ArgumentException" Then
-                ' If the theme name specified in the config file for My.Settings.userChosenTheme doesn't match
-                ' a theme file in My.Resources, give a message for this problem.
+                ' If the textbox backcolor property doesn't support the specified color,
+                ' display an error in the Immediate Window.
                 Debug.WriteLine("Exception: " & exceptionType)
                 Debug.WriteLine("Exception message: " & exceptionMessage)
                 Debug.WriteLine("")
