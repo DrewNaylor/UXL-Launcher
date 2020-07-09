@@ -147,7 +147,7 @@ Partial Class aaformThemeLoader
         'checkboxAllowCustomThemes
         '
         Me.checkboxAllowCustomThemes.AutoSize = True
-        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 85)
+        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 111)
         Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
         Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
         Me.checkboxAllowCustomThemes.TabIndex = 3
@@ -157,7 +157,7 @@ Partial Class aaformThemeLoader
         'radiobuttonIsCustomTheme
         '
         Me.radiobuttonIsCustomTheme.AutoSize = True
-        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 57)
+        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 84)
         Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
         Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(131, 21)
         Me.radiobuttonIsCustomTheme.TabIndex = 2
@@ -168,7 +168,7 @@ Partial Class aaformThemeLoader
         'radiobuttonLoadFromXml
         '
         Me.radiobuttonLoadFromXml.AutoSize = True
-        Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(208, 113)
+        Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(208, 138)
         Me.radiobuttonLoadFromXml.Name = "radiobuttonLoadFromXml"
         Me.radiobuttonLoadFromXml.Size = New System.Drawing.Size(200, 21)
         Me.radiobuttonLoadFromXml.TabIndex = 4
@@ -179,7 +179,7 @@ Partial Class aaformThemeLoader
         'radiobuttonSelectFromThemeEngine
         '
         Me.radiobuttonSelectFromThemeEngine.AutoSize = True
-        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 141)
+        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 57)
         Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
         Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(211, 21)
         Me.radiobuttonSelectFromThemeEngine.TabIndex = 5
