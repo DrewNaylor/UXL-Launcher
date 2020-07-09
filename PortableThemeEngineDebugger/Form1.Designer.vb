@@ -32,10 +32,10 @@ Partial Class aaformThemeLoader
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
-        Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
         Me.radiobuttonSelectFromThemeEngine = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
+        Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -89,8 +89,7 @@ Partial Class aaformThemeLoader
         '
         'buttonSetColor
         '
-        Me.buttonSetColor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonSetColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.buttonSetColor.Location = New System.Drawing.Point(12, 240)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
@@ -100,8 +99,7 @@ Partial Class aaformThemeLoader
         '
         'buttonResetColor
         '
-        Me.buttonResetColor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonResetColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.buttonResetColor.Location = New System.Drawing.Point(157, 240)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(108, 30)
@@ -144,26 +142,16 @@ Partial Class aaformThemeLoader
         Me.Panel1.Size = New System.Drawing.Size(424, 279)
         Me.Panel1.TabIndex = 8
         '
-        'checkboxAllowCustomThemes
+        'radiobuttonSelectFromThemeEngine
         '
-        Me.checkboxAllowCustomThemes.AutoSize = True
-        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 111)
-        Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
-        Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
-        Me.checkboxAllowCustomThemes.TabIndex = 4
-        Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
-        Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
-        '
-        'radiobuttonIsCustomTheme
-        '
-        Me.radiobuttonIsCustomTheme.AutoSize = True
-        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 84)
-        Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
-        Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(156, 21)
-        Me.radiobuttonIsCustomTheme.TabIndex = 3
-        Me.radiobuttonIsCustomTheme.TabStop = True
-        Me.radiobuttonIsCustomTheme.Text = "Apply custom theme"
-        Me.radiobuttonIsCustomTheme.UseVisualStyleBackColor = True
+        Me.radiobuttonSelectFromThemeEngine.AutoSize = True
+        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 57)
+        Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
+        Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(211, 21)
+        Me.radiobuttonSelectFromThemeEngine.TabIndex = 2
+        Me.radiobuttonSelectFromThemeEngine.TabStop = True
+        Me.radiobuttonSelectFromThemeEngine.Text = "Select theme (theme engine)"
+        Me.radiobuttonSelectFromThemeEngine.UseVisualStyleBackColor = True
         '
         'radiobuttonLoadFromXml
         '
@@ -176,16 +164,26 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml.Text = "Load from XML (debugger)"
         Me.radiobuttonLoadFromXml.UseVisualStyleBackColor = True
         '
-        'radiobuttonSelectFromThemeEngine
+        'radiobuttonIsCustomTheme
         '
-        Me.radiobuttonSelectFromThemeEngine.AutoSize = True
-        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 57)
-        Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
-        Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(211, 21)
-        Me.radiobuttonSelectFromThemeEngine.TabIndex = 2
-        Me.radiobuttonSelectFromThemeEngine.TabStop = True
-        Me.radiobuttonSelectFromThemeEngine.Text = "Select theme (theme engine)"
-        Me.radiobuttonSelectFromThemeEngine.UseVisualStyleBackColor = True
+        Me.radiobuttonIsCustomTheme.AutoSize = True
+        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 84)
+        Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
+        Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(156, 21)
+        Me.radiobuttonIsCustomTheme.TabIndex = 3
+        Me.radiobuttonIsCustomTheme.TabStop = True
+        Me.radiobuttonIsCustomTheme.Text = "Apply custom theme"
+        Me.radiobuttonIsCustomTheme.UseVisualStyleBackColor = True
+        '
+        'checkboxAllowCustomThemes
+        '
+        Me.checkboxAllowCustomThemes.AutoSize = True
+        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 111)
+        Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
+        Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
+        Me.checkboxAllowCustomThemes.TabIndex = 4
+        Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
+        Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
