@@ -150,7 +150,7 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 111)
         Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
         Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
-        Me.checkboxAllowCustomThemes.TabIndex = 3
+        Me.checkboxAllowCustomThemes.TabIndex = 4
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
@@ -160,7 +160,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 84)
         Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
         Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(156, 21)
-        Me.radiobuttonIsCustomTheme.TabIndex = 2
+        Me.radiobuttonIsCustomTheme.TabIndex = 3
         Me.radiobuttonIsCustomTheme.TabStop = True
         Me.radiobuttonIsCustomTheme.Text = "Apply custom theme"
         Me.radiobuttonIsCustomTheme.UseVisualStyleBackColor = True
@@ -171,7 +171,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(208, 138)
         Me.radiobuttonLoadFromXml.Name = "radiobuttonLoadFromXml"
         Me.radiobuttonLoadFromXml.Size = New System.Drawing.Size(200, 21)
-        Me.radiobuttonLoadFromXml.TabIndex = 4
+        Me.radiobuttonLoadFromXml.TabIndex = 5
         Me.radiobuttonLoadFromXml.TabStop = True
         Me.radiobuttonLoadFromXml.Text = "Load from XML (debugger)"
         Me.radiobuttonLoadFromXml.UseVisualStyleBackColor = True
@@ -182,7 +182,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 57)
         Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
         Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(211, 21)
-        Me.radiobuttonSelectFromThemeEngine.TabIndex = 5
+        Me.radiobuttonSelectFromThemeEngine.TabIndex = 2
         Me.radiobuttonSelectFromThemeEngine.TabStop = True
         Me.radiobuttonSelectFromThemeEngine.Text = "Select theme (theme engine)"
         Me.radiobuttonSelectFromThemeEngine.UseVisualStyleBackColor = True
