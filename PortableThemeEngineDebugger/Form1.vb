@@ -25,10 +25,6 @@ Public Class aaformThemeLoader
         ' Get current time to see how long this takes.
         Dim startdate As DateTime = DateTime.Now
 
-        ' You can load themes directly from XML with the next line, just change it
-        ' as you need.
-        'libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me)
-
         ' If it's a custom theme being entered into the theme path textbox,
         ' load it like one.
         If radiobuttonIsCustomTheme.Checked = True Then
@@ -67,7 +63,8 @@ Public Class aaformThemeLoader
             ' Show debug output.
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
-            ' Now load the theme.
+            ' Now load the theme. You can change the name of the resource to whatever
+            ' you want according to your own project, it just has to be an XML resource.
             ' Currently only ReturnOfNight is available.
             libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me)
 
