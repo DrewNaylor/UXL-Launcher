@@ -61,6 +61,15 @@ Public Class aaformThemeLoader
             ' This theme is stored in libportablethemeengine.
             libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me)
 
+        ElseIf radiobuttonLoadFromXml.Checked = True Then
+
+            ' We need to load a theme from the theme engine debugger itself.
+            ' Show debug output.
+            libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
+
+            ' Now load the theme.
+            libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me)
+
         End If
 
         ' Get the end date for calculating how long it took to run.
