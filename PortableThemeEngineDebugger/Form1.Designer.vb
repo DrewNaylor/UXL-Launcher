@@ -36,8 +36,11 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
         Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'textboxThemePath
@@ -127,6 +130,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.radiobuttonSelectFromThemeEngine)
         Me.Panel1.Controls.Add(Me.radiobuttonLoadFromXml)
         Me.Panel1.Controls.Add(Me.radiobuttonIsCustomTheme)
@@ -191,6 +195,24 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Panel2)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 96)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(183, 81)
+        Me.GroupBox1.TabIndex = 9
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Context menu test area"
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(3, 18)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(177, 60)
+        Me.Panel2.TabIndex = 0
+        '
         'aaformThemeLoader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
@@ -204,6 +226,7 @@ Partial Class aaformThemeLoader
         Me.StatusStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -223,4 +246,6 @@ Partial Class aaformThemeLoader
     Friend WithEvents radiobuttonIsCustomTheme As RadioButton
     Friend WithEvents radiobuttonLoadFromXml As RadioButton
     Friend WithEvents radiobuttonSelectFromThemeEngine As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Panel2 As Panel
 End Class
