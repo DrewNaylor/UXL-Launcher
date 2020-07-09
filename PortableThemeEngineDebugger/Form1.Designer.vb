@@ -61,7 +61,7 @@ Partial Class aaformThemeLoader
         Me.buttonLoadTheme.Location = New System.Drawing.Point(11, 58)
         Me.buttonLoadTheme.Name = "buttonLoadTheme"
         Me.buttonLoadTheme.Size = New System.Drawing.Size(113, 32)
-        Me.buttonLoadTheme.TabIndex = 2
+        Me.buttonLoadTheme.TabIndex = 1
         Me.buttonLoadTheme.Text = "Load theme"
         Me.buttonLoadTheme.UseVisualStyleBackColor = True
         '
@@ -138,7 +138,7 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(250, 85)
         Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
         Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
-        Me.checkboxAllowCustomThemes.TabIndex = 8
+        Me.checkboxAllowCustomThemes.TabIndex = 3
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
@@ -148,7 +148,7 @@ Partial Class aaformThemeLoader
         Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(250, 58)
         Me.checkboxIsCustomTheme.Name = "checkboxIsCustomTheme"
         Me.checkboxIsCustomTheme.Size = New System.Drawing.Size(132, 21)
-        Me.checkboxIsCustomTheme.TabIndex = 7
+        Me.checkboxIsCustomTheme.TabIndex = 2
         Me.checkboxIsCustomTheme.Text = "Is custom theme"
         Me.checkboxIsCustomTheme.UseVisualStyleBackColor = True
         '
