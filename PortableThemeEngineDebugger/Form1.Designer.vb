@@ -22,6 +22,7 @@ Partial Class aaformThemeLoader
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.textboxThemePath = New System.Windows.Forms.TextBox()
         Me.labelPathDescription = New System.Windows.Forms.Label()
         Me.buttonLoadTheme = New System.Windows.Forms.Button()
@@ -39,10 +40,16 @@ Partial Class aaformThemeLoader
         Me.groupboxContextMenuArea = New System.Windows.Forms.GroupBox()
         Me.panelContextMenuArea = New System.Windows.Forms.Panel()
         Me.labelContextMenuColors = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.groupboxContextMenuArea.SuspendLayout()
         Me.panelContextMenuArea.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'textboxThemePath
@@ -209,6 +216,7 @@ Partial Class aaformThemeLoader
         '
         'panelContextMenuArea
         '
+        Me.panelContextMenuArea.ContextMenuStrip = Me.ContextMenuStrip1
         Me.panelContextMenuArea.Controls.Add(Me.labelContextMenuColors)
         Me.panelContextMenuArea.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContextMenuArea.Location = New System.Drawing.Point(3, 18)
@@ -224,6 +232,37 @@ Partial Class aaformThemeLoader
         Me.labelContextMenuColors.Size = New System.Drawing.Size(146, 51)
         Me.labelContextMenuColors.TabIndex = 0
         Me.labelContextMenuColors.Text = "Right-click anwhere in" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "here to test context" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "menu colors."
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(214, 100)
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(213, 24)
+        Me.ToolStripMenuItem1.Text = "ToolStripMenuItem1"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(213, 24)
+        Me.ToolStripMenuItem2.Text = "ToolStripMenuItem2"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(213, 24)
+        Me.ToolStripMenuItem3.Text = "ToolStripMenuItem3"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(213, 24)
+        Me.ToolStripMenuItem4.Text = "ToolStripMenuItem4"
         '
         'aaformThemeLoader
         '
@@ -241,6 +280,7 @@ Partial Class aaformThemeLoader
         Me.groupboxContextMenuArea.ResumeLayout(False)
         Me.panelContextMenuArea.ResumeLayout(False)
         Me.panelContextMenuArea.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -263,4 +303,9 @@ Partial Class aaformThemeLoader
     Friend WithEvents groupboxContextMenuArea As GroupBox
     Friend WithEvents panelContextMenuArea As Panel
     Friend WithEvents labelContextMenuColors As Label
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
 End Class
