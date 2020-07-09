@@ -34,24 +34,28 @@ Public Class aaformThemeLoader
         If radiobuttonIsCustomTheme.Checked = True Then
 
             ' Specify whether custom themes are allowed.
-            libportablethemeengine.ThemeEngine.AllowCustomThemes = True
+            If checkboxAllowCustomThemes.Checked = True Then
+                libportablethemeengine.ThemeEngine.AllowCustomThemes = True
+            Else
+                libportablethemeengine.ThemeEngine.AllowCustomThemes = False
+            End If
 
             ' Don't use full TE1.x compatibility mode.
             libportablethemeengine.ThemeEngine.UseFullTE1DotXCompatibilityMode = False
 
-            ' Show theme engine debug output.
-            libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
+                ' Show theme engine debug output.
+                libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
-            ' This is a custom theme, so it's named "(Custom)", is applied to this form ("Me"), there
-            ' are no components on this form to theme (that would be things like
-            ' Windows Forms context menus), and the path for the custom theme we're applying is in
-            ' the textbox.
-            libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
+                ' This is a custom theme, so it's named "(Custom)", is applied to this form ("Me"), there
+                ' are no components on this form to theme (that would be things like
+                ' Windows Forms context menus), and the path for the custom theme we're applying is in
+                ' the textbox.
+                libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
 
-        Else
+            Else
 
-            ' We're not applying a custom theme, but we still want to show debug output.
-            libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
+                ' We're not applying a custom theme, but we still want to show debug output.
+                libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
             ' We want to apply the theme that's specified in the textbox to this form.
             ' This theme is stored in libportablethemeengine.
