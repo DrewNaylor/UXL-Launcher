@@ -33,8 +33,9 @@ Partial Class aaformThemeLoader
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
-        Me.checkboxIsCustomTheme = New System.Windows.Forms.CheckBox()
-        Me.checkboxLoadFromXML = New System.Windows.Forms.CheckBox()
+        Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonSelectFromThemeEngine = New System.Windows.Forms.RadioButton()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -71,7 +72,7 @@ Partial Class aaformThemeLoader
         Me.labelColorTester.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelColorTester.AutoSize = True
-        Me.labelColorTester.Location = New System.Drawing.Point(12, 147)
+        Me.labelColorTester.Location = New System.Drawing.Point(12, 190)
         Me.labelColorTester.Name = "labelColorTester"
         Me.labelColorTester.Size = New System.Drawing.Size(85, 17)
         Me.labelColorTester.TabIndex = 3
@@ -81,7 +82,7 @@ Partial Class aaformThemeLoader
         '
         Me.textboxColorTester.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textboxColorTester.Location = New System.Drawing.Point(12, 168)
+        Me.textboxColorTester.Location = New System.Drawing.Point(12, 211)
         Me.textboxColorTester.Name = "textboxColorTester"
         Me.textboxColorTester.Size = New System.Drawing.Size(400, 22)
         Me.textboxColorTester.TabIndex = 5
@@ -90,7 +91,7 @@ Partial Class aaformThemeLoader
         '
         Me.buttonSetColor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonSetColor.Location = New System.Drawing.Point(12, 197)
+        Me.buttonSetColor.Location = New System.Drawing.Point(12, 240)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
         Me.buttonSetColor.TabIndex = 6
@@ -101,7 +102,7 @@ Partial Class aaformThemeLoader
         '
         Me.buttonResetColor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonResetColor.Location = New System.Drawing.Point(157, 197)
+        Me.buttonResetColor.Location = New System.Drawing.Point(157, 240)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(108, 30)
         Me.buttonResetColor.TabIndex = 7
@@ -112,7 +113,7 @@ Partial Class aaformThemeLoader
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 236)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 279)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(424, 25)
         Me.StatusStrip1.TabIndex = 7
@@ -126,9 +127,10 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.checkboxLoadFromXML)
+        Me.Panel1.Controls.Add(Me.radiobuttonSelectFromThemeEngine)
+        Me.Panel1.Controls.Add(Me.radiobuttonLoadFromXml)
+        Me.Panel1.Controls.Add(Me.radiobuttonIsCustomTheme)
         Me.Panel1.Controls.Add(Me.checkboxAllowCustomThemes)
-        Me.Panel1.Controls.Add(Me.checkboxIsCustomTheme)
         Me.Panel1.Controls.Add(Me.labelPathDescription)
         Me.Panel1.Controls.Add(Me.textboxThemePath)
         Me.Panel1.Controls.Add(Me.buttonResetColor)
@@ -139,44 +141,57 @@ Partial Class aaformThemeLoader
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(424, 236)
+        Me.Panel1.Size = New System.Drawing.Size(424, 279)
         Me.Panel1.TabIndex = 8
         '
         'checkboxAllowCustomThemes
         '
         Me.checkboxAllowCustomThemes.AutoSize = True
-        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(250, 85)
+        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 85)
         Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
         Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(161, 21)
         Me.checkboxAllowCustomThemes.TabIndex = 3
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
-        'checkboxIsCustomTheme
+        'radiobuttonIsCustomTheme
         '
-        Me.checkboxIsCustomTheme.AutoSize = True
-        Me.checkboxIsCustomTheme.Location = New System.Drawing.Point(250, 58)
-        Me.checkboxIsCustomTheme.Name = "checkboxIsCustomTheme"
-        Me.checkboxIsCustomTheme.Size = New System.Drawing.Size(132, 21)
-        Me.checkboxIsCustomTheme.TabIndex = 2
-        Me.checkboxIsCustomTheme.Text = "Is custom theme"
-        Me.checkboxIsCustomTheme.UseVisualStyleBackColor = True
+        Me.radiobuttonIsCustomTheme.AutoSize = True
+        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 57)
+        Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
+        Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(131, 21)
+        Me.radiobuttonIsCustomTheme.TabIndex = 8
+        Me.radiobuttonIsCustomTheme.TabStop = True
+        Me.radiobuttonIsCustomTheme.Text = "Is custom theme"
+        Me.radiobuttonIsCustomTheme.UseVisualStyleBackColor = True
         '
-        'checkboxLoadFromXML
+        'radiobuttonLoadFromXml
         '
-        Me.checkboxLoadFromXML.AutoSize = True
-        Me.checkboxLoadFromXML.Location = New System.Drawing.Point(250, 113)
-        Me.checkboxLoadFromXML.Name = "checkboxLoadFromXML"
-        Me.checkboxLoadFromXML.Size = New System.Drawing.Size(126, 21)
-        Me.checkboxLoadFromXML.TabIndex = 4
-        Me.checkboxLoadFromXML.Text = "Load from XML"
-        Me.checkboxLoadFromXML.UseVisualStyleBackColor = True
+        Me.radiobuttonLoadFromXml.AutoSize = True
+        Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(208, 113)
+        Me.radiobuttonLoadFromXml.Name = "radiobuttonLoadFromXml"
+        Me.radiobuttonLoadFromXml.Size = New System.Drawing.Size(200, 21)
+        Me.radiobuttonLoadFromXml.TabIndex = 9
+        Me.radiobuttonLoadFromXml.TabStop = True
+        Me.radiobuttonLoadFromXml.Text = "Load from XML (debugger)"
+        Me.radiobuttonLoadFromXml.UseVisualStyleBackColor = True
+        '
+        'radiobuttonSelectFromThemeEngine
+        '
+        Me.radiobuttonSelectFromThemeEngine.AutoSize = True
+        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 141)
+        Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
+        Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(211, 21)
+        Me.radiobuttonSelectFromThemeEngine.TabIndex = 10
+        Me.radiobuttonSelectFromThemeEngine.TabStop = True
+        Me.radiobuttonSelectFromThemeEngine.Text = "Select theme (theme engine)"
+        Me.radiobuttonSelectFromThemeEngine.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(424, 261)
+        Me.ClientSize = New System.Drawing.Size(424, 304)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Name = "aaformThemeLoader"
@@ -200,7 +215,8 @@ Partial Class aaformThemeLoader
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents checkboxIsCustomTheme As CheckBox
     Friend WithEvents checkboxAllowCustomThemes As CheckBox
-    Friend WithEvents checkboxLoadFromXML As CheckBox
+    Friend WithEvents radiobuttonIsCustomTheme As RadioButton
+    Friend WithEvents radiobuttonLoadFromXml As RadioButton
+    Friend WithEvents radiobuttonSelectFromThemeEngine As RadioButton
 End Class
