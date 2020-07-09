@@ -42,11 +42,10 @@ Public Class aaformThemeLoader
             ' Show theme engine debug output.
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
-            ' This is a custom theme, so it's named "(Custom)", is applied to this form ("Me"), there
-            ' are no components on this form to theme (that would be things like
-            ' Windows Forms context menus), and the path for the custom theme we're applying is in
+            ' This is a custom theme so it's named "(Custom)", is applied to this form ("Me"), the
+            ' example context menu gets it applied too, and the path for the custom theme we're applying is in
             ' the textbox.
-            libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
+            libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me, Me.components, textboxThemePath.Text)
 
         ElseIf radiobuttonSelectFromThemeEngine.Checked = True Then
 
@@ -54,8 +53,9 @@ Public Class aaformThemeLoader
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
             ' We want to apply the theme that's specified in the textbox to this form.
+            ' Be sure to apply it to the context menu.
             ' This theme is stored in libportablethemeengine.
-            libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me)
+            libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me, Me.components)
 
         ElseIf radiobuttonLoadFromXml.Checked = True Then
 
@@ -66,7 +66,8 @@ Public Class aaformThemeLoader
             ' Now load the theme. You can change the name of the resource to whatever
             ' you want according to your own project, it just has to be an XML resource.
             ' Currently only ReturnOfNight is available.
-            libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me)
+            ' Be sure to apply it to the context menu.
+            libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me, Me.components)
 
         End If
 
