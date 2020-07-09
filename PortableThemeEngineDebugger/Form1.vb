@@ -31,7 +31,7 @@ Public Class aaformThemeLoader
 
         ' If it's a custom theme being entered into the theme path textbox,
         ' load it like one.
-        If checkboxIsCustomTheme.Checked = True Then
+        If radiobuttonIsCustomTheme.Checked = True Then
 
             ' Specify whether custom themes are allowed.
             libportablethemeengine.ThemeEngine.AllowCustomThemes = True

@@ -85,7 +85,7 @@ Partial Class aaformThemeLoader
         Me.textboxColorTester.Location = New System.Drawing.Point(12, 211)
         Me.textboxColorTester.Name = "textboxColorTester"
         Me.textboxColorTester.Size = New System.Drawing.Size(400, 22)
-        Me.textboxColorTester.TabIndex = 5
+        Me.textboxColorTester.TabIndex = 6
         '
         'buttonSetColor
         '
@@ -94,7 +94,7 @@ Partial Class aaformThemeLoader
         Me.buttonSetColor.Location = New System.Drawing.Point(12, 240)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
-        Me.buttonSetColor.TabIndex = 6
+        Me.buttonSetColor.TabIndex = 7
         Me.buttonSetColor.Text = "Set statusbar color"
         Me.buttonSetColor.UseVisualStyleBackColor = True
         '
@@ -105,7 +105,7 @@ Partial Class aaformThemeLoader
         Me.buttonResetColor.Location = New System.Drawing.Point(157, 240)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(108, 30)
-        Me.buttonResetColor.TabIndex = 7
+        Me.buttonResetColor.TabIndex = 8
         Me.buttonResetColor.Text = "Reset color"
         Me.buttonResetColor.UseVisualStyleBackColor = True
         '
@@ -160,7 +160,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 57)
         Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
         Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(131, 21)
-        Me.radiobuttonIsCustomTheme.TabIndex = 8
+        Me.radiobuttonIsCustomTheme.TabIndex = 2
         Me.radiobuttonIsCustomTheme.TabStop = True
         Me.radiobuttonIsCustomTheme.Text = "Is custom theme"
         Me.radiobuttonIsCustomTheme.UseVisualStyleBackColor = True
@@ -171,7 +171,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(208, 113)
         Me.radiobuttonLoadFromXml.Name = "radiobuttonLoadFromXml"
         Me.radiobuttonLoadFromXml.Size = New System.Drawing.Size(200, 21)
-        Me.radiobuttonLoadFromXml.TabIndex = 9
+        Me.radiobuttonLoadFromXml.TabIndex = 4
         Me.radiobuttonLoadFromXml.TabStop = True
         Me.radiobuttonLoadFromXml.Text = "Load from XML (debugger)"
         Me.radiobuttonLoadFromXml.UseVisualStyleBackColor = True
@@ -182,7 +182,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 141)
         Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
         Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(211, 21)
-        Me.radiobuttonSelectFromThemeEngine.TabIndex = 10
+        Me.radiobuttonSelectFromThemeEngine.TabIndex = 5
         Me.radiobuttonSelectFromThemeEngine.TabStop = True
         Me.radiobuttonSelectFromThemeEngine.Text = "Select theme (theme engine)"
         Me.radiobuttonSelectFromThemeEngine.UseVisualStyleBackColor = True
