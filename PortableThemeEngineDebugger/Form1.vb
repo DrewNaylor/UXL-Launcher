@@ -70,7 +70,8 @@ Public Class aaformThemeLoader
 
     Private Sub buttonSetColor_Click(sender As Object, e As EventArgs) Handles buttonSetColor.Click
         Try
-            'Me.BackColor = ColorTranslator.FromHtml(textboxColorTester.Text)
+            ' If the user typed in "Nothing", set the back color of the
+            ' statusbar to "Nothing".
             If textboxColorTester.Text.ToLowerInvariant = "nothing" Then
                 StatusStrip1.BackColor = Nothing
             Else
@@ -78,6 +79,7 @@ Public Class aaformThemeLoader
             End If
 
         Catch ex As System.ArgumentException
+            MessageBox.Show("The color " & textboxColorTester.Text & " can't be used as a StatusStrip BackColor.")
         End Try
 
         MessageBox.Show(StatusStrip1.BackColor.ToString)
