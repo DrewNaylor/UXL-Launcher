@@ -87,7 +87,7 @@ Partial Class aaformThemeLoader
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(138, 30)
         Me.buttonSetColor.TabIndex = 5
-        Me.buttonSetColor.Text = "Set button color"
+        Me.buttonSetColor.Text = "Set statusbar color"
         Me.buttonSetColor.UseVisualStyleBackColor = True
         '
         'buttonResetColor

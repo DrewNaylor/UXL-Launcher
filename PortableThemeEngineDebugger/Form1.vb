@@ -84,6 +84,6 @@ Public Class aaformThemeLoader
     End Sub
 
     Private Sub buttonResetColor_Click(sender As Object, e As EventArgs) Handles buttonResetColor.Click
-        Me.BackColor = Color.FromKnownColor(KnownColor.Control)
+        StatusStrip1.BackColor = Nothing
     End Sub
 End Class
