@@ -43,7 +43,8 @@ Public Class aaformThemeLoader
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
             ' This is a custom theme so it's named "(Custom)", is applied to this form ("Me"), the
-            ' example context menu gets it applied too, and the path for the custom theme we're applying is in
+            ' example context menu gets it applied too as it's part of the form's components ("Me.components"),
+            ' and the path for the custom theme we're applying is in
             ' the textbox.
             libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me, Me.components, textboxThemePath.Text)
 
@@ -53,7 +54,7 @@ Public Class aaformThemeLoader
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
             ' We want to apply the theme that's specified in the textbox to this form.
-            ' Be sure to apply it to the context menu.
+            ' Be sure to apply it to the context menu, which is part of the form's components ("Me.components").
             ' This theme is stored in libportablethemeengine.
             libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me, Me.components)
 
@@ -66,7 +67,7 @@ Public Class aaformThemeLoader
             ' Now load the theme. You can change the name of the resource to whatever
             ' you want according to your own project, it just has to be an XML resource.
             ' Currently only ReturnOfNight is available.
-            ' Be sure to apply it to the context menu.
+            ' Be sure to apply it to the context menu, which is part of the form's components ("Me.components").
             libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me, Me.components)
 
         End If
