@@ -68,6 +68,7 @@ Public Class aaformThemeLoader
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
             ' Now load the theme.
+            ' Currently only ReturnOfNight is available.
             libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me)
 
         End If
