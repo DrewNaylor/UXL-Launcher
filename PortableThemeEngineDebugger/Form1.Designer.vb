@@ -159,10 +159,10 @@ Partial Class aaformThemeLoader
         Me.radiobuttonIsCustomTheme.AutoSize = True
         Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 84)
         Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
-        Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(131, 21)
+        Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(156, 21)
         Me.radiobuttonIsCustomTheme.TabIndex = 2
         Me.radiobuttonIsCustomTheme.TabStop = True
-        Me.radiobuttonIsCustomTheme.Text = "Is custom theme"
+        Me.radiobuttonIsCustomTheme.Text = "Apply custom theme"
         Me.radiobuttonIsCustomTheme.UseVisualStyleBackColor = True
         '
         'radiobuttonLoadFromXml
