@@ -78,8 +78,10 @@ Public Class aaformThemeLoader
                 StatusStrip1.BackColor = ColorTranslator.FromHtml(textboxColorTester.Text)
             End If
 
-        Catch ex As System.ArgumentException
-            MessageBox.Show("The color " & textboxColorTester.Text & " can't be used as a StatusStrip BackColor.")
+        Catch ex As Exception
+            MessageBox.Show("The color """ & textboxColorTester.Text & """ can't be used as a StatusStrip BackColor." & vbCrLf &
+                            vbCrLf &
+                            "Exception message: " & ex.Message)
         End Try
 
         MessageBox.Show(StatusStrip1.BackColor.ToString)
