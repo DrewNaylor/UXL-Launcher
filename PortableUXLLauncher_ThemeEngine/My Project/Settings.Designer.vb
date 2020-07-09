@@ -53,30 +53,6 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property enableDebugOutput() As Boolean
-            Get
-                Return CType(Me("enableDebugOutput"),Boolean)
-            End Get
-            Set
-                Me("enableDebugOutput") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property enableCustomThemes() As Boolean
-            Get
-                Return CType(Me("enableCustomThemes"),Boolean)
-            End Get
-            Set
-                Me("enableCustomThemes") = value
-            End Set
-        End Property
     End Class
 End Namespace
 
