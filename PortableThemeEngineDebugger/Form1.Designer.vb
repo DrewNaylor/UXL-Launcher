@@ -44,8 +44,8 @@ Partial Class aaformThemeLoader
         Me.textboxThemePath.Name = "textboxThemePath"
         Me.textboxThemePath.Size = New System.Drawing.Size(400, 22)
         Me.textboxThemePath.TabIndex = 0
-        Me.textboxThemePath.Text = "C:\Users\drewn\Documents\0GitHub\UXL-Launcher\UXL-Launcher\VB Code-behind\Themes\" &
-    "TE2DotX_TenDarkTheme_XML.xml"
+        Me.textboxThemePath.Text = "C:\Users\drewn\Documents\0GitHub\UXL-Launcher\PortableUXLLauncher_ThemeEngine\The" &
+    "mes\TE2DotX_TenDarkTheme_XML.xml"
         '
         'labelPathDescription
         '

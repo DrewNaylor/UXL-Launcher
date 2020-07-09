@@ -22,34 +22,49 @@
 
 Public Class aaformThemeLoader
     Private Sub buttonLoadTheme_Click(sender As Object, e As EventArgs) Handles buttonLoadTheme.Click
+        ' Get current time to see how long this takes.
         Dim startdate As DateTime = DateTime.Now
-        'libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me,)
+
+        ' You can load themes directly from XML with the next line, just change it
+        ' as you need.
+        'libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me)
+
         ' If it's a custom theme being entered into the theme path textbox,
         ' load it like one.
         If checkboxIsCustomTheme.Checked = True Then
+
             ' Specify whether custom themes are allowed.
-            libportablethemeengine.ThemeEngine.AllowCustomThemes = checkboxAllowCustomThemes.Checked
+            libportablethemeengine.ThemeEngine.AllowCustomThemes = True
+
+            ' Don't use full TE1.x compatibility mode.
             libportablethemeengine.ThemeEngine.UseFullTE1DotXCompatibilityMode = False
+
+            ' Show theme engine debug output.
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
+
+            ' This is a custom theme, so it's named "(Custom)", is applied to this form ("Me"), there
+            ' are no components on this form to theme (that would be things like
+            ' Windows Forms context menus), and the path for the custom theme we're applying is in
+            ' the textbox.
             libportablethemeengine.ThemeEngine.SelectTheme("(Custom)", Me,, textboxThemePath.Text)
+
         Else
+
+            ' We're not applying a custom theme, but we still want to show debug output.
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
-            libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me,)
+
+            ' We want to apply the theme that's specified in the textbox to this form.
+            ' This theme is stored in libportablethemeengine.
+            libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me)
+
         End If
+
+        ' Get the end date for calculating how long it took to run.
         Dim enddate As DateTime = DateTime.Now
         Debug.WriteLine("Theme engine took " & (enddate - startdate).Milliseconds & " milliseconds to run.")
+
+        ' Change the titlebar text to the button backcolor that the theme engine applied.
         Me.Text = libportablethemeengine.ThemeProperties.colorButtonBackColor.ToString
-        'Try
-        '    ' Setting the form to ButtonBackColor.
-        '    ' Don't worry if it says it can't use transparent colors.
-        '    Me.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
-
-        'Catch ex As System.ArgumentException
-        '    Debug.WriteLine("That's the debugger's main window saying it can't apply transparent colors to forms.")
-        'End Try
-        'buttonLoadTheme.BackColor = libportablethemeengine.ThemeProperties.colorButtonBackColor
-
-
 
     End Sub
 
