@@ -42,6 +42,8 @@ Partial Class aaformThemeLoader
         '
         'textboxThemePath
         '
+        Me.textboxThemePath.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.textboxThemePath.Location = New System.Drawing.Point(11, 29)
         Me.textboxThemePath.Name = "textboxThemePath"
         Me.textboxThemePath.Size = New System.Drawing.Size(400, 22)
@@ -144,6 +146,7 @@ Partial Class aaformThemeLoader
         '
         'radiobuttonSelectFromThemeEngine
         '
+        Me.radiobuttonSelectFromThemeEngine.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonSelectFromThemeEngine.AutoSize = True
         Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(208, 57)
         Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
@@ -155,6 +158,7 @@ Partial Class aaformThemeLoader
         '
         'radiobuttonLoadFromXml
         '
+        Me.radiobuttonLoadFromXml.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonLoadFromXml.AutoSize = True
         Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(208, 138)
         Me.radiobuttonLoadFromXml.Name = "radiobuttonLoadFromXml"
@@ -166,6 +170,7 @@ Partial Class aaformThemeLoader
         '
         'radiobuttonIsCustomTheme
         '
+        Me.radiobuttonIsCustomTheme.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonIsCustomTheme.AutoSize = True
         Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(208, 84)
         Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
@@ -177,6 +182,7 @@ Partial Class aaformThemeLoader
         '
         'checkboxAllowCustomThemes
         '
+        Me.checkboxAllowCustomThemes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.checkboxAllowCustomThemes.AutoSize = True
         Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(208, 111)
         Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
