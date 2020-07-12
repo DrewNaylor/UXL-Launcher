@@ -44,6 +44,8 @@ AlwaysShowDirOnReadyPage=True
 DisableStartupPrompt=False
 DisableDirPage=auto
 DisableProgramGroupPage=auto
+WizardStyle=modern
+WizardResizable=True
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
