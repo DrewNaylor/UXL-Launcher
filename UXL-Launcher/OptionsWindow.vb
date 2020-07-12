@@ -779,8 +779,14 @@ Public Class aaformOptionsWindow
         textboxFirstname.Clear()
         textboxFirstname.Focus()
     End Sub
-#End Region
-#End Region
-#End Region
 
+
+#End Region
+#End Region
+#End Region
+    Private Sub linklabelTempFutureChanges_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelTempFutureChanges.LinkClicked
+        ' Show future change notice messagebox with info based on
+        ' https://github.com/DrewNaylor/UXL-Launcher/issues/180
+        MessageBox.Show("In version 3.4, the Drive location/""I installed Microsoft Office to this drive:"" and Bypass configured location options will switch tabs. See also https://github.com/DrewNaylor/UXL-Launcher/issues/180")
+    End Sub
 End Class
