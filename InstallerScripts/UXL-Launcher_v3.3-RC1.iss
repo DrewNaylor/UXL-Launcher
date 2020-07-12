@@ -55,7 +55,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-rc1\UXL-Launcher.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-rc1\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-rc1\README for UXL Launcher.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_2-stable-UXL_Launcher\source-code.zip"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-rc1\source-code.zip"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-rc1\UXL-Launcher.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-rc1\v3.3-rc1_changelog-from_v3.2-stable.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
