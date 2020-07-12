@@ -1,7 +1,7 @@
 If you are reading this in Notepad or another text editor, it displays best in Word Wrap view. Click on Format>Word Wrap on the top bar. Notepad++ users will find it under View>Word wrap.
 
 
-UXL Launcher - Unified eXecutable Launcher -- Version 3.3 Release Candidate 1 - Codename "More Forms and Seven Years Ago" -- 4/30/2019 (MM/DD/YYYY).
+UXL Launcher - Unified eXecutable Launcher -- Version 3.3 Release Candidate 1 - Codename "More Forms and Seven Years Ago" -- 7/12/2020 (MM/DD/YYYY).
 
 If you have any trouble, you might be able to find an answer on the wiki. It's linked at the end of this readme file. If not, you can submit a bug report at the "Report a problem" link at the end of this readme file. Your report will be labeled by the developers accordingly in a reasonable amount of time.
 
