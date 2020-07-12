@@ -787,6 +787,7 @@ Public Class aaformOptionsWindow
     Private Sub linklabelTempFutureChanges_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelTempFutureChanges.LinkClicked
         ' Show future change notice messagebox with info based on
         ' https://github.com/DrewNaylor/UXL-Launcher/issues/180
-        MessageBox.Show("In version 3.4, the Drive location/""I installed Microsoft Office to this drive:"" and Bypass configured location options will switch tabs. See also https://github.com/DrewNaylor/UXL-Launcher/issues/180")
+        MessageBox.Show(Me, "In version 3.4, the Drive location/""I installed Microsoft Office to this drive:"" and Bypass configured location options will switch tabs. See also https://github.com/DrewNaylor/UXL-Launcher/issues/180",
+                        "Future Change Notice")
     End Sub
 End Class
