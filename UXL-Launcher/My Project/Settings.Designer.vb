@@ -269,6 +269,18 @@ Namespace My
                 Me("bypassConfiguredLocationForAllApps") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property autoupgradeUserSettings() As Boolean
+            Get
+                Return CType(Me("autoupgradeUserSettings"),Boolean)
+            End Get
+            Set
+                Me("autoupgradeUserSettings") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

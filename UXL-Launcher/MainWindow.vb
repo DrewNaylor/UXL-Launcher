@@ -35,11 +35,36 @@ Public Class aaformMainWindow
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' Run the code in the combineStrings sub in OfficeLocater.vb
-        ' This has to be run before changing the titlebar text because
-        ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
-        ' string.
-        OfficeLocater.combineStrings()
+        ' Upgrade settings if specified in the config file.
+        ' This is only done for the installer package by default.
+        ' We need to make sure there's no temp folder first.
+        If IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\UXL_Launcher") AndAlso My.Settings.autoupgradeUserSettings = True Then
+            ' Only upgrade if the user says to.
+            Dim msgResultUpgradeSettings As Integer = MessageBox.Show("Would you like to migrate your settings to " &
+                                                                      "the latest version of UXL Launcher?", "UXL Launcher", MessageBoxButtons.YesNo)
+            If msgResultUpgradeSettings = DialogResult.Yes Then
+                ' If the user clicks "Yes", their settings will be upgraded.
+                My.Settings.Upgrade()
+                MessageBox.Show("Settings migrated.")
+            Else
+                ' Otherwise, don't upgrade their settings.
+                My.Settings.autoupgradeUserSettings = False
+                My.Settings.Save()
+                My.Settings.Reload()
+                MessageBox.Show("Settings not migrated.")
+            End If
+            ' Turn off the settings upgrade check.
+            My.Settings.autoupgradeUserSettings = False
+            ' Save and reload the user's settings.
+            My.Settings.Save()
+            My.Settings.Reload()
+        End If
+
+            ' Run the code in the combineStrings sub in OfficeLocater.vb
+            ' This has to be run before changing the titlebar text because
+            ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
+            ' string.
+            OfficeLocater.combineStrings()
 
         ' Put text in the titlebar.
         ' Placing this code here ensures the titlebar isn't as
