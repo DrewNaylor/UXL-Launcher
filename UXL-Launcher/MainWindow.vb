@@ -45,10 +45,10 @@ Public Class aaformMainWindow
             If msgResultUpgradeSettings = DialogResult.Yes Then
                 ' If the user clicks "Yes", their settings will be migrated/upgraded.
                 My.Settings.Upgrade()
-                MessageBox.Show("Settings migrated.")
+                MessageBox.Show("Settings migrated.", "UXL Launcher")
             Else
                 ' Otherwise, don't migrate their settings.
-                MessageBox.Show("Settings not migrated.")
+                MessageBox.Show("Settings not migrated.", "UXL Launcher")
             End If
             ' Turn off the settings upgrade check.
             My.Settings.autoupgradeUserSettings = False
