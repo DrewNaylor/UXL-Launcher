@@ -55,6 +55,13 @@ Public Class aaformMainWindow
             ' Save and reload the user's settings.
             My.Settings.Save()
             My.Settings.Reload()
+
+        Else
+            ' Turn off the settings upgrade check if there's no temp folder.
+            My.Settings.autoupgradeUserSettings = False
+            ' Save and reload the user's settings.
+            My.Settings.Save()
+            My.Settings.Reload()
         End If
 
             ' Run the code in the combineStrings sub in OfficeLocater.vb
