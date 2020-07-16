@@ -37,20 +37,17 @@ Public Class aaformMainWindow
 
         ' Upgrade settings if specified in the config file.
         ' This is only done for the installer package by default.
-        ' We need to make sure there's no temp folder first.
+        ' We need to make sure there's a temp folder first.
         If IO.Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\UXL_Launcher") AndAlso My.Settings.autoupgradeUserSettings = True Then
             ' Only upgrade if the user says to.
             Dim msgResultUpgradeSettings As Integer = MessageBox.Show("Would you like to migrate your settings to " &
                                                                       "the latest version of UXL Launcher?", "UXL Launcher", MessageBoxButtons.YesNo)
             If msgResultUpgradeSettings = DialogResult.Yes Then
-                ' If the user clicks "Yes", their settings will be upgraded.
+                ' If the user clicks "Yes", their settings will be migrated/upgraded.
                 My.Settings.Upgrade()
                 MessageBox.Show("Settings migrated.")
             Else
-                ' Otherwise, don't upgrade their settings.
-                My.Settings.autoupgradeUserSettings = False
-                My.Settings.Save()
-                My.Settings.Reload()
+                ' Otherwise, don't migrate their settings.
                 MessageBox.Show("Settings not migrated.")
             End If
             ' Turn off the settings upgrade check.
