@@ -1,7 +1,7 @@
 If you are reading this in Notepad or another text editor, it displays best in Word Wrap view. Click on Format>Word Wrap on the top bar. Notepad++ users will find it under View>Word wrap.
 
 
-UXL Launcher - Unified eXecutable Launcher -- Version 3.3 Release Candidate 1 - Codename "More Forms and Seven Years Ago" -- 7/12/2020 (MM/DD/YYYY).
+UXL Launcher - Unified eXecutable Launcher -- Version 3.3 Stable - Codename "More Forms and Seven Years Ago" -- 7/26/2020 (MM/DD/YYYY).
 
 If you have any trouble, you might be able to find an answer on the wiki. It's linked at the end of this readme file. If not, you can submit a bug report at the "Report a problem" link at the end of this readme file. Your report will be labeled by the developers accordingly in a reasonable amount of time.
 
@@ -10,7 +10,7 @@ Get-FileHash .\UXL-Launcher.exe -Algorithm SHA256 in the folder you extracted th
 https://www.howtogeek.com/67241/htg-explains-what-are-md5-sha-1-hashes-and-how-do-i-check-them/ , but the Windows section is a bit further down on the page.
 
 SHA-256 sum for "UXL-Launcher.exe" in the archive:
-C91B7E558C5F2C5C47055D1ECD93275FE09BC58CC27C2F6C8D5825643D7829AA
+BB375676FCA716C998130967C7CEF9771336061D0E333C86A5B5AFD42B46A617
 
 
 ----------------
@@ -99,7 +99,7 @@ Email:                    			drewnaylor_apps -AT/- outlook.com
 
 
 UXL Launcher - Unified eXecutable Launcher
-Version 3.3.0.0 Release Candidate 1 - Codename "More Forms and Seven Years Ago"
+Version 3.3.0.0 Stable - Codename "More Forms and Seven Years Ago"
 Copyright (C) 2013-2020 Drew Naylor. Licensed under Gnu GPLv3+.
 
 UXL Launcher provides launchers for most Microsoft Office apps in one place.
