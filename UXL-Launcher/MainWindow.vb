@@ -355,12 +355,20 @@ Public Class aaformMainWindow
 
     Private Sub menubarOptionsButton_Click(sender As Object, e As EventArgs) Handles menubarOptionsButton.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        showOptionsWindow() ' This code was moved to its own sub.
+        showOptionsWindow(True) ' This code was moved to its own sub.
     End Sub
 
-    Private Sub showOptionsWindow()
+    Private Sub showOptionsWindow(CenterParent As Boolean)
         Try ' We need to make sure the Options window isn't open yet.
             forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
+            If CenterParent = True Then
+                ' If the calling code wants to have it be in the center of the parent, do so.
+                forceOptionsWindowTab.StartPosition = FormStartPosition.CenterParent
+            Else
+                ' Otherwise it'll be set to center screen.
+                forceOptionsWindowTab.StartPosition = FormStartPosition.CenterScreen
+            End If
+            ' Show Options form.
             forceOptionsWindowTab.ShowDialog(Me)
         Catch ex As InvalidOperationException
             ' If it is open, focus it.
@@ -601,7 +609,7 @@ Public Class aaformMainWindow
 
     Private Sub notifyiconUXLOptions_Click(sender As Object, e As EventArgs) Handles notifyiconUXLOptions.Click
         ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-        showOptionsWindow() ' This code was moved to its own sub.
+        showOptionsWindow(False) ' This code was moved to its own sub.
     End Sub
 
     Private Sub notifyiconOfficeLang_Click(sender As Object, e As EventArgs) Handles notifyiconOfficeLang.Click

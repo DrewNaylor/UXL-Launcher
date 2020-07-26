@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-04-30T03:20:10
+        '''  Looks up a localized string similar to 2020-07-16T07:42:33
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -272,7 +272,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Release Candidate 1.
+        '''  Looks up a localized string similar to Stable.
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
