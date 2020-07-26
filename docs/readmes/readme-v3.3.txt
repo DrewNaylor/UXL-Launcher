@@ -10,7 +10,7 @@ Get-FileHash .\UXL-Launcher.exe -Algorithm SHA256 in the folder you extracted th
 https://www.howtogeek.com/67241/htg-explains-what-are-md5-sha-1-hashes-and-how-do-i-check-them/ , but the Windows section is a bit further down on the page.
 
 SHA-256 sum for "UXL-Launcher.exe" in the archive:
-BB375676FCA716C998130967C7CEF9771336061D0E333C86A5B5AFD42B46A617
+62A7FA99CB5879F2B1A58D8C8B3DEBE7616633F257EC67C87950A14FBC921A0C
 
 
 ----------------
