@@ -313,10 +313,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonBypassConfiguredLocationDeprecatedApps)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonDontBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
-        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 171)
+        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 169)
         Me.groupboxBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
-        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 153)
+        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 155)
         Me.groupboxBypassConfiguredLocation.TabIndex = 1
         Me.groupboxBypassConfiguredLocation.TabStop = False
         Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
@@ -456,7 +456,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
-        Me.groupboxStatusbar.Location = New System.Drawing.Point(3, 189)
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(3, 192)
+        Me.groupboxStatusbar.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxStatusbar.Name = "groupboxStatusbar"
         Me.groupboxStatusbar.Size = New System.Drawing.Size(414, 132)
         Me.groupboxStatusbar.TabIndex = 1
