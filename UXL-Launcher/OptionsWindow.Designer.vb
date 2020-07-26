@@ -314,8 +314,9 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonDontBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 171)
+        Me.groupboxBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
-        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 152)
+        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 153)
         Me.groupboxBypassConfiguredLocation.TabIndex = 1
         Me.groupboxBypassConfiguredLocation.TabStop = False
         Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
@@ -455,9 +456,9 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
-        Me.groupboxStatusbar.Location = New System.Drawing.Point(6, 189)
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(3, 189)
         Me.groupboxStatusbar.Name = "groupboxStatusbar"
-        Me.groupboxStatusbar.Size = New System.Drawing.Size(411, 132)
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(414, 132)
         Me.groupboxStatusbar.TabIndex = 1
         Me.groupboxStatusbar.TabStop = False
         Me.groupboxStatusbar.Text = "Statusbar"
@@ -529,9 +530,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.Controls.Add(Me.comboboxThemeList)
         Me.groupboxAppearance.Controls.Add(Me.textboxThemeInfo)
         Me.groupboxAppearance.Controls.Add(Me.checkboxEnableThemeEngine)
-        Me.groupboxAppearance.Location = New System.Drawing.Point(6, 4)
+        Me.groupboxAppearance.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxAppearance.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxAppearance.Name = "groupboxAppearance"
-        Me.groupboxAppearance.Size = New System.Drawing.Size(411, 184)
+        Me.groupboxAppearance.Size = New System.Drawing.Size(414, 185)
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Appearance"
@@ -553,7 +555,7 @@ Partial Class aaformOptionsWindow
         '
         Me.labelCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelCustomThemePath.AutoSize = True
-        Me.labelCustomThemePath.Location = New System.Drawing.Point(213, 142)
+        Me.labelCustomThemePath.Location = New System.Drawing.Point(216, 143)
         Me.labelCustomThemePath.Name = "labelCustomThemePath"
         Me.labelCustomThemePath.Size = New System.Drawing.Size(101, 13)
         Me.labelCustomThemePath.TabIndex = 6
@@ -562,7 +564,7 @@ Partial Class aaformOptionsWindow
         'buttonCustomThemesBrowse
         '
         Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(336, 155)
+        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(339, 156)
         Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
         Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
         Me.buttonCustomThemesBrowse.TabIndex = 5
@@ -572,7 +574,7 @@ Partial Class aaformOptionsWindow
         'textboxCustomThemePath
         '
         Me.textboxCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textboxCustomThemePath.Location = New System.Drawing.Point(216, 158)
+        Me.textboxCustomThemePath.Location = New System.Drawing.Point(219, 159)
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
         Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
         Me.textboxCustomThemePath.TabIndex = 4
@@ -582,7 +584,7 @@ Partial Class aaformOptionsWindow
         '
         Me.labelThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelThemeList.AutoSize = True
-        Me.labelThemeList.Location = New System.Drawing.Point(213, 49)
+        Me.labelThemeList.Location = New System.Drawing.Point(216, 49)
         Me.labelThemeList.Name = "labelThemeList"
         Me.labelThemeList.Size = New System.Drawing.Size(58, 13)
         Me.labelThemeList.TabIndex = 3
@@ -593,7 +595,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.comboboxThemeList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxThemeList.FormattingEnabled = True
-        Me.comboboxThemeList.Location = New System.Drawing.Point(216, 65)
+        Me.comboboxThemeList.Location = New System.Drawing.Point(219, 65)
         Me.comboboxThemeList.Name = "comboboxThemeList"
         Me.comboboxThemeList.Size = New System.Drawing.Size(188, 21)
         Me.comboboxThemeList.TabIndex = 2
@@ -601,7 +603,7 @@ Partial Class aaformOptionsWindow
         'textboxThemeInfo
         '
         Me.textboxThemeInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 49)
+        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 50)
         Me.textboxThemeInfo.Multiline = True
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
         Me.textboxThemeInfo.ReadOnly = True
