@@ -185,7 +185,7 @@ Partial Class aaformOptionsWindow
         'labelHelpWithOfficeVersions
         '
         Me.labelHelpWithOfficeVersions.AutoSize = True
-        Me.labelHelpWithOfficeVersions.Location = New System.Drawing.Point(82, 110)
+        Me.labelHelpWithOfficeVersions.Location = New System.Drawing.Point(71, 110)
         Me.labelHelpWithOfficeVersions.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelHelpWithOfficeVersions.Name = "labelHelpWithOfficeVersions"
         Me.labelHelpWithOfficeVersions.Size = New System.Drawing.Size(273, 39)
@@ -197,7 +197,7 @@ Partial Class aaformOptionsWindow
         'labelOfficeInstallMethodDescription
         '
         Me.labelOfficeInstallMethodDescription.AutoSize = True
-        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(83, 60)
+        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(89, 60)
         Me.labelOfficeInstallMethodDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstallMethodDescription.Name = "labelOfficeInstallMethodDescription"
         Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(191, 13)
@@ -207,7 +207,7 @@ Partial Class aaformOptionsWindow
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(86, 75)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(92, 75)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 17)
@@ -219,7 +219,7 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(82, 25)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(88, 25)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
         Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(178, 13)
@@ -230,7 +230,7 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(86, 39)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(92, 39)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
@@ -254,7 +254,7 @@ Partial Class aaformOptionsWindow
         'labelDriveTextboxLabel
         '
         Me.labelDriveTextboxLabel.AutoSize = True
-        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(82, 67)
+        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(88, 60)
         Me.labelDriveTextboxLabel.Name = "labelDriveTextboxLabel"
         Me.labelDriveTextboxLabel.Size = New System.Drawing.Size(32, 13)
         Me.labelDriveTextboxLabel.TabIndex = 4
@@ -264,7 +264,7 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonClearDriveLetter.AutoSize = True
         Me.buttonClearDriveLetter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonClearDriveLetter.Location = New System.Drawing.Point(144, 62)
+        Me.buttonClearDriveLetter.Location = New System.Drawing.Point(150, 55)
         Me.buttonClearDriveLetter.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonClearDriveLetter.Name = "buttonClearDriveLetter"
         Me.buttonClearDriveLetter.Size = New System.Drawing.Size(41, 23)
@@ -275,7 +275,7 @@ Partial Class aaformOptionsWindow
         'textboxOfficeDrive
         '
         Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.textboxOfficeDrive.Location = New System.Drawing.Point(120, 64)
+        Me.textboxOfficeDrive.Location = New System.Drawing.Point(126, 57)
         Me.textboxOfficeDrive.Margin = New System.Windows.Forms.Padding(2)
         Me.textboxOfficeDrive.MaxLength = 1
         Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
@@ -287,7 +287,7 @@ Partial Class aaformOptionsWindow
         'labelOfficeInstalledToDrive
         '
         Me.labelOfficeInstalledToDrive.AutoSize = True
-        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(82, 43)
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(88, 37)
         Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
         Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(188, 13)
@@ -323,7 +323,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationAllApps
         '
         Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(50, 124)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(57, 120)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
         Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
         Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
@@ -334,7 +334,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationDeprecatedApps
         '
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(50, 101)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(57, 97)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
@@ -345,7 +345,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonDontBypassConfiguredLocation
         '
         Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
-        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(50, 78)
+        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(57, 74)
         Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
         Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
         Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
@@ -356,7 +356,7 @@ Partial Class aaformOptionsWindow
         'labelBypassConfiguredLocation
         '
         Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(24, 22)
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(36, 22)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
         Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(338, 39)
         Me.labelBypassConfiguredLocation.TabIndex = 0
@@ -381,7 +381,7 @@ Partial Class aaformOptionsWindow
         'labelRecommendedWindowsEdition
         '
         Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(50, 82)
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(62, 82)
         Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
         Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 65)
         Me.labelRecommendedWindowsEdition.TabIndex = 5
@@ -403,7 +403,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs64Bit
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(53, 54)
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(65, 54)
         Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
         Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(98, 17)
@@ -415,7 +415,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs32Bit
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(53, 36)
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(65, 36)
         Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
         Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(98, 17)
@@ -427,7 +427,7 @@ Partial Class aaformOptionsWindow
         'labelCPUTypeDescription
         '
         Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(50, 21)
+        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(62, 21)
         Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
         Me.labelCPUTypeDescription.Size = New System.Drawing.Size(229, 13)
