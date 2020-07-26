@@ -466,7 +466,7 @@ Partial Class aaformOptionsWindow
         '
         'buttonClearFirstname
         '
-        Me.buttonClearFirstname.Location = New System.Drawing.Point(320, 89)
+        Me.buttonClearFirstname.Location = New System.Drawing.Point(339, 100)
         Me.buttonClearFirstname.Name = "buttonClearFirstname"
         Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
         Me.buttonClearFirstname.TabIndex = 5
@@ -476,7 +476,7 @@ Partial Class aaformOptionsWindow
         'labelFirstName
         '
         Me.labelFirstName.AutoSize = True
-        Me.labelFirstName.Location = New System.Drawing.Point(6, 94)
+        Me.labelFirstName.Location = New System.Drawing.Point(25, 105)
         Me.labelFirstName.Name = "labelFirstName"
         Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
         Me.labelFirstName.TabIndex = 4
@@ -484,7 +484,7 @@ Partial Class aaformOptionsWindow
         '
         'textboxFirstname
         '
-        Me.textboxFirstname.Location = New System.Drawing.Point(121, 91)
+        Me.textboxFirstname.Location = New System.Drawing.Point(140, 102)
         Me.textboxFirstname.Name = "textboxFirstname"
         Me.textboxFirstname.Size = New System.Drawing.Size(193, 20)
         Me.textboxFirstname.TabIndex = 3
@@ -492,7 +492,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonCustomStatusbarGreeting
         '
         Me.radiobuttonCustomStatusbarGreeting.AutoSize = True
-        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(7, 68)
+        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(26, 79)
         Me.radiobuttonCustomStatusbarGreeting.Name = "radiobuttonCustomStatusbarGreeting"
         Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(193, 17)
         Me.radiobuttonCustomStatusbarGreeting.TabIndex = 2
@@ -503,7 +503,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonDefaultStatusbarGreeting
         '
         Me.radiobuttonDefaultStatusbarGreeting.AutoSize = True
-        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(7, 45)
+        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(26, 56)
         Me.radiobuttonDefaultStatusbarGreeting.Name = "radiobuttonDefaultStatusbarGreeting"
         Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(166, 17)
         Me.radiobuttonDefaultStatusbarGreeting.TabIndex = 1
@@ -514,7 +514,7 @@ Partial Class aaformOptionsWindow
         'labelCustomStatusbarGreeting
         '
         Me.labelCustomStatusbarGreeting.AutoSize = True
-        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(4, 16)
+        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(23, 16)
         Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
         Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(369, 26)
         Me.labelCustomStatusbarGreeting.TabIndex = 0
