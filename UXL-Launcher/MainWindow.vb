@@ -366,6 +366,7 @@ Public Class aaformMainWindow
                 forceOptionsWindowTab.StartPosition = FormStartPosition.CenterParent
             Else
                 ' Otherwise it'll be set to center screen.
+                ' This is often the case when opening the Options window from an error message.
                 forceOptionsWindowTab.StartPosition = FormStartPosition.CenterScreen
             End If
             ' Show Options form.
