@@ -89,8 +89,7 @@ Public Class isolated_error_handler
                 ' If the user chooses to open the Options window, open the Options window to the General tab.
                 If msgResult = DialogResult.Yes Then
                     ' Open the Options window. Credit goes to this SO answer: <http://stackoverflow.com/a/2513186>
-                    aaformMainWindow.forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
-                    aaformMainWindow.forceOptionsWindowTab.ShowDialog(aaformMainWindow)
+                    aaformMainWindow.showOptionsWindow(False)
                 End If
             Catch ex As Exception
                 ' If another error shows up, then we can't handle it yet and ask the user if they want to file a
