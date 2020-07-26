@@ -64,11 +64,11 @@ Public Class aaformMainWindow
             My.Settings.Reload()
         End If
 
-            ' Run the code in the combineStrings sub in OfficeLocater.vb
-            ' This has to be run before changing the titlebar text because
-            ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
-            ' string.
-            OfficeLocater.combineStrings()
+        ' Run the code in the combineStrings sub in OfficeLocater.vb
+        ' This has to be run before changing the titlebar text because
+        ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
+        ' string.
+        OfficeLocater.combineStrings()
 
         ' Put text in the titlebar.
         ' Placing this code here ensures the titlebar isn't as
@@ -99,7 +99,7 @@ Public Class aaformMainWindow
         If My.Settings.enableThemeEngine = True Then
 
             ' If the theme engine is enabled, make the 
-            ' Revert to Default Theme button visible
+            ' Reload Default Theme button visible
             ' and enabled.
             menubarRevertThemeButton.Visible = True
             menubarRevertThemeButton.Enabled = True
@@ -115,8 +115,8 @@ Public Class aaformMainWindow
         Else
 
             ' If the theme engine is disabled, make the
-            ' Revert to Default Theme button invisible
-            ' and disable it so that Ctrl + 0 doesn't
+            ' Reload Default Theme button invisible
+            ' and disable it so that Ctrl+R doesn't
             ' do anything if the theme engine is
             ' disabled.
             menubarRevertThemeButton.Visible = False
