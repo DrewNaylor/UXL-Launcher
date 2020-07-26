@@ -358,7 +358,7 @@ Public Class aaformMainWindow
         showOptionsWindow(True) ' This code was moved to its own sub.
     End Sub
 
-    Private Sub showOptionsWindow(CenterParent As Boolean)
+    Friend Shared Sub showOptionsWindow(CenterParent As Boolean)
         Try ' We need to make sure the Options window isn't open yet.
             forceOptionsWindowTab.tabcontrolOptionsWindow.SelectTab(0)
             If CenterParent = True Then
@@ -369,7 +369,7 @@ Public Class aaformMainWindow
                 forceOptionsWindowTab.StartPosition = FormStartPosition.CenterScreen
             End If
             ' Show Options form.
-            forceOptionsWindowTab.ShowDialog(Me)
+            forceOptionsWindowTab.ShowDialog(aaformMainWindow)
         Catch ex As InvalidOperationException
             ' If it is open, focus it.
             forceOptionsWindowTab.Focus()
