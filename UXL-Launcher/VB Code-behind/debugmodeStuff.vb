@@ -90,6 +90,7 @@ Public Class debugmodeStuff
             CType(UXLLauncher_ThemeEngine.themeSheetUseThemeEngineVersion, String)
 
     End Sub
+#End Region
 
     Public Shared Sub outputThemeEngineVersionToUse(themeEngineVersionToUse As Decimal)
         ' Show theme engine version that the theme wants to use in the Immediate Window
@@ -100,5 +101,4 @@ Public Class debugmodeStuff
             Debug.WriteLine(themeEngineVersionToUse)
         End If
     End Sub
-#End Region
 End Class
