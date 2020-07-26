@@ -57,7 +57,7 @@ Public Class aaformMainWindow
             My.Settings.Reload()
 
         Else
-            ' Turn off the settings upgrade check if there's no temp folder.
+            ' Turn off the settings upgrade check if there's no temp folder or if the config file had it turned off.
             My.Settings.autoupgradeUserSettings = False
             ' Save and reload the user's settings.
             My.Settings.Save()
