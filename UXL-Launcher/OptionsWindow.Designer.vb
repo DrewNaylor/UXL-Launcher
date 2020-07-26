@@ -541,8 +541,9 @@ Partial Class aaformOptionsWindow
         '
         'checkboxMatchWindows10ThemeSettings
         '
+        Me.checkboxMatchWindows10ThemeSettings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.checkboxMatchWindows10ThemeSettings.AutoSize = True
-        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(216, 93)
+        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(220, 92)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
         Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
         Me.checkboxMatchWindows10ThemeSettings.TabIndex = 3
