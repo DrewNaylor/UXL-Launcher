@@ -784,6 +784,7 @@ Public Class aaformOptionsWindow
 #End Region
 #End Region
 #End Region
+
     Private Sub linklabelTempFutureChanges_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelTempFutureChanges.LinkClicked
         ' Show future change notice messagebox with info based on
         ' https://github.com/DrewNaylor/UXL-Launcher/issues/180
