@@ -146,6 +146,13 @@ Windows is recommended to you; please report.</value>
   <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>820, 23</value>
   </metadata>
+  <data name="checkboxMatchWindows10ThemeSettings.ToolTip" xml:space="preserve">
+    <value>If the system theme is set to Light, then the Default theme
+will be applied on app startup or when applying themes.
+
+If the system theme is set to Dark, then the TenDark theme
+will be applied on app startup or when applying themes.</value>
+  </data>
   <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>629, 23</value>
   </metadata>
