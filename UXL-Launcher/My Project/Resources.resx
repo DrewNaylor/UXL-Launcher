@@ -658,7 +658,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>Icon used for Options button</comment>
   </data>
   <data name="themeList_TXT" xml:space="preserve">
-    <value>Default,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ReturnOfNight,RGB,TenDark,(Custom)</value>
+    <value>Default,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ProDark,ReturnOfNight,RGB,TenDark,(Custom)</value>
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">
@@ -1787,5 +1787,8 @@ This decimal is to be used for the About window when talking about what version 
         mvMe4PodJyhq7fz9UxEVcO22PRVtkpKkYg9wOmRPxWMZxQ3/AIjVY/cfMCsA8A12mtaVHrEBngAAAABJ
         RU5ErkJggg==
 </value>
+  </data>
+  <data name="ProDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\vb code-behind\themes\prodarktheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
