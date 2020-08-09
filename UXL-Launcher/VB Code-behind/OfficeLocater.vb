@@ -46,14 +46,14 @@ Public Class OfficeLocater
         ' This code looks at My.Settings.cpuIsSixtyFourBit and if it's set to True, userCPUType contains " (x86)" and cpuTypeString is set
         ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
         'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is cpuTypeString.
-        If My.Settings.cpuIsSixtyFourBit = True Then
-            cpuTypePrivateString = " (x86)"
-            cpuTypeString = cpuTypePrivateString
-            titlebarBitModeString = "64-bit"
-        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-            cpuTypePrivateString = ""
-            cpuTypeString = cpuTypePrivateString
-            titlebarBitModeString = "32-bit"
+        If My.Settings.cpuIsSixtyFourBit = True Then        ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            cpuTypePrivateString = ""                       ' NOTE FROM @dubepaul  :  I came here because your application didn't work for me... BUT     '
+            cpuTypeString = cpuTypePrivateString            ' What I've got: Windows 10 x64 and Office 365 x64 (Office 16nomsi 64 bits, not 32!)         '
+            titlebarBitModeString = "64-bit"                ' For me, the fix was to invert the cpuTypePrivateString, so it finds my Office Directory.   '
+        ElseIf My.Settings.cpuIsSixtyFourBit = False Then   ' But what I think would fix that better is to check both Windows *and* office bitness.      '
+            cpuTypePrivateString = " (x86)"                 ' Or fix the Locater code to verify both Program Files and Program Files (x86) in all cases. '
+            cpuTypeString = cpuTypePrivateString            ' In any way I had fun digging that, so I hope it helps you out. Have a great day! @dubepaul '
+            titlebarBitModeString = "32-bit"                ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
         End If
     End Sub
 #End Region
