@@ -55,9 +55,6 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="libportablethemeengine">
-      <HintPath>..\PortableUXLLauncher_ThemeEngine\bin\Debug\libportablethemeengine.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -132,6 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReturnOfNightTheme_XML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PortableUXLLauncher_ThemeEngine\libportablethemeengine.vbproj">   ' I had to change theses lines to be able to compile the project in my Visual Studio.   @dubepaul.
+      <Project>{ca4a9ae5-d870-4067-b6b5-15955bf01e9d}</Project>
+      <Name>libportablethemeengine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
