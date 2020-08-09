@@ -85,7 +85,7 @@
 		  <BackColor>Transparent</BackColor>
 		  <ForeColor>White</ForeColor>
 		  <ActiveLinkColor>Red</ActiveLinkColor>
-		  <LinkColor>DodgerBlue</LinkColor>
+		  <LinkColor>#3CB2FA</LinkColor>
 	  </LinkLabel>
 
 	  <Panel>
