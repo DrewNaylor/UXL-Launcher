@@ -171,6 +171,21 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''	  &lt;Title&gt;Pro Dark&lt;/Title&gt;
+        '''	  &lt;Description&gt;Dark theme meant to resemble Office 2019&apos;s &quot;Black&quot; theme. The colors may not match exactly as they were eyeballed from the colors used in Word 2019. This theme is not associated with Microsoft, and Microsoft Office is a copyright and trademark/registered trademark of Microsoft Corporation in the United States and other countries.&lt;/Description&gt;
+        '''	  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''	  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''	  &lt;!-- &quot;UseThemeEngineVersion&quot; is u [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property ProDarkTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("ProDarkTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
         '''  &lt;Version&gt;v1.1&lt;/Version&gt;

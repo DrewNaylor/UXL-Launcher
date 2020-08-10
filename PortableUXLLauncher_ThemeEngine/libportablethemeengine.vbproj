@@ -124,6 +124,7 @@
     <Content Include="Themes\MittyTheme_XML.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Themes\ProDarkTheme_XML.xml" />
     <Content Include="Themes\ReturnOfNightTheme_XML.xml" />
     <Content Include="Themes\RGBTheme_XML.xml" />
     <None Include="Themes\TE2DotX_RGBTheme_XML.xml" />
