@@ -404,7 +404,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs64Bit
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(39, 36)
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(39, 70)
         Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
         Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(268, 17)
@@ -417,7 +417,7 @@ Partial Class aaformOptionsWindow
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
         Me.radiobuttonCPUIs32Bit.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(39, 57)
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(39, 36)
         Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
         Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(350, 30)
