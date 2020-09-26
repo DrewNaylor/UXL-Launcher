@@ -37,9 +37,9 @@ Public Class OfficeLocater
     Public Shared fullLauncherCodeString As String
 
 
-#Region "pfPathString and cpuType sub."
+#Region "pfPathString and pfPath sub."
     ' The cpuType sub is used to give pfPathString data.
-    Public Shared Sub cpuType()
+    Public Shared Sub pfPath()
 
         ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, pfPathString is set to " (x86)".
         'However, if My.Settings.pathUsePFxEightySix is set to False, pfPathString is assigned an empty value.
@@ -61,7 +61,7 @@ Public Class OfficeLocater
         ' What this does is take all the other strings above and put them into one string along with the "Program Files"
         ' and "Microsoft Office" directories.
         ' First we need to run the other subs.
-        cpuType()
+        pfPath()
 
         ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
         ' and the user doesn't have Office 2013.
