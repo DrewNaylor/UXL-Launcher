@@ -34,6 +34,7 @@ Partial Class aaformOptionsWindow
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.comboboxDriveSelector = New System.Windows.Forms.ComboBox()
         Me.labelDriveTextboxLabel = New System.Windows.Forms.Label()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
@@ -73,7 +74,6 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
-        Me.comboboxDriveSelector = New System.Windows.Forms.ComboBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -224,6 +224,15 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.TabIndex = 0
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
+        '
+        'comboboxDriveSelector
+        '
+        Me.comboboxDriveSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDriveSelector.FormattingEnabled = True
+        Me.comboboxDriveSelector.Location = New System.Drawing.Point(126, 57)
+        Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
+        Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)
+        Me.comboboxDriveSelector.TabIndex = 5
         '
         'labelDriveTextboxLabel
         '
@@ -632,15 +641,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.AutoPopDelay = 10000
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
-        '
-        'comboboxDriveSelector
-        '
-        Me.comboboxDriveSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboboxDriveSelector.FormattingEnabled = True
-        Me.comboboxDriveSelector.Location = New System.Drawing.Point(126, 57)
-        Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
-        Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)
-        Me.comboboxDriveSelector.TabIndex = 5
         '
         'aaformOptionsWindow
         '

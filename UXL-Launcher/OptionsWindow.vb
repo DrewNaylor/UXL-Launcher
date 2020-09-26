@@ -340,112 +340,112 @@ Public Class aaformOptionsWindow
         ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
         My.Settings.officeDriveLocation = comboboxDriveSelector.Text
 
-            ' My.Settings.userHasOfficeThreeSixFive will be set based on 
-            ' the .Checked state of the checkboxO365InstallMethod.
-            ' Simplified from original "If" statement.
-            My.Settings.userHasOfficeThreeSixFive = checkboxO365InstallMethod.Checked
+        ' My.Settings.userHasOfficeThreeSixFive will be set based on 
+        ' the .Checked state of the checkboxO365InstallMethod.
+        ' Simplified from original "If" statement.
+        My.Settings.userHasOfficeThreeSixFive = checkboxO365InstallMethod.Checked
 
-            ' Set My.Settings.userOfficeVersion to a string based on whatever
-            ' comboboxOfficeVersionSelector.Text is set to.
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
-                My.Settings.userOfficeVersion = "14"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-                My.Settings.userOfficeVersion = "15"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
-                My.Settings.userOfficeVersion = "16"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2019" Then
-                My.Settings.userOfficeVersion = "16nomsi"
-            Else
-                ' If none of the above Office versions are listed in the dropdown
-                ' box, just save the current My.Settings.userOfficeVersion to
-                ' itself.
-                My.Settings.userOfficeVersion = My.Settings.userOfficeVersion
-            End If
+        ' Set My.Settings.userOfficeVersion to a string based on whatever
+        ' comboboxOfficeVersionSelector.Text is set to.
+        If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
+            My.Settings.userOfficeVersion = "14"
+        ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
+            My.Settings.userOfficeVersion = "15"
+        ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
+            My.Settings.userOfficeVersion = "16"
+        ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2019" Then
+            My.Settings.userOfficeVersion = "16nomsi"
+        Else
+            ' If none of the above Office versions are listed in the dropdown
+            ' box, just save the current My.Settings.userOfficeVersion to
+            ' itself.
+            My.Settings.userOfficeVersion = My.Settings.userOfficeVersion
+        End If
 
-            ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
-            If radiobuttonUseProgramFiles.Checked = True Then
-                My.Settings.cpuIsSixtyFourBit = False
-            ElseIf radiobuttonUseProgramFilesX86.Checked = True Then
-                My.Settings.cpuIsSixtyFourBit = True
-            ElseIf radiobuttonCPUIsQBit.Checked = True Then
-                ' Focus the "Advanced" tab.
-                tabcontrolOptionsWindow.SelectedIndex = 1
-                MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
+        ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
+        If radiobuttonUseProgramFiles.Checked = True Then
+            My.Settings.cpuIsSixtyFourBit = False
+        ElseIf radiobuttonUseProgramFilesX86.Checked = True Then
+            My.Settings.cpuIsSixtyFourBit = True
+        ElseIf radiobuttonCPUIsQBit.Checked = True Then
+            ' Focus the "Advanced" tab.
+            tabcontrolOptionsWindow.SelectedIndex = 1
+            MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
-                ' Now set the radio buttons to current user settings.
-                If My.Settings.cpuIsSixtyFourBit = True Then
-                    radiobuttonUseProgramFilesX86.Checked = True
-                    My.Settings.cpuIsSixtyFourBit = True
-                ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-                    radiobuttonUseProgramFiles.Checked = True
-                    My.Settings.cpuIsSixtyFourBit = False
-                End If
+            ' Now set the radio buttons to current user settings.
+            If My.Settings.cpuIsSixtyFourBit = True Then
+                radiobuttonUseProgramFilesX86.Checked = True
+                My.Settings.cpuIsSixtyFourBit = True
+            ElseIf My.Settings.cpuIsSixtyFourBit = False Then
+                radiobuttonUseProgramFiles.Checked = True
+                My.Settings.cpuIsSixtyFourBit = False
             End If
+        End If
 
-            ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
-            ' Simplified from original "If" statement.
-            My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
+        ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
+        ' Simplified from original "If" statement.
+        My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
 
-            ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
-            My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
+        ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
+        My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
 
-            ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
-            My.Settings.userChosenTheme = comboboxThemeList.Text
+        ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
+        My.Settings.userChosenTheme = comboboxThemeList.Text
 
-            ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
-            My.Settings.userCustomThemePath = textboxCustomThemePath.Text
+        ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
+        My.Settings.userCustomThemePath = textboxCustomThemePath.Text
 
-            ' Set My.Settings.userUseCustomStatusbarGreeting to True or False based
-            ' on which radio button is selected.
-            If radiobuttonDefaultStatusbarGreeting.Checked = True Then
-                My.Settings.userUseCustomStatusbarGreeting = False
-            ElseIf radiobuttonCustomStatusbarGreeting.Checked = True Then
-                My.Settings.userUseCustomStatusbarGreeting = True
-            End If
+        ' Set My.Settings.userUseCustomStatusbarGreeting to True or False based
+        ' on which radio button is selected.
+        If radiobuttonDefaultStatusbarGreeting.Checked = True Then
+            My.Settings.userUseCustomStatusbarGreeting = False
+        ElseIf radiobuttonCustomStatusbarGreeting.Checked = True Then
+            My.Settings.userUseCustomStatusbarGreeting = True
+        End If
 
-            ' Set the My.Settings value for the user's firstname/nickname
-            ' for personalized statusbar greetings to the textbox
-            ' for the name.
-            My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
+        ' Set the My.Settings value for the user's firstname/nickname
+        ' for personalized statusbar greetings to the textbox
+        ' for the name.
+        My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
 
-            ' Save the status of whether to bypass the configured location for
-            ' deprecated or removed apps, or all compatible apps.
-            My.Settings.bypassConfiguredLocationForDeprecatedApps = radiobuttonBypassConfiguredLocationDeprecatedApps.Checked
-            My.Settings.bypassConfiguredLocationForAllApps = radiobuttonBypassConfiguredLocationAllApps.Checked
+        ' Save the status of whether to bypass the configured location for
+        ' deprecated or removed apps, or all compatible apps.
+        My.Settings.bypassConfiguredLocationForDeprecatedApps = radiobuttonBypassConfiguredLocationDeprecatedApps.Checked
+        My.Settings.bypassConfiguredLocationForAllApps = radiobuttonBypassConfiguredLocationAllApps.Checked
 
 #End Region
 
 #Region "This is where the settings get saved and things update."
-            ' Save settings.
-            My.Settings.Save()
-            My.Settings.Reload()
-            ' Update the user's theme if the theme engine is enabled
-            ' and the boolean variable set at the beginning of this
-            ' class is set to True.
-            If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
+        ' Save settings.
+        My.Settings.Save()
+        My.Settings.Reload()
+        ' Update the user's theme if the theme engine is enabled
+        ' and the boolean variable set at the beginning of this
+        ' class is set to True.
+        If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
 
-                ' If the user wants to match the Windows 10 theme, then do so,
-                ' but if not, then the user's chosen theme will be used instead.
-                ' Code moved to its own sub to make editing easier.
-                WindowsThemeSettings.checkIfUserWantsToMatchTheme()
+            ' If the user wants to match the Windows 10 theme, then do so,
+            ' but if not, then the user's chosen theme will be used instead.
+            ' Code moved to its own sub to make editing easier.
+            WindowsThemeSettings.checkIfUserWantsToMatchTheme()
 
-            End If
-            ' Update the fullLauncherCodeString.
-            OfficeLocater.combineStrings()
-            ' Update the text in the main window's titlebar.
-            aaformMainWindow.updateTitlebarText()
-            ' Update main window statusbar label text.
-            aaformMainWindow.updateStatusbarText()
-            ' Tell the user that settings were saved.
-            MessageBox.Show("Settings saved." & vbCrLf &
+        End If
+        ' Update the fullLauncherCodeString.
+        OfficeLocater.combineStrings()
+        ' Update the text in the main window's titlebar.
+        aaformMainWindow.updateTitlebarText()
+        ' Update main window statusbar label text.
+        aaformMainWindow.updateStatusbarText()
+        ' Tell the user that settings were saved.
+        MessageBox.Show("Settings saved." & vbCrLf &
                         "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
 
-            ' Saving was successful.
-            ' Return 0.
-            ' Fortunately, this was just to save
-            ' settings, rather than the entire world.
-            Return 0
+        ' Saving was successful.
+        ' Return 0.
+        ' Fortunately, this was just to save
+        ' settings, rather than the entire world.
+        Return 0
         'End If
     End Function
 #End Region
