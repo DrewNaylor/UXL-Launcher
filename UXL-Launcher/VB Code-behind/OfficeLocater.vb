@@ -49,11 +49,11 @@ Public Class OfficeLocater
         If My.Settings.cpuIsSixtyFourBit = True Then
             cpuTypePrivateString = " (x86)"
             cpuTypeString = cpuTypePrivateString
-            titlebarBitModeString = "64-bit"
+            titlebarBitModeString = "PF-x86"
         ElseIf My.Settings.cpuIsSixtyFourBit = False Then
             cpuTypePrivateString = ""
             cpuTypeString = cpuTypePrivateString
-            titlebarBitModeString = "32-bit"
+            titlebarBitModeString = "PF"
         End If
     End Sub
 #End Region
