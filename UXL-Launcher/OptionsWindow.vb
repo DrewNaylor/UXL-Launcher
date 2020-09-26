@@ -64,9 +64,6 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Load the settings from My.Settings."
-        ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
-        textboxOfficeDrive.Text = My.Settings.officeDriveLocation
-
 #Region "Drive letters."
 #Region "Set drive letter dropdown to available drives."
         ' Clear the drive letter list.
@@ -235,34 +232,9 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
-
-
-#Region "Code that runs when the user types stuff in the textboxOfficeDrive."
-    Private Sub textboxOfficeDrive_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textboxOfficeDrive.KeyPress
-        ' This sub is to make sure that people are only entering letters. Credit goes to this post on Stack Overflow
-        ' for this solution.  <http://stackoverflow.com/a/31161593>
-        ' 
-        If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
-
-            ' Display a message box when the user presses characters that aren't allowed.
-            e.Handled = True
-            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf &
-                            "You can clear the textbox by using the ""Clear"" button, or by pressing Delete or Backspace on your keyboard.",
-                            "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-            ' Change the textbox for choosing the drive Office is installed on back to the user's current configuration.
-            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
-            ' Focus and select the textbox.
-            textboxOfficeDrive.Focus()
-            textboxOfficeDrive.SelectAll()
-        End If
-    End Sub
-#End Region
-
 #Region "Code that runs when the user clicks the Defaults button."
     Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
         ' Reset the "Office Install Drive" to drive C.
-        textboxOfficeDrive.Text = "C"
         comboboxDriveSelector.Text = "C"
 
         ' Reset the Office Version Selector to Office 2010.
@@ -348,30 +320,25 @@ Public Class aaformOptionsWindow
     Private Function saveStuff() As Integer
         ' Look at the length of the text in the "Office Install Drive" textbox and if there is no text in it then kindly tell the
         ' user they need to type in one drive letter.
-        If textboxOfficeDrive.Text.Length = 0 Then
-            MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ' After telling them that, reset the "Office Install Drive" textbox to their current setting.
-            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
-            ' Select the "General" tab.
-            ' This article helped me with selecting the tab:
-            ' https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.tabcontrol.selectedindex?view=netframework-4.6.1
-            tabcontrolOptionsWindow.SelectedIndex = 0
-            ' Set focus to the Office Drive Location textbox, and select all text in it.
-            textboxOfficeDrive.Focus()
-            textboxOfficeDrive.SelectAll()
-            ' Return 1, which means there's a problem.
-            ' When this happens, code that uses this function
-            ' will exit and not continue.
-            Return 1
-        Else
-            '
-            ' This space reserved for more settings.
-            '
-            '
+        'If SomeIssueHere Then
+
+        ' Return 1, which means there's a problem.
+        ' When this happens, code that uses this function
+        ' will exit and not continue.
+
+        ' This if...else statement will only be used if there's
+        ' something that would use it, but at the moment, it is
+        ' considered... irrelevant.
+        'Return 1
+        'Else
+        '
+        ' This space reserved for more settings.
+        '
+        '
 
 #Region "Things to save to My.Settings."
-            ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
-            My.Settings.officeDriveLocation = comboboxDriveSelector.Text
+        ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
+        My.Settings.officeDriveLocation = comboboxDriveSelector.Text
 
             ' My.Settings.userHasOfficeThreeSixFive will be set based on 
             ' the .Checked state of the checkboxO365InstallMethod.
@@ -479,7 +446,7 @@ Public Class aaformOptionsWindow
             ' Fortunately, this was just to save
             ' settings, rather than the entire world.
             Return 0
-        End If
+        'End If
     End Function
 #End Region
 
@@ -488,14 +455,6 @@ Public Class aaformOptionsWindow
         ' Cancel out of the Options window and reload the user's settings
         My.Settings.Reload()
         Me.Close()
-    End Sub
-#End Region
-
-#Region "Code that runs when the user clicks the Clear Textbox button next to the Office drive location."
-    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearDriveLetter.Click
-        ' Clear the OfficeDrive textbox and set focus to it.
-        textboxOfficeDrive.Text = ""
-        textboxOfficeDrive.Select()
     End Sub
 #End Region
 
