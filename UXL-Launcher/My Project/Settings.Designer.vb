@@ -281,6 +281,18 @@ Namespace My
                 Me("autoupgradeUserSettings") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("ProDark")>  _
+        Public Property defaultDarkTheme() As String
+            Get
+                Return CType(Me("defaultDarkTheme"),String)
+            End Get
+            Set
+                Me("defaultDarkTheme") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

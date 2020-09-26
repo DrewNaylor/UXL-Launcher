@@ -59,5 +59,8 @@
     <Setting Name="autoupgradeUserSettings" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="defaultDarkTheme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ProDark</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
