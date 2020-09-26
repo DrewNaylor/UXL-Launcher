@@ -223,9 +223,9 @@ Public Class aaformOptionsWindow
         End If
 
         ' Load the user's settings for My.Settings.cpuIsSixtyFourBit.
-        If My.Settings.cpuIsSixtyFourBit = True Then
+        If My.Settings.pathUsePFxEightySix = True Then
             radiobuttonUseProgramFilesX86.Checked = True
-        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
+        ElseIf My.Settings.pathUsePFxEightySix = False Then
             radiobuttonUseProgramFiles.Checked = True
         End If
 
@@ -364,21 +364,21 @@ Public Class aaformOptionsWindow
 
         ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
         If radiobuttonUseProgramFiles.Checked = True Then
-            My.Settings.cpuIsSixtyFourBit = False
+            My.Settings.pathUsePFxEightySix = False
         ElseIf radiobuttonUseProgramFilesX86.Checked = True Then
-            My.Settings.cpuIsSixtyFourBit = True
+            My.Settings.pathUsePFxEightySix = True
         ElseIf radiobuttonCPUIsQBit.Checked = True Then
             ' Focus the "Advanced" tab.
             tabcontrolOptionsWindow.SelectedIndex = 1
             MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
             ' Now set the radio buttons to current user settings.
-            If My.Settings.cpuIsSixtyFourBit = True Then
+            If My.Settings.pathUsePFxEightySix = True Then
                 radiobuttonUseProgramFilesX86.Checked = True
-                My.Settings.cpuIsSixtyFourBit = True
-            ElseIf My.Settings.cpuIsSixtyFourBit = False Then
+                My.Settings.pathUsePFxEightySix = True
+            ElseIf My.Settings.pathUsePFxEightySix = False Then
                 radiobuttonUseProgramFiles.Checked = True
-                My.Settings.cpuIsSixtyFourBit = False
+                My.Settings.pathUsePFxEightySix = False
             End If
         End If
 

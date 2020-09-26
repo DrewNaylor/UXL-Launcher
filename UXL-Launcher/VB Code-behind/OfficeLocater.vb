@@ -44,10 +44,10 @@ Public Class OfficeLocater
         ' This code looks at My.Settings.cpuIsSixtyFourBit and if it's set to True, userCPUType contains " (x86)" and cpuTypeString is set
         ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
         'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is cpuTypeString.
-        If My.Settings.cpuIsSixtyFourBit = True Then
+        If My.Settings.pathUsePFxEightySix = True Then
             cpuTypeString = " (x86)"
             titlebarBitModeString = "PF-x86"
-        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
+        ElseIf My.Settings.pathUsePFxEightySix = False Then
             cpuTypeString = String.Empty
             titlebarBitModeString = "PF"
         End If
