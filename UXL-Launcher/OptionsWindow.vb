@@ -158,6 +158,10 @@ Public Class aaformOptionsWindow
 #End Region
 #End Region
 
+#Region "Set the drive list dropdown to the available drives."
+
+#End Region
+
 
 #Region "Set the DataSource of the comboboxOfficeVersionSelector to a string."
         ' First, see if the user's Office version set in the config file
@@ -289,6 +293,25 @@ Public Class aaformOptionsWindow
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 
     End Sub
+#End Region
+
+#Region "Get drive letters."
+    Private Function DriveLetters() As List(Of String)
+        ' Basing my code/copying off the answer for getting ready drives here:
+        ' https://social.msdn.microsoft.com/Forums/vstudio/en-US/4605ebb2-fc2c-4166-9c42-9025c20eaa1e/populate-combo-box-with-drive-letters
+        Dim DriveLettersList As New List(Of String)
+
+        For Each Drive As System.IO.DriveInfo In IO.DriveInfo.GetDrives
+            ' Go through the list of drives and add their name
+            ' to the list if they're ready.
+            If Drive.IsReady = True Then
+                DriveLettersList.Add(Drive.Name)
+            End If
+        Next
+
+        ' Return the list.
+        Return DriveLettersList
+    End Function
 #End Region
 
 #Region "Code that runs when the user clicks the Save button."
