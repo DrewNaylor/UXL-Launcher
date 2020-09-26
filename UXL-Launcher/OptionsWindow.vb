@@ -794,9 +794,13 @@ Public Class aaformOptionsWindow
 
     Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
         If comboboxOfficeVersionSelector.SelectedIndex >= 3 Then
+            ' Office versions newer than 2016 don't support MSI
+            ' and default to C2R, so this checkbox is not necessary.
             labelOfficeInstallMethodDescription.Hide()
             checkboxO365InstallMethod.Hide()
         Else
+            ' Office versions older than 2019 support MSI
+            ' so this checkbox may be necessary.
             labelOfficeInstallMethodDescription.Show()
             checkboxO365InstallMethod.Show()
         End If
