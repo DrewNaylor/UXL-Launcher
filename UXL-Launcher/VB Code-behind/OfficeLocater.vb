@@ -89,7 +89,7 @@ Public Class OfficeLocater
             ' This is mostly for Office 2019, but will help for future Office versions that have a different version
             ' folder, such as "Office17".
             fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & pfPathString & "\Microsoft Office\root\Office" &
-                My.Settings.userOfficeVersion.Replace("nomsi", "") & "\"
+                My.Settings.userOfficeVersion.Replace("nomsi", String.Empty) & "\"
         End If
 
 
