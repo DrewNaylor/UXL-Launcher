@@ -665,7 +665,6 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxDriveSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxDriveSelector.FormattingEnabled = True
-        Me.comboboxDriveSelector.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"})
         Me.comboboxDriveSelector.Location = New System.Drawing.Point(126, 57)
         Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
         Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)

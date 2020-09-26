@@ -159,7 +159,9 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Set the drive list dropdown to the available drives."
-
+        For Each DriveLetter As String In GetDriveLetters()
+            comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
+        Next
 #End Region
 
 
@@ -296,7 +298,7 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Get drive letters."
-    Private Function DriveLetters() As List(Of String)
+    Private Function GetDriveLetters() As List(Of String)
         ' Basing my code/copying off the answer for getting ready drives here:
         ' https://social.msdn.microsoft.com/Forums/vstudio/en-US/4605ebb2-fc2c-4166-9c42-9025c20eaa1e/populate-combo-box-with-drive-letters
         Dim DriveLettersList As New List(Of String)
