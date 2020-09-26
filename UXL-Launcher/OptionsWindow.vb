@@ -63,7 +63,12 @@ Public Class aaformOptionsWindow
         End If
 #End Region
 
-#Region "Set the drive list dropdown to the available drives."
+#Region "Load the settings from My.Settings."
+        ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
+        textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+
+#Region "Drive letters."
+#Region "Set drive letter dropdown to available drives."
         ' Clear the drive letter list.
         comboboxDriveSelector.Items.Clear()
 
@@ -72,11 +77,7 @@ Public Class aaformOptionsWindow
             comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
         Next
 #End Region
-
-#Region "Load the settings from My.Settings."
-        ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
-        textboxOfficeDrive.Text = My.Settings.officeDriveLocation
-
+#Region "Set drive letters in the dropdown."
         ' If the drive the user wants to use isn't available in the dropdown,
         ' add it to the dropdown.
         If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
@@ -87,6 +88,8 @@ Public Class aaformOptionsWindow
 
         ' Select the drive letter in the drive letter dropdown box.
         comboboxDriveSelector.Text = My.Settings.officeDriveLocation
+#End Region
+#End Region
 
         ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
         ' Simplified from original "If" statement.
