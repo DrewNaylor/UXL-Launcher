@@ -29,27 +29,27 @@
 Public Class OfficeLocater
 #Region "This code is for figuring out where Office should be launched from based on My.Settings."
 
-    ' Create a public, shared string called cpuTypeString. This string is used in the app launch code when the user clicks the buttons.
-    Public Shared cpuTypeString As String
-    ' Create a public, shared string called titlebarBitMode which is used to show whether or not the app is in "64-bit Mode" or "32-bit Mode."
-    Public Shared titlebarBitModeString As String
+    ' Create a public, shared string called pfPathString. This string is used in the app launch code when the user clicks the buttons.
+    Public Shared pfPathString As String
+    ' Create a public, shared string called titlebarProgramFilesModeString which is used to show whether or not the app is in "PF Mode" or "PF-x86 Mode".
+    Public Shared titlebarProgramFilesModeString As String
     ' Create a public, shared string called fullLauncherCodeString which is used to combine all the other launcher code strings into one that's much shorter.
     Public Shared fullLauncherCodeString As String
 
 
-#Region "cpuTypeString and cpuType sub."
-    ' The cpuType sub is used to give cpuTypeString data.
+#Region "pfPathString and cpuType sub."
+    ' The cpuType sub is used to give pfPathString data.
     Public Shared Sub cpuType()
 
-        ' This code looks at My.Settings.cpuIsSixtyFourBit and if it's set to True, userCPUType contains " (x86)" and cpuTypeString is set
+        ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, userCPUType contains " (x86)" and pfPathString is set
         ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
-        'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is cpuTypeString.
+        'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is pfPathString.
         If My.Settings.pathUsePFxEightySix = True Then
-            cpuTypeString = " (x86)"
-            titlebarBitModeString = "PF-x86"
+            pfPathString = " (x86)"
+            titlebarProgramFilesModeString = "PF-x86"
         ElseIf My.Settings.pathUsePFxEightySix = False Then
-            cpuTypeString = String.Empty
-            titlebarBitModeString = "PF"
+            pfPathString = String.Empty
+            titlebarProgramFilesModeString = "PF"
         End If
     End Sub
 #End Region
@@ -67,19 +67,19 @@ Public Class OfficeLocater
         ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
         ' and the user doesn't have Office 2013.
         If My.Settings.userHasOfficeThreeSixFive = True And Not My.Settings.userOfficeVersion = "15" And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
-            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" &
+            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & pfPathString & "\Microsoft Office\root\Office" &
                 My.Settings.userOfficeVersion & "\"
 
             ' If the user installed specifically Office 2013 and they used Office 365/Click-to-Run, then we have a special 
             ' string for that install method.
         ElseIf My.Settings.userOfficeVersion = "15" And My.Settings.userHasOfficeThreeSixFive = True Then
-            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office 15\root\Office15\"
+            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & pfPathString & "\Microsoft Office 15\root\Office15\"
 
             ' Otherwise, if the user doesn't have Office 365, then create a different string. This string doesn't
             ' rely on the version of Office that's used; just if it's not installed via Office 365/C2R.
             ' Also make sure that "nomsi" isn't in the Office version string.
         ElseIf My.Settings.userHasOfficeThreeSixFive = False And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
-            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\Office" &
+            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & pfPathString & "\Microsoft Office\Office" &
                 My.Settings.userOfficeVersion & "\"
 
             ' Office 2019 installs to the same folder as Office 2016, but doesn't have MSI installer support, so ignore the
@@ -89,7 +89,7 @@ Public Class OfficeLocater
             ' the "Office(number)" path takes the version and replaces "nomsi" with nothing ("")
             ' This is mostly for Office 2019, but will help for future Office versions that have a different version
             ' folder, such as "Office17".
-            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & cpuTypeString & "\Microsoft Office\root\Office" &
+            fullLauncherCodeString = My.Settings.officeDriveLocation & ":\Program Files" & pfPathString & "\Microsoft Office\root\Office" &
                 My.Settings.userOfficeVersion.Replace("nomsi", "") & "\"
         End If
 

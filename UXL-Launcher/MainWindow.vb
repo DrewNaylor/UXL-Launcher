@@ -66,7 +66,7 @@ Public Class aaformMainWindow
 
         ' Run the code in the combineStrings sub in OfficeLocater.vb
         ' This has to be run before changing the titlebar text because
-        ' part of the titlebar uses the OfficeLocater.titlebarBitModeString
+        ' part of the titlebar uses the OfficeLocater.titlebarProgramFilesModeString
         ' string.
         OfficeLocater.combineStrings()
 
@@ -193,7 +193,7 @@ Public Class aaformMainWindow
         ' When called, this updates the titlebar text of the main window.
         ' Moved into its own sub so that it can be updated in one place.
         Me.Text = "UXL Launcher Version " & My.Application.Info.Version.Major.ToString & "." & My.Application.Info.Version.Minor.ToString &
-    " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarBitModeString & " Mode)"
+    " (" & My.Resources.isStable & ", " & OfficeLocater.titlebarProgramFilesModeString & " Mode)"
     End Sub
 #End Region
 
