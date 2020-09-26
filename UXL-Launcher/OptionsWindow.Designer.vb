@@ -169,7 +169,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonBypassConfiguredLocationDeprecatedApps)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonDontBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
-        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 147)
+        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(4, 147)
         Me.groupboxBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
         Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 175)
@@ -224,7 +224,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
-        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(3, 4)
+        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(4, 4)
         Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
         Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
