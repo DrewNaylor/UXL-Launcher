@@ -81,6 +81,7 @@ Public Class aaformOptionsWindow
         ' add it to the dropdown.
         If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
             comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation)
+            ' Sort the list so it doesn't look bad.
             comboboxDriveSelector.Sorted = True
         End If
 
