@@ -63,9 +63,20 @@ Public Class aaformOptionsWindow
         End If
 #End Region
 
+#Region "Set the drive list dropdown to the available drives."
+        ' Clear the drive letter list.
+        comboboxDriveSelector.Items.Clear()
+
+        For Each DriveLetter As String In GetDriveLetters()
+            ' Get the drive letters of all active drives and remove the ":\".
+            comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
+        Next
+#End Region
+
 #Region "Load the settings from My.Settings."
         ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+        comboboxDriveSelector.Text = My.Settings.officeDriveLocation
 
         ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
         ' Simplified from original "If" statement.
@@ -157,17 +168,6 @@ Public Class aaformOptionsWindow
 #End Region
 #End Region
 #End Region
-
-#Region "Set the drive list dropdown to the available drives."
-        ' Clear the drive letter list.
-        comboboxDriveSelector.Items.Clear()
-
-        For Each DriveLetter As String In GetDriveLetters()
-            ' Get the drive letters of all active drives and remove the ":\".
-            comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
-        Next
-#End Region
-
 
 #Region "Set the DataSource of the comboboxOfficeVersionSelector to a string."
         ' First, see if the user's Office version set in the config file
