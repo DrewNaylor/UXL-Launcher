@@ -75,6 +75,7 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
+        Me.comboboxDriveSelector = New System.Windows.Forms.ComboBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -214,6 +215,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeLocation
         '
+        Me.groupboxOfficeLocation.Controls.Add(Me.comboboxDriveSelector)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
         Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearDriveLetter)
         Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
@@ -240,7 +242,7 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonClearDriveLetter.AutoSize = True
         Me.buttonClearDriveLetter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonClearDriveLetter.Location = New System.Drawing.Point(150, 55)
+        Me.buttonClearDriveLetter.Location = New System.Drawing.Point(150, 92)
         Me.buttonClearDriveLetter.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonClearDriveLetter.Name = "buttonClearDriveLetter"
         Me.buttonClearDriveLetter.Size = New System.Drawing.Size(41, 23)
@@ -251,7 +253,7 @@ Partial Class aaformOptionsWindow
         'textboxOfficeDrive
         '
         Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.textboxOfficeDrive.Location = New System.Drawing.Point(126, 57)
+        Me.textboxOfficeDrive.Location = New System.Drawing.Point(126, 94)
         Me.textboxOfficeDrive.Margin = New System.Windows.Forms.Padding(2)
         Me.textboxOfficeDrive.MaxLength = 1
         Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
@@ -266,9 +268,9 @@ Partial Class aaformOptionsWindow
         Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(88, 37)
         Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
-        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(188, 13)
+        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(228, 13)
         Me.labelOfficeInstalledToDrive.TabIndex = 1
-        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to this drive:"
+        Me.labelOfficeInstalledToDrive.Text = "Please choose the drive you installed Office to:"
         '
         'tabpageAdvanced
         '
@@ -659,6 +661,16 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
+        'comboboxDriveSelector
+        '
+        Me.comboboxDriveSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDriveSelector.FormattingEnabled = True
+        Me.comboboxDriveSelector.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"})
+        Me.comboboxDriveSelector.Location = New System.Drawing.Point(126, 57)
+        Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
+        Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)
+        Me.comboboxDriveSelector.TabIndex = 5
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -747,4 +759,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonBypassConfiguredLocationDeprecatedApps As RadioButton
     Friend WithEvents radiobuttonBypassConfiguredLocationAllApps As RadioButton
     Friend WithEvents linklabelTempFutureChanges As LinkLabel
+    Friend WithEvents comboboxDriveSelector As ComboBox
 End Class
