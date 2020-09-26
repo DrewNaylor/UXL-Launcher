@@ -159,6 +159,9 @@ Public Class aaformOptionsWindow
 #End Region
 
 #Region "Set the drive list dropdown to the available drives."
+        ' Clear the drive letter list.
+        comboboxDriveSelector.Items.Clear()
+
         For Each DriveLetter As String In GetDriveLetters()
             ' Get the drive letters of all active drives and remove the ":\".
             comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
