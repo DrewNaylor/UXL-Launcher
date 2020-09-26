@@ -263,6 +263,7 @@ Public Class aaformOptionsWindow
     Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
         ' Reset the "Office Install Drive" to drive C.
         textboxOfficeDrive.Text = "C"
+        comboboxDriveSelector.Text = "C"
 
         ' Reset the Office Version Selector to Office 2010.
         comboboxOfficeVersionSelector.Text = "Microsoft Office 2019"
@@ -370,7 +371,7 @@ Public Class aaformOptionsWindow
 
 #Region "Things to save to My.Settings."
             ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
-            My.Settings.officeDriveLocation = textboxOfficeDrive.Text
+            My.Settings.officeDriveLocation = comboboxDriveSelector.Text
 
             ' My.Settings.userHasOfficeThreeSixFive will be set based on 
             ' the .Checked state of the checkboxO365InstallMethod.
