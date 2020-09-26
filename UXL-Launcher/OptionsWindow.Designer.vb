@@ -30,8 +30,6 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
-        Me.labelHelpWithOfficeVersions = New System.Windows.Forms.Label()
-        Me.labelOfficeInstallMethodDescription = New System.Windows.Forms.Label()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
@@ -168,51 +166,29 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
-        Me.groupboxOfficeVersion.Controls.Add(Me.labelHelpWithOfficeVersions)
-        Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeInstallMethodDescription)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
-        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(3, 137)
+        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(3, 211)
         Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
         Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 187)
+        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 113)
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
-        Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
-        '
-        'labelHelpWithOfficeVersions
-        '
-        Me.labelHelpWithOfficeVersions.AutoSize = True
-        Me.labelHelpWithOfficeVersions.Location = New System.Drawing.Point(71, 110)
-        Me.labelHelpWithOfficeVersions.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelHelpWithOfficeVersions.Name = "labelHelpWithOfficeVersions"
-        Me.labelHelpWithOfficeVersions.Size = New System.Drawing.Size(273, 39)
-        Me.labelHelpWithOfficeVersions.TabIndex = 6
-        Me.labelHelpWithOfficeVersions.Text = "If you're unsure of which version you use, just select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the latest one. A future " &
-    "version will default to Office 2019" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "since Office 2010 support ends October 2020" &
-    "."
-        '
-        'labelOfficeInstallMethodDescription
-        '
-        Me.labelOfficeInstallMethodDescription.AutoSize = True
-        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(89, 60)
-        Me.labelOfficeInstallMethodDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelOfficeInstallMethodDescription.Name = "labelOfficeInstallMethodDescription"
-        Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(191, 13)
-        Me.labelOfficeInstallMethodDescription.TabIndex = 5
-        Me.labelOfficeInstallMethodDescription.Text = "My Microsoft Office installation method:"
+        Me.groupboxOfficeVersion.Text = "Microsoft Office version + compatibility"
         '
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(92, 75)
+        Me.checkboxO365InstallMethod.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(92, 64)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 17)
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 30)
         Me.checkboxO365InstallMethod.TabIndex = 5
-        Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility"
+        Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Always enabled for 2019 and above)" &
+    ""
         Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
         Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
         '
@@ -222,9 +198,9 @@ Partial Class aaformOptionsWindow
         Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(88, 25)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
-        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(178, 13)
+        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(263, 13)
         Me.labelUserHasThisOfficeVersion.TabIndex = 2
-        Me.labelUserHasThisOfficeVersion.Text = "I use this version of Microsoft Office:"
+        Me.labelUserHasThisOfficeVersion.Text = "Please select your installed version of Microsoft Office:"
         '
         'comboboxOfficeVersionSelector
         '
@@ -741,7 +717,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonUseProgramFilesX86 As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
-    Friend WithEvents labelOfficeInstallMethodDescription As Label
     Friend WithEvents tooltipO365InstallMethod As ToolTip
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
@@ -771,6 +746,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonDontBypassConfiguredLocation As RadioButton
     Friend WithEvents radiobuttonBypassConfiguredLocationDeprecatedApps As RadioButton
     Friend WithEvents radiobuttonBypassConfiguredLocationAllApps As RadioButton
-    Friend WithEvents labelHelpWithOfficeVersions As Label
     Friend WithEvents linklabelTempFutureChanges As LinkLabel
 End Class
