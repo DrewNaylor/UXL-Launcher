@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
+    <value>16-bit Windows is the recommended option for you, but if
+using Office 2013, you may need to select "Program Files"
+due to the 32-bit version installing to "Program Files"
+even on 64-bit Windows. Something is broken if 16-bit
+Windows is recommended to you; please report.</value>
+  </data>
   <metadata name="tooltipO365InstallMethod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>22, 23</value>
   </metadata>
@@ -136,13 +143,6 @@ This option uses that folder instead of the default. If unsure of what this mean
 some apps, such as ones that have been deprecated or removed from
 later Office versions, or all compatible apps (ones that open from Run).</value>
   </data>
-  <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
-    <value>16-bit Windows is the recommended option for you, but if
-using Office 2013, you may need to select "32-bit Windows"
-due to the 32-bit version installing to "Program Files"
-even on 64-bit Windows. Something is broken if 16-bit
-Windows is recommended to you; please report.</value>
-  </data>
   <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>820, 23</value>
   </metadata>
@@ -161,5 +161,11 @@ will be applied on app startup or when applying themes.</value>
   </metadata>
   <metadata name="openfiledialogBrowseCustomThemeFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>362, 23</value>
+  </metadata>
+  <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 23</value>
+  </metadata>
+  <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>820, 23</value>
   </metadata>
 </root>

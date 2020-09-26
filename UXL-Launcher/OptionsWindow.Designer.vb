@@ -163,7 +163,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(2)
         Me.tabpageGeneral.Size = New System.Drawing.Size(422, 326)
         Me.tabpageGeneral.TabIndex = 0
-        Me.tabpageGeneral.Text = "General"
+        Me.tabpageGeneral.Text = "Office Version"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
         '
         'groupboxOfficeVersion
@@ -304,7 +304,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(2)
         Me.tabpageAdvanced.Size = New System.Drawing.Size(422, 326)
         Me.tabpageAdvanced.TabIndex = 1
-        Me.tabpageAdvanced.Text = "Advanced"
+        Me.tabpageAdvanced.Text = "Root Path"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
         '
         'groupboxBypassConfiguredLocation
@@ -377,14 +377,14 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.Size = New System.Drawing.Size(415, 162)
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
-        Me.groupboxCPUType.Text = "What edition of Windows do you run?"
+        Me.groupboxCPUType.Text = "Program Files path"
         '
         'labelRecommendedWindowsEdition
         '
         Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(62, 82)
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(62, 91)
         Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
-        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 65)
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(281, 65)
         Me.labelRecommendedWindowsEdition.TabIndex = 5
         Me.labelRecommendedWindowsEdition.Text = resources.GetString("labelRecommendedWindowsEdition.Text")
         '
@@ -404,36 +404,38 @@ Partial Class aaformOptionsWindow
         'radiobuttonCPUIs64Bit
         '
         Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(65, 54)
+        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(39, 70)
         Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
-        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(98, 17)
+        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(268, 17)
         Me.radiobuttonCPUIs64Bit.TabIndex = 3
         Me.radiobuttonCPUIs64Bit.TabStop = True
-        Me.radiobuttonCPUIs64Bit.Text = "64-bit Windows"
+        Me.radiobuttonCPUIs64Bit.Text = "Program Files (x86): 32-bit Office on 64-bit Windows"
         Me.radiobuttonCPUIs64Bit.UseVisualStyleBackColor = True
         '
         'radiobuttonCPUIs32Bit
         '
         Me.radiobuttonCPUIs32Bit.AutoSize = True
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(65, 36)
+        Me.radiobuttonCPUIs32Bit.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(39, 36)
         Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
-        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(98, 17)
+        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(350, 30)
         Me.radiobuttonCPUIs32Bit.TabIndex = 2
         Me.radiobuttonCPUIs32Bit.TabStop = True
-        Me.radiobuttonCPUIs32Bit.Text = "32-bit Windows"
+        Me.radiobuttonCPUIs32Bit.Text = "Program Files: 64-bit Office on 64-bit Windows," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "32-bit Office on 32-bit Windows," &
+    " or 32-bit Office 2013 from Office 365"
         Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
         '
         Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(62, 21)
+        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(36, 21)
         Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
-        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(229, 13)
+        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(280, 13)
         Me.labelCPUTypeDescription.TabIndex = 0
-        Me.labelCPUTypeDescription.Text = "Choose which edition of Windows you're using:"
+        Me.labelCPUTypeDescription.Text = "Select the Program Files path used by your copy of Office:"
         '
         'tabpagePersonalization
         '
