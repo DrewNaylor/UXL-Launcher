@@ -117,13 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
-    <value>Your installation of Windows is 16-bit, so you'll probably want to
-select "Program Files" if you're using any of the configurations not listed for it.
-If you're using 32-bit Office on 64-bit Windows, you'll need to select the
-"Program Files (x86)" option.
-Something is broken if 16-bit Windows is recommended to you; please report.</value>
-  </data>
   <data name="labelBypassConfiguredLocation.Text" xml:space="preserve">
     <value>If you'd like, you can bypass the configured location when launching
 some apps, such as ones that have been deprecated or removed from
@@ -143,6 +136,13 @@ On some versions of Office such as Office 2016, Microsoft places the EXE files i
 from older versions of Office. This is due to a technology called 'Click-to-Run', or 'C2R' for short.
 This option uses that folder instead of the default. If unsure of what this means, check this box.</value>
   </data>
+  <data name="labelRecommendedWindowsEdition.Text" xml:space="preserve">
+    <value>Your installation of Windows is 16-bit, so you'll probably want to
+select "Program Files" if you're using any of the configurations not listed for it.
+If you're using 32-bit Office on 64-bit Windows, you'll need to select the
+"Program Files (x86)" option.
+Something is broken if 16-bit Windows is recommended to you; please report.</value>
+  </data>
   <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>820, 23</value>
   </metadata>
@@ -156,19 +156,10 @@ will be applied on app startup or when applying themes.</value>
   <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>629, 23</value>
   </metadata>
-  <metadata name="tooltipO365InstallMethod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>22, 23</value>
-  </metadata>
   <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 23</value>
   </metadata>
   <metadata name="openfiledialogBrowseCustomThemeFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>362, 23</value>
-  </metadata>
-  <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>629, 23</value>
-  </metadata>
-  <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>820, 23</value>
   </metadata>
 </root>
