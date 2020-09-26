@@ -76,6 +76,15 @@ Public Class aaformOptionsWindow
 #Region "Load the settings from My.Settings."
         ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
         textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+
+        ' If the drive the user wants to use isn't available in the dropdown,
+        ' add it to the dropdown.
+        If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
+            comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation)
+            comboboxDriveSelector.Sorted = True
+        End If
+
+        ' Select the drive letter in the drive letter dropdown box.
         comboboxDriveSelector.Text = My.Settings.officeDriveLocation
 
         ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
