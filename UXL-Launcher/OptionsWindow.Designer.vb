@@ -169,10 +169,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonBypassConfiguredLocationDeprecatedApps)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonDontBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
-        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 167)
+        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 147)
         Me.groupboxBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
-        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 155)
+        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 175)
         Me.groupboxBypassConfiguredLocation.TabIndex = 2
         Me.groupboxBypassConfiguredLocation.TabStop = False
         Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
@@ -180,7 +180,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationAllApps
         '
         Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(57, 120)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(59, 135)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
         Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
         Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
@@ -191,7 +191,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationDeprecatedApps
         '
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(57, 97)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(59, 112)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
@@ -202,7 +202,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonDontBypassConfiguredLocation
         '
         Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
-        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(57, 74)
+        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(59, 89)
         Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
         Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
         Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
@@ -213,7 +213,7 @@ Partial Class aaformOptionsWindow
         'labelBypassConfiguredLocation
         '
         Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(36, 22)
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(38, 31)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
         Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(338, 39)
         Me.labelBypassConfiguredLocation.TabIndex = 0
@@ -228,7 +228,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
         Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 159)
+        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 139)
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "Microsoft Office versions + C2R"
