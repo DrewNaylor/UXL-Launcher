@@ -52,14 +52,14 @@ Public Class aaformOptionsWindow
         If Environment.Is64BitOperatingSystem = True Then
             ' If the OS is 64-bit, recommend the user to click
             ' 64-bit Windows.
-            labelRecommendedWindowsEdition.Text = "64-bit Windows is the recommended option for you, but if" & vbCrLf &
-                "using Office 2013, you may need to select ""32-bit Windows""" & vbCrLf &
-                "due to the 32-bit version installing to ""Program Files""" & vbCrLf &
-                "even on 64-bit Windows. 64-bit Office (Office 2019's default)" & vbCrLf &
-                "requires ""32-bit Windows"" to be selected above."
+            labelRecommendedWindowsEdition.Text = "Your installation of Windows is 64-bit, so you'll probably want to" & vbCrLf &
+                "select ""Program Files"" if you're using any of the configurations listed for it." & vbCrLf &
+                "" & vbCrLf &
+                "If you're using 32-bit Office on 64-bit Windows, you'll need to select" & vbCrLf &
+                "the ""Program Files (x86)"" option."
         Else
             ' If the OS isn't 64-bit, recommend the 32-bit option.
-            labelRecommendedWindowsEdition.Text = "32-bit Windows is the recommended option for you."
+            labelRecommendedWindowsEdition.Text = "Your installation of Windows is 32-bit, so only ""Program Files"" can be used."
         End If
 #End Region
 

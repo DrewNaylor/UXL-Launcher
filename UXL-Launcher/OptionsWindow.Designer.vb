@@ -382,9 +382,9 @@ Partial Class aaformOptionsWindow
         'labelRecommendedWindowsEdition
         '
         Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(62, 91)
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(36, 89)
         Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
-        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(281, 65)
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(369, 65)
         Me.labelRecommendedWindowsEdition.TabIndex = 5
         Me.labelRecommendedWindowsEdition.Text = resources.GetString("labelRecommendedWindowsEdition.Text")
         '
