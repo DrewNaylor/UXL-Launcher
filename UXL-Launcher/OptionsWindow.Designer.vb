@@ -49,8 +49,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
         Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonUseProgramFilesX86 = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonUseProgramFiles = New System.Windows.Forms.RadioButton()
         Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
@@ -367,8 +367,8 @@ Partial Class aaformOptionsWindow
         '
         Me.groupboxCPUType.Controls.Add(Me.labelRecommendedWindowsEdition)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
-        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
-        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFilesX86)
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFiles)
         Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(3, 3)
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
@@ -401,31 +401,31 @@ Partial Class aaformOptionsWindow
     "tton!)"
         Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
         '
-        'radiobuttonCPUIs64Bit
+        'radiobuttonUseProgramFilesX86
         '
-        Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(39, 70)
-        Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
-        Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
-        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(268, 17)
-        Me.radiobuttonCPUIs64Bit.TabIndex = 3
-        Me.radiobuttonCPUIs64Bit.TabStop = True
-        Me.radiobuttonCPUIs64Bit.Text = "Program Files (x86): 32-bit Office on 64-bit Windows"
-        Me.radiobuttonCPUIs64Bit.UseVisualStyleBackColor = True
+        Me.radiobuttonUseProgramFilesX86.AutoSize = True
+        Me.radiobuttonUseProgramFilesX86.Location = New System.Drawing.Point(39, 70)
+        Me.radiobuttonUseProgramFilesX86.Margin = New System.Windows.Forms.Padding(2)
+        Me.radiobuttonUseProgramFilesX86.Name = "radiobuttonUseProgramFilesX86"
+        Me.radiobuttonUseProgramFilesX86.Size = New System.Drawing.Size(268, 17)
+        Me.radiobuttonUseProgramFilesX86.TabIndex = 3
+        Me.radiobuttonUseProgramFilesX86.TabStop = True
+        Me.radiobuttonUseProgramFilesX86.Text = "Program Files (x86): 32-bit Office on 64-bit Windows"
+        Me.radiobuttonUseProgramFilesX86.UseVisualStyleBackColor = True
         '
-        'radiobuttonCPUIs32Bit
+        'radiobuttonUseProgramFiles
         '
-        Me.radiobuttonCPUIs32Bit.AutoSize = True
-        Me.radiobuttonCPUIs32Bit.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(39, 36)
-        Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
-        Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
-        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(350, 30)
-        Me.radiobuttonCPUIs32Bit.TabIndex = 2
-        Me.radiobuttonCPUIs32Bit.TabStop = True
-        Me.radiobuttonCPUIs32Bit.Text = "Program Files: 64-bit Office on 64-bit Windows," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "32-bit Office on 32-bit Windows," &
+        Me.radiobuttonUseProgramFiles.AutoSize = True
+        Me.radiobuttonUseProgramFiles.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.radiobuttonUseProgramFiles.Location = New System.Drawing.Point(39, 36)
+        Me.radiobuttonUseProgramFiles.Margin = New System.Windows.Forms.Padding(2)
+        Me.radiobuttonUseProgramFiles.Name = "radiobuttonUseProgramFiles"
+        Me.radiobuttonUseProgramFiles.Size = New System.Drawing.Size(350, 30)
+        Me.radiobuttonUseProgramFiles.TabIndex = 2
+        Me.radiobuttonUseProgramFiles.TabStop = True
+        Me.radiobuttonUseProgramFiles.Text = "Program Files: 64-bit Office on 64-bit Windows," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "32-bit Office on 32-bit Windows," &
     " or 32-bit Office 2013 from Office 365"
-        Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
+        Me.radiobuttonUseProgramFiles.UseVisualStyleBackColor = True
         '
         'labelCPUTypeDescription
         '
@@ -737,8 +737,8 @@ Partial Class aaformOptionsWindow
     Friend WithEvents checkboxO365InstallMethod As CheckBox
     Friend WithEvents groupboxCPUType As GroupBox
     Friend WithEvents labelCPUTypeDescription As Label
-    Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
-    Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
+    Friend WithEvents radiobuttonUseProgramFiles As RadioButton
+    Friend WithEvents radiobuttonUseProgramFilesX86 As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
     Friend WithEvents labelOfficeInstallMethodDescription As Label

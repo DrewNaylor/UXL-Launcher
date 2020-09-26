@@ -204,9 +204,9 @@ Public Class aaformOptionsWindow
 
         ' Load the user's settings for My.Settings.cpuIsSixtyFourBit.
         If My.Settings.cpuIsSixtyFourBit = True Then
-            radiobuttonCPUIs64Bit.Checked = True
+            radiobuttonUseProgramFilesX86.Checked = True
         ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-            radiobuttonCPUIs32Bit.Checked = True
+            radiobuttonUseProgramFiles.Checked = True
         End If
 
     End Sub
@@ -242,13 +242,13 @@ Public Class aaformOptionsWindow
         textboxOfficeDrive.Text = "C"
 
         ' Reset the Office Version Selector to Office 2010.
-        comboboxOfficeVersionSelector.Text = "Microsoft Office 2010"
+        comboboxOfficeVersionSelector.Text = "Microsoft Office 2019"
 
         ' Reset the Office 365 checkbox to unchecked.
         checkboxO365InstallMethod.Checked = False
 
         ' Reset the CPUType radio buttons to 64-bit.
-        radiobuttonCPUIs64Bit.Checked = True
+        radiobuttonUseProgramFilesX86.Checked = True
 
         ' Reset the theme to use to Default.
         comboboxThemeList.Text = "Default"
@@ -353,9 +353,9 @@ Public Class aaformOptionsWindow
             End If
 
             ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
-            If radiobuttonCPUIs32Bit.Checked = True Then
+            If radiobuttonUseProgramFiles.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = False
-            ElseIf radiobuttonCPUIs64Bit.Checked = True Then
+            ElseIf radiobuttonUseProgramFilesX86.Checked = True Then
                 My.Settings.cpuIsSixtyFourBit = True
             ElseIf radiobuttonCPUIsQBit.Checked = True Then
                 ' Focus the "Advanced" tab.
@@ -364,10 +364,10 @@ Public Class aaformOptionsWindow
                                 MessageBoxIcon.Error)
                 ' Now set the radio buttons to current user settings.
                 If My.Settings.cpuIsSixtyFourBit = True Then
-                    radiobuttonCPUIs64Bit.Checked = True
+                    radiobuttonUseProgramFilesX86.Checked = True
                     My.Settings.cpuIsSixtyFourBit = True
                 ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-                    radiobuttonCPUIs32Bit.Checked = True
+                    radiobuttonUseProgramFiles.Checked = True
                     My.Settings.cpuIsSixtyFourBit = False
                 End If
             End If
