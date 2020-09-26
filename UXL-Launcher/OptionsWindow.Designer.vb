@@ -68,7 +68,6 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
-        Me.linklabelTempFutureChanges = New System.Windows.Forms.LinkLabel()
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
@@ -100,7 +99,6 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.tabcontrolOptionsWindow, 0, 0)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonTestSettings, 1, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonDefaultSettings, 0, 1)
-        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.linklabelTempFutureChanges, 2, 1)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Margin = New System.Windows.Forms.Padding(2)
@@ -607,18 +605,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
-        'linklabelTempFutureChanges
-        '
-        Me.linklabelTempFutureChanges.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.linklabelTempFutureChanges.AutoSize = True
-        Me.linklabelTempFutureChanges.Location = New System.Drawing.Point(156, 377)
-        Me.linklabelTempFutureChanges.Margin = New System.Windows.Forms.Padding(4, 0, 2, 4)
-        Me.linklabelTempFutureChanges.Name = "linklabelTempFutureChanges"
-        Me.linklabelTempFutureChanges.Size = New System.Drawing.Size(117, 13)
-        Me.linklabelTempFutureChanges.TabIndex = 10
-        Me.linklabelTempFutureChanges.TabStop = True
-        Me.linklabelTempFutureChanges.Text = "Future change notice..."
-        '
         'tooltipO365InstallMethod
         '
         Me.tooltipO365InstallMethod.AutoPopDelay = 32766
@@ -719,7 +705,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tooltipCustomThemePath As ToolTip
     Friend WithEvents checkboxMatchWindows10ThemeSettings As CheckBox
     Friend WithEvents tooltipMatchWindows10ThemeSettings As ToolTip
-    Friend WithEvents linklabelTempFutureChanges As LinkLabel
     Friend WithEvents groupboxBypassConfiguredLocation As GroupBox
     Friend WithEvents radiobuttonBypassConfiguredLocationAllApps As RadioButton
     Friend WithEvents radiobuttonBypassConfiguredLocationDeprecatedApps As RadioButton
