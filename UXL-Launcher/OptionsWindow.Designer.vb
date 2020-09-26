@@ -292,7 +292,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.Size = New System.Drawing.Size(415, 122)
         Me.groupboxOfficeLocation.TabIndex = 6
         Me.groupboxOfficeLocation.TabStop = False
-        Me.groupboxOfficeLocation.Text = "Microsoft Office drive location"
+        Me.groupboxOfficeLocation.Text = "Root drive path"
         '
         'comboboxDriveSelector
         '
