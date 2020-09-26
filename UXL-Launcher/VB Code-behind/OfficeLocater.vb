@@ -42,7 +42,7 @@ Public Class OfficeLocater
     Public Shared Sub pfPath()
 
         ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, pfPathString is set to " (x86)".
-        'However, if My.Settings.pathUsePFxEightySix is set to False, pfPathString is assigned an empty value.
+        ' However, if My.Settings.pathUsePFxEightySix is set to False, pfPathString is assigned an empty value.
         If My.Settings.pathUsePFxEightySix = True Then
             pfPathString = " (x86)"
             titlebarProgramFilesModeString = "PF-x86"
