@@ -80,13 +80,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property cpuIsSixtyFourBit() As Boolean
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property pathUsePFxEightySix() As Boolean
             Get
-                Return CType(Me("cpuIsSixtyFourBit"),Boolean)
+                Return CType(Me("pathUsePFxEightySix"),Boolean)
             End Get
             Set
-                Me("cpuIsSixtyFourBit") = value
+                Me("pathUsePFxEightySix") = value
             End Set
         End Property
         
@@ -104,7 +104,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("14")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("16nomsi")>  _
         Public Property userOfficeVersion() As String
             Get
                 Return CType(Me("userOfficeVersion"),String)

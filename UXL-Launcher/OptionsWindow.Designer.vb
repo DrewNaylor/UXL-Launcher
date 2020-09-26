@@ -29,29 +29,26 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel = New System.Windows.Forms.Button()
         Me.tabcontrolOptionsWindow = New System.Windows.Forms.TabControl()
         Me.tabpageGeneral = New System.Windows.Forms.TabPage()
-        Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
-        Me.labelHelpWithOfficeVersions = New System.Windows.Forms.Label()
-        Me.labelOfficeInstallMethodDescription = New System.Windows.Forms.Label()
-        Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
-        Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
-        Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
-        Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
-        Me.labelDriveTextboxLabel = New System.Windows.Forms.Label()
-        Me.buttonClearDriveLetter = New System.Windows.Forms.Button()
-        Me.textboxOfficeDrive = New System.Windows.Forms.TextBox()
-        Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
-        Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxBypassConfiguredLocation = New System.Windows.Forms.GroupBox()
         Me.radiobuttonBypassConfiguredLocationAllApps = New System.Windows.Forms.RadioButton()
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps = New System.Windows.Forms.RadioButton()
         Me.radiobuttonDontBypassConfiguredLocation = New System.Windows.Forms.RadioButton()
         Me.labelBypassConfiguredLocation = New System.Windows.Forms.Label()
+        Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
+        Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
+        Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
+        Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
+        Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.comboboxDriveSelector = New System.Windows.Forms.ComboBox()
+        Me.labelDriveTextboxLabel = New System.Windows.Forms.Label()
+        Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
         Me.groupboxCPUType = New System.Windows.Forms.GroupBox()
         Me.labelRecommendedWindowsEdition = New System.Windows.Forms.Label()
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonCPUIs64Bit = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonCPUIs32Bit = New System.Windows.Forms.RadioButton()
-        Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
+        Me.radiobuttonUseProgramFilesX86 = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonUseProgramFiles = New System.Windows.Forms.RadioButton()
+        Me.labelPFPathDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
         Me.buttonClearFirstname = New System.Windows.Forms.Button()
@@ -71,7 +68,6 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
-        Me.linklabelTempFutureChanges = New System.Windows.Forms.LinkLabel()
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
@@ -80,10 +76,10 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
-        Me.groupboxOfficeVersion.SuspendLayout()
-        Me.groupboxOfficeLocation.SuspendLayout()
-        Me.tabpageAdvanced.SuspendLayout()
         Me.groupboxBypassConfiguredLocation.SuspendLayout()
+        Me.groupboxOfficeVersion.SuspendLayout()
+        Me.tabpageAdvanced.SuspendLayout()
+        Me.groupboxOfficeLocation.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
         Me.tabpagePersonalization.SuspendLayout()
         Me.groupboxStatusbar.SuspendLayout()
@@ -103,7 +99,6 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.tabcontrolOptionsWindow, 0, 0)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonTestSettings, 1, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonDefaultSettings, 0, 1)
-        Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.linklabelTempFutureChanges, 2, 1)
         Me.tableLayoutPanelOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanelOptionsWindow.Location = New System.Drawing.Point(0, 0)
         Me.tableLayoutPanelOptionsWindow.Margin = New System.Windows.Forms.Padding(2)
@@ -155,157 +150,16 @@ Partial Class aaformOptionsWindow
         '
         'tabpageGeneral
         '
+        Me.tabpageGeneral.Controls.Add(Me.groupboxBypassConfiguredLocation)
         Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeVersion)
-        Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeLocation)
         Me.tabpageGeneral.Location = New System.Drawing.Point(4, 22)
         Me.tabpageGeneral.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageGeneral.Name = "tabpageGeneral"
         Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(2)
         Me.tabpageGeneral.Size = New System.Drawing.Size(422, 326)
         Me.tabpageGeneral.TabIndex = 0
-        Me.tabpageGeneral.Text = "General"
+        Me.tabpageGeneral.Text = "Versions + Compatibility"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
-        '
-        'groupboxOfficeVersion
-        '
-        Me.groupboxOfficeVersion.Controls.Add(Me.labelHelpWithOfficeVersions)
-        Me.groupboxOfficeVersion.Controls.Add(Me.labelOfficeInstallMethodDescription)
-        Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
-        Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
-        Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
-        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(3, 137)
-        Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
-        Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 187)
-        Me.groupboxOfficeVersion.TabIndex = 1
-        Me.groupboxOfficeVersion.TabStop = False
-        Me.groupboxOfficeVersion.Text = "What version of Microsoft Office do you use? How was it installed?"
-        '
-        'labelHelpWithOfficeVersions
-        '
-        Me.labelHelpWithOfficeVersions.AutoSize = True
-        Me.labelHelpWithOfficeVersions.Location = New System.Drawing.Point(71, 110)
-        Me.labelHelpWithOfficeVersions.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelHelpWithOfficeVersions.Name = "labelHelpWithOfficeVersions"
-        Me.labelHelpWithOfficeVersions.Size = New System.Drawing.Size(273, 39)
-        Me.labelHelpWithOfficeVersions.TabIndex = 6
-        Me.labelHelpWithOfficeVersions.Text = "If you're unsure of which version you use, just select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the latest one. A future " &
-    "version will default to Office 2019" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "since Office 2010 support ends October 2020" &
-    "."
-        '
-        'labelOfficeInstallMethodDescription
-        '
-        Me.labelOfficeInstallMethodDescription.AutoSize = True
-        Me.labelOfficeInstallMethodDescription.Location = New System.Drawing.Point(89, 60)
-        Me.labelOfficeInstallMethodDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelOfficeInstallMethodDescription.Name = "labelOfficeInstallMethodDescription"
-        Me.labelOfficeInstallMethodDescription.Size = New System.Drawing.Size(191, 13)
-        Me.labelOfficeInstallMethodDescription.TabIndex = 5
-        Me.labelOfficeInstallMethodDescription.Text = "My Microsoft Office installation method:"
-        '
-        'checkboxO365InstallMethod
-        '
-        Me.checkboxO365InstallMethod.AutoSize = True
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(92, 75)
-        Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
-        Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 17)
-        Me.checkboxO365InstallMethod.TabIndex = 5
-        Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility"
-        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
-        Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
-        '
-        'labelUserHasThisOfficeVersion
-        '
-        Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(88, 25)
-        Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
-        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(178, 13)
-        Me.labelUserHasThisOfficeVersion.TabIndex = 2
-        Me.labelUserHasThisOfficeVersion.Text = "I use this version of Microsoft Office:"
-        '
-        'comboboxOfficeVersionSelector
-        '
-        Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(92, 39)
-        Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
-        Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
-        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
-        Me.comboboxOfficeVersionSelector.TabIndex = 4
-        '
-        'groupboxOfficeLocation
-        '
-        Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
-        Me.groupboxOfficeLocation.Controls.Add(Me.buttonClearDriveLetter)
-        Me.groupboxOfficeLocation.Controls.Add(Me.textboxOfficeDrive)
-        Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
-        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(3, 3)
-        Me.groupboxOfficeLocation.Margin = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeLocation.Name = "groupboxOfficeLocation"
-        Me.groupboxOfficeLocation.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(415, 130)
-        Me.groupboxOfficeLocation.TabIndex = 0
-        Me.groupboxOfficeLocation.TabStop = False
-        Me.groupboxOfficeLocation.Text = "Where is Microsoft Office located?"
-        '
-        'labelDriveTextboxLabel
-        '
-        Me.labelDriveTextboxLabel.AutoSize = True
-        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(88, 60)
-        Me.labelDriveTextboxLabel.Name = "labelDriveTextboxLabel"
-        Me.labelDriveTextboxLabel.Size = New System.Drawing.Size(32, 13)
-        Me.labelDriveTextboxLabel.TabIndex = 4
-        Me.labelDriveTextboxLabel.Text = "Drive"
-        '
-        'buttonClearDriveLetter
-        '
-        Me.buttonClearDriveLetter.AutoSize = True
-        Me.buttonClearDriveLetter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.buttonClearDriveLetter.Location = New System.Drawing.Point(150, 55)
-        Me.buttonClearDriveLetter.Margin = New System.Windows.Forms.Padding(2)
-        Me.buttonClearDriveLetter.Name = "buttonClearDriveLetter"
-        Me.buttonClearDriveLetter.Size = New System.Drawing.Size(41, 23)
-        Me.buttonClearDriveLetter.TabIndex = 3
-        Me.buttonClearDriveLetter.Text = "Clear"
-        Me.buttonClearDriveLetter.UseVisualStyleBackColor = True
-        '
-        'textboxOfficeDrive
-        '
-        Me.textboxOfficeDrive.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.textboxOfficeDrive.Location = New System.Drawing.Point(126, 57)
-        Me.textboxOfficeDrive.Margin = New System.Windows.Forms.Padding(2)
-        Me.textboxOfficeDrive.MaxLength = 1
-        Me.textboxOfficeDrive.Name = "textboxOfficeDrive"
-        Me.textboxOfficeDrive.ShortcutsEnabled = False
-        Me.textboxOfficeDrive.Size = New System.Drawing.Size(20, 20)
-        Me.textboxOfficeDrive.TabIndex = 2
-        Me.textboxOfficeDrive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'labelOfficeInstalledToDrive
-        '
-        Me.labelOfficeInstalledToDrive.AutoSize = True
-        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(88, 37)
-        Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
-        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(188, 13)
-        Me.labelOfficeInstalledToDrive.TabIndex = 1
-        Me.labelOfficeInstalledToDrive.Text = "I installed Microsoft Office to this drive:"
-        '
-        'tabpageAdvanced
-        '
-        Me.tabpageAdvanced.Controls.Add(Me.groupboxBypassConfiguredLocation)
-        Me.tabpageAdvanced.Controls.Add(Me.groupboxCPUType)
-        Me.tabpageAdvanced.Location = New System.Drawing.Point(4, 22)
-        Me.tabpageAdvanced.Margin = New System.Windows.Forms.Padding(2)
-        Me.tabpageAdvanced.Name = "tabpageAdvanced"
-        Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabpageAdvanced.Size = New System.Drawing.Size(422, 326)
-        Me.tabpageAdvanced.TabIndex = 1
-        Me.tabpageAdvanced.Text = "Advanced"
-        Me.tabpageAdvanced.UseVisualStyleBackColor = True
         '
         'groupboxBypassConfiguredLocation
         '
@@ -313,18 +167,18 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonBypassConfiguredLocationDeprecatedApps)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonDontBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
-        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(3, 169)
+        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(4, 147)
         Me.groupboxBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
-        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 155)
-        Me.groupboxBypassConfiguredLocation.TabIndex = 1
+        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 175)
+        Me.groupboxBypassConfiguredLocation.TabIndex = 2
         Me.groupboxBypassConfiguredLocation.TabStop = False
         Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
         '
         'radiobuttonBypassConfiguredLocationAllApps
         '
         Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(57, 120)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(59, 127)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
         Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
         Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
@@ -335,7 +189,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationDeprecatedApps
         '
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(57, 97)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(59, 104)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
@@ -346,7 +200,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonDontBypassConfiguredLocation
         '
         Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
-        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(57, 74)
+        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(59, 81)
         Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
         Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
         Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
@@ -357,34 +211,137 @@ Partial Class aaformOptionsWindow
         'labelBypassConfiguredLocation
         '
         Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(36, 22)
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(44, 30)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
         Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(338, 39)
         Me.labelBypassConfiguredLocation.TabIndex = 0
         Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
         '
+        'groupboxOfficeVersion
+        '
+        Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
+        Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
+        Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
+        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
+        Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
+        Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
+        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 139)
+        Me.groupboxOfficeVersion.TabIndex = 1
+        Me.groupboxOfficeVersion.TabStop = False
+        Me.groupboxOfficeVersion.Text = "Microsoft Office versions + C2R"
+        '
+        'checkboxO365InstallMethod
+        '
+        Me.checkboxO365InstallMethod.AutoSize = True
+        Me.checkboxO365InstallMethod.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(79, 81)
+        Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
+        Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 30)
+        Me.checkboxO365InstallMethod.TabIndex = 5
+        Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Always enabled for 2019 and above)" &
+    ""
+        Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
+        Me.checkboxO365InstallMethod.UseVisualStyleBackColor = True
+        '
+        'labelUserHasThisOfficeVersion
+        '
+        Me.labelUserHasThisOfficeVersion.AutoSize = True
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(76, 27)
+        Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
+        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(263, 13)
+        Me.labelUserHasThisOfficeVersion.TabIndex = 2
+        Me.labelUserHasThisOfficeVersion.Text = "Please select your installed version of Microsoft Office:"
+        '
+        'comboboxOfficeVersionSelector
+        '
+        Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxOfficeVersionSelector.FormattingEnabled = True
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(79, 42)
+        Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
+        Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
+        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
+        Me.comboboxOfficeVersionSelector.TabIndex = 4
+        '
+        'tabpageAdvanced
+        '
+        Me.tabpageAdvanced.Controls.Add(Me.groupboxOfficeLocation)
+        Me.tabpageAdvanced.Controls.Add(Me.groupboxCPUType)
+        Me.tabpageAdvanced.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageAdvanced.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabpageAdvanced.Name = "tabpageAdvanced"
+        Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(2)
+        Me.tabpageAdvanced.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageAdvanced.TabIndex = 1
+        Me.tabpageAdvanced.Text = "Root Path"
+        Me.tabpageAdvanced.UseVisualStyleBackColor = True
+        '
+        'groupboxOfficeLocation
+        '
+        Me.groupboxOfficeLocation.Controls.Add(Me.comboboxDriveSelector)
+        Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
+        Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
+        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxOfficeLocation.Margin = New System.Windows.Forms.Padding(2)
+        Me.groupboxOfficeLocation.Name = "groupboxOfficeLocation"
+        Me.groupboxOfficeLocation.Padding = New System.Windows.Forms.Padding(2)
+        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(415, 122)
+        Me.groupboxOfficeLocation.TabIndex = 6
+        Me.groupboxOfficeLocation.TabStop = False
+        Me.groupboxOfficeLocation.Text = "Root drive path"
+        '
+        'comboboxDriveSelector
+        '
+        Me.comboboxDriveSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDriveSelector.FormattingEnabled = True
+        Me.comboboxDriveSelector.Location = New System.Drawing.Point(131, 61)
+        Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
+        Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)
+        Me.comboboxDriveSelector.TabIndex = 5
+        '
+        'labelDriveTextboxLabel
+        '
+        Me.labelDriveTextboxLabel.AutoSize = True
+        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(93, 64)
+        Me.labelDriveTextboxLabel.Name = "labelDriveTextboxLabel"
+        Me.labelDriveTextboxLabel.Size = New System.Drawing.Size(32, 13)
+        Me.labelDriveTextboxLabel.TabIndex = 4
+        Me.labelDriveTextboxLabel.Text = "Drive"
+        '
+        'labelOfficeInstalledToDrive
+        '
+        Me.labelOfficeInstalledToDrive.AutoSize = True
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(93, 41)
+        Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
+        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(228, 13)
+        Me.labelOfficeInstalledToDrive.TabIndex = 1
+        Me.labelOfficeInstalledToDrive.Text = "Please choose the drive you installed Office to:"
+        '
         'groupboxCPUType
         '
         Me.groupboxCPUType.Controls.Add(Me.labelRecommendedWindowsEdition)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
-        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs64Bit)
-        Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIs32Bit)
-        Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
-        Me.groupboxCPUType.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFilesX86)
+        Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFiles)
+        Me.groupboxCPUType.Controls.Add(Me.labelPFPathDescription)
+        Me.groupboxCPUType.Location = New System.Drawing.Point(4, 130)
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxCPUType.Name = "groupboxCPUType"
         Me.groupboxCPUType.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxCPUType.Size = New System.Drawing.Size(415, 162)
+        Me.groupboxCPUType.Size = New System.Drawing.Size(415, 192)
         Me.groupboxCPUType.TabIndex = 0
         Me.groupboxCPUType.TabStop = False
-        Me.groupboxCPUType.Text = "What edition of Windows do you run?"
+        Me.groupboxCPUType.Text = "Program Files path"
         '
         'labelRecommendedWindowsEdition
         '
         Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(62, 82)
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(36, 101)
         Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
-        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(291, 65)
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(369, 65)
         Me.labelRecommendedWindowsEdition.TabIndex = 5
         Me.labelRecommendedWindowsEdition.Text = resources.GetString("labelRecommendedWindowsEdition.Text")
         '
@@ -401,39 +358,41 @@ Partial Class aaformOptionsWindow
     "tton!)"
         Me.radiobuttonCPUIsQBit.UseVisualStyleBackColor = True
         '
-        'radiobuttonCPUIs64Bit
+        'radiobuttonUseProgramFilesX86
         '
-        Me.radiobuttonCPUIs64Bit.AutoSize = True
-        Me.radiobuttonCPUIs64Bit.Location = New System.Drawing.Point(65, 54)
-        Me.radiobuttonCPUIs64Bit.Margin = New System.Windows.Forms.Padding(2)
-        Me.radiobuttonCPUIs64Bit.Name = "radiobuttonCPUIs64Bit"
-        Me.radiobuttonCPUIs64Bit.Size = New System.Drawing.Size(98, 17)
-        Me.radiobuttonCPUIs64Bit.TabIndex = 3
-        Me.radiobuttonCPUIs64Bit.TabStop = True
-        Me.radiobuttonCPUIs64Bit.Text = "64-bit Windows"
-        Me.radiobuttonCPUIs64Bit.UseVisualStyleBackColor = True
+        Me.radiobuttonUseProgramFilesX86.AutoSize = True
+        Me.radiobuttonUseProgramFilesX86.Location = New System.Drawing.Point(39, 70)
+        Me.radiobuttonUseProgramFilesX86.Margin = New System.Windows.Forms.Padding(2)
+        Me.radiobuttonUseProgramFilesX86.Name = "radiobuttonUseProgramFilesX86"
+        Me.radiobuttonUseProgramFilesX86.Size = New System.Drawing.Size(268, 17)
+        Me.radiobuttonUseProgramFilesX86.TabIndex = 3
+        Me.radiobuttonUseProgramFilesX86.TabStop = True
+        Me.radiobuttonUseProgramFilesX86.Text = "Program Files (x86): 32-bit Office on 64-bit Windows"
+        Me.radiobuttonUseProgramFilesX86.UseVisualStyleBackColor = True
         '
-        'radiobuttonCPUIs32Bit
+        'radiobuttonUseProgramFiles
         '
-        Me.radiobuttonCPUIs32Bit.AutoSize = True
-        Me.radiobuttonCPUIs32Bit.Location = New System.Drawing.Point(65, 36)
-        Me.radiobuttonCPUIs32Bit.Margin = New System.Windows.Forms.Padding(2)
-        Me.radiobuttonCPUIs32Bit.Name = "radiobuttonCPUIs32Bit"
-        Me.radiobuttonCPUIs32Bit.Size = New System.Drawing.Size(98, 17)
-        Me.radiobuttonCPUIs32Bit.TabIndex = 2
-        Me.radiobuttonCPUIs32Bit.TabStop = True
-        Me.radiobuttonCPUIs32Bit.Text = "32-bit Windows"
-        Me.radiobuttonCPUIs32Bit.UseVisualStyleBackColor = True
+        Me.radiobuttonUseProgramFiles.AutoSize = True
+        Me.radiobuttonUseProgramFiles.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.radiobuttonUseProgramFiles.Location = New System.Drawing.Point(39, 36)
+        Me.radiobuttonUseProgramFiles.Margin = New System.Windows.Forms.Padding(2)
+        Me.radiobuttonUseProgramFiles.Name = "radiobuttonUseProgramFiles"
+        Me.radiobuttonUseProgramFiles.Size = New System.Drawing.Size(350, 30)
+        Me.radiobuttonUseProgramFiles.TabIndex = 2
+        Me.radiobuttonUseProgramFiles.TabStop = True
+        Me.radiobuttonUseProgramFiles.Text = "Program Files: 64-bit Office on 64-bit Windows," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "32-bit Office on 32-bit Windows," &
+    " or 32-bit Office 2013 from Office 365"
+        Me.radiobuttonUseProgramFiles.UseVisualStyleBackColor = True
         '
-        'labelCPUTypeDescription
+        'labelPFPathDescription
         '
-        Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(62, 21)
-        Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
-        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(229, 13)
-        Me.labelCPUTypeDescription.TabIndex = 0
-        Me.labelCPUTypeDescription.Text = "Choose which edition of Windows you're using:"
+        Me.labelPFPathDescription.AutoSize = True
+        Me.labelPFPathDescription.Location = New System.Drawing.Point(36, 21)
+        Me.labelPFPathDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.labelPFPathDescription.Name = "labelPFPathDescription"
+        Me.labelPFPathDescription.Size = New System.Drawing.Size(280, 13)
+        Me.labelPFPathDescription.TabIndex = 0
+        Me.labelPFPathDescription.Text = "Select the Program Files path used by your copy of Office:"
         '
         'tabpagePersonalization
         '
@@ -456,10 +415,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
-        Me.groupboxStatusbar.Location = New System.Drawing.Point(3, 192)
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(4, 192)
         Me.groupboxStatusbar.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxStatusbar.Name = "groupboxStatusbar"
-        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 132)
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 130)
         Me.groupboxStatusbar.TabIndex = 1
         Me.groupboxStatusbar.TabStop = False
         Me.groupboxStatusbar.Text = "Statusbar"
@@ -531,10 +490,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.Controls.Add(Me.comboboxThemeList)
         Me.groupboxAppearance.Controls.Add(Me.textboxThemeInfo)
         Me.groupboxAppearance.Controls.Add(Me.checkboxEnableThemeEngine)
-        Me.groupboxAppearance.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxAppearance.Location = New System.Drawing.Point(4, 4)
         Me.groupboxAppearance.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxAppearance.Name = "groupboxAppearance"
-        Me.groupboxAppearance.Size = New System.Drawing.Size(415, 185)
+        Me.groupboxAppearance.Size = New System.Drawing.Size(415, 184)
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Appearance"
@@ -555,7 +514,7 @@ Partial Class aaformOptionsWindow
         '
         Me.labelCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelCustomThemePath.AutoSize = True
-        Me.labelCustomThemePath.Location = New System.Drawing.Point(217, 143)
+        Me.labelCustomThemePath.Location = New System.Drawing.Point(217, 142)
         Me.labelCustomThemePath.Name = "labelCustomThemePath"
         Me.labelCustomThemePath.Size = New System.Drawing.Size(101, 13)
         Me.labelCustomThemePath.TabIndex = 6
@@ -564,7 +523,7 @@ Partial Class aaformOptionsWindow
         'buttonCustomThemesBrowse
         '
         Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(340, 156)
+        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(340, 155)
         Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
         Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
         Me.buttonCustomThemesBrowse.TabIndex = 5
@@ -574,7 +533,7 @@ Partial Class aaformOptionsWindow
         'textboxCustomThemePath
         '
         Me.textboxCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textboxCustomThemePath.Location = New System.Drawing.Point(220, 159)
+        Me.textboxCustomThemePath.Location = New System.Drawing.Point(220, 158)
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
         Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
         Me.textboxCustomThemePath.TabIndex = 4
@@ -603,7 +562,7 @@ Partial Class aaformOptionsWindow
         'textboxThemeInfo
         '
         Me.textboxThemeInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 50)
+        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 49)
         Me.textboxThemeInfo.Multiline = True
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
         Me.textboxThemeInfo.ReadOnly = True
@@ -645,18 +604,6 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.TabIndex = 6
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'linklabelTempFutureChanges
-        '
-        Me.linklabelTempFutureChanges.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.linklabelTempFutureChanges.AutoSize = True
-        Me.linklabelTempFutureChanges.Location = New System.Drawing.Point(156, 377)
-        Me.linklabelTempFutureChanges.Margin = New System.Windows.Forms.Padding(4, 0, 2, 4)
-        Me.linklabelTempFutureChanges.Name = "linklabelTempFutureChanges"
-        Me.linklabelTempFutureChanges.Size = New System.Drawing.Size(117, 13)
-        Me.linklabelTempFutureChanges.TabIndex = 10
-        Me.linklabelTempFutureChanges.TabStop = True
-        Me.linklabelTempFutureChanges.Text = "Future change notice..."
         '
         'tooltipO365InstallMethod
         '
@@ -700,13 +647,13 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.PerformLayout()
         Me.tabcontrolOptionsWindow.ResumeLayout(False)
         Me.tabpageGeneral.ResumeLayout(False)
-        Me.groupboxOfficeVersion.ResumeLayout(False)
-        Me.groupboxOfficeVersion.PerformLayout()
-        Me.groupboxOfficeLocation.ResumeLayout(False)
-        Me.groupboxOfficeLocation.PerformLayout()
-        Me.tabpageAdvanced.ResumeLayout(False)
         Me.groupboxBypassConfiguredLocation.ResumeLayout(False)
         Me.groupboxBypassConfiguredLocation.PerformLayout()
+        Me.groupboxOfficeVersion.ResumeLayout(False)
+        Me.groupboxOfficeVersion.PerformLayout()
+        Me.tabpageAdvanced.ResumeLayout(False)
+        Me.groupboxOfficeLocation.ResumeLayout(False)
+        Me.groupboxOfficeLocation.PerformLayout()
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
         Me.tabpagePersonalization.ResumeLayout(False)
@@ -725,23 +672,17 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tabcontrolOptionsWindow As TabControl
     Friend WithEvents tabpageGeneral As TabPage
     Friend WithEvents tabpageAdvanced As TabPage
-    Friend WithEvents groupboxOfficeLocation As GroupBox
-    Friend WithEvents labelOfficeInstalledToDrive As Label
-    Friend WithEvents textboxOfficeDrive As TextBox
-    Friend WithEvents buttonClearDriveLetter As Button
     Friend WithEvents groupboxOfficeVersion As GroupBox
     Friend WithEvents comboboxOfficeVersionSelector As ComboBox
     Friend WithEvents labelUserHasThisOfficeVersion As Label
     Friend WithEvents checkboxO365InstallMethod As CheckBox
     Friend WithEvents groupboxCPUType As GroupBox
-    Friend WithEvents labelCPUTypeDescription As Label
-    Friend WithEvents radiobuttonCPUIs32Bit As RadioButton
-    Friend WithEvents radiobuttonCPUIs64Bit As RadioButton
+    Friend WithEvents labelPFPathDescription As Label
+    Friend WithEvents radiobuttonUseProgramFiles As RadioButton
+    Friend WithEvents radiobuttonUseProgramFilesX86 As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton
     Friend WithEvents buttonTestSettings As Button
-    Friend WithEvents labelOfficeInstallMethodDescription As Label
     Friend WithEvents tooltipO365InstallMethod As ToolTip
-    Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents tooltipSystemInfo As ToolTip
     Friend WithEvents tabpagePersonalization As TabPage
     Friend WithEvents groupboxAppearance As GroupBox
@@ -761,14 +702,16 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonClearFirstname As Button
     Friend WithEvents openfiledialogBrowseCustomThemeFile As OpenFileDialog
     Friend WithEvents labelRecommendedWindowsEdition As Label
-    Friend WithEvents groupboxBypassConfiguredLocation As GroupBox
-    Friend WithEvents labelBypassConfiguredLocation As Label
     Friend WithEvents tooltipCustomThemePath As ToolTip
     Friend WithEvents checkboxMatchWindows10ThemeSettings As CheckBox
     Friend WithEvents tooltipMatchWindows10ThemeSettings As ToolTip
-    Friend WithEvents radiobuttonDontBypassConfiguredLocation As RadioButton
-    Friend WithEvents radiobuttonBypassConfiguredLocationDeprecatedApps As RadioButton
+    Friend WithEvents groupboxBypassConfiguredLocation As GroupBox
     Friend WithEvents radiobuttonBypassConfiguredLocationAllApps As RadioButton
-    Friend WithEvents labelHelpWithOfficeVersions As Label
-    Friend WithEvents linklabelTempFutureChanges As LinkLabel
+    Friend WithEvents radiobuttonBypassConfiguredLocationDeprecatedApps As RadioButton
+    Friend WithEvents radiobuttonDontBypassConfiguredLocation As RadioButton
+    Friend WithEvents labelBypassConfiguredLocation As Label
+    Friend WithEvents groupboxOfficeLocation As GroupBox
+    Friend WithEvents comboboxDriveSelector As ComboBox
+    Friend WithEvents labelDriveTextboxLabel As Label
+    Friend WithEvents labelOfficeInstalledToDrive As Label
 End Class

@@ -52,20 +52,41 @@ Public Class aaformOptionsWindow
         If Environment.Is64BitOperatingSystem = True Then
             ' If the OS is 64-bit, recommend the user to click
             ' 64-bit Windows.
-            labelRecommendedWindowsEdition.Text = "64-bit Windows is the recommended option for you, but if" & vbCrLf &
-                "using Office 2013, you may need to select ""32-bit Windows""" & vbCrLf &
-                "due to the 32-bit version installing to ""Program Files""" & vbCrLf &
-                "even on 64-bit Windows. 64-bit Office (Office 2019's default)" & vbCrLf &
-                "requires ""32-bit Windows"" to be selected above."
+            labelRecommendedWindowsEdition.Text = "Your installation of Windows is 64-bit, so you'll probably want to" & vbCrLf &
+                "select ""Program Files"" if you're using any of the configurations listed for it." & vbCrLf &
+                "" & vbCrLf &
+                "If you're using 32-bit Office on 64-bit Windows, you'll need to select" & vbCrLf &
+                "the ""Program Files (x86)"" option."
         Else
             ' If the OS isn't 64-bit, recommend the 32-bit option.
-            labelRecommendedWindowsEdition.Text = "32-bit Windows is the recommended option for you."
+            labelRecommendedWindowsEdition.Text = "Your installation of Windows is 32-bit, so only ""Program Files"" can be used."
         End If
 #End Region
 
 #Region "Load the settings from My.Settings."
-        ' Load the user's settings for My.Settings.officeDriveLocation when the Options window loads.
-        textboxOfficeDrive.Text = My.Settings.officeDriveLocation
+#Region "Drive letters."
+#Region "Set drive letter dropdown to available drives."
+        ' Clear the drive letter list.
+        comboboxDriveSelector.Items.Clear()
+
+        For Each DriveLetter As String In GetDriveLetters()
+            ' Get the drive letters of all active drives and remove the ":\".
+            comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
+        Next
+#End Region
+#Region "Set drive letters in the dropdown."
+        ' If the drive the user wants to use isn't available in the dropdown,
+        ' add it to the dropdown.
+        If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
+            comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation)
+            ' Sort the list so it doesn't look bad.
+            comboboxDriveSelector.Sorted = True
+        End If
+
+        ' Select the drive letter in the drive letter dropdown box.
+        comboboxDriveSelector.Text = My.Settings.officeDriveLocation
+#End Region
+#End Region
 
         ' Load the user's settings for My.Settings.userHasOfficeThreeSixFive when the Options window loads.
         ' Simplified from original "If" statement.
@@ -158,7 +179,6 @@ Public Class aaformOptionsWindow
 #End Region
 #End Region
 
-
 #Region "Set the DataSource of the comboboxOfficeVersionSelector to a string."
         ' First, see if the user's Office version set in the config file
         ' is contained in My.Resources.supportedOfficeVersionList.
@@ -203,52 +223,28 @@ Public Class aaformOptionsWindow
         End If
 
         ' Load the user's settings for My.Settings.cpuIsSixtyFourBit.
-        If My.Settings.cpuIsSixtyFourBit = True Then
-            radiobuttonCPUIs64Bit.Checked = True
-        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-            radiobuttonCPUIs32Bit.Checked = True
+        If My.Settings.pathUsePFxEightySix = True Then
+            radiobuttonUseProgramFilesX86.Checked = True
+        ElseIf My.Settings.pathUsePFxEightySix = False Then
+            radiobuttonUseProgramFiles.Checked = True
         End If
 
-    End Sub
-#End Region
-
-
-
-#Region "Code that runs when the user types stuff in the textboxOfficeDrive."
-    Private Sub textboxOfficeDrive_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textboxOfficeDrive.KeyPress
-        ' This sub is to make sure that people are only entering letters. Credit goes to this post on Stack Overflow
-        ' for this solution.  <http://stackoverflow.com/a/31161593>
-        ' 
-        If e.KeyChar <> vbBack And Char.IsLetter(e.KeyChar) = False Then
-
-            ' Display a message box when the user presses characters that aren't allowed.
-            e.Handled = True
-            MessageBox.Show("This textbox only accepts letters such as A, B, C etc." & vbCrLf &
-                            "You can clear the textbox by using the ""Clear"" button, or by pressing Delete or Backspace on your keyboard.",
-                            "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-
-            ' Change the textbox for choosing the drive Office is installed on back to the user's current configuration.
-            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
-            ' Focus and select the textbox.
-            textboxOfficeDrive.Focus()
-            textboxOfficeDrive.SelectAll()
-        End If
     End Sub
 #End Region
 
 #Region "Code that runs when the user clicks the Defaults button."
     Private Sub buttonDefaultSettings_Click(sender As Object, e As EventArgs) Handles buttonDefaultSettings.Click
         ' Reset the "Office Install Drive" to drive C.
-        textboxOfficeDrive.Text = "C"
+        comboboxDriveSelector.Text = "C"
 
         ' Reset the Office Version Selector to Office 2010.
-        comboboxOfficeVersionSelector.Text = "Microsoft Office 2010"
+        comboboxOfficeVersionSelector.Text = "Microsoft Office 2019"
 
         ' Reset the Office 365 checkbox to unchecked.
         checkboxO365InstallMethod.Checked = False
 
-        ' Reset the CPUType radio buttons to 64-bit.
-        radiobuttonCPUIs64Bit.Checked = True
+        ' Reset the PFPath radio buttons to "Program Files".
+        radiobuttonUseProgramFiles.Checked = True
 
         ' Reset the theme to use to Default.
         comboboxThemeList.Text = "Default"
@@ -291,6 +287,25 @@ Public Class aaformOptionsWindow
     End Sub
 #End Region
 
+#Region "Get drive letters."
+    Private Function GetDriveLetters() As List(Of String)
+        ' Basing my code/copying off the answer for getting ready drives here:
+        ' https://social.msdn.microsoft.com/Forums/vstudio/en-US/4605ebb2-fc2c-4166-9c42-9025c20eaa1e/populate-combo-box-with-drive-letters
+        Dim DriveLettersList As New List(Of String)
+
+        For Each Drive As System.IO.DriveInfo In IO.DriveInfo.GetDrives
+            ' Go through the list of drives and add their name
+            ' to the list if they're ready.
+            If Drive.IsReady = True Then
+                DriveLettersList.Add(Drive.Name)
+            End If
+        Next
+
+        ' Return the list.
+        Return DriveLettersList
+    End Function
+#End Region
+
 #Region "Code that runs when the user clicks the Save button."
     Private Sub buttonSaveSettings_Click(sender As Object, e As EventArgs) Handles buttonSaveSettings.Click
         ' Moved saving code to its own sub so that closing the Options
@@ -305,138 +320,133 @@ Public Class aaformOptionsWindow
     Private Function saveStuff() As Integer
         ' Look at the length of the text in the "Office Install Drive" textbox and if there is no text in it then kindly tell the
         ' user they need to type in one drive letter.
-        If textboxOfficeDrive.Text.Length = 0 Then
-            MessageBox.Show("You must type one letter into the drive letter text box.", "Textbox length requirement not met", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ' After telling them that, reset the "Office Install Drive" textbox to their current setting.
-            textboxOfficeDrive.Text = My.Settings.officeDriveLocation
-            ' Select the "General" tab.
-            ' This article helped me with selecting the tab:
-            ' https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.tabcontrol.selectedindex?view=netframework-4.6.1
-            tabcontrolOptionsWindow.SelectedIndex = 0
-            ' Set focus to the Office Drive Location textbox, and select all text in it.
-            textboxOfficeDrive.Focus()
-            textboxOfficeDrive.SelectAll()
-            ' Return 1, which means there's a problem.
-            ' When this happens, code that uses this function
-            ' will exit and not continue.
-            Return 1
-        Else
-            '
-            ' This space reserved for more settings.
-            '
-            '
+        'If SomeIssueHere Then
+
+        ' Return 1, which means there's a problem.
+        ' When this happens, code that uses this function
+        ' will exit and not continue.
+
+        ' This if...else statement will only be used if there's
+        ' something that would use it, but at the moment, it is
+        ' considered... irrelevant.
+        'Return 1
+        'Else
+        '
+        ' This space reserved for more settings.
+        '
+        '
 
 #Region "Things to save to My.Settings."
-            ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
-            My.Settings.officeDriveLocation = textboxOfficeDrive.Text
+        ' Set My.Settings.officeDriveLocation to the text in textboxOfficeDrive.
+        My.Settings.officeDriveLocation = comboboxDriveSelector.Text
 
-            ' My.Settings.userHasOfficeThreeSixFive will be set based on 
-            ' the .Checked state of the checkboxO365InstallMethod.
-            ' Simplified from original "If" statement.
-            My.Settings.userHasOfficeThreeSixFive = checkboxO365InstallMethod.Checked
+        ' My.Settings.userHasOfficeThreeSixFive will be set based on 
+        ' the .Checked state of the checkboxO365InstallMethod.
+        ' Simplified from original "If" statement.
+        My.Settings.userHasOfficeThreeSixFive = checkboxO365InstallMethod.Checked
 
-            ' Set My.Settings.userOfficeVersion to a string based on whatever
-            ' comboboxOfficeVersionSelector.Text is set to.
-            If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
-                My.Settings.userOfficeVersion = "14"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
-                My.Settings.userOfficeVersion = "15"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
-                My.Settings.userOfficeVersion = "16"
-            ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2019" Then
-                My.Settings.userOfficeVersion = "16nomsi"
-            Else
-                ' If none of the above Office versions are listed in the dropdown
-                ' box, just save the current My.Settings.userOfficeVersion to
-                ' itself.
-                My.Settings.userOfficeVersion = My.Settings.userOfficeVersion
-            End If
+        ' Set My.Settings.userOfficeVersion to a string based on whatever
+        ' comboboxOfficeVersionSelector.Text is set to.
+        If comboboxOfficeVersionSelector.Text = "Microsoft Office 2010" Then
+            My.Settings.userOfficeVersion = "14"
+        ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2013" Then
+            My.Settings.userOfficeVersion = "15"
+        ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2016" Then
+            My.Settings.userOfficeVersion = "16"
+        ElseIf comboboxOfficeVersionSelector.Text = "Microsoft Office 2019" Then
+            My.Settings.userOfficeVersion = "16nomsi"
+        Else
+            ' If none of the above Office versions are listed in the dropdown
+            ' box, just save the current My.Settings.userOfficeVersion to
+            ' itself.
+            My.Settings.userOfficeVersion = My.Settings.userOfficeVersion
+        End If
 
-            ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
-            If radiobuttonCPUIs32Bit.Checked = True Then
-                My.Settings.cpuIsSixtyFourBit = False
-            ElseIf radiobuttonCPUIs64Bit.Checked = True Then
-                My.Settings.cpuIsSixtyFourBit = True
-            ElseIf radiobuttonCPUIsQBit.Checked = True Then
-                ' Focus the "Advanced" tab.
-                tabcontrolOptionsWindow.SelectedIndex = 1
-                MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
+        ' Set My.Settings.cpuIsSixtyFourBit to True or False depending on the radio buttons.
+        If radiobuttonUseProgramFiles.Checked = True Then
+            My.Settings.pathUsePFxEightySix = False
+        ElseIf radiobuttonUseProgramFilesX86.Checked = True Then
+            My.Settings.pathUsePFxEightySix = True
+        ElseIf radiobuttonCPUIsQBit.Checked = True Then
+            ' Focus the "Advanced" tab.
+            tabcontrolOptionsWindow.SelectedIndex = 1
+            MessageBox.Show("Why do you have a quantum CPU?" & vbCrLf & "(Your currently saved settings will be re-applied because Qubits don't exist for consumers yet.)" & vbCrLf & "(Thank you for finding this hidden radio button!)", "Qubits don't exist for consumers yet.", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error)
-                ' Now set the radio buttons to current user settings.
-                If My.Settings.cpuIsSixtyFourBit = True Then
-                    radiobuttonCPUIs64Bit.Checked = True
-                    My.Settings.cpuIsSixtyFourBit = True
-                ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-                    radiobuttonCPUIs32Bit.Checked = True
-                    My.Settings.cpuIsSixtyFourBit = False
-                End If
+            ' Now set the radio buttons to current user settings.
+            If My.Settings.pathUsePFxEightySix = True Then
+                radiobuttonUseProgramFilesX86.Checked = True
+                My.Settings.pathUsePFxEightySix = True
+            ElseIf My.Settings.pathUsePFxEightySix = False Then
+                radiobuttonUseProgramFiles.Checked = True
+                My.Settings.pathUsePFxEightySix = False
             End If
+        End If
 
-            ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
-            ' Simplified from original "If" statement.
-            My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
+        ' Set My.Settings.enableThemeEngine to True or False based on the checkbox.
+        ' Simplified from original "If" statement.
+        My.Settings.enableThemeEngine = checkboxEnableThemeEngine.Checked
 
-            ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
-            My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
+        ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
+        My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
 
-            ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
-            My.Settings.userChosenTheme = comboboxThemeList.Text
+        ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
+        My.Settings.userChosenTheme = comboboxThemeList.Text
 
-            ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
-            My.Settings.userCustomThemePath = textboxCustomThemePath.Text
+        ' Set My.Settings.userCustomThemePath to the custom theme path textbox.
+        My.Settings.userCustomThemePath = textboxCustomThemePath.Text
 
-            ' Set My.Settings.userUseCustomStatusbarGreeting to True or False based
-            ' on which radio button is selected.
-            If radiobuttonDefaultStatusbarGreeting.Checked = True Then
-                My.Settings.userUseCustomStatusbarGreeting = False
-            ElseIf radiobuttonCustomStatusbarGreeting.Checked = True Then
-                My.Settings.userUseCustomStatusbarGreeting = True
-            End If
+        ' Set My.Settings.userUseCustomStatusbarGreeting to True or False based
+        ' on which radio button is selected.
+        If radiobuttonDefaultStatusbarGreeting.Checked = True Then
+            My.Settings.userUseCustomStatusbarGreeting = False
+        ElseIf radiobuttonCustomStatusbarGreeting.Checked = True Then
+            My.Settings.userUseCustomStatusbarGreeting = True
+        End If
 
-            ' Set the My.Settings value for the user's firstname/nickname
-            ' for personalized statusbar greetings to the textbox
-            ' for the name.
-            My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
+        ' Set the My.Settings value for the user's firstname/nickname
+        ' for personalized statusbar greetings to the textbox
+        ' for the name.
+        My.Settings.userFirstNameForCustomStatusbarGreeting = textboxFirstname.Text
 
-            ' Save the status of whether to bypass the configured location for
-            ' deprecated or removed apps, or all compatible apps.
-            My.Settings.bypassConfiguredLocationForDeprecatedApps = radiobuttonBypassConfiguredLocationDeprecatedApps.Checked
-            My.Settings.bypassConfiguredLocationForAllApps = radiobuttonBypassConfiguredLocationAllApps.Checked
+        ' Save the status of whether to bypass the configured location for
+        ' deprecated or removed apps, or all compatible apps.
+        My.Settings.bypassConfiguredLocationForDeprecatedApps = radiobuttonBypassConfiguredLocationDeprecatedApps.Checked
+        My.Settings.bypassConfiguredLocationForAllApps = radiobuttonBypassConfiguredLocationAllApps.Checked
 
 #End Region
 
 #Region "This is where the settings get saved and things update."
-            ' Save settings.
-            My.Settings.Save()
-            My.Settings.Reload()
-            ' Update the user's theme if the theme engine is enabled
-            ' and the boolean variable set at the beginning of this
-            ' class is set to True.
-            If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
+        ' Save settings.
+        My.Settings.Save()
+        My.Settings.Reload()
+        ' Update the user's theme if the theme engine is enabled
+        ' and the boolean variable set at the beginning of this
+        ' class is set to True.
+        If My.Settings.enableThemeEngine = True And boolIsThemeEngineEnabled = True Then
 
-                ' If the user wants to match the Windows 10 theme, then do so,
-                ' but if not, then the user's chosen theme will be used instead.
-                ' Code moved to its own sub to make editing easier.
-                WindowsThemeSettings.checkIfUserWantsToMatchTheme()
+            ' If the user wants to match the Windows 10 theme, then do so,
+            ' but if not, then the user's chosen theme will be used instead.
+            ' Code moved to its own sub to make editing easier.
+            WindowsThemeSettings.checkIfUserWantsToMatchTheme()
 
-            End If
-            ' Update the fullLauncherCodeString.
-            OfficeLocater.combineStrings()
-            ' Update the text in the main window's titlebar.
-            aaformMainWindow.updateTitlebarText()
-            ' Update main window statusbar label text.
-            aaformMainWindow.updateStatusbarText()
-            ' Tell the user that settings were saved.
-            MessageBox.Show("Settings saved." & vbCrLf &
+        End If
+        ' Update the fullLauncherCodeString.
+        OfficeLocater.combineStrings()
+        ' Update the text in the main window's titlebar.
+        aaformMainWindow.updateTitlebarText()
+        ' Update main window statusbar label text.
+        aaformMainWindow.updateStatusbarText()
+        ' Tell the user that settings were saved.
+        MessageBox.Show("Settings saved." & vbCrLf &
                         "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
 
-            ' Saving was successful.
-            ' Return 0.
-            ' Fortunately, this was just to save
-            ' settings, rather than the entire world.
-            Return 0
-        End If
+        ' Saving was successful.
+        ' Return 0.
+        ' Fortunately, this was just to save
+        ' settings, rather than the entire world.
+        Return 0
+        'End If
     End Function
 #End Region
 
@@ -445,14 +455,6 @@ Public Class aaformOptionsWindow
         ' Cancel out of the Options window and reload the user's settings
         My.Settings.Reload()
         Me.Close()
-    End Sub
-#End Region
-
-#Region "Code that runs when the user clicks the Clear Textbox button next to the Office drive location."
-    Private Sub buttonClearTextbox_Click(sender As Object, e As EventArgs) Handles buttonClearDriveLetter.Click
-        ' Clear the OfficeDrive textbox and set focus to it.
-        textboxOfficeDrive.Text = ""
-        textboxOfficeDrive.Select()
     End Sub
 #End Region
 
@@ -785,10 +787,15 @@ Public Class aaformOptionsWindow
 #End Region
 #End Region
 
-    Private Sub linklabelTempFutureChanges_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles linklabelTempFutureChanges.LinkClicked
-        ' Show future change notice messagebox with info based on
-        ' https://github.com/DrewNaylor/UXL-Launcher/issues/180
-        MessageBox.Show(Me, "In version 3.4, the Drive location/""I installed Microsoft Office to this drive:"" and Bypass configured location options will switch tabs. See also https://github.com/DrewNaylor/UXL-Launcher/issues/180",
-                        "Future Change Notice")
+    Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
+        If comboboxOfficeVersionSelector.SelectedIndex = 3 Then
+            ' Office versions newer than 2016 don't support MSI
+            ' and default to C2R, so this checkbox is not necessary.
+            checkboxO365InstallMethod.Hide()
+        Else
+            ' Office versions older than 2019 support MSI
+            ' so this checkbox may be necessary.
+            checkboxO365InstallMethod.Show()
+        End If
     End Sub
 End Class

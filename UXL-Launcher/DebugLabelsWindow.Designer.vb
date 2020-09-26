@@ -31,7 +31,7 @@ Partial Class aaformDebugLabels
         Me.debugLabelForofficeDriveLocation = New System.Windows.Forms.Label()
         Me.debugLabelForuserOfficeVersion = New System.Windows.Forms.Label()
         Me.debugLabelForofficeInstallMethodString = New System.Windows.Forms.Label()
-        Me.debugLabelForcpuTypeString = New System.Windows.Forms.Label()
+        Me.debugLabelForpfPathString = New System.Windows.Forms.Label()
         Me.debugTextboxForFullLauncherCodeString = New System.Windows.Forms.TextBox()
         Me.debugLabelForAlwaysOnTop = New System.Windows.Forms.Label()
         Me.debugButtonDefaultThemeSetter = New System.Windows.Forms.Button()
@@ -49,139 +49,131 @@ Partial Class aaformDebugLabels
         'debugLabelXmlThemeFileVersion
         '
         Me.debugLabelXmlThemeFileVersion.AutoSize = True
-        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(5, 68)
-        Me.debugLabelXmlThemeFileVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.debugLabelXmlThemeFileVersion.Location = New System.Drawing.Point(4, 54)
         Me.debugLabelXmlThemeFileVersion.Name = "debugLabelXmlThemeFileVersion"
-        Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(220, 17)
+        Me.debugLabelXmlThemeFileVersion.Size = New System.Drawing.Size(164, 13)
         Me.debugLabelXmlThemeFileVersion.TabIndex = 37
         Me.debugLabelXmlThemeFileVersion.Text = "debugLabelXmlThemeFileVersion"
         '
         'debugLabelXmlThemeUseThemeEngineVersion
         '
         Me.debugLabelXmlThemeUseThemeEngineVersion.AutoSize = True
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(5, 85)
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Location = New System.Drawing.Point(4, 68)
         Me.debugLabelXmlThemeUseThemeEngineVersion.Name = "debugLabelXmlThemeUseThemeEngineVersion"
-        Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(311, 17)
+        Me.debugLabelXmlThemeUseThemeEngineVersion.Size = New System.Drawing.Size(233, 13)
         Me.debugLabelXmlThemeUseThemeEngineVersion.TabIndex = 36
         Me.debugLabelXmlThemeUseThemeEngineVersion.Text = "debugLabelXmlThemeUseThemeEngineVersion"
         '
         'debugLabelXmlThemeAuthor
         '
         Me.debugLabelXmlThemeAuthor.AutoSize = True
-        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(5, 51)
+        Me.debugLabelXmlThemeAuthor.Location = New System.Drawing.Point(4, 41)
         Me.debugLabelXmlThemeAuthor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelXmlThemeAuthor.Name = "debugLabelXmlThemeAuthor"
-        Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(192, 17)
+        Me.debugLabelXmlThemeAuthor.Size = New System.Drawing.Size(144, 13)
         Me.debugLabelXmlThemeAuthor.TabIndex = 35
         Me.debugLabelXmlThemeAuthor.Text = "debugLabelXmlThemeAuthor"
         '
         'debugLabelXmlThemeTitle
         '
         Me.debugLabelXmlThemeTitle.AutoSize = True
-        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(5, 17)
-        Me.debugLabelXmlThemeTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.debugLabelXmlThemeTitle.Location = New System.Drawing.Point(4, 14)
         Me.debugLabelXmlThemeTitle.Name = "debugLabelXmlThemeTitle"
-        Me.debugLabelXmlThemeTitle.Size = New System.Drawing.Size(177, 17)
+        Me.debugLabelXmlThemeTitle.Size = New System.Drawing.Size(133, 13)
         Me.debugLabelXmlThemeTitle.TabIndex = 34
         Me.debugLabelXmlThemeTitle.Text = "debugLabelXmlThemeTitle"
         '
         'debugLabelXmlThemeDescription
         '
         Me.debugLabelXmlThemeDescription.AutoSize = True
-        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(5, 34)
-        Me.debugLabelXmlThemeDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.debugLabelXmlThemeDescription.Location = New System.Drawing.Point(4, 27)
         Me.debugLabelXmlThemeDescription.Name = "debugLabelXmlThemeDescription"
-        Me.debugLabelXmlThemeDescription.Size = New System.Drawing.Size(221, 17)
+        Me.debugLabelXmlThemeDescription.Size = New System.Drawing.Size(166, 13)
         Me.debugLabelXmlThemeDescription.TabIndex = 33
         Me.debugLabelXmlThemeDescription.Text = "debugLabelXmlThemeDescription"
         '
         'debugLabelForUserHasOfficeThreeSixFive
         '
         Me.debugLabelForUserHasOfficeThreeSixFive.AutoSize = True
-        Me.debugLabelForUserHasOfficeThreeSixFive.Location = New System.Drawing.Point(5, 98)
-        Me.debugLabelForUserHasOfficeThreeSixFive.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.debugLabelForUserHasOfficeThreeSixFive.Location = New System.Drawing.Point(4, 78)
         Me.debugLabelForUserHasOfficeThreeSixFive.Name = "debugLabelForUserHasOfficeThreeSixFive"
-        Me.debugLabelForUserHasOfficeThreeSixFive.Size = New System.Drawing.Size(278, 17)
+        Me.debugLabelForUserHasOfficeThreeSixFive.Size = New System.Drawing.Size(209, 13)
         Me.debugLabelForUserHasOfficeThreeSixFive.TabIndex = 32
         Me.debugLabelForUserHasOfficeThreeSixFive.Text = "debugLabelForUserHasOfficeThreeSixFive"
         '
         'debugLabelForofficeDriveLocation
         '
         Me.debugLabelForofficeDriveLocation.AutoSize = True
-        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(5, 18)
+        Me.debugLabelForofficeDriveLocation.Location = New System.Drawing.Point(4, 14)
         Me.debugLabelForofficeDriveLocation.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeDriveLocation.Name = "debugLabelForofficeDriveLocation"
-        Me.debugLabelForofficeDriveLocation.Size = New System.Drawing.Size(225, 17)
+        Me.debugLabelForofficeDriveLocation.Size = New System.Drawing.Size(170, 13)
         Me.debugLabelForofficeDriveLocation.TabIndex = 31
         Me.debugLabelForofficeDriveLocation.Text = "debugLabelForofficeDriveLocation"
         '
         'debugLabelForuserOfficeVersion
         '
         Me.debugLabelForuserOfficeVersion.AutoSize = True
-        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(5, 81)
+        Me.debugLabelForuserOfficeVersion.Location = New System.Drawing.Point(4, 65)
         Me.debugLabelForuserOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForuserOfficeVersion.Name = "debugLabelForuserOfficeVersion"
-        Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(217, 17)
+        Me.debugLabelForuserOfficeVersion.Size = New System.Drawing.Size(161, 13)
         Me.debugLabelForuserOfficeVersion.TabIndex = 30
         Me.debugLabelForuserOfficeVersion.Text = "debugLabelForuserOfficeVersion"
         '
         'debugLabelForofficeInstallMethodString
         '
         Me.debugLabelForofficeInstallMethodString.AutoSize = True
-        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(5, 49)
+        Me.debugLabelForofficeInstallMethodString.Location = New System.Drawing.Point(4, 39)
         Me.debugLabelForofficeInstallMethodString.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForofficeInstallMethodString.Name = "debugLabelForofficeInstallMethodString"
-        Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(258, 17)
+        Me.debugLabelForofficeInstallMethodString.Size = New System.Drawing.Size(194, 13)
         Me.debugLabelForofficeInstallMethodString.TabIndex = 29
         Me.debugLabelForofficeInstallMethodString.Text = "debugLabelForofficeInstallMethodString"
         '
-        'debugLabelForcpuTypeString
+        'debugLabelForpfPathString
         '
-        Me.debugLabelForcpuTypeString.AutoSize = True
-        Me.debugLabelForcpuTypeString.Location = New System.Drawing.Point(5, 32)
-        Me.debugLabelForcpuTypeString.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.debugLabelForcpuTypeString.Name = "debugLabelForcpuTypeString"
-        Me.debugLabelForcpuTypeString.Size = New System.Drawing.Size(196, 17)
-        Me.debugLabelForcpuTypeString.TabIndex = 28
-        Me.debugLabelForcpuTypeString.Text = "debugLabelForcpuTypeString"
+        Me.debugLabelForpfPathString.AutoSize = True
+        Me.debugLabelForpfPathString.Location = New System.Drawing.Point(4, 26)
+        Me.debugLabelForpfPathString.Name = "debugLabelForpfPathString"
+        Me.debugLabelForpfPathString.Size = New System.Drawing.Size(136, 13)
+        Me.debugLabelForpfPathString.TabIndex = 28
+        Me.debugLabelForpfPathString.Text = "debugLabelForpfPathString"
         '
         'debugTextboxForFullLauncherCodeString
         '
-        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(8, 123)
+        Me.debugTextboxForFullLauncherCodeString.Location = New System.Drawing.Point(6, 98)
         Me.debugTextboxForFullLauncherCodeString.Margin = New System.Windows.Forms.Padding(2)
         Me.debugTextboxForFullLauncherCodeString.Multiline = True
         Me.debugTextboxForFullLauncherCodeString.Name = "debugTextboxForFullLauncherCodeString"
-        Me.debugTextboxForFullLauncherCodeString.Size = New System.Drawing.Size(239, 63)
+        Me.debugTextboxForFullLauncherCodeString.Size = New System.Drawing.Size(192, 51)
         Me.debugTextboxForFullLauncherCodeString.TabIndex = 39
         Me.debugTextboxForFullLauncherCodeString.Text = "debugTextboxForFullLauncherCodeString"
         '
         'debugLabelForAlwaysOnTop
         '
         Me.debugLabelForAlwaysOnTop.AutoSize = True
-        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(5, 18)
+        Me.debugLabelForAlwaysOnTop.Location = New System.Drawing.Point(4, 14)
         Me.debugLabelForAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.debugLabelForAlwaysOnTop.Name = "debugLabelForAlwaysOnTop"
-        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(222, 34)
+        Me.debugLabelForAlwaysOnTop.Size = New System.Drawing.Size(167, 26)
         Me.debugLabelForAlwaysOnTop.TabIndex = 38
         Me.debugLabelForAlwaysOnTop.Text = "This debug label shows the status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of the Always On Top feature."
         '
         'debugButtonDefaultThemeSetter
         '
-        Me.debugButtonDefaultThemeSetter.Location = New System.Drawing.Point(112, 116)
-        Me.debugButtonDefaultThemeSetter.Margin = New System.Windows.Forms.Padding(4)
+        Me.debugButtonDefaultThemeSetter.Location = New System.Drawing.Point(90, 93)
         Me.debugButtonDefaultThemeSetter.Name = "debugButtonDefaultThemeSetter"
-        Me.debugButtonDefaultThemeSetter.Size = New System.Drawing.Size(94, 72)
+        Me.debugButtonDefaultThemeSetter.Size = New System.Drawing.Size(75, 58)
         Me.debugButtonDefaultThemeSetter.TabIndex = 41
         Me.debugButtonDefaultThemeSetter.Text = "Apply Default Theme"
         Me.debugButtonDefaultThemeSetter.UseVisualStyleBackColor = True
         '
         'debugButtonTestThemeSetter
         '
-        Me.debugButtonTestThemeSetter.Location = New System.Drawing.Point(10, 116)
-        Me.debugButtonTestThemeSetter.Margin = New System.Windows.Forms.Padding(4)
+        Me.debugButtonTestThemeSetter.Location = New System.Drawing.Point(8, 93)
         Me.debugButtonTestThemeSetter.Name = "debugButtonTestThemeSetter"
-        Me.debugButtonTestThemeSetter.Size = New System.Drawing.Size(94, 72)
+        Me.debugButtonTestThemeSetter.Size = New System.Drawing.Size(75, 58)
         Me.debugButtonTestThemeSetter.TabIndex = 40
         Me.debugButtonTestThemeSetter.Text = "Apply Chosen Theme"
         Me.debugButtonTestThemeSetter.UseVisualStyleBackColor = True
@@ -193,12 +185,14 @@ Partial Class aaformDebugLabels
         Me.groupboxOfficeDetails.Controls.Add(Me.debugLabelForofficeDriveLocation)
         Me.groupboxOfficeDetails.Controls.Add(Me.debugLabelForUserHasOfficeThreeSixFive)
         Me.groupboxOfficeDetails.Controls.Add(Me.debugLabelForuserOfficeVersion)
-        Me.groupboxOfficeDetails.Controls.Add(Me.debugLabelForcpuTypeString)
+        Me.groupboxOfficeDetails.Controls.Add(Me.debugLabelForpfPathString)
         Me.groupboxOfficeDetails.Controls.Add(Me.debugTextboxForFullLauncherCodeString)
         Me.groupboxOfficeDetails.Controls.Add(Me.debugLabelForofficeInstallMethodString)
-        Me.groupboxOfficeDetails.Location = New System.Drawing.Point(3, 3)
+        Me.groupboxOfficeDetails.Location = New System.Drawing.Point(2, 2)
+        Me.groupboxOfficeDetails.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.groupboxOfficeDetails.Name = "groupboxOfficeDetails"
-        Me.groupboxOfficeDetails.Size = New System.Drawing.Size(427, 193)
+        Me.groupboxOfficeDetails.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxOfficeDetails.Size = New System.Drawing.Size(342, 154)
         Me.groupboxOfficeDetails.TabIndex = 42
         Me.groupboxOfficeDetails.TabStop = False
         Me.groupboxOfficeDetails.Text = "Configured Location Details"
@@ -215,9 +209,11 @@ Partial Class aaformDebugLabels
         Me.groupboxThemeInfo.Controls.Add(Me.debugButtonTestThemeSetter)
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeDescription)
         Me.groupboxThemeInfo.Controls.Add(Me.debugLabelXmlThemeFileVersion)
-        Me.groupboxThemeInfo.Location = New System.Drawing.Point(3, 348)
+        Me.groupboxThemeInfo.Location = New System.Drawing.Point(2, 278)
+        Me.groupboxThemeInfo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.groupboxThemeInfo.Name = "groupboxThemeInfo"
-        Me.groupboxThemeInfo.Size = New System.Drawing.Size(427, 198)
+        Me.groupboxThemeInfo.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxThemeInfo.Size = New System.Drawing.Size(342, 158)
         Me.groupboxThemeInfo.TabIndex = 43
         Me.groupboxThemeInfo.TabStop = False
         Me.groupboxThemeInfo.Text = "Theme Details"
@@ -227,9 +223,11 @@ Partial Class aaformDebugLabels
         Me.groupboxAlwaysOnTop.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupboxAlwaysOnTop.Controls.Add(Me.debugLabelForAlwaysOnTop)
-        Me.groupboxAlwaysOnTop.Location = New System.Drawing.Point(3, 202)
+        Me.groupboxAlwaysOnTop.Location = New System.Drawing.Point(2, 162)
+        Me.groupboxAlwaysOnTop.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.groupboxAlwaysOnTop.Name = "groupboxAlwaysOnTop"
-        Me.groupboxAlwaysOnTop.Size = New System.Drawing.Size(427, 140)
+        Me.groupboxAlwaysOnTop.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxAlwaysOnTop.Size = New System.Drawing.Size(342, 112)
         Me.groupboxAlwaysOnTop.TabIndex = 44
         Me.groupboxAlwaysOnTop.TabStop = False
         Me.groupboxAlwaysOnTop.Text = "Always On Top Details"
@@ -241,16 +239,18 @@ Partial Class aaformDebugLabels
         Me.panelLabelsTab.Controls.Add(Me.groupboxOfficeDetails)
         Me.panelLabelsTab.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelLabelsTab.Location = New System.Drawing.Point(0, 0)
+        Me.panelLabelsTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.panelLabelsTab.Name = "panelLabelsTab"
-        Me.panelLabelsTab.Size = New System.Drawing.Size(433, 549)
+        Me.panelLabelsTab.Size = New System.Drawing.Size(346, 439)
         Me.panelLabelsTab.TabIndex = 42
         '
         'aaformDebugLabels
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(433, 549)
+        Me.ClientSize = New System.Drawing.Size(346, 439)
         Me.Controls.Add(Me.panelLabelsTab)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "aaformDebugLabels"
         Me.Text = "Debug Info"
         Me.groupboxOfficeDetails.ResumeLayout(False)
@@ -273,7 +273,7 @@ Partial Class aaformDebugLabels
     Friend WithEvents debugLabelForofficeDriveLocation As Label
     Friend WithEvents debugLabelForuserOfficeVersion As Label
     Friend WithEvents debugLabelForofficeInstallMethodString As Label
-    Friend WithEvents debugLabelForcpuTypeString As Label
+    Friend WithEvents debugLabelForpfPathString As Label
     Friend WithEvents debugTextboxForFullLauncherCodeString As TextBox
     Friend WithEvents debugLabelForAlwaysOnTop As Label
     Friend WithEvents debugButtonDefaultThemeSetter As Button
