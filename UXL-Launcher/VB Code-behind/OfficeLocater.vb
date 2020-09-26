@@ -41,9 +41,8 @@ Public Class OfficeLocater
     ' The cpuType sub is used to give pfPathString data.
     Public Shared Sub cpuType()
 
-        ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, userCPUType contains " (x86)" and pfPathString is set
-        ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
-        'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is pfPathString.
+        ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, pfPathString is set to " (x86)".
+        'However, if My.Settings.pathUsePFxEightySix is set to False, pfPathString is assigned an empty value.
         If My.Settings.pathUsePFxEightySix = True Then
             pfPathString = " (x86)"
             titlebarProgramFilesModeString = "PF-x86"
