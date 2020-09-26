@@ -40,19 +40,15 @@ Public Class OfficeLocater
 #Region "cpuTypeString and cpuType sub."
     ' The cpuType sub is used to give cpuTypeString data.
     Public Shared Sub cpuType()
-        ' Create a string called userCPUType which is only used in this sub.
-        Dim cpuTypePrivateString As String
 
         ' This code looks at My.Settings.cpuIsSixtyFourBit and if it's set to True, userCPUType contains " (x86)" and cpuTypeString is set
         ' to the value of userCPUType to work around the inability to create and assign a value to a Public Shared string.
         'However, if My.Settings.cpuIsSixtyFourBit is set to False, userCPUType is assigned an empty value and so is cpuTypeString.
         If My.Settings.cpuIsSixtyFourBit = True Then
-            cpuTypePrivateString = " (x86)"
-            cpuTypeString = cpuTypePrivateString
+            cpuTypeString = " (x86)"
             titlebarBitModeString = "PF-x86"
         ElseIf My.Settings.cpuIsSixtyFourBit = False Then
-            cpuTypePrivateString = String.Empty
-            cpuTypeString = cpuTypePrivateString
+            cpuTypeString = String.Empty
             titlebarBitModeString = "PF"
         End If
     End Sub
