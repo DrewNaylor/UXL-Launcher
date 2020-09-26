@@ -243,7 +243,7 @@ Public Class aaformOptionsWindow
         ' Reset the Office 365 checkbox to unchecked.
         checkboxO365InstallMethod.Checked = False
 
-        ' Reset the CPUType radio buttons to 64-bit.
+        ' Reset the PFPath radio buttons to "Program Files".
         radiobuttonUseProgramFiles.Checked = True
 
         ' Reset the theme to use to Default.

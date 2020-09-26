@@ -48,7 +48,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCPUIsQBit = New System.Windows.Forms.RadioButton()
         Me.radiobuttonUseProgramFilesX86 = New System.Windows.Forms.RadioButton()
         Me.radiobuttonUseProgramFiles = New System.Windows.Forms.RadioButton()
-        Me.labelCPUTypeDescription = New System.Windows.Forms.Label()
+        Me.labelPFPathDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
         Me.buttonClearFirstname = New System.Windows.Forms.Button()
@@ -326,7 +326,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonCPUIsQBit)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFilesX86)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFiles)
-        Me.groupboxCPUType.Controls.Add(Me.labelCPUTypeDescription)
+        Me.groupboxCPUType.Controls.Add(Me.labelPFPathDescription)
         Me.groupboxCPUType.Location = New System.Drawing.Point(4, 130)
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxCPUType.Name = "groupboxCPUType"
@@ -384,15 +384,15 @@ Partial Class aaformOptionsWindow
     " or 32-bit Office 2013 from Office 365"
         Me.radiobuttonUseProgramFiles.UseVisualStyleBackColor = True
         '
-        'labelCPUTypeDescription
+        'labelPFPathDescription
         '
-        Me.labelCPUTypeDescription.AutoSize = True
-        Me.labelCPUTypeDescription.Location = New System.Drawing.Point(36, 21)
-        Me.labelCPUTypeDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.labelCPUTypeDescription.Name = "labelCPUTypeDescription"
-        Me.labelCPUTypeDescription.Size = New System.Drawing.Size(280, 13)
-        Me.labelCPUTypeDescription.TabIndex = 0
-        Me.labelCPUTypeDescription.Text = "Select the Program Files path used by your copy of Office:"
+        Me.labelPFPathDescription.AutoSize = True
+        Me.labelPFPathDescription.Location = New System.Drawing.Point(36, 21)
+        Me.labelPFPathDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.labelPFPathDescription.Name = "labelPFPathDescription"
+        Me.labelPFPathDescription.Size = New System.Drawing.Size(280, 13)
+        Me.labelPFPathDescription.TabIndex = 0
+        Me.labelPFPathDescription.Text = "Select the Program Files path used by your copy of Office:"
         '
         'tabpagePersonalization
         '
@@ -677,7 +677,7 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelUserHasThisOfficeVersion As Label
     Friend WithEvents checkboxO365InstallMethod As CheckBox
     Friend WithEvents groupboxCPUType As GroupBox
-    Friend WithEvents labelCPUTypeDescription As Label
+    Friend WithEvents labelPFPathDescription As Label
     Friend WithEvents radiobuttonUseProgramFiles As RadioButton
     Friend WithEvents radiobuttonUseProgramFilesX86 As RadioButton
     Friend WithEvents radiobuttonCPUIsQBit As RadioButton

@@ -59,7 +59,7 @@ Public Class debugmodeStuff
         ' Debug label for officeDriveLocation.
         aaformDebugLabels.debugLabelForofficeDriveLocation.Text = "officeDriveLocation: " & My.Settings.officeDriveLocation
         ' Debug label for pfPathString.
-        aaformDebugLabels.debugLabelForcpuTypeString.Text = "pfPathString: " & OfficeLocater.pfPathString
+        aaformDebugLabels.debugLabelForpfPathString.Text = "pfPathString: " & OfficeLocater.pfPathString
 
         ' Debug label for officeInstallMethodString depending on the value of userHasOfficeThreeSixFive.
         If My.Settings.userHasOfficeThreeSixFive = True Then

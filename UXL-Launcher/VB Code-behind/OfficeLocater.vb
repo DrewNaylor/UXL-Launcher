@@ -38,7 +38,7 @@ Public Class OfficeLocater
 
 
 #Region "pfPathString and pfPath sub."
-    ' The cpuType sub is used to give pfPathString data.
+    ' The pfPath sub is used to give pfPathString data.
     Public Shared Sub pfPath()
 
         ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, pfPathString is set to " (x86)".
