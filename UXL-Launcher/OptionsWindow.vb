@@ -248,7 +248,7 @@ Public Class aaformOptionsWindow
         checkboxO365InstallMethod.Checked = False
 
         ' Reset the CPUType radio buttons to 64-bit.
-        radiobuttonUseProgramFilesX86.Checked = True
+        radiobuttonUseProgramFiles.Checked = True
 
         ' Reset the theme to use to Default.
         comboboxThemeList.Text = "Default"
@@ -790,5 +790,15 @@ Public Class aaformOptionsWindow
         ' https://github.com/DrewNaylor/UXL-Launcher/issues/180
         MessageBox.Show(Me, "In version 3.4, the Drive location/""I installed Microsoft Office to this drive:"" and Bypass configured location options will switch tabs. See also https://github.com/DrewNaylor/UXL-Launcher/issues/180",
                         "Future Change Notice")
+    End Sub
+
+    Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
+        If comboboxOfficeVersionSelector.SelectedIndex >= 3 Then
+            labelOfficeInstallMethodDescription.Hide()
+            checkboxO365InstallMethod.Hide()
+        Else
+            labelOfficeInstallMethodDescription.Show()
+            checkboxO365InstallMethod.Show()
+        End If
     End Sub
 End Class
