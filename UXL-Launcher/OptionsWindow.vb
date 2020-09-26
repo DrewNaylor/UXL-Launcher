@@ -788,7 +788,7 @@ Public Class aaformOptionsWindow
 #End Region
 
     Private Sub comboboxOfficeVersionSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxOfficeVersionSelector.SelectedIndexChanged
-        If comboboxOfficeVersionSelector.SelectedIndex >= 3 Then
+        If comboboxOfficeVersionSelector.SelectedIndex = 3 Then
             ' Office versions newer than 2016 don't support MSI
             ' and default to C2R, so this checkbox is not necessary.
             checkboxO365InstallMethod.Hide()
