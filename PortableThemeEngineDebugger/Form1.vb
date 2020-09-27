@@ -79,7 +79,8 @@ Public Class aaformThemeLoader
                 libportablethemeengine.ThemeEngine.SelectTheme("This should be optional in case the user wants to match the theme.", Me, Me.components)
             Else
                 libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = True
-                libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me, Me.components)
+                libportablethemeengine.ThemeEngine.DefaultDarkTheme = textboxThemePath.Text
+                libportablethemeengine.ThemeEngine.SelectTheme("This shouldn't matter, either.", Me, Me.components)
             End If
 
         End If
