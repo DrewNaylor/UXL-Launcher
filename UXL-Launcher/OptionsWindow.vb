@@ -165,9 +165,14 @@ Public Class aaformOptionsWindow
 #End Region
 #Region "Default dark theme."
         ' Load in the settings for default dark theme.
-        Dim DarkThemesListString As String = My.Resources.darkthemesList
-        Dim DarkThemesListStringSplit() As String = DarkThemesListString.Split(delimiter)
-        For Each DarkTheme As String In DarkThemesListStringSplit
+        ' Get the list of dark themes from My.Resources.
+        Dim DarkThemesListString() As String = My.Resources.darkthemesList.Split(delimiter)
+
+        ' Clear the dark theme list.
+        comboboxDefaultDarkThemesList.Items.Clear()
+
+        For Each DarkTheme As String In DarkThemesListString
+            ' Look in the list of dark themes and add them to the list.
             comboboxDefaultDarkThemesList.Items.Add(DarkTheme)
         Next
         If Not My.Resources.darkthemesList.Contains(My.Settings.defaultDarkTheme.ToString) Then
