@@ -74,6 +74,7 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
+        Me.groupboxDefaultDarkTheme = New System.Windows.Forms.GroupBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -399,6 +400,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpagePersonalization
         '
+        Me.tabpagePersonalization.Controls.Add(Me.groupboxDefaultDarkTheme)
         Me.tabpagePersonalization.Controls.Add(Me.groupboxAppearance)
         Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
         Me.tabpagePersonalization.Margin = New System.Windows.Forms.Padding(2)
@@ -641,6 +643,15 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
+        'groupboxDefaultDarkTheme
+        '
+        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
+        Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
+        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
+        Me.groupboxDefaultDarkTheme.TabIndex = 1
+        Me.groupboxDefaultDarkTheme.TabStop = False
+        Me.groupboxDefaultDarkTheme.Text = "Default dark theme"
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -729,4 +740,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton
     Friend WithEvents radiobuttonDefaultStatusbarGreeting As RadioButton
     Friend WithEvents labelCustomStatusbarGreeting As Label
+    Friend WithEvents groupboxDefaultDarkTheme As GroupBox
 End Class
