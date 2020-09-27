@@ -420,9 +420,17 @@ Public Class ThemeEngine
                 Case "Light"
                     ThemeProperties.themeSheet.LoadXml(My.Resources.DefaultTheme_XML)
 
-                ' Otherwise, load TenDark.
+                ' Otherwise, load the default dark theme.
                 Case "Dark"
-                    ThemeProperties.themeSheet.LoadXml(My.Resources.TenDarkTheme_XML)
+                    ' Check if the theme specified in My.Settings.defaultDarkTheme is in the
+                    ' list of available dark themes.
+                    If My.Resources.darkthemesList.Contains(DefaultDarkTheme.ToString) AndAlso My.Resources.ResourceManager.GetString(DefaultDarkTheme & "Theme_XML") IsNot Nothing Then
+                        ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(DefaultDarkTheme & "Theme_XML"))
+                    Else
+                        ' If we can't find the specified theme, we'll just use ProDark,
+                        ' which is the new default in version 2.1.
+                        ThemeProperties.themeSheet.LoadXml(My.Resources.ProDarkTheme_XML)
+                    End If
             End Select
 
             ' If the calling app doesn't want to match the Windows 10 theme,
@@ -1070,6 +1078,8 @@ Public Class ThemeEngine
     Private Shared _themeengineAllowCustomThemes As Boolean = True
     ' Whether the calling app wants to match the Windows 10 theme or not.
     Private Shared _matchWindows10ThemeSettings As Boolean = False
+    ' Default dark theme when the calling app wants to match the Windows 10 theme settings.
+    Private Shared _defaultDarkTheme As String = "ProDark"
 
     ' Safe color validation.
     Public Shared Property UseSafeColorValidation() As Boolean
@@ -1121,6 +1131,16 @@ Public Class ThemeEngine
         End Get
         Set(value As Boolean)
             _matchWindows10ThemeSettings = value
+        End Set
+    End Property
+
+    ' Default dark theme.
+    Public Shared Property DefaultDarkTheme() As String
+        Get
+            Return _defaultDarkTheme
+        End Get
+        Set(value As String)
+            _defaultDarkTheme = value
         End Set
     End Property
 

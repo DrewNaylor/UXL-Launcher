@@ -71,6 +71,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Maudern,ProDark,TenDark.
+        '''</summary>
+        Friend ReadOnly Property darkthemesList() As String
+            Get
+                Return ResourceManager.GetString("darkthemesList", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
