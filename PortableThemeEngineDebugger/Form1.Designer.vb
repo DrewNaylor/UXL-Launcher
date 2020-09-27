@@ -46,7 +46,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
         Me.radiobuttonMatchSystemTheme = New System.Windows.Forms.RadioButton()
-        Me.checkboxOverrideDefaultDarkTheme = New System.Windows.Forms.CheckBox()
+        Me.checkboxSpecifyDefaultDarkTheme = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.groupboxContextMenuArea.SuspendLayout()
@@ -91,7 +91,7 @@ Partial Class aaformThemeLoader
         Me.labelColorTester.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelColorTester.AutoSize = True
-        Me.labelColorTester.Location = New System.Drawing.Point(10, 227)
+        Me.labelColorTester.Location = New System.Drawing.Point(10, 240)
         Me.labelColorTester.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelColorTester.Name = "labelColorTester"
         Me.labelColorTester.Size = New System.Drawing.Size(63, 13)
@@ -102,7 +102,7 @@ Partial Class aaformThemeLoader
         '
         Me.textboxColorTester.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textboxColorTester.Location = New System.Drawing.Point(10, 244)
+        Me.textboxColorTester.Location = New System.Drawing.Point(10, 257)
         Me.textboxColorTester.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.textboxColorTester.Name = "textboxColorTester"
         Me.textboxColorTester.Size = New System.Drawing.Size(353, 20)
@@ -111,7 +111,7 @@ Partial Class aaformThemeLoader
         'buttonSetColor
         '
         Me.buttonSetColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.buttonSetColor.Location = New System.Drawing.Point(10, 267)
+        Me.buttonSetColor.Location = New System.Drawing.Point(10, 280)
         Me.buttonSetColor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(110, 24)
@@ -122,7 +122,7 @@ Partial Class aaformThemeLoader
         'buttonResetColor
         '
         Me.buttonResetColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.buttonResetColor.Location = New System.Drawing.Point(126, 267)
+        Me.buttonResetColor.Location = New System.Drawing.Point(126, 280)
         Me.buttonResetColor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(86, 24)
@@ -134,7 +134,7 @@ Partial Class aaformThemeLoader
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 299)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 312)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 11, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(371, 22)
@@ -149,7 +149,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.checkboxOverrideDefaultDarkTheme)
+        Me.Panel1.Controls.Add(Me.checkboxSpecifyDefaultDarkTheme)
         Me.Panel1.Controls.Add(Me.radiobuttonMatchSystemTheme)
         Me.Panel1.Controls.Add(Me.groupboxContextMenuArea)
         Me.Panel1.Controls.Add(Me.radiobuttonSelectFromThemeEngine)
@@ -167,7 +167,7 @@ Partial Class aaformThemeLoader
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(371, 299)
+        Me.Panel1.Size = New System.Drawing.Size(371, 312)
         Me.Panel1.TabIndex = 8
         '
         'groupboxContextMenuArea
@@ -298,21 +298,22 @@ Partial Class aaformThemeLoader
         Me.radiobuttonMatchSystemTheme.Text = "Match Windows 10 theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "settings"
         Me.radiobuttonMatchSystemTheme.UseVisualStyleBackColor = True
         '
-        'checkboxOverrideDefaultDarkTheme
+        'checkboxSpecifyDefaultDarkTheme
         '
-        Me.checkboxOverrideDefaultDarkTheme.AutoSize = True
-        Me.checkboxOverrideDefaultDarkTheme.Location = New System.Drawing.Point(202, 184)
-        Me.checkboxOverrideDefaultDarkTheme.Name = "checkboxOverrideDefaultDarkTheme"
-        Me.checkboxOverrideDefaultDarkTheme.Size = New System.Drawing.Size(157, 17)
-        Me.checkboxOverrideDefaultDarkTheme.TabIndex = 11
-        Me.checkboxOverrideDefaultDarkTheme.Text = "Override default dark theme"
-        Me.checkboxOverrideDefaultDarkTheme.UseVisualStyleBackColor = True
+        Me.checkboxSpecifyDefaultDarkTheme.AutoSize = True
+        Me.checkboxSpecifyDefaultDarkTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.checkboxSpecifyDefaultDarkTheme.Location = New System.Drawing.Point(202, 184)
+        Me.checkboxSpecifyDefaultDarkTheme.Name = "checkboxSpecifyDefaultDarkTheme"
+        Me.checkboxSpecifyDefaultDarkTheme.Size = New System.Drawing.Size(161, 43)
+        Me.checkboxSpecifyDefaultDarkTheme.TabIndex = 11
+        Me.checkboxSpecifyDefaultDarkTheme.Text = "Specify default dark theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(changes default dark theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "for this session)"
+        Me.checkboxSpecifyDefaultDarkTheme.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.ClientSize = New System.Drawing.Size(371, 321)
+        Me.ClientSize = New System.Drawing.Size(371, 334)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
@@ -354,5 +355,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents radiobuttonMatchSystemTheme As RadioButton
-    Friend WithEvents checkboxOverrideDefaultDarkTheme As CheckBox
+    Friend WithEvents checkboxSpecifyDefaultDarkTheme As CheckBox
 End Class

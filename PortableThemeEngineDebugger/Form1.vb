@@ -74,7 +74,11 @@ Public Class aaformThemeLoader
 
             ' If the radiobutton for matching the system theme is checked,
             ' we'll match the system theme.
-            If checkboxOverrideDefaultDarkTheme.Checked = False Then
+
+            ' Show debug output.
+            libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
+
+            If checkboxSpecifyDefaultDarkTheme.Checked = False Then
                 libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = True
                 libportablethemeengine.ThemeEngine.SelectTheme("This should be optional in case the user wants to match the theme.", Me, Me.components)
             Else
@@ -82,6 +86,9 @@ Public Class aaformThemeLoader
                 libportablethemeengine.ThemeEngine.DefaultDarkTheme = textboxThemePath.Text
                 libportablethemeengine.ThemeEngine.SelectTheme("This shouldn't matter, either.", Me, Me.components)
             End If
+
+            ' Turn off matching system theme settings in case the user chooses another option.
+            libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = False
 
         End If
 
