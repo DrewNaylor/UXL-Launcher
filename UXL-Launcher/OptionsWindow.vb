@@ -280,6 +280,9 @@ Public Class aaformOptionsWindow
         ' Reset the match Windows 10 theme settings checkbox to unchecked.
         checkboxMatchWindows10ThemeSettings.Checked = False
 
+        ' Reset the default dark theme dropdown to ProDark.
+        comboboxDefaultDarkThemesList.SelectedItem = "ProDark"
+
         ' Reset the personalized statusbar firstname/nickname
         ' textbox to empty.
         textboxFirstname.Clear()
