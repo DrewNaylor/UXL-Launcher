@@ -1792,7 +1792,7 @@ This decimal is to be used for the About window when talking about what version 
     <value>..\vb code-behind\themes\prodarktheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="darkthemesList" xml:space="preserve">
-    <value>ProDark,TenDark,Maudern</value>
+    <value>Maudern,ProDark,TenDark</value>
     <comment>Dark themes available in the "default dark theme" dropdown in the Theme tab.</comment>
   </data>
 </root>
