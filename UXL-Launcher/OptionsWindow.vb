@@ -175,11 +175,13 @@ Public Class aaformOptionsWindow
             ' Look in the list of dark themes and add them to the list.
             comboboxDefaultDarkThemesList.Items.Add(DarkTheme)
         Next
-        If Not My.Resources.darkthemesList.Contains(My.Settings.defaultDarkTheme.ToString) Then
+
+        If Not comboboxDefaultDarkThemesList.Items.Contains(My.Settings.defaultDarkTheme.ToString) Then
             ' If the specified dark theme isn't in the list, then set the selected dark theme
             ' to ProDark, since that's the default.
             comboboxDefaultDarkThemesList.SelectedItem = "ProDark"
         Else
+            ' Otherwise it's in the list, so select it.
             comboboxDefaultDarkThemesList.SelectedItem = My.Settings.defaultDarkTheme
         End If
 #End Region

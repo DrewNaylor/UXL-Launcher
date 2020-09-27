@@ -69,7 +69,7 @@ Public Class WindowsThemeSettings
             ElseIf getWindowsThemeSettings = "Dark" Then
                 ' Check if the theme specified in My.Settings.defaultDarkTheme is in the
                 ' list of available dark themes.
-                If My.Resources.darkthemesList.Contains(My.Settings.defaultDarkTheme.ToString) Then
+                If My.Resources.darkthemesList.Contains(My.Settings.defaultDarkTheme.ToString) AndAlso My.Resources.ResourceManager.GetString(My.Settings.defaultDarkTheme & "Theme_XML") IsNot Nothing Then
                     UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.defaultDarkTheme & "Theme_XML"))
                 Else
                     UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.ProDarkTheme_XML)
