@@ -165,8 +165,17 @@ Public Class aaformOptionsWindow
 #End Region
 #Region "Default dark theme."
         ' Load in the settings for default dark theme.
+        Dim DarkThemesListString As String = My.Resources.darkthemesList
+        Dim DarkThemesListStringSplit() As String = DarkThemesListString.Split(delimiter)
+        For Each DarkTheme As String In DarkThemesListStringSplit
+            comboboxDefaultDarkThemesList.Items.Add(DarkTheme)
+        Next
         If Not My.Resources.darkthemesList.Contains(My.Settings.defaultDarkTheme.ToString) Then
-            ' If the specified dark theme isn't in the list, then set the 
+            ' If the specified dark theme isn't in the list, then set the selected dark theme
+            ' to ProDark, since that's the default.
+            comboboxDefaultDarkThemesList.SelectedItem = "ProDark"
+        Else
+            comboboxDefaultDarkThemesList.SelectedItem = My.Settings.defaultDarkTheme
         End If
 #End Region
 #Region "Custom statusbar greeting."
