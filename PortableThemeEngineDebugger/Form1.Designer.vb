@@ -304,9 +304,9 @@ Partial Class aaformThemeLoader
         Me.checkboxSpecifyDefaultDarkTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
         Me.checkboxSpecifyDefaultDarkTheme.Location = New System.Drawing.Point(202, 184)
         Me.checkboxSpecifyDefaultDarkTheme.Name = "checkboxSpecifyDefaultDarkTheme"
-        Me.checkboxSpecifyDefaultDarkTheme.Size = New System.Drawing.Size(161, 43)
+        Me.checkboxSpecifyDefaultDarkTheme.Size = New System.Drawing.Size(152, 17)
         Me.checkboxSpecifyDefaultDarkTheme.TabIndex = 11
-        Me.checkboxSpecifyDefaultDarkTheme.Text = "Specify default dark theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(changes default dark theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "for this session)"
+        Me.checkboxSpecifyDefaultDarkTheme.Text = "Specify default dark theme"
         Me.checkboxSpecifyDefaultDarkTheme.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader

@@ -426,6 +426,9 @@ Public Class ThemeEngine
                     ' list of available dark themes.
                     If My.Resources.darkthemesList.Contains(DefaultDarkTheme.ToString) AndAlso My.Resources.ResourceManager.GetString(DefaultDarkTheme & "Theme_XML") IsNot Nothing Then
                         ThemeProperties.themeSheet.LoadXml(My.Resources.ResourceManager.GetString(DefaultDarkTheme & "Theme_XML"))
+                        ' Reset default dark theme back to ProDark in case an application wanted to override it but might not
+                        ' in the future in the same session.
+                        DefaultDarkTheme = "ProDark"
                     Else
                         ' If we can't find the specified theme, we'll just use ProDark,
                         ' which is the new default in version 2.1.
