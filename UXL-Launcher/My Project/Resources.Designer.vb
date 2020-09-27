@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-09-26T08:20:44
+        '''  Looks up a localized string similar to 2020-09-27T00:12:12
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -159,7 +159,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ProDark,TenDark.
+        '''  Looks up a localized string similar to ProDark,TenDark,Maudern.
         '''</summary>
         Public ReadOnly Property darkthemesList() As String
             Get
