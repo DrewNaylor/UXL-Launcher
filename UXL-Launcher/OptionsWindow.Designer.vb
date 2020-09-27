@@ -75,6 +75,8 @@ Partial Class aaformOptionsWindow
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
         Me.groupboxDefaultDarkTheme = New System.Windows.Forms.GroupBox()
+        Me.labelDefaultDarkThemeDescription = New System.Windows.Forms.Label()
+        Me.comboboxDefaultDarkThemesList = New System.Windows.Forms.ComboBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -87,6 +89,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.SuspendLayout()
         Me.tabpageStatusbar.SuspendLayout()
         Me.groupboxStatusbar.SuspendLayout()
+        Me.groupboxDefaultDarkTheme.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -645,12 +648,32 @@ Partial Class aaformOptionsWindow
         '
         'groupboxDefaultDarkTheme
         '
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDefaultDarkThemesList)
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
         Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
         Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
         Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
         Me.groupboxDefaultDarkTheme.TabIndex = 1
         Me.groupboxDefaultDarkTheme.TabStop = False
         Me.groupboxDefaultDarkTheme.Text = "Default dark theme"
+        '
+        'labelDefaultDarkThemeDescription
+        '
+        Me.labelDefaultDarkThemeDescription.AutoSize = True
+        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 44)
+        Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
+        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(390, 13)
+        Me.labelDefaultDarkThemeDescription.TabIndex = 0
+        Me.labelDefaultDarkThemeDescription.Text = "When matching Windows 10 theme settings is enabled, we'll use this dark theme:"
+        '
+        'comboboxDefaultDarkThemesList
+        '
+        Me.comboboxDefaultDarkThemesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDefaultDarkThemesList.FormattingEnabled = True
+        Me.comboboxDefaultDarkThemesList.Location = New System.Drawing.Point(15, 61)
+        Me.comboboxDefaultDarkThemesList.Name = "comboboxDefaultDarkThemesList"
+        Me.comboboxDefaultDarkThemesList.Size = New System.Drawing.Size(195, 21)
+        Me.comboboxDefaultDarkThemesList.TabIndex = 1
         '
         'aaformOptionsWindow
         '
@@ -686,6 +709,8 @@ Partial Class aaformOptionsWindow
         Me.tabpageStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.PerformLayout()
+        Me.groupboxDefaultDarkTheme.ResumeLayout(False)
+        Me.groupboxDefaultDarkTheme.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -741,4 +766,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents radiobuttonDefaultStatusbarGreeting As RadioButton
     Friend WithEvents labelCustomStatusbarGreeting As Label
     Friend WithEvents groupboxDefaultDarkTheme As GroupBox
+    Friend WithEvents labelDefaultDarkThemeDescription As Label
+    Friend WithEvents comboboxDefaultDarkThemesList As ComboBox
 End Class
