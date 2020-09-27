@@ -414,6 +414,9 @@ Public Class aaformOptionsWindow
         ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
         My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
 
+        ' Save default dark theme setting.
+        My.Settings.defaultDarkTheme = comboboxDefaultDarkThemesList.Text
+
         ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
         My.Settings.userChosenTheme = comboboxThemeList.Text
 
