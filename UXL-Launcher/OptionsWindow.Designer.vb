@@ -35,6 +35,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonDontBypassConfiguredLocation = New System.Windows.Forms.RadioButton()
         Me.labelBypassConfiguredLocation = New System.Windows.Forms.Label()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.labelOffice365Compatibility = New System.Windows.Forms.Label()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
@@ -50,6 +51,9 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonUseProgramFiles = New System.Windows.Forms.RadioButton()
         Me.labelPFPathDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
+        Me.groupboxDefaultDarkTheme = New System.Windows.Forms.GroupBox()
+        Me.comboboxDefaultDarkThemesList = New System.Windows.Forms.ComboBox()
+        Me.labelDefaultDarkThemeDescription = New System.Windows.Forms.Label()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
         Me.checkboxMatchWindows10ThemeSettings = New System.Windows.Forms.CheckBox()
         Me.labelCustomThemePath = New System.Windows.Forms.Label()
@@ -74,9 +78,6 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
-        Me.groupboxDefaultDarkTheme = New System.Windows.Forms.GroupBox()
-        Me.labelDefaultDarkThemeDescription = New System.Windows.Forms.Label()
-        Me.comboboxDefaultDarkThemesList = New System.Windows.Forms.ComboBox()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -86,10 +87,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
         Me.tabpagePersonalization.SuspendLayout()
+        Me.groupboxDefaultDarkTheme.SuspendLayout()
         Me.groupboxAppearance.SuspendLayout()
         Me.tabpageStatusbar.SuspendLayout()
         Me.groupboxStatusbar.SuspendLayout()
-        Me.groupboxDefaultDarkTheme.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -226,6 +227,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
+        Me.groupboxOfficeVersion.Controls.Add(Me.labelOffice365Compatibility)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
@@ -238,11 +240,21 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "Microsoft Office versions + C2R"
         '
+        'labelOffice365Compatibility
+        '
+        Me.labelOffice365Compatibility.AutoSize = True
+        Me.labelOffice365Compatibility.Location = New System.Drawing.Point(76, 64)
+        Me.labelOffice365Compatibility.Name = "labelOffice365Compatibility"
+        Me.labelOffice365Compatibility.Size = New System.Drawing.Size(272, 26)
+        Me.labelOffice365Compatibility.TabIndex = 6
+        Me.labelOffice365Compatibility.Text = "Most people install Office from Office 365/Microsoft 365," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "so you may need to che" &
+    "ck this box:"
+        '
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
         Me.checkboxO365InstallMethod.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(79, 81)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(79, 92)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 30)
@@ -255,7 +267,7 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(76, 27)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(76, 16)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
         Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(263, 13)
@@ -266,7 +278,7 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(79, 42)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(79, 31)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
@@ -413,6 +425,35 @@ Partial Class aaformOptionsWindow
         Me.tabpagePersonalization.TabIndex = 2
         Me.tabpagePersonalization.Text = "Theme"
         Me.tabpagePersonalization.UseVisualStyleBackColor = True
+        '
+        'groupboxDefaultDarkTheme
+        '
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDefaultDarkThemesList)
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
+        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
+        Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
+        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
+        Me.groupboxDefaultDarkTheme.TabIndex = 1
+        Me.groupboxDefaultDarkTheme.TabStop = False
+        Me.groupboxDefaultDarkTheme.Text = "Default dark theme"
+        '
+        'comboboxDefaultDarkThemesList
+        '
+        Me.comboboxDefaultDarkThemesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDefaultDarkThemesList.FormattingEnabled = True
+        Me.comboboxDefaultDarkThemesList.Location = New System.Drawing.Point(15, 61)
+        Me.comboboxDefaultDarkThemesList.Name = "comboboxDefaultDarkThemesList"
+        Me.comboboxDefaultDarkThemesList.Size = New System.Drawing.Size(195, 21)
+        Me.comboboxDefaultDarkThemesList.TabIndex = 1
+        '
+        'labelDefaultDarkThemeDescription
+        '
+        Me.labelDefaultDarkThemeDescription.AutoSize = True
+        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 44)
+        Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
+        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(390, 13)
+        Me.labelDefaultDarkThemeDescription.TabIndex = 0
+        Me.labelDefaultDarkThemeDescription.Text = "When matching Windows 10 theme settings is enabled, we'll use this dark theme:"
         '
         'groupboxAppearance
         '
@@ -646,35 +687,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
-        'groupboxDefaultDarkTheme
-        '
-        Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDefaultDarkThemesList)
-        Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
-        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
-        Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
-        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
-        Me.groupboxDefaultDarkTheme.TabIndex = 1
-        Me.groupboxDefaultDarkTheme.TabStop = False
-        Me.groupboxDefaultDarkTheme.Text = "Default dark theme"
-        '
-        'labelDefaultDarkThemeDescription
-        '
-        Me.labelDefaultDarkThemeDescription.AutoSize = True
-        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 44)
-        Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
-        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(390, 13)
-        Me.labelDefaultDarkThemeDescription.TabIndex = 0
-        Me.labelDefaultDarkThemeDescription.Text = "When matching Windows 10 theme settings is enabled, we'll use this dark theme:"
-        '
-        'comboboxDefaultDarkThemesList
-        '
-        Me.comboboxDefaultDarkThemesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboboxDefaultDarkThemesList.FormattingEnabled = True
-        Me.comboboxDefaultDarkThemesList.Location = New System.Drawing.Point(15, 61)
-        Me.comboboxDefaultDarkThemesList.Name = "comboboxDefaultDarkThemesList"
-        Me.comboboxDefaultDarkThemesList.Size = New System.Drawing.Size(195, 21)
-        Me.comboboxDefaultDarkThemesList.TabIndex = 1
-        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -704,13 +716,13 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
         Me.tabpagePersonalization.ResumeLayout(False)
+        Me.groupboxDefaultDarkTheme.ResumeLayout(False)
+        Me.groupboxDefaultDarkTheme.PerformLayout()
         Me.groupboxAppearance.ResumeLayout(False)
         Me.groupboxAppearance.PerformLayout()
         Me.tabpageStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.PerformLayout()
-        Me.groupboxDefaultDarkTheme.ResumeLayout(False)
-        Me.groupboxDefaultDarkTheme.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -768,4 +780,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents groupboxDefaultDarkTheme As GroupBox
     Friend WithEvents labelDefaultDarkThemeDescription As Label
     Friend WithEvents comboboxDefaultDarkThemesList As ComboBox
+    Friend WithEvents labelOffice365Compatibility As Label
 End Class

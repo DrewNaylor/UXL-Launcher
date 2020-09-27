@@ -163,6 +163,12 @@ Public Class aaformOptionsWindow
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
 #End Region
+#Region "Default dark theme."
+        ' Load in the settings for default dark theme.
+        If Not My.Resources.darkthemesList.Contains(My.Settings.defaultDarkTheme.ToString) Then
+            ' If the specified dark theme isn't in the list, then set the 
+        End If
+#End Region
 #Region "Custom statusbar greeting."
         If My.Settings.userUseCustomStatusbarGreeting = True Then
             ' If the settings are configured to use a custom statusbar greeting,
@@ -791,10 +797,12 @@ Public Class aaformOptionsWindow
         If comboboxOfficeVersionSelector.SelectedIndex = 3 Then
             ' Office versions newer than 2016 don't support MSI
             ' and default to C2R, so this checkbox is not necessary.
+            labelOffice365Compatibility.Hide()
             checkboxO365InstallMethod.Hide()
         Else
             ' Office versions older than 2019 support MSI
             ' so this checkbox may be necessary.
+            labelOffice365Compatibility.Show()
             checkboxO365InstallMethod.Show()
         End If
     End Sub

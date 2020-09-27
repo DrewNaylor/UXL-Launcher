@@ -156,19 +156,10 @@ will be applied on app startup or when applying themes.</value>
   <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>629, 23</value>
   </metadata>
-  <metadata name="tooltipO365InstallMethod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>22, 23</value>
-  </metadata>
   <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 23</value>
   </metadata>
   <metadata name="openfiledialogBrowseCustomThemeFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>362, 23</value>
-  </metadata>
-  <metadata name="tooltipCustomThemePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>629, 23</value>
-  </metadata>
-  <metadata name="tooltipMatchWindows10ThemeSettings.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>820, 23</value>
   </metadata>
 </root>
