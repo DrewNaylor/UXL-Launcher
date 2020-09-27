@@ -59,13 +59,6 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList = New System.Windows.Forms.ComboBox()
         Me.textboxThemeInfo = New System.Windows.Forms.TextBox()
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
-        Me.buttonTestSettings = New System.Windows.Forms.Button()
-        Me.buttonDefaultSettings = New System.Windows.Forms.Button()
-        Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
-        Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
-        Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
-        Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
-        Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
         Me.tabpageStatusbar = New System.Windows.Forms.TabPage()
         Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
         Me.buttonClearFirstname = New System.Windows.Forms.Button()
@@ -74,6 +67,13 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
+        Me.buttonTestSettings = New System.Windows.Forms.Button()
+        Me.buttonDefaultSettings = New System.Windows.Forms.Button()
+        Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tooltipSystemInfo = New System.Windows.Forms.ToolTip(Me.components)
+        Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
+        Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -510,53 +510,6 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine.Text = "Enable UXL Launcher Theme Engine (requires application restart)"
         Me.checkboxEnableThemeEngine.UseVisualStyleBackColor = True
         '
-        'buttonTestSettings
-        '
-        Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.buttonTestSettings.AutoSize = True
-        Me.buttonTestSettings.Location = New System.Drawing.Point(71, 364)
-        Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
-        Me.buttonTestSettings.Name = "buttonTestSettings"
-        Me.buttonTestSettings.Size = New System.Drawing.Size(79, 28)
-        Me.buttonTestSettings.TabIndex = 7
-        Me.buttonTestSettings.Text = "Test settings"
-        Me.buttonTestSettings.UseVisualStyleBackColor = True
-        '
-        'buttonDefaultSettings
-        '
-        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.buttonDefaultSettings.AutoSize = True
-        Me.buttonDefaultSettings.Location = New System.Drawing.Point(2, 364)
-        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
-        Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
-        Me.buttonDefaultSettings.Size = New System.Drawing.Size(65, 28)
-        Me.buttonDefaultSettings.TabIndex = 6
-        Me.buttonDefaultSettings.Text = "Defaults"
-        Me.buttonDefaultSettings.UseVisualStyleBackColor = True
-        '
-        'tooltipO365InstallMethod
-        '
-        Me.tooltipO365InstallMethod.AutoPopDelay = 32766
-        Me.tooltipO365InstallMethod.InitialDelay = 500
-        Me.tooltipO365InstallMethod.ReshowDelay = 100
-        '
-        'openfiledialogBrowseCustomThemeFile
-        '
-        Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
-        Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
-        '
-        'tooltipCustomThemePath
-        '
-        Me.tooltipCustomThemePath.AutoPopDelay = 5000
-        Me.tooltipCustomThemePath.InitialDelay = 500
-        Me.tooltipCustomThemePath.ReshowDelay = 100
-        '
-        'tooltipMatchWindows10ThemeSettings
-        '
-        Me.tooltipMatchWindows10ThemeSettings.AutoPopDelay = 10000
-        Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
-        Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
-        '
         'tabpageStatusbar
         '
         Me.tabpageStatusbar.Controls.Add(Me.groupboxStatusbar)
@@ -582,7 +535,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 130)
         Me.groupboxStatusbar.TabIndex = 2
         Me.groupboxStatusbar.TabStop = False
-        Me.groupboxStatusbar.Text = "Statusbar"
+        Me.groupboxStatusbar.Text = "Greeting"
         '
         'buttonClearFirstname
         '
@@ -640,6 +593,53 @@ Partial Class aaformOptionsWindow
         Me.labelCustomStatusbarGreeting.TabIndex = 0
         Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
     "ickname, or to use the default. Your name will not be used to identify you."
+        '
+        'buttonTestSettings
+        '
+        Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonTestSettings.AutoSize = True
+        Me.buttonTestSettings.Location = New System.Drawing.Point(71, 364)
+        Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
+        Me.buttonTestSettings.Name = "buttonTestSettings"
+        Me.buttonTestSettings.Size = New System.Drawing.Size(79, 28)
+        Me.buttonTestSettings.TabIndex = 7
+        Me.buttonTestSettings.Text = "Test settings"
+        Me.buttonTestSettings.UseVisualStyleBackColor = True
+        '
+        'buttonDefaultSettings
+        '
+        Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.buttonDefaultSettings.AutoSize = True
+        Me.buttonDefaultSettings.Location = New System.Drawing.Point(2, 364)
+        Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
+        Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(65, 28)
+        Me.buttonDefaultSettings.TabIndex = 6
+        Me.buttonDefaultSettings.Text = "Defaults"
+        Me.buttonDefaultSettings.UseVisualStyleBackColor = True
+        '
+        'tooltipO365InstallMethod
+        '
+        Me.tooltipO365InstallMethod.AutoPopDelay = 32766
+        Me.tooltipO365InstallMethod.InitialDelay = 500
+        Me.tooltipO365InstallMethod.ReshowDelay = 100
+        '
+        'openfiledialogBrowseCustomThemeFile
+        '
+        Me.openfiledialogBrowseCustomThemeFile.Filter = "XML Files (*.xml)|*.xml|Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
+        Me.openfiledialogBrowseCustomThemeFile.Title = "Browse for a custom theme"
+        '
+        'tooltipCustomThemePath
+        '
+        Me.tooltipCustomThemePath.AutoPopDelay = 5000
+        Me.tooltipCustomThemePath.InitialDelay = 500
+        Me.tooltipCustomThemePath.ReshowDelay = 100
+        '
+        'tooltipMatchWindows10ThemeSettings
+        '
+        Me.tooltipMatchWindows10ThemeSettings.AutoPopDelay = 10000
+        Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
+        Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
         'aaformOptionsWindow
         '
