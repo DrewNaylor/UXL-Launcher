@@ -45,8 +45,8 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
         Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.radiobuttonMatchSystemTheme = New System.Windows.Forms.RadioButton()
+        Me.checkboxOverrideDefaultDarkTheme = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.groupboxContextMenuArea.SuspendLayout()
@@ -149,8 +149,8 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.CheckBox1)
-        Me.Panel1.Controls.Add(Me.RadioButton1)
+        Me.Panel1.Controls.Add(Me.checkboxOverrideDefaultDarkTheme)
+        Me.Panel1.Controls.Add(Me.radiobuttonMatchSystemTheme)
         Me.Panel1.Controls.Add(Me.groupboxContextMenuArea)
         Me.Panel1.Controls.Add(Me.radiobuttonSelectFromThemeEngine)
         Me.Panel1.Controls.Add(Me.radiobuttonLoadFromXml)
@@ -286,27 +286,27 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'radiobuttonMatchSystemTheme
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.RadioButton1.Location = New System.Drawing.Point(186, 148)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(149, 30)
-        Me.RadioButton1.TabIndex = 10
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Match Windows 10 theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "settings"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radiobuttonMatchSystemTheme.AutoSize = True
+        Me.radiobuttonMatchSystemTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.radiobuttonMatchSystemTheme.Location = New System.Drawing.Point(186, 147)
+        Me.radiobuttonMatchSystemTheme.Name = "radiobuttonMatchSystemTheme"
+        Me.radiobuttonMatchSystemTheme.Size = New System.Drawing.Size(149, 30)
+        Me.radiobuttonMatchSystemTheme.TabIndex = 10
+        Me.radiobuttonMatchSystemTheme.TabStop = True
+        Me.radiobuttonMatchSystemTheme.Text = "Match Windows 10 theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "settings"
+        Me.radiobuttonMatchSystemTheme.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'checkboxOverrideDefaultDarkTheme
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(202, 184)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(157, 17)
-        Me.CheckBox1.TabIndex = 11
-        Me.CheckBox1.Text = "Override default dark theme"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.checkboxOverrideDefaultDarkTheme.AutoSize = True
+        Me.checkboxOverrideDefaultDarkTheme.Location = New System.Drawing.Point(202, 184)
+        Me.checkboxOverrideDefaultDarkTheme.Name = "checkboxOverrideDefaultDarkTheme"
+        Me.checkboxOverrideDefaultDarkTheme.Size = New System.Drawing.Size(157, 17)
+        Me.checkboxOverrideDefaultDarkTheme.TabIndex = 11
+        Me.checkboxOverrideDefaultDarkTheme.Text = "Override default dark theme"
+        Me.checkboxOverrideDefaultDarkTheme.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
@@ -353,6 +353,6 @@ Partial Class aaformThemeLoader
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents radiobuttonMatchSystemTheme As RadioButton
+    Friend WithEvents checkboxOverrideDefaultDarkTheme As CheckBox
 End Class

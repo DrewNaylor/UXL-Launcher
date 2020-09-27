@@ -70,6 +70,18 @@ Public Class aaformThemeLoader
             ' Be sure to apply it to the context menu, which is part of the form's components ("Me.components").
             libportablethemeengine.ThemeEngine.LoadThemeFromXML(My.Resources.ReturnOfNightTheme_XML, Me, Me.components)
 
+        ElseIf radiobuttonMatchSystemTheme.Checked = True Then
+
+            ' If the radiobutton for matching the system theme is checked,
+            ' we'll match the system theme.
+            If checkboxOverrideDefaultDarkTheme.Checked = False Then
+                libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = True
+                libportablethemeengine.ThemeEngine.SelectTheme("This should be optional in case the user wants to match the theme.", Me, Me.components)
+            Else
+                libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = True
+                libportablethemeengine.ThemeEngine.SelectTheme(textboxThemePath.Text, Me, Me.components)
+            End If
+
         End If
 
         ' Get the end date for calculating how long it took to run.
