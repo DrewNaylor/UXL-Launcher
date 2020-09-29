@@ -33,6 +33,8 @@ Partial Class aaformThemeLoader
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching = New System.Windows.Forms.CheckBox()
+        Me.radiobuttonMatchSystemTheme = New System.Windows.Forms.RadioButton()
         Me.groupboxContextMenuArea = New System.Windows.Forms.GroupBox()
         Me.panelContextMenuArea = New System.Windows.Forms.Panel()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -45,8 +47,6 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
         Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
-        Me.radiobuttonMatchSystemTheme = New System.Windows.Forms.RadioButton()
-        Me.checkboxSpecifyDefaultDarkTheme = New System.Windows.Forms.CheckBox()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.groupboxContextMenuArea.SuspendLayout()
@@ -59,7 +59,7 @@ Partial Class aaformThemeLoader
         Me.textboxThemePath.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.textboxThemePath.Location = New System.Drawing.Point(9, 23)
-        Me.textboxThemePath.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.textboxThemePath.Margin = New System.Windows.Forms.Padding(2)
         Me.textboxThemePath.Name = "textboxThemePath"
         Me.textboxThemePath.Size = New System.Drawing.Size(353, 20)
         Me.textboxThemePath.TabIndex = 0
@@ -79,7 +79,7 @@ Partial Class aaformThemeLoader
         'buttonLoadTheme
         '
         Me.buttonLoadTheme.Location = New System.Drawing.Point(9, 46)
-        Me.buttonLoadTheme.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.buttonLoadTheme.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonLoadTheme.Name = "buttonLoadTheme"
         Me.buttonLoadTheme.Size = New System.Drawing.Size(90, 26)
         Me.buttonLoadTheme.TabIndex = 1
@@ -103,7 +103,7 @@ Partial Class aaformThemeLoader
         Me.textboxColorTester.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.textboxColorTester.Location = New System.Drawing.Point(10, 257)
-        Me.textboxColorTester.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.textboxColorTester.Margin = New System.Windows.Forms.Padding(2)
         Me.textboxColorTester.Name = "textboxColorTester"
         Me.textboxColorTester.Size = New System.Drawing.Size(353, 20)
         Me.textboxColorTester.TabIndex = 6
@@ -112,7 +112,7 @@ Partial Class aaformThemeLoader
         '
         Me.buttonSetColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.buttonSetColor.Location = New System.Drawing.Point(10, 280)
-        Me.buttonSetColor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.buttonSetColor.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonSetColor.Name = "buttonSetColor"
         Me.buttonSetColor.Size = New System.Drawing.Size(110, 24)
         Me.buttonSetColor.TabIndex = 7
@@ -123,7 +123,7 @@ Partial Class aaformThemeLoader
         '
         Me.buttonResetColor.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.buttonResetColor.Location = New System.Drawing.Point(126, 280)
-        Me.buttonResetColor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.buttonResetColor.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonResetColor.Name = "buttonResetColor"
         Me.buttonResetColor.Size = New System.Drawing.Size(86, 24)
         Me.buttonResetColor.TabIndex = 8
@@ -149,7 +149,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.checkboxSpecifyDefaultDarkTheme)
+        Me.Panel1.Controls.Add(Me.checkboxSpecifyDarkThemeForSystemThemeMatching)
         Me.Panel1.Controls.Add(Me.radiobuttonMatchSystemTheme)
         Me.Panel1.Controls.Add(Me.groupboxContextMenuArea)
         Me.Panel1.Controls.Add(Me.radiobuttonSelectFromThemeEngine)
@@ -165,18 +165,41 @@ Partial Class aaformThemeLoader
         Me.Panel1.Controls.Add(Me.textboxColorTester)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(371, 312)
         Me.Panel1.TabIndex = 8
+        '
+        'checkboxSpecifyDarkThemeForSystemThemeMatching
+        '
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.AutoSize = True
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.Location = New System.Drawing.Point(218, 184)
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.Name = "checkboxSpecifyDarkThemeForSystemThemeMatching"
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.Size = New System.Drawing.Size(117, 17)
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.TabIndex = 11
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.Text = "Specify dark theme"
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.UseVisualStyleBackColor = True
+        '
+        'radiobuttonMatchSystemTheme
+        '
+        Me.radiobuttonMatchSystemTheme.AutoSize = True
+        Me.radiobuttonMatchSystemTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.radiobuttonMatchSystemTheme.Location = New System.Drawing.Point(202, 147)
+        Me.radiobuttonMatchSystemTheme.Name = "radiobuttonMatchSystemTheme"
+        Me.radiobuttonMatchSystemTheme.Size = New System.Drawing.Size(149, 30)
+        Me.radiobuttonMatchSystemTheme.TabIndex = 10
+        Me.radiobuttonMatchSystemTheme.TabStop = True
+        Me.radiobuttonMatchSystemTheme.Text = "Match Windows 10 theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "settings"
+        Me.radiobuttonMatchSystemTheme.UseVisualStyleBackColor = True
         '
         'groupboxContextMenuArea
         '
         Me.groupboxContextMenuArea.Controls.Add(Me.panelContextMenuArea)
         Me.groupboxContextMenuArea.Location = New System.Drawing.Point(9, 77)
-        Me.groupboxContextMenuArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxContextMenuArea.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxContextMenuArea.Name = "groupboxContextMenuArea"
-        Me.groupboxContextMenuArea.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.groupboxContextMenuArea.Padding = New System.Windows.Forms.Padding(2)
         Me.groupboxContextMenuArea.Size = New System.Drawing.Size(146, 65)
         Me.groupboxContextMenuArea.TabIndex = 9
         Me.groupboxContextMenuArea.TabStop = False
@@ -188,7 +211,7 @@ Partial Class aaformThemeLoader
         Me.panelContextMenuArea.Controls.Add(Me.labelContextMenuColors)
         Me.panelContextMenuArea.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContextMenuArea.Location = New System.Drawing.Point(2, 15)
-        Me.panelContextMenuArea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.panelContextMenuArea.Margin = New System.Windows.Forms.Padding(2)
         Me.panelContextMenuArea.Name = "panelContextMenuArea"
         Me.panelContextMenuArea.Size = New System.Drawing.Size(142, 48)
         Me.panelContextMenuArea.TabIndex = 0
@@ -238,8 +261,8 @@ Partial Class aaformThemeLoader
         '
         Me.radiobuttonSelectFromThemeEngine.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonSelectFromThemeEngine.AutoSize = True
-        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(186, 47)
-        Me.radiobuttonSelectFromThemeEngine.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.radiobuttonSelectFromThemeEngine.Location = New System.Drawing.Point(202, 47)
+        Me.radiobuttonSelectFromThemeEngine.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonSelectFromThemeEngine.Name = "radiobuttonSelectFromThemeEngine"
         Me.radiobuttonSelectFromThemeEngine.Size = New System.Drawing.Size(160, 17)
         Me.radiobuttonSelectFromThemeEngine.TabIndex = 2
@@ -252,8 +275,8 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonLoadFromXml.AutoSize = True
         Me.radiobuttonLoadFromXml.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(186, 112)
-        Me.radiobuttonLoadFromXml.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.radiobuttonLoadFromXml.Location = New System.Drawing.Point(202, 112)
+        Me.radiobuttonLoadFromXml.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonLoadFromXml.Name = "radiobuttonLoadFromXml"
         Me.radiobuttonLoadFromXml.Size = New System.Drawing.Size(151, 30)
         Me.radiobuttonLoadFromXml.TabIndex = 5
@@ -265,8 +288,8 @@ Partial Class aaformThemeLoader
         '
         Me.radiobuttonIsCustomTheme.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonIsCustomTheme.AutoSize = True
-        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(186, 69)
-        Me.radiobuttonIsCustomTheme.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.radiobuttonIsCustomTheme.Location = New System.Drawing.Point(202, 69)
+        Me.radiobuttonIsCustomTheme.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonIsCustomTheme.Name = "radiobuttonIsCustomTheme"
         Me.radiobuttonIsCustomTheme.Size = New System.Drawing.Size(120, 17)
         Me.radiobuttonIsCustomTheme.TabIndex = 3
@@ -278,36 +301,13 @@ Partial Class aaformThemeLoader
         '
         Me.checkboxAllowCustomThemes.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.checkboxAllowCustomThemes.AutoSize = True
-        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(202, 90)
-        Me.checkboxAllowCustomThemes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.checkboxAllowCustomThemes.Location = New System.Drawing.Point(218, 90)
+        Me.checkboxAllowCustomThemes.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxAllowCustomThemes.Name = "checkboxAllowCustomThemes"
         Me.checkboxAllowCustomThemes.Size = New System.Drawing.Size(125, 17)
         Me.checkboxAllowCustomThemes.TabIndex = 4
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
-        '
-        'radiobuttonMatchSystemTheme
-        '
-        Me.radiobuttonMatchSystemTheme.AutoSize = True
-        Me.radiobuttonMatchSystemTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.radiobuttonMatchSystemTheme.Location = New System.Drawing.Point(186, 147)
-        Me.radiobuttonMatchSystemTheme.Name = "radiobuttonMatchSystemTheme"
-        Me.radiobuttonMatchSystemTheme.Size = New System.Drawing.Size(149, 30)
-        Me.radiobuttonMatchSystemTheme.TabIndex = 10
-        Me.radiobuttonMatchSystemTheme.TabStop = True
-        Me.radiobuttonMatchSystemTheme.Text = "Match Windows 10 theme" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "settings"
-        Me.radiobuttonMatchSystemTheme.UseVisualStyleBackColor = True
-        '
-        'checkboxSpecifyDefaultDarkTheme
-        '
-        Me.checkboxSpecifyDefaultDarkTheme.AutoSize = True
-        Me.checkboxSpecifyDefaultDarkTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.checkboxSpecifyDefaultDarkTheme.Location = New System.Drawing.Point(202, 184)
-        Me.checkboxSpecifyDefaultDarkTheme.Name = "checkboxSpecifyDefaultDarkTheme"
-        Me.checkboxSpecifyDefaultDarkTheme.Size = New System.Drawing.Size(152, 17)
-        Me.checkboxSpecifyDefaultDarkTheme.TabIndex = 11
-        Me.checkboxSpecifyDefaultDarkTheme.Text = "Specify default dark theme"
-        Me.checkboxSpecifyDefaultDarkTheme.UseVisualStyleBackColor = True
         '
         'aaformThemeLoader
         '
@@ -316,7 +316,7 @@ Partial Class aaformThemeLoader
         Me.ClientSize = New System.Drawing.Size(371, 334)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "aaformThemeLoader"
         Me.Text = "Form1"
         Me.StatusStrip1.ResumeLayout(False)
@@ -355,5 +355,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents radiobuttonMatchSystemTheme As RadioButton
-    Friend WithEvents checkboxSpecifyDefaultDarkTheme As CheckBox
+    Friend WithEvents checkboxSpecifyDarkThemeForSystemThemeMatching As CheckBox
 End Class

@@ -169,20 +169,20 @@ Public Class aaformOptionsWindow
         Dim DarkThemesListString() As String = My.Resources.darkthemesList.Split(delimiter)
 
         ' Clear the dark theme list.
-        comboboxDefaultDarkThemesList.Items.Clear()
+        comboboxDarkThemesForSystemThemeMatchingList.Items.Clear()
 
         For Each DarkTheme As String In DarkThemesListString
             ' Look in the list of dark themes and add them to the list.
-            comboboxDefaultDarkThemesList.Items.Add(DarkTheme)
+            comboboxDarkThemesForSystemThemeMatchingList.Items.Add(DarkTheme)
         Next
 
-        If Not comboboxDefaultDarkThemesList.Items.Contains(My.Settings.defaultDarkTheme.ToString) Then
+        If Not comboboxDarkThemesForSystemThemeMatchingList.Items.Contains(My.Settings.darkthemeForSystemThemeMatching.ToString) Then
             ' If the specified dark theme isn't in the list, then set the selected dark theme
             ' to ProDark, since that's the default.
-            comboboxDefaultDarkThemesList.SelectedItem = "ProDark"
+            comboboxDarkThemesForSystemThemeMatchingList.SelectedItem = "ProDark"
         Else
             ' Otherwise it's in the list, so select it.
-            comboboxDefaultDarkThemesList.SelectedItem = My.Settings.defaultDarkTheme
+            comboboxDarkThemesForSystemThemeMatchingList.SelectedItem = My.Settings.darkthemeForSystemThemeMatching
         End If
 #End Region
 #Region "Custom statusbar greeting."
@@ -281,7 +281,7 @@ Public Class aaformOptionsWindow
         checkboxMatchWindows10ThemeSettings.Checked = False
 
         ' Reset the default dark theme dropdown to ProDark.
-        comboboxDefaultDarkThemesList.SelectedItem = "ProDark"
+        comboboxDarkThemesForSystemThemeMatchingList.SelectedItem = "ProDark"
 
         ' Reset the personalized statusbar firstname/nickname
         ' textbox to empty.
@@ -414,8 +414,8 @@ Public Class aaformOptionsWindow
         ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
         My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
 
-        ' Save default dark theme setting.
-        My.Settings.defaultDarkTheme = comboboxDefaultDarkThemesList.Text
+        ' Save dark theme for system theme matching setting.
+        My.Settings.darkthemeForSystemThemeMatching = comboboxDarkThemesForSystemThemeMatchingList.Text
 
         ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
         My.Settings.userChosenTheme = comboboxThemeList.Text

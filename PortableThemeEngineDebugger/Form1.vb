@@ -78,7 +78,7 @@ Public Class aaformThemeLoader
             ' Show debug output.
             libportablethemeengine.ThemeEngine.ShowThemeEngineDebuggingOutput = True
 
-            If checkboxSpecifyDefaultDarkTheme.Checked = False Then
+            If checkboxSpecifyDarkThemeForSystemThemeMatching.Checked = False Then
                 ' Don't override the default but do match the theme.
                 libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = True
                 libportablethemeengine.ThemeEngine.SelectTheme("This should be optional in case the user wants to match the theme.", Me, Me.components)
@@ -86,7 +86,7 @@ Public Class aaformThemeLoader
                 ' User wants to match the theme and override the default, so
                 ' we'll do that.
                 libportablethemeengine.ThemeEngine.MatchWindows10ThemeSettings = True
-                libportablethemeengine.ThemeEngine.DefaultDarkTheme = textboxThemePath.Text
+                libportablethemeengine.ThemeEngine.DarkThemeForSystemThemeMatching = textboxThemePath.Text
                 libportablethemeengine.ThemeEngine.SelectTheme("This shouldn't matter, either.", Me, Me.components)
             End If
 

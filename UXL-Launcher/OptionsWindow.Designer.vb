@@ -52,7 +52,7 @@ Partial Class aaformOptionsWindow
         Me.labelPFPathDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
         Me.groupboxDefaultDarkTheme = New System.Windows.Forms.GroupBox()
-        Me.comboboxDefaultDarkThemesList = New System.Windows.Forms.ComboBox()
+        Me.comboboxDarkThemesForSystemThemeMatchingList = New System.Windows.Forms.ComboBox()
         Me.labelDefaultDarkThemeDescription = New System.Windows.Forms.Label()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
         Me.checkboxMatchWindows10ThemeSettings = New System.Windows.Forms.CheckBox()
@@ -428,23 +428,23 @@ Partial Class aaformOptionsWindow
         '
         'groupboxDefaultDarkTheme
         '
-        Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDefaultDarkThemesList)
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDarkThemesForSystemThemeMatchingList)
         Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
         Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
         Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
         Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
         Me.groupboxDefaultDarkTheme.TabIndex = 1
         Me.groupboxDefaultDarkTheme.TabStop = False
-        Me.groupboxDefaultDarkTheme.Text = "Default dark theme"
+        Me.groupboxDefaultDarkTheme.Text = "Dark theme for system theme matching"
         '
-        'comboboxDefaultDarkThemesList
+        'comboboxDarkThemesForSystemThemeMatchingList
         '
-        Me.comboboxDefaultDarkThemesList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboboxDefaultDarkThemesList.FormattingEnabled = True
-        Me.comboboxDefaultDarkThemesList.Location = New System.Drawing.Point(15, 61)
-        Me.comboboxDefaultDarkThemesList.Name = "comboboxDefaultDarkThemesList"
-        Me.comboboxDefaultDarkThemesList.Size = New System.Drawing.Size(195, 21)
-        Me.comboboxDefaultDarkThemesList.TabIndex = 1
+        Me.comboboxDarkThemesForSystemThemeMatchingList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDarkThemesForSystemThemeMatchingList.FormattingEnabled = True
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(15, 61)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Name = "comboboxDarkThemesForSystemThemeMatchingList"
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Size = New System.Drawing.Size(195, 21)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.TabIndex = 1
         '
         'labelDefaultDarkThemeDescription
         '
@@ -779,6 +779,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelCustomStatusbarGreeting As Label
     Friend WithEvents groupboxDefaultDarkTheme As GroupBox
     Friend WithEvents labelDefaultDarkThemeDescription As Label
-    Friend WithEvents comboboxDefaultDarkThemesList As ComboBox
+    Friend WithEvents comboboxDarkThemesForSystemThemeMatchingList As ComboBox
     Friend WithEvents labelOffice365Compatibility As Label
 End Class
