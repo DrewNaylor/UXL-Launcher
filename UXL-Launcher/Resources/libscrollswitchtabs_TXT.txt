@@ -1,6 +1,6 @@
 libscrollswitchtabs
-By Drew Naylor. Licensed under CC BY 4.0.
-Version 3.0
+Copyright (C) 2020 Drew Naylor. Licensed under Apache License 2.0.
+Version 0.1
 
 The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
 
