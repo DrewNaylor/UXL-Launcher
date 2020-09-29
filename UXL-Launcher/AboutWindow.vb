@@ -108,4 +108,9 @@ My.Resources.ApplauncherIconsInfo_TXT.Replace(vbLf, vbCrLf) ' Icon set for UXL L
     End Sub
 #End Region
 
+    Private Sub tabcontrolAboutWindow_MouseWheel(sender As Object, e As MouseEventArgs) Handles tabcontrolAboutWindow.MouseWheel
+        ' Switch tabs on scroll.
+        libscrollswitchtabs.ScrollSwitchTabs.switch(tabcontrolAboutWindow, e)
+    End Sub
+
 End Class

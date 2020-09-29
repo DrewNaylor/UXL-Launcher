@@ -845,4 +845,9 @@ Public Class aaformOptionsWindow
             checkboxO365InstallMethod.Show()
         End If
     End Sub
+
+    Private Sub tabcontrolOptionsWindow_MouseWheel(sender As Object, e As MouseEventArgs) Handles tabcontrolOptionsWindow.MouseWheel
+        ' Switch tabs on scroll.
+        libscrollswitchtabs.ScrollSwitchTabs.switch(tabcontrolOptionsWindow, e)
+    End Sub
 End Class
