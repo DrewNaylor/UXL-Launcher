@@ -204,6 +204,7 @@
     <None Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\libscrollswitchtabs_TXT.txt" />
     <Content Include="VB Code-behind\Themes\ProDarkTheme_XML.xml" />
     <None Include="Resources\UXLLauncherInfo_TXT.txt" />
     <None Include="Resources\ThemeEngineInfo_TXT.txt" />

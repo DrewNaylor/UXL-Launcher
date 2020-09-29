@@ -382,7 +382,7 @@ This decimal is to be used for the About window when talking about what version 
 </value>
   </data>
   <data name="ApplauncherIconsInfo_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ApplauncherIconsInfo_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+    <value>..\Resources\ApplauncherIconsInfo_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
   </data>
   <data name="gpl_RTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gpl-rtf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -1794,5 +1794,8 @@ This decimal is to be used for the About window when talking about what version 
   <data name="darkthemesList" xml:space="preserve">
     <value>Maudern,ProDark,TenDark</value>
     <comment>Dark themes available in the "default dark theme" dropdown in the Theme tab.</comment>
+  </data>
+  <data name="libscrollswitchtabs_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\libscrollswitchtabs_txt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

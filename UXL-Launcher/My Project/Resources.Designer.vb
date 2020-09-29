@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-09-27T00:51:14
+        '''  Looks up a localized string similar to 2020-09-29T04:39:15
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -296,6 +296,27 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("Language_Settings", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to applauncher-icons
+        '''By Drew Naylor. Licensed under CC BY 4.0.
+        '''Version 3.0
+        '''
+        '''The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+        '''
+        '''Link to applauncher-icons project repository:
+        '''https://github.com/DrewNaylor/applauncher-icons
+        '''
+        '''Link to applauncher-icons version 3.0 GitHub Releases page:
+        '''https://github.com/DrewNaylor/applauncher-icons/releases/tag/v3.0
+        '''
+        '''T [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property libscrollswitchtabs_TXT() As String
+            Get
+                Return ResourceManager.GetString("libscrollswitchtabs_TXT", resourceCulture)
             End Get
         End Property
         
