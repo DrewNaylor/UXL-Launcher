@@ -48,7 +48,7 @@ My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
 My.Resources.ThemeEngineInfo_TXT.Replace(vbLf, vbCrLf) & vbCrLf & vbCrLf &
 My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
 My.Resources.ApplauncherIconsInfo_TXT.Replace(vbLf, vbCrLf) & vbCrLf & vbCrLf & ' Icon set for UXL Launcher info.
-        My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
+My.Resources.separator & vbCrLf & vbCrLf & ' separator line.
 My.Resources.libscrollswitchtabs_TXT.Replace(vbLf, vbCrLf) ' libscrollswitchtabs.
         ) '  The Replace(vbLf, vbCrLf) function is required for text to have Windows line endings if building from downloading the master branch code from GitHub.
 
