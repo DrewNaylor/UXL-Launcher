@@ -32,12 +32,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchAccess()
         ' Launch Microsoft Access. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForAllApps = True Then
-            isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access", True)
-            ' Otherwise, don't.
-        Else
-            isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access")
-        End If
+        isolated_error_handler.launcherErrorHandler("MSACCESS.EXE", "Microsoft Access", My.Settings.bypassConfiguredLocationForAllApps)
 
     End Sub
 #End Region
@@ -45,12 +40,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchExcel()
         ' Launch Microsoft Excel. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForAllApps = True Then
-            isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel", True)
-            ' Otherwise, don't.
-        Else
-            isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel")
-        End If
+        isolated_error_handler.launcherErrorHandler("EXCEL.EXE", "Microsoft Excel", My.Settings.bypassConfiguredLocationForAllApps)
 
     End Sub
 #End Region
@@ -84,12 +74,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchOutlook()
         ' Launch Microsoft Outlook. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForAllApps = True Then
-            isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook", True)
-            ' Otherwise, don't.
-        Else
-            isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook")
-        End If
+        isolated_error_handler.launcherErrorHandler("OUTLOOK.EXE", "Microsoft Outlook", My.Settings.bypassConfiguredLocationForAllApps)
 
     End Sub
 #End Region
@@ -97,12 +82,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchPowerpoint()
         ' Launch Microsoft Powerpoint. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForAllApps = True Then
-            isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint", True)
-            ' Otherwise, don't.
-        Else
-            isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint")
-        End If
+        isolated_error_handler.launcherErrorHandler("POWERPNT.EXE", "Microsoft PowerPoint", My.Settings.bypassConfiguredLocationForAllApps)
 
     End Sub
 #End Region
@@ -122,12 +102,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchPublisher()
         ' Launch Microsoft Publisher. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForAllApps = True Then
-            isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher", True)
-            ' Otherwise, don't.
-        Else
-            isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher")
-        End If
+        isolated_error_handler.launcherErrorHandler("MSPUB.EXE", "Microsoft Publisher", My.Settings.bypassConfiguredLocationForAllApps)
 
     End Sub
 #End Region
@@ -135,12 +110,7 @@ Public Class LaunchApp
     Public Shared Sub LaunchWord()
         ' Launch Microsoft Word. Try...Catch code source here: <http://www.homeandlearn.co.uk/NET/nets5p4.html>
         ' If the user wants to bypass the configured location, do so.
-        If My.Settings.bypassConfiguredLocationForAllApps = True Then
-            isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word", True)
-            ' Otherwise, don't.
-        Else
-            isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word")
-        End If
+        isolated_error_handler.launcherErrorHandler("WINWORD.EXE", "Microsoft Word", My.Settings.bypassConfiguredLocationForAllApps)
 
     End Sub
 #End Region
