@@ -2,18 +2,24 @@ libscrollswitchtabs
 Copyright (C) 2020 Drew Naylor. Licensed under Apache License 2.0.
 Version 0.1
 
-The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+libscrollswitchtabs allows you to switch tabs in the Windows Forms TabControl using the mouse scroll wheel, like many Linux applications.
 
-Link to applauncher-icons project repository:
-https://github.com/DrewNaylor/applauncher-icons
+libscrollswitchtabs is part of the drews-libs project.
+Link to drews-libs project repository:
+https://github.com/DrewNaylor/drews-libs
 
-Link to applauncher-icons version 3.0 GitHub Releases page:
-https://github.com/DrewNaylor/applauncher-icons/releases/tag/v3.0
 
-The version of applauncher-icons used in UXL Launcher has been modified from the original source. Namely, the Office Language Preferences icon used in the UI was resized from the original files.
+No warranty is provided with libscrollswitchtabs. Use at your own risk. Drew Naylor is not responsible for any problems that use of libscrollswitchtabs may cause.
 
-No warranty is provided with applauncher-icons. Use at your own risk. Drew Naylor is not responsible for any problems that use of applauncher-icons may cause.
+Apache License 2.0 summary as it applies to libscrollswitchtabs:
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
+   http://www.apache.org/licenses/LICENSE-2.0
 
-Microsoft is not associated with either the applauncher-icons project or Drew Naylor and does not condone this project.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
