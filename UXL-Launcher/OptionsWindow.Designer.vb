@@ -188,10 +188,10 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
         Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(41, 129)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
-        Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(206, 17)
         Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
         Me.radiobuttonBypassConfiguredLocationAllApps.TabStop = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Text = "Bypass configured location for all compatible apps"
+        Me.radiobuttonBypassConfiguredLocationAllApps.Text = "Bypass configured location for all apps"
         Me.radiobuttonBypassConfiguredLocationAllApps.UseVisualStyleBackColor = True
         '
         'radiobuttonBypassConfiguredLocationDeprecatedApps
