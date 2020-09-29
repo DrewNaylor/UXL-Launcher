@@ -120,7 +120,8 @@
   <data name="labelBypassConfiguredLocation.Text" xml:space="preserve">
     <value>If you'd like, you can bypass the configured location when launching
 some apps, such as ones that have been deprecated or removed from
-later Office versions, or all compatible apps (ones that open from Run).</value>
+later Office versions, or all apps. Please note this feature only works for
+apps that can be launched from Run.</value>
   </data>
   <metadata name="tooltipO365InstallMethod.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>22, 23</value>

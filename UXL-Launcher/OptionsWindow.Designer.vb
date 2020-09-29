@@ -186,7 +186,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationAllApps
         '
         Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(59, 127)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(41, 129)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
         Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(260, 17)
         Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
@@ -197,7 +197,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationDeprecatedApps
         '
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(59, 104)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(41, 106)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
@@ -208,7 +208,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonDontBypassConfiguredLocation
         '
         Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
-        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(59, 81)
+        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(41, 83)
         Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
         Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
         Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
@@ -219,9 +219,9 @@ Partial Class aaformOptionsWindow
         'labelBypassConfiguredLocation
         '
         Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(44, 30)
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(38, 28)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
-        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(338, 39)
+        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(339, 52)
         Me.labelBypassConfiguredLocation.TabIndex = 0
         Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
         '
