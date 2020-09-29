@@ -466,9 +466,23 @@ Public Class aaformOptionsWindow
         aaformMainWindow.updateStatusbarText()
         ' Tell the user that settings were saved.
         MessageBox.Show("Settings saved." & vbCrLf &
-                        "Some settings may require a restart of UXL Launcher, such as enabling or disabling the theme engine.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+                        "Some settings may require a restart of UXL Launcher, such as turning the theme engine on or off.", "Save settings", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
 #End Region
 
+        ' Ask the user if they want to restart the application if they
+        ' changed something that requires a restart to take effect,
+        ' such as if they turned the theme engine on or off.
+        If Not boolIsThemeEngineEnabled = My.Settings.enableThemeEngine AndAlso AskToRestartAfterThemeEngineStatusChange = True Then
+            Dim msgResult As Integer = MessageBox.Show("Theme engine status changed. Restart UXL Launcher now?", "Save settings",
+                MessageBoxButtons.YesNo)
+            ' If the user chooses to restart, then we'll restart.
+            If msgResult = DialogResult.Yes Then
+                Application.Restart()
+            Else
+                ' If the user clicks "No", then don't bother them after this.
+                AskToRestartAfterThemeEngineStatusChange = False
+            End If
+        End If
         ' Saving was successful.
         ' Return 0.
         ' Fortunately, this was just to save
@@ -476,6 +490,9 @@ Public Class aaformOptionsWindow
         Return 0
         'End If
     End Function
+
+    ' Don't bug the user to restart if they clicked "No" in the restart messagebox.
+    Dim AskToRestartAfterThemeEngineStatusChange As Boolean = True
 #End Region
 
 #Region "Code that runs when the user clicks the Cancel button."
