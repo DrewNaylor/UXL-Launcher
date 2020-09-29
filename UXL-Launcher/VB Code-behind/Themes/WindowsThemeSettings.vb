@@ -64,12 +64,19 @@ Public Class WindowsThemeSettings
                 UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.DefaultTheme_XML)
                 aaformMainWindow.themeApplier()
 
-                ' Otherwise, load TenDark.
+                ' Otherwise, load the dark theme for system theme matching.
+                ' This falls back to ProDark if we can't find it.
             ElseIf getWindowsThemeSettings = "Dark" Then
-                UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.TenDarkTheme_XML)
+                ' Check if the theme specified in My.Settings.darkthemeForSystemThemeMatching is in the
+                ' list of available dark themes.
+                If My.Resources.darkthemesList.Contains(My.Settings.darkthemeForSystemThemeMatching.ToString) AndAlso My.Resources.ResourceManager.GetString(My.Settings.darkthemeForSystemThemeMatching & "Theme_XML") IsNot Nothing Then
+                    UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.ResourceManager.GetString(My.Settings.darkthemeForSystemThemeMatching & "Theme_XML"))
+                Else
+                    UXLLauncher_ThemeEngine.userTheme.LoadXml(My.Resources.ProDarkTheme_XML)
+                End If
                 aaformMainWindow.themeApplier()
-            End If
-        Else
+                End If
+            Else
 
             ' If the user doesn't want to match the Windows 10 theme,
             ' just move on.

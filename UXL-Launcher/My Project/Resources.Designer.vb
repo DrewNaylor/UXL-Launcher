@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-07-26T20:07:21
+        '''  Looks up a localized string similar to 2020-09-27T00:51:14
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -155,6 +155,15 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("DARK_UXL_Launcher_Banner", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Maudern,ProDark,TenDark.
+        '''</summary>
+        Public ReadOnly Property darkthemesList() As String
+            Get
+                Return ResourceManager.GetString("darkthemesList", resourceCulture)
             End Get
         End Property
         
@@ -433,16 +442,12 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
-        '''  &lt;Title&gt;Pro Dark&lt;/Title&gt;
-        '''  &lt;Description&gt;Dark theme meant to resemble Office 2019&apos;s &quot;Black&quot; theme.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
-        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''	  &lt;Title&gt;Pro Dark&lt;/Title&gt;
+        '''	  &lt;Description&gt;Dark theme meant to resemble Office 2019&apos;s &quot;Black&quot; theme. The colors may not match exactly as they were eyeballed from the colors used in Word 2019. This theme is not associated with Microsoft, and Microsoft Office is a copyright and trademark/registered trademark of Microsoft Corporation in the United States and other countries.&lt;/Description&gt;
+        '''	  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''	  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
-        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
-        '''  UXL Launcher Theme Engine to use in case there are changes in newer
-        '''  versions of the theme engine that designers or developers don&apos;t want
-        '''  to use. Version 1.01 is the oldest version number available and anything
-        '''  smaller than that will  [rest of string was truncated]&quot;;.
+        '''	  &lt;!-- &quot;UseThemeEngineVersion&quot; is u [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ProDarkTheme_XML() As String
             Get
@@ -609,7 +614,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 1.03.
+        '''  Looks up a localized string similar to 1.04.
         '''</summary>
         Public ReadOnly Property themeEngineVersion() As String
             Get

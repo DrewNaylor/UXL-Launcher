@@ -124,10 +124,6 @@ Public Class ThemeProperties
     Private Shared _propertyStatusLabelBorderStyle As Border3DStyle
 #End Region
 
-#Region "Theme engine properties that can be set from the calling app."
-
-#End Region
-
 #Region "Theme properties."
 #Region "Theme info."
     ' Theme XML file.

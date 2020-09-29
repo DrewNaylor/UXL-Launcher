@@ -163,6 +163,28 @@ Public Class aaformOptionsWindow
         ' Next, enable (or disable, based on user settings) and update the controls.
         enableOrDisableThemeEngineOptionsWindowControls()
 #End Region
+#Region "Default dark theme."
+        ' Load in the settings for default dark theme.
+        ' Get the list of dark themes from My.Resources.
+        Dim DarkThemesListString() As String = My.Resources.darkthemesList.Split(delimiter)
+
+        ' Clear the dark theme list.
+        comboboxDarkThemesForSystemThemeMatchingList.Items.Clear()
+
+        For Each DarkTheme As String In DarkThemesListString
+            ' Look in the list of dark themes and add them to the list.
+            comboboxDarkThemesForSystemThemeMatchingList.Items.Add(DarkTheme)
+        Next
+
+        If Not comboboxDarkThemesForSystemThemeMatchingList.Items.Contains(My.Settings.darkthemeForSystemThemeMatching.ToString) Then
+            ' If the specified dark theme isn't in the list, then set the selected dark theme
+            ' to ProDark, since that's the default.
+            comboboxDarkThemesForSystemThemeMatchingList.SelectedItem = "ProDark"
+        Else
+            ' Otherwise it's in the list, so select it.
+            comboboxDarkThemesForSystemThemeMatchingList.SelectedItem = My.Settings.darkthemeForSystemThemeMatching
+        End If
+#End Region
 #Region "Custom statusbar greeting."
         If My.Settings.userUseCustomStatusbarGreeting = True Then
             ' If the settings are configured to use a custom statusbar greeting,
@@ -257,6 +279,9 @@ Public Class aaformOptionsWindow
 
         ' Reset the match Windows 10 theme settings checkbox to unchecked.
         checkboxMatchWindows10ThemeSettings.Checked = False
+
+        ' Reset the default dark theme dropdown to ProDark.
+        comboboxDarkThemesForSystemThemeMatchingList.SelectedItem = "ProDark"
 
         ' Reset the personalized statusbar firstname/nickname
         ' textbox to empty.
@@ -388,6 +413,9 @@ Public Class aaformOptionsWindow
 
         ' Set My.Settings.matchWindows10ThemeSettings to True or False based on the checkbox.
         My.Settings.matchWindows10ThemeSettings = checkboxMatchWindows10ThemeSettings.Checked
+
+        ' Save dark theme for system theme matching setting.
+        My.Settings.darkthemeForSystemThemeMatching = comboboxDarkThemesForSystemThemeMatchingList.Text
 
         ' Set My.Settings.userChosenTheme to the text in the theme list dropdown box.
         My.Settings.userChosenTheme = comboboxThemeList.Text
@@ -791,10 +819,12 @@ Public Class aaformOptionsWindow
         If comboboxOfficeVersionSelector.SelectedIndex = 3 Then
             ' Office versions newer than 2016 don't support MSI
             ' and default to C2R, so this checkbox is not necessary.
+            labelOffice365Compatibility.Hide()
             checkboxO365InstallMethod.Hide()
         Else
             ' Office versions older than 2019 support MSI
             ' so this checkbox may be necessary.
+            labelOffice365Compatibility.Show()
             checkboxO365InstallMethod.Show()
         End If
     End Sub

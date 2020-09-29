@@ -285,12 +285,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("ProDark")>  _
-        Public Property defaultDarkTheme() As String
+        Public Property darkthemeForSystemThemeMatching() As String
             Get
-                Return CType(Me("defaultDarkTheme"),String)
+                Return CType(Me("darkthemeForSystemThemeMatching"),String)
             End Get
             Set
-                Me("defaultDarkTheme") = value
+                Me("darkthemeForSystemThemeMatching") = value
             End Set
         End Property
     End Class

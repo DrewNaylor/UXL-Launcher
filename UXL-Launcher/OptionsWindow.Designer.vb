@@ -35,6 +35,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonDontBypassConfiguredLocation = New System.Windows.Forms.RadioButton()
         Me.labelBypassConfiguredLocation = New System.Windows.Forms.Label()
         Me.groupboxOfficeVersion = New System.Windows.Forms.GroupBox()
+        Me.labelOffice365Compatibility = New System.Windows.Forms.Label()
         Me.checkboxO365InstallMethod = New System.Windows.Forms.CheckBox()
         Me.labelUserHasThisOfficeVersion = New System.Windows.Forms.Label()
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
@@ -50,13 +51,9 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonUseProgramFiles = New System.Windows.Forms.RadioButton()
         Me.labelPFPathDescription = New System.Windows.Forms.Label()
         Me.tabpagePersonalization = New System.Windows.Forms.TabPage()
-        Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
-        Me.buttonClearFirstname = New System.Windows.Forms.Button()
-        Me.labelFirstName = New System.Windows.Forms.Label()
-        Me.textboxFirstname = New System.Windows.Forms.TextBox()
-        Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
-        Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
-        Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
+        Me.groupboxDefaultDarkTheme = New System.Windows.Forms.GroupBox()
+        Me.comboboxDarkThemesForSystemThemeMatchingList = New System.Windows.Forms.ComboBox()
+        Me.labelDefaultDarkThemeDescription = New System.Windows.Forms.Label()
         Me.groupboxAppearance = New System.Windows.Forms.GroupBox()
         Me.checkboxMatchWindows10ThemeSettings = New System.Windows.Forms.CheckBox()
         Me.labelCustomThemePath = New System.Windows.Forms.Label()
@@ -66,6 +63,14 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList = New System.Windows.Forms.ComboBox()
         Me.textboxThemeInfo = New System.Windows.Forms.TextBox()
         Me.checkboxEnableThemeEngine = New System.Windows.Forms.CheckBox()
+        Me.tabpageStatusbar = New System.Windows.Forms.TabPage()
+        Me.groupboxStatusbar = New System.Windows.Forms.GroupBox()
+        Me.buttonClearFirstname = New System.Windows.Forms.Button()
+        Me.labelFirstName = New System.Windows.Forms.Label()
+        Me.textboxFirstname = New System.Windows.Forms.TextBox()
+        Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
+        Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
+        Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
@@ -82,8 +87,10 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.SuspendLayout()
         Me.groupboxCPUType.SuspendLayout()
         Me.tabpagePersonalization.SuspendLayout()
-        Me.groupboxStatusbar.SuspendLayout()
+        Me.groupboxDefaultDarkTheme.SuspendLayout()
         Me.groupboxAppearance.SuspendLayout()
+        Me.tabpageStatusbar.SuspendLayout()
+        Me.groupboxStatusbar.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -140,6 +147,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageGeneral)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageAdvanced)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpagePersonalization)
+        Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageStatusbar)
         Me.tabcontrolOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(8, 8)
         Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(8, 8, 8, 2)
@@ -219,6 +227,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeVersion
         '
+        Me.groupboxOfficeVersion.Controls.Add(Me.labelOffice365Compatibility)
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
@@ -231,11 +240,21 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "Microsoft Office versions + C2R"
         '
+        'labelOffice365Compatibility
+        '
+        Me.labelOffice365Compatibility.AutoSize = True
+        Me.labelOffice365Compatibility.Location = New System.Drawing.Point(76, 64)
+        Me.labelOffice365Compatibility.Name = "labelOffice365Compatibility"
+        Me.labelOffice365Compatibility.Size = New System.Drawing.Size(272, 26)
+        Me.labelOffice365Compatibility.TabIndex = 6
+        Me.labelOffice365Compatibility.Text = "Most people install Office from Office 365/Microsoft 365," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "so you may need to che" &
+    "ck this box:"
+        '
         'checkboxO365InstallMethod
         '
         Me.checkboxO365InstallMethod.AutoSize = True
         Me.checkboxO365InstallMethod.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(79, 81)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(79, 92)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 30)
@@ -248,7 +267,7 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(76, 27)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(76, 16)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
         Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(263, 13)
@@ -259,7 +278,7 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(79, 42)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(79, 31)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
@@ -396,7 +415,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpagePersonalization
         '
-        Me.tabpagePersonalization.Controls.Add(Me.groupboxStatusbar)
+        Me.tabpagePersonalization.Controls.Add(Me.groupboxDefaultDarkTheme)
         Me.tabpagePersonalization.Controls.Add(Me.groupboxAppearance)
         Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
         Me.tabpagePersonalization.Margin = New System.Windows.Forms.Padding(2)
@@ -404,81 +423,37 @@ Partial Class aaformOptionsWindow
         Me.tabpagePersonalization.Padding = New System.Windows.Forms.Padding(2)
         Me.tabpagePersonalization.Size = New System.Drawing.Size(422, 326)
         Me.tabpagePersonalization.TabIndex = 2
-        Me.tabpagePersonalization.Text = "Personalization"
+        Me.tabpagePersonalization.Text = "Theme"
         Me.tabpagePersonalization.UseVisualStyleBackColor = True
         '
-        'groupboxStatusbar
+        'groupboxDefaultDarkTheme
         '
-        Me.groupboxStatusbar.Controls.Add(Me.buttonClearFirstname)
-        Me.groupboxStatusbar.Controls.Add(Me.labelFirstName)
-        Me.groupboxStatusbar.Controls.Add(Me.textboxFirstname)
-        Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
-        Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
-        Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
-        Me.groupboxStatusbar.Location = New System.Drawing.Point(4, 192)
-        Me.groupboxStatusbar.Margin = New System.Windows.Forms.Padding(2)
-        Me.groupboxStatusbar.Name = "groupboxStatusbar"
-        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 130)
-        Me.groupboxStatusbar.TabIndex = 1
-        Me.groupboxStatusbar.TabStop = False
-        Me.groupboxStatusbar.Text = "Statusbar"
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDarkThemesForSystemThemeMatchingList)
+        Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
+        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
+        Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
+        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
+        Me.groupboxDefaultDarkTheme.TabIndex = 1
+        Me.groupboxDefaultDarkTheme.TabStop = False
+        Me.groupboxDefaultDarkTheme.Text = "Dark theme for system theme matching"
         '
-        'buttonClearFirstname
+        'comboboxDarkThemesForSystemThemeMatchingList
         '
-        Me.buttonClearFirstname.Location = New System.Drawing.Point(339, 100)
-        Me.buttonClearFirstname.Name = "buttonClearFirstname"
-        Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
-        Me.buttonClearFirstname.TabIndex = 5
-        Me.buttonClearFirstname.Text = "Clear"
-        Me.buttonClearFirstname.UseVisualStyleBackColor = True
+        Me.comboboxDarkThemesForSystemThemeMatchingList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboboxDarkThemesForSystemThemeMatchingList.FormattingEnabled = True
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(15, 61)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Name = "comboboxDarkThemesForSystemThemeMatchingList"
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Size = New System.Drawing.Size(195, 21)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.TabIndex = 1
         '
-        'labelFirstName
+        'labelDefaultDarkThemeDescription
         '
-        Me.labelFirstName.AutoSize = True
-        Me.labelFirstName.Location = New System.Drawing.Point(25, 105)
-        Me.labelFirstName.Name = "labelFirstName"
-        Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
-        Me.labelFirstName.TabIndex = 4
-        Me.labelFirstName.Text = "Firstname/nickname:"
-        '
-        'textboxFirstname
-        '
-        Me.textboxFirstname.Location = New System.Drawing.Point(140, 102)
-        Me.textboxFirstname.Name = "textboxFirstname"
-        Me.textboxFirstname.Size = New System.Drawing.Size(193, 20)
-        Me.textboxFirstname.TabIndex = 3
-        '
-        'radiobuttonCustomStatusbarGreeting
-        '
-        Me.radiobuttonCustomStatusbarGreeting.AutoSize = True
-        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(26, 79)
-        Me.radiobuttonCustomStatusbarGreeting.Name = "radiobuttonCustomStatusbarGreeting"
-        Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(193, 17)
-        Me.radiobuttonCustomStatusbarGreeting.TabIndex = 2
-        Me.radiobuttonCustomStatusbarGreeting.TabStop = True
-        Me.radiobuttonCustomStatusbarGreeting.Text = "Use personalized statusbar greeting"
-        Me.radiobuttonCustomStatusbarGreeting.UseVisualStyleBackColor = True
-        '
-        'radiobuttonDefaultStatusbarGreeting
-        '
-        Me.radiobuttonDefaultStatusbarGreeting.AutoSize = True
-        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(26, 56)
-        Me.radiobuttonDefaultStatusbarGreeting.Name = "radiobuttonDefaultStatusbarGreeting"
-        Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(166, 17)
-        Me.radiobuttonDefaultStatusbarGreeting.TabIndex = 1
-        Me.radiobuttonDefaultStatusbarGreeting.TabStop = True
-        Me.radiobuttonDefaultStatusbarGreeting.Text = "Use default statusbar greeting"
-        Me.radiobuttonDefaultStatusbarGreeting.UseVisualStyleBackColor = True
-        '
-        'labelCustomStatusbarGreeting
-        '
-        Me.labelCustomStatusbarGreeting.AutoSize = True
-        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(10, 15)
-        Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
-        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(369, 26)
-        Me.labelCustomStatusbarGreeting.TabIndex = 0
-        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
-    "ickname, or to use the default. Your name will not be used to identify you."
+        Me.labelDefaultDarkThemeDescription.AutoSize = True
+        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 44)
+        Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
+        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(390, 13)
+        Me.labelDefaultDarkThemeDescription.TabIndex = 0
+        Me.labelDefaultDarkThemeDescription.Text = "When matching Windows 10 theme settings is enabled, we'll use this dark theme:"
         '
         'groupboxAppearance
         '
@@ -581,6 +556,90 @@ Partial Class aaformOptionsWindow
         Me.checkboxEnableThemeEngine.Text = "Enable UXL Launcher Theme Engine (requires application restart)"
         Me.checkboxEnableThemeEngine.UseVisualStyleBackColor = True
         '
+        'tabpageStatusbar
+        '
+        Me.tabpageStatusbar.Controls.Add(Me.groupboxStatusbar)
+        Me.tabpageStatusbar.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageStatusbar.Name = "tabpageStatusbar"
+        Me.tabpageStatusbar.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageStatusbar.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageStatusbar.TabIndex = 3
+        Me.tabpageStatusbar.Text = "Statusbar"
+        Me.tabpageStatusbar.UseVisualStyleBackColor = True
+        '
+        'groupboxStatusbar
+        '
+        Me.groupboxStatusbar.Controls.Add(Me.buttonClearFirstname)
+        Me.groupboxStatusbar.Controls.Add(Me.labelFirstName)
+        Me.groupboxStatusbar.Controls.Add(Me.textboxFirstname)
+        Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
+        Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
+        Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxStatusbar.Margin = New System.Windows.Forms.Padding(2)
+        Me.groupboxStatusbar.Name = "groupboxStatusbar"
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 130)
+        Me.groupboxStatusbar.TabIndex = 2
+        Me.groupboxStatusbar.TabStop = False
+        Me.groupboxStatusbar.Text = "Greeting"
+        '
+        'buttonClearFirstname
+        '
+        Me.buttonClearFirstname.Location = New System.Drawing.Point(339, 100)
+        Me.buttonClearFirstname.Name = "buttonClearFirstname"
+        Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
+        Me.buttonClearFirstname.TabIndex = 5
+        Me.buttonClearFirstname.Text = "Clear"
+        Me.buttonClearFirstname.UseVisualStyleBackColor = True
+        '
+        'labelFirstName
+        '
+        Me.labelFirstName.AutoSize = True
+        Me.labelFirstName.Location = New System.Drawing.Point(25, 105)
+        Me.labelFirstName.Name = "labelFirstName"
+        Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
+        Me.labelFirstName.TabIndex = 4
+        Me.labelFirstName.Text = "Firstname/nickname:"
+        '
+        'textboxFirstname
+        '
+        Me.textboxFirstname.Location = New System.Drawing.Point(140, 102)
+        Me.textboxFirstname.Name = "textboxFirstname"
+        Me.textboxFirstname.Size = New System.Drawing.Size(193, 20)
+        Me.textboxFirstname.TabIndex = 3
+        '
+        'radiobuttonCustomStatusbarGreeting
+        '
+        Me.radiobuttonCustomStatusbarGreeting.AutoSize = True
+        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(26, 79)
+        Me.radiobuttonCustomStatusbarGreeting.Name = "radiobuttonCustomStatusbarGreeting"
+        Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(193, 17)
+        Me.radiobuttonCustomStatusbarGreeting.TabIndex = 2
+        Me.radiobuttonCustomStatusbarGreeting.TabStop = True
+        Me.radiobuttonCustomStatusbarGreeting.Text = "Use personalized statusbar greeting"
+        Me.radiobuttonCustomStatusbarGreeting.UseVisualStyleBackColor = True
+        '
+        'radiobuttonDefaultStatusbarGreeting
+        '
+        Me.radiobuttonDefaultStatusbarGreeting.AutoSize = True
+        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(26, 56)
+        Me.radiobuttonDefaultStatusbarGreeting.Name = "radiobuttonDefaultStatusbarGreeting"
+        Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(166, 17)
+        Me.radiobuttonDefaultStatusbarGreeting.TabIndex = 1
+        Me.radiobuttonDefaultStatusbarGreeting.TabStop = True
+        Me.radiobuttonDefaultStatusbarGreeting.Text = "Use default statusbar greeting"
+        Me.radiobuttonDefaultStatusbarGreeting.UseVisualStyleBackColor = True
+        '
+        'labelCustomStatusbarGreeting
+        '
+        Me.labelCustomStatusbarGreeting.AutoSize = True
+        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(10, 15)
+        Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
+        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(369, 26)
+        Me.labelCustomStatusbarGreeting.TabIndex = 0
+        Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
+    "ickname, or to use the default. Your name will not be used to identify you."
+        '
         'buttonTestSettings
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -657,10 +716,13 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.ResumeLayout(False)
         Me.groupboxCPUType.PerformLayout()
         Me.tabpagePersonalization.ResumeLayout(False)
-        Me.groupboxStatusbar.ResumeLayout(False)
-        Me.groupboxStatusbar.PerformLayout()
+        Me.groupboxDefaultDarkTheme.ResumeLayout(False)
+        Me.groupboxDefaultDarkTheme.PerformLayout()
         Me.groupboxAppearance.ResumeLayout(False)
         Me.groupboxAppearance.PerformLayout()
+        Me.tabpageStatusbar.ResumeLayout(False)
+        Me.groupboxStatusbar.ResumeLayout(False)
+        Me.groupboxStatusbar.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -693,13 +755,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonCustomThemesBrowse As Button
     Friend WithEvents textboxCustomThemePath As TextBox
     Friend WithEvents labelCustomThemePath As Label
-    Friend WithEvents groupboxStatusbar As GroupBox
-    Friend WithEvents labelCustomStatusbarGreeting As Label
-    Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton
-    Friend WithEvents radiobuttonDefaultStatusbarGreeting As RadioButton
-    Friend WithEvents textboxFirstname As TextBox
-    Friend WithEvents labelFirstName As Label
-    Friend WithEvents buttonClearFirstname As Button
     Friend WithEvents openfiledialogBrowseCustomThemeFile As OpenFileDialog
     Friend WithEvents labelRecommendedWindowsEdition As Label
     Friend WithEvents tooltipCustomThemePath As ToolTip
@@ -714,4 +769,16 @@ Partial Class aaformOptionsWindow
     Friend WithEvents comboboxDriveSelector As ComboBox
     Friend WithEvents labelDriveTextboxLabel As Label
     Friend WithEvents labelOfficeInstalledToDrive As Label
+    Friend WithEvents tabpageStatusbar As TabPage
+    Friend WithEvents groupboxStatusbar As GroupBox
+    Friend WithEvents buttonClearFirstname As Button
+    Friend WithEvents labelFirstName As Label
+    Friend WithEvents textboxFirstname As TextBox
+    Friend WithEvents radiobuttonCustomStatusbarGreeting As RadioButton
+    Friend WithEvents radiobuttonDefaultStatusbarGreeting As RadioButton
+    Friend WithEvents labelCustomStatusbarGreeting As Label
+    Friend WithEvents groupboxDefaultDarkTheme As GroupBox
+    Friend WithEvents labelDefaultDarkThemeDescription As Label
+    Friend WithEvents comboboxDarkThemesForSystemThemeMatchingList As ComboBox
+    Friend WithEvents labelOffice365Compatibility As Label
 End Class
