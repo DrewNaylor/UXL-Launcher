@@ -79,6 +79,7 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
+        Me.labelDriveNotReady = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -300,6 +301,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeLocation
         '
+        Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveNotReady)
         Me.groupboxOfficeLocation.Controls.Add(Me.buttonRefreshDriveLetterList)
         Me.groupboxOfficeLocation.Controls.Add(Me.comboboxDriveSelector)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
@@ -698,6 +700,15 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
+        'labelDriveNotReady
+        '
+        Me.labelDriveNotReady.AutoSize = True
+        Me.labelDriveNotReady.Location = New System.Drawing.Point(128, 85)
+        Me.labelDriveNotReady.Name = "labelDriveNotReady"
+        Me.labelDriveNotReady.Size = New System.Drawing.Size(83, 13)
+        Me.labelDriveNotReady.TabIndex = 5
+        Me.labelDriveNotReady.Text = "*Drive not ready"
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -793,4 +804,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents comboboxDarkThemesForSystemThemeMatchingList As ComboBox
     Friend WithEvents labelOffice365Compatibility As Label
     Friend WithEvents buttonRefreshDriveLetterList As Button
+    Friend WithEvents labelDriveNotReady As Label
 End Class
