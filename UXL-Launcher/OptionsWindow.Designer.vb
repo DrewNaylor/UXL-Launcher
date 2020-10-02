@@ -125,7 +125,7 @@ Partial Class aaformOptionsWindow
         Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(2, 2, 8, 2)
         Me.buttonSaveSettings.Name = "buttonSaveSettings"
         Me.buttonSaveSettings.Size = New System.Drawing.Size(70, 28)
-        Me.buttonSaveSettings.TabIndex = 9
+        Me.buttonSaveSettings.TabIndex = 7
         Me.buttonSaveSettings.Text = "Save"
         Me.buttonSaveSettings.UseVisualStyleBackColor = True
         '
@@ -190,7 +190,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(41, 129)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
         Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(206, 17)
-        Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 5
+        Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 2
         Me.radiobuttonBypassConfiguredLocationAllApps.TabStop = True
         Me.radiobuttonBypassConfiguredLocationAllApps.Text = "Bypass configured location for all apps"
         Me.radiobuttonBypassConfiguredLocationAllApps.UseVisualStyleBackColor = True
@@ -201,7 +201,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(41, 106)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 4
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 2
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabStop = True
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Text = "Bypass configured location for deprecated/removed apps"
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.UseVisualStyleBackColor = True
@@ -212,7 +212,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(41, 83)
         Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
         Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
-        Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 3
+        Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 2
         Me.radiobuttonDontBypassConfiguredLocation.TabStop = True
         Me.radiobuttonDontBypassConfiguredLocation.Text = "Don't bypass configured location"
         Me.radiobuttonDontBypassConfiguredLocation.UseVisualStyleBackColor = True
@@ -259,7 +259,7 @@ Partial Class aaformOptionsWindow
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
         Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 30)
-        Me.checkboxO365InstallMethod.TabIndex = 5
+        Me.checkboxO365InstallMethod.TabIndex = 1
         Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Always enabled for 2019 and above)" &
     ""
         Me.tooltipO365InstallMethod.SetToolTip(Me.checkboxO365InstallMethod, resources.GetString("checkboxO365InstallMethod.ToolTip"))
@@ -283,7 +283,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
         Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
-        Me.comboboxOfficeVersionSelector.TabIndex = 4
+        Me.comboboxOfficeVersionSelector.TabIndex = 0
         '
         'tabpageAdvanced
         '
@@ -309,7 +309,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.Name = "groupboxOfficeLocation"
         Me.groupboxOfficeLocation.Padding = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeLocation.Size = New System.Drawing.Size(415, 122)
-        Me.groupboxOfficeLocation.TabIndex = 6
+        Me.groupboxOfficeLocation.TabIndex = 0
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Root drive path"
         '
@@ -318,7 +318,7 @@ Partial Class aaformOptionsWindow
         Me.buttonRefreshDriveLetterList.Location = New System.Drawing.Point(178, 59)
         Me.buttonRefreshDriveLetterList.Name = "buttonRefreshDriveLetterList"
         Me.buttonRefreshDriveLetterList.Size = New System.Drawing.Size(58, 23)
-        Me.buttonRefreshDriveLetterList.TabIndex = 6
+        Me.buttonRefreshDriveLetterList.TabIndex = 1
         Me.buttonRefreshDriveLetterList.Text = "Refresh"
         Me.buttonRefreshDriveLetterList.UseVisualStyleBackColor = True
         '
@@ -329,7 +329,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxDriveSelector.Location = New System.Drawing.Point(131, 61)
         Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
         Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)
-        Me.comboboxDriveSelector.TabIndex = 5
+        Me.comboboxDriveSelector.TabIndex = 0
         '
         'labelDriveTextboxLabel
         '
@@ -362,7 +362,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.Name = "groupboxCPUType"
         Me.groupboxCPUType.Padding = New System.Windows.Forms.Padding(2)
         Me.groupboxCPUType.Size = New System.Drawing.Size(415, 192)
-        Me.groupboxCPUType.TabIndex = 0
+        Me.groupboxCPUType.TabIndex = 1
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "Program Files path"
         '
@@ -395,7 +395,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonUseProgramFilesX86.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonUseProgramFilesX86.Name = "radiobuttonUseProgramFilesX86"
         Me.radiobuttonUseProgramFilesX86.Size = New System.Drawing.Size(268, 17)
-        Me.radiobuttonUseProgramFilesX86.TabIndex = 3
+        Me.radiobuttonUseProgramFilesX86.TabIndex = 2
         Me.radiobuttonUseProgramFilesX86.TabStop = True
         Me.radiobuttonUseProgramFilesX86.Text = "Program Files (x86): 32-bit Office on 64-bit Windows"
         Me.radiobuttonUseProgramFilesX86.UseVisualStyleBackColor = True
@@ -455,7 +455,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(15, 61)
         Me.comboboxDarkThemesForSystemThemeMatchingList.Name = "comboboxDarkThemesForSystemThemeMatchingList"
         Me.comboboxDarkThemesForSystemThemeMatchingList.Size = New System.Drawing.Size(195, 21)
-        Me.comboboxDarkThemesForSystemThemeMatchingList.TabIndex = 1
+        Me.comboboxDarkThemesForSystemThemeMatchingList.TabIndex = 6
         '
         'labelDefaultDarkThemeDescription
         '
@@ -491,7 +491,7 @@ Partial Class aaformOptionsWindow
         Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(220, 92)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
         Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
-        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 3
+        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 2
         Me.checkboxMatchWindows10ThemeSettings.Text = "Match Windows 10 theme settings"
         Me.tooltipMatchWindows10ThemeSettings.SetToolTip(Me.checkboxMatchWindows10ThemeSettings, resources.GetString("checkboxMatchWindows10ThemeSettings.ToolTip"))
         Me.checkboxMatchWindows10ThemeSettings.UseVisualStyleBackColor = True
@@ -512,7 +512,7 @@ Partial Class aaformOptionsWindow
         Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(340, 155)
         Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
         Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
-        Me.buttonCustomThemesBrowse.TabIndex = 5
+        Me.buttonCustomThemesBrowse.TabIndex = 4
         Me.buttonCustomThemesBrowse.Text = "Browse..."
         Me.buttonCustomThemesBrowse.UseVisualStyleBackColor = True
         '
@@ -522,7 +522,7 @@ Partial Class aaformOptionsWindow
         Me.textboxCustomThemePath.Location = New System.Drawing.Point(220, 158)
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
         Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
-        Me.textboxCustomThemePath.TabIndex = 4
+        Me.textboxCustomThemePath.TabIndex = 3
         Me.tooltipCustomThemePath.SetToolTip(Me.textboxCustomThemePath, "(Placeholder)")
         '
         'labelThemeList
@@ -543,7 +543,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList.Location = New System.Drawing.Point(220, 65)
         Me.comboboxThemeList.Name = "comboboxThemeList"
         Me.comboboxThemeList.Size = New System.Drawing.Size(188, 21)
-        Me.comboboxThemeList.TabIndex = 2
+        Me.comboboxThemeList.TabIndex = 1
         '
         'textboxThemeInfo
         '
@@ -554,7 +554,7 @@ Partial Class aaformOptionsWindow
         Me.textboxThemeInfo.ReadOnly = True
         Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 129)
-        Me.textboxThemeInfo.TabIndex = 1
+        Me.textboxThemeInfo.TabIndex = 5
         Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
         'checkboxEnableThemeEngine
@@ -599,7 +599,7 @@ Partial Class aaformOptionsWindow
         Me.buttonClearFirstname.Location = New System.Drawing.Point(339, 100)
         Me.buttonClearFirstname.Name = "buttonClearFirstname"
         Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
-        Me.buttonClearFirstname.TabIndex = 5
+        Me.buttonClearFirstname.TabIndex = 4
         Me.buttonClearFirstname.Text = "Clear"
         Me.buttonClearFirstname.UseVisualStyleBackColor = True
         '
@@ -659,7 +659,7 @@ Partial Class aaformOptionsWindow
         Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonTestSettings.Name = "buttonTestSettings"
         Me.buttonTestSettings.Size = New System.Drawing.Size(79, 28)
-        Me.buttonTestSettings.TabIndex = 7
+        Me.buttonTestSettings.TabIndex = 9
         Me.buttonTestSettings.Text = "Test settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
         '
@@ -671,7 +671,7 @@ Partial Class aaformOptionsWindow
         Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
         Me.buttonDefaultSettings.Size = New System.Drawing.Size(65, 28)
-        Me.buttonDefaultSettings.TabIndex = 6
+        Me.buttonDefaultSettings.TabIndex = 10
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
         '
