@@ -172,6 +172,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AboutWindow.resx">
       <DependentUpon>AboutWindow.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -264,6 +265,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -Command "((Get-Date).ToUniversalTime()).ToString(\"s\") | Out-File '$(ProjectDir)Resources\BuildDate.txt'"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>call cd $(SolutionDir)
+call "$(SolutionDir)postbuild.bat"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
