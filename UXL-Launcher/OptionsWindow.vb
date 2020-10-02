@@ -339,6 +339,16 @@ Public Class aaformOptionsWindow
         ' Select the drive letter in the drive letter dropdown box.
         comboboxDriveSelector.Text = My.Settings.officeDriveLocation
     End Sub
+
+    Private Sub CheckIfDriveIsAvailable(DriveLetter As String)
+        ' Check if the drive is available and
+        ' show a label if it's not.
+        If Not IO.Directory.Exists(DriveLetter & ":\") Then
+            labelDriveNotAvailable.Show()
+        Else
+            labelDriveNotAvailable.Hide()
+        End If
+    End Sub
 #End Region
 
 #Region "Code that runs when the user clicks the Save button."
@@ -867,5 +877,12 @@ Public Class aaformOptionsWindow
         ' Fill the list of drive letters and set the selected letter based on the
         ' settings.
         FillDriveLettersBasedOnSettings()
+    End Sub
+
+    Private Sub comboboxDriveSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxDriveSelector.SelectedIndexChanged
+        ' Send the currently-selected drive letter to the
+        ' code that hides or shows the "drive available"
+        ' label.
+        CheckIfDriveIsAvailable(comboboxDriveSelector.Text)
     End Sub
 End Class
