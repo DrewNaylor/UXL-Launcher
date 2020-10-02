@@ -887,19 +887,20 @@ Public Class aaformOptionsWindow
     End Sub
 
     Private Sub buttonUpgradeSettings_Click(sender As Object, e As EventArgs) Handles buttonUpgradeSettings.Click
+        ' Ask the user if they want to migrate their settings from the previous version.
         Dim msgResult As Integer = MessageBox.Show("Would you like to migrate your settings from the previous version? We'll restart when it's done.",
                         "Migrate settings", MessageBoxButtons.YesNo)
         If msgResult = DialogResult.Yes Then
-
+            ' If they say yes, upgrade their settings and stuff.
             My.Settings.Upgrade()
             My.Settings.Save()
             My.Settings.Reload()
-
+            ' Settings are now migrated.
             MessageBox.Show("Settings migrated. We'll restart when you click OK.", "Migrate settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+            ' We still have to restart for them to take effect.
             Application.Restart()
         Else
-
+            ' If they say no, tell them that they weren't migrated.
             MessageBox.Show("Settings not migrated.", "Migrate settings", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
