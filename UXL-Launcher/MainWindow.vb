@@ -48,7 +48,8 @@ Public Class aaformMainWindow
                 MessageBox.Show("Settings migrated.", "UXL Launcher")
             Else
                 ' Otherwise, don't migrate their settings.
-                MessageBox.Show("Settings not migrated.", "UXL Launcher")
+                MessageBox.Show("Settings not migrated. You can migrate them later if you change your mind by going to Tools>Options...>Maintenance" &
+                                " and clicking the Migrate settings button.", "UXL Launcher")
             End If
             ' Turn off the settings upgrade check.
             My.Settings.autoupgradeUserSettings = False

@@ -331,7 +331,7 @@ Partial Class aaformOptionsWindow
         '
         'buttonRefreshDriveLetterList
         '
-        Me.buttonRefreshDriveLetterList.Location = New System.Drawing.Point(178, 59)
+        Me.buttonRefreshDriveLetterList.Location = New System.Drawing.Point(178, 60)
         Me.buttonRefreshDriveLetterList.Name = "buttonRefreshDriveLetterList"
         Me.buttonRefreshDriveLetterList.Size = New System.Drawing.Size(58, 23)
         Me.buttonRefreshDriveLetterList.TabIndex = 1
