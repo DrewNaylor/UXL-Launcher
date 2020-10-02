@@ -66,25 +66,12 @@ Public Class aaformOptionsWindow
 #Region "Load the settings from My.Settings."
 #Region "Drive letters."
 #Region "Set drive letter dropdown to available drives."
-        ' Clear the drive letter list.
-        comboboxDriveSelector.Items.Clear()
-
-        For Each DriveLetter As String In GetDriveLetters()
-            ' Get the drive letters of all active drives and remove the ":\".
-            comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
-        Next
+        ' Refresh drive letter list.
+        RefreshDriveLetters()
 #End Region
 #Region "Set drive letters in the dropdown."
-        ' If the drive the user wants to use isn't available in the dropdown,
-        ' add it to the dropdown.
-        If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
-            comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation)
-            ' Sort the list so it doesn't look bad.
-            comboboxDriveSelector.Sorted = True
-        End If
-
-        ' Select the drive letter in the drive letter dropdown box.
-        comboboxDriveSelector.Text = My.Settings.officeDriveLocation
+        ' Fill drive letters in the list.
+        FillDriveLettersBasedOnSettings()
 #End Region
 #End Region
 
@@ -329,6 +316,29 @@ Public Class aaformOptionsWindow
         ' Return the list.
         Return DriveLettersList
     End Function
+
+    Private Sub RefreshDriveLetters()
+        ' Clear the drive letter list.
+        comboboxDriveSelector.Items.Clear()
+
+        For Each DriveLetter As String In GetDriveLetters()
+            ' Get the drive letters of all active drives and remove the ":\".
+            comboboxDriveSelector.Items.Add(DriveLetter.Replace(":\", String.Empty))
+        Next
+    End Sub
+
+    Private Sub FillDriveLettersBasedOnSettings()
+        ' If the drive the user wants to use isn't available in the dropdown,
+        ' add it to the dropdown.
+        If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
+            comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation)
+            ' Sort the list so it doesn't look bad.
+            comboboxDriveSelector.Sorted = True
+        End If
+
+        ' Select the drive letter in the drive letter dropdown box.
+        comboboxDriveSelector.Text = My.Settings.officeDriveLocation
+    End Sub
 #End Region
 
 #Region "Code that runs when the user clicks the Save button."
@@ -849,5 +859,13 @@ Public Class aaformOptionsWindow
     Private Sub tabcontrolOptionsWindow_MouseWheel(sender As Object, e As MouseEventArgs) Handles tabcontrolOptionsWindow.MouseWheel
         ' Switch tabs on scroll.
         libscrollswitchtabs.ScrollSwitchTabs.switch(tabcontrolOptionsWindow, e)
+    End Sub
+
+    Private Sub buttonRefreshDriveLetterList_Click(sender As Object, e As EventArgs) Handles buttonRefreshDriveLetterList.Click
+        ' Refresh the drive letters list with currently-available drive letters.
+        RefreshDriveLetters()
+        ' Fill the list of drive letters and set the selected letter based on the
+        ' settings.
+        FillDriveLettersBasedOnSettings()
     End Sub
 End Class
