@@ -885,4 +885,8 @@ Public Class aaformOptionsWindow
         ' label.
         CheckIfDriveIsAvailable(comboboxDriveSelector.Text)
     End Sub
+
+    Private Sub buttonUpgradeSettings_Click(sender As Object, e As EventArgs) Handles buttonUpgradeSettings.Click
+
+    End Sub
 End Class

@@ -74,6 +74,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
         Me.tabpageMaintenance = New System.Windows.Forms.TabPage()
+        Me.labelMigrateSettings = New System.Windows.Forms.Label()
         Me.buttonUpgradeSettings = New System.Windows.Forms.Button()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
@@ -82,7 +83,6 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
-        Me.labelMigrateSettings = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -679,6 +679,17 @@ Partial Class aaformOptionsWindow
         Me.tabpageMaintenance.Text = "Maintenance"
         Me.tabpageMaintenance.UseVisualStyleBackColor = True
         '
+        'labelMigrateSettings
+        '
+        Me.labelMigrateSettings.AutoSize = True
+        Me.labelMigrateSettings.Location = New System.Drawing.Point(7, 7)
+        Me.labelMigrateSettings.Name = "labelMigrateSettings"
+        Me.labelMigrateSettings.Size = New System.Drawing.Size(308, 39)
+        Me.labelMigrateSettings.TabIndex = 1
+        Me.labelMigrateSettings.Text = "You can migrate your settings from the previous version if you" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "declined on first" &
+    " startup. Please be aware that this requires the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "new version to be installed to" &
+    " the same place as the old version."
+        '
         'buttonUpgradeSettings
         '
         Me.buttonUpgradeSettings.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -687,7 +698,7 @@ Partial Class aaformOptionsWindow
         Me.buttonUpgradeSettings.Name = "buttonUpgradeSettings"
         Me.buttonUpgradeSettings.Size = New System.Drawing.Size(409, 38)
         Me.buttonUpgradeSettings.TabIndex = 0
-        Me.buttonUpgradeSettings.Text = "Migrate/upgrade settings"
+        Me.buttonUpgradeSettings.Text = "Migrate/upgrade settings (requires restart)"
         Me.buttonUpgradeSettings.UseVisualStyleBackColor = True
         '
         'buttonTestSettings
@@ -736,17 +747,6 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.AutoPopDelay = 10000
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
-        '
-        'labelMigrateSettings
-        '
-        Me.labelMigrateSettings.AutoSize = True
-        Me.labelMigrateSettings.Location = New System.Drawing.Point(7, 7)
-        Me.labelMigrateSettings.Name = "labelMigrateSettings"
-        Me.labelMigrateSettings.Size = New System.Drawing.Size(308, 39)
-        Me.labelMigrateSettings.TabIndex = 1
-        Me.labelMigrateSettings.Text = "You can migrate your settings from the previous version if you" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "declined on first" &
-    " startup. Please be aware that this requires the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "new version to be installed to" &
-    " the same place as the old version."
         '
         'aaformOptionsWindow
         '
