@@ -73,6 +73,8 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonCustomStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
+        Me.tabpageMaintenance = New System.Windows.Forms.TabPage()
+        Me.buttonUpgradeSettings = New System.Windows.Forms.Button()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
         Me.buttonDefaultSettings = New System.Windows.Forms.Button()
         Me.tooltipO365InstallMethod = New System.Windows.Forms.ToolTip(Me.components)
@@ -80,7 +82,7 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
-        Me.tabpageMaintenance = New System.Windows.Forms.TabPage()
+        Me.labelMigrateSettings = New System.Windows.Forms.Label()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -94,6 +96,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.SuspendLayout()
         Me.tabpageStatusbar.SuspendLayout()
         Me.groupboxStatusbar.SuspendLayout()
+        Me.tabpageMaintenance.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -664,6 +667,29 @@ Partial Class aaformOptionsWindow
         Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
     "ickname, or to use the default. Your name will not be used to identify you."
         '
+        'tabpageMaintenance
+        '
+        Me.tabpageMaintenance.Controls.Add(Me.labelMigrateSettings)
+        Me.tabpageMaintenance.Controls.Add(Me.buttonUpgradeSettings)
+        Me.tabpageMaintenance.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageMaintenance.Name = "tabpageMaintenance"
+        Me.tabpageMaintenance.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageMaintenance.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageMaintenance.TabIndex = 4
+        Me.tabpageMaintenance.Text = "Maintenance"
+        Me.tabpageMaintenance.UseVisualStyleBackColor = True
+        '
+        'buttonUpgradeSettings
+        '
+        Me.buttonUpgradeSettings.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.buttonUpgradeSettings.Location = New System.Drawing.Point(7, 49)
+        Me.buttonUpgradeSettings.Name = "buttonUpgradeSettings"
+        Me.buttonUpgradeSettings.Size = New System.Drawing.Size(409, 38)
+        Me.buttonUpgradeSettings.TabIndex = 0
+        Me.buttonUpgradeSettings.Text = "Migrate/upgrade settings"
+        Me.buttonUpgradeSettings.UseVisualStyleBackColor = True
+        '
         'buttonTestSettings
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
@@ -711,15 +737,16 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
-        'tabpageMaintenance
+        'labelMigrateSettings
         '
-        Me.tabpageMaintenance.Location = New System.Drawing.Point(4, 22)
-        Me.tabpageMaintenance.Name = "tabpageMaintenance"
-        Me.tabpageMaintenance.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageMaintenance.Size = New System.Drawing.Size(422, 326)
-        Me.tabpageMaintenance.TabIndex = 4
-        Me.tabpageMaintenance.Text = "Maintenance"
-        Me.tabpageMaintenance.UseVisualStyleBackColor = True
+        Me.labelMigrateSettings.AutoSize = True
+        Me.labelMigrateSettings.Location = New System.Drawing.Point(7, 7)
+        Me.labelMigrateSettings.Name = "labelMigrateSettings"
+        Me.labelMigrateSettings.Size = New System.Drawing.Size(308, 39)
+        Me.labelMigrateSettings.TabIndex = 1
+        Me.labelMigrateSettings.Text = "You can migrate your settings from the previous version if you" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "declined on first" &
+    " startup. Please be aware that this requires the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "new version to be installed to" &
+    " the same place as the old version."
         '
         'aaformOptionsWindow
         '
@@ -757,6 +784,8 @@ Partial Class aaformOptionsWindow
         Me.tabpageStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.PerformLayout()
+        Me.tabpageMaintenance.ResumeLayout(False)
+        Me.tabpageMaintenance.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -818,4 +847,6 @@ Partial Class aaformOptionsWindow
     Friend WithEvents buttonRefreshDriveLetterList As Button
     Friend WithEvents labelDriveNotAvailable As Label
     Friend WithEvents tabpageMaintenance As TabPage
+    Friend WithEvents buttonUpgradeSettings As Button
+    Friend WithEvents labelMigrateSettings As Label
 End Class
