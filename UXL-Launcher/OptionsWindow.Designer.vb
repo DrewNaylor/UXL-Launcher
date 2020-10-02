@@ -80,6 +80,7 @@ Partial Class aaformOptionsWindow
         Me.openfiledialogBrowseCustomThemeFile = New System.Windows.Forms.OpenFileDialog()
         Me.tooltipCustomThemePath = New System.Windows.Forms.ToolTip(Me.components)
         Me.tooltipMatchWindows10ThemeSettings = New System.Windows.Forms.ToolTip(Me.components)
+        Me.tabpageMaintenance = New System.Windows.Forms.TabPage()
         Me.tableLayoutPanelOptionsWindow.SuspendLayout()
         Me.tabcontrolOptionsWindow.SuspendLayout()
         Me.tabpageGeneral.SuspendLayout()
@@ -150,6 +151,7 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageAdvanced)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpagePersonalization)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageStatusbar)
+        Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageMaintenance)
         Me.tabcontrolOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(8, 8)
         Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(8, 8, 8, 2)
@@ -709,6 +711,16 @@ Partial Class aaformOptionsWindow
         Me.tooltipMatchWindows10ThemeSettings.InitialDelay = 500
         Me.tooltipMatchWindows10ThemeSettings.ReshowDelay = 100
         '
+        'tabpageMaintenance
+        '
+        Me.tabpageMaintenance.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageMaintenance.Name = "tabpageMaintenance"
+        Me.tabpageMaintenance.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabpageMaintenance.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageMaintenance.TabIndex = 4
+        Me.tabpageMaintenance.Text = "Maintenance"
+        Me.tabpageMaintenance.UseVisualStyleBackColor = True
+        '
         'aaformOptionsWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -805,4 +817,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelOffice365Compatibility As Label
     Friend WithEvents buttonRefreshDriveLetterList As Button
     Friend WithEvents labelDriveNotAvailable As Label
+    Friend WithEvents tabpageMaintenance As TabPage
 End Class
