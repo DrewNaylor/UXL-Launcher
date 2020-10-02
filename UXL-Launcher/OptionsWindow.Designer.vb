@@ -41,6 +41,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxOfficeVersionSelector = New System.Windows.Forms.ComboBox()
         Me.tabpageAdvanced = New System.Windows.Forms.TabPage()
         Me.groupboxOfficeLocation = New System.Windows.Forms.GroupBox()
+        Me.buttonRefreshDriveLetterList = New System.Windows.Forms.Button()
         Me.comboboxDriveSelector = New System.Windows.Forms.ComboBox()
         Me.labelDriveTextboxLabel = New System.Windows.Forms.Label()
         Me.labelOfficeInstalledToDrive = New System.Windows.Forms.Label()
@@ -299,6 +300,7 @@ Partial Class aaformOptionsWindow
         '
         'groupboxOfficeLocation
         '
+        Me.groupboxOfficeLocation.Controls.Add(Me.buttonRefreshDriveLetterList)
         Me.groupboxOfficeLocation.Controls.Add(Me.comboboxDriveSelector)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
@@ -310,6 +312,15 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.TabIndex = 6
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Root drive path"
+        '
+        'buttonRefreshDriveLetterList
+        '
+        Me.buttonRefreshDriveLetterList.Location = New System.Drawing.Point(178, 59)
+        Me.buttonRefreshDriveLetterList.Name = "buttonRefreshDriveLetterList"
+        Me.buttonRefreshDriveLetterList.Size = New System.Drawing.Size(58, 23)
+        Me.buttonRefreshDriveLetterList.TabIndex = 6
+        Me.buttonRefreshDriveLetterList.Text = "Refresh"
+        Me.buttonRefreshDriveLetterList.UseVisualStyleBackColor = True
         '
         'comboboxDriveSelector
         '
@@ -781,4 +792,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents labelDefaultDarkThemeDescription As Label
     Friend WithEvents comboboxDarkThemesForSystemThemeMatchingList As ComboBox
     Friend WithEvents labelOffice365Compatibility As Label
+    Friend WithEvents buttonRefreshDriveLetterList As Button
 End Class
