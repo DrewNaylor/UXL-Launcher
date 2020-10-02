@@ -74,6 +74,7 @@ Partial Class aaformOptionsWindow
         Me.radiobuttonDefaultStatusbarGreeting = New System.Windows.Forms.RadioButton()
         Me.labelCustomStatusbarGreeting = New System.Windows.Forms.Label()
         Me.tabpageMaintenance = New System.Windows.Forms.TabPage()
+        Me.groupboxMigrateSettings = New System.Windows.Forms.GroupBox()
         Me.labelMigrateSettings = New System.Windows.Forms.Label()
         Me.buttonUpgradeSettings = New System.Windows.Forms.Button()
         Me.buttonTestSettings = New System.Windows.Forms.Button()
@@ -97,6 +98,7 @@ Partial Class aaformOptionsWindow
         Me.tabpageStatusbar.SuspendLayout()
         Me.groupboxStatusbar.SuspendLayout()
         Me.tabpageMaintenance.SuspendLayout()
+        Me.groupboxMigrateSettings.SuspendLayout()
         Me.SuspendLayout()
         '
         'tableLayoutPanelOptionsWindow
@@ -605,14 +607,14 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.Location = New System.Drawing.Point(4, 4)
         Me.groupboxStatusbar.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxStatusbar.Name = "groupboxStatusbar"
-        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 130)
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 120)
         Me.groupboxStatusbar.TabIndex = 2
         Me.groupboxStatusbar.TabStop = False
         Me.groupboxStatusbar.Text = "Greeting"
         '
         'buttonClearFirstname
         '
-        Me.buttonClearFirstname.Location = New System.Drawing.Point(339, 100)
+        Me.buttonClearFirstname.Location = New System.Drawing.Point(352, 89)
         Me.buttonClearFirstname.Name = "buttonClearFirstname"
         Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
         Me.buttonClearFirstname.TabIndex = 4
@@ -622,7 +624,7 @@ Partial Class aaformOptionsWindow
         'labelFirstName
         '
         Me.labelFirstName.AutoSize = True
-        Me.labelFirstName.Location = New System.Drawing.Point(25, 105)
+        Me.labelFirstName.Location = New System.Drawing.Point(12, 93)
         Me.labelFirstName.Name = "labelFirstName"
         Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
         Me.labelFirstName.TabIndex = 4
@@ -630,15 +632,15 @@ Partial Class aaformOptionsWindow
         '
         'textboxFirstname
         '
-        Me.textboxFirstname.Location = New System.Drawing.Point(140, 102)
+        Me.textboxFirstname.Location = New System.Drawing.Point(127, 90)
         Me.textboxFirstname.Name = "textboxFirstname"
-        Me.textboxFirstname.Size = New System.Drawing.Size(193, 20)
+        Me.textboxFirstname.Size = New System.Drawing.Size(219, 20)
         Me.textboxFirstname.TabIndex = 3
         '
         'radiobuttonCustomStatusbarGreeting
         '
         Me.radiobuttonCustomStatusbarGreeting.AutoSize = True
-        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(26, 79)
+        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(13, 67)
         Me.radiobuttonCustomStatusbarGreeting.Name = "radiobuttonCustomStatusbarGreeting"
         Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(193, 17)
         Me.radiobuttonCustomStatusbarGreeting.TabIndex = 2
@@ -649,7 +651,7 @@ Partial Class aaformOptionsWindow
         'radiobuttonDefaultStatusbarGreeting
         '
         Me.radiobuttonDefaultStatusbarGreeting.AutoSize = True
-        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(26, 56)
+        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(13, 44)
         Me.radiobuttonDefaultStatusbarGreeting.Name = "radiobuttonDefaultStatusbarGreeting"
         Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(166, 17)
         Me.radiobuttonDefaultStatusbarGreeting.TabIndex = 1
@@ -669,8 +671,7 @@ Partial Class aaformOptionsWindow
         '
         'tabpageMaintenance
         '
-        Me.tabpageMaintenance.Controls.Add(Me.labelMigrateSettings)
-        Me.tabpageMaintenance.Controls.Add(Me.buttonUpgradeSettings)
+        Me.tabpageMaintenance.Controls.Add(Me.groupboxMigrateSettings)
         Me.tabpageMaintenance.Location = New System.Drawing.Point(4, 22)
         Me.tabpageMaintenance.Name = "tabpageMaintenance"
         Me.tabpageMaintenance.Padding = New System.Windows.Forms.Padding(3)
@@ -679,10 +680,22 @@ Partial Class aaformOptionsWindow
         Me.tabpageMaintenance.Text = "Maintenance"
         Me.tabpageMaintenance.UseVisualStyleBackColor = True
         '
+        'groupboxMigrateSettings
+        '
+        Me.groupboxMigrateSettings.Controls.Add(Me.labelMigrateSettings)
+        Me.groupboxMigrateSettings.Controls.Add(Me.buttonUpgradeSettings)
+        Me.groupboxMigrateSettings.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxMigrateSettings.Margin = New System.Windows.Forms.Padding(2)
+        Me.groupboxMigrateSettings.Name = "groupboxMigrateSettings"
+        Me.groupboxMigrateSettings.Size = New System.Drawing.Size(415, 100)
+        Me.groupboxMigrateSettings.TabIndex = 2
+        Me.groupboxMigrateSettings.TabStop = False
+        Me.groupboxMigrateSettings.Text = "Migrate settings"
+        '
         'labelMigrateSettings
         '
         Me.labelMigrateSettings.AutoSize = True
-        Me.labelMigrateSettings.Location = New System.Drawing.Point(7, 7)
+        Me.labelMigrateSettings.Location = New System.Drawing.Point(6, 16)
         Me.labelMigrateSettings.Name = "labelMigrateSettings"
         Me.labelMigrateSettings.Size = New System.Drawing.Size(308, 39)
         Me.labelMigrateSettings.TabIndex = 1
@@ -694,9 +707,9 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonUpgradeSettings.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonUpgradeSettings.Location = New System.Drawing.Point(7, 49)
+        Me.buttonUpgradeSettings.Location = New System.Drawing.Point(6, 58)
         Me.buttonUpgradeSettings.Name = "buttonUpgradeSettings"
-        Me.buttonUpgradeSettings.Size = New System.Drawing.Size(409, 38)
+        Me.buttonUpgradeSettings.Size = New System.Drawing.Size(403, 38)
         Me.buttonUpgradeSettings.TabIndex = 0
         Me.buttonUpgradeSettings.Text = "Migrate settings (requires restart)"
         Me.buttonUpgradeSettings.UseVisualStyleBackColor = True
@@ -785,7 +798,8 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.ResumeLayout(False)
         Me.groupboxStatusbar.PerformLayout()
         Me.tabpageMaintenance.ResumeLayout(False)
-        Me.tabpageMaintenance.PerformLayout()
+        Me.groupboxMigrateSettings.ResumeLayout(False)
+        Me.groupboxMigrateSettings.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -849,4 +863,5 @@ Partial Class aaformOptionsWindow
     Friend WithEvents tabpageMaintenance As TabPage
     Friend WithEvents buttonUpgradeSettings As Button
     Friend WithEvents labelMigrateSettings As Label
+    Friend WithEvents groupboxMigrateSettings As GroupBox
 End Class
