@@ -8,7 +8,7 @@
     <Setting Name="officeDriveLocation" Type="System.String" Scope="User">
       <Value Profile="(Default)">C</Value>
     </Setting>
-    <Setting Name="pathUsePFxEightySix" Type="System.Boolean" Scope="User">
+    <Setting Name="cpuIsSixtyFourBit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="userHasOfficeThreeSixFive" Type="System.Boolean" Scope="User">

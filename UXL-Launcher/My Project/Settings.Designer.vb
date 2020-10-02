@@ -81,12 +81,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property pathUsePFxEightySix() As Boolean
+        Public Property cpuIsSixtyFourBit() As Boolean
             Get
-                Return CType(Me("pathUsePFxEightySix"),Boolean)
+                Return CType(Me("cpuIsSixtyFourBit"),Boolean)
             End Get
             Set
-                Me("pathUsePFxEightySix") = value
+                Me("cpuIsSixtyFourBit") = value
             End Set
         End Property
         

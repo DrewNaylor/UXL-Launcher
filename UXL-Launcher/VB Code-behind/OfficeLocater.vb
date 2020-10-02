@@ -43,10 +43,10 @@ Public Class OfficeLocater
 
         ' This code looks at My.Settings.pathUsePFxEightySix and if it's set to True, pfPathString is set to " (x86)".
         ' However, if My.Settings.pathUsePFxEightySix is set to False, pfPathString is assigned an empty value.
-        If My.Settings.pathUsePFxEightySix = True Then
+        If My.Settings.cpuIsSixtyFourBit = True Then
             pfPathString = " (x86)"
             titlebarProgramFilesModeString = "PF-x86"
-        ElseIf My.Settings.pathUsePFxEightySix = False Then
+        ElseIf My.Settings.cpuIsSixtyFourBit = False Then
             pfPathString = String.Empty
             titlebarProgramFilesModeString = "PF"
         End If
