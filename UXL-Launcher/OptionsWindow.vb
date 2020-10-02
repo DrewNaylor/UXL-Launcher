@@ -887,6 +887,10 @@ Public Class aaformOptionsWindow
     End Sub
 
     Private Sub buttonUpgradeSettings_Click(sender As Object, e As EventArgs) Handles buttonUpgradeSettings.Click
+        My.Settings.Upgrade()
+        My.Settings.Save()
+        My.Settings.Reload()
 
+        MessageBox.Show("Settings migrated. We'll restart when you click OK.")
     End Sub
 End Class
