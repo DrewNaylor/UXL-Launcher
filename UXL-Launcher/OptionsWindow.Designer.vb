@@ -698,7 +698,7 @@ Partial Class aaformOptionsWindow
         Me.buttonUpgradeSettings.Name = "buttonUpgradeSettings"
         Me.buttonUpgradeSettings.Size = New System.Drawing.Size(409, 38)
         Me.buttonUpgradeSettings.TabIndex = 0
-        Me.buttonUpgradeSettings.Text = "Migrate/upgrade settings (requires restart)"
+        Me.buttonUpgradeSettings.Text = "Migrate settings (requires restart)"
         Me.buttonUpgradeSettings.UseVisualStyleBackColor = True
         '
         'buttonTestSettings
