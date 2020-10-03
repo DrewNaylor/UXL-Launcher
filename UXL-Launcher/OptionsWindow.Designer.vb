@@ -509,7 +509,7 @@ Partial Class aaformOptionsWindow
         Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(7, 43)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
         Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
-        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 2
+        Me.checkboxMatchWindows10ThemeSettings.TabIndex = 1
         Me.checkboxMatchWindows10ThemeSettings.Text = "Match Windows 10 theme settings"
         Me.tooltipMatchWindows10ThemeSettings.SetToolTip(Me.checkboxMatchWindows10ThemeSettings, resources.GetString("checkboxMatchWindows10ThemeSettings.ToolTip"))
         Me.checkboxMatchWindows10ThemeSettings.UseVisualStyleBackColor = True
@@ -530,7 +530,7 @@ Partial Class aaformOptionsWindow
         Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(127, 168)
         Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
         Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
-        Me.buttonCustomThemesBrowse.TabIndex = 4
+        Me.buttonCustomThemesBrowse.TabIndex = 5
         Me.buttonCustomThemesBrowse.Text = "Browse..."
         Me.buttonCustomThemesBrowse.UseVisualStyleBackColor = True
         '
@@ -540,7 +540,7 @@ Partial Class aaformOptionsWindow
         Me.textboxCustomThemePath.Location = New System.Drawing.Point(7, 171)
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
         Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
-        Me.textboxCustomThemePath.TabIndex = 3
+        Me.textboxCustomThemePath.TabIndex = 4
         Me.tooltipCustomThemePath.SetToolTip(Me.textboxCustomThemePath, "(Placeholder)")
         '
         'labelThemeList
@@ -561,7 +561,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList.Location = New System.Drawing.Point(7, 79)
         Me.comboboxThemeList.Name = "comboboxThemeList"
         Me.comboboxThemeList.Size = New System.Drawing.Size(188, 21)
-        Me.comboboxThemeList.TabIndex = 1
+        Me.comboboxThemeList.TabIndex = 2
         '
         'textboxThemeInfo
         '
@@ -572,7 +572,7 @@ Partial Class aaformOptionsWindow
         Me.textboxThemeInfo.ReadOnly = True
         Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 152)
-        Me.textboxThemeInfo.TabIndex = 5
+        Me.textboxThemeInfo.TabIndex = 6
         Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
         'checkboxEnableThemeEngine
