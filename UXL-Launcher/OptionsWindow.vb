@@ -674,7 +674,7 @@ Public Class aaformOptionsWindow
             ' two places when needed.
             ' Make sure there's text in the custom theme path box before changing
             ' the text in the details textbox.
-            If textboxCustomThemePath.Text.Length > 0 Then
+            If textboxCustomThemePath.Text.Length > 0 Or My.Settings.allowCustomThemes = False Then
                 customThemePathInfoUpdater()
             Else
                 textboxThemeInfo.Text = "You can use a custom theme by clicking Browse... and picking a custom theme file from the file system or by pasting the custom theme path in the custom theme path textbox."
