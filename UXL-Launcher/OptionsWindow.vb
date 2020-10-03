@@ -674,11 +674,7 @@ Public Class aaformOptionsWindow
             ' two places when needed.
             ' Make sure there's text in the custom theme path box before changing
             ' the text in the details textbox.
-            If textboxCustomThemePath.Text.Length > 0 Or My.Settings.allowCustomThemes = False Then
-                customThemePathInfoUpdater()
-            Else
-                textboxThemeInfo.Text = "You can use a custom theme by clicking Browse... and picking a custom theme file from the file system or by pasting the custom theme path in the custom theme path textbox."
-            End If
+            customThemePathInfoUpdater()
 
         End If
     End Sub
@@ -694,35 +690,41 @@ Public Class aaformOptionsWindow
 
         ' Next, make sure that the theme list is only using custom themes.
         If comboboxThemeList.Text = "(Custom)" Then
-            ' Create a temporary XML document.
-            Dim tempXml As XmlDocument = New XmlDocument
-            ' Also create a temporary string that removes quotation marks.
-            ' This string takes the current text in the custom theme path
-            ' textbox and creates a new string replacing double-quotes.
-            Dim tempRemoveQuotesInPath As String = textboxCustomThemePath.Text.Replace("""", "")
-            ' Also replace text currently in the textbox with a string
-            ' that doesn't have double quotes.
-            textboxCustomThemePath.Text = tempRemoveQuotesInPath
-            ' Load into the XML document the correct theme file
-            ' if it exists.
-            If System.IO.File.Exists(tempRemoveQuotesInPath) Then
-                Try
-                    tempXml.Load(tempRemoveQuotesInPath)
-                    ' Catch XmlException.
-                    ' This can be caused by using the "None" theme that
-                    ' has purposefully invalid XML just to make sure there
-                    ' aren't any problems in the theme engine that might
-                    ' slip by when using valid XML.
-                Catch ex As System.Xml.XmlException
-                    ' Also catch UnauthorizedAccessException.
-                    ' If this exception occurs, it may be because
-                    ' a file was accessed that's not allowed to be accessed,
-                    ' such as a file in the Windows directory.
-                Catch ex As System.UnauthorizedAccessException
-                End Try
+            ' Only update the text if there's something in the custom theme path textbox.
+            If textboxCustomThemePath.Text.Length > 0 Or My.Settings.allowCustomThemes = False Then
+                ' Create a temporary XML document.
+                Dim tempXml As XmlDocument = New XmlDocument
+                ' Also create a temporary string that removes quotation marks.
+                ' This string takes the current text in the custom theme path
+                ' textbox and creates a new string replacing double-quotes.
+                Dim tempRemoveQuotesInPath As String = textboxCustomThemePath.Text.Replace("""", "")
+                ' Also replace text currently in the textbox with a string
+                ' that doesn't have double quotes.
+                textboxCustomThemePath.Text = tempRemoveQuotesInPath
+                ' Load into the XML document the correct theme file
+                ' if it exists.
+                If System.IO.File.Exists(tempRemoveQuotesInPath) Then
+                    Try
+                        tempXml.Load(tempRemoveQuotesInPath)
+                        ' Catch XmlException.
+                        ' This can be caused by using the "None" theme that
+                        ' has purposefully invalid XML just to make sure there
+                        ' aren't any problems in the theme engine that might
+                        ' slip by when using valid XML.
+                    Catch ex As System.Xml.XmlException
+                        ' Also catch UnauthorizedAccessException.
+                        ' If this exception occurs, it may be because
+                        ' a file was accessed that's not allowed to be accessed,
+                        ' such as a file in the Windows directory.
+                    Catch ex As System.UnauthorizedAccessException
+                    End Try
+                End If
+                ' Get the theme's info.
+                textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, tempRemoveQuotesInPath)
+            Else
+                ' Nothing in the textbox, so let the user know how they can use a custom theme.
+                textboxThemeInfo.Text = "You can use a custom theme by clicking Browse... and picking a custom theme file from the file system or by pasting the custom theme path in the custom theme path textbox."
             End If
-            ' Get the theme's info.
-            textboxThemeInfo.Text = UXLLauncher_ThemeEngine.getThemeFileInfo(tempXml, True, tempRemoveQuotesInPath)
         End If
     End Sub
 
