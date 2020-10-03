@@ -172,6 +172,7 @@ Partial Class aaformThemeLoader
         '
         'checkboxSpecifyDarkThemeForSystemThemeMatching
         '
+        Me.checkboxSpecifyDarkThemeForSystemThemeMatching.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.checkboxSpecifyDarkThemeForSystemThemeMatching.AutoSize = True
         Me.checkboxSpecifyDarkThemeForSystemThemeMatching.CheckAlign = System.Drawing.ContentAlignment.TopLeft
         Me.checkboxSpecifyDarkThemeForSystemThemeMatching.Location = New System.Drawing.Point(218, 184)
@@ -183,6 +184,7 @@ Partial Class aaformThemeLoader
         '
         'radiobuttonMatchSystemTheme
         '
+        Me.radiobuttonMatchSystemTheme.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.radiobuttonMatchSystemTheme.AutoSize = True
         Me.radiobuttonMatchSystemTheme.CheckAlign = System.Drawing.ContentAlignment.TopLeft
         Me.radiobuttonMatchSystemTheme.Location = New System.Drawing.Point(202, 147)
