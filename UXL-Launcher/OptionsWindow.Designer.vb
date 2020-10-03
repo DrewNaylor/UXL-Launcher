@@ -459,9 +459,9 @@ Partial Class aaformOptionsWindow
         '
         Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDarkThemesForSystemThemeMatchingList)
         Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
-        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 194)
+        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 209)
         Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
-        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 127)
+        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 112)
         Me.groupboxDefaultDarkTheme.TabIndex = 1
         Me.groupboxDefaultDarkTheme.TabStop = False
         Me.groupboxDefaultDarkTheme.Text = "Dark theme for system theme matching"
@@ -470,7 +470,7 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxDarkThemesForSystemThemeMatchingList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxDarkThemesForSystemThemeMatchingList.FormattingEnabled = True
-        Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(15, 61)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(15, 54)
         Me.comboboxDarkThemesForSystemThemeMatchingList.Name = "comboboxDarkThemesForSystemThemeMatchingList"
         Me.comboboxDarkThemesForSystemThemeMatchingList.Size = New System.Drawing.Size(195, 21)
         Me.comboboxDarkThemesForSystemThemeMatchingList.TabIndex = 6
@@ -478,7 +478,7 @@ Partial Class aaformOptionsWindow
         'labelDefaultDarkThemeDescription
         '
         Me.labelDefaultDarkThemeDescription.AutoSize = True
-        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 44)
+        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 37)
         Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
         Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(390, 13)
         Me.labelDefaultDarkThemeDescription.TabIndex = 0
@@ -497,7 +497,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.Location = New System.Drawing.Point(4, 4)
         Me.groupboxAppearance.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxAppearance.Name = "groupboxAppearance"
-        Me.groupboxAppearance.Size = New System.Drawing.Size(415, 184)
+        Me.groupboxAppearance.Size = New System.Drawing.Size(415, 200)
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Appearance"
@@ -506,7 +506,7 @@ Partial Class aaformOptionsWindow
         '
         Me.checkboxMatchWindows10ThemeSettings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.checkboxMatchWindows10ThemeSettings.AutoSize = True
-        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(220, 92)
+        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(7, 43)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
         Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
         Me.checkboxMatchWindows10ThemeSettings.TabIndex = 2
@@ -518,7 +518,7 @@ Partial Class aaformOptionsWindow
         '
         Me.labelCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelCustomThemePath.AutoSize = True
-        Me.labelCustomThemePath.Location = New System.Drawing.Point(217, 142)
+        Me.labelCustomThemePath.Location = New System.Drawing.Point(4, 155)
         Me.labelCustomThemePath.Name = "labelCustomThemePath"
         Me.labelCustomThemePath.Size = New System.Drawing.Size(101, 13)
         Me.labelCustomThemePath.TabIndex = 6
@@ -527,7 +527,7 @@ Partial Class aaformOptionsWindow
         'buttonCustomThemesBrowse
         '
         Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(340, 155)
+        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(127, 168)
         Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
         Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
         Me.buttonCustomThemesBrowse.TabIndex = 4
@@ -537,7 +537,7 @@ Partial Class aaformOptionsWindow
         'textboxCustomThemePath
         '
         Me.textboxCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textboxCustomThemePath.Location = New System.Drawing.Point(220, 158)
+        Me.textboxCustomThemePath.Location = New System.Drawing.Point(7, 171)
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
         Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
         Me.textboxCustomThemePath.TabIndex = 3
@@ -547,7 +547,7 @@ Partial Class aaformOptionsWindow
         '
         Me.labelThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelThemeList.AutoSize = True
-        Me.labelThemeList.Location = New System.Drawing.Point(217, 49)
+        Me.labelThemeList.Location = New System.Drawing.Point(4, 63)
         Me.labelThemeList.Name = "labelThemeList"
         Me.labelThemeList.Size = New System.Drawing.Size(58, 13)
         Me.labelThemeList.TabIndex = 3
@@ -558,7 +558,7 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.comboboxThemeList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxThemeList.FormattingEnabled = True
-        Me.comboboxThemeList.Location = New System.Drawing.Point(220, 65)
+        Me.comboboxThemeList.Location = New System.Drawing.Point(7, 79)
         Me.comboboxThemeList.Name = "comboboxThemeList"
         Me.comboboxThemeList.Size = New System.Drawing.Size(188, 21)
         Me.comboboxThemeList.TabIndex = 1
@@ -566,12 +566,12 @@ Partial Class aaformOptionsWindow
         'textboxThemeInfo
         '
         Me.textboxThemeInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.textboxThemeInfo.Location = New System.Drawing.Point(7, 49)
+        Me.textboxThemeInfo.Location = New System.Drawing.Point(205, 39)
         Me.textboxThemeInfo.Multiline = True
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
         Me.textboxThemeInfo.ReadOnly = True
         Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 129)
+        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 152)
         Me.textboxThemeInfo.TabIndex = 5
         Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
