@@ -500,7 +500,7 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.Size = New System.Drawing.Size(415, 200)
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
-        Me.groupboxAppearance.Text = "Appearance"
+        Me.groupboxAppearance.Text = "Theme configuration"
         '
         'checkboxMatchWindows10ThemeSettings
         '
