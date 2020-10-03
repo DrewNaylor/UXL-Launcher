@@ -659,9 +659,12 @@ Public Class aaformOptionsWindow
             ' First, enable the custom theme path textbox and the "Browse..."
             ' button if the theme list combobox is "(Custom)" as long as custom
             ' themes are allowed.
-            If My.Settings.allowCustomThemes = True Then
+            If My.Settings.allowCustomThemes = True AndAlso checkboxMatchWindows10ThemeSettings.Checked = False Then
                 textboxCustomThemePath.Enabled = True
                 buttonCustomThemesBrowse.Enabled = True
+            Else
+                textboxCustomThemePath.Enabled = False
+                buttonCustomThemesBrowse.Enabled = False
             End If
 
             ' If it is "(Custom)", send the custom theme path below the theme list
