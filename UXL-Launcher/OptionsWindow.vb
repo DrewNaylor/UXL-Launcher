@@ -669,7 +669,13 @@ Public Class aaformOptionsWindow
 
             ' This code has been moved to the sub below to be able to call it from
             ' two places when needed.
-            customThemePathInfoUpdater()
+            ' Make sure there's text in the custom theme path box before changing
+            ' the text in the details textbox.
+            If textboxCustomThemePath.Text.Length > 0 Then
+                customThemePathInfoUpdater()
+            Else
+                textboxThemeInfo.Text = "You can use a custom theme by clicking Browse... and picking a custom theme file from the file system or by pasting the custom theme path in the custom theme path textbox."
+            End If
 
         End If
     End Sub
