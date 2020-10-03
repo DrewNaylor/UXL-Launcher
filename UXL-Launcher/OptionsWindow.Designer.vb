@@ -697,11 +697,9 @@ Partial Class aaformOptionsWindow
         Me.labelMigrateSettings.AutoSize = True
         Me.labelMigrateSettings.Location = New System.Drawing.Point(6, 16)
         Me.labelMigrateSettings.Name = "labelMigrateSettings"
-        Me.labelMigrateSettings.Size = New System.Drawing.Size(308, 39)
+        Me.labelMigrateSettings.Size = New System.Drawing.Size(410, 39)
         Me.labelMigrateSettings.TabIndex = 1
-        Me.labelMigrateSettings.Text = "You can migrate your settings from the previous version if you" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "declined on first" &
-    " startup. Please be aware that this requires the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "new version to be installed to" &
-    " the same place as the old version."
+        Me.labelMigrateSettings.Text = resources.GetString("labelMigrateSettings.Text")
         '
         'buttonUpgradeSettings
         '
@@ -711,7 +709,7 @@ Partial Class aaformOptionsWindow
         Me.buttonUpgradeSettings.Name = "buttonUpgradeSettings"
         Me.buttonUpgradeSettings.Size = New System.Drawing.Size(403, 38)
         Me.buttonUpgradeSettings.TabIndex = 0
-        Me.buttonUpgradeSettings.Text = "Migrate settings (requires restart)"
+        Me.buttonUpgradeSettings.Text = "Migrate settings (overwrites current settings and requires restart)"
         Me.buttonUpgradeSettings.UseVisualStyleBackColor = True
         '
         'buttonTestSettings
