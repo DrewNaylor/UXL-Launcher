@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-09-29T04:39:15
+        '''  Looks up a localized string similar to 2020-10-02T08:39:50
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -281,7 +281,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Git.
+        '''  Looks up a localized string similar to Release Candidate 1.
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
@@ -300,19 +300,18 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to applauncher-icons
-        '''By Drew Naylor. Licensed under CC BY 4.0.
-        '''Version 3.0
+        '''  Looks up a localized string similar to libscrollswitchtabs
+        '''Copyright (C) 2020 Drew Naylor. Licensed under Apache License 2.0.
+        '''Version 0.1
         '''
-        '''The applauncher-icons project provides most of the icons used in UXL Launcher, with the exception of some icons. These include, but are not limited to, the UXL Launcher logo and the About window banner.
+        '''libscrollswitchtabs allows you to switch tabs in the Windows Forms TabControl using the mouse scroll wheel, like many Linux applications.
         '''
-        '''Link to applauncher-icons project repository:
-        '''https://github.com/DrewNaylor/applauncher-icons
+        '''libscrollswitchtabs is part of the drews-libs project.
+        '''Link to drews-libs project repository:
+        '''https://github.com/DrewNaylor/drews-libs
         '''
-        '''Link to applauncher-icons version 3.0 GitHub Releases page:
-        '''https://github.com/DrewNaylor/applauncher-icons/releases/tag/v3.0
         '''
-        '''T [rest of string was truncated]&quot;;.
+        '''No warranty is provided with libscrollswitchtabs. Use at your own risk. Drew Naylor is not responsible for any problems that  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property libscrollswitchtabs_TXT() As String
             Get
