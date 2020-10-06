@@ -480,9 +480,9 @@ Partial Class aaformOptionsWindow
         Me.labelDefaultDarkThemeDescription.AutoSize = True
         Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 37)
         Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
-        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(390, 13)
+        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(363, 13)
         Me.labelDefaultDarkThemeDescription.TabIndex = 0
-        Me.labelDefaultDarkThemeDescription.Text = "When matching Windows 10 theme settings is enabled, we'll use this dark theme:"
+        Me.labelDefaultDarkThemeDescription.Text = "When matching system theme settings is enabled, we'll use this dark theme:"
         '
         'groupboxAppearance
         '
@@ -504,13 +504,12 @@ Partial Class aaformOptionsWindow
         '
         'checkboxMatchWindows10ThemeSettings
         '
-        Me.checkboxMatchWindows10ThemeSettings.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.checkboxMatchWindows10ThemeSettings.AutoSize = True
         Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(7, 43)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
-        Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(189, 17)
+        Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(162, 17)
         Me.checkboxMatchWindows10ThemeSettings.TabIndex = 1
-        Me.checkboxMatchWindows10ThemeSettings.Text = "Match Windows 10 theme settings"
+        Me.checkboxMatchWindows10ThemeSettings.Text = "Match system theme settings"
         Me.tooltipMatchWindows10ThemeSettings.SetToolTip(Me.checkboxMatchWindows10ThemeSettings, resources.GetString("checkboxMatchWindows10ThemeSettings.ToolTip"))
         Me.checkboxMatchWindows10ThemeSettings.UseVisualStyleBackColor = True
         '
