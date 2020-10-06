@@ -1,16 +1,26 @@
 If you are reading this in Notepad or another text editor, it displays best in Word Wrap view. Click on Format>Word Wrap on the top bar. Notepad++ users will find it under View>Word wrap.
 
 
-UXL Launcher - Unified eXecutable Launcher -- Version 3.3 Release Candidate 1 - Codename "More Forms and Seven Years Ago" -- 7/12/2020 (MM/DD/YYYY).
+UXL Launcher - Unified eXecutable Launcher -- Version 3.4 Release Candidate 1 - Codename "Changeth Arrangeth" -- 10/6/2020 (MM/DD/YYYY).
 
 If you have any trouble, you might be able to find an answer on the wiki. It's linked at the end of this readme file. If not, you can submit a bug report at the "Report a problem" link at the end of this readme file. Your report will be labeled by the developers accordingly in a reasonable amount of time.
 
 You can use Windows PowerShell to confirm the hash of the main UXL Launcher EXE file by running
-Get-FileHash .\UXL-Launcher.exe -Algorithm SHA256 in the folder you extracted the archive to and comparing the output to my sum listed below. HowToGeek has a nice article on this:
+"Get-FileHash .\UXL-Launcher.exe -Algorithm SHA256" in the folder you extracted the archive to and comparing the output to my sum listed below. HowToGeek has a nice article on this:
 https://www.howtogeek.com/67241/htg-explains-what-are-md5-sha-1-hashes-and-how-do-i-check-them/ , but the Windows section is a bit further down on the page.
 
+7-Zip also has a way to check file hashes in the "CRC SHA" dropdown in the file context menu. This project is not associated with 7-Zip.
+
+To check the hash for other files, replace "UXL-Launcher.exe" with the appropriate file.
+
 SHA-256 sum for "UXL-Launcher.exe" in the archive:
-C91B7E558C5F2C5C47055D1ECD93275FE09BC58CC27C2F6C8D5825643D7829AA
+3FDB90F24EBFD512AE39436EE6A038E0D2954BE9FA5C996DB7CB7AEFA617CF15
+
+SHA-256 sum for "lib\libscrollswitchtabs.dll" in the archive:
+423A65849280D1F9665AD03094DD8648482E889CD4FA0F7AA4CA7AE8F087C7A7
+
+SHA-256 sum for "UXL-Launcher.exe.config" in the archive:
+6893BB5389DA7FFB63961CA35B4C7892B627181894F20950D93149277114CB7D
 
 
 ----------------
@@ -18,7 +28,7 @@ GENERAL NOTES
 ~~~~~~~~~~~~~~~~
 
 --> The source code should be included in this archive in a Zip file called "source-code.zip".
---> Make sure to read the changelog included in this archive named "v3.3-rc1_changelog-from_v3.2-stable.txt". A lot of documentation is in this file since I have a hard time making good documentation unless I know exactly what to talk about. The changelog does have markdown so that it looks good on GitHub, but it shouldn't be too intrusive.
+--> Make sure to read the changelog included in this archive named "v3.4-rc1_changelog-from_v3.3-stable.txt". A lot of documentation is in this file since I have a hard time making good documentation unless I know exactly what to talk about. The changelog does have markdown so that it looks good on GitHub, but it shouldn't be too intrusive.
 --> Before running UXL Launcher, please extract the entire archive to an easy-to-access location. It won't work correctly if it's temporarily extracted without its config file ("UXL-Launcher.exe.config").
 --> If you find any bugs, please report them at the GitHub Issues page linked at the end of this document.
 --> The documentation is linked at the end of this document, though it's not the best.
@@ -76,11 +86,13 @@ HOW TO USE
 
 2. Open the file titled "UXL-Launcher.exe". I recommend making a shortcut to the app on your desktop or taskbar for easy access.
 
-3. If you run Office 2010 without Office 365 on a 64-bit Windows install and Office is installed to Drive C, skip to step 4. If you have a different configuration, open the Options window from Tools>Options... and configure your settings accordingly.
+3. If you're upgrading from a previous version, you'll be asked if you want to migrate your settings. If you choose not to, you can do it later from Tools>Options...>Maintenance and click the "Migrate settings" button.
 
-4. Click any of the buttons for the apps you have installed and it should start. Otherwise, you will get a "File Not Found" error message with the option to directly open the Options window, if you so choose. See step 3 above.
+4. If you run Office 2019 64-bit on a 64-bit Windows install and Office is installed to Drive C, skip to step 5. If you have a different configuration, open the Options window from Tools>Options... and configure your settings accordingly.
 
-5. If you don't have a particular Office app installed, my app will give you a "File Not Found" warning. If you do not have Office installed but simply want to test my app, I have a package of dummy applications which is now available here: https://github.com/DrewNaylor/dummyOffice It's not recommended to use dummyOffice as it may cause problems with file associations due to filenames. There's some info in the dummyOffice repository linked above.
+5. Click any of the buttons for the apps you have installed and it should start. Otherwise, you will get a "File Not Found" error message with the option to directly open the Options window, if you so choose. See step 4 above.
+
+6. If you don't have a particular Office app installed, my app will give you a "File Not Found" warning. If you do not have Office installed but simply want to test my app, I have a package of dummy applications which is now available here: https://github.com/DrewNaylor/dummyOffice It's not recommended to use dummyOffice as it may cause problems with file associations due to filenames. There's some info in the dummyOffice repository linked above.
 
 ----------------------------------
 CONTACT AND COPYRIGHT/LICENSING
@@ -99,7 +111,7 @@ Email:                    			drewnaylor_apps -AT/- outlook.com
 
 
 UXL Launcher - Unified eXecutable Launcher
-Version 3.3.0.0 Release Candidate 1 - Codename "More Forms and Seven Years Ago"
+Version 3.4.0.0 Release Candidate 1 - Codename "Changeth Arrangeth"
 Copyright (C) 2013-2020 Drew Naylor. Licensed under Gnu GPLv3+.
 
 UXL Launcher provides launchers for most Microsoft Office apps in one place.
@@ -122,7 +134,7 @@ Microsoft is not affiliated with either the UXL Launcher project or Drew Naylor 
 ----------------------------------------------------------------------------------------
 
 UXL Launcher Theme Engine
-Version 1.03
+Version 1.04
 Copyright (C) 2013-2020 Drew Naylor. Licensed under Gnu GPLv3+.
 
 The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
@@ -163,3 +175,30 @@ No warranty is provided with applauncher-icons. Use at your own risk. Drew Naylo
 This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
 
 Microsoft is not associated with either the applauncher-icons project or Drew Naylor and does not condone this project.
+
+----------------------------------------------------------------------------------------
+
+libscrollswitchtabs
+Copyright (C) 2020 Drew Naylor. Licensed under Apache License 2.0.
+Version 0.1
+
+libscrollswitchtabs allows you to switch tabs in the Windows Forms TabControl using the mouse scroll wheel, like many Linux applications.
+
+libscrollswitchtabs is part of the drews-libs project.
+Link to drews-libs project repository:
+https://github.com/DrewNaylor/drews-libs
+
+No warranty is provided with libscrollswitchtabs. Use at your own risk. Drew Naylor is not responsible for any problems that use of libscrollswitchtabs may cause.
+
+Apache License 2.0 summary as it applies to libscrollswitchtabs:
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
