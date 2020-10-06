@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "UXL Launcher"
-#define MyAppVersion "3.3.0.0"
+#define MyAppVersion "3.4.0.0"
 #define MyAppPublisher "Drew Naylor"
 #define MyAppURL "https://github.com/DrewNaylor/UXL-Launcher"
 #define MyAppUpdatesURL "https://github.com/DrewNaylor/UXL-Launcher/releases/latest"
@@ -23,12 +23,12 @@ AppSupportURL={#MyAppHelpURL}
 AppUpdatesURL={#MyAppUpdatesURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName=Drew Naylor
-LicenseFile=C:\Users\drewn\My Applications\UXL-Launcher\v3.3-stable\LICENSE.txt
-InfoBeforeFile=C:\Users\drewn\My Applications\UXL-Launcher\v3.3-stable\README for UXL Launcher.txt
-InfoAfterFile=C:\Users\drewn\My Applications\UXL-Launcher\v3.3-stable\v3.3_changelog-from_v3.2-stable.txt
-OutputDir=C:\Users\drewn\My Applications\UXL-Launcher\v3.3-stable
-OutputBaseFilename=UXL-Launcher_v3.3-Stable
-SetupIconFile="C:\Users\drewn\Documents\0GitHub\UXL-Launcher\UXL-Launcher\Resources\UXL_Launcher_Icon_For_Windows.ico"
+LicenseFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\LICENSE.txt
+InfoBeforeFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\README for UXL Launcher.txt
+InfoAfterFile=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\v3.4-rc1_changelog-from_v3.3-stable.txt
+OutputDir=C:\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher
+OutputBaseFilename=UXL-Launcher_v3.4-rc1
+SetupIconFile="C:\Users\Drew\Documents\Visual Studio 2015\Projects\UXL-Launcher\UXL-Launcher\Resources\UXL_Launcher_Icon_For_Windows.ico"
 Compression=lzma
 SolidCompression=yes
 AppCopyright=Copyright 2013-2020 Drew Naylor. Licensed under the Gnu GPL v3+.
@@ -38,7 +38,7 @@ MinVersion=0,6.1
 CreateUninstallRegKey=yes
 EnableDirDoesntExistWarning=True
 DirExistsWarning=no
-VersionInfoVersion=3.3.0.0
+VersionInfoVersion=3.4.0.0
 AlwaysShowGroupOnReadyPage=True
 AlwaysShowDirOnReadyPage=True
 DisableStartupPrompt=False
@@ -54,13 +54,14 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-stable\UXL-Launcher.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-stable\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-stable\README for UXL Launcher.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-stable\source-code.zip"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-stable\v3.3_changelog-from_v3.2-stable.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\UXL-Launcher.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\README for UXL Launcher.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\source-code.zip"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\v3.3_changelog-from_v3.2-stable.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "..\..\..\..\My Applications\UXL-Launcher\v3.3-stable\UXL-Launcher_upgrade.exe.config"; DestDir: "{app}"; DestName: "UXL-Launcher.exe.config"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\UXL-Launcher_upgrade.exe.config"; DestDir: "{app}"; DestName: "UXL-Launcher.exe.config"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\LICENSE_Apache-2.0.txt"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
