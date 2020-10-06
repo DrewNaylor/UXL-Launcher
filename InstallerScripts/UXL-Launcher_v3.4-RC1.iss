@@ -58,7 +58,7 @@ Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files
 Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\README for UXL Launcher.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\source-code.zip"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\v3.3_changelog-from_v3.2-stable.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\v3.4-rc1_changelog-from_v3.3-stable.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\UXL-Launcher_upgrade.exe.config"; DestDir: "{app}"; DestName: "UXL-Launcher.exe.config"; Flags: ignoreversion
 Source: "..\..\..\..\..\..\..\DrewN Desktop Apps\Binaries\App Launcher Zip Files\uxl-launcher\3_4-rc1-UXL_Launcher\LICENSE_Apache-2.0.txt"; DestDir: "{app}"; Flags: ignoreversion
