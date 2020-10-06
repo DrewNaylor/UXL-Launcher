@@ -3,7 +3,7 @@
        XML InnerText, kinda like what HTML does. -->
   <Title>Ten Dark</Title>
   <Description>A dark theme similar to Windows 10's "Dark Mode".</Description>
-  <Version>v1.1</Version>
+  <Version>v1.2</Version>
   <Author>Drew Naylor</Author>
 
   <!-- "UseThemeEngineVersion" is used to specify the version of the
@@ -18,8 +18,8 @@
   RuntimeVersion numbers lower than 2.0 are treated as TE1.x themes, and
   the version number in the UseThemeEngineVersion node will be used instead.
   Same thing happens if the ThemeEngine RuntimeVersion attribute is missing. -->
-  <!-- TE1.x compatibility: --><UseThemeEngineVersion>1.03</UseThemeEngineVersion>
-  <ThemeEngine RuntimeVersion="2.0" />
+  <!-- TE1.x compatibility: --><UseThemeEngineVersion>1.04</UseThemeEngineVersion>
+  <ThemeEngine RuntimeVersion="2.1" />
   
     <Theme_Colors>
 

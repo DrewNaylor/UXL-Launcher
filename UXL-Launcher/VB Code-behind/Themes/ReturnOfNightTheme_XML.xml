@@ -1,7 +1,7 @@
 ﻿<UXL_Launcher_Theme>
   <Title>Return of the Night</Title>
   <Description>Based on the Test2 theme, "Return of the Night" is a purple theme best suited for those who like proper day/night cycles.</Description>
-  <Version>v1.1</Version>
+  <Version>v1.2</Version>
   <Author>Drew Naylor</Author>
 
   <!-- "UseThemeEngineVersion" is used to specify the version of the
@@ -9,7 +9,7 @@
   versions of the theme engine that designers or developers don't want
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
-  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  <UseThemeEngineVersion>1.04</UseThemeEngineVersion>
   
     <Theme_Colors>
       

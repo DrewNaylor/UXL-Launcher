@@ -1,7 +1,7 @@
 <UXL_Launcher_Theme>
   <Title>Maudern Classic</Title>
   <Description>Maudern Classic is basically Maudern v1.0 plus a few extra things supported in TE1.03, in case anyone preferred that version's general appearance over Maudern v1.1.</Description>
-  <Version>v1.0</Version>
+  <Version>v1.1</Version>
   <Author>Drew Naylor</Author>
 
   <!-- "UseThemeEngineVersion" is used to specify the version of the
@@ -9,7 +9,7 @@
   versions of the theme engine that designers or developers don't want
   to use. Version 1.01 is the oldest version number available and anything
   smaller than that will automatically be set to 1.01 at runtime. -->
-  <UseThemeEngineVersion>1.03</UseThemeEngineVersion>
+  <UseThemeEngineVersion>1.04</UseThemeEngineVersion>
   
     <Theme_Colors>
 
