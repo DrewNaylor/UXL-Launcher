@@ -70,6 +70,18 @@ Public Class OfficeLocater
         ' First we need to run the other subs.
         cpuType()
 
+        ' Check how many characters are in My.Settings.officeDriveLocation.
+        ' If it's not 1, reset it to C because that's not supposed to happen.
+        ' This will prevent being sent to Google due to
+        ' a modified config file containing https://google.com/search?q=
+        ' for the officeDriveLocation, for example.
+        ' Backported from version 3.4 due to security concerns.
+        If Not My.Settings.officeDriveLocation.Length = 1 Then
+            My.Settings.officeDriveLocation = "C"
+            My.Settings.Save()
+            My.Settings.Reload()
+        End If
+
         ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
         ' and the user doesn't have Office 2013.
         If My.Settings.userHasOfficeThreeSixFive = True And Not My.Settings.userOfficeVersion = "15" And Not My.Settings.userOfficeVersion.Contains("nomsi") Then
