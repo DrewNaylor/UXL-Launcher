@@ -50,7 +50,7 @@ Below is information on the icon set used in UXL Launcher.
 ```
 applauncher-icons
 By Drew Naylor. Licensed under CC BY 4.0.
-Version 2.1
+Version 3.0
 
 The applauncher-icons project provides most of the icons used in UXL Launcher,
 with the exception of some icons. These include, but are not limited to, the
@@ -59,8 +59,8 @@ UXL Launcher logo and the About window banner.
 Link to applauncher-icons project repository:
 https://github.com/DrewNaylor/applauncher-icons
 
-Link to applauncher-icons version 2.1 GitHub Releases page:
-https://github.com/DrewNaylor/applauncher-icons/releases/tag/v2.1
+Link to applauncher-icons version 3.0 GitHub Releases page:
+https://github.com/DrewNaylor/applauncher-icons/releases/tag/v3.0
 
 The version of applauncher-icons used in UXL Launcher has been modified from the
 original source. Namely, the smaller icons used in the UXL Launcher Quickmenu and
@@ -74,6 +74,35 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
 
 Microsoft is not associated with either the applauncher-icons project or Drew Naylor
 and does not condone this project.
+```
+
+Switching tabs with the scroll wheel is provided by `libscrollswitchtabs` and its full license is available in `LICENSE_Apache-2.0.txt`. Details:
+
+```
+libscrollswitchtabs
+Copyright (C) 2020 Drew Naylor. Licensed under Apache License 2.0.
+Version 0.1
+
+libscrollswitchtabs allows you to switch tabs in the Windows Forms TabControl using the mouse scroll wheel, like many Linux applications.
+
+libscrollswitchtabs is part of the drews-libs project.
+Link to drews-libs project repository:
+https://github.com/DrewNaylor/drews-libs
+
+No warranty is provided with libscrollswitchtabs. Use at your own risk. Drew Naylor is not responsible for any problems that use of libscrollswitchtabs may cause.
+
+Apache License 2.0 summary as it applies to libscrollswitchtabs:
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
 
 <br>
@@ -113,29 +142,13 @@ More information to come in the future! In the meantime, please check the reposi
 
 - Launching Office 2013 installed via Office 365 on a 64-bit computer requires UXL Launcher to be set to 32-bit Windows. [(issue #43)](https://github.com/DrewNaylor/UXL-Launcher/issues/43)
 
-- ~~If the user chooses to test their settings and Office Language Preferences can't be launched and they choose to open the Options window, a duplicate Options window spawns. [(issue #46)](https://github.com/DrewNaylor/UXL-Launcher/issues/46)~~ Fixed in [f697e75](https://github.com/DrewNaylor/UXL-Launcher/commit/f697e75552dd19e8d66db12e775adc559c87e953)
-
 - CryptoPrevent Maximum protection settings block Windows PowerShell from running thus halting the build process. [(issue #52)](https://github.com/DrewNaylor/UXL-Launcher/issues/52)
 
-- ~~If the main window is set to Always On Top and the user opens the Options window from the Quickmenu and clicks on a window behind the UXL Launcher window, the Options window will not be able to be interacted with until the user right-clicks on the Quickmenu icon again. [(issue #53)](https://github.com/DrewNaylor/UXL-Launcher/issues/53)~~ Fixed in [94edb9d](https://github.com/DrewNaylor/UXL-Launcher/commit/94edb9d042fb9e06c9244cda54ff83ae7bd6ab03) and [7875980](https://github.com/DrewNaylor/UXL-Launcher/commit/7875980c2c8c8c272d544146788e96f0fa9aad35)
-
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
-
-- **UXL Launcher might not work with Office 2010 Home and Student and Home and Business.** [(issue #70)](https://github.com/DrewNaylor/UXL-Launcher/issues/70)
 
 - Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
 - If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
-
-- ~~UXL Launcher builds from AppVeyor may have text in the About window crammed together. [(issue #121)](https://github.com/DrewNaylor/UXL-Launcher/issues/121)~~ Fixed in [093d972](https://github.com/DrewNaylor/UXL-Launcher/commit/093d9722b3d3cfc4043543994b2d498772508a48)
-
-- ~~If the main window is minimized, "Hide When Minimized" is enabled, and a program couldn't be found when using the Quickmenu to open a program, the error message won't be on top. [(issue #125)](https://github.com/DrewNaylor/UXL-Launcher/issues/125)~~ Needs verification; might not be an actual problem
-
-- ~~Numbers such as 1.01.1 used for the UseThemeEngineVersion tag/element will crash UXL Launcher with an exception of System.InvalidCastException because it's trying to convert the value from a string to a decimal type. [(issue #126)](https://github.com/DrewNaylor/UXL-Launcher/issues/126)~~ Fixed in [9dc5474](https://github.com/DrewNaylor/UXL-Launcher/commit/9dc5474e2a4e11e3cbd98ba7e50d9c0550aadd0b)
-
-- "TenDark" theme button highlight colors are a bit hard to see. [(issue #140)]( https://github.com/DrewNaylor/UXL-Launcher/issues/140 )
-
-- If the Drive Location textbox length requirement isn't met when using "Test settings", you can't type anything into the textbox after closing the warning messagebox and before the settings are tested. [(issue #142)](https://github.com/DrewNaylor/UXL-Launcher/issues/142 )
 
 - If the Options window or the About window are open, focus can be sent to the main window by using "Show UXL Launcher" in the Quickmenu and more About windows can be opened by navigating with the keyboard. [(issue #144)](https://github.com/DrewNaylor/UXL-Launcher/issues/144)
 
