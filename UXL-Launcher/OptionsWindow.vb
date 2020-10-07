@@ -328,6 +328,11 @@ Public Class aaformOptionsWindow
     End Sub
 
     Private Sub FillDriveLettersBasedOnSettings()
+        ' Make sure the value in here is valid, or else
+        ' change the setting to "C" to prevent visual weirdness
+        ' when an invalid value show up but does nothing.
+        OfficeLocater.CheckOfficeDriveLocationLength()
+
         ' If the drive the user wants to use isn't available in the dropdown,
         ' add it to the dropdown.
         If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then

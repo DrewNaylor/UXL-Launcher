@@ -53,6 +53,16 @@ Public Class OfficeLocater
     End Sub
 #End Region
 
+    Friend Shared Sub CheckOfficeDriveLocationLength()
+        ' Check the Office drive location setting's length
+        ' and change it back to C if needed.
+        If Not My.Settings.officeDriveLocation.Length = 1 Then
+            My.Settings.officeDriveLocation = "C"
+            My.Settings.Save()
+            My.Settings.Reload()
+        End If
+    End Sub
+
 #End Region
 #Region "This code combines all the launcher strings into one string to make modification easier."
     ' With this sub I'll be able to shorten the length of the button_click event strings for the launcher buttons.
@@ -68,11 +78,8 @@ Public Class OfficeLocater
         ' This will prevent being sent to Google due to
         ' a modified config file containing https://google.com/search?q=
         ' for the officeDriveLocation, for example.
-        If Not My.Settings.officeDriveLocation.Length = 1 Then
-            My.Settings.officeDriveLocation = "C"
-            My.Settings.Save()
-            My.Settings.Reload()
-        End If
+        ' Moved to its own sub for reference elsewhere.
+        CheckOfficeDriveLocationLength()
 
         ' Then we need to combine them. First up is the user installed via Office 365/Click-to-Run
         ' and the user doesn't have Office 2013.
