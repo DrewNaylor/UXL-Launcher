@@ -105,10 +105,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
+## A Note from the Developer - October 8, 2020
+
+Most of this was copied-and-pasted from the commit message:
+
+Version 3.4 Stable is having its version number increased to 4.0 since it seems like the changes would be better in a new major version. If they weren't that different I would keep it on 3.4, but the Options window changed so much and the defaults changing could be confusing if it's not a major version increase, so I increased it. Version 3.4 RC1 unintentionally turned out to be a preview of Version 4.0 even though it wasn't supposed to be a GNOME-style preview version. Changes intended for 3.5 are being moved to 4.1, and changes for 4.0 are being moved to 5.0.
+
+UXL Launcher is moving into a new era with 4.0. Roughly four years for the 3.x series seems like a good lifespan. What's nice is that this project is using the same codebase in 4.x as it was in 3.x, so that it won't have to be rebuilt like it was from 2.x to 3.x.
+
+While it seems like version 4.0 has few changes for a major version number increase, the changes it does have are enough to warrant the major version number being increased as I briefly mentioned earlier.
+
+Version 2.x had four stable releases (2.6.1, 2.7, 2.8, and 2.8.1), and Version 3.x had five stable releases (3.0, 3.1, 3.2, 3.3, and 3.3.1). I'd like to have the 3.x series go for as long as it could have life in it, but I guess the whole "these changes are best for 4.0 but I'll do them for 3.4" ended up being a self-fulfilling prophecy. Funny how things work out that way.
+
+Version 4.0 is like a midpoint between the familiar stuff in 3.x and the bigger changes in 5.x, if those bigger changes ever happen, that is. During 4.x, progress will be made toward ditching the built-in theme engine in favor of the one in the DLL, and the code that actually launches apps will hopefully be moved into a library so it can be re-used easily in different interfaces (if they ever exist). Moving the core code to libraries could allow for things like experimenting with UIs more easily.
+
+I guess this can be changed to Stable now, as well. Still not ready until at least October 20, 2020, though.
+
 <br>
 <br>
 
-Screenshots:
+## Screenshots
 
 ![](/docs/images/uxl-launcher-3.0_screenshot.PNG?raw=true)
 <br>
@@ -136,7 +152,7 @@ More information to come in the future! In the meantime, please check the reposi
 <br>
 <br>
 
-# Known issues.
+## Known Issues
 
 [See all known issues.](https://github.com/DrewNaylor/UXL-Launcher/labels/known%20issue)
 
@@ -155,9 +171,9 @@ More information to come in the future! In the meantime, please check the reposi
 <br>
 <br>
 
-# System Requirements
+## System Requirements
 
-## System Requirements for running UXL Launcher
+### System Requirements for running UXL Launcher
 
 To run UXL Launcher, your computer requires the following:
 
@@ -181,7 +197,7 @@ To run UXL Launcher, your computer requires the following:
 
 - Disk space, RAM, and CPU frequency requirements are based on the .Net Framework 4.6.1 requirements. UXL Launcher itself is quite small.
 
-## Building UXL Launcher from Source: System Requirements and Guide
+### Building UXL Launcher from Source: System Requirements and Guide
 
 In addition to the requirements for simply running UXL Launcher, your computer requires the following software to build it from source code:
 
