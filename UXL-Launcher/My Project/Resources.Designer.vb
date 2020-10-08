@@ -129,7 +129,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2020-10-02T08:39:50
+        '''  Looks up a localized string similar to 2020-10-08T07:45:33
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -171,7 +171,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Default Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Default is the theme UXL Launcher ships with.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
@@ -220,7 +220,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Eyesore 2&lt;/Title&gt;
         '''  &lt;Description&gt;Originally a test theme for UXL Launcher, Eyesore 2 is meant to be a spiritual successor to the Windows 3.1 Hotdog Stand theme, but worse.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
@@ -281,7 +281,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Release Candidate 1.
+        '''  Looks up a localized string similar to Stable.
         '''</summary>
         Public ReadOnly Property isStable() As String
             Get
@@ -323,7 +323,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Maudern Classic&lt;/Title&gt;
         '''  &lt;Description&gt;Maudern Classic is basically Maudern v1.0 plus a few extra things supported in TE1.03, in case anyone preferred that version&apos;s general appearance over Maudern v1.1.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
@@ -340,7 +340,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Maudern&lt;/Title&gt;
         '''  &lt;Description&gt;Maudern is a simple, flat theme with a grey color scheme similar in appearance to rock coloration.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
@@ -359,7 +359,7 @@ Namespace My.Resources
         '''  &lt;Title&gt;Mitty Theme&lt;/Title&gt;
         '''  &lt;Description&gt;Most of the work for version 3.2 was done while my calico cat, Mitty, was still around, so it felt like a good idea to make this theme for her. I miss her.
         '''    &quot;...if you meant something to someone, if you helped someone, or loved someone, if even a single person remembers you, then maybe you never really die...&quot; - The Machine&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''  
         '''    &lt;!-- &quot;UseThemeEngineVersion&quot; is u [rest of string was truncated]&quot;;.
@@ -519,7 +519,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
@@ -537,7 +537,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Arr G. Bee&lt;/Title&gt;
         '''  &lt;Description&gt;Arr G. Bee is a theme that&apos;s influenced by the UXL Launcher logo.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
@@ -604,7 +604,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Ten Dark&lt;/Title&gt;
         '''  &lt;Description&gt;A dark theme similar to Windows 10&apos;s &quot;Dark Mode&quot;.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
