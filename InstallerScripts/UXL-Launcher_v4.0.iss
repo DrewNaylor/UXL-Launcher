@@ -41,7 +41,6 @@ DirExistsWarning=no
 VersionInfoVersion=4.0.0.0
 AlwaysShowGroupOnReadyPage=True
 AlwaysShowDirOnReadyPage=True
-DisableStartupPrompt=False
 DisableDirPage=auto
 DisableProgramGroupPage=auto
 WizardStyle=modern
