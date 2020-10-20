@@ -335,8 +335,8 @@ Public Class aaformOptionsWindow
 
         ' If the drive the user wants to use isn't available in the dropdown,
         ' add it to the dropdown.
-        If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation) Then
-            comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation)
+        If Not comboboxDriveSelector.Items.Contains(My.Settings.officeDriveLocation.ToUpperInvariant) Then
+            comboboxDriveSelector.Items.Add(My.Settings.officeDriveLocation.ToUpperInvariant)
             ' Sort the list so it doesn't look bad.
             comboboxDriveSelector.Sorted = True
         End If
