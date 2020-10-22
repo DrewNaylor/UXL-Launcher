@@ -155,18 +155,17 @@ More information to come in the future! In the meantime, please check the reposi
 ## Known Issues
 
 [See all known issues.](https://github.com/DrewNaylor/UXL-Launcher/labels/known%20issue)
-
-- Launching Office 2013 installed via Office 365 on a 64-bit computer requires UXL Launcher to be set to 32-bit Windows. [(issue #43)](https://github.com/DrewNaylor/UXL-Launcher/issues/43)
-
 - CryptoPrevent Maximum protection settings block Windows PowerShell from running thus halting the build process. [(issue #52)](https://github.com/DrewNaylor/UXL-Launcher/issues/52)
 
 - Statusbar text is cut off when using the Windows High Contrast White theme. [(issue #58)](https://github.com/DrewNaylor/UXL-Launcher/issues/58)
 
-- Sometimes aaformMainWindow.vb (main UXL Launcher window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
+- Sometimes aaformMainWindow.vb (main app window) doesn't display properly in the Visual Studio Design view before building the project. [(issue #97)](https://github.com/DrewNaylor/UXL-Launcher/issues/97)
 
 - If a UXL Launcher pinned shortcut on the taskbar is set to run minimized and "Hide When Minimized" is enabled in UXL Launcher, upon clicking the shortcut, the app will start, place the Quickmenu in the system tray, and highlight the pinned icon in the taskbar for a few seconds, then the highlight goes away. [(issue #120)](https://github.com/DrewNaylor/UXL-Launcher/issues/120)
 
 - If the Options window or the About window are open, focus can be sent to the main window by using "Show UXL Launcher" in the Quickmenu and more About windows can be opened by navigating with the keyboard. [(issue #144)](https://github.com/DrewNaylor/UXL-Launcher/issues/144)
+
+- Some text in the Options window isn't fully shown when running on a HiDPI device. [(issue #199)](https://github.com/DrewNaylor/UXL-Launcher/issues/199)
 
 <br>
 <br>
