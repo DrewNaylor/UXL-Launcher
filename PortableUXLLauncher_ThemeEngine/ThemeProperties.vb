@@ -742,10 +742,4 @@ Public Class ThemeProperties
     Friend Shared ReadOnly defaultThemeAuthor As String = "(No author specified)"
     Friend Shared ReadOnly defaultThemeVersion As String = "(No version specified)"
 #End Region
-
-#Region "Load default properties into the specific properties to access from elsewhere."
-    Friend Shared Sub LoadDefaultProperty(Control As String)
-
-    End Sub
-#End Region
 End Class
