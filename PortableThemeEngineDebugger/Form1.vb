@@ -127,4 +127,11 @@ Public Class aaformThemeLoader
         ' Reset statusbar backcolor.
         StatusStrip1.BackColor = Nothing
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim AddedButton As Button = libportablethemeengine.PreThemedControls.ThemedButton
+        AddedButton.Text = "test"
+
+        Panel1.Controls.Add(AddedButton)
+    End Sub
 End Class

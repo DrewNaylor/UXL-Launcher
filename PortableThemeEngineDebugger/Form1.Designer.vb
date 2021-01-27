@@ -47,6 +47,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
         Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.groupboxContextMenuArea.SuspendLayout()
@@ -149,6 +150,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.checkboxSpecifyDarkThemeForSystemThemeMatching)
         Me.Panel1.Controls.Add(Me.radiobuttonMatchSystemTheme)
         Me.Panel1.Controls.Add(Me.groupboxContextMenuArea)
@@ -311,6 +313,15 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(13, 148)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(140, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "new pre-themed button"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'aaformThemeLoader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -358,4 +369,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents radiobuttonMatchSystemTheme As RadioButton
     Friend WithEvents checkboxSpecifyDarkThemeForSystemThemeMatching As CheckBox
+    Friend WithEvents Button1 As Button
 End Class

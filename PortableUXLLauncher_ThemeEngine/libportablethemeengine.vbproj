@@ -90,6 +90,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PreThemedControls.vb" />
     <Compile Include="TE1DotXLoaderShim.vb" />
     <Compile Include="TE2DotXLoader.vb" />
     <Compile Include="ThemeProperties.vb" />
