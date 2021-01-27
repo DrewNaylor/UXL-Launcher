@@ -33,6 +33,7 @@ Partial Class aaformThemeLoader
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.checkboxSpecifyDarkThemeForSystemThemeMatching = New System.Windows.Forms.CheckBox()
         Me.radiobuttonMatchSystemTheme = New System.Windows.Forms.RadioButton()
         Me.groupboxContextMenuArea = New System.Windows.Forms.GroupBox()
@@ -47,7 +48,7 @@ Partial Class aaformThemeLoader
         Me.radiobuttonLoadFromXml = New System.Windows.Forms.RadioButton()
         Me.radiobuttonIsCustomTheme = New System.Windows.Forms.RadioButton()
         Me.checkboxAllowCustomThemes = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.groupboxContextMenuArea.SuspendLayout()
@@ -150,6 +151,7 @@ Partial Class aaformThemeLoader
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.FlowLayoutPanel1)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.checkboxSpecifyDarkThemeForSystemThemeMatching)
         Me.Panel1.Controls.Add(Me.radiobuttonMatchSystemTheme)
@@ -171,6 +173,15 @@ Partial Class aaformThemeLoader
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(371, 312)
         Me.Panel1.TabIndex = 8
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(13, 148)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(140, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "new pre-themed button"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'checkboxSpecifyDarkThemeForSystemThemeMatching
         '
@@ -313,14 +324,12 @@ Partial Class aaformThemeLoader
         Me.checkboxAllowCustomThemes.Text = "Allow custom themes"
         Me.checkboxAllowCustomThemes.UseVisualStyleBackColor = True
         '
-        'Button1
+        'FlowLayoutPanel1
         '
-        Me.Button1.Location = New System.Drawing.Point(13, 148)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(140, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "new pre-themed button"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(13, 178)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(177, 59)
+        Me.FlowLayoutPanel1.TabIndex = 13
         '
         'aaformThemeLoader
         '
@@ -370,4 +379,5 @@ Partial Class aaformThemeLoader
     Friend WithEvents radiobuttonMatchSystemTheme As RadioButton
     Friend WithEvents checkboxSpecifyDarkThemeForSystemThemeMatching As CheckBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

@@ -132,6 +132,6 @@ Public Class aaformThemeLoader
         Dim AddedButton As Button = libportablethemeengine.PreThemedControls.ThemedButton
         AddedButton.Text = "test"
 
-        Panel1.Controls.Add(AddedButton)
+        FlowLayoutPanel1.Controls.Add(AddedButton)
     End Sub
 End Class
