@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("PortableThemeEngineDebugger")>
-<Assembly: AssemblyCopyright("Copyright (C) 2020 Drew Naylor. Licensed under Gnu GPLv3+.")>
+<Assembly: AssemblyCopyright("Copyright (C) 2020-2021 Drew Naylor. Licensed under Gnu GPLv3+.")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

@@ -1,5 +1,5 @@
 ﻿'PortableThemeEngineDebugger - Simple application used to test PortableThemeEngine.
-'Copyright (C) 2020 Drew Naylor. Licensed under Gnu GPLv3+.
+'Copyright (C) 2020-2021 Drew Naylor. Licensed under Gnu GPLv3+.
 'Any companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
@@ -126,5 +126,12 @@ Public Class aaformThemeLoader
     Private Sub buttonResetColor_Click(sender As Object, e As EventArgs) Handles buttonResetColor.Click
         ' Reset statusbar backcolor.
         StatusStrip1.BackColor = Nothing
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim AddedButton As Button = libportablethemeengine.PreThemedControls.ThemedButton
+        AddedButton.Text = "test"
+
+        FlowLayoutPanel1.Controls.Add(AddedButton)
     End Sub
 End Class
