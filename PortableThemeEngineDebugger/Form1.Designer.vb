@@ -326,9 +326,10 @@ Partial Class aaformThemeLoader
         '
         'FlowLayoutPanel1
         '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(13, 178)
+        Me.FlowLayoutPanel1.AutoScroll = True
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(11, 178)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(177, 59)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(180, 59)
         Me.FlowLayoutPanel1.TabIndex = 13
         '
         'aaformThemeLoader
