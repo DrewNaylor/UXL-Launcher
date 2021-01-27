@@ -1,4 +1,31 @@
-﻿Imports System.Drawing
+﻿' PortableThemeEngine - Theme engine based off the UXL Launcher Theme Engine.
+' Can be used with standard Windows Forms applications.
+' Copyright (C) 2019-2021 Drew Naylor.
+' Microsoft Windows and all related words are copyright
+' and trademark Microsoft Corporation.
+' Microsoft is not affiliated with either PortableThemeEngine or Drew Naylor
+' and does not endorse this software.
+' Any other companies mentioned own their respective copyrights/trademarks.
+' (Note that the copyright years include the years left out by the hyphen.)
+'
+' This file is part of PortableThemeEngine.
+'
+'
+'   Licensed under the Apache License, Version 2.0 (the "License");
+'   you may not use this file except in compliance with the License.
+'   You may obtain a copy of the License at
+'
+'     http://www.apache.org/licenses/LICENSE-2.0
+'
+'   Unless required by applicable law or agreed to in writing, software
+'   distributed under the License is distributed on an "AS IS" BASIS,
+'   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+'   See the License for the specific language governing permissions and
+'   limitations under the License.
+
+
+
+Imports System.Drawing
 
 Public Class PreThemedControls
 

@@ -1,6 +1,6 @@
 ﻿' PortableThemeEngine - Theme engine based off the UXL Launcher Theme Engine.
 ' Can be used with standard Windows Forms applications.
-' Copyright (C) 2019-2020 Drew Naylor.
+' Copyright (C) 2019-2021 Drew Naylor.
 ' Microsoft Windows and all related words are copyright
 ' and trademark Microsoft Corporation.
 ' Microsoft is not affiliated with either PortableThemeEngine or Drew Naylor
