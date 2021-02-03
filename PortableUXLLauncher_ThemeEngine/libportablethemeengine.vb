@@ -295,6 +295,14 @@ Public Class ThemeEngine
                 ' TabPage ForeColor.
                 ctrl.ForeColor = ThemeProperties.colorTabPageForeColor
 
+                'ElseIf TypeOf ctrl Is ListBox Then
+                ' ' ListBoxes aren't supported yet, so this is a placeholder.
+                '    ' If the control is a tabpage, theme it as such.
+                '    ' TabPage BackColor.
+                '    ctrl.BackColor = ThemeProperties.colorTabPageBackColor
+                '    ' TabPage ForeColor.
+                '    ctrl.ForeColor = ThemeProperties.colorTabPageForeColor
+
             ElseIf TypeOf ctrl Is TableLayoutPanel Then
                 ' If the control is a tablelayoutpanel, theme it as such.
                 ' TableLayoutPanel BackColor.
