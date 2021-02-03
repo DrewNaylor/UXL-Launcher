@@ -731,6 +731,10 @@ Public Class ThemeProperties
     Friend Shared ReadOnly defaultRadioButtonBackColor As String = "Transparent"
     Friend Shared ReadOnly defaultRadioButtonForeColor As String = "ControlText"
 
+    ' Specify default SplitContainer properties.
+    Friend Shared ReadOnly defaultSplitContainerBackColor As String = "Control"
+    Friend Shared ReadOnly defaultSplitContainerForeColor As String = "ControlText"
+
     ' Specify default TableLayoutPanel properties.
     Friend Shared ReadOnly defaultTableLayoutPanelBackColor As String = "Control"
     Friend Shared ReadOnly defaultTableLayoutPanelForeColor As String = "ControlText"

@@ -712,6 +712,14 @@ Friend Class TE2DotXLoader
                     Case "ForeColor"
                         Return ThemeProperties.defaultRadioButtonForeColor
                 End Select
+            Case "SplitContainer"
+                'Check splitcontainer defaults.
+                Select Case PropertyToCheck
+                    Case "BackColor"
+                        Return ThemeProperties.defaultSplitContainerBackColor
+                    Case "ForeColor"
+                        Return ThemeProperties.defaultSplitContainerForeColor
+                End Select
             Case "TableLayoutPanel"
                 ' Check tablelayoutpanel defaults.
                 Select Case PropertyToCheck
