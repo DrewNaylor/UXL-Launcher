@@ -435,6 +435,17 @@ Friend Class TE2DotXLoader
                         Case -1 ' Theme isn't compatible with 1.03 or newer.
                             Return False
                     End Select
+                Case "SplitContainer"
+                    ' SplitContainers aren't supported before TE2.1.
+                    VersionIntroduced = Version.Parse("2.1")
+                    Select Case ThemeProperties.themeSheetEngineRuntimeVersion.CompareTo(VersionIntroduced)
+                        Case 0 ' Theme is compatible with 2.1 exactly, so use it.
+                            Return True
+                        Case 1 ' Theme is compatible with an engine runtime version newer than 2.1, so use it.
+                            Return True
+                        Case -1 ' Theme isn't compatible with 2.1 or newer.
+                            Return False
+                    End Select
                 Case "TableLayoutPanel"
                     ' Panels aren't supported before TE1.03.
                     VersionIntroduced = Version.Parse("1.03")
