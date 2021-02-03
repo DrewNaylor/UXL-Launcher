@@ -84,16 +84,6 @@ Public Class ThemeEngine
                 ctrl.BackColor = ThemeProperties.colorGroupBoxBackColor
                 ctrl.ForeColor = ThemeProperties.colorGroupBoxForeColor
 
-                'ElseIf TypeOf ctrl Is SplitContainer Then
-                '    ' Split containers aren't yet fully supported and this is just a placeholder.
-                '    ctrl.BackColor = colorFlowLayoutPanelBackColor
-                '    ctrl.ForeColor = colorFlowLayoutPanelForeColor
-                '    ' For split containers, we have to go through the controls inside
-                '    ' them to change their colors.
-                '    ctrl = ctrl.GetNextControl(ctrl, True)
-
-
-
             ElseIf TypeOf ctrl Is Button Then
                 ' If the control is a button, theme it as a button.
                 ' We have to define a button locally since "FlatStyle"
@@ -173,6 +163,13 @@ Public Class ThemeEngine
                 ctrl.BackColor = ThemeProperties.colorCheckBoxBackColor
                 ' CheckBox ForeColor.
                 ctrl.ForeColor = ThemeProperties.colorCheckBoxForeColor
+
+                'ElseIf TypeOf ctrl Is DataGridView Then
+                ' If the control is a datagridview, theme it as such.
+                ' Placeholder stuff for now since it's not fully
+                ' supported yet.
+                'ctrl.BackColor = Color.Black
+                'ctrl.ForeColor = Color.White
 
             ElseIf TypeOf ctrl Is FlowLayoutPanel Then
                 ' If the control is a flowlayoutpanel, theme it as such.
@@ -313,15 +310,18 @@ Public Class ThemeEngine
                     ctrl.ForeColor = ThemeProperties.colorTabPageForeColor
                 End If
 
-            ElseIf TypeOf ctrl Is Panel Then
-                ' Apply color to panels.
-                ctrl.BackColor = ThemeProperties.colorPanelBackColor
-                ctrl.ForeColor = ThemeProperties.colorPanelForeColor
-
             ElseIf TypeOf ctrl Is SplitContainer Then
                 ' Apply color to SplitContainers.
                 ctrl.BackColor = ThemeProperties.colorSplitContainerBackColor
                 ctrl.ForeColor = ThemeProperties.colorSplitContainerForeColor
+                ' For Split containers, we have to go through the controls inside
+                ' them to change their colors.
+                ctrl = ctrl.GetNextControl(ctrl, True)
+
+            ElseIf TypeOf ctrl Is Panel Then
+                ' Apply color to panels.
+                ctrl.BackColor = ThemeProperties.colorPanelBackColor
+                ctrl.ForeColor = ThemeProperties.colorPanelForeColor
 
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
                 ' Apply dark/light banners in the About window if the theme
