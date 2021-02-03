@@ -475,6 +475,26 @@ Public Class ThemeProperties
         End Set
     End Property
 
+    ' SplitContainer back color.
+    Public Shared Property colorSplitContainerBackColor() As Color
+        Get
+            Return _colorSplitContainerBackColor
+        End Get
+        Set(value As Color)
+            _colorSplitContainerBackColor = value
+        End Set
+    End Property
+
+    ' SplitContainer fore color.
+    Public Shared Property colorSplitContainerForeColor() As Color
+        Get
+            Return _colorSplitContainerForeColor
+        End Get
+        Set(value As Color)
+            _colorSplitContainerForeColor = value
+        End Set
+    End Property
+
     ' Radio button back color.
     Public Shared Property colorRadioButtonBackColor() As Color
         Get
