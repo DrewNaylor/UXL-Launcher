@@ -318,6 +318,11 @@ Public Class ThemeEngine
                 ctrl.BackColor = ThemeProperties.colorPanelBackColor
                 ctrl.ForeColor = ThemeProperties.colorPanelForeColor
 
+            ElseIf TypeOf ctrl Is SplitContainer Then
+                ' Apply color to SplitContainers.
+                ctrl.BackColor = ThemeProperties.colorSplitContainerBackColor
+                ctrl.ForeColor = ThemeProperties.colorSplitContainerForeColor
+
             ElseIf TypeOf ctrl Is PictureBox AndAlso ctrl.Name = "pictureboxUXLBanner" Then
                 ' Apply dark/light banners in the About window if the theme
                 ' wants to.
