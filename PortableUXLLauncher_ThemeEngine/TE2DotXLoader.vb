@@ -281,6 +281,16 @@ Friend Class TE2DotXLoader
         ' Assign MenuBar BackColor property.
         ThemeProperties.colorMenubarBackColor = GetThemeColor("MenuBar", "BackColor", LoadFromAttribute)
 
+        ' Assign SplitContainer BackColor property.
+        ' We can have this load from the attributes since
+        ' it's first supported in TE2.x.
+        ThemeProperties.colorSplitContainerBackColor = GetThemeColor("SplitContainer", "BackColor", True)
+
+        ' Assign SplitContainer ForeColor property.
+        ' We can have this load from the attributes since
+        ' it's first supported in TE2.x.
+        ThemeProperties.colorSplitContainerBackColor = GetThemeColor("SplitContainer", "ForeColor", True)
+
         ' Assign StatusBar backcolor property.
         ThemeProperties.colorStatusBarBackColor = GetThemeColor("StatusBar", "BackColor", LoadFromAttribute)
 
