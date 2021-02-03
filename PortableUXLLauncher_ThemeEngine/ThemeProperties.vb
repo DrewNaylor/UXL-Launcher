@@ -116,6 +116,9 @@ Public Class ThemeProperties
     ' Panel colors:
     Private Shared _colorPanelBackColor As Color
     Private Shared _colorPanelForeColor As Color
+    ' SplitContainer colors:
+    Private Shared _colorSplitContainerBackColor As Color
+    Private Shared _colorSplitContainerForeColor As Color
     ' Statusbar label colors:
     Private Shared _colorStatusLabelBackColor As Color
     Private Shared _colorStatusLabelForeColor As Color
