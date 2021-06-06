@@ -1,5 +1,5 @@
 ﻿'PortableThemeEngine Theme Editor - Theme editor for editing PortableThemeEngine themes.
-'Copyright (C) 2020 Drew Naylor. Licensed under Gnu GPLv3+.
+'Copyright (C) 2020-2021 Drew Naylor. Licensed under Gnu GPLv3+.
 'Any companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
 '

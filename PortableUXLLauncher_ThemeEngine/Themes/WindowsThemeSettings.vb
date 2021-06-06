@@ -1,23 +1,27 @@
-﻿'PortableThemeEngine - Theme engine based off the UXL Launcher Theme Engine.
-'Can be used with standard Windows Forms applications with a few small changes.
-'Copyright (C) 2019-2020 Drew Naylor. Licensed under Gnu GPLv3+.
-'Any companies mentioned own their respective copyrights/trademarks.
-'(Note that the copyright years include the years left out by the hyphen.)
+﻿' PortableThemeEngine - Theme engine based off the UXL Launcher Theme Engine.
+' Can be used with standard Windows Forms applications.
+' Copyright (C) 2019-2021 Drew Naylor.
+' Microsoft Windows and all related words are copyright
+' and trademark Microsoft Corporation.
+' Microsoft is not affiliated with either PortableThemeEngine or Drew Naylor
+' and does not endorse this software.
+' Any other companies mentioned own their respective copyrights/trademarks.
+' (Note that the copyright years include the years left out by the hyphen.)
 '
-'This file is part of PortableThemeEngine.
+' This file is part of PortableThemeEngine.
 '
-'PortableThemeEngine is free software: you can redistribute it and/or modify
-'it under the terms of the GNU General Public License as published by
-'the Free Software Foundation, either version 3 of the License, or
-'(at your option) any later version.
 '
-'PortableThemeEngine is distributed in the hope that it will be useful,
-'but WITHOUT ANY WARRANTY; without even the implied warranty of
-'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-'GNU General Public License for more details.
+'   Licensed under the Apache License, Version 2.0 (the "License");
+'   you may not use this file except in compliance with the License.
+'   You may obtain a copy of the License at
 '
-'You should have received a copy of the GNU General Public License
-'along with PortableThemeEngine.  If not, see <http://www.gnu.org/licenses/>.
+'     http://www.apache.org/licenses/LICENSE-2.0
+'
+'   Unless required by applicable law or agreed to in writing, software
+'   distributed under the License is distributed on an "AS IS" BASIS,
+'   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+'   See the License for the specific language governing permissions and
+'   limitations under the License.
 
 
 
