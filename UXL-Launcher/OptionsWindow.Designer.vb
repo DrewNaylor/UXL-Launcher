@@ -105,10 +105,10 @@ Partial Class aaformOptionsWindow
         '
         Me.tableLayoutPanelOptionsWindow.ColumnCount = 5
         Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76.0!))
-        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
+        Me.tableLayoutPanelOptionsWindow.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonSaveSettings, 4, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.buttonCancel, 3, 1)
         Me.tableLayoutPanelOptionsWindow.Controls.Add(Me.tabcontrolOptionsWindow, 0, 0)
@@ -121,17 +121,17 @@ Partial Class aaformOptionsWindow
         Me.tableLayoutPanelOptionsWindow.RowCount = 2
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.0!))
         Me.tableLayoutPanelOptionsWindow.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
-        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(446, 394)
+        Me.tableLayoutPanelOptionsWindow.Size = New System.Drawing.Size(558, 492)
         Me.tableLayoutPanelOptionsWindow.TabIndex = 0
         '
         'buttonSaveSettings
         '
         Me.buttonSaveSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonSaveSettings.AutoSize = True
-        Me.buttonSaveSettings.Location = New System.Drawing.Point(368, 364)
-        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(2, 2, 8, 2)
+        Me.buttonSaveSettings.Location = New System.Drawing.Point(460, 454)
+        Me.buttonSaveSettings.Margin = New System.Windows.Forms.Padding(2, 2, 10, 2)
         Me.buttonSaveSettings.Name = "buttonSaveSettings"
-        Me.buttonSaveSettings.Size = New System.Drawing.Size(70, 28)
+        Me.buttonSaveSettings.Size = New System.Drawing.Size(88, 35)
         Me.buttonSaveSettings.TabIndex = 7
         Me.buttonSaveSettings.Text = "Save"
         Me.buttonSaveSettings.UseVisualStyleBackColor = True
@@ -141,10 +141,10 @@ Partial Class aaformOptionsWindow
         Me.buttonCancel.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonCancel.AutoSize = True
         Me.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.buttonCancel.Location = New System.Drawing.Point(292, 364)
+        Me.buttonCancel.Location = New System.Drawing.Point(366, 454)
         Me.buttonCancel.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonCancel.Name = "buttonCancel"
-        Me.buttonCancel.Size = New System.Drawing.Size(72, 28)
+        Me.buttonCancel.Size = New System.Drawing.Size(90, 35)
         Me.buttonCancel.TabIndex = 8
         Me.buttonCancel.Text = "Cancel"
         Me.buttonCancel.UseVisualStyleBackColor = True
@@ -158,22 +158,22 @@ Partial Class aaformOptionsWindow
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageStatusbar)
         Me.tabcontrolOptionsWindow.Controls.Add(Me.tabpageMaintenance)
         Me.tabcontrolOptionsWindow.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(8, 8)
-        Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(8, 8, 8, 2)
+        Me.tabcontrolOptionsWindow.Location = New System.Drawing.Point(10, 10)
+        Me.tabcontrolOptionsWindow.Margin = New System.Windows.Forms.Padding(10, 10, 10, 2)
         Me.tabcontrolOptionsWindow.Name = "tabcontrolOptionsWindow"
         Me.tabcontrolOptionsWindow.SelectedIndex = 0
-        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(430, 352)
+        Me.tabcontrolOptionsWindow.Size = New System.Drawing.Size(538, 440)
         Me.tabcontrolOptionsWindow.TabIndex = 0
         '
         'tabpageGeneral
         '
         Me.tabpageGeneral.Controls.Add(Me.groupboxBypassConfiguredLocation)
         Me.tabpageGeneral.Controls.Add(Me.groupboxOfficeVersion)
-        Me.tabpageGeneral.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageGeneral.Location = New System.Drawing.Point(4, 25)
         Me.tabpageGeneral.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageGeneral.Name = "tabpageGeneral"
         Me.tabpageGeneral.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabpageGeneral.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageGeneral.Size = New System.Drawing.Size(530, 411)
         Me.tabpageGeneral.TabIndex = 0
         Me.tabpageGeneral.Text = "Versions + Compatibility"
         Me.tabpageGeneral.UseVisualStyleBackColor = True
@@ -184,10 +184,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonBypassConfiguredLocationDeprecatedApps)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.radiobuttonDontBypassConfiguredLocation)
         Me.groupboxBypassConfiguredLocation.Controls.Add(Me.labelBypassConfiguredLocation)
-        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(4, 147)
+        Me.groupboxBypassConfiguredLocation.Location = New System.Drawing.Point(5, 184)
         Me.groupboxBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxBypassConfiguredLocation.Name = "groupboxBypassConfiguredLocation"
-        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(415, 175)
+        Me.groupboxBypassConfiguredLocation.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxBypassConfiguredLocation.Size = New System.Drawing.Size(519, 219)
         Me.groupboxBypassConfiguredLocation.TabIndex = 2
         Me.groupboxBypassConfiguredLocation.TabStop = False
         Me.groupboxBypassConfiguredLocation.Text = "Bypass configured location"
@@ -195,9 +196,10 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationAllApps
         '
         Me.radiobuttonBypassConfiguredLocationAllApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(41, 129)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Location = New System.Drawing.Point(51, 161)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.radiobuttonBypassConfiguredLocationAllApps.Name = "radiobuttonBypassConfiguredLocationAllApps"
-        Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(206, 17)
+        Me.radiobuttonBypassConfiguredLocationAllApps.Size = New System.Drawing.Size(273, 21)
         Me.radiobuttonBypassConfiguredLocationAllApps.TabIndex = 2
         Me.radiobuttonBypassConfiguredLocationAllApps.TabStop = True
         Me.radiobuttonBypassConfiguredLocationAllApps.Text = "Bypass configured location for all apps"
@@ -206,9 +208,10 @@ Partial Class aaformOptionsWindow
         'radiobuttonBypassConfiguredLocationDeprecatedApps
         '
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.AutoSize = True
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(41, 106)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Location = New System.Drawing.Point(51, 132)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Name = "radiobuttonBypassConfiguredLocationDeprecatedApps"
-        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(296, 17)
+        Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Size = New System.Drawing.Size(390, 21)
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabIndex = 2
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.TabStop = True
         Me.radiobuttonBypassConfiguredLocationDeprecatedApps.Text = "Bypass configured location for deprecated/removed apps"
@@ -217,9 +220,10 @@ Partial Class aaformOptionsWindow
         'radiobuttonDontBypassConfiguredLocation
         '
         Me.radiobuttonDontBypassConfiguredLocation.AutoSize = True
-        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(41, 83)
+        Me.radiobuttonDontBypassConfiguredLocation.Location = New System.Drawing.Point(51, 104)
+        Me.radiobuttonDontBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.radiobuttonDontBypassConfiguredLocation.Name = "radiobuttonDontBypassConfiguredLocation"
-        Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(179, 17)
+        Me.radiobuttonDontBypassConfiguredLocation.Size = New System.Drawing.Size(235, 21)
         Me.radiobuttonDontBypassConfiguredLocation.TabIndex = 2
         Me.radiobuttonDontBypassConfiguredLocation.TabStop = True
         Me.radiobuttonDontBypassConfiguredLocation.Text = "Don't bypass configured location"
@@ -228,9 +232,10 @@ Partial Class aaformOptionsWindow
         'labelBypassConfiguredLocation
         '
         Me.labelBypassConfiguredLocation.AutoSize = True
-        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(38, 28)
+        Me.labelBypassConfiguredLocation.Location = New System.Drawing.Point(48, 35)
+        Me.labelBypassConfiguredLocation.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelBypassConfiguredLocation.Name = "labelBypassConfiguredLocation"
-        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(339, 52)
+        Me.labelBypassConfiguredLocation.Size = New System.Drawing.Size(457, 68)
         Me.labelBypassConfiguredLocation.TabIndex = 0
         Me.labelBypassConfiguredLocation.Text = resources.GetString("labelBypassConfiguredLocation.Text")
         '
@@ -240,11 +245,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeVersion.Controls.Add(Me.checkboxO365InstallMethod)
         Me.groupboxOfficeVersion.Controls.Add(Me.labelUserHasThisOfficeVersion)
         Me.groupboxOfficeVersion.Controls.Add(Me.comboboxOfficeVersionSelector)
-        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxOfficeVersion.Location = New System.Drawing.Point(5, 5)
         Me.groupboxOfficeVersion.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeVersion.Name = "groupboxOfficeVersion"
         Me.groupboxOfficeVersion.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(415, 139)
+        Me.groupboxOfficeVersion.Size = New System.Drawing.Size(519, 174)
         Me.groupboxOfficeVersion.TabIndex = 1
         Me.groupboxOfficeVersion.TabStop = False
         Me.groupboxOfficeVersion.Text = "Microsoft Office versions + C2R"
@@ -252,9 +257,10 @@ Partial Class aaformOptionsWindow
         'labelOffice365Compatibility
         '
         Me.labelOffice365Compatibility.AutoSize = True
-        Me.labelOffice365Compatibility.Location = New System.Drawing.Point(76, 64)
+        Me.labelOffice365Compatibility.Location = New System.Drawing.Point(95, 80)
+        Me.labelOffice365Compatibility.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelOffice365Compatibility.Name = "labelOffice365Compatibility"
-        Me.labelOffice365Compatibility.Size = New System.Drawing.Size(272, 26)
+        Me.labelOffice365Compatibility.Size = New System.Drawing.Size(360, 34)
         Me.labelOffice365Compatibility.TabIndex = 6
         Me.labelOffice365Compatibility.Text = "Most people install Office from Office 365/Microsoft 365," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "so you may need to che" &
     "ck this box:"
@@ -263,10 +269,10 @@ Partial Class aaformOptionsWindow
         '
         Me.checkboxO365InstallMethod.AutoSize = True
         Me.checkboxO365InstallMethod.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(79, 92)
+        Me.checkboxO365InstallMethod.Location = New System.Drawing.Point(99, 115)
         Me.checkboxO365InstallMethod.Margin = New System.Windows.Forms.Padding(2)
         Me.checkboxO365InstallMethod.Name = "checkboxO365InstallMethod"
-        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(235, 30)
+        Me.checkboxO365InstallMethod.Size = New System.Drawing.Size(307, 38)
         Me.checkboxO365InstallMethod.TabIndex = 1
         Me.checkboxO365InstallMethod.Text = "Enable Office 365/Click-to-Run Compatibility" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Always enabled for 2019 and above)" &
     ""
@@ -276,10 +282,10 @@ Partial Class aaformOptionsWindow
         'labelUserHasThisOfficeVersion
         '
         Me.labelUserHasThisOfficeVersion.AutoSize = True
-        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(76, 16)
+        Me.labelUserHasThisOfficeVersion.Location = New System.Drawing.Point(95, 20)
         Me.labelUserHasThisOfficeVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelUserHasThisOfficeVersion.Name = "labelUserHasThisOfficeVersion"
-        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(263, 13)
+        Me.labelUserHasThisOfficeVersion.Size = New System.Drawing.Size(352, 17)
         Me.labelUserHasThisOfficeVersion.TabIndex = 2
         Me.labelUserHasThisOfficeVersion.Text = "Please select your installed version of Microsoft Office:"
         '
@@ -287,21 +293,21 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxOfficeVersionSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxOfficeVersionSelector.FormattingEnabled = True
-        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(79, 31)
+        Me.comboboxOfficeVersionSelector.Location = New System.Drawing.Point(99, 39)
         Me.comboboxOfficeVersionSelector.Margin = New System.Windows.Forms.Padding(2)
         Me.comboboxOfficeVersionSelector.Name = "comboboxOfficeVersionSelector"
-        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(138, 21)
+        Me.comboboxOfficeVersionSelector.Size = New System.Drawing.Size(172, 24)
         Me.comboboxOfficeVersionSelector.TabIndex = 0
         '
         'tabpageAdvanced
         '
         Me.tabpageAdvanced.Controls.Add(Me.groupboxOfficeLocation)
         Me.tabpageAdvanced.Controls.Add(Me.groupboxCPUType)
-        Me.tabpageAdvanced.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageAdvanced.Location = New System.Drawing.Point(4, 25)
         Me.tabpageAdvanced.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageAdvanced.Name = "tabpageAdvanced"
         Me.tabpageAdvanced.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabpageAdvanced.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageAdvanced.Size = New System.Drawing.Size(530, 411)
         Me.tabpageAdvanced.TabIndex = 1
         Me.tabpageAdvanced.Text = "Root Path"
         Me.tabpageAdvanced.UseVisualStyleBackColor = True
@@ -313,11 +319,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxOfficeLocation.Controls.Add(Me.comboboxDriveSelector)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelDriveTextboxLabel)
         Me.groupboxOfficeLocation.Controls.Add(Me.labelOfficeInstalledToDrive)
-        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxOfficeLocation.Location = New System.Drawing.Point(5, 5)
         Me.groupboxOfficeLocation.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxOfficeLocation.Name = "groupboxOfficeLocation"
         Me.groupboxOfficeLocation.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(415, 122)
+        Me.groupboxOfficeLocation.Size = New System.Drawing.Size(519, 152)
         Me.groupboxOfficeLocation.TabIndex = 0
         Me.groupboxOfficeLocation.TabStop = False
         Me.groupboxOfficeLocation.Text = "Root drive path"
@@ -325,17 +331,19 @@ Partial Class aaformOptionsWindow
         'labelDriveNotAvailable
         '
         Me.labelDriveNotAvailable.AutoSize = True
-        Me.labelDriveNotAvailable.Location = New System.Drawing.Point(128, 85)
+        Me.labelDriveNotAvailable.Location = New System.Drawing.Point(160, 106)
+        Me.labelDriveNotAvailable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelDriveNotAvailable.Name = "labelDriveNotAvailable"
-        Me.labelDriveNotAvailable.Size = New System.Drawing.Size(99, 13)
+        Me.labelDriveNotAvailable.Size = New System.Drawing.Size(130, 17)
         Me.labelDriveNotAvailable.TabIndex = 5
         Me.labelDriveNotAvailable.Text = "*Drive not available"
         '
         'buttonRefreshDriveLetterList
         '
-        Me.buttonRefreshDriveLetterList.Location = New System.Drawing.Point(178, 60)
+        Me.buttonRefreshDriveLetterList.Location = New System.Drawing.Point(222, 75)
+        Me.buttonRefreshDriveLetterList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buttonRefreshDriveLetterList.Name = "buttonRefreshDriveLetterList"
-        Me.buttonRefreshDriveLetterList.Size = New System.Drawing.Size(58, 23)
+        Me.buttonRefreshDriveLetterList.Size = New System.Drawing.Size(72, 29)
         Me.buttonRefreshDriveLetterList.TabIndex = 1
         Me.buttonRefreshDriveLetterList.Text = "Refresh"
         Me.buttonRefreshDriveLetterList.UseVisualStyleBackColor = True
@@ -344,27 +352,29 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxDriveSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxDriveSelector.FormattingEnabled = True
-        Me.comboboxDriveSelector.Location = New System.Drawing.Point(131, 61)
+        Me.comboboxDriveSelector.Location = New System.Drawing.Point(164, 76)
+        Me.comboboxDriveSelector.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.comboboxDriveSelector.Name = "comboboxDriveSelector"
-        Me.comboboxDriveSelector.Size = New System.Drawing.Size(41, 21)
+        Me.comboboxDriveSelector.Size = New System.Drawing.Size(50, 24)
         Me.comboboxDriveSelector.TabIndex = 0
         '
         'labelDriveTextboxLabel
         '
         Me.labelDriveTextboxLabel.AutoSize = True
-        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(93, 64)
+        Me.labelDriveTextboxLabel.Location = New System.Drawing.Point(116, 80)
+        Me.labelDriveTextboxLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelDriveTextboxLabel.Name = "labelDriveTextboxLabel"
-        Me.labelDriveTextboxLabel.Size = New System.Drawing.Size(32, 13)
+        Me.labelDriveTextboxLabel.Size = New System.Drawing.Size(41, 17)
         Me.labelDriveTextboxLabel.TabIndex = 4
         Me.labelDriveTextboxLabel.Text = "Drive"
         '
         'labelOfficeInstalledToDrive
         '
         Me.labelOfficeInstalledToDrive.AutoSize = True
-        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(93, 41)
+        Me.labelOfficeInstalledToDrive.Location = New System.Drawing.Point(116, 51)
         Me.labelOfficeInstalledToDrive.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelOfficeInstalledToDrive.Name = "labelOfficeInstalledToDrive"
-        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(228, 13)
+        Me.labelOfficeInstalledToDrive.Size = New System.Drawing.Size(304, 17)
         Me.labelOfficeInstalledToDrive.TabIndex = 1
         Me.labelOfficeInstalledToDrive.Text = "Please choose the drive you installed Office to:"
         '
@@ -375,11 +385,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFilesX86)
         Me.groupboxCPUType.Controls.Add(Me.radiobuttonUseProgramFiles)
         Me.groupboxCPUType.Controls.Add(Me.labelPFPathDescription)
-        Me.groupboxCPUType.Location = New System.Drawing.Point(4, 130)
+        Me.groupboxCPUType.Location = New System.Drawing.Point(5, 162)
         Me.groupboxCPUType.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxCPUType.Name = "groupboxCPUType"
         Me.groupboxCPUType.Padding = New System.Windows.Forms.Padding(2)
-        Me.groupboxCPUType.Size = New System.Drawing.Size(415, 192)
+        Me.groupboxCPUType.Size = New System.Drawing.Size(519, 240)
         Me.groupboxCPUType.TabIndex = 1
         Me.groupboxCPUType.TabStop = False
         Me.groupboxCPUType.Text = "Program Files path"
@@ -387,19 +397,20 @@ Partial Class aaformOptionsWindow
         'labelRecommendedWindowsEdition
         '
         Me.labelRecommendedWindowsEdition.AutoSize = True
-        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(36, 101)
+        Me.labelRecommendedWindowsEdition.Location = New System.Drawing.Point(45, 126)
+        Me.labelRecommendedWindowsEdition.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelRecommendedWindowsEdition.Name = "labelRecommendedWindowsEdition"
-        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(369, 65)
+        Me.labelRecommendedWindowsEdition.Size = New System.Drawing.Size(495, 85)
         Me.labelRecommendedWindowsEdition.TabIndex = 5
         Me.labelRecommendedWindowsEdition.Text = resources.GetString("labelRecommendedWindowsEdition.Text")
         '
         'radiobuttonCPUIsQBit
         '
         Me.radiobuttonCPUIsQBit.AutoSize = True
-        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(450, 160)
+        Me.radiobuttonCPUIsQBit.Location = New System.Drawing.Point(562, 200)
         Me.radiobuttonCPUIsQBit.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonCPUIsQBit.Name = "radiobuttonCPUIsQBit"
-        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(432, 17)
+        Me.radiobuttonCPUIsQBit.Size = New System.Drawing.Size(575, 21)
         Me.radiobuttonCPUIsQBit.TabIndex = 4
         Me.radiobuttonCPUIsQBit.TabStop = True
         Me.radiobuttonCPUIsQBit.Text = "I'm running Quantum-bit Windows lawl. (Thank you for finding this hidden radio bu" &
@@ -409,10 +420,10 @@ Partial Class aaformOptionsWindow
         'radiobuttonUseProgramFilesX86
         '
         Me.radiobuttonUseProgramFilesX86.AutoSize = True
-        Me.radiobuttonUseProgramFilesX86.Location = New System.Drawing.Point(39, 70)
+        Me.radiobuttonUseProgramFilesX86.Location = New System.Drawing.Point(49, 88)
         Me.radiobuttonUseProgramFilesX86.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonUseProgramFilesX86.Name = "radiobuttonUseProgramFilesX86"
-        Me.radiobuttonUseProgramFilesX86.Size = New System.Drawing.Size(268, 17)
+        Me.radiobuttonUseProgramFilesX86.Size = New System.Drawing.Size(357, 21)
         Me.radiobuttonUseProgramFilesX86.TabIndex = 2
         Me.radiobuttonUseProgramFilesX86.TabStop = True
         Me.radiobuttonUseProgramFilesX86.Text = "Program Files (x86): 32-bit Office on 64-bit Windows"
@@ -422,10 +433,10 @@ Partial Class aaformOptionsWindow
         '
         Me.radiobuttonUseProgramFiles.AutoSize = True
         Me.radiobuttonUseProgramFiles.CheckAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.radiobuttonUseProgramFiles.Location = New System.Drawing.Point(39, 36)
+        Me.radiobuttonUseProgramFiles.Location = New System.Drawing.Point(49, 45)
         Me.radiobuttonUseProgramFiles.Margin = New System.Windows.Forms.Padding(2)
         Me.radiobuttonUseProgramFiles.Name = "radiobuttonUseProgramFiles"
-        Me.radiobuttonUseProgramFiles.Size = New System.Drawing.Size(350, 30)
+        Me.radiobuttonUseProgramFiles.Size = New System.Drawing.Size(465, 38)
         Me.radiobuttonUseProgramFiles.TabIndex = 2
         Me.radiobuttonUseProgramFiles.TabStop = True
         Me.radiobuttonUseProgramFiles.Text = "Program Files: 64-bit Office on 64-bit Windows," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "32-bit Office on 32-bit Windows," &
@@ -435,10 +446,10 @@ Partial Class aaformOptionsWindow
         'labelPFPathDescription
         '
         Me.labelPFPathDescription.AutoSize = True
-        Me.labelPFPathDescription.Location = New System.Drawing.Point(36, 21)
+        Me.labelPFPathDescription.Location = New System.Drawing.Point(45, 26)
         Me.labelPFPathDescription.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelPFPathDescription.Name = "labelPFPathDescription"
-        Me.labelPFPathDescription.Size = New System.Drawing.Size(280, 13)
+        Me.labelPFPathDescription.Size = New System.Drawing.Size(375, 17)
         Me.labelPFPathDescription.TabIndex = 0
         Me.labelPFPathDescription.Text = "Select the Program Files path used by your copy of Office:"
         '
@@ -446,11 +457,11 @@ Partial Class aaformOptionsWindow
         '
         Me.tabpagePersonalization.Controls.Add(Me.groupboxDefaultDarkTheme)
         Me.tabpagePersonalization.Controls.Add(Me.groupboxAppearance)
-        Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 22)
+        Me.tabpagePersonalization.Location = New System.Drawing.Point(4, 25)
         Me.tabpagePersonalization.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpagePersonalization.Name = "tabpagePersonalization"
         Me.tabpagePersonalization.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabpagePersonalization.Size = New System.Drawing.Size(422, 326)
+        Me.tabpagePersonalization.Size = New System.Drawing.Size(530, 411)
         Me.tabpagePersonalization.TabIndex = 2
         Me.tabpagePersonalization.Text = "Theme"
         Me.tabpagePersonalization.UseVisualStyleBackColor = True
@@ -459,9 +470,11 @@ Partial Class aaformOptionsWindow
         '
         Me.groupboxDefaultDarkTheme.Controls.Add(Me.comboboxDarkThemesForSystemThemeMatchingList)
         Me.groupboxDefaultDarkTheme.Controls.Add(Me.labelDefaultDarkThemeDescription)
-        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(4, 209)
+        Me.groupboxDefaultDarkTheme.Location = New System.Drawing.Point(5, 261)
+        Me.groupboxDefaultDarkTheme.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.groupboxDefaultDarkTheme.Name = "groupboxDefaultDarkTheme"
-        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(415, 112)
+        Me.groupboxDefaultDarkTheme.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxDefaultDarkTheme.Size = New System.Drawing.Size(519, 140)
         Me.groupboxDefaultDarkTheme.TabIndex = 1
         Me.groupboxDefaultDarkTheme.TabStop = False
         Me.groupboxDefaultDarkTheme.Text = "Dark theme for system theme matching"
@@ -470,17 +483,19 @@ Partial Class aaformOptionsWindow
         '
         Me.comboboxDarkThemesForSystemThemeMatchingList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxDarkThemesForSystemThemeMatchingList.FormattingEnabled = True
-        Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(15, 54)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Location = New System.Drawing.Point(19, 68)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.comboboxDarkThemesForSystemThemeMatchingList.Name = "comboboxDarkThemesForSystemThemeMatchingList"
-        Me.comboboxDarkThemesForSystemThemeMatchingList.Size = New System.Drawing.Size(195, 21)
+        Me.comboboxDarkThemesForSystemThemeMatchingList.Size = New System.Drawing.Size(243, 24)
         Me.comboboxDarkThemesForSystemThemeMatchingList.TabIndex = 6
         '
         'labelDefaultDarkThemeDescription
         '
         Me.labelDefaultDarkThemeDescription.AutoSize = True
-        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(12, 37)
+        Me.labelDefaultDarkThemeDescription.Location = New System.Drawing.Point(15, 46)
+        Me.labelDefaultDarkThemeDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelDefaultDarkThemeDescription.Name = "labelDefaultDarkThemeDescription"
-        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(363, 13)
+        Me.labelDefaultDarkThemeDescription.Size = New System.Drawing.Size(485, 17)
         Me.labelDefaultDarkThemeDescription.TabIndex = 0
         Me.labelDefaultDarkThemeDescription.Text = "When matching system theme settings is enabled, we'll use this dark theme:"
         '
@@ -494,10 +509,11 @@ Partial Class aaformOptionsWindow
         Me.groupboxAppearance.Controls.Add(Me.comboboxThemeList)
         Me.groupboxAppearance.Controls.Add(Me.textboxThemeInfo)
         Me.groupboxAppearance.Controls.Add(Me.checkboxEnableThemeEngine)
-        Me.groupboxAppearance.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxAppearance.Location = New System.Drawing.Point(5, 5)
         Me.groupboxAppearance.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxAppearance.Name = "groupboxAppearance"
-        Me.groupboxAppearance.Size = New System.Drawing.Size(415, 200)
+        Me.groupboxAppearance.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxAppearance.Size = New System.Drawing.Size(519, 250)
         Me.groupboxAppearance.TabIndex = 0
         Me.groupboxAppearance.TabStop = False
         Me.groupboxAppearance.Text = "Theme configuration"
@@ -505,9 +521,10 @@ Partial Class aaformOptionsWindow
         'checkboxMatchWindows10ThemeSettings
         '
         Me.checkboxMatchWindows10ThemeSettings.AutoSize = True
-        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(7, 43)
+        Me.checkboxMatchWindows10ThemeSettings.Location = New System.Drawing.Point(9, 54)
+        Me.checkboxMatchWindows10ThemeSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.checkboxMatchWindows10ThemeSettings.Name = "checkboxMatchWindows10ThemeSettings"
-        Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(162, 17)
+        Me.checkboxMatchWindows10ThemeSettings.Size = New System.Drawing.Size(212, 21)
         Me.checkboxMatchWindows10ThemeSettings.TabIndex = 1
         Me.checkboxMatchWindows10ThemeSettings.Text = "Match system theme settings"
         Me.tooltipMatchWindows10ThemeSettings.SetToolTip(Me.checkboxMatchWindows10ThemeSettings, resources.GetString("checkboxMatchWindows10ThemeSettings.ToolTip"))
@@ -517,18 +534,20 @@ Partial Class aaformOptionsWindow
         '
         Me.labelCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelCustomThemePath.AutoSize = True
-        Me.labelCustomThemePath.Location = New System.Drawing.Point(4, 155)
+        Me.labelCustomThemePath.Location = New System.Drawing.Point(5, 194)
+        Me.labelCustomThemePath.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelCustomThemePath.Name = "labelCustomThemePath"
-        Me.labelCustomThemePath.Size = New System.Drawing.Size(101, 13)
+        Me.labelCustomThemePath.Size = New System.Drawing.Size(134, 17)
         Me.labelCustomThemePath.TabIndex = 6
         Me.labelCustomThemePath.Text = "Custom theme path:"
         '
         'buttonCustomThemesBrowse
         '
         Me.buttonCustomThemesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(127, 168)
+        Me.buttonCustomThemesBrowse.Location = New System.Drawing.Point(159, 210)
+        Me.buttonCustomThemesBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buttonCustomThemesBrowse.Name = "buttonCustomThemesBrowse"
-        Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(68, 23)
+        Me.buttonCustomThemesBrowse.Size = New System.Drawing.Size(85, 29)
         Me.buttonCustomThemesBrowse.TabIndex = 5
         Me.buttonCustomThemesBrowse.Text = "Browse..."
         Me.buttonCustomThemesBrowse.UseVisualStyleBackColor = True
@@ -536,9 +555,10 @@ Partial Class aaformOptionsWindow
         'textboxCustomThemePath
         '
         Me.textboxCustomThemePath.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textboxCustomThemePath.Location = New System.Drawing.Point(7, 171)
+        Me.textboxCustomThemePath.Location = New System.Drawing.Point(9, 214)
+        Me.textboxCustomThemePath.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.textboxCustomThemePath.Name = "textboxCustomThemePath"
-        Me.textboxCustomThemePath.Size = New System.Drawing.Size(117, 20)
+        Me.textboxCustomThemePath.Size = New System.Drawing.Size(145, 22)
         Me.textboxCustomThemePath.TabIndex = 4
         Me.tooltipCustomThemePath.SetToolTip(Me.textboxCustomThemePath, "(Placeholder)")
         '
@@ -546,9 +566,10 @@ Partial Class aaformOptionsWindow
         '
         Me.labelThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.labelThemeList.AutoSize = True
-        Me.labelThemeList.Location = New System.Drawing.Point(4, 63)
+        Me.labelThemeList.Location = New System.Drawing.Point(5, 79)
+        Me.labelThemeList.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelThemeList.Name = "labelThemeList"
-        Me.labelThemeList.Size = New System.Drawing.Size(58, 13)
+        Me.labelThemeList.Size = New System.Drawing.Size(77, 17)
         Me.labelThemeList.TabIndex = 3
         Me.labelThemeList.Text = "Theme list:"
         '
@@ -557,29 +578,32 @@ Partial Class aaformOptionsWindow
         Me.comboboxThemeList.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.comboboxThemeList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.comboboxThemeList.FormattingEnabled = True
-        Me.comboboxThemeList.Location = New System.Drawing.Point(7, 79)
+        Me.comboboxThemeList.Location = New System.Drawing.Point(9, 99)
+        Me.comboboxThemeList.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.comboboxThemeList.Name = "comboboxThemeList"
-        Me.comboboxThemeList.Size = New System.Drawing.Size(188, 21)
+        Me.comboboxThemeList.Size = New System.Drawing.Size(234, 24)
         Me.comboboxThemeList.TabIndex = 2
         '
         'textboxThemeInfo
         '
         Me.textboxThemeInfo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.textboxThemeInfo.Location = New System.Drawing.Point(205, 39)
+        Me.textboxThemeInfo.Location = New System.Drawing.Point(256, 49)
+        Me.textboxThemeInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.textboxThemeInfo.Multiline = True
         Me.textboxThemeInfo.Name = "textboxThemeInfo"
         Me.textboxThemeInfo.ReadOnly = True
         Me.textboxThemeInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textboxThemeInfo.Size = New System.Drawing.Size(203, 152)
+        Me.textboxThemeInfo.Size = New System.Drawing.Size(253, 189)
         Me.textboxThemeInfo.TabIndex = 6
         Me.textboxThemeInfo.Text = "Theme description goes here at runtime."
         '
         'checkboxEnableThemeEngine
         '
         Me.checkboxEnableThemeEngine.AutoSize = True
-        Me.checkboxEnableThemeEngine.Location = New System.Drawing.Point(7, 20)
+        Me.checkboxEnableThemeEngine.Location = New System.Drawing.Point(9, 25)
+        Me.checkboxEnableThemeEngine.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.checkboxEnableThemeEngine.Name = "checkboxEnableThemeEngine"
-        Me.checkboxEnableThemeEngine.Size = New System.Drawing.Size(335, 17)
+        Me.checkboxEnableThemeEngine.Size = New System.Drawing.Size(448, 21)
         Me.checkboxEnableThemeEngine.TabIndex = 0
         Me.checkboxEnableThemeEngine.Text = "Enable UXL Launcher Theme Engine (requires application restart)"
         Me.checkboxEnableThemeEngine.UseVisualStyleBackColor = True
@@ -587,10 +611,11 @@ Partial Class aaformOptionsWindow
         'tabpageStatusbar
         '
         Me.tabpageStatusbar.Controls.Add(Me.groupboxStatusbar)
-        Me.tabpageStatusbar.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageStatusbar.Location = New System.Drawing.Point(4, 25)
+        Me.tabpageStatusbar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabpageStatusbar.Name = "tabpageStatusbar"
-        Me.tabpageStatusbar.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageStatusbar.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageStatusbar.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tabpageStatusbar.Size = New System.Drawing.Size(530, 411)
         Me.tabpageStatusbar.TabIndex = 3
         Me.tabpageStatusbar.Text = "Statusbar"
         Me.tabpageStatusbar.UseVisualStyleBackColor = True
@@ -603,19 +628,21 @@ Partial Class aaformOptionsWindow
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonCustomStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.radiobuttonDefaultStatusbarGreeting)
         Me.groupboxStatusbar.Controls.Add(Me.labelCustomStatusbarGreeting)
-        Me.groupboxStatusbar.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxStatusbar.Location = New System.Drawing.Point(5, 5)
         Me.groupboxStatusbar.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxStatusbar.Name = "groupboxStatusbar"
-        Me.groupboxStatusbar.Size = New System.Drawing.Size(415, 120)
+        Me.groupboxStatusbar.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxStatusbar.Size = New System.Drawing.Size(519, 150)
         Me.groupboxStatusbar.TabIndex = 2
         Me.groupboxStatusbar.TabStop = False
         Me.groupboxStatusbar.Text = "Greeting"
         '
         'buttonClearFirstname
         '
-        Me.buttonClearFirstname.Location = New System.Drawing.Point(352, 89)
+        Me.buttonClearFirstname.Location = New System.Drawing.Point(440, 111)
+        Me.buttonClearFirstname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buttonClearFirstname.Name = "buttonClearFirstname"
-        Me.buttonClearFirstname.Size = New System.Drawing.Size(55, 23)
+        Me.buttonClearFirstname.Size = New System.Drawing.Size(69, 29)
         Me.buttonClearFirstname.TabIndex = 4
         Me.buttonClearFirstname.Text = "Clear"
         Me.buttonClearFirstname.UseVisualStyleBackColor = True
@@ -623,25 +650,28 @@ Partial Class aaformOptionsWindow
         'labelFirstName
         '
         Me.labelFirstName.AutoSize = True
-        Me.labelFirstName.Location = New System.Drawing.Point(12, 93)
+        Me.labelFirstName.Location = New System.Drawing.Point(15, 116)
+        Me.labelFirstName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelFirstName.Name = "labelFirstName"
-        Me.labelFirstName.Size = New System.Drawing.Size(106, 13)
+        Me.labelFirstName.Size = New System.Drawing.Size(138, 17)
         Me.labelFirstName.TabIndex = 4
         Me.labelFirstName.Text = "Firstname/nickname:"
         '
         'textboxFirstname
         '
-        Me.textboxFirstname.Location = New System.Drawing.Point(127, 90)
+        Me.textboxFirstname.Location = New System.Drawing.Point(159, 112)
+        Me.textboxFirstname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.textboxFirstname.Name = "textboxFirstname"
-        Me.textboxFirstname.Size = New System.Drawing.Size(219, 20)
+        Me.textboxFirstname.Size = New System.Drawing.Size(273, 22)
         Me.textboxFirstname.TabIndex = 3
         '
         'radiobuttonCustomStatusbarGreeting
         '
         Me.radiobuttonCustomStatusbarGreeting.AutoSize = True
-        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(13, 67)
+        Me.radiobuttonCustomStatusbarGreeting.Location = New System.Drawing.Point(16, 84)
+        Me.radiobuttonCustomStatusbarGreeting.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.radiobuttonCustomStatusbarGreeting.Name = "radiobuttonCustomStatusbarGreeting"
-        Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(193, 17)
+        Me.radiobuttonCustomStatusbarGreeting.Size = New System.Drawing.Size(258, 21)
         Me.radiobuttonCustomStatusbarGreeting.TabIndex = 2
         Me.radiobuttonCustomStatusbarGreeting.TabStop = True
         Me.radiobuttonCustomStatusbarGreeting.Text = "Use personalized statusbar greeting"
@@ -650,9 +680,10 @@ Partial Class aaformOptionsWindow
         'radiobuttonDefaultStatusbarGreeting
         '
         Me.radiobuttonDefaultStatusbarGreeting.AutoSize = True
-        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(13, 44)
+        Me.radiobuttonDefaultStatusbarGreeting.Location = New System.Drawing.Point(16, 55)
+        Me.radiobuttonDefaultStatusbarGreeting.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.radiobuttonDefaultStatusbarGreeting.Name = "radiobuttonDefaultStatusbarGreeting"
-        Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(166, 17)
+        Me.radiobuttonDefaultStatusbarGreeting.Size = New System.Drawing.Size(220, 21)
         Me.radiobuttonDefaultStatusbarGreeting.TabIndex = 1
         Me.radiobuttonDefaultStatusbarGreeting.TabStop = True
         Me.radiobuttonDefaultStatusbarGreeting.Text = "Use default statusbar greeting"
@@ -661,9 +692,10 @@ Partial Class aaformOptionsWindow
         'labelCustomStatusbarGreeting
         '
         Me.labelCustomStatusbarGreeting.AutoSize = True
-        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(10, 15)
+        Me.labelCustomStatusbarGreeting.Location = New System.Drawing.Point(12, 19)
+        Me.labelCustomStatusbarGreeting.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelCustomStatusbarGreeting.Name = "labelCustomStatusbarGreeting"
-        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(369, 26)
+        Me.labelCustomStatusbarGreeting.Size = New System.Drawing.Size(494, 34)
         Me.labelCustomStatusbarGreeting.TabIndex = 0
         Me.labelCustomStatusbarGreeting.Text = "You can choose to use a statusbar greeting personalized with your firstname" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or n" &
     "ickname, or to use the default. Your name will not be used to identify you."
@@ -671,10 +703,11 @@ Partial Class aaformOptionsWindow
         'tabpageMaintenance
         '
         Me.tabpageMaintenance.Controls.Add(Me.groupboxMigrateSettings)
-        Me.tabpageMaintenance.Location = New System.Drawing.Point(4, 22)
+        Me.tabpageMaintenance.Location = New System.Drawing.Point(4, 25)
+        Me.tabpageMaintenance.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabpageMaintenance.Name = "tabpageMaintenance"
-        Me.tabpageMaintenance.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageMaintenance.Size = New System.Drawing.Size(422, 326)
+        Me.tabpageMaintenance.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tabpageMaintenance.Size = New System.Drawing.Size(530, 411)
         Me.tabpageMaintenance.TabIndex = 4
         Me.tabpageMaintenance.Text = "Maintenance"
         Me.tabpageMaintenance.UseVisualStyleBackColor = True
@@ -683,10 +716,11 @@ Partial Class aaformOptionsWindow
         '
         Me.groupboxMigrateSettings.Controls.Add(Me.labelMigrateSettings)
         Me.groupboxMigrateSettings.Controls.Add(Me.buttonUpgradeSettings)
-        Me.groupboxMigrateSettings.Location = New System.Drawing.Point(4, 4)
+        Me.groupboxMigrateSettings.Location = New System.Drawing.Point(5, 5)
         Me.groupboxMigrateSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.groupboxMigrateSettings.Name = "groupboxMigrateSettings"
-        Me.groupboxMigrateSettings.Size = New System.Drawing.Size(415, 100)
+        Me.groupboxMigrateSettings.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.groupboxMigrateSettings.Size = New System.Drawing.Size(519, 146)
         Me.groupboxMigrateSettings.TabIndex = 2
         Me.groupboxMigrateSettings.TabStop = False
         Me.groupboxMigrateSettings.Text = "Migrate settings"
@@ -694,9 +728,10 @@ Partial Class aaformOptionsWindow
         'labelMigrateSettings
         '
         Me.labelMigrateSettings.AutoSize = True
-        Me.labelMigrateSettings.Location = New System.Drawing.Point(6, 16)
+        Me.labelMigrateSettings.Location = New System.Drawing.Point(8, 20)
+        Me.labelMigrateSettings.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.labelMigrateSettings.Name = "labelMigrateSettings"
-        Me.labelMigrateSettings.Size = New System.Drawing.Size(410, 39)
+        Me.labelMigrateSettings.Size = New System.Drawing.Size(455, 68)
         Me.labelMigrateSettings.TabIndex = 1
         Me.labelMigrateSettings.Text = resources.GetString("labelMigrateSettings.Text")
         '
@@ -704,9 +739,10 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonUpgradeSettings.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonUpgradeSettings.Location = New System.Drawing.Point(6, 58)
+        Me.buttonUpgradeSettings.Location = New System.Drawing.Point(7, 92)
+        Me.buttonUpgradeSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.buttonUpgradeSettings.Name = "buttonUpgradeSettings"
-        Me.buttonUpgradeSettings.Size = New System.Drawing.Size(403, 38)
+        Me.buttonUpgradeSettings.Size = New System.Drawing.Size(504, 48)
         Me.buttonUpgradeSettings.TabIndex = 0
         Me.buttonUpgradeSettings.Text = "Migrate settings (overwrites current settings and requires restart)"
         Me.buttonUpgradeSettings.UseVisualStyleBackColor = True
@@ -715,10 +751,10 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonTestSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonTestSettings.AutoSize = True
-        Me.buttonTestSettings.Location = New System.Drawing.Point(71, 364)
+        Me.buttonTestSettings.Location = New System.Drawing.Point(90, 454)
         Me.buttonTestSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonTestSettings.Name = "buttonTestSettings"
-        Me.buttonTestSettings.Size = New System.Drawing.Size(79, 28)
+        Me.buttonTestSettings.Size = New System.Drawing.Size(99, 35)
         Me.buttonTestSettings.TabIndex = 9
         Me.buttonTestSettings.Text = "Test settings"
         Me.buttonTestSettings.UseVisualStyleBackColor = True
@@ -727,10 +763,10 @@ Partial Class aaformOptionsWindow
         '
         Me.buttonDefaultSettings.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.buttonDefaultSettings.AutoSize = True
-        Me.buttonDefaultSettings.Location = New System.Drawing.Point(2, 364)
+        Me.buttonDefaultSettings.Location = New System.Drawing.Point(4, 454)
         Me.buttonDefaultSettings.Margin = New System.Windows.Forms.Padding(2)
         Me.buttonDefaultSettings.Name = "buttonDefaultSettings"
-        Me.buttonDefaultSettings.Size = New System.Drawing.Size(65, 28)
+        Me.buttonDefaultSettings.Size = New System.Drawing.Size(81, 35)
         Me.buttonDefaultSettings.TabIndex = 10
         Me.buttonDefaultSettings.Text = "Defaults"
         Me.buttonDefaultSettings.UseVisualStyleBackColor = True
@@ -760,12 +796,13 @@ Partial Class aaformOptionsWindow
         '
         'aaformOptionsWindow
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(120.0!, 120.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.CancelButton = Me.buttonCancel
-        Me.ClientSize = New System.Drawing.Size(446, 394)
+        Me.ClientSize = New System.Drawing.Size(558, 492)
         Me.Controls.Add(Me.tableLayoutPanelOptionsWindow)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "aaformOptionsWindow"

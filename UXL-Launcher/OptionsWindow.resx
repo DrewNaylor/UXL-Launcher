@@ -160,9 +160,10 @@ applying themes.</value>
     <value>629, 23</value>
   </metadata>
   <data name="labelMigrateSettings.Text" xml:space="preserve">
-    <value>You can migrate your settings from the previous version if you declined on first startup.
-Please be aware that this overwrites your current settings and requires the new
-version to be installed to the same place as the old version.</value>
+    <value>You can migrate your settings from the previous version if you declined
+on first startup.
+Please be aware that this overwrites your current settings and requires
+the new version to be installed to the same place as the old version.</value>
   </data>
   <metadata name="tooltipSystemInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 23</value>
