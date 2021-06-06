@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -64,7 +64,7 @@ Namespace My.Resources
         '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
         '''  &lt;Title&gt;Return of the Night&lt;/Title&gt;
         '''  &lt;Description&gt;Based on the Test2 theme, &quot;Return of the Night&quot; is a purple theme best suited for those who like proper day/night cycles.&lt;/Description&gt;
-        '''  &lt;Version&gt;v1.1&lt;/Version&gt;
+        '''  &lt;Version&gt;v1.2&lt;/Version&gt;
         '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
         '''
         '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
