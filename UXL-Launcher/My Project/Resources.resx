@@ -384,9 +384,6 @@ This decimal is to be used for the About window when talking about what version 
   <data name="ApplauncherIconsInfo_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ApplauncherIconsInfo_TXT.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
   </data>
-  <data name="gpl_RTF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gpl-rtf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="BuildDate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BuildDate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
   </data>
@@ -1797,5 +1794,8 @@ This decimal is to be used for the About window when talking about what version 
   </data>
   <data name="libscrollswitchtabs_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\libscrollswitchtabs_txt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="apache2_0_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apache2.0-txt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

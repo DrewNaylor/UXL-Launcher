@@ -53,8 +53,8 @@ My.Resources.libscrollswitchtabs_TXT.Replace(vbLf, vbCrLf) ' libscrollswitchtabs
         ) '  The Replace(vbLf, vbCrLf) function is required for text to have Windows line endings if building from downloading the master branch code from GitHub.
 
 
-        ' Load the GPL document in the RTF Textbox control.
-        rtftextboxLicense.Rtf = My.Resources.gpl_RTF
+        ' Load the license in the RichTextBox control.
+        rtftextboxLicense.Text = My.Resources.apache2_0_txt
         ' Load the Acknowledgements document in the RTF Textbox control.
         rtftextboxAcknowledgements.Rtf = My.Resources.Acknowledgements_RTF
 
