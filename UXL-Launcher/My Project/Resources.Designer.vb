@@ -99,6 +99,28 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to 
+        '''                                 Apache License
+        '''                           Version 2.0, January 2004
+        '''                        http://www.apache.org/licenses/
+        '''
+        '''   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+        '''
+        '''   1. Definitions.
+        '''
+        '''      &quot;License&quot; shall mean the terms and conditions for use, reproduction,
+        '''      and distribution as defined by Sections 1 through 9 of this document.
+        '''
+        '''      &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
+        '''      the copyright owner that is granting t [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property apache2_0_txt() As String
+            Get
+                Return ResourceManager.GetString("apache2_0_txt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to applauncher-icons
         '''By Drew Naylor. Licensed under CC BY 4.0.
         '''Version 3.0
@@ -129,7 +151,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2021-06-06T12:04:52
+        '''  Looks up a localized string similar to 2021-06-11T18:32:23
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -242,21 +264,6 @@ Namespace My.Resources
         Public ReadOnly Property EyesoreTheme_XML() As String
             Get
                 Return ResourceManager.GetString("EyesoreTheme_XML", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to {\rtf1\ansi\deff0\nouicompat{\fonttbl{\f0\fswiss Helvetica;}{\f1\fswiss\fcharset0 Helvetica;}{\f2\fnil Courier;}}
-        '''{\colortbl ;\red0\green0\blue255;}
-        '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
-        '''\pard\sa180\b\f0\fs28\lang9 GNU GENERAL PUBLIC LICENSE\par
-        '''\b0\fs24 Version 3, 29 June 2007\par
-        '''Copyright \f1\&apos;a9 2007 Free Software Foundation, Inc. &lt;{{\field{\*\fldinst{HYPERLINK &quot;http://fsf.org/&quot;}}{\fldrslt{http://fsf.org/\ul0\cf0}}}}\f1\fs24 &gt;\par
-        '''\f0 Everyone is permitted to copy and distribute verbat [rest of string was truncated]&quot;;.
-        '''</summary>
-        Public ReadOnly Property gpl_RTF() As String
-            Get
-                Return ResourceManager.GetString("gpl_RTF", resourceCulture)
             End Get
         End Property
         
@@ -620,7 +627,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2020 Drew Naylor. Licensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2021 Drew Naylor. Licensed under Gnu GPLv3+.
         '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
         '''
         '''The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
@@ -721,7 +728,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2020 Drew Naylor. Licensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2021 Drew Naylor. Licensed under Gnu GPLv3+.
         '''
         '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
         '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
