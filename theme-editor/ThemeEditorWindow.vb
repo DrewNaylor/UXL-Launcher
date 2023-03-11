@@ -1,5 +1,5 @@
 ﻿'PortableThemeEngine Theme Editor - Theme editor for editing PortableThemeEngine themes.
-'Copyright (C) 2020-2021 Drew Naylor. Licensed under Apache License 2.0.
+'Copyright (C) 2020-2021, 2023 Drew Naylor. Licensed under Apache License 2.0.
 'Any companies mentioned own their respective copyrights/trademarks.
 '(Note that the copyright years include the years left out by the hyphen.)
 '
@@ -23,6 +23,12 @@ Imports System.Xml
 
 Public Class aaformMainWindow
     Private Sub comboboxControlSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboboxControlSelector.SelectedIndexChanged
+        ' Recheck the controls we need to show.
+        recheckNeededControlPropertyControls()
+    End Sub
+
+    Private Sub recheckNeededControlPropertyControls()
+        ' Moved to its own sub so we can call it on startup.
         If comboboxControlSelector.Text = "Button" Then
             ' Show textbox for backcolor.
             uiBackColorTextbox.Show()
@@ -40,6 +46,9 @@ Public Class aaformMainWindow
 
             ' Show button controls.
             hideButtonControls(False)
+
+            ' Hide the message label.
+            labelPickControl.Hide()
 
             ' Update backcolor and forecolor textboxes with
             ' the button's properties.
@@ -65,6 +74,9 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
+            ' Hide the message label.
+            labelPickControl.Hide()
+
             uiBackColorTextbox.Text = ThemeProperties.themecontrolGroupboxBackColor
             uiForeColorTextbox.Text = ThemeProperties.themecontrolGroupboxForeColor
 
@@ -81,6 +93,9 @@ Public Class aaformMainWindow
 
             ' Hide button controls.
             hideButtonControls(True)
+
+            ' Hide the message label.
+            labelPickControl.Hide()
 
             uiBackColorTextbox.Text = ThemeProperties.themecontrolFlowayoutpanelBackColor
             uiForeColorTextbox.Text = ThemeProperties.themecontrolFlowayoutpanelForeColor
@@ -104,6 +119,9 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
+            ' Hide the message label.
+            labelPickControl.Hide()
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = ThemeProperties.themecontrolStatusbarBackColor
 
@@ -120,6 +138,9 @@ Public Class aaformMainWindow
 
             ' Hide button controls.
             hideButtonControls(True)
+
+            ' Hide the message label.
+            labelPickControl.Hide()
 
             uiBackColorTextbox.Text = ThemeProperties.themecontrolLabelBackColor
             uiForeColorTextbox.Text = ThemeProperties.themecontrolLabelForeColor
@@ -138,6 +159,9 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
+            ' Hide the message label.
+            labelPickControl.Hide()
+
             uiBackColorTextbox.Text = ThemeProperties.themecontrolTextboxBackColor
             uiForeColorTextbox.Text = ThemeProperties.themecontrolTextboxForeColor
 
@@ -154,6 +178,9 @@ Public Class aaformMainWindow
 
             ' Hide button controls.
             hideButtonControls(True)
+
+            ' Hide the message label.
+            labelPickControl.Hide()
 
             ' Update textboxes with menuitem stuff.
             uiBackColorTextbox.Text = ThemeProperties.themecontrolMenuitemBackColor
@@ -181,6 +208,9 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
+            ' Hide the message label.
+            labelPickControl.Hide()
+
             ' Update backcolor textbox with statusbar's backcolor.
             uiBackColorTextbox.Text = ThemeProperties.themecontrolMenubarBackColor
 
@@ -198,12 +228,38 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
+            ' Show the message label.
+            labelPickControl.Show()
+
             ' Update textboxes with statuslabel stuff.
             uiBackColorTextbox.Text = ThemeProperties.themecontrolStatuslabelBackColor
             uiForeColorTextbox.Text = ThemeProperties.themecontrolStatuslabelForeColor
 
             uiStatusLabelBorderSidesDropdown.Text = ThemeProperties.themecontrolStatuslabelBorderSides
             uiStatusLabelBorderStyleDropdown.Text = ThemeProperties.themecontrolStatuslabelBorderStyle
+
+        Else
+            ' If no implemented control is selected, show a message.
+            ' Show backcolor textbox.
+            uiBackColorTextbox.Hide()
+            ' Hide forecolor textbox since statusbars
+            ' don't support forecolors in the theme engine.
+            uiForeColorTextbox.Hide()
+            ' Hide forecolor label since the textbox is hidden.
+            uiForeColorLabel.Hide()
+            ' Show backcolor label.
+            uiBackColorLabel.Hide()
+            ' Hide image margin controls.
+            hideImageMarginControls(True)
+
+            ' Hide statuslabel controls.
+            hideStatusLabelControls(True)
+
+            ' Hide button controls.
+            hideButtonControls(True)
+
+            ' Show the message label.
+            labelPickControl.Show()
         End If
     End Sub
 
@@ -433,6 +489,11 @@ Public Class aaformMainWindow
             ThemeProcessor.LoadTheme(openfiledialogOpenTheme.FileName)
             updateThemeInfo()
         End If
+    End Sub
+
+    Private Sub aaformMainWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Recheck the controls we need to show.
+        recheckNeededControlPropertyControls()
     End Sub
 End Class
 
