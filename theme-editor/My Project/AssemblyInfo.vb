@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Theme editor for editing PortableThemeEngine themes.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("PortableThemeEngine Theme Editor")>
-<Assembly: AssemblyCopyright("Copyright (C) 2020-2021 Drew Naylor. Licensed under Apache License 2.0.")>
+<Assembly: AssemblyCopyright("Copyright (C) 2020-2021, 2023 Drew Naylor. Licensed under Apache License 2.0.")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
