@@ -228,8 +228,8 @@ Public Class aaformMainWindow
             ' Hide button controls.
             hideButtonControls(True)
 
-            ' Show the message label.
-            labelPickControl.Show()
+            ' Hide the message label.
+            labelPickControl.Hide()
 
             ' Update textboxes with statuslabel stuff.
             uiBackColorTextbox.Text = ThemeProperties.themecontrolStatuslabelBackColor

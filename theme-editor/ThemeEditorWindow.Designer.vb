@@ -143,6 +143,8 @@ Partial Class aaformMainWindow
         '
         'flowlayoutpanelPropertyList
         '
+        Me.flowlayoutpanelPropertyList.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.flowlayoutpanelPropertyList.AutoScroll = True
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorLabel)
         Me.flowlayoutpanelPropertyList.Controls.Add(Me.uiBackColorTextbox)
@@ -289,7 +291,7 @@ Partial Class aaformMainWindow
         Me.labelPickControl.Location = New System.Drawing.Point(2, 303)
         Me.labelPickControl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.labelPickControl.Name = "labelPickControl"
-        Me.labelPickControl.Size = New System.Drawing.Size(244, 26)
+        Me.labelPickControl.Size = New System.Drawing.Size(277, 13)
         Me.labelPickControl.TabIndex = 20
         Me.labelPickControl.Text = "Please pick a control to theme from the dropdown above."
         '
@@ -450,7 +452,7 @@ Partial Class aaformMainWindow
         Me.tabpageThemeInfo.Margin = New System.Windows.Forms.Padding(2)
         Me.tabpageThemeInfo.Name = "tabpageThemeInfo"
         Me.tabpageThemeInfo.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabpageThemeInfo.Size = New System.Drawing.Size(570, 398)
+        Me.tabpageThemeInfo.Size = New System.Drawing.Size(570, 330)
         Me.tabpageThemeInfo.TabIndex = 1
         Me.tabpageThemeInfo.Text = "Theme info"
         Me.tabpageThemeInfo.UseVisualStyleBackColor = True
