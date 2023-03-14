@@ -14,8 +14,8 @@
     <Theme_Colors>
       
       <Button>
-        <BackColor>RoyalBlue</BackColor>
-        <ForeColor>Lime</ForeColor>
+        <BackColor>#F5A9B8</BackColor>
+        <ForeColor>Black</ForeColor>
         <!-- The FlatStyle determines the "depth" of the buttons. This can be set
         to either "Flat" or "Standard". Anything else will be set to "Standard".
         Quotation marks are not supported. -->
@@ -23,7 +23,9 @@
         <!-- Anything within the "FlatAppearance" element will only be used if
         "FlatStyle" is set to "Flat". -->
         <FlatAppearance>
-          <BorderColor>Red</BorderColor>
+          <BorderColor>#5BCEFA</BorderColor>
+		  <MouseDownBackColor>RoyalBlue</MouseDownBackColor>
+          <MouseOverBackColor>#5BCEFA</MouseOverBackColor>
         </FlatAppearance>
       </Button>
       
@@ -73,9 +75,9 @@
 
       <MenuItem>
         <!-- Background color for menubar dropdown items. -->
-        <BackColor>RoyalBlue</BackColor>
+        <BackColor>White</BackColor>
         <!-- Text color for menubar dropdown items. -->
-        <ForeColor>White</ForeColor>
+        <ForeColor>Black</ForeColor>
         <ImageMarginGradient>
           <!-- The "ImageMarginGradient" is the small box on the
           left side of many Windows dropdown menu items. 
@@ -85,16 +87,16 @@
           
           <!-- "StartColor" is the color on the left side of
           the image margin's gradient. -->
-          <StartColor>Red</StartColor>
+          <StartColor>#5BCEFA</StartColor>
           <!-- "EndColor" is the color on the right side of
           the image margin's gradient. -->
-          <EndColor>Lime</EndColor>
+          <EndColor>#F5A9B8</EndColor>
         </ImageMarginGradient>
       </MenuItem>
 
       <MenuBar>
         <!-- Background color for the menubar itself. -->
-        <BackColor>RoyalBlue</BackColor>
+        <BackColor>#5BCEFA</BackColor>
       </MenuBar>
       
       <StatusLabel>
