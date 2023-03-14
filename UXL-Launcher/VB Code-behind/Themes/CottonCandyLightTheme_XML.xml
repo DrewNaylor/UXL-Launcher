@@ -62,6 +62,13 @@
         <BackColor>Transparent</BackColor>
         <ForeColor>Black</ForeColor>
       </Label>
+	  
+	  <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Red</ActiveLinkColor>
+        <LinkColor>DodgerBlue</LinkColor>
+      </LinkLabel>
 
       <Panel>
         <BackColor>#5BCEFA</BackColor>
