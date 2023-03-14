@@ -25,37 +25,37 @@
         <FlatAppearance>
           <BorderColor>#5BCEFA</BorderColor>
 		  <MouseDownBackColor>RoyalBlue</MouseDownBackColor>
-          <MouseOverBackColor>#5BCEFA</MouseOverBackColor>
+          <MouseOverBackColor>LightBlue</MouseOverBackColor>
         </FlatAppearance>
       </Button>
       
       <GroupBox>
         <BackColor>White</BackColor>
-        <ForeColor>Blue</ForeColor>
+        <ForeColor>Black</ForeColor>
       </GroupBox>
 
       <FlowLayoutPanel>
-        <BackColor>White</BackColor>
+        <BackColor>#F5A9B8</BackColor>
         <ForeColor>Black</ForeColor>
       </FlowLayoutPanel>
 
       <TableLayoutPanel>
-        <BackColor>White</BackColor>
+        <BackColor>#5BCEFA</BackColor>
         <ForeColor>Black</ForeColor>
         <!--If you want this to apply to the table layout panel inside the
         About window About tab, set ApplyToAboutWindowAboutTabTLP to True
         as shown below. Otherwise, the tab page control's colors will
         be used instead-->
-        <ApplyToAboutWindowAboutTabTLP>True</ApplyToAboutWindowAboutTabTLP>
+        <ApplyToAboutWindowAboutTabTLP>False</ApplyToAboutWindowAboutTabTLP>
       </TableLayoutPanel>
 
       <TabPage>
-        <BackColor>RoyalBlue</BackColor>
+        <BackColor>#F5A9B8</BackColor>
         <ForeColor>White</ForeColor>
       </TabPage>
       
       <StatusBar>
-        <BackColor>RoyalBlue</BackColor>
+        <BackColor>#5BCEFA</BackColor>
       </StatusBar>
 
       <Label>
@@ -64,7 +64,7 @@
       </Label>
 
       <Panel>
-        <BackColor>White</BackColor>
+        <BackColor>#5BCEFA</BackColor>
         <ForeColor>Black</ForeColor>
       </Panel>
 
@@ -100,8 +100,8 @@
       </MenuBar>
       
       <StatusLabel>
-        <BackColor>Transparent</BackColor>
-        <ForeColor>White</ForeColor>
+        <BackColor>#F5A9B8</BackColor>
+        <ForeColor>Black</ForeColor>
         
         <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
         <BorderSides>None</BorderSides>
