@@ -12,6 +12,13 @@
   <UseThemeEngineVersion>1.04</UseThemeEngineVersion>
   
     <Theme_Colors>
+	
+	  <AboutWindow>
+        <!-- This controls how the About window's banner appears.
+        Available BannerStyle options are "Light" and "Dark".
+        Anything else will be set to "Light". -->
+        <BannerStyle>Dark</BannerStyle>
+      </AboutWindow>
       
       <Button>
         <BackColor>#F5A9B8</BackColor>
@@ -74,6 +81,13 @@
         <BackColor>Transparent</BackColor>
         <ForeColor>White</ForeColor>
       </Label>
+	  
+      <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Red</ActiveLinkColor>
+        <LinkColor>DodgerBlue</LinkColor>
+      </LinkLabel>
 
       <Panel>
         <BackColor>#5BCEFA</BackColor>
