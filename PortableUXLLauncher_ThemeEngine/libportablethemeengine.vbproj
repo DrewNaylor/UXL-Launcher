@@ -119,6 +119,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Themes\CottonCandyDarkTheme_XML.xml" />
+    <None Include="Themes\CottonCandyLightTheme_XML.xml" />
     <Content Include="Themes\DefaultTheme_XML.xml" />
     <Content Include="Themes\Eyesore2Theme_XML.xml" />
     <Content Include="Themes\EyesoreTheme_XML.xml" />

@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -61,6 +61,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Cotton Candy (Dark)&lt;/Title&gt;
+        '''  &lt;Description&gt;Cotton Candy is a theme with light pink and light blue accents ;-). This is the Dark version, which uses a black fill-color where possible.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property CottonCandyDarkTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("CottonCandyDarkTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Cotton Candy (Light)&lt;/Title&gt;
+        '''  &lt;Description&gt;Cotton Candy is a theme with light pink and light blue accents ;-). This is the Light version, which uses a white fill-color.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.0 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property CottonCandyLightTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("CottonCandyLightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property DARK_UXL_Launcher_Banner() As System.Drawing.Bitmap
@@ -71,7 +107,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Maudern,ProDark,TenDark.
+        '''  Looks up a localized string similar to CottonCandyDark,Maudern,ProDark,TenDark.
         '''</summary>
         Friend ReadOnly Property darkthemesList() As String
             Get

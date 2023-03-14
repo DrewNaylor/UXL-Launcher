@@ -638,7 +638,13 @@
     <value>..\themes\prodarktheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="darkthemesList" xml:space="preserve">
-    <value>Maudern,ProDark,TenDark</value>
+    <value>CottonCandyDark,Maudern,ProDark,TenDark</value>
     <comment>Dark themes available in case the developer wants to allow changing the default dark theme.</comment>
+  </data>
+  <data name="CottonCandyDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\CottonCandyDarkTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CottonCandyLightTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Themes\CottonCandyLightTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -1,0 +1,123 @@
+﻿<UXL_Launcher_Theme>
+  <Title>Cotton Candy (Light)</Title>
+  <Description>Cotton Candy is a theme with light pink and light blue accents ;-). This is the Light version, which uses a white fill-color.</Description>
+  <Version>v1.0</Version>
+  <Author>Drew Naylor</Author>
+
+  <!-- "UseThemeEngineVersion" is used to specify the version of the
+  UXL Launcher Theme Engine to use in case there are changes in newer
+  versions of the theme engine that designers or developers don't want
+  to use. Version 1.01 is the oldest version number available and anything
+  smaller than that will automatically be set to 1.01 at runtime. -->
+  <UseThemeEngineVersion>1.04</UseThemeEngineVersion>
+  
+    <Theme_Colors>
+      
+      <Button>
+        <BackColor>#F5A9B8</BackColor>
+        <ForeColor>Black</ForeColor>
+        <!-- The FlatStyle determines the "depth" of the buttons. This can be set
+        to either "Flat" or "Standard". Anything else will be set to "Standard".
+        Quotation marks are not supported. -->
+        <FlatStyle>Flat</FlatStyle>
+        <!-- Anything within the "FlatAppearance" element will only be used if
+        "FlatStyle" is set to "Flat". -->
+        <FlatAppearance>
+          <BorderColor>#5BCEFA</BorderColor>
+		  <MouseDownBackColor>RoyalBlue</MouseDownBackColor>
+          <MouseOverBackColor>LightBlue</MouseOverBackColor>
+        </FlatAppearance>
+      </Button>
+      
+      <GroupBox>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+      </GroupBox>
+
+      <FlowLayoutPanel>
+        <BackColor>#F5A9B8</BackColor>
+        <ForeColor>Black</ForeColor>
+      </FlowLayoutPanel>
+
+      <TableLayoutPanel>
+        <BackColor>#5BCEFA</BackColor>
+        <ForeColor>Black</ForeColor>
+        <!--If you want this to apply to the table layout panel inside the
+        About window About tab, set ApplyToAboutWindowAboutTabTLP to True
+        as shown below. Otherwise, the tab page control's colors will
+        be used instead-->
+        <ApplyToAboutWindowAboutTabTLP>False</ApplyToAboutWindowAboutTabTLP>
+      </TableLayoutPanel>
+
+      <TabPage>
+        <BackColor>#F5A9B8</BackColor>
+        <ForeColor>White</ForeColor>
+      </TabPage>
+      
+      <StatusBar>
+        <BackColor>#5BCEFA</BackColor>
+      </StatusBar>
+
+      <Label>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>Black</ForeColor>
+      </Label>
+	  
+	  <LinkLabel>
+        <BackColor>Transparent</BackColor>
+        <ForeColor>White</ForeColor>
+        <ActiveLinkColor>Red</ActiveLinkColor>
+        <LinkColor>DodgerBlue</LinkColor>
+      </LinkLabel>
+
+      <Panel>
+        <BackColor>#5BCEFA</BackColor>
+        <ForeColor>Black</ForeColor>
+      </Panel>
+
+      <TextBox>
+        <BackColor>White</BackColor>
+        <ForeColor>Black</ForeColor>
+      </TextBox>
+
+      <MenuItem>
+        <!-- Background color for menubar dropdown items. -->
+        <BackColor>White</BackColor>
+        <!-- Text color for menubar dropdown items. -->
+        <ForeColor>Black</ForeColor>
+        <ImageMarginGradient>
+          <!-- The "ImageMarginGradient" is the small box on the
+          left side of many Windows dropdown menu items. 
+          Make sure to include the "0x" at the beginning
+          of HTML color codes or they might not work, though
+          you can also just use regular words like "Red" or "Blue".-->
+          
+          <!-- "StartColor" is the color on the left side of
+          the image margin's gradient. -->
+          <StartColor>#5BCEFA</StartColor>
+          <!-- "EndColor" is the color on the right side of
+          the image margin's gradient. -->
+          <EndColor>#F5A9B8</EndColor>
+        </ImageMarginGradient>
+      </MenuItem>
+
+      <MenuBar>
+        <!-- Background color for the menubar itself. -->
+        <BackColor>#5BCEFA</BackColor>
+      </MenuBar>
+      
+      <StatusLabel>
+        <BackColor>#F5A9B8</BackColor>
+        <ForeColor>Black</ForeColor>
+        
+        <!--Accepted BorderSides values are None, Top, Bottom, Left, Right, and All. Other values will be set to None.-->
+        <BorderSides>None</BorderSides>
+
+        <!--Accepted BorderStyle values are Adjust, Bump, Etched, Flat, Raised, RaisedInner, RaisedOuter, Sunken, SunkenInner,
+        and SunkenOuter. Other values will be set to Flat. BorderSides must be something other than None for this to work.-->
+        <BorderStyle>Flat</BorderStyle>
+      </StatusLabel>
+      
+    </Theme_Colors>
+  
+</UXL_Launcher_Theme>
