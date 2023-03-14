@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -82,7 +82,7 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
-        '''{\*\generator Riched20 10.0.14393}\viewkind4\uc1 
+        '''{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
         '''\pard\sl240\slmult1\qc\b\f0\fs10\lang9\par
         '''
         '''\pard\sl276\slmult1\qc\fs32 UXL Launcher Acknowledgements\b0\par
@@ -112,7 +112,7 @@ Namespace My.Resources
         '''      and distribution as defined by Sections 1 through 9 of this document.
         '''
         '''      &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
-        '''      the copyright owner that is granting t [rest of string was truncated]&quot;;.
+        '''      the copyright owner that  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property apache2_0_txt() As String
             Get
@@ -151,7 +151,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 2021-06-11T18:32:23
+        '''  Looks up a localized string similar to 2023-03-14T03:17:18
         '''.
         '''</summary>
         Public ReadOnly Property BuildDate() As String
@@ -171,6 +171,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Cotton Candy (Dark)&lt;/Title&gt;
+        '''  &lt;Description&gt;Cotton Candy is a theme with light pink and light blue accents ;-). This is the Dark version, which uses a black fill-color where possible.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property CottonCandyDarkTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("CottonCandyDarkTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;UXL_Launcher_Theme&gt;
+        '''  &lt;Title&gt;Cotton Candy (Light)&lt;/Title&gt;
+        '''  &lt;Description&gt;Cotton Candy is a theme with light pink and light blue accents ;-). This is the Light version, which uses a white fill-color.&lt;/Description&gt;
+        '''  &lt;Version&gt;v1.0&lt;/Version&gt;
+        '''  &lt;Author&gt;Drew Naylor&lt;/Author&gt;
+        '''
+        '''  &lt;!-- &quot;UseThemeEngineVersion&quot; is used to specify the version of the
+        '''  UXL Launcher Theme Engine to use in case there are changes in newer
+        '''  versions of the theme engine that designers or developers don&apos;t want
+        '''  to use. Version 1.0 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property CottonCandyLightTheme_XML() As String
+            Get
+                Return ResourceManager.GetString("CottonCandyLightTheme_XML", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Public ReadOnly Property DARK_UXL_Launcher_Banner() As System.Drawing.Bitmap
@@ -181,7 +217,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Maudern,ProDark,TenDark.
+        '''  Looks up a localized string similar to CottonCandyDark,Maudern,ProDark,TenDark.
         '''</summary>
         Public ReadOnly Property darkthemesList() As String
             Get
@@ -627,12 +663,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2021 Drew Naylor. Licensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2021 Drew Naylor. Licensed under Apache License 2.0.
         '''The copyright and license info is the same for the theme engine as it is for UXL Launcher itself as the theme engine is built into the same file as UXL Launcher.
         '''
         '''The UXL Launcher Theme Engine can make the UXL Launcher main window look slightly better and can also use custom themes.
         '''Please be aware that UXL Launcher and the UXL Launcher Theme Engine are both unofficial and not made by Microsoft.
-        '''Note that the &quot;License&quot; tab contains only th [rest of string was truncated]&quot;;.
+        '''Note that the &quot;License&quot; tab contains [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ThemeEngineInfo_TXT() As String
             Get
@@ -650,7 +686,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Default,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ProDark,ReturnOfNight,RGB,TenDark,(Custom).
+        '''  Looks up a localized string similar to Default,CottonCandyLight,CottonCandyDark,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ProDark,ReturnOfNight,RGB,TenDark,(Custom).
         '''</summary>
         Public ReadOnly Property themeList_TXT() As String
             Get
@@ -728,14 +764,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Copyright (C) 2013-2021 Drew Naylor. Licensed under Gnu GPLv3+.
+        '''  Looks up a localized string similar to Copyright (C) 2013-2021 Drew Naylor. Licensed under Apache License 2.0.
         '''
         '''UXL Launcher provides launchers for most Microsoft Office apps in one place.
         '''Please be aware that UXL Launcher is unofficial and not made by Microsoft.
         '''Note that the &quot;License&quot; tab contains only the license for UXL Launcher. Other licenses are linked to from each component&apos;s information area below, if they are different.
         '''
         '''License notice:
-        '''UXL Launcher is free software: you can redistribute it and/or modify it under the terms of the GNU Ge [rest of string was truncated]&quot;;.
+        '''Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+        '''you may not use this file ex [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property UXLLauncherInfo_TXT() As String
             Get

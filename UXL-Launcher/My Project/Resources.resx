@@ -635,7 +635,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="uxl_icon_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAA5NJREFUSEu1VllIlFEU1jbanvKhjYiijYKegqIorB60gigieqokKFuUKK2ocCnw
+        DwAACw8BkvkDpQAAA5NJREFUSEu1VllIlFEU1jbanvKhjYiijYKegqIorB60gigieqokKFuUKK2ocCnw
         odSkQm2BihbqTVptojLKjJZRx3Eat2nGcRt1dHTUWZzRr3Pu3Gn+0ZmpiD4Y/nvPXb57zj3fuRNVUFCA
         0tLS//LjvaO4oURXvxdVzQ5oWxywObzSGh6D3mHUWpyoaHKgpWcQw8NygMB7jyKoa3dhy9V6LMvUIfeV
         BS6PYkUIvK2xY212DVZfqMELbY+0+hCSgHHzQyfGHVRj1gkNXn3vldbRMHe5selKPaIOfEPi/UY4B4fk
@@ -655,7 +655,7 @@ This decimal is to be used for the About window when talking about what version 
     <comment>Icon used for Options button</comment>
   </data>
   <data name="themeList_TXT" xml:space="preserve">
-    <value>Default,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ProDark,ReturnOfNight,RGB,TenDark,(Custom)</value>
+    <value>Default,CottonCandyLight,CottonCandyDark,Eyesore,Eyesore2,Maudern,MaudernClassic,Mitty,ProDark,ReturnOfNight,RGB,TenDark,(Custom)</value>
     <comment>This is the theme list used in the Options window.</comment>
   </data>
   <data name="appVersionCodename" xml:space="preserve">
@@ -933,7 +933,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="AccessLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAdiSURBVHhe7Zr7
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAdiSURBVHhe7Zr7
         UxVlHMb7sf6H1BS5ngs3L2lq4ug4oAlpCCSCV26KlwSOQJaao41ppTCNdlHQypyJ8jbilSzUhNRKmfIC
         IZT3QOXAOcCe3afvu+c9LS8hWZ5iD5xn5pnds7PLvN/Pu/u+z7vLE/CfD9UBKZoDUzUHpWk2MKc7bWTO
         cNrEvMBpM/NCp4NdzgRCXF4EhLq8GAjr4PAlmocsFT30lVZyA7mK/AWGZ63GsKxxGLH0qSceRx4EQPSw
@@ -971,7 +971,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="AccessSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHUSURBVEhL7dbf
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHUSURBVEhL7dbf
         S1NhGAfw3eY/srLy11pubpFEgghddBVdVSRz1dK2ttoG6ryMoB9QsJugC5GCXWjIQMZuhMgLSVcouwvE
         JgQ+eCEMZe3b9+2ZsKK2uR/ghQ88cM7hnO/nnPe87+FYYPVkcdIjODUiaPcKTt8RnGGfvSvouMf2CTrv
         C7rY3aOCnjGBzS+ws8/5f8Ae+Ap7MIHe4C04/Scsfxesw1sEQAAEQAAEQAAE2D4QAAEQAAHA9gAM17YH
@@ -985,7 +985,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="Clip_Organizer_75x64" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABACAYAAABSiYopAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAvYSURBVHhe7VsH
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAvYSURBVHhe7VsH
         UJXZFY5uihozO9lJJjsZMjGJ2UlkZFQUbBAUiasoKNh7771gV9Q4sWDvrqMhriUbVyWuLTtKoohgYWFF
         2nv0B0h59OYKnJzvch8B/Gnvf79l930zZ5D/f/zvnu+e891zz/39nhVWWGGFFVZYYYUVVlhhhRXvJEaO
         HPlely5dfm9ra9teXrKiNnr06PFh9+7dJ7H5Dxw4MHHo0KFkb28/Ut7+boOJeJ/Nnc3P1dU1zNvbu2rO
@@ -1042,7 +1042,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="ExcelLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAloSURBVHhe7Zp7
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAloSURBVHhe7Zp7
         UFTnGcZN44W9nuveuSw3jdZ66agJacRrrDVOpzXN2H86yXRSk7TTaaedJjHVqNHG1DFNjGi8hSrIBCEi
         am2oyv26y+4CIiCgqGiC4kQ7BSTBy9P3LF8nniwSi8IswrPzDsPuOTPf8zvnfN/7vucbMeLYVDxyfAoe
         yZ6M71A8mjMJj+Z+DyNzJ2Jk3kSMyv8uRudPwOiCCRhTOB5jih5DSNE4hBSPg6ZkLLQlsdCWxkJXFkMR
@@ -1089,7 +1089,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="ExcelNewWorksheet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJnSURBVEhLzdRd
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJnSURBVEhLzdRd
         TFJhGAdwa4USkSWaJBEoYrOlw62tyTS9oq762mxra3bhbF10VcuLMmpttq66qauurC5aF2251UZD6RAZ
         RdbyEyOIL+EU4CEHBgTyj17QhUtgAVvPdnbe8178f+fd8+4pWTcsw3pNMzZQe7FRuwelukawR3djk16K
         zW8l4BpqUT4mwtYPQlR8FIA3sQNVU3xUT28H31iJmk88z87P294IzVv6xVYOv2R1FQBAAoDQUg6RjRsQ
@@ -1106,7 +1106,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="ExcelSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIDSURBVEhLY2Dc
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIDSURBVEhLY2Dc
         Y/CfaZ/ef5YDOv9ZD2r9Zz+s+Z/zqPp/ruOq/3lOKv/nPaX4n/+M/H+Bc7L/hS5I/xe+JPlf9IrEf/Gr
         Yv8lrov8l7op/ErmtuAJ2Tt8NQr3uSUY0AEVLPgPtOC/7F3+//IPeD/LP+IughoNAVS14D7vf4WH3P+V
         H3PMghpPGwuUHnP+V3nCCfEJzSx4yvFZ4RUwTmhowX/VZ2w1BC0oe9j0f//Hw//XvtuIYkH8o7j/B78c
@@ -1121,7 +1121,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="InfopathLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAZvSURBVHhe7Zrp
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAZvSURBVHhe7Zrp
         U1NnFIf92P4R7WdBkX0LZIOQsCiCNG5F7HSzOLWO09Hi0kValaEiuLAvWQiEXRA6Fkd0KrUOtlBbF6Yo
         NkVcEFlkTSD3/nqSXKfDmDB2CqTc5Mw8k+Hjee773t9538uKgpVAoQfhSawCilYTXkCxhTVAiTfhQ/gC
         pX6EP1BmIQBQBRJBRDCgDrGhCSUEgDaMCCeEQLkFEaATExKgQkpEEJFApQUZoI8i5ECVgoi2UR1DxAI1
@@ -1155,7 +1155,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="InfopathSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE+SURBVEhL7dRf
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE+SURBVEhL7dRf
         KwRhFMfxfRnegpQktUlKkmiTkpWySl6B1u16A264cGP9y59du4uR2fZqScp/eykXe4No1ZZSU0pqv57p
         jBsXzKN5buTUNDU1v09nznkmNF8PyQZYaITFJlhqhuUWWAnDaiustcF6O2x0QKoT0l2w2Q3ZXshFYKuP
         6nY/5zsDJHJR6kJfKwAABaAArEEcK0rci5YKGGB3CPaGSXrxxgDyMa8TU4A9glMYUzMxCJAfJWEaOPUN
@@ -1167,7 +1167,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="OnenoteLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAnlSURBVHhe7Zr7
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAnlSURBVHhe7Zr7
         U1TnGcfzY/snqCj3m6RtajuZTCYzNZ22iant2NFM2k7bmXY67WT6Q81M7XhJjMTEqFETERER8AZeQEAQ
         RWDv7C4sy/2mAt4giggoAi7LAvvt9z28wK57pAniLJF9Zp5h9+zZw3k/5/l+3+c9Z1/SxAJaj9TJ1Huk
         wSONMk0eWSZyOWD2SItHWmWWe2SFTJtHVnqk3SOrJtJZsxx9/NtUHYfcmlh8wr8/twbh+y89S3yHAKDa
@@ -1216,7 +1216,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="OneNoteSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG0SURBVEhL7ZRL
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG0SURBVEhL7ZRL
         LwNRGIb9DH9BxyWxIBIbidjasGZFxEIiISFd+QkikVhYsCNhZSNxLaMXtEVDtGmQpi6lFHFvX+/xTTMq
         OpKprviSJ6fzTfI+PZc5JQtlwCJZIstkhawSF1lzAOtEJxvETTzES3xkk2xpuPA74A6UwRnSUFrytQoW
         kG1CCQIO3AU09BrRUr8sQFADdjSMGfFFEyhkJsUS7Gq4+9iTIgqwp8H5oyAxB9zogq82VxAfBW7Zj/Z8
@@ -1230,7 +1230,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="OutlookLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAhqSURBVHhe7Zp5
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAhqSURBVHhe7Zp5
         lFVzHMC//5HsS9b6w3pEtkPhhBSRODiWc3DsJByEY41oUVTiUCQhbcSRaVfZpihpU6ZNe2nXNFPNPu99
         fb7v3jvzm+e+wZk3dZt595zvuW/uu/f3ft/P77v+7ojOEdW5jsxzZL4jvzmywJeFjvzuSI4jixxZ7MsS
         R5Y6ssyRPxxZnpBiZDuSoytkNNINaa3rpYHU5NiHAFTKCkdWym7OQ3WNXO6r9P+OOgDAk1UJmcXna3zV
@@ -1273,7 +1273,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="OutlookNewEmailContact" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIeSURBVEhLzZTN
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIeSURBVEhLzZTN
         S1RhFMbPH+C3JKKLIUGij5UfC8NvI00iEMSlCxVcBJJCKiSCprQQEW1VLkQTsmghRJGighQiatqUzvhR
         5rRTAiEXitg8Pu+8d1CuzHW444AXHuaec1+e35z3vO8RLAjwlVqklqhvlJP6Tv2glqkVykW5qVVqjVqn
         NnzawS+ZxU9pwW9JFPNzAQDQHIQAm7KHLWkwrPVzwQCwChDy0rAPGwD4Y1QSNoCH26V6EkaAqqIlKMC/
@@ -1289,7 +1289,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="OutlookSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHHSURBVEhL7ZTL
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHHSURBVEhL7ZTL
         K0RhGIffP8C9SCwmSnJZYRbKrRSSzZRmaYGyUEK5FFmILGRhlizksiELJYpsRJLc74zbWNooFiT8/D7f
         mWh0ZnSYjZx6mvO+5+t95v1ugnUBNsgm2SLbZIfskj2yTw7IITkix+SEnBL3Ozc4l1WcSTsuJVZ8n18Q
         gMVBCXAh97iSRqO0fn5ZAHYBSgaM8kETANdGJ0ETeDhdak2CKFBdtH9LcLcm6GsWlBUIMlIFeXZBVwPz
@@ -1303,7 +1303,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="picture_manager_75x75" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABtrSURBVHhe7Zx3
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABtrSURBVHhe7Zx3
         WBRXF8bTjCbGT00zlhijMbGkaUyiMZpYURHsKNixd40l1tiwRmPvLTawo6hgAQsiVqxEpfdeBAt1l/c7
         587O7uzuzGLymTzfH5nneR9wgZm5P97z3nPv4L5wv/6H+FfPpn9h/QmZwYoZ1AMxA1ndTRrgJBTt2s2k
         /qyuJvXrIqlvZ4U6IbqPrI6I7t0RUUIdENVLliOiespykOTCai/J2V4oktWjnUnd25rk1MakbnYmdW2t
@@ -1427,7 +1427,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="PowerpointLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAe3SURBVHhe7Zpr
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAe3SURBVHhe7Zpr
         UJTXHcbzpW0S9n5hqRrAJjNtpl8ymbT9Fosz/VCTdPqlnc7UibHNaIMGlejUKiZiQZSAILAXLssdxQVU
         YgwJaqO0Xghi1FSSKCDEKBezArv77oW9PP2ffU8ms6IdI+wKyz4zzzDDvh/e5/f+z3nP/5z3MSHvBxDy
         fyh6z4/gZC5gfhzOQuYn4NzL/CRcRdzFcaJLJKL1UriZDTLRRmY53CZmBTylzEp4yphV8JRzV6iDnjRr
@@ -1467,7 +1467,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="PowerPointNewPresentation" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAH/SURBVEhLxZTP
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAH/SURBVEhLxZTP
         SxRhGMc99RNLo9RVs+0SQtDRmx7SP0Lo1EkETx48eRAi8GBGRW26siqb7LB6WCvCVXIVS7JwJcguhlCt
         FePJNnd3Zp7n/Tr7zhxCZZxlHPzCc3hfhs+HeZ/nfct2H5xCbvA0cg/PIPfoLPKPzyH/5DzyT8tReHYB
         hdBFFIYqoA1XQgtfgj5yGXrkCvTRKhhj1TDGa1QjWvuBJ+p6EQ/WlO3PMQhgRAOgF7WgibosK1e7bbSV
@@ -1482,7 +1482,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="PowerpointSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGiSURBVEhL7ZRL
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGiSURBVEhL7ZRL
         SwJRGIZbdaWLUXkrs00E7Vu26kcE/YLAVYtWLoRomVFRloYWJg66MdokghWBdEHbZBtD6LaxlVnqzJwz
         b+PMBFFgYzqreuEszrd4Hg7f952mt6VmFJ0tKC63orjShtJqO0prHSitd6K80YWyqxvlrR6wbh1YTy+4
         7T5w3n5wvgHwO3rwu4Yc7zed0YDZjpDV0PQ1DRCA9xtB9kwgAXOBMkNzClpOgwUgwUHQoMWt4DUSMBbQ
@@ -1496,7 +1496,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="PublisherLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAe4SURBVHhe7Zpr
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAe4SURBVHhe7Zpr
         UJTnFcf92H5oYsNt2XeXvbG7oMFb06SmNvWS6UzTfGhtnEnyoZnpjB87006SaZJOLEaJgqAQLmIUUQSD
         SwQxYACBgFzWZe+X991dwCADxmrAxBArxsu/Z3efmc4Oi6XCrrC7/5n/DDO8H97ze57z7DnneZdt8Qxg
         M3mTx4iN5F+TX/DbhF+RN5B/6TbhebcZ65l/4bbgOfKz5J+Tn3Fb/f4ZeR15rduGNcyryavcdmSRnxbs
@@ -1536,7 +1536,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="PublisherNewPublication" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIDSURBVEhLzZTN
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIDSURBVEhLzZTN
         S1RRGMbdB4VGMmhQERKEiAzWIBFIrmrnn+CiVRDqyoVI2yQXbcO1EEhbpaBEIS0/8qNz7odzZ2RmbtPc
         GafRMzPh6MzTe8+MBBJ3TtwZ8IFnceHw/O553/O+LY/0rxjQ1/BQX8cDbR392gZC2ibuad8QJPdqW+jR
         ttHNt3GX7+AO30UX+Tb/jluc4QbnznXGVzu5PnGNsUDLeTUAAAKgg2kIMF20M2OsFl1VgwFoJ7dx400t
@@ -1551,7 +1551,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="PublisherSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGkSURBVEhL7ZTP
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGkSURBVEhL7ZTP
         K4NxHMfdFSFaKCQpSVqTJCVO3PwdLjg5LLmSi6t2VkquHEUh5tfm+31+aFutzWxmHp6Ztmxvn+e7STk8
         vthOvOt9eC6v1/P9fH9UjanHGFVPMKJ6Max4MaScYlA5w4ByDie1X7lAn3KJXn6JHu5DN/eji9rJr9DB
         Gdo4T7QyftTCVXcjY46qzymDACRAM1PgYKrZxLS5ErqYMgvQRK3n2loJXxlBA9NQ/76SSgnqmG5Ws5Cj
@@ -1565,7 +1565,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="Query_64x64" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABH6SURBVHhezZoH
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABH6SURBVHhezZoH
         WFNX+8Dt37bUAWgNChgVEBwg4sC6UdzbOrBqrasIoqIiGBApDSBLdpgRCHuFva7sBGVPIagMUf62aktr
         m1pbvw59v3NuEkW5SKLix/s8v+eBe885nPzee9YNQ95TjECoIfSHjRy5nTZW2UpJRcVHSVk1kKaiEq88
         YWLkWFV6Ok2VnkFTVc2gqahmjFFRyVAaPz5xtLJytKKSUpgCjeY9fPRo2+GKiiZDh8ptRm3pIsYiBlVo
@@ -1648,7 +1648,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="SharepointLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAcxSURBVHhe7Zlb
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAcxSURBVHhe7Zlb
         bBRVHMZPMIA8CEafTBA1UR980hhj4ouXxAd9URPFF6MPJhojEKOigEgUAihBQUEqpRakyKXFtvZCaQuU
         Ei7WUgu9CKVAKRRKb9vdbvc+O5/ff/ZsHegWxOLS6e4/+TLdnZ0z5/ud2/+cKvyiYGmrTdts2m7TDpty
         bcqzaadNv9qUb1OBTYU2/WZTkU3FloJUH0pUE5VPLcYu9RzfP0WNJhwEIKYSm0otDaJMbebnZ7WlG4tx
@@ -1685,7 +1685,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="SharepointSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFXSURBVEhL7ZS9
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFXSURBVEhL7ZS9
         L0NRGMZfH/+AjcUgJiP+AtYONtYONpO5kz9ARMJgM6jP9raqtLcfUk1EGkEwSUtCGA6L2Pt4rr5TQ3Mk
         5048yS83d3l+5973nCPYECBONskW2SY7ZJfsKQmSJB5JkTTZJxlyIIacISsx0i/tcSBokSWH8oEjmdfq
         VhwLQAGQkzWtD00A+PoloQny/F3HnEmIgoCYvcDrBi5nAeMD79d8FoC7BaA02Elwai94iuPbXEz/LPDF
@@ -1697,7 +1697,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="WordLargeSVG_3D" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
-        YgAAB2IBOHqZ2wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAwfSURBVHhe7ZoH
+        YQAAB2EBlcO4tgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAwfSURBVHhe7ZoH
         VFRnGoazPaEMnaEMCKhgQ4y0UJ2BAYbeBVRcEzV7TDlpJ4nZ7J7s7kk2J9lkd7NHjUZFLEFNgkZNdLHF
         ApZEYy9R6SAiVcr0ue9+M3MJjPeqMLqaCO8575m5l7kzfM/3/f/9y33kkUjgF1HAL6OBX5F/PQ34jd5i
         4LcS4HfkR2OAx2KNtpAClmSrOMA6HhDonQDYyABbsl0iYE92SCInA45kpxTAORUQ6p0GuJBd0wG3DMCd
@@ -1755,7 +1755,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="WordNewDocument" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJiSURBVEhLzZRv
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJiSURBVEhLzZRv
         aM1hFMcnKUlaSYb8STLcmD/jBcaaGGKbYTL/bmwlk2VRs80reeHFRFHcF1JKpL1ZW2mGYX+w+bMhXlDK
         i2U1f3attHE/zun8fm5zd+fO3S3fenqe59zfcz73Oec8J25YCgxfASNSYWQajFoFo1fDmHSIXwtj18O4
         DTB+I0zIhEmbYEo2TNsC03NgxjY6Zm7nYWIuZR4vCXF/aggACIBZueDZiX/ubooc16YhBiAA5nnxOe5j
@@ -1772,7 +1772,7 @@ This decimal is to be used for the About window when talking about what version 
   <data name="WordSmallSVG_24x24" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        xQAAAsUBidZ/7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIYSURBVEhL7ZRN
+        xAAAAsQBW5GdCwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIYSURBVEhL7ZRN
         SFRRFMeNCCIihIjMKCUirSEtNBeRJoYVYWYfKGofgymEBlIrM1tFizZRO5tFBEEQ0UYUwuw7LfIDrcAW
         BYELSajEUQit+XUO570e9ZzKmlnZHy733jPc/2/uOefdhDm5MDcP5uXD/AJYsA0WFsKiHZC4ExbvgiVF
         sHQ3LNsDy/fCyn2QegBWlcLqMkbWlPMsrYKmQJCkhJ8VAwACIL0CAgcJrz/MScfaFGMAAiAjSMixjw8g
@@ -1789,7 +1789,7 @@ This decimal is to be used for the About window when talking about what version 
     <value>..\vb code-behind\themes\prodarktheme_xml.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="darkthemesList" xml:space="preserve">
-    <value>Maudern,ProDark,TenDark</value>
+    <value>CottonCandyDark,Maudern,ProDark,TenDark</value>
     <comment>Dark themes available in the "default dark theme" dropdown in the Theme tab.</comment>
   </data>
   <data name="libscrollswitchtabs_TXT" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -1797,5 +1797,11 @@ This decimal is to be used for the About window when talking about what version 
   </data>
   <data name="apache2_0_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apache2.0-txt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CottonCandyDarkTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\VB Code-behind\Themes\CottonCandyDarkTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CottonCandyLightTheme_XML" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\VB Code-behind\Themes\CottonCandyLightTheme_XML.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
