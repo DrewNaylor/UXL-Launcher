@@ -1,7 +1,7 @@
 # UXL Launcher
 
 ## Moving to Codeberg
-**Note:** I'm migrating to Codeberg. The canonical repo for Retiled is now here, please update your remotes: https://codeberg.org/DrewNaylor/UXL-Launcher
+**Note:** I'm migrating to Codeberg. The canonical repo for UXL Launcher is now here, please update your remotes: https://codeberg.org/DrewNaylor/UXL-Launcher
 
 ## Rest of the readme
 
