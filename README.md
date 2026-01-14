@@ -1,5 +1,10 @@
 # UXL Launcher
 
+## Moving to Codeberg
+**Note:** I'm migrating to Codeberg. The canonical repo for Retiled is now here, please update your remotes: https://codeberg.org/DrewNaylor/UXL-Launcher
+
+## Rest of the readme
+
 An app launcher meant to launch Microsoft Office 2010, 2013, 2016, 2019 desktop software/apps, including ones from Office 365. Not associated with Microsoft.
 
 | Overall project status | Master branch status |
